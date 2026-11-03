@@ -1,0 +1,37 @@
+method,parameter,value,validation_loss,scenario
+Bingham,beta,0.94,0.6851791706132895,Matched
+Bingham,beta,0.98,0.6231216583256441,Matched
+Bingham,beta,1.0,0.6106903820521783,Matched
+EW PCA,beta,0.94,0.685179170613289,Matched
+EW PCA,beta,0.98,0.6231216583256444,Matched
+EW PCA,beta,1.0,0.6106903820521782,Matched
+Rolling PCA,window,12.0,0.8965134268216222,Matched
+Rolling PCA,window,24.0,0.6989903688992195,Matched
+Rolling PCA,window,48.0,0.6121812005958683,Matched
+GROUSE,step,0.01,0.567916509757699,Matched
+GROUSE,step,0.04,0.6341973697099242,Matched
+GROUSE,step,0.1,0.8932544104044599,Matched
+Bingham,beta,0.94,0.9026801701644148,Unequal powers
+Bingham,beta,0.98,0.855889754339954,Unequal powers
+Bingham,beta,1.0,0.8566085025390181,Unequal powers
+EW PCA,beta,0.94,0.9026801701644155,Unequal powers
+EW PCA,beta,0.98,0.8558897543399538,Unequal powers
+EW PCA,beta,1.0,0.856608502539018,Unequal powers
+Rolling PCA,window,12.0,1.013344331474696,Unequal powers
+Rolling PCA,window,24.0,0.8661695296762466,Unequal powers
+Rolling PCA,window,48.0,0.8532555297017496,Unequal powers
+GROUSE,step,0.01,0.8361150132667738,Unequal powers
+GROUSE,step,0.04,0.8602180181074134,Unequal powers
+GROUSE,step,0.1,1.2438870053638589,Unequal powers
+Bingham,beta,0.94,1.9734141219419452,Sparse corruption
+Bingham,beta,0.98,1.7313529196536441,Sparse corruption
+Bingham,beta,1.0,1.674439958379211,Sparse corruption
+EW PCA,beta,0.94,1.9734141219419448,Sparse corruption
+EW PCA,beta,0.98,1.7313529196536448,Sparse corruption
+EW PCA,beta,1.0,1.6744399583792093,Sparse corruption
+Rolling PCA,window,12.0,2.7597358063803914,Sparse corruption
+Rolling PCA,window,24.0,1.9987366697031101,Sparse corruption
+Rolling PCA,window,48.0,1.7129165121054142,Sparse corruption
+GROUSE,step,0.01,1.668745521758817,Sparse corruption
+GROUSE,step,0.04,2.327836241129971,Sparse corruption
+GROUSE,step,0.1,3.685178116411565,Sparse corruption

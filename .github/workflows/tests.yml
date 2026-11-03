@@ -1,0 +1,38 @@
+name: Tests and theory validation
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+jobs:
+  theory:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MPLBACKEND: Agg
+      MPLCONFIGDIR: /tmp/bayesian-st-matplotlib
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: requirements-lock.txt
+      - name: Install TeX rendering tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends texlive-latex-extra texlive-fonts-recommended cm-super dvipng
+      - name: Install Python environment
+        run: bash scripts/setup.sh
+      - name: Run regression tests
+        run: .venv/bin/python -m pytest -q
+      - name: Run general validation notebook
+        run: .venv/bin/python scripts/execute_notebook.py notebooks/00_theory.ipynb
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: theory-validation
+          path: |
+            notebooks/00_theory.ipynb
+            results/

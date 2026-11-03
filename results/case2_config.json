@@ -1,0 +1,50 @@
+{
+  "source_hash": "105251b3ead699598f25c25d6ca0ce29d254a6de558ccd94a2b1caf2163823f1",
+  "config": {
+    "seed": 2718,
+    "repeats": 8,
+    "T": 72,
+    "draws": 6000,
+    "burnin": 2500,
+    "n": 8,
+    "k": 3,
+    "d": 64,
+    "s": 0.2,
+    "tau2": 1.5,
+    "checkpoints": [
+      12,
+      36,
+      72
+    ],
+    "max_draws": 24000,
+    "max_burnin": 8000,
+    "known_motion_fraction": 0.5,
+    "nominal_mass": 0.95,
+    "validation_candidates": 3,
+    "spatial_basis": "Eight low-frequency separable DCT-II modes on an 8x8 grid",
+    "calibration_input_rank": "Rank of supplied-frame transported preassigned inputs",
+    "coverage_distribution": "Independent Gaussian-QR initial subspaces, Gaussian skew drift paths, and Gaussian observations",
+    "coverage_guaranteed": false,
+    "noise_fit_ascent_verified": false,
+    "score_method": "Prior Monte Carlo log-mean-exp, with importance ESS and chain discrepancy"
+  },
+  "tables": {
+    "metrics": "6ef75369428df0b540cad359db9265a0e8f54a3f060f3f0f8c2c0dbf2fc40983",
+    "calibration": "045dfd49f8d3c9e7eb26413fb2e2ac2be367db87bf5cb9e7f4332be726d0c859",
+    "fields": "02bc96abec38fc19a69c21e91f42e67dcc6b622023fcc06053b11db13273e368",
+    "noise": "b0bdbabdc63f70d7c7217245236ab98172bcd3cf2787e6820e08b71379bf61d8",
+    "tuning": "9f529144fae58619c1c92020004a1f0643b35f29647faff09c055c114003ae59"
+  },
+  "previous_source_hash": "e7adf67afd2a3b8a6a5f761f6183ebdd345c0d8192999abe5f264c0ea5a7997e",
+  "requested_config": {
+    "seed": 2718,
+    "repeats": 8,
+    "T": 72,
+    "draws": 6000,
+    "burnin": 2500,
+    "max_draws": 24000,
+    "max_burnin": 8000
+  },
+  "config_digest": "1098197023cd6c8b5a1d43da385229394d8510d93f34b4803fd77982ba985824",
+  "reuse_verification": "All eight field numerical dependency functions unchanged verbatim after independent array scheduling refactor; original provenance and every table checksum verified."
+}

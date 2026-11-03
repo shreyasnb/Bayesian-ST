@@ -1,0 +1,15 @@
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+.venv/
+results/*
+!results/README.md
+!results/validation.json
+!results/summary.json
+!results/manifest.json
+!results/*.csv
+!results/*.pdf
+!results/*_config.json
+!results/*.png
+!results/case1_accuracy.json

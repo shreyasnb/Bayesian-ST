@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bayesian-st"
+version = "0.1.0"
+description = "Grassmann Bingham subspace tracking and reproducible simulations"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "scipy>=1.12", "matplotlib>=3.8", "pandas>=2.0", "nbformat>=5.10", "nbclient>=0.10", "ipykernel>=6.29", "pytest>=8"]
+
+[tool.setuptools.packages.find]
+include = ["lib*", "benchmarks*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

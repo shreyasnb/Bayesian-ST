@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "core_hash": "608a6515b42598bf2f3caa0e80ba532aad80a0369e948604d24ef01e508b9708",
+  "tests": 39,
+  "seed": 20,
+  "tracking_repeats": 128,
+  "tracking_terminal": 480,
+  "fixed_time_violations": 0,
+  "violation_upper_95": 0.023132405251746757,
+  "sampler": {
+    "max_rhat": 1.0007026975459008,
+    "max_mean_difference": 0.002296355394263677,
+    "max_standardized_difference": 0.5906998429699951,
+    "min_ess": 1033.3186288425604,
+    "max_mcse": 0.0028725237816521706
+  },
+  "moment_error": 0.003521279454262921,
+  "dimensions": [
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "seconds": 78.92880055000023,
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "scope": "Finite deterministic checks, stochastic diagnostics and stated scalability budgets; no universal guarantee"
+}

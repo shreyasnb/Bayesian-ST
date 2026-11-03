@@ -1,0 +1,46 @@
+{
+  "source_hash": "fe09936ba86136a1f7a5de96424b441f8ef32393fc38b2c575c17ede1f715b2b",
+  "requested_config": {
+    "seed": 1729,
+    "workers": 4,
+    "checkpoint_dir": "results/checkpoints/array",
+    "repeats": 8,
+    "T": 72,
+    "draws": 6000,
+    "burnin": 2500,
+    "max_draws": 24000,
+    "max_burnin": 8000
+  },
+  "config": {
+    "seed": 1729,
+    "repeats": 8,
+    "T": 72,
+    "draws": 6000,
+    "burnin": 2500,
+    "n": 16,
+    "k": 3,
+    "s": 0.3,
+    "tau2": 2.0,
+    "checkpoints": [
+      12,
+      36,
+      72
+    ],
+    "max_draws": 24000,
+    "max_burnin": 8000,
+    "coverage_distribution": "Repeated independent observations of deterministic moving subspace paths",
+    "known_motion_fraction": 0.5,
+    "validation_candidates": 3,
+    "evaluation_snapshots": 256,
+    "nominal_mass": 0.95,
+    "coverage_guaranteed": false,
+    "workers": 4,
+    "checkpoint_dir": "results/checkpoints/array"
+  },
+  "config_digest": "a30ca47f1dea2ac6f152d3bcf348afc9ec5129ee262bde8f453cb1b3edfe7c8a",
+  "tables": {
+    "metrics": "6d0f57239553cf3293c8eac9b3b4bac25d2d58a03e41823e64e3fd197c7adbfa",
+    "regions": "3ef2d509e4d0a4289e8ef5442f4780f6c173e315c7bebc42e60bf6f395b3bba0",
+    "tuning": "f4a3573d9bea07fbb252c5c6d332accfe272d4e55ddcad84b899e2159410b6b1"
+  }
+}
