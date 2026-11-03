@@ -1,0 +1,11 @@
+checkpoint,status,scope,artifacts
+0,implemented and checked,"Baseline tests, likelihood identities, equivariance, hashes and preserved outputs",baseline/audit.json; validation.json
+1,implemented and checked,"Explicit identity, partial, exact and causal motion; sensor-fixed and co-rotating inputs",motion/preregistered.json; applications/predeclared_config.json
+2,implemented and checked,Exponential memory and rolling likelihood queue; independent mixture validation,motion/tuning.csv; motion/selection.json; motion/paired.csv
+3,implemented and checked,Geometry and causality checked; primary causal-versus-tuned-memory holdout outcome,motion/paired.csv; motion/paths.csv; motion/cost.csv
+4,implemented and checked,Rank/codimension-one transition moments and inverse projection; independent real-circle full-density reference,process/reference_checks.json; process/coverage_trials.csv
+4,unresolved,General-rank stochastic moment inversion and calibrated uncertainty; explicitly rejected,process/status.json
+5,implemented and checked,"Matched-process 200-trial calibration per kappa; four distinct coverages, widths, innovations and separate noise ablations",process/coverage_summary.csv; motion/coverage_paired_noise.csv; applications/noise.csv
+6,unresolved,array primary application versus scalar shrinkage,applications/paired.csv; applications/tuning.csv
+6,empirically inconclusive,field primary application versus scalar shrinkage,applications/paired.csv; applications/tuning.csv
+7,implemented and checked,"Checkpoint handoff, sources, table checksums, commands, manuscript notes and measured cost",manifest.json; gate_binding.json; README.md

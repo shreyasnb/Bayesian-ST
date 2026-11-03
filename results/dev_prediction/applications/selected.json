@@ -1,0 +1,130 @@
+{
+  "signature": "090b3738672d0c4cd4e95814fa8b6cd6a8a6f5e868dddf6e210b361795540fe9",
+  "selected": [
+    {
+      "application": "array",
+      "method": "EW PCA",
+      "parameters": {
+        "beta": 0.85
+      }
+    },
+    {
+      "application": "array",
+      "method": "Loaded covariance",
+      "parameters": {
+        "beta": 0.85,
+        "loading": 1.6
+      }
+    },
+    {
+      "application": "array",
+      "method": "Posterior mean",
+      "parameters": {
+        "beta": 0.85
+      }
+    },
+    {
+      "application": "array",
+      "method": "Shrunk PCA",
+      "parameters": {
+        "beta": 0.85,
+        "rho": 0.5
+      }
+    },
+    {
+      "application": "field",
+      "method": "EW PCA",
+      "parameters": {
+        "beta": 0.95
+      }
+    },
+    {
+      "application": "field",
+      "method": "GROUSE",
+      "parameters": {
+        "step": 0.03
+      }
+    },
+    {
+      "application": "field",
+      "method": "Posterior mean",
+      "parameters": {
+        "beta": 0.95
+      }
+    },
+    {
+      "application": "field",
+      "method": "Rolling PCA",
+      "parameters": {
+        "window": 24
+      }
+    },
+    {
+      "application": "field",
+      "method": "Shrunk PCA",
+      "parameters": {
+        "beta": 0.95,
+        "rho": 1.0
+      }
+    }
+  ],
+  "selection_completed_before_final_test": true,
+  "boundary_notes": [
+    {
+      "application": "array",
+      "method": "EW PCA",
+      "notes": [],
+      "unresolved": false
+    },
+    {
+      "application": "array",
+      "method": "Loaded covariance",
+      "notes": [],
+      "unresolved": false
+    },
+    {
+      "application": "array",
+      "method": "Posterior mean",
+      "notes": [],
+      "unresolved": false
+    },
+    {
+      "application": "array",
+      "method": "Shrunk PCA",
+      "notes": [],
+      "unresolved": false
+    },
+    {
+      "application": "field",
+      "method": "EW PCA",
+      "notes": [],
+      "unresolved": false
+    },
+    {
+      "application": "field",
+      "method": "GROUSE",
+      "notes": [],
+      "unresolved": false
+    },
+    {
+      "application": "field",
+      "method": "Posterior mean",
+      "notes": [],
+      "unresolved": false
+    },
+    {
+      "application": "field",
+      "method": "Rolling PCA",
+      "notes": [],
+      "unresolved": false
+    },
+    {
+      "application": "field",
+      "method": "Shrunk PCA",
+      "notes": [
+        "rho: structural endpoint"
+      ],
+      "unresolved": false
+    }
+  ]
+}

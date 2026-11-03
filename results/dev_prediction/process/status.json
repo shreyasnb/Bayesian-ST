@@ -1,0 +1,30 @@
+{
+  "status": "passed numerical reference checks; pilot outcomes retained",
+  "general_rank": "unresolved",
+  "config_sha256": "3d9c7dff1b9824982af7727d929861f67ac4de6d4bdf97d30f6dec5f859ca488",
+  "sources": {
+    "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+    "scripts/check_process_prediction.py": "f379ff8d1effffd6fd9710f19cf19055842b4abbfc31d28e4343bc5d24c9407c",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342"
+  },
+  "tables": {
+    "coverage_summary.csv": "e2a38b860de6ef18252f91db13c86ecf5ee3c390621b635fdd165facd9e66ee7",
+    "innovations.csv": "3b26378b8e88aacd19ee39d16eae469fbdf3f8a3d5b2e3f5c1b5b61352a6fd61",
+    "paths.csv": "10c431088e1879b83ff83d1144ce4ce16b95f7313938f10fef8b4f4737e43d4e",
+    "coverage_trials.csv": "5c807986f0cf9ea4565274dd1d058a83b4f665c6b2ef82a6628f5a95cf63a251",
+    "noise_ablation.csv": "9b0213816737181f88743db7bd67ee35fd062cd30675a14ec884ebaf9baf50a6"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "seconds": 55.825470777999726,
+  "hardware": "x86_64",
+  "statistical_replicates": "Independent trajectory identifiers, not posterior/grid draws",
+  "projection": "Moment residual does not bound density TV, HPD mass, or accumulated filtering error",
+  "timing": "Cumulative at reporting time; prediction includes moments and inversion. Inversion is nested, not additive. Standalone moment timing only for full-density reference; embedded timings are missing rather than zero.",
+  "noise_fit": "Separate 20-trajectory frozen-prior surrogate ablation; full state-space ascent unverified"
+}

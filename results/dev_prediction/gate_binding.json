@@ -1,0 +1,78 @@
+{
+  "final_core_hash": "0afd7917aec6a6d2fc140f766be14d73c4621d85ccd66f90ed46365ad92b5828",
+  "captured_run_core_hashes": {
+    "motion": "38ceb0c32201e97be5648a1e8c8925084e962bdee1987d9431c9e9fb96421384",
+    "applications": "38ceb0c32201e97be5648a1e8c8925084e962bdee1987d9431c9e9fb96421384"
+  },
+  "verified_sources": {
+    "motion": {
+      "lib/prediction_study.py": "47e3bd7b754c4241d278f8de4bd1c2f61ca32ee209a90c438557a8468cf06b7e",
+      "lib/prediction.py": "d204ff6c0d1cb74546ef1b893d1edfe3e34e9fe8a52201b81a9371a7dc18ebda",
+      "scripts/run_prediction_ablation.py": "9924d408c9768a590c8200470f76e863099ae57121928dbe32098224151be645",
+      "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+      "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+      "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+      "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342",
+      "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+      "lib/drift_study.py": "c2a96ba02a50a87bf4c17afece9c07aef302e33383cd22ee9fb451625783f32f",
+      "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53",
+      "lib/reporting.py": "ef4cda760a52c7711ca24127c1de97fa1328c645bbbc87305fea93e5cda6fe40",
+      "scripts/check_motion_paired_noise.py": "d7944fc56dc4d4d04be1381df256b1b0b8879451bc5846142c1b14d16d029cda"
+    },
+    "applications": {
+      "lib/application_ablation.py": "c0e8f6ca6781e79eebb83d96d36ed9b7d054594af33b9105fb7437e4e334edb4",
+      "scripts/run_application_ablation.py": "2c399b1666e540867a1c57805d484aced0df97cad25baf076bb32a625de40e65",
+      "lib/experiments.py": "eed715bb9c3d45b372803a182a64c905dd1f5668c37f214aebd4a46db144bc73",
+      "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+      "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342",
+      "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+      "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+      "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+      "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+      "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+      "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3"
+    },
+    "process": {
+      "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+      "scripts/check_process_prediction.py": "f379ff8d1effffd6fd9710f19cf19055842b4abbfc31d28e4343bc5d24c9407c",
+      "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+      "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+      "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342"
+    }
+  },
+  "verified_tables": {
+    "motion": {
+      "tuning.csv": "91dd1a680ae014130aa7fa1d55c9cbad68e1bf2cb85a0b160a51951a9716bbde",
+      "tuning_summary.csv": "a0e81faebbe5cd402abe252ae0aa02b4f6610b0f3d15385ae67a95ba7ec70f4c",
+      "metrics.csv": "01852ebe9926ef02bbeb18dc386eea32fb1e0528d6be1b1686cbcb34f64afd84",
+      "paths.csv": "062efd462bc9bd108b3500f1f23cb20c186a9699031194f5c981340aa2efdd80",
+      "bounds.csv": "dfe4ed4af02a6b55e909fb869d6adedce391cb55dfa446349532c8c763632e98",
+      "cost.csv": "b1e8971b27ccf035a71a049fa65db4ec229b46993be281d047c5c1a0656fb11f",
+      "posterior.csv": "7c0c2325c9c49076a098dccd669d35f50de1ca959a00321915cdb207f3ed5779",
+      "summary.csv": "b26360294b3079f43efe368120c4db073f63ea4cb3de63204d316cb27766c882",
+      "paired.csv": "fe640a1564002c27619c1abb44ab5f0e5bb5115dec742286fafb31d841c15bc8",
+      "coverage.csv": "ac32155386dcd9741f73dd2f1aec6ed4c15b06a5e7df04fcec572980bdb2697e",
+      "posterior_paired_noise.csv": "4205c2b9681a2b82a5f5b193f93ce48f294d10afaaf612462743a2bcf325b560",
+      "coverage_paired_noise.csv": "769bab606470d2f8447e8b4e775269d2da68c5eb5c2f051b47bfb593c330aa0b"
+    },
+    "applications": {
+      "validation_trials.csv": "3352b8b1153f3170b1fbf18aa10538e83cd5ba2e38dabc539e7cd78571e721cf",
+      "tuning.csv": "57702c0b0476c53009ebf35799af3d2939d6d4175f99dddd6dad5091f2e34e44",
+      "metrics.csv": "cbd3056aa3c3546a505973c140d9b806c2ae2e6628219f190184ced0725fab33",
+      "paired.csv": "890007358194b098b804c71b0266bb19e1f5934271021da0e8670afd14381450",
+      "tails_cost.csv": "b8af6d68cd995208742873a6e6fa8f506055b9a1fc6ef77f60ec9e2491feb6fc",
+      "noise.csv": "4ea2152fe726450023d4f40882e18962aecbad2eda21638aedbbc0922c432b0e",
+      "selected.json": "1eb9dd2d86c28ceddf0170ea26157fe9f533d430f903623e4b2e76c52627ffc3",
+      "predeclared_config.json": "10a2fc72ed34375e6e0c588fadfb3aaa7ecb12eb69f6d036da46a7ecd009c5e5"
+    },
+    "process": {
+      "coverage_summary.csv": "e2a38b860de6ef18252f91db13c86ecf5ee3c390621b635fdd165facd9e66ee7",
+      "innovations.csv": "3b26378b8e88aacd19ee39d16eae469fbdf3f8a3d5b2e3f5c1b5b61352a6fd61",
+      "paths.csv": "10c431088e1879b83ff83d1144ce4ce16b95f7313938f10fef8b4f4737e43d4e",
+      "coverage_trials.csv": "5c807986f0cf9ea4565274dd1d058a83b4f665c6b2ef82a6628f5a95cf63a251",
+      "noise_ablation.csv": "9b0213816737181f88743db7bd67ee35fd062cd30675a14ec884ebaf9baf50a6"
+    }
+  },
+  "scope": "Source-verified association with final gate; no new Monte Carlo replication",
+  "change": "Relative-root certificate lookup and its regression test; scientific study dependencies unchanged"
+}

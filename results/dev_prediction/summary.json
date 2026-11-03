@@ -1,0 +1,251 @@
+{
+  "validation": {
+    "status": "passed",
+    "core_hash": "0afd7917aec6a6d2fc140f766be14d73c4621d85ccd66f90ed46365ad92b5828",
+    "tests": 72,
+    "seed": 20,
+    "tracking_repeats": 128,
+    "tracking_terminal": 480,
+    "fixed_time_violations": 0,
+    "violation_upper_95": 0.023132405251746757,
+    "sampler": {
+      "max_rhat": 1.0007026975459008,
+      "max_mean_difference": 0.002296355394263677,
+      "max_standardized_difference": 0.5906998429699951,
+      "min_ess": 1033.3186288425604,
+      "max_mcse": 0.0028725237816521706
+    },
+    "moment_error": 0.003521279454262921,
+    "dimensions": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "seconds": 99.76047813400146,
+    "versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "matplotlib": "3.10.8"
+    },
+    "scope": "Finite deterministic checks, stochastic diagnostics and stated scalability budgets; no universal guarantee",
+    "original_notebook_sha256": "57f997159cbeaa910fcd39c3e8a8751c0b38561b833812426521fed3d5ed5544",
+    "validation_notebook": "results/dev_prediction/validation.ipynb",
+    "execution": "Unchanged general-notebook checks with isolated OUT directory"
+  },
+  "checkpoint_status": [
+    {
+      "checkpoint": 0,
+      "status": "implemented and checked",
+      "scope": "Baseline tests, likelihood identities, equivariance, hashes and preserved outputs",
+      "artifacts": "baseline/audit.json; validation.json"
+    },
+    {
+      "checkpoint": 1,
+      "status": "implemented and checked",
+      "scope": "Explicit identity, partial, exact and causal motion; sensor-fixed and co-rotating inputs",
+      "artifacts": "motion/preregistered.json; applications/predeclared_config.json"
+    },
+    {
+      "checkpoint": 2,
+      "status": "implemented and checked",
+      "scope": "Exponential memory and rolling likelihood queue; independent mixture validation",
+      "artifacts": "motion/tuning.csv; motion/selection.json; motion/paired.csv"
+    },
+    {
+      "checkpoint": 3,
+      "status": "implemented and checked",
+      "scope": "Geometry and causality checked; primary causal-versus-tuned-memory holdout outcome",
+      "artifacts": "motion/paired.csv; motion/paths.csv; motion/cost.csv"
+    },
+    {
+      "checkpoint": 4,
+      "status": "implemented and checked",
+      "scope": "Rank/codimension-one transition moments and inverse projection; independent real-circle full-density reference",
+      "artifacts": "process/reference_checks.json; process/coverage_trials.csv"
+    },
+    {
+      "checkpoint": 4,
+      "status": "unresolved",
+      "scope": "General-rank stochastic moment inversion and calibrated uncertainty; explicitly rejected",
+      "artifacts": "process/status.json"
+    },
+    {
+      "checkpoint": 5,
+      "status": "implemented and checked",
+      "scope": "Matched-process 200-trial calibration per kappa; four distinct coverages, widths, innovations and separate noise ablations",
+      "artifacts": "process/coverage_summary.csv; motion/coverage_paired_noise.csv; applications/noise.csv"
+    },
+    {
+      "checkpoint": 6,
+      "status": "unresolved",
+      "scope": "array primary application versus scalar shrinkage",
+      "artifacts": "applications/paired.csv; applications/tuning.csv"
+    },
+    {
+      "checkpoint": 6,
+      "status": "empirically inconclusive",
+      "scope": "field primary application versus scalar shrinkage",
+      "artifacts": "applications/paired.csv; applications/tuning.csv"
+    },
+    {
+      "checkpoint": 7,
+      "status": "implemented and checked",
+      "scope": "Checkpoint handoff, sources, table checksums, commands, manuscript notes and measured cost",
+      "artifacts": "manifest.json; gate_binding.json; README.md"
+    }
+  ],
+  "motion_primary": {
+    "law": "fast",
+    "input_frame": "sensor",
+    "method": "causal_velocity",
+    "reference": "tuned_forgetting",
+    "mean_gain": 0.0310180001819352,
+    "se": 0.002173870355083,
+    "low": 0.0266738669171887,
+    "high": 0.0353621334466818,
+    "trials": 64,
+    "primary": true,
+    "interval_scope": "primary"
+  },
+  "selected_motion_policy": {
+    "beta": 0.85,
+    "window": 12,
+    "lag": 32,
+    "damping": 0.5,
+    "beta_boundary": false,
+    "window_boundary": false,
+    "lag_boundary": true,
+    "damping_boundary": false
+  },
+  "motion_checks": {
+    "terminal_rows": 6272,
+    "numerical_finite": true,
+    "theorem_applicable": 3840,
+    "theorem_valid": 1145,
+    "valid_certificate_violations": 0,
+    "posterior_evaluations": 80,
+    "posterior_sampling_failures": 0,
+    "prior_sampling_failures": 0
+  },
+  "applications": [
+    {
+      "application": "array",
+      "status": "unresolved",
+      "selected_validation_failures": 8,
+      "test_failures": 16,
+      "paired_gain": 0.0001875910795054,
+      "low": -0.011944037239756,
+      "high": 0.0123192193987669,
+      "interpretation": "Numerically unresolved: posterior sampling diagnostics failed in selected validation or test targets"
+    },
+    {
+      "application": "field",
+      "status": "empirically inconclusive",
+      "selected_validation_failures": 0,
+      "test_failures": 0,
+      "paired_gain": 0.0022154305526401,
+      "low": -0.0338338817820581,
+      "high": 0.0382647428873383,
+      "interpretation": "Empirically inconclusive"
+    }
+  ],
+  "application_checks": {
+    "posterior_targets": 160,
+    "posterior_sampling_failures": 102,
+    "validation_posterior_failures": 39,
+    "maximum_matching_ew_modal_distance": 8.161702118890973e-08,
+    "selected_boundaries": [
+      {
+        "application": "field",
+        "method": "Shrunk PCA",
+        "parameters": {
+          "beta": 0.95,
+          "rho": 1.0
+        },
+        "notes": [
+          "rho: structural endpoint"
+        ],
+        "unresolved": false
+      }
+    ],
+    "boundary_expansion_candidates": 0,
+    "boundary_expansion_stage": "Validation only; selected.json saved before test jobs",
+    "frozen_window_noise_ascent_min": 1.4596466968441746e-07,
+    "state_space_ascent_claim": false,
+    "status": "Bounded exploratory pilot; unsupported calibrated-coverage or universal-performance claims",
+    "selected_validation_posterior_failures": {
+      "array": 8,
+      "field": 0
+    }
+  },
+  "process_reference": {
+    "full_density_reference": [
+      {
+        "grid": 1024,
+        "first_moment_error": 1.114652904736155e-15,
+        "fit_residual": 4.163336342344337e-17,
+        "prediction_tv": 0.028325838681825057,
+        "posterior_tv": 0.02612346092638817,
+        "projected_hpd_mass_under_exact_posterior": 0.9501590048708103,
+        "hpd_threshold": 2.161694149443324,
+        "ball_radius": 0.5650185806008435
+      },
+      {
+        "grid": 4096,
+        "first_moment_error": 8.380061874001314e-16,
+        "fit_residual": 4.163336342344337e-17,
+        "prediction_tv": 0.028325974893482278,
+        "posterior_tv": 0.02612333846675416,
+        "projected_hpd_mass_under_exact_posterior": 0.9498896936093156,
+        "hpd_threshold": 2.161694149443324,
+        "ball_radius": 0.5650185806008435
+      }
+    ],
+    "interpretation": "Exact predicted moment conditional on the maintained previous Bingham; full recursive filter is approximate.",
+    "independent_transition_draws": [
+      {
+        "field": "real",
+        "kappa": 6.0,
+        "draws": 100000,
+        "mean_error": 0.0004823018556944725,
+        "maximum_real_entry_iid_se": 0.000823652192405459
+      },
+      {
+        "field": "complex",
+        "kappa": 6.0,
+        "draws": 100000,
+        "mean_error": 0.00013423797121363187,
+        "maximum_real_entry_iid_se": 0.0007473892083455451
+      }
+    ],
+    "circle_analytic_vs_series": [
+      {
+        "span": 0.0,
+        "analytic_series_error": 0.0
+      },
+      {
+        "span": 2.0,
+        "analytic_series_error": 4.163336342344337e-13
+      },
+      {
+        "span": 40.0,
+        "analytic_series_error": 4.210694293238504e-14
+      },
+      {
+        "span": 400.0,
+        "analytic_series_error": 3.1652458432063213e-13
+      }
+    ],
+    "large_kappa": {
+      "kappa": 1000.0,
+      "n": 3,
+      "k": 1,
+      "rho": 0.9984992481176957
+    },
+    "general_rank_status": "unresolved; explicitly rejected"
+  },
+  "process_status": "passed numerical reference checks; pilot outcomes retained"
+}

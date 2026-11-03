@@ -1,0 +1,66 @@
+{
+  "full_density_reference": [
+    {
+      "grid": 1024,
+      "first_moment_error": 1.114652904736155e-15,
+      "fit_residual": 4.163336342344337e-17,
+      "prediction_tv": 0.028325838681825057,
+      "posterior_tv": 0.02612346092638817,
+      "projected_hpd_mass_under_exact_posterior": 0.9501590048708103,
+      "hpd_threshold": 2.161694149443324,
+      "ball_radius": 0.5650185806008435
+    },
+    {
+      "grid": 4096,
+      "first_moment_error": 8.380061874001314e-16,
+      "fit_residual": 4.163336342344337e-17,
+      "prediction_tv": 0.028325974893482278,
+      "posterior_tv": 0.02612333846675416,
+      "projected_hpd_mass_under_exact_posterior": 0.9498896936093156,
+      "hpd_threshold": 2.161694149443324,
+      "ball_radius": 0.5650185806008435
+    }
+  ],
+  "interpretation": "Exact predicted moment conditional on the maintained previous Bingham; full recursive filter is approximate.",
+  "independent_transition_draws": [
+    {
+      "field": "real",
+      "kappa": 6.0,
+      "draws": 100000,
+      "mean_error": 0.0004823018556944725,
+      "maximum_real_entry_iid_se": 0.000823652192405459
+    },
+    {
+      "field": "complex",
+      "kappa": 6.0,
+      "draws": 100000,
+      "mean_error": 0.00013423797121363187,
+      "maximum_real_entry_iid_se": 0.0007473892083455451
+    }
+  ],
+  "circle_analytic_vs_series": [
+    {
+      "span": 0.0,
+      "analytic_series_error": 0.0
+    },
+    {
+      "span": 2.0,
+      "analytic_series_error": 4.163336342344337e-13
+    },
+    {
+      "span": 40.0,
+      "analytic_series_error": 4.210694293238504e-14
+    },
+    {
+      "span": 400.0,
+      "analytic_series_error": 3.1652458432063213e-13
+    }
+  ],
+  "large_kappa": {
+    "kappa": 1000.0,
+    "n": 3,
+    "k": 1,
+    "rho": 0.9984992481176957
+  },
+  "general_rank_status": "unresolved; explicitly rejected"
+}

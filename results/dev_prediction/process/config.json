@@ -1,0 +1,62 @@
+{
+  "seed": 871306,
+  "T": 24,
+  "s": 0.12,
+  "grid": 2048,
+  "matched_trials": 200,
+  "stress_trials": 40,
+  "kappas": [
+    4.0,
+    20.0
+  ],
+  "report_times": [
+    8,
+    16,
+    24
+  ],
+  "forgetting": 0.85,
+  "fixed_noise": true,
+  "primary": "Matched transition at terminal time; each kappa is preselected",
+  "method": "Real Gr(1,2), deterministic Bessel inverse; independent Fourier full-density reference",
+  "theoretical_scope": "Exact first moment conditional on maintained previous Bingham; assumed-density full recursion",
+  "inference_claim": "No universal calibration claim; matched evidence and reference differences are measured",
+  "multiplicity": "Coverage intervals are pointwise Wilson intervals; additional stress results are exploratory",
+  "regimes": [
+    {
+      "law": "Matched transition",
+      "kappa": 4.0,
+      "trials": 200,
+      "seed": 871346
+    },
+    {
+      "law": "Matched transition",
+      "kappa": 20.0,
+      "trials": 200,
+      "seed": 871506
+    },
+    {
+      "law": "Slow deterministic",
+      "kappa": 4.0,
+      "trials": 40,
+      "seed": 872306
+    },
+    {
+      "law": "Fast deterministic",
+      "kappa": 4.0,
+      "trials": 40,
+      "seed": 872406
+    },
+    {
+      "law": "Acceleration and turn",
+      "kappa": 4.0,
+      "trials": 40,
+      "seed": 872506
+    },
+    {
+      "law": "Observation contamination",
+      "kappa": 4.0,
+      "trials": 40,
+      "seed": 872606
+    }
+  ]
+}

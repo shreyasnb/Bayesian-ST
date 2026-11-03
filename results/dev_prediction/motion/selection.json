@@ -1,0 +1,16 @@
+{
+  "selected": {
+    "beta": 0.85,
+    "window": 12,
+    "lag": 32,
+    "damping": 0.5,
+    "beta_boundary": false,
+    "window_boundary": false,
+    "lag_boundary": true,
+    "damping_boundary": false
+  },
+  "source_hash": "5841bd1b32ef06280ca8bc726f96df6730a86d67ddbde502ee461393dee327a7",
+  "test_observations_used": false,
+  "grid_expansion": "Initial validation selected lag 16 at the upper boundary; added lag 32 using validation only before any final test. Other grids unchanged; all remaining boundary selections explicit.",
+  "policy_scope": "One setting shared across all test rates, laws and input frames"
+}

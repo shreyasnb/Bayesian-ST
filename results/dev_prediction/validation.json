@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "core_hash": "0afd7917aec6a6d2fc140f766be14d73c4621d85ccd66f90ed46365ad92b5828",
+  "tests": 72,
+  "seed": 20,
+  "tracking_repeats": 128,
+  "tracking_terminal": 480,
+  "fixed_time_violations": 0,
+  "violation_upper_95": 0.023132405251746757,
+  "sampler": {
+    "max_rhat": 1.0007026975459008,
+    "max_mean_difference": 0.002296355394263677,
+    "max_standardized_difference": 0.5906998429699951,
+    "min_ess": 1033.3186288425604,
+    "max_mcse": 0.0028725237816521706
+  },
+  "moment_error": 0.003521279454262921,
+  "dimensions": [
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "seconds": 99.76047813400146,
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "scope": "Finite deterministic checks, stochastic diagnostics and stated scalability budgets; no universal guarantee",
+  "original_notebook_sha256": "57f997159cbeaa910fcd39c3e8a8751c0b38561b833812426521fed3d5ed5544",
+  "validation_notebook": "results/dev_prediction/validation.ipynb",
+  "execution": "Unchanged general-notebook checks with isolated OUT directory"
+}

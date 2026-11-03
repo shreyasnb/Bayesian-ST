@@ -1,0 +1,159 @@
+{
+  "config": {
+    "schema": 1,
+    "n": 8,
+    "k": 3,
+    "T": 128,
+    "s": 0.03,
+    "input_norm": 2.0,
+    "validation_seed": 3296411,
+    "test_seed": 3296412,
+    "validation_trials": 32,
+    "test_trials": 64,
+    "validation_laws": [
+      "slow",
+      "fast",
+      "acceleration"
+    ],
+    "test_laws": [
+      "slow",
+      "fast",
+      "acceleration",
+      "turn",
+      "weak_excitation",
+      "low_snr",
+      "corruption"
+    ],
+    "input_frames": [
+      "sensor",
+      "co_rotating"
+    ],
+    "betas": [
+      1.0,
+      0.995,
+      0.99,
+      0.98,
+      0.97,
+      0.95,
+      0.93,
+      0.9,
+      0.85,
+      0.8,
+      0.7
+    ],
+    "windows": [
+      8,
+      12,
+      16,
+      24,
+      32,
+      48
+    ],
+    "lags": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "damping": [
+      0.0,
+      0.5,
+      1.0
+    ],
+    "report_times": [
+      8,
+      16,
+      32,
+      64,
+      96,
+      128
+    ],
+    "posterior_trials": 8,
+    "draws": 1500,
+    "burnin": 1000,
+    "max_draws": 6000,
+    "max_burnin": 4000,
+    "primary_law": "fast",
+    "primary_frame": "sensor",
+    "primary_method": "causal_velocity",
+    "primary_reference": "tuned_forgetting",
+    "delta": 0.05,
+    "selection_loss": "Terminal chordal distance, equally weighted validation law/frame mixture",
+    "primary_endpoint": "Terminal chordal distance; paired causal-minus-tuned-memory comparison",
+    "posterior_laws": [
+      "slow",
+      "fast"
+    ],
+    "posterior_frame": "sensor",
+    "posterior_methods": [
+      "identity_1",
+      "tuned_forgetting",
+      "rolling_window",
+      "causal_velocity",
+      "exact_motion"
+    ]
+  },
+  "configuration_hash": "39af55c4ace745978983b1a7d0cc39ac6e37b0d14ea5149f3feaad17ce6c755e",
+  "sources": {
+    "lib/prediction_study.py": "47e3bd7b754c4241d278f8de4bd1c2f61ca32ee209a90c438557a8468cf06b7e",
+    "lib/prediction.py": "d204ff6c0d1cb74546ef1b893d1edfe3e34e9fe8a52201b81a9371a7dc18ebda",
+    "scripts/run_prediction_ablation.py": "9924d408c9768a590c8200470f76e863099ae57121928dbe32098224151be645",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+    "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342",
+    "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+    "lib/drift_study.py": "c2a96ba02a50a87bf4c17afece9c07aef302e33383cd22ee9fb451625783f32f",
+    "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53",
+    "lib/reporting.py": "ef4cda760a52c7711ca24127c1de97fa1328c645bbbc87305fea93e5cda6fe40"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "source_hash": "5841bd1b32ef06280ca8bc726f96df6730a86d67ddbde502ee461393dee327a7",
+  "core_hash": "38ceb0c32201e97be5648a1e8c8925084e962bdee1987d9431c9e9fb96421384",
+  "reviewed_commit": "57f520cbe860b73e13d71bae5c31391e2a009482",
+  "checkout_commit": "57f520cbe860b73e13d71bae5c31391e2a009482",
+  "selection": "One common policy; equal weighting across slow/fast/acceleration and both input frames",
+  "cost_scope": "Prediction and update cumulative seconds, separately; posterior moments only at terminal pilot",
+  "primary": "Fast drift, sensor-fixed inputs: terminal causal velocity versus tuned forgetting; other intervals exploratory",
+  "selected": {
+    "beta": 0.85,
+    "window": 12,
+    "lag": 32,
+    "damping": 0.5,
+    "beta_boundary": false,
+    "window_boundary": false,
+    "lag_boundary": true,
+    "damping_boundary": false
+  },
+  "checks": {
+    "terminal_rows": 6272,
+    "numerical_finite": true,
+    "theorem_applicable": 3840,
+    "theorem_valid": 1145,
+    "valid_certificate_violations": 0,
+    "posterior_evaluations": 80,
+    "posterior_sampling_failures": 0,
+    "prior_sampling_failures": 0
+  },
+  "tables": {
+    "tuning.csv": "91dd1a680ae014130aa7fa1d55c9cbad68e1bf2cb85a0b160a51951a9716bbde",
+    "tuning_summary.csv": "a0e81faebbe5cd402abe252ae0aa02b4f6610b0f3d15385ae67a95ba7ec70f4c",
+    "metrics.csv": "01852ebe9926ef02bbeb18dc386eea32fb1e0528d6be1b1686cbcb34f64afd84",
+    "paths.csv": "062efd462bc9bd108b3500f1f23cb20c186a9699031194f5c981340aa2efdd80",
+    "bounds.csv": "dfe4ed4af02a6b55e909fb869d6adedce391cb55dfa446349532c8c763632e98",
+    "cost.csv": "b1e8971b27ccf035a71a049fa65db4ec229b46993be281d047c5c1a0656fb11f",
+    "posterior.csv": "7c0c2325c9c49076a098dccd669d35f50de1ca959a00321915cdb207f3ed5779",
+    "summary.csv": "b26360294b3079f43efe368120c4db073f63ea4cb3de63204d316cb27766c882",
+    "paired.csv": "fe640a1564002c27619c1abb44ab5f0e5bb5115dec742286fafb31d841c15bc8",
+    "coverage.csv": "ac32155386dcd9741f73dd2f1aec6ed4c15b06a5e7df04fcec572980bdb2697e"
+  },
+  "workers": 2,
+  "inference_scope": "Unknown-motion Bingham laws are approximate; no credible-coverage theorem or learned-motion tracking certificate",
+  "innovation_scope": "Terminal prior trace identity across independent trajectories; temporal correlation not assessed in this bounded pilot",
+  "noise_learning": "Fixed true variance only; separate noise-fit ablation required",
+  "coverage_scope": "Eight independent trajectories per law/method, with Wilson intervals; no calibration claim"
+}

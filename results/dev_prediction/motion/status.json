@@ -1,0 +1,16 @@
+{
+  "status": "completed",
+  "source_hash": "5841bd1b32ef06280ca8bc726f96df6730a86d67ddbde502ee461393dee327a7",
+  "checks": {
+    "terminal_rows": 6272,
+    "numerical_finite": true,
+    "theorem_applicable": 3840,
+    "theorem_valid": 1145,
+    "valid_certificate_violations": 0,
+    "posterior_evaluations": 80,
+    "posterior_sampling_failures": 0,
+    "prior_sampling_failures": 0
+  },
+  "checkpoints_2_3": "implemented and checked",
+  "empirical_claim": "See paired.csv; software correctness does not imply superiority"
+}

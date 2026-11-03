@@ -1,0 +1,18 @@
+{
+  "status": "checked",
+  "query_seed": 8291747,
+  "script_sha256": "d7944fc56dc4d4d04be1381df256b1b0b8879451bc5846142c1b14d16d029cda",
+  "input_sha256": "7c0c2325c9c49076a098dccd669d35f50de1ca959a00321915cdb207f3ed5779",
+  "original_metadata_sha256": "12c86072d49aafab439265942f806a70217d399cf441d12f1837781da841f64b",
+  "original_producer_source_hash": "5841bd1b32ef06280ca8bc726f96df6730a86d67ddbde502ee461393dee327a7",
+  "tables": {
+    "posterior_paired_noise.csv": "4205c2b9681a2b82a5f5b193f93ce48f294d10afaaf612462743a2bcf325b560",
+    "coverage_paired_noise.csv": "769bab606470d2f8447e8b4e775269d2da68c5eb5c2f051b47bfb593c330aa0b"
+  },
+  "scope": "Evaluation pairing correction only; identical inference, tuning, hidden states, training observations and posterior draws",
+  "raw_evidence": "posterior.csv and original future-response columns are preserved",
+  "query_law": "One independent N(0,s) held-out noise draw per trial/law/input frame, shared across methods",
+  "paired_groups": 16,
+  "posterior_rows": 80,
+  "interval_scope": "Terminal pilot, 8 independent trajectories per regime/method, wide Wilson intervals"
+}

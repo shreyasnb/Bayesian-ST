@@ -1,0 +1,107 @@
+application,method,parameters,validation_loss,validation_trajectories,candidate_count,validation_seconds,selected,boundary,sampling_failures,beta,loading,rho,step,window,boundary_notes,unresolved_selected_boundary
+array,EW PCA,{'beta': 0.7},0.6136413226508783,8,5,0.1080601409994415,False,True,0,0.7,,,,,,False
+array,EW PCA,{'beta': 0.85},0.5897037226744846,8,5,0.11414346500168904,True,False,0,0.85,,,,,[],False
+array,EW PCA,{'beta': 0.95},0.6656549850387974,8,5,0.11813832500411081,False,False,0,0.95,,,,,,False
+array,EW PCA,{'beta': 0.99},0.7446617215664209,8,5,0.11321579999639653,False,False,0,0.99,,,,,,False
+array,EW PCA,{'beta': 1.0},0.7704615115668025,8,5,0.13567005299773882,False,True,0,1.0,,,,,,False
+array,Loaded covariance,"{'beta': 0.7, 'loading': 0.025}",1.0949536330935168,8,25,0.07352291300412617,False,True,0,0.7,0.025,,,,,False
+array,Loaded covariance,"{'beta': 0.7, 'loading': 0.1}",0.7991174167782578,8,25,0.0889959240121243,False,True,0,0.7,0.1,,,,,False
+array,Loaded covariance,"{'beta': 0.7, 'loading': 0.4}",0.6379688649633175,8,25,0.06801926899788668,False,True,0,0.7,0.4,,,,,False
+array,Loaded covariance,"{'beta': 0.7, 'loading': 1.6}",0.5945069425053318,8,25,0.06623233400387107,False,True,0,0.7,1.6,,,,,False
+array,Loaded covariance,"{'beta': 0.7, 'loading': 6.4}",0.663770183970571,8,25,0.08942595899134176,False,True,0,0.7,6.4,,,,,False
+array,Loaded covariance,"{'beta': 0.85, 'loading': 0.025}",1.0741530909090375,8,25,0.07816827099668444,False,True,0,0.85,0.025,,,,,False
+array,Loaded covariance,"{'beta': 0.85, 'loading': 0.1}",0.817217500621368,8,25,0.08127193100153818,False,False,0,0.85,0.1,,,,,False
+array,Loaded covariance,"{'beta': 0.85, 'loading': 0.4}",0.639608513874701,8,25,0.07865962199866772,False,False,0,0.85,0.4,,,,,False
+array,Loaded covariance,"{'beta': 0.85, 'loading': 1.6}",0.5855278204659804,8,25,0.07745244900070247,True,False,0,0.85,1.6,,,,[],False
+array,Loaded covariance,"{'beta': 0.85, 'loading': 6.4}",0.6619960671372048,8,25,0.06819675699807703,False,True,0,0.85,6.4,,,,,False
+array,Loaded covariance,"{'beta': 0.95, 'loading': 0.025}",0.8747318556013981,8,25,0.060750950000510784,False,True,0,0.95,0.025,,,,,False
+array,Loaded covariance,"{'beta': 0.95, 'loading': 0.1}",0.7489604344653145,8,25,0.06321760699574952,False,False,0,0.95,0.1,,,,,False
+array,Loaded covariance,"{'beta': 0.95, 'loading': 0.4}",0.6309595382332,8,25,0.07731636300013633,False,False,0,0.95,0.4,,,,,False
+array,Loaded covariance,"{'beta': 0.95, 'loading': 1.6}",0.6134097721525523,8,25,0.06772735499180271,False,False,0,0.95,1.6,,,,,False
+array,Loaded covariance,"{'beta': 0.95, 'loading': 6.4}",0.6946291941387002,8,25,0.06869856000412256,False,True,0,0.95,6.4,,,,,False
+array,Loaded covariance,"{'beta': 0.99, 'loading': 0.025}",0.8472076143711768,8,25,0.07011425100063207,False,True,0,0.99,0.025,,,,,False
+array,Loaded covariance,"{'beta': 0.99, 'loading': 0.1}",0.7405005812111509,8,25,0.07499025599827291,False,False,0,0.99,0.1,,,,,False
+array,Loaded covariance,"{'beta': 0.99, 'loading': 0.4}",0.642708246620662,8,25,0.08153545300956466,False,False,0,0.99,0.4,,,,,False
+array,Loaded covariance,"{'beta': 0.99, 'loading': 1.6}",0.645102267514638,8,25,0.0736238389981736,False,False,0,0.99,1.6,,,,,False
+array,Loaded covariance,"{'beta': 0.99, 'loading': 6.4}",0.7218531107953851,8,25,0.07920312999704038,False,True,0,0.99,6.4,,,,,False
+array,Loaded covariance,"{'beta': 1.0, 'loading': 0.025}",0.8484466416278482,8,25,0.06910853200315614,False,True,0,1.0,0.025,,,,,False
+array,Loaded covariance,"{'beta': 1.0, 'loading': 0.1}",0.7431253388283272,8,25,0.06486859000142431,False,True,0,1.0,0.1,,,,,False
+array,Loaded covariance,"{'beta': 1.0, 'loading': 0.4}",0.6488721637624376,8,25,0.06789275599294342,False,True,0,1.0,0.4,,,,,False
+array,Loaded covariance,"{'beta': 1.0, 'loading': 1.6}",0.6554558666851366,8,25,0.07429839299584273,False,True,0,1.0,1.6,,,,,False
+array,Loaded covariance,"{'beta': 1.0, 'loading': 6.4}",0.7296867009963526,8,25,0.0644287129980512,False,True,0,1.0,6.4,,,,,False
+array,Posterior mean,{'beta': 0.7},0.615620556497327,8,5,37.90373108500353,False,True,5,0.7,,,,,,False
+array,Posterior mean,{'beta': 0.85},0.5683896153381923,8,5,30.27694935299951,True,False,8,0.85,,,,,[],False
+array,Posterior mean,{'beta': 0.95},0.6317472060820937,8,5,31.331358820003516,False,False,8,0.95,,,,,,False
+array,Posterior mean,{'beta': 0.99},0.7102848535164733,8,5,29.069535761002044,False,False,8,0.99,,,,,,False
+array,Posterior mean,{'beta': 1.0},0.7354994911102604,8,5,30.797761683006684,False,True,8,1.0,,,,,,False
+array,Shrunk PCA,"{'beta': 0.7, 'rho': 0.0}",0.8196047768243084,8,25,0.11685401200156775,False,True,0,0.7,,0.0,,,,False
+array,Shrunk PCA,"{'beta': 0.7, 'rho': 0.25}",0.641403679185053,8,25,0.1135640889951901,False,True,0,0.7,,0.25,,,,False
+array,Shrunk PCA,"{'beta': 0.7, 'rho': 0.5}",0.6031331167479533,8,25,0.12334363899572054,False,True,0,0.7,,0.5,,,,False
+array,Shrunk PCA,"{'beta': 0.7, 'rho': 0.75}",0.6026018990980548,8,25,0.13502039499871898,False,True,0,0.7,,0.75,,,,False
+array,Shrunk PCA,"{'beta': 0.7, 'rho': 1.0}",0.6136413226508783,8,25,0.12252130800334271,False,True,0,0.7,,1.0,,,,False
+array,Shrunk PCA,"{'beta': 0.85, 'rho': 0.0}",0.8196047768243084,8,25,0.16830433900395292,False,True,0,0.85,,0.0,,,,False
+array,Shrunk PCA,"{'beta': 0.85, 'rho': 0.25}",0.6190230854825021,8,25,0.12056992200086825,False,False,0,0.85,,0.25,,,,False
+array,Shrunk PCA,"{'beta': 0.85, 'rho': 0.5}",0.5761822949998835,8,25,0.1274449930024275,True,False,0,0.85,,0.5,,,[],False
+array,Shrunk PCA,"{'beta': 0.85, 'rho': 0.75}",0.5763707988357586,8,25,0.0981844089947117,False,False,0,0.85,,0.75,,,,False
+array,Shrunk PCA,"{'beta': 0.85, 'rho': 1.0}",0.5897037226744846,8,25,0.1365676759996859,False,True,0,0.85,,1.0,,,,False
+array,Shrunk PCA,"{'beta': 0.95, 'rho': 0.0}",0.8196047768243084,8,25,0.13551281599575304,False,True,0,0.95,,0.0,,,,False
+array,Shrunk PCA,"{'beta': 0.95, 'rho': 0.25}",0.65147263715745,8,25,0.11711125899819308,False,False,0,0.95,,0.25,,,,False
+array,Shrunk PCA,"{'beta': 0.95, 'rho': 0.5}",0.6269514127216084,8,25,0.14559947199813905,False,False,0,0.95,,0.5,,,,False
+array,Shrunk PCA,"{'beta': 0.95, 'rho': 0.75}",0.641021440115968,8,25,0.1380528539957595,False,False,0,0.95,,0.75,,,,False
+array,Shrunk PCA,"{'beta': 0.95, 'rho': 1.0}",0.6656549850387974,8,25,0.08527793600296718,False,True,0,0.95,,1.0,,,,False
+array,Shrunk PCA,"{'beta': 0.99, 'rho': 0.0}",0.8196047768243084,8,25,0.13035843200486852,False,True,0,0.99,,0.0,,,,False
+array,Shrunk PCA,"{'beta': 0.99, 'rho': 0.25}",0.708619603230438,8,25,0.09764917500069714,False,False,0,0.99,,0.25,,,,False
+array,Shrunk PCA,"{'beta': 0.99, 'rho': 0.5}",0.7020027937423595,8,25,0.1245553539993125,False,False,0,0.99,,0.5,,,,False
+array,Shrunk PCA,"{'beta': 0.99, 'rho': 0.75}",0.7206135442714328,8,25,0.11516557300274144,False,False,0,0.99,,0.75,,,,False
+array,Shrunk PCA,"{'beta': 0.99, 'rho': 1.0}",0.7446617215664209,8,25,0.11841485300465138,False,True,0,0.99,,1.0,,,,False
+array,Shrunk PCA,"{'beta': 1.0, 'rho': 0.0}",0.8196047768243084,8,25,0.13264737200006493,False,True,0,1.0,,0.0,,,,False
+array,Shrunk PCA,"{'beta': 1.0, 'rho': 0.25}",0.7259259496663407,8,25,0.09700294700451195,False,True,0,1.0,,0.25,,,,False
+array,Shrunk PCA,"{'beta': 1.0, 'rho': 0.5}",0.7253891881483532,8,25,0.12561790599647793,False,True,0,1.0,,0.5,,,,False
+array,Shrunk PCA,"{'beta': 1.0, 'rho': 0.75}",0.74602880531923,8,25,0.08881672899588011,False,True,0,1.0,,0.75,,,,False
+array,Shrunk PCA,"{'beta': 1.0, 'rho': 1.0}",0.7704615115668025,8,25,0.10078535999855376,False,True,0,1.0,,1.0,,,,False
+field,EW PCA,{'beta': 0.7},1.4289680310357973,8,5,0.17191819200161262,False,True,0,0.7,,,,,,False
+field,EW PCA,{'beta': 0.85},0.7812449789134468,8,5,0.13032507699972484,False,False,0,0.85,,,,,,False
+field,EW PCA,{'beta': 0.95},0.689077924324776,8,5,0.13712193199899048,True,False,0,0.95,,,,,[],False
+field,EW PCA,{'beta': 0.99},1.0629690094965154,8,5,0.139460524002061,False,False,0,0.99,,,,,,False
+field,EW PCA,{'beta': 1.0},1.3470876612528713,8,5,0.14025875400329824,False,True,0,1.0,,,,,,False
+field,GROUSE,{'step': 0.0003},2.3287541523240676,8,6,0.14666822200888419,False,True,0,,,,0.0003,,,False
+field,GROUSE,{'step': 0.001},2.2211253211112214,8,6,1.2507625620019098,False,False,0,,,,0.001,,,False
+field,GROUSE,{'step': 0.003},1.9617244820476816,8,6,0.14980164100052207,False,False,0,,,,0.003,,,False
+field,GROUSE,{'step': 0.01},1.5216142033381768,8,6,0.12211507900428842,False,False,0,,,,0.01,,,False
+field,GROUSE,{'step': 0.03},0.6929711344372522,8,6,0.18264942400128348,True,False,0,,,,0.03,,[],False
+field,GROUSE,{'step': 0.1},0.9154313952937918,8,6,0.2615136819986219,False,True,0,,,,0.1,,,False
+field,Posterior mean,{'beta': 0.7},1.2475592045688215,8,5,16.494666088001395,False,True,0,0.7,,,,,,False
+field,Posterior mean,{'beta': 0.85},0.8814850402491056,8,5,14.026110063001397,False,False,2,0.85,,,,,,False
+field,Posterior mean,{'beta': 0.95},0.709006883598985,8,5,9.530040736000956,True,False,0,0.95,,,,,[],False
+field,Posterior mean,{'beta': 0.99},1.0611838416083776,8,5,8.354036222004652,False,False,0,0.99,,,,,,False
+field,Posterior mean,{'beta': 1.0},1.3427464308744241,8,5,11.06661856800929,False,True,0,1.0,,,,,,False
+field,Rolling PCA,{'window': 12},0.7319876524656956,8,5,0.12526082000113092,False,True,0,,,,,12.0,,False
+field,Rolling PCA,{'window': 24},0.6545686399390465,8,5,0.18034224900475238,True,False,0,,,,,24.0,[],False
+field,Rolling PCA,{'window': 48},0.7389823329560457,8,5,0.2145412009958818,False,False,0,,,,,48.0,,False
+field,Rolling PCA,{'window': 96},1.0791698113284456,8,5,0.2400970460003009,False,False,0,,,,,96.0,,False
+field,Rolling PCA,{'window': 192},1.3470876612528722,8,5,0.35107085399431526,False,True,0,,,,,192.0,,False
+field,Shrunk PCA,"{'beta': 0.7, 'rho': 0.0}",2.079267703611115,8,25,0.1334776090006926,False,True,0,0.7,,0.0,,,,False
+field,Shrunk PCA,"{'beta': 0.7, 'rho': 0.25}",1.6514079280147582,8,25,0.12745996000012383,False,True,0,0.7,,0.25,,,,False
+field,Shrunk PCA,"{'beta': 0.7, 'rho': 0.5}",1.4004047240534194,8,25,0.14771751999796834,False,True,0,0.7,,0.5,,,,False
+field,Shrunk PCA,"{'beta': 0.7, 'rho': 0.75}",1.3262580917270992,8,25,0.15610012699835352,False,True,0,0.7,,0.75,,,,False
+field,Shrunk PCA,"{'beta': 0.7, 'rho': 1.0}",1.4289680310357973,8,25,0.143437137001456,False,True,0,0.7,,1.0,,,,False
+field,Shrunk PCA,"{'beta': 0.85, 'rho': 0.0}",2.079267703611115,8,25,0.1290497689988115,False,True,0,0.85,,0.0,,,,False
+field,Shrunk PCA,"{'beta': 0.85, 'rho': 0.25}",1.5081290193397268,8,25,0.11829634799141786,False,False,0,0.85,,0.25,,,,False
+field,Shrunk PCA,"{'beta': 0.85, 'rho': 0.5}",1.101412337132986,8,25,0.13382185700174887,False,False,0,0.85,,0.5,,,,False
+field,Shrunk PCA,"{'beta': 0.85, 'rho': 0.75}",0.8591176569908925,8,25,0.13147510699855047,False,False,0,0.85,,0.75,,,,False
+field,Shrunk PCA,"{'beta': 0.85, 'rho': 1.0}",0.7812449789134468,8,25,0.13621248800336616,False,True,0,0.85,,1.0,,,,False
+field,Shrunk PCA,"{'beta': 0.95, 'rho': 0.0}",2.079267703611115,8,25,0.10883607598952949,False,True,0,0.95,,0.0,,,,False
+field,Shrunk PCA,"{'beta': 0.95, 'rho': 0.25}",1.5099116341298362,8,25,0.1330009190023702,False,False,0,0.95,,0.25,,,,False
+field,Shrunk PCA,"{'beta': 0.95, 'rho': 0.5}",1.0884279810883535,8,25,0.10472535299413721,False,False,0,0.95,,0.5,,,,False
+field,Shrunk PCA,"{'beta': 0.95, 'rho': 0.75}",0.8148167444866665,8,25,0.11383193499932531,False,False,0,0.95,,0.75,,,,False
+field,Shrunk PCA,"{'beta': 0.95, 'rho': 1.0}",0.689077924324776,8,25,0.10850619399934658,True,True,0,0.95,,1.0,,,['rho: structural endpoint'],False
+field,Shrunk PCA,"{'beta': 0.99, 'rho': 0.0}",2.079267703611115,8,25,0.1385316969899577,False,True,0,0.99,,0.0,,,,False
+field,Shrunk PCA,"{'beta': 0.99, 'rho': 0.25}",1.6252560977823658,8,25,0.1263577339996118,False,False,0,0.99,,0.25,,,,False
+field,Shrunk PCA,"{'beta': 0.99, 'rho': 0.5}",1.3045357801536825,8,25,0.10273676199722104,False,False,0,0.99,,0.5,,,,False
+field,Shrunk PCA,"{'beta': 0.99, 'rho': 0.75}",1.1171067507250658,8,25,0.1328915389967733,False,False,0,0.99,,0.75,,,,False
+field,Shrunk PCA,"{'beta': 0.99, 'rho': 1.0}",1.0629690094965154,8,25,0.14381653499731328,False,True,0,0.99,,1.0,,,,False
+field,Shrunk PCA,"{'beta': 1.0, 'rho': 0.0}",2.079267703611115,8,25,0.11495526400176459,False,True,0,1.0,,0.0,,,,False
+field,Shrunk PCA,"{'beta': 1.0, 'rho': 0.25}",1.707291221002536,8,25,0.12569250000160537,False,True,0,1.0,,0.25,,,,False
+field,Shrunk PCA,"{'beta': 1.0, 'rho': 0.5}",1.4612690530733021,8,25,0.10058287399442634,False,True,0,1.0,,0.5,,,,False
+field,Shrunk PCA,"{'beta': 1.0, 'rho': 0.75}",1.341201199823414,8,25,0.1504445190039405,False,True,0,1.0,,0.75,,,,False
+field,Shrunk PCA,"{'beta': 1.0, 'rho': 1.0}",1.3470876612528713,8,25,0.13798986499750754,False,True,0,1.0,,1.0,,,,False

@@ -5,7 +5,9 @@ from pathlib import Path
 
 CORE = ['lib/geometry.py','lib/models.py','lib/filter.py','lib/em.py','lib/moments.py',
         'lib/theory.py','lib/reference.py','lib/validation.py','lib/studies.py',
-        'scripts/make_theory_notebook.py','lib/spectral_series.py']
+        'scripts/make_theory_notebook.py','lib/spectral_series.py',
+        'lib/prediction.py','lib/process_prediction.py','lib/prediction_study.py',
+        'lib/application_ablation.py','scripts/validate_dev.py']
 
 
 def core_hash(root):
@@ -17,8 +19,10 @@ def core_hash(root):
     return h.hexdigest()
 
 
-def require_gate(root):
-    root=Path(root); path=root/'results/validation.json'
+def require_gate(root, gate_path=None):
+    root=Path(root).resolve()
+    path=root/'results/validation.json' if gate_path is None else Path(gate_path)
+    if not path.is_absolute():path=root/path
     if not path.exists(): raise RuntimeError('Run notebooks/00_theory.ipynb successfully first')
     gate=json.loads(path.read_text())
     if gate.get('status')!='passed' or gate.get('core_hash')!=core_hash(root):

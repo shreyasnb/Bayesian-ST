@@ -1,0 +1,551 @@
+{
+  "config": {
+    "validation_seed": 582031,
+    "test_seed": 582032,
+    "noise_seed": 582033,
+    "T_array": 32,
+    "T_field": 128,
+    "validation_trials": 8,
+    "test_trials": 16,
+    "draws": 1000,
+    "burnin": 500,
+    "max_draws": 4000,
+    "max_burnin": 2000,
+    "primary_endpoint": "Terminal time, posterior-mean vs scalar-shrinkage task loss in matched drifting identity-frame data",
+    "array_selection_loss": "Mean output power over 256 independent heldout snapshots at terminal time",
+    "field_selection_loss": "Terminal current-observation reconstruction squared error; coefficient/spatial orthonormal basis equivalent",
+    "motion_access": "Identity supplied to every method in all primary and mismatch cases; half-true motion supplied to every method only in separately labelled synthetic partial controls",
+    "policy": "One matched-drift validation policy per application, frozen and reused in all test regimes; no regime-specific test tuning",
+    "conditional_on": "Fixed true measurement variances; original application generators; no noise fits in primary comparisons",
+    "mean_initial_state_law": "Original array deterministic orthonormal interference modes; field Gaussian-QR Haar initial rank-three state, identical across methods",
+    "statistics": "Exploratory pointwise paired Student intervals across independent trajectory identifiers; robustness cases paired interventions, not extra independent trials",
+    "reference_grids": {
+      "array": {
+        "Posterior mean": [
+          {
+            "beta": 0.7
+          },
+          {
+            "beta": 0.85
+          },
+          {
+            "beta": 0.95
+          },
+          {
+            "beta": 0.99
+          },
+          {
+            "beta": 1.0
+          }
+        ],
+        "EW PCA": [
+          {
+            "beta": 0.7
+          },
+          {
+            "beta": 0.85
+          },
+          {
+            "beta": 0.95
+          },
+          {
+            "beta": 0.99
+          },
+          {
+            "beta": 1.0
+          }
+        ],
+        "Shrunk PCA": [
+          {
+            "beta": 0.7,
+            "rho": 0.0
+          },
+          {
+            "beta": 0.7,
+            "rho": 0.25
+          },
+          {
+            "beta": 0.7,
+            "rho": 0.5
+          },
+          {
+            "beta": 0.7,
+            "rho": 0.75
+          },
+          {
+            "beta": 0.7,
+            "rho": 1.0
+          },
+          {
+            "beta": 0.85,
+            "rho": 0.0
+          },
+          {
+            "beta": 0.85,
+            "rho": 0.25
+          },
+          {
+            "beta": 0.85,
+            "rho": 0.5
+          },
+          {
+            "beta": 0.85,
+            "rho": 0.75
+          },
+          {
+            "beta": 0.85,
+            "rho": 1.0
+          },
+          {
+            "beta": 0.95,
+            "rho": 0.0
+          },
+          {
+            "beta": 0.95,
+            "rho": 0.25
+          },
+          {
+            "beta": 0.95,
+            "rho": 0.5
+          },
+          {
+            "beta": 0.95,
+            "rho": 0.75
+          },
+          {
+            "beta": 0.95,
+            "rho": 1.0
+          },
+          {
+            "beta": 0.99,
+            "rho": 0.0
+          },
+          {
+            "beta": 0.99,
+            "rho": 0.25
+          },
+          {
+            "beta": 0.99,
+            "rho": 0.5
+          },
+          {
+            "beta": 0.99,
+            "rho": 0.75
+          },
+          {
+            "beta": 0.99,
+            "rho": 1.0
+          },
+          {
+            "beta": 1.0,
+            "rho": 0.0
+          },
+          {
+            "beta": 1.0,
+            "rho": 0.25
+          },
+          {
+            "beta": 1.0,
+            "rho": 0.5
+          },
+          {
+            "beta": 1.0,
+            "rho": 0.75
+          },
+          {
+            "beta": 1.0,
+            "rho": 1.0
+          }
+        ],
+        "Loaded covariance": [
+          {
+            "beta": 0.7,
+            "loading": 0.025
+          },
+          {
+            "beta": 0.7,
+            "loading": 0.1
+          },
+          {
+            "beta": 0.7,
+            "loading": 0.4
+          },
+          {
+            "beta": 0.7,
+            "loading": 1.6
+          },
+          {
+            "beta": 0.7,
+            "loading": 6.4
+          },
+          {
+            "beta": 0.85,
+            "loading": 0.025
+          },
+          {
+            "beta": 0.85,
+            "loading": 0.1
+          },
+          {
+            "beta": 0.85,
+            "loading": 0.4
+          },
+          {
+            "beta": 0.85,
+            "loading": 1.6
+          },
+          {
+            "beta": 0.85,
+            "loading": 6.4
+          },
+          {
+            "beta": 0.95,
+            "loading": 0.025
+          },
+          {
+            "beta": 0.95,
+            "loading": 0.1
+          },
+          {
+            "beta": 0.95,
+            "loading": 0.4
+          },
+          {
+            "beta": 0.95,
+            "loading": 1.6
+          },
+          {
+            "beta": 0.95,
+            "loading": 6.4
+          },
+          {
+            "beta": 0.99,
+            "loading": 0.025
+          },
+          {
+            "beta": 0.99,
+            "loading": 0.1
+          },
+          {
+            "beta": 0.99,
+            "loading": 0.4
+          },
+          {
+            "beta": 0.99,
+            "loading": 1.6
+          },
+          {
+            "beta": 0.99,
+            "loading": 6.4
+          },
+          {
+            "beta": 1.0,
+            "loading": 0.025
+          },
+          {
+            "beta": 1.0,
+            "loading": 0.1
+          },
+          {
+            "beta": 1.0,
+            "loading": 0.4
+          },
+          {
+            "beta": 1.0,
+            "loading": 1.6
+          },
+          {
+            "beta": 1.0,
+            "loading": 6.4
+          }
+        ]
+      },
+      "field": {
+        "Posterior mean": [
+          {
+            "beta": 0.7
+          },
+          {
+            "beta": 0.85
+          },
+          {
+            "beta": 0.95
+          },
+          {
+            "beta": 0.99
+          },
+          {
+            "beta": 1.0
+          }
+        ],
+        "EW PCA": [
+          {
+            "beta": 0.7
+          },
+          {
+            "beta": 0.85
+          },
+          {
+            "beta": 0.95
+          },
+          {
+            "beta": 0.99
+          },
+          {
+            "beta": 1.0
+          }
+        ],
+        "Shrunk PCA": [
+          {
+            "beta": 0.7,
+            "rho": 0.0
+          },
+          {
+            "beta": 0.7,
+            "rho": 0.25
+          },
+          {
+            "beta": 0.7,
+            "rho": 0.5
+          },
+          {
+            "beta": 0.7,
+            "rho": 0.75
+          },
+          {
+            "beta": 0.7,
+            "rho": 1.0
+          },
+          {
+            "beta": 0.85,
+            "rho": 0.0
+          },
+          {
+            "beta": 0.85,
+            "rho": 0.25
+          },
+          {
+            "beta": 0.85,
+            "rho": 0.5
+          },
+          {
+            "beta": 0.85,
+            "rho": 0.75
+          },
+          {
+            "beta": 0.85,
+            "rho": 1.0
+          },
+          {
+            "beta": 0.95,
+            "rho": 0.0
+          },
+          {
+            "beta": 0.95,
+            "rho": 0.25
+          },
+          {
+            "beta": 0.95,
+            "rho": 0.5
+          },
+          {
+            "beta": 0.95,
+            "rho": 0.75
+          },
+          {
+            "beta": 0.95,
+            "rho": 1.0
+          },
+          {
+            "beta": 0.99,
+            "rho": 0.0
+          },
+          {
+            "beta": 0.99,
+            "rho": 0.25
+          },
+          {
+            "beta": 0.99,
+            "rho": 0.5
+          },
+          {
+            "beta": 0.99,
+            "rho": 0.75
+          },
+          {
+            "beta": 0.99,
+            "rho": 1.0
+          },
+          {
+            "beta": 1.0,
+            "rho": 0.0
+          },
+          {
+            "beta": 1.0,
+            "rho": 0.25
+          },
+          {
+            "beta": 1.0,
+            "rho": 0.5
+          },
+          {
+            "beta": 1.0,
+            "rho": 0.75
+          },
+          {
+            "beta": 1.0,
+            "rho": 1.0
+          }
+        ],
+        "Rolling PCA": [
+          {
+            "window": 12
+          },
+          {
+            "window": 24
+          },
+          {
+            "window": 48
+          },
+          {
+            "window": 96
+          },
+          {
+            "window": 192
+          }
+        ],
+        "GROUSE": [
+          {
+            "step": 0.0003
+          },
+          {
+            "step": 0.001
+          },
+          {
+            "step": 0.003
+          },
+          {
+            "step": 0.01
+          },
+          {
+            "step": 0.03
+          },
+          {
+            "step": 0.1
+          }
+        ]
+      }
+    },
+    "scenarios": [
+      {
+        "application": "array",
+        "scenario": "Drift",
+        "mismatch": "Matched",
+        "rate": 0.012,
+        "motion": "identity",
+        "primary": true
+      },
+      {
+        "application": "array",
+        "scenario": "Static",
+        "mismatch": "Matched",
+        "rate": 0.0,
+        "motion": "identity",
+        "primary": false
+      },
+      {
+        "application": "array",
+        "scenario": "Unequal powers",
+        "mismatch": "Unequal powers",
+        "rate": 0.012,
+        "motion": "identity",
+        "primary": false
+      },
+      {
+        "application": "array",
+        "scenario": "Correlation",
+        "mismatch": "Correlation",
+        "rate": 0.012,
+        "motion": "identity",
+        "primary": false
+      },
+      {
+        "application": "array",
+        "scenario": "Contamination",
+        "mismatch": "Contamination",
+        "rate": 0.012,
+        "motion": "identity",
+        "primary": false
+      },
+      {
+        "application": "array",
+        "scenario": "Partial motion",
+        "mismatch": "Matched",
+        "rate": 0.012,
+        "motion": "partial",
+        "primary": false
+      },
+      {
+        "application": "field",
+        "scenario": "Matched",
+        "mismatch": "Matched",
+        "rate": 0.018,
+        "motion": "identity",
+        "primary": true
+      },
+      {
+        "application": "field",
+        "scenario": "Unequal powers",
+        "mismatch": "Unequal powers",
+        "rate": 0.018,
+        "motion": "identity",
+        "primary": false
+      },
+      {
+        "application": "field",
+        "scenario": "Sparse corruption",
+        "mismatch": "Sparse corruption",
+        "rate": 0.018,
+        "motion": "identity",
+        "primary": false
+      },
+      {
+        "application": "field",
+        "scenario": "Partial motion",
+        "mismatch": "Matched",
+        "rate": 0.018,
+        "motion": "partial",
+        "primary": false
+      }
+    ],
+    "boundary_rule": "Before final testing, one extra validation stage adds beta .5 at a selected .7 boundary; loading divided/multiplied by4 at selected edges, step divided/multiplied by3, window6 at selected12. Structural beta1/rho0or1 and windows beyond horizon are not expanded. Remaining outer edges are unresolved and prohibit positive main-paper claims.",
+    "runtime": "Measured prediction, correction, terminal moment and decision times; no regional optimization; cumulative per trajectory with terminal posterior reporting only",
+    "hardware": {
+      "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+      "processor": "",
+      "cpu_count": 5,
+      "workers": 2,
+      "blas_threads": 1
+    },
+    "versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    },
+    "review_revision": "57f520cbe860b73e13d71bae5c31391e2a009482"
+  },
+  "sources": {
+    "lib/application_ablation.py": "c0e8f6ca6781e79eebb83d96d36ed9b7d054594af33b9105fb7437e4e334edb4",
+    "scripts/run_application_ablation.py": "3abde6c96819d5461cf1ebdb8406c59daf4519daf1fbee148e63c28290bca219",
+    "lib/experiments.py": "eed715bb9c3d45b372803a182a64c905dd1f5668c37f214aebd4a46db144bc73",
+    "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+    "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3"
+  },
+  "signature": "090b3738672d0c4cd4e95814fa8b6cd6a8a6f5e868dddf6e210b361795540fe9"
+}
