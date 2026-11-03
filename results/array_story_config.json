@@ -1,0 +1,50 @@
+{
+  "source_hash": "5ec3e59a42e00167d51366010fa90bda5eac5b0145f862140c168dba1935c7ef",
+  "files": {
+    "lib/array_story.py": "1d0c95882fc19d26d06970178cf6f845afb8ce99c0f3677b8d68a6747cd16f7c",
+    "lib/experiments.py": "eed715bb9c3d45b372803a182a64c905dd1f5668c37f214aebd4a46db144bc73",
+    "scripts/run_array_story.py": "b19de8adcb7574ae4cfca922b5c56349c54d3e5d9acbc6b8d9cd467857d1b669",
+    "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac"
+  },
+  "functions": {
+    "sample_bingham": "1ee3c239f25f3f811bf7441f0ed21320d74486b0f779dca451451a3c9f8a7acc",
+    "chain_diagnostics": "0699f094a55a778ae90fdf6a27306b15fdd0f02ebe4df682bccacfce16eb1b03",
+    "_batch_mcse": "694ce5452b8266278a0d7ea72422b27704044c52cb64eae2cb5d6a60ec8476cd",
+    "effective_sample_size": "3472971daa13b2316648126e9ba57e7514b29565e2c049954d4673c0540ea69b",
+    "MomentResult": "416f22ca79d083e5c9ed1810423e48ebd0446d6ebad0e43d5d444fdae756de43",
+    "_hermitian": "debc1eee41ef2762de475fab9e416add415df5a60bb41d2cd275d293f252c1a9"
+  },
+  "inputs": {
+    "case1_metrics.csv": "6d0f57239553cf3293c8eac9b3b4bac25d2d58a03e41823e64e3fd197c7adbfa",
+    "case1_tuning.csv": "f4a3573d9bea07fbb252c5c6d332accfe272d4e55ddcad84b899e2159410b6b1"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "config": {
+    "seed": 1729,
+    "T": 72,
+    "n": 16,
+    "k": 3,
+    "complex_data": true,
+    "draws": 6000,
+    "burnin": 2000,
+    "max_draws": 24000,
+    "max_burnin": 8000,
+    "trajectories": "Preassigned repeat zero, Static and Drift; same data/tuning as original application",
+    "quantity": "Interference-plus-noise power along physical ULA steering directions",
+    "intervals": "Pointwise posterior quantiles in angle, not simultaneous or frequentist guarantees",
+    "caveat": "The original desired reference vector is prescribed, not generally a single-angle steering vector; no fictitious desired angle is drawn"
+  },
+  "tables": {
+    "spectra": "4ebdf518cd0e33ecc4f07735bdc35a4f41d40939b1fa78d3821b1922737f2e2e",
+    "power": "eb07e33af11fd011b61dbf0c5ee16379e7efad03f138b9c2a037dc2eaf63a66a",
+    "diagnostics": "05f014cc7373f0a487368ebad7bae7d703ce9c3ff58b1fe113b52e5e24ebd9d2"
+  },
+  "core_hash": "e09585e0469b7b61d59ee30aac4c4b7e34dcf296f5b81b2945d666ed9c4b97db"
+}

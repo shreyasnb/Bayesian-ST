@@ -6,6 +6,7 @@ if (_local_tex / 'usr/bin/dvipng').exists():
     os.environ['PATH'] = str(_local_tex / 'usr/bin') + os.pathsep + os.environ['PATH']
     os.environ.setdefault('TEXMFHOME', str(_local_tex / 'usr/share/texmf'))
 os.environ.setdefault('MPLCONFIGDIR', '/tmp/bayesian-st-matplotlib')
+os.environ.setdefault('XDG_CACHE_HOME', '/tmp/bayesian-st-cache')
 import matplotlib as mpl
 mpl.rcParams.update({
     'text.usetex': True, 'font.family': 'serif', 'font.size': 11,

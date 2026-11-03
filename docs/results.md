@@ -1,8 +1,9 @@
 # Simulation findings
 
-These are the recorded eight-trajectory pilot runs. Comparisons below use
-all scenarios and retain unfavorable outcomes and numerical failures.
-See the notebooks for individual scenarios and uncertainty intervals.
+The original application comparisons use eight trajectories per scenario.
+The controlled decision study and the higher-dimensional motion study have
+separate repetition counts below. All retain unfavorable outcomes and
+numerical failures. See the notebooks for uncertainty intervals.
 
 ## Array
 
@@ -66,6 +67,42 @@ Intervals concern paired absolute-loss gains, not the displayed percentage.
 Shrunk PCA and strongly loaded covariance capture much of the benefit.
 See [interpretation](interpretation.md) for the cost and scope qualifications.
 
+## Higher-dimensional motion and uncertainty
+
+This conditional-observation study uses n=8, rank 3, 128 measurements,
+64 independent trajectories and posterior calculations on the first 16.
+The true measurement variance is fixed at 0.03. Static and exact-motion
+controls are orthogonally coupled, so they are not extra independent trials.
+
+| Prediction | Mean modal error | Mean valid bound | Valid | Ball coverage |
+| --- | ---: | ---: | --- | --- |
+| Exact frame | 0.057 | 0.369 | 64/64 | 15/16 |
+| Identity, slow drift | 0.198 | 0.836 | 64/64 | 0/16 |
+| Identity, slow drift, forgetting | 0.124 | 1.005 | 64/64 | 15/16 |
+| Identity, fast drift | 1.164 | unavailable | 0/64 | 0/16 |
+| Identity, fast drift, forgetting | 0.599 | unavailable | 0/64 | 0/16 |
+
+The distance ceiling is sqrt(3)=1.732. A valid modal bound and poor
+credible coverage coexist under slow unmodelled motion. These test
+different claims; the modal theorem is not a coverage theorem. Sixteen
+posterior trials give wide binomial intervals. Forgetting helps this slow
+protocol but does not establish general calibration; both fast nominal
+protocols fail the bound condition and have zero terminal ball coverage.
+All 672 reported posterior summaries pass the stated chain diagnostics.
+See [modeling and drift](modeling_and_drift.md) for assumptions and draft changes.
+
+## Array uncertainty
+
+The main figures use native complex inference with 16 channels and rank 3.
+Preassigned static/drifting trajectories show responses at 12, 36 and 72
+snapshots, and posterior output-power distributions for three weight rules.
+All six independently sampled targets pass the stated diagnostics.
+Light envelopes bound responses over an estimated 95% state HPD region;
+central functional quantiles are shown separately. If the state lies in
+the region, all evaluated responses are bounded. Sampled thresholds do
+not establish frequentist coverage. The maximum optimization gap is
+9.92e-07; this excludes threshold Monte Carlo error.
+
 ## Interpretation
 
 Marginal Bingham and matching EW PCA modes coincide. Mean/modal changes
@@ -73,6 +110,8 @@ therefore concern posterior task decisions. Individual realized errors
 need not obey the posterior expected-risk ordering. No universal
 performance or frequentist-coverage claim follows from this pilot.
 
-No inconsistency in the stated mathematical assumptions was found.
-The required numerical qualifications and Algorithm 1 clarifications
-are recorded in `draft_notes.md`.
+Unknown-motion credible calibration is unsupported by the nominal
+identity/forgetting model. Narrow that claim or specify and propagate a
+stochastic transition. The exact correction and conditional modal theorem
+retain their stated scope. See `modeling_and_drift.md`,
+`latent_paper_audit.md`, and `draft_notes.md` for the required qualifications.

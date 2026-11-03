@@ -5,7 +5,7 @@ from pathlib import Path
 
 CORE = ['lib/geometry.py','lib/models.py','lib/filter.py','lib/em.py','lib/moments.py',
         'lib/theory.py','lib/reference.py','lib/validation.py','lib/studies.py',
-        'scripts/make_theory_notebook.py']
+        'scripts/make_theory_notebook.py','lib/spectral_series.py']
 
 
 def core_hash(root):

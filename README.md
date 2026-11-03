@@ -26,9 +26,9 @@ See [reproducibility](docs/reproducibility.md) for installation, numerical budge
 | --- | --- |
 | [00_theory](notebooks/00_theory.ipynb) | Debugging and validation: likelihoods, excitation, counterexamples, drift bounds, posterior risks, credible geometry, EM, sampling, and scaling |
 | [01_array](notebooks/01_array.ipynb) | Complex array beamforming: orientation, snapshots, drift, held-out power, SINR, mismatch, regional leakage, coverage, and cost |
-| [02_field](notebooks/02_field.ipynb) | Passive field reconstruction, known calibration patterns, separate noise fitting, predictive scores, mismatch, coverage, and cost |
+| [02_field](notebooks/02_field.ipynb) | Known-input prediction and drift bounds; supplementary passive reconstruction, noise fitting, predictive scores, coverage, and cost |
 
-Plots use larger canvases, paired-effect heatmaps, spatial residual maps, coverage forests, and cost–accuracy comparisons. Both display and export resolution are 200 dpi, with TeX fonts and PDF exports. Executed notebooks embed the corresponding plots. Raw tables, configurations, numerical certificates, and PDF figures are under `results/`.
+Main plots show response uncertainty, projected posterior draws, decision distributions, and the conditions behind the tracking bound. Detailed heatmaps, spatial residuals, coverage forests, and cost comparisons remain supplementary. Both display and export resolution are 200 dpi, with TeX fonts and PDF exports. Executed notebooks embed the corresponding plots. Raw tables, configurations, numerical certificates, and PDF figures are under `results/`.
 
 ## Library
 
@@ -61,3 +61,7 @@ For known projected inputs, omit `tau2` and call `update(u, v=v)`. For complex d
 [Claims and checks](docs/claims.md) map equations to validation. [Draft notes](docs/draft_notes.md) describe numerical clarifications to Algorithm 1 and limitations. [Simulation protocol](docs/simulations.md) specifies data generation, tuning, and interpretation. See [recorded evidence](results/README.md) and [simulation findings](docs/results.md) for results and limitations.
 
 See [interpretation](docs/interpretation.md) for what the comparisons support, the stronger shrinkage/loading controls, and when the posterior computation is worthwhile. The added controlled study uses exact low-dimensional quadrature, 400 test trajectories and 160 independent validation trajectories; it is distinct from the drifting application pilots.
+
+The latest [computational audit](docs/latent_paper_audit.md) checks the supplied latent-information paper's appendices. A new adaptive spectral backend evaluates real/complex rank-one means and normalizers (and codimension-one quantities by duality). It rejects unresolved truncation budgets and does not substitute unchecked general-rank Jack truncations.
+
+The main notebook figures now emphasize **16-channel rank-three array prediction bands** and **eight-dimensional rank-three tracking, prediction clouds, and Monte Carlo errors**. Dense comparisons and the earlier three-dimensional diagnostic are retained as supplementary sections. [Modeling and drift](docs/modeling_and_drift.md) explains why identity-frame modal certificates and credible-region calibration are distinct, with explicit informative and failed regimes.

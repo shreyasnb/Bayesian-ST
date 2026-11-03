@@ -38,13 +38,37 @@ suite=ET.parse(OUT/'pytest.xml').getroot()
 tests=sum(int(s.attrib.get('tests',0)) for s in suite.iter('testsuite'))
 assert tests>=30
 ''')
+md(r"""## Computational appendix audit
+The real normalizer and its gradient agree with Appendices C, F, and H of the supplied latent-information paper. Low truncation orders used for latent geodesics are not guaranteed accurate for concentrated tracking posteriors. The new rank-one spectral series adapts its order and reports truncation bounds. It supports real and native complex measures separately, and also gives codimension-one means by complement duality.
+
+Appendix J's algebraic realification requires both a trace-factor correction and the correct structured measure. It does not license use of the unrestricted real Grassmann normalizer. The tests include the trace identity and an exact uniform-variance counterexample. The paper's distribution-parameter Fisher metric is a different object from the Gaussian observation Fisher matrix below. See `docs/latent_paper_audit.md`.
+""")
+code("""from lib.spectral_series import rank_one_bingham
+from lib.moments import mean_bingham, log_normalizer
+rows=[]
+for n in (3,8,16,64):
+    for complex_data in (False,True):
+        Atest=np.diag(np.linspace(-20.,0.,n))
+        begin=time.perf_counter()
+        evaluated=rank_one_bingham(Atest,complex_data=complex_data)
+        rows.append(dict(n=n,complex_data=complex_data,order=evaluated.order,
+            seconds=time.perf_counter()-begin,truncation_bound=evaluated.moment_error_bound,
+            trace_error=evaluated.trace_error))
+        assert evaluated.accuracy_met and evaluated.moment_error_bound<=1e-10
+        assert evaluated.trace_error<1e-10
+series_table=pd.DataFrame(rows);display(series_table)
+series_table.to_csv(OUT/'spectral_series_timing.csv',index=False)
+# A low fixed order is a diagnostic approximation, not an accepted mean budget.
+assert not rank_one_bingham(np.diag([0.,-8.,-80.]),fixed_order=3).accuracy_met
+print('Complex uniform variance =',1/12,'; energy-corrected unrestricted real variance =',1/36)
+""")
 md(r'''## Excitation and identifiability
 The score covariance checks Eq. (20). Complementary input directions can give information even when the noiseless response vanishes. Local positive information is distinct from global injectivity; the tests explicitly construct two globally ambiguous subspaces and an orientation attaining Eq. (22).''')
 code('''from lib.studies import information_study, tracking_study, scalability_study
 info=information_study()
 display(info)
 assert info.relative_error.max()<.08
-fig,axs=plt.subplots(1,2,figsize=(6.5,2.4))
+fig,axs=plt.subplots(1,2,figsize=(12,4.5))
 axs[0].bar(info.input,info.lambda_min);axs[0].set_ylabel(r'$\\lambda_{\\min}(F)$')
 axs[1].bar(info.input,info.relative_error);axs[1].set_ylabel('Score covariance error')
 for ax in axs: ax.tick_params(axis='x',rotation=25)
@@ -61,7 +85,7 @@ assert terminal.violations==0
 violation_upper=1-.05**(1/int(terminal.repeats))
 assert violation_upper<.05
 assert (~track.valid).any(), 'Stress cases must include invalid conditions'
-fig,axs=plt.subplots(1,3,figsize=(9,2.4))
+fig,axs=plt.subplots(1,3,figsize=(15,4.5))
 for (drift,beta),g in track.groupby(['drift','beta']):
     label=rf'$\\omega={drift:g},\\ \\beta={beta:g}$'
     axs[0].plot(g.t,g.error,marker='.',label=label)
@@ -90,7 +114,7 @@ assert np.max(abs(q.mean.diagonal()-[.92541154,.06829456,.00629390]))<1e-7
 assert abs(reg.radius-.519344)<1e-6 and abs(reg.hpd_loss-3.157974)<1e-6
 assert directional.gap.max()<1e-7
 assert directional.hpd.iloc[0]>directional.ball.iloc[0] and directional.hpd.iloc[1]<directional.ball.iloc[1]
-fig,axs=plt.subplots(1,2,figsize=(6.5,2.4))
+fig,axs=plt.subplots(1,2,figsize=(12,4.5))
 x=np.arange(2)
 axs[0].bar(x,directional.risk);axs[0].set_xticks(x,[r'$e_2$',r'$e_3$']);axs[0].set_ylabel('Response risk')
 axs[1].bar(x-.17,directional.ball,width=.34,label='Ball');axs[1].bar(x+.17,directional.hpd,width=.34,label='HPD')
@@ -107,14 +131,13 @@ display(diag)
 assert diag['max_rhat']<1.05 and diag['min_ess']>100
 moment_error=max(np.max(abs(c.mean-q.mean)) for c in chains)
 assert moment_error<max(.007,5*diag['max_mcse'])
-from tests_placeholder import unused
-'''.replace('from tests_placeholder import unused',''))
+''')
 md('''## Cost and scalability
 Dense parameter storage and eigendecomposition are measured at dimensions 8 through 128, rank 3. These checks establish implementability at the tested sizes, not large-scale optimality. Posterior sampling, regional optimization, and EM add costs reported separately in the applications.''')
 code('''scale=scalability_study();display(scale)
 assert scale.finite.all() and np.max(abs(scale.trace))<1e-8
 assert np.allclose(scale.parameter_bytes,8*scale.n**2)
-fig,axs=plt.subplots(1,2,figsize=(6.5,2.4))
+fig,axs=plt.subplots(1,2,figsize=(12,4.5))
 axs[0].loglog(scale.n,scale.seconds,'o-');axs[0].set_ylabel('Seconds per update')
 axs[1].loglog(scale.n,scale.parameter_bytes/1024,'o-');axs[1].set_ylabel('Parameter storage (KiB)')
 for ax in axs:ax.set_xlabel('Dimension')

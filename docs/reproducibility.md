@@ -129,7 +129,75 @@ checks exact scientific equality between serial and two-worker execution on a
 small smoke protocol, plus exact JSON restoration. This low-draw protocol tests
 execution and caching only; it is not a posterior-accuracy study.
 
-## Redesigned figures and controlled decisions
+## Main figures and supplementary comparisons
+
+The main application figures now show native complex n=16, rank-three array
+responses, posterior output-power distributions, and a real n=8, rank-three
+conditional field study. They include evolving response intervals, projected
+posterior draws, repeated-data error distributions and the noise/drift terms
+in the theorem condition. Dense method/parameter maps and the stationary
+Gr(1,3) decision diagnostic remain supplementary. Coordinate projections are
+visual summaries; inference uses every ambient dimension.
+
+After the core gate passes, the example notebooks invoke these commands and
+verify their cached tables and numerical dependencies:
+
+```bash
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python scripts/run_drift_study.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python scripts/run_array_story.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python scripts/run_array_envelopes.py
+python scripts/make_example_notebooks.py
+python scripts/execute_notebook.py notebooks/01_array.ipynb
+python scripts/execute_notebook.py notebooks/02_field.ipynb
+python scripts/summarize_results.py
+python scripts/write_manifest.py
+```
+
+The drift study uses 64 independent trajectories and posterior computations
+on the first 16 at six preassigned times. Its 672 reported summaries include
+exactly transported static/known-motion controls, rather than treating these
+coupled controls as independent Monte Carlo replications. Sampling uses two
+chains, spectral and scalar-response diagnostics, and adaptive budgets capped
+at 12,000 retained draws and 4,000 burn-in sweeps per chain. The representative
+trajectory is always trial zero. Fast-drift failures are retained. This is a
+conditional-observation experiment, distinct from the original passive field
+reconstruction study.
+
+The array story uses repeat zero of the original static/drifting cases with
+identical data and tuned settings. All six targets receive new independent
+chain evaluations. Its light response envelopes project an estimated 95%
+state HPD region using the regional optimization; central response quantiles
+are distinct and shown separately. The region threshold comes from the
+original validated target and retains its Monte Carlo error. Optimization
+gaps do not certify that threshold's probability mass or frequentist coverage.
+
+All plots retain TeX and use figure/export DPI 200. The field response fans
+join quantiles at reporting times for display, not as continuous-time or
+simultaneous confidence bands. Clean-response uncertainty differs from noisy
+observation prediction; both are retained in the raw tables.
+
+## Deterministic spectral moments
+
+`lib.spectral_series.rank_one_bingham` evaluates rank-one means and normalized
+log integrals using the real/complex Dirichlet series, with adaptive truncation
+and reported truncation bounds. `lib.moments.mean_bingham` selects this path
+for rank/codimension one when no sampler-specific options are provided.
+`backend='mcmc'` or explicit draws/burn-in retains sampling.
+`lib.moments.log_normalizer` also uses exact complement duality for
+codimension one and rejects unsupported general ranks.
+
+```bash
+OPENBLAS_NUM_THREADS=1 python scripts/check_spectral_series.py
+OPENBLAS_NUM_THREADS=1 python scripts/check_paper_realification.py
+```
+
+The theory notebook includes this backend's independent analytic/integration
+checks and measured timings through n=64. Error bounds cover truncation in
+exact arithmetic, not floating-point rounding or a Fisher/Hessian approximation.
+See [the appendix audit](latent_paper_audit.md) for why low-degree general-rank
+Jack approximations and unrestricted realification were not adopted.
+
+## Earlier comparisons and cache provenance
 
 The two application notebooks now use larger 200 dpi canvases and exports,
 with TeX retained. Figures show paired effect maps, individual paired trials,
@@ -145,9 +213,20 @@ validation candidates per applicable task and horizon. Selected boundaries are
 recorded. All 4,000 posterior means undergo order-doubling checks; production
 moment timing excludes those reference audits and region integrations.
 
-Original array/field simulation tables are reused unchanged for the visualization
-revision. The existing extended-chain accuracy follow-up is also preserved:
+Original array/field simulation tables are reused unchanged. The existing
+extended-chain accuracy follow-up is also preserved:
 notebooks check its numerical source dependencies and raw-table checksum while
 excluding display-only plotting settings. Reformatting a figure does not require
 repeating those Monte Carlo simulations. The new controlled-study cache has its
 own source, configuration, version and table checksums.
+
+The spectral-backend revision changes the core digest but leaves every numeric
+dependency used by the historical application and decision tables unchanged.
+`scripts/revalidate_cached_results.py --from-commit 864f8d1` verified original
+table checksums, unchanged source files, and unchanged sampler/quadrature
+definitions before associating those caches with the newly passed gate.
+`results/revision_provenance.json` and each updated metadata file retain the
+original digests and the proof. This is dependency-verified reuse, not a claim
+that the historical Monte Carlo simulations were repeated. New uncertainty
+studies were executed separately. Reproducing from scratch does not require
+this migration step; absent caches are generated by the corresponding scripts.

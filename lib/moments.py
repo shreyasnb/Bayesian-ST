@@ -288,18 +288,56 @@ def quadrature(A, k=1, order=96):
     raise ValueError("deterministic quadrature supports n=2 or n=3 only")
 
 
-def mean_bingham(A, k, rng=None, **kwargs):
-    """Convenience mean evaluator: exact uniform case, otherwise Monte Carlo.
+def mean_bingham(A, k, rng=None, *, backend='auto', complex_data=False,
+                 tol=1e-10, max_order=4096, **kwargs):
+    """Evaluate a mean with a certified-truncation rank-one fast path.
 
-    Use ``sample_bingham`` directly whenever diagnostics or credible draws are
-    needed. No automatic Laplace approximation is used at large concentration.
+    ``auto`` uses the positive spectral series for rank one or codimension one
+    when no sampler-specific options are supplied, and MCMC otherwise.
+    ``mcmc`` explicitly requests the unchanged reference kernel. Existing calls
+    specifying draws/burnin retain MCMC behavior. Use ``rank_one_bingham`` from
+    lib.spectral_series for the normalizer and detailed truncation diagnostics.
+    Real and complex invariant measures remain distinct. The series controls
+    truncation, not floating-point rounding or a Hessian/Fisher approximation.
     """
     A = _hermitian(A)
-    if not 0 < k < len(A):
+    n=len(A)
+    if not 0 < k < n:
         raise ValueError("k must satisfy 0 < k < n")
-    if np.linalg.norm(A - np.trace(A) * np.eye(len(A)) / len(A)) < 1e-12:
-        return k * np.eye(len(A), dtype=A.dtype) / len(A)
-    return sample_bingham(A, k, rng=rng, **kwargs).mean
+    if backend not in ('auto','series','mcmc'):
+        raise ValueError('backend must be auto, series, or mcmc')
+    complex_data=bool(complex_data or np.iscomplexobj(A))
+    if np.linalg.norm(A - np.trace(A) * np.eye(n) / n) < 1e-12:
+        return k * np.eye(n, dtype=A.dtype) / n
+    use_series=(backend=='series' or (backend=='auto' and not kwargs and k in (1,n-1)))
+    if use_series:
+        if kwargs:raise ValueError('Sampler options cannot be used with the series backend')
+        from .spectral_series import rank_one_bingham
+        if k==1:
+            return rank_one_bingham(A,complex_data=complex_data,tol=tol,max_order=max_order).mean
+        if k==n-1:
+            return np.eye(n)-rank_one_bingham(-A,complex_data=complex_data,tol=tol,max_order=max_order).mean
+        raise ValueError('The series backend supports rank or codimension one only')
+    # Mean-only complement sampling avoids unnecessary column updates; an
+    # explicitly supplied initial basis retains its original rank and meaning.
+    if k>n//2 and 'initial' not in kwargs:
+        return np.eye(n)-sample_bingham(-A,n-k,rng=rng,complex_data=complex_data,**kwargs).mean
+    return sample_bingham(A,k,rng=rng,complex_data=complex_data,**kwargs).mean
+
+
+def log_normalizer(A, k=1, *, complex_data=False, tol=1e-10, max_order=4096):
+    """Normalized log integral for rank/codimension one; reject other ranks.
+
+    Complement duality gives psi_k(A)=trace(A)+psi_(n-k)(-A).
+    No low-order general-rank Jack approximation is silently substituted.
+    """
+    A=_hermitian(A);n=len(A)
+    from .spectral_series import rank_one_bingham
+    if k==1:
+        return rank_one_bingham(A,complex_data=complex_data,tol=tol,max_order=max_order).log_normalizer
+    if k==n-1:
+        return float(np.trace(A).real)+rank_one_bingham(-A,complex_data=complex_data,tol=tol,max_order=max_order).log_normalizer
+    raise ValueError('The deterministic normalizer supports rank or codimension one only')
 
 
 def chain_diagnostics(results):

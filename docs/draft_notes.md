@@ -7,6 +7,15 @@ contradiction among the stated propositions and their assumptions. Finite
 numerical experiments cannot establish these propositions for all dimensions or
 parameter values.
 
+The subsequent appendix audit and higher-dimensional experiments identify a
+substantive qualification to the modeling interpretation: identity prediction
+with residual physical drift is approximate, and modal bounds do not certify
+credible coverage. See [modeling and drift](modeling_and_drift.md) for replacement
+Section 3.2 wording and [the computational audit](latent_paper_audit.md) for
+normalizer, differentiation, and complex-measure details. Claims of calibrated
+uncertainty under arbitrary unknown motion need a specified stochastic
+transition and validated prediction, or must be narrowed.
+
 ## Changes to Algorithm 1
 
 The algebraic recursion need not change. Its numerical contract should be made

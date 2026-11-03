@@ -13,3 +13,9 @@ results/*
 !results/*_config.json
 !results/*.png
 !results/case1_accuracy.json
+!results/spectral_series_checks.json
+!results/paper_audit_checks.json
+!results/revision_provenance.json
+!results/array_story_config.json
+!results/drift_study_config.json
+!results/array_envelope_config.json

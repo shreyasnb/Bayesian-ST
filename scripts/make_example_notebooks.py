@@ -11,7 +11,80 @@ def md(text):return nbf.v4.new_markdown_cell(text)
 def code(text):return nbf.v4.new_code_cell(text)
 def write(name,cells):
     if len(sys.argv)>1 and sys.argv[1]!=name:return
-    nb=nbf.v4.new_notebook(cells=cells,metadata={
+    setup=cells[1]
+    setup.source=setup.source.replace("display(result['config'])", "print('Original application tables verified.')")
+    setup.metadata['jupyter']={'source_hidden':True}
+    for cell in cells[2:]:
+        if cell.cell_type=='markdown' and cell.source.startswith('## '):cell.source='#'+cell.source
+    if name=='01_array.ipynb':
+        main=[
+            md(r"""# Array predictions and decisions
+The framework maintains a distribution over a subspace, so it can predict a response **with uncertainty** and choose weights using that distribution. The main figures show these ideas in a native-complex 16-channel, rank-three array. They do not reduce inference to a three-dimensional toy problem.
+
+Static and drifting cases use preassigned repeat zero of the original application with identical observations and validation settings. The maintained distribution is exact only under its state model; the drifting case uses approximate prediction. Detailed method comparisons, parameter maps, cost, and numerical checks follow in the supplementary section. All figures use TeX and 200 dpi."""),setup,
+            code("""from lib.story_visuals import load_story,array_prediction_fans,array_power_distributions
+subprocess.run([sys.executable,str(ROOT/'scripts/run_array_story.py')],cwd=ROOT,check=True)
+array_story=load_story(ROOT,'array_story')
+subprocess.run([sys.executable,str(ROOT/'scripts/run_array_envelopes.py')],cwd=ROOT,check=True)
+envelope_meta=json.loads((OUT/'array_envelope_config.json').read_text())
+assert hashlib.sha256((OUT/'array_envelope_bounds.csv').read_bytes()).hexdigest()==envelope_meta['table_sha256']
+envelope=pd.read_csv(OUT/'array_envelope_bounds.csv')
+assert envelope.optimization_gap.max()<1e-5
+assert array_story['diagnostics'].sampling_ok.astype(bool).all()
+"""),
+            md(r"""## What the subspace predicts across the array
+For each steering direction, the curves predict interference-plus-noise power. The light envelope bounds evaluated responses over an estimated nominal 95% state HPD region using Eq. (33); the darker band contains the central 50% of posterior responses. The black curve is the true response and orange uses the modal subspace. A single state region bounds all evaluated directions when it contains the state. As observations arrive, uncertainty narrows and remains directional.
+
+The lower row retains unmodelled motion. Narrowing uncertainty is not automatically trustworthy when the state model is wrong. Region thresholds are sampled; optimization and sampling errors are separate. This is not a frequentist confidence guarantee or a certificate between angular grid points. The desired reference vector in this experiment is prescribed and is not generally a single plane-wave angle, so no fictitious desired-angle marker is drawn."""),
+            code("show(array_prediction_fans(array_story,envelope=envelope,path=OUT/'array_prediction_fans'))"),
+            md(r"""## The distribution changes a downstream decision
+Each violin is the posterior distribution of output power for a different choice of beamformer weights, evaluated under the **same** maintained distribution. Circles show posterior expected power; diamonds show power at the true physical state. These are posterior Monte Carlo distributions, not independent repeated-training outcomes.
+
+Posterior-mean covariance weights minimize the specified expected power. That does not make them optimal in every realization, under every loss, or under a misspecified motion model. The static/drift comparison keeps that distinction visible."""),
+            code("show(array_power_distributions(array_story,path=OUT/'array_power_distributions'))"),
+            md("""## Supplementary comparisons and numerical checks
+The following panels retain all original methods and regimes, the controlled low-data study, and numerical limitations."""),
+            md('### Central response quantiles\nThese pointwise functional quantiles differ from the image of the full state HPD region, including near extremal responses.'),
+            code("show(array_prediction_fans(array_story,path=OUT/'array_response_quantiles'))")]
+    else:
+        main=[
+            md(r"""# Predicting fields while tracking a subspace
+A modal basis gives one prediction. A subspace distribution also describes its direction-dependent uncertainty. The main figures study real **n=8, k=3** calibration with known inputs, time-varying states, and repeated noise realizations. The 64-sensor passive reconstruction experiment remains in the supplementary comparisons.
+
+The central distinction is between an error bound for the modal estimate and a credible region under a maintained distribution. They are different objects. Taking G=I can give a useful modal bound under slow residual motion while its nominal credible region is miscalibrated. Figures use larger canvases, TeX, and 200 dpi."""),setup,
+            code("""from lib.story_visuals import (load_story,prediction_fans,projected_clouds,drift_certificate,monte_carlo_uncertainty)
+subprocess.run([sys.executable,str(ROOT/'scripts/run_drift_study.py'),'--workers','4'],cwd=ROOT,check=True)
+drift=load_story(ROOT,'drift_study')
+assert drift['posterior'].sampling_ok.astype(bool).all()
+print('Dimensions:',drift['config']['n'],'rank:',drift['config']['k'])
+print('Modal trajectories:',drift['config']['modal_trials'],'posterior trajectories:',drift['config']['posterior_trials'])
+"""),
+            md(r"""## Predictions and uncertainty evolve together
+The upper row predicts one fixed component of a fresh projected input, with central 50% and 95% posterior intervals. It is not a component of every incoming training measurement, whose inputs differ. The lower row compares the actual subspace error with a nominal 95% posterior-ball radius; crosses mark missed truths.
+
+The observations are paired across the three filters. Known motion is an exact Bayesian prediction control. Identity is a nominal frame for the drifting state, and forgetting is approximate. Curves join six reporting times for display; they do not assert simultaneous path coverage."""),
+            code("show(prediction_fans(drift,path=OUT/'field_prediction_fans'))"),
+            md(r"""## See the prediction distribution, not just its centre
+Dots are projected Monte Carlo predictions; diamonds and circles give mean and modal predictions, and stars show the truth. The axes are two fixed coordinates of an eight-dimensional response. All eight dimensions and rank three are used in inference.
+
+A cloud can become small without containing the truth when old evidence accumulates under an incorrect transition model. The exact-motion and forgetting controls show which part of this behavior is due to the maintained state model. This projection is a visualization, not a two-dimensional credible region for the full subspace."""),
+            code("show(projected_clouds(drift,path=OUT/'field_prediction_clouds'))"),
+            md(r"""## When the tracking theorem is informative
+The left panel is the theorem's noise-versus-drift budget at the fixed terminal time. The initial parameter is zero. The certificate condition holds below the diagonal boundary, where the combined perturbation is less than half the excitation gap. Forgetting reduces stale-motion bias but also reduces retained information; arrows join protocol median ratios to display this tradeoff.
+
+The right panel compares actual error with the theorem bound **only where its condition holds**. The bound can be informative with G=I and slow unmodelled motion. Fast-motion cases outside the condition receive no certificate; they are not counted as successful bounds. This is a conditional known-input, fixed-true-noise theorem, unlike the passive credible-region experiment in the supplement."""),
+            code("show(drift_certificate(drift,path=OUT/'field_drift_certificate'))"),
+            md(r"""## Monte Carlo error and coverage are separate questions
+The left panel shows repeated-data tracking errors across 64 independent trajectories. On the right, each point compares actual modal error with the posterior-ball radius for one of 16 posterior-evaluated trajectories. Above the diagonal, that credible ball misses the true state.
+
+These panels can show an informative modal bound and undercoverage simultaneously. Good point tracking does not prove calibrated state uncertainty. The 16-trial coverage estimates have wide binomial uncertainty; a favorable forgetting result is not a general coverage theorem. Static and exact-motion controls are orthogonally coupled, not counted as additional independent Monte Carlo replicates."""),
+            code("show(monte_carlo_uncertainty(drift,path=OUT/'field_monte_carlo'))"),
+            md("""## Supplementary comparisons and numerical checks
+The remaining sections retain passive reconstruction, dense parameter comparisons, the low-dimensional controlled decision study, and approximation diagnostics."""),
+            md("""### Fast drift stress test
+The same preassigned design with faster residual motion exposes the limits of identity prediction and forgetting."""),
+            code("show(prediction_fans(drift,fast=True,path=OUT/'field_fast_drift'))")]
+    nb=nbf.v4.new_notebook(cells=main+cells[2:],metadata={
         'kernelspec':{'display_name':'Python 3','language':'python','name':'python3'},
         'language_info':{'name':'python','version':'3.12'}})
     nbf.write(nb,ROOT/'notebooks'/name)

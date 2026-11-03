@@ -1,0 +1,137 @@
+{
+  "source_hash": "e12e57d28154bfadd347f0088116b9b5a4903fd64527767b13121583873cf733",
+  "config": {
+    "seed": 74013,
+    "n": 8,
+    "k": 3,
+    "T": 128,
+    "s": 0.03,
+    "input_norm": 2.0,
+    "slow_rate": 0.003,
+    "fast_rate": 0.025,
+    "forgetting": 0.97,
+    "delta": 0.05,
+    "report_times": [
+      8,
+      16,
+      32,
+      64,
+      96,
+      128
+    ],
+    "modal_trials": 64,
+    "posterior_trials": 16,
+    "draws": 1500,
+    "burnin": 1000,
+    "max_draws": 12000,
+    "max_burnin": 4000
+  },
+  "protocols": [
+    {
+      "protocol": "static",
+      "label": "Static",
+      "rate": 0.0,
+      "beta": 1.0,
+      "known": false,
+      "exact": true
+    },
+    {
+      "protocol": "known_slow",
+      "label": "Known motion",
+      "rate": 0.003,
+      "beta": 1.0,
+      "known": true,
+      "exact": true
+    },
+    {
+      "protocol": "identity_slow",
+      "label": "G=I, slow drift",
+      "rate": 0.003,
+      "beta": 1.0,
+      "known": false,
+      "exact": false
+    },
+    {
+      "protocol": "forget_slow",
+      "label": "G=I, slow drift, forgetting",
+      "rate": 0.003,
+      "beta": 0.97,
+      "known": false,
+      "exact": false
+    },
+    {
+      "protocol": "known_fast",
+      "label": "Known fast motion",
+      "rate": 0.025,
+      "beta": 1.0,
+      "known": true,
+      "exact": true
+    },
+    {
+      "protocol": "identity_fast",
+      "label": "G=I, fast drift",
+      "rate": 0.025,
+      "beta": 1.0,
+      "known": false,
+      "exact": false
+    },
+    {
+      "protocol": "forget_fast",
+      "label": "G=I, fast drift, forgetting",
+      "rate": 0.025,
+      "beta": 0.97,
+      "known": false,
+      "exact": false
+    }
+  ],
+  "source": {
+    "files": {
+      "lib/drift_study.py": "c2a96ba02a50a87bf4c17afece9c07aef302e33383cd22ee9fb451625783f32f",
+      "scripts/run_drift_study.py": "e8642e391d1a433a11209fb05506d4e7c9691243d7a00f4a0dbdfc64b587b2d9",
+      "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+      "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+      "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+      "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342",
+      "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53"
+    },
+    "sampling_functions": {
+      "_hermitian": "debc1eee41ef2762de475fab9e416add415df5a60bb41d2cd275d293f252c1a9",
+      "effective_sample_size": "3472971daa13b2316648126e9ba57e7514b29565e2c049954d4673c0540ea69b",
+      "_batch_mcse": "694ce5452b8266278a0d7ea72422b27704044c52cb64eae2cb5d6a60ec8476cd",
+      "MomentResult": "416f22ca79d083e5c9ed1810423e48ebd0446d6ebad0e43d5d444fdae756de43",
+      "sample_bingham": "1ee3c239f25f3f811bf7441f0ed21320d74486b0f779dca451451a3c9f8a7acc",
+      "chain_diagnostics": "0699f094a55a778ae90fdf6a27306b15fdd0f02ebe4df682bccacfce16eb1b03"
+    }
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "tables": {
+    "modal": "8d705e4926858ad85d6440cd75ccec4b712bf6b4c4b0d4148b57d5e967d7206a",
+    "bounds": "6530de8e0b26960d1a813582df7642c286f8ff5bd7aeb1491558bea8f49b2488",
+    "posterior": "b11886d064fdae22b9c5268aebc0df8100e605f5af508dfa4b336e2ea374b114",
+    "cloud": "b3dcf74c39f263a513af674a97a548cc053370f70b3884956731e171e8dea9a2",
+    "coverage": "75854468bc0f98a6ae17d4fd1211c71e377eeab2f39801d935a5710d656304bd"
+  },
+  "core_hash": "e09585e0469b7b61d59ee30aac4c4b7e34dcf296f5b81b2945d666ed9c4b97db",
+  "workers": 4,
+  "checks": {
+    "maximum_parameter_equivariance_error": 6.366462912410498e-12,
+    "maximum_sample_risk_identity_error": 2.3635607360183997e-15,
+    "posterior_evaluations": 672,
+    "sampling_failures": 0
+  },
+  "interpretation": {
+    "observations": "Conditional u_t=P_t v_t+Gaussian noise; all components and preassigned inputs observed",
+    "input_protocol": "Coordinate-cycle patterns rotated by the prescribed true frame; independent of hidden subspace",
+    "state_process": "Haar initial rank-three subspace and deterministic orthogonal motion",
+    "coupling": "Static and exact-known controls are orthogonally coupled; static draws are transported exactly",
+    "prediction": "Fresh fixed query e0, response component e1^T P e0; not the training u component",
+    "bands": "Pointwise clean-response posterior quantiles at reporting times; not simultaneous path coverage",
+    "theorem": "Fixed true variance; deterministic inputs/motion conditional on each initial state; delta=.05 at each stated fixed time",
+    "coverage": "Wilson intervals across independent trajectories; wide at 16 posterior repetitions",
+    "approximation": "G=I with physical drift and beta<1 are approximate prediction; no calibrated coverage guarantee"
+  }
+}
