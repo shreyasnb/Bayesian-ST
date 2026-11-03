@@ -128,3 +128,26 @@ recorded in `case2_config.json`; it does not represent a new field simulation.
 checks exact scientific equality between serial and two-worker execution on a
 small smoke protocol, plus exact JSON restoration. This low-draw protocol tests
 execution and caching only; it is not a posterior-accuracy study.
+
+## Redesigned figures and controlled decisions
+
+The two application notebooks now use larger 200 dpi canvases and exports,
+with TeX retained. Figures show paired effect maps, individual paired trials,
+spatial residuals, coverage forests, risk calibration, and computation tradeoffs.
+Open circles in effect maps identify intervals containing zero. Intervals are
+pointwise paired Student intervals, not simultaneous confidence bands.
+
+Run `OPENBLAS_NUM_THREADS=1 python scripts/run_decision_study.py` to reproduce
+the added stationary real Gr(1,3) diagnostic. The default study has 400 test
+trajectories, 160 independent validation trajectories, two noise levels, and
+five snapshot counts. GROUSE, scalar shrinkage, and diagonal loading use nine
+validation candidates per applicable task and horizon. Selected boundaries are
+recorded. All 4,000 posterior means undergo order-doubling checks; production
+moment timing excludes those reference audits and region integrations.
+
+Original array/field simulation tables are reused unchanged for the visualization
+revision. The existing extended-chain accuracy follow-up is also preserved:
+notebooks check its numerical source dependencies and raw-table checksum while
+excluding display-only plotting settings. Reformatting a figure does not require
+repeating those Monte Carlo simulations. The new controlled-study cache has its
+own source, configuration, version and table checksums.

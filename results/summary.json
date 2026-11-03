@@ -122,5 +122,233 @@
       },
       "calibration_failed_diagnostics": 0
     }
+  },
+  "decision_study": {
+    "config": {
+      "seed": 86021,
+      "trials": 400,
+      "validation_trials": 160,
+      "checkpoints": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "noise_levels": [
+        1.0,
+        0.2
+      ],
+      "tau2": 1.0,
+      "n": 3,
+      "k": 1,
+      "query_directions_per_trial": 8,
+      "steps": [
+        0.02,
+        0.05,
+        0.08,
+        0.2,
+        0.35,
+        0.5,
+        1.0,
+        2.0,
+        4.0
+      ],
+      "rhos": [
+        0.0,
+        0.1,
+        0.25,
+        0.4,
+        0.55,
+        0.7,
+        0.85,
+        0.95,
+        1.0
+      ],
+      "loadings": [
+        0.01,
+        0.03,
+        0.1,
+        0.3,
+        1.0,
+        3.0,
+        10.0,
+        30.0,
+        1000000.0
+      ],
+      "candidate_count": 9,
+      "coverage_trials_per_regime": 100,
+      "coverage_mass": 0.95,
+      "calibration_protocol": "Exact joint Haar prior, stationary state and Gaussian likelihood; predeclared first coverage_trials trajectories at terminal time; not robustness under drift",
+      "quadrature_order": 48,
+      "reference_order": 96,
+      "tolerance": 1e-08,
+      "projection_protocol": "Same passive observations; fresh independent unit queries supplied to every method at decision time",
+      "reconstruction_protocol": "Same current observation; known noise; Prior mean uses isotropic LMMSE, other methods use conditional Wiener shrinkage",
+      "beamforming_protocol": "Same passive snapshots; independent desired unit queries shared by all methods; average population interference-plus-noise output power, not a mean-SINR optimality claim",
+      "tuning": "Matched nine-candidate families per task/horizon/noise on independent validation trajectories; grids broadened because validation selected previous grid boundaries, not because of test outcomes; constant GROUSE steps only; shrinkage includes both constrained endpoints and loading includes the isotropic limit; boundary selections retained",
+      "runtime_accounting": "Per-task times include cumulative required updates, current requested mean and task action; other-horizon mean evaluations, quadrature audits, calibration integration and validation are excluded. Shrunk PCA uses the cheap EW-PCA implementation; Loaded covariance is beamforming-only; task times are not additive. Bingham/Mode timings include the general filter implementation overhead, not an asymptotic distinction from matching EW PCA.",
+      "state_process": "Haar initial rank-one subspace, constant state, no forgetting",
+      "uncertainty": "Paired 95% Student intervals over trajectories; eight within-trial queries averaged, not counted as independent replicates",
+      "scope": "Controlled low-dimensional real Bayes decision study; not a claim of large-scale complex or drifting tracking superiority"
+    },
+    "checks": {
+      "maximum_quadrature_difference": 1.6535818270213554e-09,
+      "evaluated_posteriors": 4000,
+      "coverage_trials": 200,
+      "posterior_risk_nonnegative": true,
+      "maximum_unit_gain_error": 4.440892098500626e-16,
+      "minimum_posterior_beamforming_excess": 0.0
+    },
+    "moderate_noise_four_snapshots": [
+      {
+        "regime": 1,
+        "t": 4,
+        "task": "Projection",
+        "reference": "Mode",
+        "trials": 400,
+        "baseline_loss": 0.1273745916409082,
+        "posterior_loss": 0.0978363342857727,
+        "paired_gain": 0.0295382573551354,
+        "gain_low": 0.0219065497395886,
+        "gain_high": 0.0371699649706821,
+        "reduction_percent": 23.19007030727843,
+        "win_fraction": 0.61
+      },
+      {
+        "regime": 1,
+        "t": 4,
+        "task": "Projection",
+        "reference": "Shrunk PCA",
+        "trials": 400,
+        "baseline_loss": 0.1091488907347675,
+        "posterior_loss": 0.0978363342857727,
+        "paired_gain": 0.0113125564489947,
+        "gain_low": 0.0076182406481363,
+        "gain_high": 0.0150068722498531,
+        "reduction_percent": 10.36433478420255,
+        "win_fraction": 0.7225
+      },
+      {
+        "regime": 1,
+        "t": 4,
+        "task": "Reconstruction",
+        "reference": "Mode",
+        "trials": 400,
+        "baseline_loss": 0.3039202732152809,
+        "posterior_loss": 0.271894492987922,
+        "paired_gain": 0.0320257802273588,
+        "gain_low": 0.0181165196255537,
+        "gain_high": 0.0459350408291639,
+        "reduction_percent": 10.53755969897854,
+        "win_fraction": 0.5775
+      },
+      {
+        "regime": 1,
+        "t": 4,
+        "task": "Reconstruction",
+        "reference": "Shrunk PCA",
+        "trials": 400,
+        "baseline_loss": 0.2872896145921347,
+        "posterior_loss": 0.271894492987922,
+        "paired_gain": 0.0153951216042127,
+        "gain_low": 0.0061531040926483,
+        "gain_high": 0.0246371391157771,
+        "reduction_percent": 5.358746304167367,
+        "win_fraction": 0.56
+      },
+      {
+        "regime": 1,
+        "t": 4,
+        "task": "Beamforming",
+        "reference": "Loaded covariance",
+        "trials": 400,
+        "baseline_loss": 0.4288822654631464,
+        "posterior_loss": 0.4191152903558315,
+        "paired_gain": 0.0097669751073147,
+        "gain_low": 0.0072579641681134,
+        "gain_high": 0.0122759860465161,
+        "reduction_percent": 2.277309157739959,
+        "win_fraction": 0.7525
+      },
+      {
+        "regime": 1,
+        "t": 4,
+        "task": "Beamforming",
+        "reference": "Mode",
+        "trials": 400,
+        "baseline_loss": 0.4440116730654765,
+        "posterior_loss": 0.4191152903558315,
+        "paired_gain": 0.0248963827096449,
+        "gain_low": 0.0172353504390477,
+        "gain_high": 0.0325574149802421,
+        "reduction_percent": 5.607145987347406,
+        "win_fraction": 0.57
+      },
+      {
+        "regime": 1,
+        "t": 4,
+        "task": "Beamforming",
+        "reference": "Shrunk PCA",
+        "trials": 400,
+        "baseline_loss": 0.4283307147335122,
+        "posterior_loss": 0.4191152903558315,
+        "paired_gain": 0.0092154243776806,
+        "gain_low": 0.0054594050643563,
+        "gain_high": 0.012971443691005,
+        "reduction_percent": 2.1514740971620743,
+        "win_fraction": 0.6675
+      }
+    ],
+    "coverage": [
+      {
+        "regime": 0,
+        "s": 1.0,
+        "t": 16,
+        "region": "Ball",
+        "successes": 94,
+        "trials": 100,
+        "coverage": 0.94,
+        "low": 0.8752303146877748,
+        "high": 0.9722142547333432,
+        "nominal_mass": 0.95
+      },
+      {
+        "regime": 0,
+        "s": 1.0,
+        "t": 16,
+        "region": "HPD",
+        "successes": 93,
+        "trials": 100,
+        "coverage": 0.93,
+        "low": 0.8625032899347025,
+        "high": 0.965681175635936,
+        "nominal_mass": 0.95
+      },
+      {
+        "regime": 1,
+        "s": 0.2,
+        "t": 16,
+        "region": "Ball",
+        "successes": 94,
+        "trials": 100,
+        "coverage": 0.94,
+        "low": 0.8752303146877748,
+        "high": 0.9722142547333432,
+        "nominal_mass": 0.95
+      },
+      {
+        "regime": 1,
+        "s": 0.2,
+        "t": 16,
+        "region": "HPD",
+        "successes": 94,
+        "trials": 100,
+        "coverage": 0.94,
+        "low": 0.8752303146877748,
+        "high": 0.9722142547333432,
+        "nominal_mass": 0.95
+      }
+    ]
   }
 }

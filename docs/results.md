@@ -7,8 +7,8 @@ See the notebooks for individual scenarios and uncertainty intervals.
 ## Array
 
 168 passive posterior evaluations; 22 failed the predeclared
-sampling diagnostics at the maximum budget. Such evaluations cannot
-support precise posterior uncertainty claims.
+sampling diagnostics at the maximum budget.
+Capped failures are retained and require separate accuracy follow-up.
 
 | Scenario | Loaded covariance | Mode | Oracle | Posterior mean |
 | --- | --- | --- | --- | --- |
@@ -29,8 +29,8 @@ Original flags remain unchanged; extended checks use new independent random stre
 ## Field
 
 72 passive posterior evaluations; 0 failed the predeclared
-sampling diagnostics at the maximum budget. Such evaluations cannot
-support precise posterior uncertainty claims.
+sampling diagnostics at the maximum budget.
+All selected passive evaluations met the stated diagnostics; this is not a convergence proof.
 
 | Scenario | EW PCA | GROUSE | Mode | Oracle | Posterior mean | Rolling PCA |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -42,6 +42,29 @@ Known-calibration posterior evaluations with failed diagnostics: 0 of 72.
 
 Sampled high-dimensional EM ascent is unverified. Predictive scores
 must be read with their importance ESS, sampler ESS and chain disagreement.
+
+## Controlled decision study
+
+This separate stationary real Gr(1,3) study uses identical observations,
+known variances, 400 independent test trajectories, 160 independent
+validation trajectories, and nine-candidate reference families.
+It tests posterior decisions under the stated joint prior model.
+
+| Task | Reference | Loss reduction | Paired gain interval |
+| --- | --- | ---: | --- |
+| Projection | Mode | 23.19% | [0.02191, 0.03717] |
+| Projection | Shrunk PCA | 10.36% | [0.00762, 0.01501] |
+| Reconstruction | Mode | 10.54% | [0.01812, 0.04594] |
+| Reconstruction | Shrunk PCA | 5.36% | [0.00615, 0.02464] |
+| Beamforming | Loaded covariance | 2.28% | [0.00726, 0.01228] |
+| Beamforming | Mode | 5.61% | [0.01724, 0.03256] |
+| Beamforming | Shrunk PCA | 2.15% | [0.00546, 0.01297] |
+
+Rows above use noise variance 0.2 and four observations; all other
+predeclared regimes, including statistical ties, remain in the notebooks.
+Intervals concern paired absolute-loss gains, not the displayed percentage.
+Shrunk PCA and strongly loaded covariance capture much of the benefit.
+See [interpretation](interpretation.md) for the cost and scope qualifications.
 
 ## Interpretation
 

@@ -18,8 +18,9 @@ for case in ('case1','case2'):
            'maximum_mcse':float(p.max_mcse.max())}
     lines.extend([f'## {"Array" if case=="case1" else "Field"}','',
                   f'{len(p)} passive posterior evaluations; {failed} failed the predeclared',
-                  'sampling diagnostics at the maximum budget. Such evaluations cannot',
-                  'support precise posterior uncertainty claims.',''])
+                  'sampling diagnostics at the maximum budget.',
+                  'Capped failures are retained and require separate accuracy follow-up.' if failed else
+                  'All selected passive evaluations met the stated diagnostics; this is not a convergence proof.',''])
     value='sinr_db' if case=='case1' else 'field_squared_error'
     table=final.groupby(['scenario','method'])[value].mean().unstack('method')
     entry['terminal_means']=table.to_dict()
@@ -46,6 +47,28 @@ for case in ('case1','case2'):
                       '', 'Sampled high-dimensional EM ascent is unverified. Predictive scores',
                       'must be read with their importance ESS, sampler ESS and chain disagreement.',''])
     summary['cases'][case]=entry
+study_path=out/'decision_study_config.json'
+if study_path.exists():
+    meta=json.loads(study_path.read_text())
+    paired=pd.read_csv(out/'decision_study_paired.csv')
+    selected=paired[(paired.regime==1)&(paired.t==4)&paired.reference.isin(['Mode','Shrunk PCA','Loaded covariance'])]
+    summary['decision_study']=dict(config=meta['config'],checks=meta['checks'],
+                                  moderate_noise_four_snapshots=selected.to_dict('records'),
+                                  coverage=pd.read_csv(out/'decision_study_coverage_summary.csv').to_dict('records'))
+    lines.extend(['## Controlled decision study','',
+                  'This separate stationary real Gr(1,3) study uses identical observations,',
+                  'known variances, 400 independent test trajectories, 160 independent',
+                  'validation trajectories, and nine-candidate reference families.',
+                  'It tests posterior decisions under the stated joint prior model.',
+                  '', '| Task | Reference | Loss reduction | Paired gain interval |',
+                  '| --- | --- | ---: | --- |'])
+    for row in selected.itertuples():
+        lines.append(f'| {row.task} | {row.reference} | {row.reduction_percent:.2f}% | [{row.gain_low:.5f}, {row.gain_high:.5f}] |')
+    lines.extend(['', 'Rows above use noise variance 0.2 and four observations; all other',
+                  'predeclared regimes, including statistical ties, remain in the notebooks.',
+                  'Intervals concern paired absolute-loss gains, not the displayed percentage.',
+                  'Shrunk PCA and strongly loaded covariance capture much of the benefit.',
+                  'See [interpretation](interpretation.md) for the cost and scope qualifications.',''])
 lines.extend(['## Interpretation','',
               'Marginal Bingham and matching EW PCA modes coincide. Mean/modal changes',
               'therefore concern posterior task decisions. Individual realized errors',

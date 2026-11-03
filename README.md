@@ -28,7 +28,7 @@ See [reproducibility](docs/reproducibility.md) for installation, numerical budge
 | [01_array](notebooks/01_array.ipynb) | Complex array beamforming: orientation, snapshots, drift, held-out power, SINR, mismatch, regional leakage, coverage, and cost |
 | [02_field](notebooks/02_field.ipynb) | Passive field reconstruction, known calibration patterns, separate noise fitting, predictive scores, mismatch, coverage, and cost |
 
-Plots use conventional labels, TeX fonts, and PDF output suitable for further PMLR figure preparation. Executed notebooks embed the corresponding plots. Raw tables, configurations, numerical certificates, and PDF figures are under `results/`.
+Plots use larger canvases, paired-effect heatmaps, spatial residual maps, coverage forests, and cost–accuracy comparisons. Both display and export resolution are 200 dpi, with TeX fonts and PDF exports. Executed notebooks embed the corresponding plots. Raw tables, configurations, numerical certificates, and PDF figures are under `results/`.
 
 ## Library
 
@@ -59,3 +59,5 @@ For known projected inputs, omit `tau2` and call `update(u, v=v)`. For complex d
 - GROUSE, EW PCA, rolling PCA, and loaded-covariance MVDR are implemented with citations and matched validation budgets. GREAT, GeRoST, and a paper-specific Bayesian array tracker are not silently approximated or relabelled.
 
 [Claims and checks](docs/claims.md) map equations to validation. [Draft notes](docs/draft_notes.md) describe numerical clarifications to Algorithm 1 and limitations. [Simulation protocol](docs/simulations.md) specifies data generation, tuning, and interpretation. See [recorded evidence](results/README.md) and [simulation findings](docs/results.md) for results and limitations.
+
+See [interpretation](docs/interpretation.md) for what the comparisons support, the stronger shrinkage/loading controls, and when the posterior computation is worthwhile. The added controlled study uses exact low-dimensional quadrature, 400 test trajectories and 160 independent validation trajectories; it is distinct from the drifting application pilots.

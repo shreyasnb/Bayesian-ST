@@ -1,0 +1,104 @@
+{
+  "source_hash": "3e719903ae2bc50d78703b2513dbd1478ef01384427bee534df08f1759c383e6",
+  "sources": {
+    "lib/decision_study.py": "fe49d832063d5b5a07dc2bccee48061ddeef12cf37425a5564213eeef1290df4",
+    "scripts/run_decision_study.py": "a1f28cc395bce732f6d7ef5c0a15801fdc081af1c747e60d675757fc69465021",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "core_hash": "608a6515b42598bf2f3caa0e80ba532aad80a0369e948604d24ef01e508b9708",
+  "requested_config": {
+    "seed": 86021,
+    "trials": 400,
+    "validation_trials": 160
+  },
+  "config": {
+    "seed": 86021,
+    "trials": 400,
+    "validation_trials": 160,
+    "checkpoints": [
+      1,
+      2,
+      4,
+      8,
+      16
+    ],
+    "noise_levels": [
+      1.0,
+      0.2
+    ],
+    "tau2": 1.0,
+    "n": 3,
+    "k": 1,
+    "query_directions_per_trial": 8,
+    "steps": [
+      0.02,
+      0.05,
+      0.08,
+      0.2,
+      0.35,
+      0.5,
+      1.0,
+      2.0,
+      4.0
+    ],
+    "rhos": [
+      0.0,
+      0.1,
+      0.25,
+      0.4,
+      0.55,
+      0.7,
+      0.85,
+      0.95,
+      1.0
+    ],
+    "loadings": [
+      0.01,
+      0.03,
+      0.1,
+      0.3,
+      1.0,
+      3.0,
+      10.0,
+      30.0,
+      1000000.0
+    ],
+    "candidate_count": 9,
+    "coverage_trials_per_regime": 100,
+    "coverage_mass": 0.95,
+    "calibration_protocol": "Exact joint Haar prior, stationary state and Gaussian likelihood; predeclared first coverage_trials trajectories at terminal time; not robustness under drift",
+    "quadrature_order": 48,
+    "reference_order": 96,
+    "tolerance": 1e-08,
+    "projection_protocol": "Same passive observations; fresh independent unit queries supplied to every method at decision time",
+    "reconstruction_protocol": "Same current observation; known noise; Prior mean uses isotropic LMMSE, other methods use conditional Wiener shrinkage",
+    "beamforming_protocol": "Same passive snapshots; independent desired unit queries shared by all methods; average population interference-plus-noise output power, not a mean-SINR optimality claim",
+    "tuning": "Matched nine-candidate families per task/horizon/noise on independent validation trajectories; grids broadened because validation selected previous grid boundaries, not because of test outcomes; constant GROUSE steps only; shrinkage includes both constrained endpoints and loading includes the isotropic limit; boundary selections retained",
+    "runtime_accounting": "Per-task times include cumulative required updates, current requested mean and task action; other-horizon mean evaluations, quadrature audits, calibration integration and validation are excluded. Shrunk PCA uses the cheap EW-PCA implementation; Loaded covariance is beamforming-only; task times are not additive. Bingham/Mode timings include the general filter implementation overhead, not an asymptotic distinction from matching EW PCA.",
+    "state_process": "Haar initial rank-one subspace, constant state, no forgetting",
+    "uncertainty": "Paired 95% Student intervals over trajectories; eight within-trial queries averaged, not counted as independent replicates",
+    "scope": "Controlled low-dimensional real Bayes decision study; not a claim of large-scale complex or drifting tracking superiority"
+  },
+  "tables": {
+    "metrics": "dd2b96d6f4760144fc6e57a623bba46a9270acb0da3bbc5b3af6f0eb1c06b2d5",
+    "paired": "719d9683f86acaaff0ef163e5d416d95f7051134473e99e22b74c015637c642e",
+    "coverage": "8efe938b3ec84f8e69eb325368eb1b7feb6e23a76736c5611fd64cb565ba3386",
+    "coverage_summary": "dcb6772c97a7c953e7d461d229c3df4a3e4b1c43cf468a41bfa078f2010357f1",
+    "tuning": "f63d30c3c605f9300e0049188fc47c32e958cecc5d253cc194d7775a6dcf60c9",
+    "accuracy": "d9ad3d0fd002c4d73a7c5f03f5056b61f97dcd8c4bf82d8baa18ac6548c4a392"
+  },
+  "checks": {
+    "maximum_quadrature_difference": 1.6535818270213554e-09,
+    "evaluated_posteriors": 4000,
+    "coverage_trials": 200,
+    "posterior_risk_nonnegative": true,
+    "maximum_unit_gain_error": 4.440892098500626e-16,
+    "minimum_posterior_beamforming_excess": 0.0
+  }
+}
