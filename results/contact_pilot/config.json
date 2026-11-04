@@ -1,0 +1,232 @@
+{
+  "config": {
+    "schema": 1,
+    "validation_seed": 6245101,
+    "test_seed": 6245102,
+    "validation_trials": 16,
+    "test_trials": 64,
+    "T": 600,
+    "dt": 0.05,
+    "d": 10.0,
+    "v0": 0.02,
+    "sigma": 0.001,
+    "betas": [
+      1.0,
+      0.98,
+      0.95,
+      0.9,
+      0.8
+    ],
+    "rhos": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "ridges": [
+      0.0,
+      1e-06,
+      1e-05,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "report_times": [
+      60,
+      180,
+      600
+    ],
+    "validation_conditions": [
+      "plane",
+      "sphere_large",
+      "sphere_small",
+      "weak"
+    ],
+    "main_conditions": [
+      "plane",
+      "sphere_large",
+      "sphere_small",
+      "weak"
+    ],
+    "stress_conditions": [
+      "anisotropic"
+    ],
+    "primary_condition": "sphere_small",
+    "primary_time": 600,
+    "primary_endpoint": "Terminal actual clean-response squared error averaged over nine queries within trajectory",
+    "primary_references": [
+      "Scalar shrinkage",
+      "Ridge map"
+    ],
+    "selection": "One policy per method on equally weighted three-condition curved validation mixture; plane uses separate beta=1 validation control",
+    "shrinkage_selection": "For each beta, minimize the pooled validation quadratic over continuous rho in[0,1]; one rho shared across trajectories and curved conditions. Coarse rho curves are diagnostics, not the optimization restriction.",
+    "sensing": "Known applied force and noisy instantaneous solver velocity only. Positions are plant/scoring records, not encoder measurements.",
+    "observation": "Known isotropic viscous resistance in matched laws; fixed true sigma=0.001 m/s; no noise learning or motion supplied",
+    "stress_target": "Actual KKT velocity under hypothetical force d*w; geometric P*w scored separately",
+    "statistics": "Independent trajectories are replicates; nine queries and three coordinates averaged within each trajectory. Primary comparisons preselected; other intervals exploratory.",
+    "posterior": "Deterministic complementary normal-line sphere integration with two-resolution diagnostics; no MCMC",
+    "noisy_intervals": "Not evaluated; every interval in this pilot is a clean-response component interval",
+    "input_program": "Plane cycles world axes; curved guide uses fixed world-frame sinusoidal force program",
+    "query_program": "Three axes and normalized pairwise sums/differences, all norm v0",
+    "reporting": "Posterior integration and task decisions at observations60/180/600; corrections every observation",
+    "delta": 0.05
+  },
+  "configuration_hash": "269ed371de6d41192b6e8b44d825aeaa9a7f517ed577dcd1820cf73a4db34f90",
+  "sources": {
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_study.py": "8ce2724d9804d8470604e68de280a9fe503d20bec5debc7559e3883548161df3",
+    "scripts/run_contact_pilot.py": "4ec7def328a436d55102e1eb2518545b6cb428a1daf93eddc5b7426362506981",
+    "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53",
+    "lib/reference.py": "4aa76180e4b46cafb5f29f96023f11430fabcd44d56344de610a90497de853cf"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "source_hash": "c8b96eb48a5490114b0a165b494697498b81b9db3ff6a85b574bbba4dba73825",
+  "reviewed_commit": "bef07fe301d03ecf4bd714e0e15999514c24a2a2",
+  "gate": {
+    "status": "passed",
+    "core_hash": "3d41c355a8446d63f3b676dca882a3218e4eb895e87473009385b312135ebb89",
+    "tests": 88,
+    "seed": 20,
+    "tracking_repeats": 128,
+    "tracking_terminal": 480,
+    "fixed_time_violations": 0,
+    "violation_upper_95": 0.023132405251746757,
+    "sampler": {
+      "max_rhat": 1.0007026975459008,
+      "max_mean_difference": 0.002296355394263677,
+      "max_standardized_difference": 0.5906998429699951,
+      "min_ess": 1033.3186288425604,
+      "max_mcse": 0.0028725237816521706
+    },
+    "moment_error": 0.003521279454262921,
+    "dimensions": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "seconds": 70.43870659399545,
+    "versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "matplotlib": "3.10.8"
+    },
+    "scope": "Finite model, mechanics, deterministic-posterior and numerical checks; empirical superiority and coverage remain experimental outcomes",
+    "contact_hash": "591bec34ab682053eb0ac879a7df1a2bbd4001cb8dfa232a12fe078324e9d6d7",
+    "original_notebook_sha256": "57f997159cbeaa910fcd39c3e8a8751c0b38561b833812426521fed3d5ed5544",
+    "execution": "Full general notebook and complete regression suite, isolated contact outputs"
+  },
+  "development_only": false,
+  "workers": 2,
+  "hardware": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "cpu_count": 5,
+    "blas_threads": 1
+  },
+  "selected": [
+    {
+      "scope": "plane",
+      "method": "Posterior mean",
+      "beta": 1.0
+    },
+    {
+      "scope": "plane",
+      "method": "Tuned mode",
+      "beta": 1.0
+    },
+    {
+      "scope": "plane",
+      "method": "Velocity PCA",
+      "beta": 1.0
+    },
+    {
+      "scope": "plane",
+      "method": "Scalar shrinkage",
+      "beta": 1.0,
+      "rho": 0.9999763992279386
+    },
+    {
+      "scope": "plane",
+      "method": "Ridge map",
+      "beta": 1.0,
+      "regularization": 0.0
+    },
+    {
+      "scope": "curved",
+      "method": "Posterior mean",
+      "beta": 0.8
+    },
+    {
+      "scope": "curved",
+      "method": "Tuned mode",
+      "beta": 0.8
+    },
+    {
+      "scope": "curved",
+      "method": "Velocity PCA",
+      "beta": 1.0
+    },
+    {
+      "scope": "curved",
+      "method": "Scalar shrinkage",
+      "beta": 0.8,
+      "rho": 0.9715157100210771
+    },
+    {
+      "scope": "curved",
+      "method": "Ridge map",
+      "beta": 1.0,
+      "regularization": 0.1
+    }
+  ],
+  "checks": {
+    "posterior_evaluations": 960,
+    "numerical_failures": 0,
+    "mean_numerical_failures": 0,
+    "state_region_numerical_failures": 0,
+    "response_interval_numerical_failures": 0,
+    "selected_validation_numerical_failures": 0,
+    "maximum_ls_parameter_error": 7.275957614183426e-11,
+    "maximum_ls_projector_error": 1.1554829142122114e-13,
+    "maximum_ls_objective_error": 2.77862157424341e-16,
+    "theorem_applicable": 768,
+    "theorem_valid": 389,
+    "valid_certificate_violations": 0,
+    "maximum_matched_projection_identity_error": 1.1572048930318045e-17,
+    "maximum_surface_error": 5.551115123125783e-17,
+    "no_mcmc": true,
+    "no_noise_learning": true,
+    "positions_available_to_estimators": false
+  },
+  "tables": {
+    "validation_trials.csv": "6ffa42a425306fafe5b89e8dfebfb03dbe8ec6e0aec6ee35708cc2168fce4700",
+    "tuning.csv": "53cc1a7888bcbaadc13120f7d92585195c29fa576ccf997b6bae66878e091e59",
+    "selected.json": "fc68d490acff2024637990d49035f6fb23cc7ccea4c6765ba21b2ab940fa40bc",
+    "preregistered.json": "a8781b86a32c1cf2f996858e6995532c0e0d7dc13a6357c2d5f16c9b47d5de00",
+    "metrics.csv": "1ecdb1fbf5cedab002a795df25b53f2e5562fb53bbf8418cea5d17d3ddc89fdf",
+    "posterior.csv": "06c33cd9e432062a599972b617445f4f5165d2af0e431785117be0b94a333188",
+    "query_predictions.csv": "8d321bc1b1e671f822d61ddd9aa0bbf885d6c6514e755d84c5cf165977a9c9a7",
+    "bounds.csv": "5ee20480eb38e305d99e16bc11678b1bce03599f82ea8d6d17ceb32e6f27d18f",
+    "paths.csv": "5988ec7e170b5ad32f025906f4a00001bfea73cec07a81c6f42d823bbcd56b18",
+    "trajectories.csv": "df1d81df6dff7d844993cfa245eeb0da549dcc86dda84d84a6df11c685425736",
+    "paired.csv": "2fd7a4f34639b7710190bae80f7221178a8c118111422131a180acbd835555a8",
+    "coverage.csv": "3082af73fd61f59c5da8291f44a79fc0113a50e1729cc779133caa4361a6508c",
+    "query_coverage.csv": "083d422b5f6a1b8054358cc3ec5dbc09b0e2af51b9ba5e0e06b3338509ec23f1",
+    "costs.csv": "0dfba1a5f8ab8964ba45f22d037f36d4a2db2730d2ad49afc435885f913e55d5"
+  }
+}

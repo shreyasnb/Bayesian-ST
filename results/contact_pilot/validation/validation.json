@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "core_hash": "3d41c355a8446d63f3b676dca882a3218e4eb895e87473009385b312135ebb89",
+  "tests": 88,
+  "seed": 20,
+  "tracking_repeats": 128,
+  "tracking_terminal": 480,
+  "fixed_time_violations": 0,
+  "violation_upper_95": 0.023132405251746757,
+  "sampler": {
+    "max_rhat": 1.0007026975459008,
+    "max_mean_difference": 0.002296355394263677,
+    "max_standardized_difference": 0.5906998429699951,
+    "min_ess": 1033.3186288425604,
+    "max_mcse": 0.0028725237816521706
+  },
+  "moment_error": 0.003521279454262921,
+  "dimensions": [
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "seconds": 70.43870659399545,
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "scope": "Finite model, mechanics, deterministic-posterior and numerical checks; empirical superiority and coverage remain experimental outcomes",
+  "contact_hash": "591bec34ab682053eb0ac879a7df1a2bbd4001cb8dfa232a12fe078324e9d6d7",
+  "original_notebook_sha256": "57f997159cbeaa910fcd39c3e8a8751c0b38561b833812426521fed3d5ed5544",
+  "execution": "Full general notebook and complete regression suite, isolated contact outputs"
+}

@@ -1,0 +1,706 @@
+{
+  "scope_assessment": "Physical example only",
+  "reason": "The mechanics and inference numerics work, and the primary task has a modest gain over pooled scalar shrinkage. The improvement over its own mode is tiny and curved-guide credible uncertainty is unreliable. Keep this as a physical conditional-response illustration, pending a stronger sensing/dynamics comparison.",
+  "checks": {
+    "posterior_evaluations": 960,
+    "numerical_failures": 0,
+    "mean_numerical_failures": 0,
+    "state_region_numerical_failures": 0,
+    "response_interval_numerical_failures": 0,
+    "selected_validation_numerical_failures": 0,
+    "maximum_ls_parameter_error": 7.275957614183426e-11,
+    "maximum_ls_projector_error": 1.1554829142122114e-13,
+    "maximum_ls_objective_error": 2.77862157424341e-16,
+    "theorem_applicable": 768,
+    "theorem_valid": 389,
+    "valid_certificate_violations": 0,
+    "maximum_matched_projection_identity_error": 1.1572048930318045e-17,
+    "maximum_surface_error": 5.551115123125783e-17,
+    "no_mcmc": true,
+    "no_noise_learning": true,
+    "positions_available_to_estimators": false
+  },
+  "configuration": {
+    "schema": 1,
+    "validation_seed": 6245101,
+    "test_seed": 6245102,
+    "validation_trials": 16,
+    "test_trials": 64,
+    "T": 600,
+    "dt": 0.05,
+    "d": 10.0,
+    "v0": 0.02,
+    "sigma": 0.001,
+    "betas": [
+      1.0,
+      0.98,
+      0.95,
+      0.9,
+      0.8
+    ],
+    "rhos": [
+      0.0,
+      0.25,
+      0.5,
+      0.75,
+      1.0
+    ],
+    "ridges": [
+      0.0,
+      1e-06,
+      1e-05,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "report_times": [
+      60,
+      180,
+      600
+    ],
+    "validation_conditions": [
+      "plane",
+      "sphere_large",
+      "sphere_small",
+      "weak"
+    ],
+    "main_conditions": [
+      "plane",
+      "sphere_large",
+      "sphere_small",
+      "weak"
+    ],
+    "stress_conditions": [
+      "anisotropic"
+    ],
+    "primary_condition": "sphere_small",
+    "primary_time": 600,
+    "primary_endpoint": "Terminal actual clean-response squared error averaged over nine queries within trajectory",
+    "primary_references": [
+      "Scalar shrinkage",
+      "Ridge map"
+    ],
+    "selection": "One policy per method on equally weighted three-condition curved validation mixture; plane uses separate beta=1 validation control",
+    "shrinkage_selection": "For each beta, minimize the pooled validation quadratic over continuous rho in[0,1]; one rho shared across trajectories and curved conditions. Coarse rho curves are diagnostics, not the optimization restriction.",
+    "sensing": "Known applied force and noisy instantaneous solver velocity only. Positions are plant/scoring records, not encoder measurements.",
+    "observation": "Known isotropic viscous resistance in matched laws; fixed true sigma=0.001 m/s; no noise learning or motion supplied",
+    "stress_target": "Actual KKT velocity under hypothetical force d*w; geometric P*w scored separately",
+    "statistics": "Independent trajectories are replicates; nine queries and three coordinates averaged within each trajectory. Primary comparisons preselected; other intervals exploratory.",
+    "posterior": "Deterministic complementary normal-line sphere integration with two-resolution diagnostics; no MCMC",
+    "noisy_intervals": "Not evaluated; every interval in this pilot is a clean-response component interval",
+    "input_program": "Plane cycles world axes; curved guide uses fixed world-frame sinusoidal force program",
+    "query_program": "Three axes and normalized pairwise sums/differences, all norm v0",
+    "reporting": "Posterior integration and task decisions at observations60/180/600; corrections every observation",
+    "delta": 0.05
+  },
+  "primary_comparisons": [
+    {
+      "condition": "sphere_small",
+      "reference": "Scalar shrinkage",
+      "trials": 64,
+      "gain": 4.303875101472551e-08,
+      "low": 3.993422539142156e-08,
+      "high": 4.614327663802947e-08,
+      "mean_loss": 1.0825155293932648e-06,
+      "reference_loss": 1.1255542804079906e-06,
+      "normalized_gain": 0.0001075968775368,
+      "normalized_low": 9.98355634785539e-05,
+      "normalized_high": 0.000115358191595,
+      "primary": true,
+      "numerical_failures": 0,
+      "interval": "Two preselected references at primary condition; other pointwise intervals exploratory; no simultaneous claim",
+      "selected_validation_numerical_failures": 0,
+      "numerically_resolved": true
+    },
+    {
+      "condition": "sphere_small",
+      "reference": "Ridge map",
+      "trials": 64,
+      "gain": 0.0002332001909164,
+      "low": 0.0002243231417116,
+      "high": 0.0002420772401213,
+      "mean_loss": 1.0825155293932648e-06,
+      "reference_loss": 0.0002342827064458,
+      "normalized_gain": 0.5830004772912007,
+      "normalized_low": 0.5608078542790538,
+      "normalized_high": 0.6051931003033476,
+      "primary": true,
+      "numerical_failures": 0,
+      "interval": "Two preselected references at primary condition; other pointwise intervals exploratory; no simultaneous claim",
+      "selected_validation_numerical_failures": 0,
+      "numerically_resolved": true
+    }
+  ],
+  "all_paired_effects": [
+    {
+      "condition": "plane",
+      "reference": "Mode",
+      "gain": 3.4310855783335993e-14,
+      "low": 2.0097786234144688e-14,
+      "high": 4.8523925332527286e-14,
+      "reduction_percent": 0.0009814967118377638,
+      "primary": false
+    },
+    {
+      "condition": "plane",
+      "reference": "Tuned mode",
+      "gain": 3.431085577966048e-14,
+      "low": 2.0097786233942342e-14,
+      "high": 4.8523925325378616e-14,
+      "reduction_percent": 0.0009814967117326232,
+      "primary": false
+    },
+    {
+      "condition": "plane",
+      "reference": "Scalar shrinkage",
+      "gain": 1.3188080776159876e-15,
+      "low": -2.3555507563003244e-15,
+      "high": 4.9931669115323e-15,
+      "reduction_percent": 3.7726194188778804e-05,
+      "primary": false
+    },
+    {
+      "condition": "plane",
+      "reference": "Ridge map",
+      "gain": 1.0792807445960831e-08,
+      "low": 9.187934644521569e-09,
+      "high": 1.2397680247400091e-08,
+      "reduction_percent": 75.5347011487954,
+      "primary": false
+    },
+    {
+      "condition": "plane",
+      "reference": "Velocity PCA",
+      "gain": 3.411020272165904e-09,
+      "low": 2.2387248196339923e-09,
+      "high": 4.5833157246978166e-09,
+      "reduction_percent": 49.38672925514419,
+      "primary": false
+    },
+    {
+      "condition": "sphere_large",
+      "reference": "Mode",
+      "gain": 1.481151714151819e-07,
+      "low": -2.668661351127867e-07,
+      "high": 5.630964779431505e-07,
+      "reduction_percent": 6.396767806854407,
+      "primary": false
+    },
+    {
+      "condition": "sphere_large",
+      "reference": "Tuned mode",
+      "gain": 1.4811517141518126e-07,
+      "low": -2.6686613511278706e-07,
+      "high": 5.630964779431496e-07,
+      "reduction_percent": 6.396767806854382,
+      "primary": false
+    },
+    {
+      "condition": "sphere_large",
+      "reference": "Scalar shrinkage",
+      "gain": 1.542811073300227e-07,
+      "low": -2.1242485466153876e-07,
+      "high": 5.209870693215841e-07,
+      "reduction_percent": 6.645364835759435,
+      "primary": false
+    },
+    {
+      "condition": "sphere_large",
+      "reference": "Ridge map",
+      "gain": 4.22463778349365e-05,
+      "low": 3.715538500719035e-05,
+      "high": 4.733737066268265e-05,
+      "reduction_percent": 95.12008181787782,
+      "primary": false
+    },
+    {
+      "condition": "sphere_large",
+      "reference": "Velocity PCA",
+      "gain": 3.9142696226526e-05,
+      "low": 3.0768473349392405e-05,
+      "high": 4.75169191036596e-05,
+      "reduction_percent": 94.75344676621349,
+      "primary": false
+    },
+    {
+      "condition": "sphere_small",
+      "reference": "Mode",
+      "gain": 1.8044101031936091e-09,
+      "low": 1.5497975134176516e-09,
+      "high": 2.0590226929695672e-09,
+      "reduction_percent": 0.166409381352108,
+      "primary": false
+    },
+    {
+      "condition": "sphere_small",
+      "reference": "Tuned mode",
+      "gain": 1.8044101031931742e-09,
+      "low": 1.5497975134175344e-09,
+      "high": 2.059022692968814e-09,
+      "reduction_percent": 0.166409381352068,
+      "primary": false
+    },
+    {
+      "condition": "sphere_small",
+      "reference": "Scalar shrinkage",
+      "gain": 4.303875101472551e-08,
+      "low": 3.993422539142156e-08,
+      "high": 4.614327663802947e-08,
+      "reduction_percent": 3.8237828031825205,
+      "primary": true
+    },
+    {
+      "condition": "sphere_small",
+      "reference": "Ridge map",
+      "gain": 0.0002332001909164,
+      "low": 0.0002243231417116,
+      "high": 0.0002420772401213,
+      "reduction_percent": 99.53794475664792,
+      "primary": true
+    },
+    {
+      "condition": "sphere_small",
+      "reference": "Velocity PCA",
+      "gain": 0.0002275914871686,
+      "low": 0.0002234436991076,
+      "high": 0.0002317392752295,
+      "reduction_percent": 99.52661189438764,
+      "primary": false
+    },
+    {
+      "condition": "weak",
+      "reference": "Mode",
+      "gain": 3.2175090654302485e-06,
+      "low": -1.0691612715075414e-06,
+      "high": 7.504179402368039e-06,
+      "reduction_percent": 29.73719479860376,
+      "primary": false
+    },
+    {
+      "condition": "weak",
+      "reference": "Tuned mode",
+      "gain": 3.21750906543025e-06,
+      "low": -1.0691612715075393e-06,
+      "high": 7.504179402368039e-06,
+      "reduction_percent": 29.73719479860377,
+      "primary": false
+    },
+    {
+      "condition": "weak",
+      "reference": "Scalar shrinkage",
+      "gain": 2.981434780070114e-06,
+      "low": -1.0692141869262312e-06,
+      "high": 7.03208374706646e-06,
+      "reduction_percent": 28.16995651584947,
+      "primary": false
+    },
+    {
+      "condition": "weak",
+      "reference": "Ridge map",
+      "gain": 0.0001160567966546,
+      "low": 0.0001035732332097,
+      "high": 0.0001285403600994,
+      "reduction_percent": 93.85220778794006,
+      "primary": false
+    },
+    {
+      "condition": "weak",
+      "reference": "Velocity PCA",
+      "gain": 0.000184704743365,
+      "low": 0.0001663709801115,
+      "high": 0.0002030385066184,
+      "reduction_percent": 96.04678836433816,
+      "primary": false
+    },
+    {
+      "condition": "anisotropic",
+      "reference": "Mode",
+      "gain": 4.2768151764395524e-07,
+      "low": 4.168073104731748e-07,
+      "high": 4.385557248147357e-07,
+      "reduction_percent": 0.8315030735777024,
+      "primary": false
+    },
+    {
+      "condition": "anisotropic",
+      "reference": "Tuned mode",
+      "gain": 4.276815176439555e-07,
+      "low": 4.1680731047317417e-07,
+      "high": 4.385557248147367e-07,
+      "reduction_percent": 0.8315030735777028,
+      "primary": false
+    },
+    {
+      "condition": "anisotropic",
+      "reference": "Scalar shrinkage",
+      "gain": -1.314067974327007e-06,
+      "low": -1.335614720349876e-06,
+      "high": -1.2925212283041378e-06,
+      "reduction_percent": -2.644372428879182,
+      "primary": false
+    },
+    {
+      "condition": "anisotropic",
+      "reference": "Ridge map",
+      "gain": 6.092275409541421e-05,
+      "low": 5.564241521890206e-05,
+      "high": 6.620309297192636e-05,
+      "reduction_percent": 54.42942132293943,
+      "primary": false
+    },
+    {
+      "condition": "anisotropic",
+      "reference": "Velocity PCA",
+      "gain": 9.413997092974294e-05,
+      "low": 9.194107363131504e-05,
+      "high": 9.633886822817082e-05,
+      "reduction_percent": 64.85834781855209,
+      "primary": false
+    }
+  ],
+  "terminal_coverage": [
+    {
+      "condition": "plane",
+      "t": 600,
+      "region": "State ball",
+      "successes": 63.0,
+      "trials": 64,
+      "coverage": 0.984375,
+      "low": 0.9166570109970936,
+      "high": 0.9972365292495986,
+      "mean_width": 0.0061170866897652,
+      "width_quantity": "ball_radius",
+      "numerical_failures": 0,
+      "interval": "Wilson across independent trajectories"
+    },
+    {
+      "condition": "plane",
+      "t": 600,
+      "region": "State HPD",
+      "successes": 63.0,
+      "trials": 64,
+      "coverage": 0.984375,
+      "low": 0.9166570109970936,
+      "high": 0.9972365292495986,
+      "mean_width": 2.9957509835543004,
+      "width_quantity": "hpd_threshold",
+      "numerical_failures": 0,
+      "interval": "Wilson across independent trajectories"
+    },
+    {
+      "condition": "plane",
+      "t": 600,
+      "region": "Clean response",
+      "successes": NaN,
+      "trials": 64,
+      "coverage": 0.9502314814814814,
+      "low": 0.9192075920086984,
+      "high": 0.9812553709542644,
+      "mean_width": 0.0061213915261372,
+      "width_quantity": "mean component interval width / v0",
+      "numerical_failures": 0,
+      "interval": "Student across trajectory means of27 component coverage flags"
+    },
+    {
+      "condition": "sphere_large",
+      "t": 600,
+      "region": "State ball",
+      "successes": 64.0,
+      "trials": 64,
+      "coverage": 1.0,
+      "low": 0.9433739770288436,
+      "high": 1.0,
+      "mean_width": 0.1557535629315108,
+      "width_quantity": "ball_radius",
+      "numerical_failures": 0,
+      "interval": "Wilson across independent trajectories"
+    },
+    {
+      "condition": "sphere_large",
+      "t": 600,
+      "region": "State HPD",
+      "successes": 64.0,
+      "trials": 64,
+      "coverage": 1.0,
+      "low": 0.9433739770288436,
+      "high": 1.0,
+      "mean_width": 3.023608853987028,
+      "width_quantity": "hpd_threshold",
+      "numerical_failures": 0,
+      "interval": "Wilson across independent trajectories"
+    },
+    {
+      "condition": "sphere_large",
+      "t": 600,
+      "region": "Clean response",
+      "successes": NaN,
+      "trials": 64,
+      "coverage": 0.9849537037037036,
+      "low": 0.9729851127759602,
+      "high": 0.9969222946314472,
+      "mean_width": 0.1296754684084741,
+      "width_quantity": "mean component interval width / v0",
+      "numerical_failures": 0,
+      "interval": "Student across trajectory means of27 component coverage flags"
+    },
+    {
+      "condition": "sphere_small",
+      "t": 600,
+      "region": "State ball",
+      "successes": 42.0,
+      "trials": 64,
+      "coverage": 0.65625,
+      "low": 0.5340341181762038,
+      "high": 0.7607702496453097,
+      "mean_width": 0.0699573643744081,
+      "width_quantity": "ball_radius",
+      "numerical_failures": 0,
+      "interval": "Wilson across independent trajectories"
+    },
+    {
+      "condition": "sphere_small",
+      "t": 600,
+      "region": "State HPD",
+      "successes": 23.0,
+      "trials": 64,
+      "coverage": 0.359375,
+      "low": 0.2528823053221461,
+      "high": 0.4817937636384916,
+      "mean_width": 2.998097758360436,
+      "width_quantity": "hpd_threshold",
+      "numerical_failures": 0,
+      "interval": "Wilson across independent trajectories"
+    },
+    {
+      "condition": "sphere_small",
+      "t": 600,
+      "region": "Clean response",
+      "successes": NaN,
+      "trials": 64,
+      "coverage": 0.6643518518518519,
+      "low": 0.6204329560884627,
+      "high": 0.708270747615241,
+      "mean_width": 0.0664891962477398,
+      "width_quantity": "mean component interval width / v0",
+      "numerical_failures": 0,
+      "interval": "Student across trajectory means of27 component coverage flags"
+    },
+    {
+      "condition": "weak",
+      "t": 600,
+      "region": "State ball",
+      "successes": 61.0,
+      "trials": 64,
+      "coverage": 0.953125,
+      "low": 0.8710013921145747,
+      "high": 0.9839312745678148,
+      "mean_width": 0.2150994462942918,
+      "width_quantity": "ball_radius",
+      "numerical_failures": 0,
+      "interval": "Wilson across independent trajectories"
+    },
+    {
+      "condition": "weak",
+      "t": 600,
+      "region": "State HPD",
+      "successes": 42.0,
+      "trials": 64,
+      "coverage": 0.65625,
+      "low": 0.5340341181762038,
+      "high": 0.7607702496453097,
+      "mean_width": 2.982860880737909,
+      "width_quantity": "hpd_threshold",
+      "numerical_failures": 0,
+      "interval": "Wilson across independent trajectories"
+    },
+    {
+      "condition": "weak",
+      "t": 600,
+      "region": "Clean response",
+      "successes": NaN,
+      "trials": 64,
+      "coverage": 0.8599537037037037,
+      "low": 0.8211387557161043,
+      "high": 0.8987686516913032,
+      "mean_width": 0.1568505929167174,
+      "width_quantity": "mean component interval width / v0",
+      "numerical_failures": 0,
+      "interval": "Student across trajectory means of27 component coverage flags"
+    },
+    {
+      "condition": "anisotropic",
+      "t": 600,
+      "region": "State ball",
+      "successes": 0.0,
+      "trials": 64,
+      "coverage": 0.0,
+      "low": 0.0,
+      "high": 0.0566260229711563,
+      "mean_width": 0.1017991798860933,
+      "width_quantity": "ball_radius",
+      "numerical_failures": 0,
+      "interval": "Wilson across independent trajectories"
+    },
+    {
+      "condition": "anisotropic",
+      "t": 600,
+      "region": "State HPD",
+      "successes": 0.0,
+      "trials": 64,
+      "coverage": 0.0,
+      "low": 0.0,
+      "high": 0.0566260229711563,
+      "mean_width": 3.000371236335494,
+      "width_quantity": "hpd_threshold",
+      "numerical_failures": 0,
+      "interval": "Wilson across independent trajectories"
+    },
+    {
+      "condition": "anisotropic",
+      "t": 600,
+      "region": "Clean response",
+      "successes": NaN,
+      "trials": 64,
+      "coverage": 0.0630787037037036,
+      "low": 0.0539483850017105,
+      "high": 0.0722090224056968,
+      "mean_width": 0.081777989100938,
+      "width_quantity": "mean component interval width / v0",
+      "numerical_failures": 0,
+      "interval": "Student across trajectory means of27 component coverage flags"
+    }
+  ],
+  "risk": [
+    {
+      "condition": "anisotropic",
+      "risk_mean": 8.15801469488443e-07,
+      "empirical_response_error": 5.1007067340682335e-05,
+      "width_normalized": 0.08177798910093799,
+      "modal_chordal_error": 0.3612475307946679,
+      "empirical_to_posterior_risk": 62.52387283963445
+    },
+    {
+      "condition": "plane",
+      "risk_mean": 3.3308256676871134e-09,
+      "empirical_response_error": 3.4957344848533763e-09,
+      "width_normalized": 0.0061213915261372235,
+      "modal_chordal_error": 0.003233333250979494,
+      "empirical_to_posterior_risk": 1.0495098914260421
+    },
+    {
+      "condition": "sphere_large",
+      "risk_mean": 3.2394510793518136e-06,
+      "empirical_response_error": 2.1673537636377712e-06,
+      "width_normalized": 0.1296754684084741,
+      "modal_chordal_error": 0.056885193805942744,
+      "empirical_to_posterior_risk": 0.6690496971701267
+    },
+    {
+      "condition": "sphere_small",
+      "risk_mean": 4.188219774750082e-07,
+      "empirical_response_error": 1.082515529393265e-06,
+      "width_normalized": 0.0664891962477398,
+      "modal_chordal_error": 0.06204515402324375,
+      "empirical_to_posterior_risk": 2.5846674425242178
+    },
+    {
+      "condition": "weak",
+      "risk_mean": 6.986493095248259e-06,
+      "empirical_response_error": 7.602304596285119e-06,
+      "width_normalized": 0.1568505929167174,
+      "modal_chordal_error": 0.11807118014747642,
+      "empirical_to_posterior_risk": 1.088143148879041
+    }
+  ],
+  "primary_cost": {
+    "corrections": 0.08932943728427739,
+    "integrations": 0.510760342235926,
+    "decisions": 2.1107141492392096e-05
+  },
+  "mechanics": {
+    "status": "passed",
+    "scope": "Integration correctness on first four preassigned test trajectories per condition; no inference or tuning changed",
+    "maximum_position_difference": 2.2987678877771156e-10,
+    "maximum_velocity_difference": 7.241012548483179e-11,
+    "maximum_velocity_difference_over_sigma": 7.241012548483179e-08,
+    "table_sha256": "062d5234537557b191905b9c8b36805527d5c6e2c3b2ac62368a7a0aea6b4ea2",
+    "config_sha256": "0e6739f78d2e25c0fd7c7329a1b3c7781e04530c2e1f145392fe0f7c8b37730a",
+    "sources": {
+      "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+      "scripts/check_contact_mechanics.py": "f7113552588d39c009e6f8cc6bf902ac8af1a2e42d5c34cc764c58b9a2d8f2d7"
+    }
+  },
+  "numerics": {
+    "status": "passed",
+    "independent_analytic_checks": [
+      {
+        "reference": "pole",
+        "kappa": 80000.0,
+        "mean_error": 4.3076653355456074e-14,
+        "log_normalizer_error": 2.7959856652159942e-12,
+        "radial_tail_bound": 2.2802482805665173e-16
+      },
+      {
+        "reference": "ridge",
+        "kappa": 80000.0,
+        "mean_error": 2.4424906541753444e-15,
+        "log_normalizer_error": 7.105427357601002e-15,
+        "radial_tail_bound": 4.548465672919022e-19
+      },
+      {
+        "reference": "pole",
+        "kappa": 1000000.0,
+        "mean_error": 2.398081733190338e-14,
+        "log_normalizer_error": 3.965006101225299e-11,
+        "radial_tail_bound": 2.8503267403163625e-15
+      },
+      {
+        "reference": "ridge",
+        "kappa": 1000000.0,
+        "mean_error": 5.329070518200751e-15,
+        "log_normalizer_error": 8.881784197001252e-15,
+        "radial_tail_bound": 1.6081254606576366e-18
+      }
+    ],
+    "development_seed": 6245199,
+    "development_scope": "Numerical resolutions only; no test truth used to tune the model or uncertainty",
+    "physical_targets": 63,
+    "maximum_span": 79691.088400408,
+    "maximum_mean_resolution_error": 5.1111963027515654e-14,
+    "maximum_quantile_scaled_error": 0.000673010712489504,
+    "maximum_quantile_relative_error": 0.0020657390391273706,
+    "maximum_region_integration_error": 1.1920960598089298e-09,
+    "maximum_region_radius_scaled_error": 3.4384913634648396e-13,
+    "maximum_region_hpd_scaled_error": 7.647844276459327e-12,
+    "maximum_moment_region_logz_error": 1.4551915228366852e-11,
+    "minimum_angular_order": 128,
+    "maximum_angular_order": 128,
+    "seconds": 15.316362842000672,
+    "sources": {
+      "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+      "scripts/check_contact_posterior.py": "33d4a07c2dd07a6665e98211d072be281d96fd12879cd543f28607081a73baa4",
+      "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+      "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+      "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+      "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+      "lib/reference.py": "4aa76180e4b46cafb5f29f96023f11430fabcd44d56344de610a90497de853cf",
+      "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011"
+    },
+    "tables": {
+      "resolution_checks.csv": "6dd1c750054c377a363e90a314e2828e657eb61f224ca7212c6f161fe75a7d17"
+    },
+    "versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0"
+    },
+    "limitations": "Resolution changes and QUADPACK error estimates are not rigorous integration/roundoff enclosures",
+    "backend_scope": "Existing spectral means through span 600; concentration-adapted real Gr(1,3) complement quadrature beyond. No numerical core changed. No MCMC.",
+    "quantile_method": "Continuous radial functional CDF using analytic threshold intervals and Dawson integrals; warped angular quadrature with width-relative resolution gate",
+    "noise_intervals": "Clean intervals only; no Gaussian moment surrogate for observation intervals",
+    "high_concentration_reason": "The existing positive-series tail gate requires order+2 greater than the shifted span; a default cap4096 cannot certify span80000 and extending its quadratic recurrence is unnecessary in this dimension"
+  },
+  "assessment_scope": "Conservative qualitative scope decision for this bounded, frozen pilot; not a universal selection rule"
+}

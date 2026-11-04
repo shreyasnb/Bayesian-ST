@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "scope": "Integration correctness on first four preassigned test trajectories per condition; no inference or tuning changed",
+  "maximum_position_difference": 2.2987678877771156e-10,
+  "maximum_velocity_difference": 7.241012548483179e-11,
+  "maximum_velocity_difference_over_sigma": 7.241012548483179e-08,
+  "table_sha256": "062d5234537557b191905b9c8b36805527d5c6e2c3b2ac62368a7a0aea6b4ea2",
+  "config_sha256": "0e6739f78d2e25c0fd7c7329a1b3c7781e04530c2e1f145392fe0f7c8b37730a",
+  "sources": {
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "scripts/check_contact_mechanics.py": "f7113552588d39c009e6f8cc6bf902ac8af1a2e42d5c34cc764c58b9a2d8f2d7"
+  }
+}

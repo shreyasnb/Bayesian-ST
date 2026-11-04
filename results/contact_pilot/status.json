@@ -1,0 +1,23 @@
+{
+  "status": "completed",
+  "source_hash": "c8b96eb48a5490114b0a165b494697498b81b9db3ff6a85b574bbba4dba73825",
+  "checks": {
+    "posterior_evaluations": 960,
+    "numerical_failures": 0,
+    "mean_numerical_failures": 0,
+    "state_region_numerical_failures": 0,
+    "response_interval_numerical_failures": 0,
+    "selected_validation_numerical_failures": 0,
+    "maximum_ls_parameter_error": 7.275957614183426e-11,
+    "maximum_ls_projector_error": 1.1554829142122114e-13,
+    "maximum_ls_objective_error": 2.77862157424341e-16,
+    "theorem_applicable": 768,
+    "theorem_valid": 389,
+    "valid_certificate_violations": 0,
+    "maximum_matched_projection_identity_error": 1.1572048930318045e-17,
+    "maximum_surface_error": 5.551115123125783e-17,
+    "no_mcmc": true,
+    "no_noise_learning": true,
+    "positions_available_to_estimators": false
+  }
+}

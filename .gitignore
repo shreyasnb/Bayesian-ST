@@ -30,3 +30,7 @@ results/*
 !results/dev_prediction/**/*.ipynb
 results/dev_prediction/**/checkpoints/**
 results/dev_prediction/**/pytest.xml
+!results/contact_pilot/
+!results/contact_pilot/**/
+results/contact_pilot/**/checkpoints/**
+results/contact_pilot/**/pytest.xml

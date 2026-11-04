@@ -1,0 +1,62 @@
+{
+  "selected": [
+    {
+      "scope": "plane",
+      "method": "Posterior mean",
+      "beta": 1.0
+    },
+    {
+      "scope": "plane",
+      "method": "Tuned mode",
+      "beta": 1.0
+    },
+    {
+      "scope": "plane",
+      "method": "Velocity PCA",
+      "beta": 1.0
+    },
+    {
+      "scope": "plane",
+      "method": "Scalar shrinkage",
+      "beta": 1.0,
+      "rho": 0.9999763992279386
+    },
+    {
+      "scope": "plane",
+      "method": "Ridge map",
+      "beta": 1.0,
+      "regularization": 0.0
+    },
+    {
+      "scope": "curved",
+      "method": "Posterior mean",
+      "beta": 0.8
+    },
+    {
+      "scope": "curved",
+      "method": "Tuned mode",
+      "beta": 0.8
+    },
+    {
+      "scope": "curved",
+      "method": "Velocity PCA",
+      "beta": 1.0
+    },
+    {
+      "scope": "curved",
+      "method": "Scalar shrinkage",
+      "beta": 0.8,
+      "rho": 0.9715157100210771
+    },
+    {
+      "scope": "curved",
+      "method": "Ridge map",
+      "beta": 1.0,
+      "regularization": 0.1
+    }
+  ],
+  "source_hash": "c8b96eb48a5490114b0a165b494697498b81b9db3ff6a85b574bbba4dba73825",
+  "test_observations_used": false,
+  "selection_completed_before_final_test": true,
+  "boundary_notes": "beta1, rho0/1 and ridge0 are structural endpoints; beta0.8 and largest ridge remain explicit finite-grid boundaries"
+}

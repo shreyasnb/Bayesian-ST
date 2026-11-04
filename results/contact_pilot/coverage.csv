@@ -1,0 +1,46 @@
+condition,t,region,successes,trials,coverage,low,high,mean_width,width_quantity,numerical_failures,interval
+plane,60,State ball,64.0,64,1.0,0.9433739770288436,1.0,0.01933066840330554,ball_radius,0,Wilson across independent trajectories
+plane,60,State HPD,64.0,64,1.0,0.9433739770288436,1.0,2.995919172797982,hpd_threshold,0,Wilson across independent trajectories
+plane,60,Clean response,,64,0.9664351851851851,0.9430234498657463,0.989846920504624,0.019342332313448823,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+plane,180,State ball,62.0,64,0.96875,0.8930250611770575,0.9913880422874833,0.011169114501483182,ball_radius,0,Wilson across independent trajectories
+plane,180,State HPD,62.0,64,0.96875,0.8930250611770575,0.9913880422874833,2.995794655141058,hpd_threshold,0,Wilson across independent trajectories
+plane,180,Clean response,,64,0.9675925925925926,0.9386399602393121,0.996545224945873,0.011176474942540485,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+plane,600,State ball,63.0,64,0.984375,0.9166570109970937,0.9972365292495986,0.006117086689765202,ball_radius,0,Wilson across independent trajectories
+plane,600,State HPD,63.0,64,0.984375,0.9166570109970937,0.9972365292495986,2.9957509835543004,hpd_threshold,0,Wilson across independent trajectories
+plane,600,Clean response,,64,0.9502314814814814,0.9192075920086983,0.9812553709542645,0.006121391526137268,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+sphere_large,60,State ball,62.0,64,0.96875,0.8930250611770575,0.9913880422874833,0.1556699287217654,ball_radius,0,Wilson across independent trajectories
+sphere_large,60,State HPD,63.0,64,0.984375,0.9166570109970937,0.9972365292495986,3.0162798763893788,hpd_threshold,0,Wilson across independent trajectories
+sphere_large,60,Clean response,,64,0.9646990740740741,0.9345092056520172,0.9948889424961309,0.1331342719087203,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+sphere_large,180,State ball,63.0,64,0.984375,0.9166570109970937,0.9972365292495986,0.156481077088107,ball_radius,0,Wilson across independent trajectories
+sphere_large,180,State HPD,62.0,64,0.96875,0.8930250611770575,0.9913880422874833,3.0102646205528902,hpd_threshold,0,Wilson across independent trajectories
+sphere_large,180,Clean response,,64,0.9577546296296297,0.9307759786139671,0.9847332806452922,0.12962209101213507,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+sphere_large,600,State ball,64.0,64,1.0,0.9433739770288436,1.0,0.15575356293151082,ball_radius,0,Wilson across independent trajectories
+sphere_large,600,State HPD,64.0,64,1.0,0.9433739770288436,1.0,3.023608853987028,hpd_threshold,0,Wilson across independent trajectories
+sphere_large,600,Clean response,,64,0.9849537037037037,0.9729851127759602,0.9969222946314472,0.1296754684084741,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+sphere_small,60,State ball,41.0,64,0.640625,0.5182062363615084,0.7471176946778538,0.0858221211756414,ball_radius,0,Wilson across independent trajectories
+sphere_small,60,State HPD,26.0,64,0.40625,0.29456724435258885,0.528550134954503,3.002762706890664,hpd_threshold,0,Wilson across independent trajectories
+sphere_small,60,Clean response,,64,0.6886574074074074,0.6239337502821944,0.7533810645326204,0.07809521972683761,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+sphere_small,180,State ball,44.0,64,0.6875,0.5660743364084737,0.7876909049773426,0.05806681089398022,ball_radius,0,Wilson across independent trajectories
+sphere_small,180,State HPD,35.0,64,0.546875,0.42573382520679776,0.6627074851396563,2.997405213229861,hpd_threshold,0,Wilson across independent trajectories
+sphere_small,180,Clean response,,64,0.7118055555555556,0.6590191990481098,0.7645919120630014,0.057477502317279106,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+sphere_small,600,State ball,42.0,64,0.65625,0.5340341181762038,0.7607702496453097,0.06995736437440819,ball_radius,0,Wilson across independent trajectories
+sphere_small,600,State HPD,23.0,64,0.359375,0.2528823053221461,0.48179376363849163,2.998097758360436,hpd_threshold,0,Wilson across independent trajectories
+sphere_small,600,Clean response,,64,0.6643518518518519,0.6204329560884627,0.708270747615241,0.06648919624773986,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+weak,60,State ball,62.0,64,0.96875,0.8930250611770575,0.9913880422874833,0.14432787496087024,ball_radius,0,Wilson across independent trajectories
+weak,60,State HPD,59.0,64,0.921875,0.8298024712135222,0.9661693219045645,3.0130145072777292,hpd_threshold,0,Wilson across independent trajectories
+weak,60,Clean response,,64,0.9450231481481481,0.9159538055047316,0.9740924907915647,0.12443779731451184,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+weak,180,State ball,59.0,64,0.921875,0.8298024712135222,0.9661693219045645,0.2598399859175591,ball_radius,0,Wilson across independent trajectories
+weak,180,State HPD,33.0,64,0.515625,0.3958139224399903,0.6336665143421609,3.0050843746568536,hpd_threshold,0,Wilson across independent trajectories
+weak,180,Clean response,,64,0.8287037037037037,0.788276073242961,0.8691313341644464,0.18639872978472471,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+weak,600,State ball,61.0,64,0.953125,0.8710013921145747,0.9839312745678148,0.2150994462942918,ball_radius,0,Wilson across independent trajectories
+weak,600,State HPD,42.0,64,0.65625,0.5340341181762038,0.7607702496453097,2.982860880737909,hpd_threshold,0,Wilson across independent trajectories
+weak,600,Clean response,,64,0.8599537037037037,0.8211387557161043,0.8987686516913032,0.15685059291671744,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+anisotropic,60,State ball,2.0,64,0.03125,0.00861195771251659,0.10697493882294247,0.09610716239091538,ball_radius,0,Wilson across independent trajectories
+anisotropic,60,State HPD,0.0,64,0.0,0.0,0.056626022971156334,3.004565809072183,hpd_threshold,0,Wilson across independent trajectories
+anisotropic,60,Clean response,,64,0.1782407407407407,0.1443433338237179,0.2121381476577635,0.08807118904020944,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+anisotropic,180,State ball,17.0,64,0.265625,0.17296238569537764,0.38483106257235195,0.06521377507350298,ball_radius,0,Wilson across independent trajectories
+anisotropic,180,State HPD,20.0,64,0.3125,0.21230909502265743,0.43392566359152623,2.997862107853209,hpd_threshold,0,Wilson across independent trajectories
+anisotropic,180,Clean response,,64,0.1244212962962963,0.11215575545279537,0.13668683713979723,0.06274708284969939,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags
+anisotropic,600,State ball,0.0,64,0.0,0.0,0.056626022971156334,0.1017991798860933,ball_radius,0,Wilson across independent trajectories
+anisotropic,600,State HPD,0.0,64,0.0,0.0,0.056626022971156334,3.0003712363354946,hpd_threshold,0,Wilson across independent trajectories
+anisotropic,600,Clean response,,64,0.06307870370370369,0.053948385001710564,0.07220902240569682,0.08177798910093803,mean component interval width / v0,0,Student across trajectory means of27 component coverage flags

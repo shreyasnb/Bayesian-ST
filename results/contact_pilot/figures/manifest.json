@@ -1,0 +1,42 @@
+{
+  "core_hash": "3d41c355a8446d63f3b676dca882a3218e4eb895e87473009385b312135ebb89",
+  "contact_hash": "591bec34ab682053eb0ac879a7df1a2bbd4001cb8dfa232a12fe078324e9d6d7",
+  "sources": {
+    "lib/contact_visuals.py": "9122f3652ec56fec8ab2517ead0e78c8f732893fdb9a1c187d24975c00b0fde4",
+    "scripts/plot_contact_pilot.py": "fb0dc3a159f05fa2513f45f0e5ef4deb9582c1b4e5fd91f26c9a17c4c2c64d85",
+    "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392"
+  },
+  "metadata_sha256": "0e6739f78d2e25c0fd7c7329a1b3c7781e04530c2e1f145392fe0f7c8b37730a",
+  "figures": {
+    "physical_setup.pdf": "7df2b80aa34bdb787e23680bada9f3b5d03094565d2e9a7cc31bc3ec7bea4d14",
+    "physical_setup.png": "c0e1cdfb37a2ffc73db11bc87f2de1cb66e9926ed1012a7aefacc22fcd805046",
+    "paired_losses.pdf": "d7a217a4cb55dabd89a33254f3204cfbe612c865ff332f32b638a1a385ba2c4d",
+    "paired_losses.png": "95b40846d6d2ae1f6fad8d8faf52d7dc4cc71a830d85fdcaa93195a4010e5007",
+    "coverage_width.pdf": "7e628ca85f7f0890a1fbf3eac3273a6fa8a0af4852de5724114e0d27ab52c1bf",
+    "coverage_width.png": "31cfc6c1a2c887bcb5d6160ed607463ec06afa9f4bf9311c48e8bba8568f5a56",
+    "response_intervals.pdf": "c888864fa55d8ca464112b470ed2bba7308d9c6a4bd6d83aeef7b8ff48c81c3b",
+    "response_intervals.png": "4f094157cac780e9fdc2ca6a07192c517f54f8626c138db77643189a8306d148",
+    "risk_calibration.pdf": "6105dd85c3e513359f78e063fabee22b312bee986b8079391c251b6c8f18d192",
+    "risk_calibration.png": "8646fcfa948a2495916ef73c1328283e581c1be90f461c90459b8d5b7b72b231",
+    "benchmark_losses.pdf": "cfc7211b4f6c5e9d5cf48c9cbf599606ddb906e5d686d5dfcd812840b1c71d22",
+    "benchmark_losses.png": "87f9453104031d60478d381aac55f0c127734378420bb59f7b2b869713f5a7a4",
+    "runtime.pdf": "85509b364e406fb11c52569ea14da78132ad7d7a8450c34030da284917d3799e",
+    "runtime.png": "aa3b435d20069365d1b5a05899bfc3bb9131748e81af385b1638f2ea53c5c321",
+    "mechanical_diagnostics.pdf": "6122c29e6c4b159da0d92c10095d452f4a4e69d6e5a300cee974a6423b6c5862",
+    "mechanical_diagnostics.png": "82d59ef6349797eabc95a43fbe02a539f650274f5a05a9d5c84d353dcead2c96",
+    "validation_curves.pdf": "6e0a846cf60e5d613303e35eb6a3cd4ad72d0855bd18c07a1ee168d01fab564f",
+    "validation_curves.png": "208b9542a854193178ed892152ab887554dc4ad009aebea8c40b4588208cce89",
+    "paired_stress.pdf": "bc6f55de8157a212c6243e6f8e0a40d7ce3f7d6dff1da12131096f5124e803d5",
+    "paired_stress.png": "d19831a0139e0776102309513d4021218054dfa46cb3e5314cc1f64824b5539a",
+    "coverage_stress.pdf": "c2678956eb0f88ea97d696ef7c4969445cea026f12e0752d82fb453b76181bdc",
+    "coverage_stress.png": "6c10525d91da2b81a35bbfc1a0114f1ceeb01ca9238e0f334b3d4182291a526b"
+  },
+  "dpi": 200,
+  "text_usetex": true,
+  "main_figures": [
+    "physical_setup",
+    "paired_losses",
+    "coverage_width"
+  ],
+  "interpretation": "Geometry is plant/scoring only. Independent trajectories, maintained-posterior uncertainty and numerical resolution have distinct labels."
+}
