@@ -1,0 +1,21 @@
+{
+  "seed": 7315271,
+  "trajectories_per_kappa": 4,
+  "kappas": [
+    4.0,
+    20.0
+  ],
+  "T": 24,
+  "coarse_degree": 24,
+  "fine_degree": 32,
+  "coarse_summary_order": 128,
+  "fine_summary_order": 192,
+  "thresholds": {
+    "mean_error": 0.0002,
+    "density_tv": 0.002,
+    "region_mass_error": 0.005,
+    "scalar_cdf_error": 0.005,
+    "quantile_width_relative_error": 0.02
+  },
+  "selection": "Fixed development trajectories; no final test observation used"
+}

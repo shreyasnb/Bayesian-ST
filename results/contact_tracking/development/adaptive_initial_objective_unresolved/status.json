@@ -1,0 +1,7 @@
+{
+  "status": "development_discarded",
+  "stage": "initial_validation",
+  "source_hash": "8aee30dce8bac8c7013b6a13f57e3d2bfbc9b81911424b12ce5364cda2759bce",
+  "heldout_opened": false,
+  "reason": "Independent stress target exposed comparison of initial/final objective at different angular budgets. Partial validation stopped before further source changes."
+}

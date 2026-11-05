@@ -1,0 +1,241 @@
+{
+  "status": "passed",
+  "development_seeds": [
+    743029,
+    743030
+  ],
+  "references": [
+    {
+      "spectrum": [
+        0,
+        0,
+        0
+      ],
+      "mean_error": 1.1102230246251565e-16,
+      "log_normalizer_error": 0.0,
+      "backend_resolution_error": 5.551115123125783e-17,
+      "inverse_residual": 5.551115123125783e-17,
+      "inverse_backend_error": 0.0,
+      "inverse_iterations": 0,
+      "inverse_seconds": 0.00032431900035589933,
+      "numerical_ok": true
+    },
+    {
+      "spectrum": [
+        0,
+        0.2,
+        1
+      ],
+      "mean_error": 1.1814993428060916e-12,
+      "log_normalizer_error": 2.220446049250313e-16,
+      "backend_resolution_error": 1.1102230246251565e-16,
+      "inverse_residual": 4.440892098500626e-16,
+      "inverse_backend_error": 0.0,
+      "inverse_iterations": 3,
+      "inverse_seconds": 0.0008585539908381179,
+      "numerical_ok": true
+    },
+    {
+      "spectrum": [
+        0,
+        2,
+        6
+      ],
+      "mean_error": 2.3483992528383624e-13,
+      "log_normalizer_error": 3.552713678800501e-15,
+      "backend_resolution_error": 1.1102230246251565e-16,
+      "inverse_residual": 6.179723399668546e-12,
+      "inverse_backend_error": 2.7755575615628914e-17,
+      "inverse_iterations": 4,
+      "inverse_seconds": 0.001047251993441023,
+      "numerical_ok": true
+    },
+    {
+      "spectrum": [
+        0,
+        20,
+        100
+      ],
+      "mean_error": 2.6645352591003757e-14,
+      "log_normalizer_error": 2.842170943040401e-14,
+      "backend_resolution_error": 3.469446951953614e-18,
+      "inverse_residual": 2.1568302699392916e-12,
+      "inverse_backend_error": 0.0,
+      "inverse_iterations": 3,
+      "inverse_seconds": 0.0022067870013415813,
+      "numerical_ok": true
+    },
+    {
+      "spectrum": [
+        0,
+        100,
+        80000
+      ],
+      "mean_error": 5.662137425588298e-15,
+      "log_normalizer_error": 0.0,
+      "backend_resolution_error": 1.6940658945086007e-21,
+      "inverse_residual": 5.3458279469786874e-11,
+      "inverse_backend_error": 1.734723475976807e-18,
+      "inverse_iterations": 2,
+      "inverse_seconds": 0.0021077550045447424,
+      "numerical_ok": true
+    },
+    {
+      "spectrum": [
+        0,
+        80000,
+        80000
+      ],
+      "mean_error": 2.2426505097428162e-14,
+      "log_normalizer_error": 2.9103830456733704e-11,
+      "backend_resolution_error": 0.0,
+      "inverse_residual": 1.1102230246251565e-16,
+      "inverse_backend_error": 1.6940658945086007e-21,
+      "inverse_iterations": 0,
+      "inverse_seconds": 0.0019446570076979697,
+      "numerical_ok": true
+    },
+    {
+      "spectrum": [
+        0,
+        0,
+        80000
+      ],
+      "mean_error": 7.521760991835436e-15,
+      "log_normalizer_error": 0.0,
+      "backend_resolution_error": 1.2189915743476831e-11,
+      "inverse_residual": 6.602046747514282e-11,
+      "inverse_backend_error": 1.2190026765779294e-11,
+      "inverse_iterations": 9,
+      "inverse_seconds": 0.0019205259886803105,
+      "numerical_ok": true
+    },
+    {
+      "spectrum": [
+        0,
+        0,
+        1000000.0
+      ],
+      "mean_error": 7.993605777301127e-15,
+      "log_normalizer_error": 0.0,
+      "backend_resolution_error": 1.2215395361891979e-11,
+      "inverse_residual": 5.022696271411922e-11,
+      "inverse_backend_error": 1.221545087304321e-11,
+      "inverse_iterations": 5,
+      "inverse_seconds": 0.0014396259939530864,
+      "numerical_ok": true
+    }
+  ],
+  "timings": [
+    {
+      "requested_rms": 0.0,
+      "kappa": Infinity,
+      "actual_rms": 0.0,
+      "rho": 1.0,
+      "tangent_variance": 0.0,
+      "kernel_integration_error": 0.0,
+      "observations": 180,
+      "cumulative_prediction_correction_mean_seconds": 0.1394330819894094,
+      "maximum_inverse_residual": 0.0,
+      "maximum_inverse_backend_error": 0.0,
+      "mean_inverse_iterations": 0.0
+    },
+    {
+      "requested_rms": 0.0025,
+      "kappa": 160000.5000040839,
+      "actual_rms": 0.0024999999999970866,
+      "rho": 0.999990625,
+      "tangent_variance": 3.1250130210032537e-06,
+      "kernel_integration_error": 2.220446049250313e-16,
+      "observations": 180,
+      "cumulative_prediction_correction_mean_seconds": 0.3468693150061881,
+      "maximum_inverse_residual": 1.6689737369901536e-09,
+      "maximum_inverse_backend_error": 1.1102230246251565e-16,
+      "mean_inverse_iterations": 1.2944444444444445
+    },
+    {
+      "requested_rms": 0.005,
+      "kappa": 40000.50002503121,
+      "actual_rms": 0.00500000000002748,
+      "rho": 0.9999624999999996,
+      "tangent_variance": 1.2500208341651723e-05,
+      "kernel_integration_error": 5.551115123125783e-16,
+      "observations": 180,
+      "cumulative_prediction_correction_mean_seconds": 0.25912491700728424,
+      "maximum_inverse_residual": 1.998865961638785e-09,
+      "maximum_inverse_backend_error": 1.734723475976807e-18,
+      "mean_inverse_iterations": 1.5333333333333334
+    },
+    {
+      "requested_rms": 0.01,
+      "kappa": 10000.500100053701,
+      "actual_rms": 0.010000000000005,
+      "rho": 0.9998499999999999,
+      "tangent_variance": 5.000333386670077e-05,
+      "kernel_integration_error": 2.220446049250313e-16,
+      "observations": 180,
+      "cumulative_prediction_correction_mean_seconds": 0.30936323100468144,
+      "maximum_inverse_residual": 1.8383858879644777e-09,
+      "maximum_inverse_backend_error": 1.1102230246251565e-16,
+      "mean_inverse_iterations": 1.5611111111111111
+    },
+    {
+      "requested_rms": 0.02,
+      "kappa": 2500.500400480107,
+      "actual_rms": 0.019999999999998897,
+      "rho": 0.9994000000000001,
+      "tangent_variance": 0.00020005336750614341,
+      "kernel_integration_error": 5.421010862427522e-19,
+      "observations": 180,
+      "cumulative_prediction_correction_mean_seconds": 0.261938558993279,
+      "maximum_inverse_residual": 7.333776919082879e-10,
+      "maximum_inverse_backend_error": 1.1102230246251565e-16,
+      "mean_inverse_iterations": 2.0
+    },
+    {
+      "requested_rms": 0.04,
+      "kappa": 625.5016077313581,
+      "actual_rms": 0.03999999999999918,
+      "rho": 0.9976,
+      "tangent_variance": 0.0008008555280176552,
+      "kernel_integration_error": 7.771561172376096e-16,
+      "observations": 180,
+      "cumulative_prediction_correction_mean_seconds": 0.3234553059883183,
+      "maximum_inverse_residual": 1.7087896653222856e-09,
+      "maximum_inverse_backend_error": 1.1102230246251565e-16,
+      "mean_inverse_iterations": 2.138888888888889
+    },
+    {
+      "requested_rms": 0.08,
+      "kappa": 156.7565262750509,
+      "actual_rms": 0.08000000000000669,
+      "rho": 0.9903999999999984,
+      "tangent_variance": 0.0032137957983823856,
+      "kernel_integration_error": 7.771561172376096e-16,
+      "observations": 180,
+      "cumulative_prediction_correction_mean_seconds": 0.30682769599661697,
+      "maximum_inverse_residual": 1.8351069552835497e-09,
+      "maximum_inverse_backend_error": 1.1102230246251565e-16,
+      "mean_inverse_iterations": 2.4277777777777776
+    }
+  ],
+  "sources": {
+    "lib/contact_process_prediction.py": "8832cc135eab98955014207c36e861ef1d6a0589809edf8a27c646bbb112ca88",
+    "scripts/check_contact_process.py": "ebf632ab367493634ae20ab09cb19f52c00caf7aaa398b17ccc088a0fc78e957",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7"
+  },
+  "tables": {
+    "timings.csv": "2d8fd536a1e9ff0bf718ba4845c4e2183f6f8fc5d85fbea72c4f75f96a1a5e20"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "scope": "Exact kernel moment; approximate Bingham density closure. Resolution errors exclude rigorous roundoff enclosures. Per-step unchecked angular budgets are development-validated, not individually certified.",
+  "cost": "Prediction, correction and posterior mean combined at every step; inversion is nested within prediction. Timings are cloud implementation measurements, not real-time guarantees."
+}

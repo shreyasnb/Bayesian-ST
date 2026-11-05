@@ -1,0 +1,104 @@
+{
+  "terminal_original_mode_mse": 1.0845238238545462e-06,
+  "terminal_causal_mode_mse": 1.2620313875242758e-07,
+  "causal_vs_original": {
+    "gain": 9.583206851021185e-07,
+    "low": 8.232110653267392e-07,
+    "high": 1.0934303048774978e-06,
+    "trials": 64,
+    "relative_gain": 0.8836326727209325
+  },
+  "causal_vs_original_time_average": {
+    "gain": 9.153151337136109e-07,
+    "low": 4.261979432829501e-07,
+    "high": 1.4044323241442717e-06,
+    "trials": 64,
+    "relative_gain": 0.4303922938537989
+  },
+  "process_vs_gaussian": {
+    "gain": -1.3808885451952026e-09,
+    "low": -6.124000975334039e-09,
+    "high": 3.3622238849436345e-09,
+    "trials": 64,
+    "relative_gain": -0.00616463976159623
+  },
+  "process_vs_gaussian_interval_score": {
+    "gain": -2.7785540345359134e-06,
+    "low": -8.110105442605965e-06,
+    "high": 2.5529973735341378e-06,
+    "trials": 64,
+    "relative_gain": -0.001981548226482937
+  },
+  "process_vs_gaussian_time_average": {
+    "gain": 2.295721741355902e-08,
+    "low": -2.353424982192514e-08,
+    "high": 6.944868464904319e-08,
+    "trials": 64,
+    "relative_gain": 0.03823202110726158
+  },
+  "process_vs_raw_time_average": {
+    "gain": 5.849499685156512e-07,
+    "low": 2.7367067829704616e-07,
+    "high": 8.962292587342563e-07,
+    "trials": 64,
+    "relative_gain": 0.5031984879496184
+  },
+  "process_vs_regularized_point": {
+    "gain": -9.905594256940978e-08,
+    "low": -1.3791374653059092e-07,
+    "high": -6.019813860822865e-08,
+    "trials": 64,
+    "relative_gain": -0.7841267350466106
+  },
+  "temperature": 2.0,
+  "process_ms_per_observation": 2.3764458966616075,
+  "gaussian_ms_per_observation": 2.05161140334288,
+  "process_ms_per_report": 145.23990832579634,
+  "gaussian_ms_per_report": 73.4391223231796,
+  "shape": [
+    {
+      "method": "temperature",
+      "gain": -1.4752810400701806e-12,
+      "low": -1.6544695413865106e-12,
+      "high": -1.2960925387538505e-12,
+      "trials": 64,
+      "relative_gain": -1.167068863896438e-05,
+      "exact_coverage": 1.0,
+      "local_coverage": 1.0,
+      "exact_width": 0.001326335764457883,
+      "local_width": 0.0013248741125129048,
+      "exact_failures": 0,
+      "local_failures": 0
+    },
+    {
+      "method": "process_identity",
+      "gain": -5.6286044439285765e-12,
+      "low": -7.541785555337983e-12,
+      "high": -3.71542333251917e-12,
+      "trials": 64,
+      "relative_gain": -1.1661174600467379e-05,
+      "exact_coverage": 0.9780092592592593,
+      "local_coverage": 0.9780092592592593,
+      "exact_width": 0.001853998021059539,
+      "local_width": 0.0018502060888695407,
+      "exact_failures": 0,
+      "local_failures": 0
+    },
+    {
+      "method": "process_motion",
+      "gain": -1.2509968246389211e-12,
+      "low": -1.5591004245058587e-12,
+      "high": -9.428932247719836e-13,
+      "trials": 64,
+      "relative_gain": -5.550583539403328e-06,
+      "exact_coverage": 0.9947916666666666,
+      "local_coverage": 0.9947916666666666,
+      "exact_width": 0.0013945180959791235,
+      "local_width": 0.0013929168820874828,
+      "exact_failures": 0,
+      "local_failures": 0
+    }
+  ],
+  "cost_scope": "Median of three separate serial runs of preassigned small-sphere trajectory 0; shared forecast included",
+  "source": "Independent trajectory rows; no queries or components counted as replicates"
+}

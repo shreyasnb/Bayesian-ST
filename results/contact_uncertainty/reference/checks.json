@@ -1,0 +1,24 @@
+{
+  "status": "passed",
+  "targets": 24,
+  "failures": 0,
+  "maxima": {
+    "density_tv": 1.5007719948376476e-08,
+    "mean_error": 1.674104072072805e-14,
+    "region_mass_error": 0.0006387989253094917,
+    "scalar_cdf_error": 0.0027547164777874736,
+    "quantile_max_width_relative_error": 0.012815438227652104
+  },
+  "coarse_degree": 24,
+  "fine_degree": 32,
+  "coarse_summary_order": 128,
+  "fine_summary_order": 192,
+  "tables": {
+    "development_checks.csv": "4a20b3206a8c0fb67ca1af50a17d28e2ad3f4fcfe6b9dbbf4b85a67945e28ff1"
+  },
+  "sources": {
+    "lib/contact_spherical_reference.py": "292346eb229d5e34fc7bdee154bf2720b534e40fd32ada5dc6b0aaf398a25f4b",
+    "scripts/run_contact_matched.py": "633578afd21a6cd1c3b03aad8fa2ad9db9ad9eafde6f0faa3fba6ec3f6915fe1"
+  },
+  "scope": "Empirical harmonic/sphere-grid refinement; not a rigorous error enclosure"
+}

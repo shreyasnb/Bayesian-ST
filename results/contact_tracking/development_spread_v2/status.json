@@ -1,0 +1,7 @@
+{
+  "status": "development_discarded",
+  "stage": "heldout",
+  "source_hash": "ab0fc989b04ee5b3a5ed4ab0f3eeb2c647c12491c7450ec117da61f6a75d4c8c",
+  "reason": "Smoke ran all conditions but final source-hash guard correctly rejected writing a completed record because timing labels were patched during development.",
+  "formal_evidence": false
+}

@@ -1,0 +1,13 @@
+{
+  "ls_parameter_max": 2.473825588822365e-10,
+  "ls_objective_max": 2.974032153307948e-16,
+  "ls_projector_max": 1.323645821867262e-12,
+  "all_variances_fixed": true,
+  "mode_reports": 9600,
+  "independent_trials_per_condition": 64,
+  "conditions": 5,
+  "source_hashes_unchanged": true,
+  "selection_hash": "089d2deb2d49bba26ec885cc07fbc93a7d7b33e687148757ec73d5ab2ee1d1e1",
+  "wall_seconds": 1180.33058381101,
+  "all_errors_finite": true
+}

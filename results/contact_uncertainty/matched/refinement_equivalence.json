@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "compared_trajectories": 400,
+  "mismatches": [],
+  "comparison": "Exact recursive equality of all checkpoint result fields excluding keys containing seconds; no unresolved targets removed",
+  "archived_source_hash": "9a3f5c5ffe78d3bb43862c643e4c171d99f1e3601cd6e1ed3ce14fce5ec8e2aa",
+  "current_source_hash": "d668245a394fa716835b4cec4ea7cdc15556835c87253ee16da7175f690f2cd9"
+}

@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "core_hash": "e7a40b759d48dd5fda6d6a3eb826b5603e2632e566cf4fc571e865c0448aba24",
+  "tests": 135,
+  "seed": 20,
+  "tracking_repeats": 128,
+  "tracking_terminal": 480,
+  "fixed_time_violations": 0,
+  "violation_upper_95": 0.023132405251746757,
+  "sampler": {
+    "max_rhat": 1.0007026975459008,
+    "max_mean_difference": 0.002296355394263677,
+    "max_standardized_difference": 0.5906998429699951,
+    "min_ess": 1033.3186288425604,
+    "max_mcse": 0.0028725237816521706
+  },
+  "moment_error": 0.003521279454262921,
+  "dimensions": [
+    8,
+    16,
+    32,
+    64,
+    128
+  ],
+  "seconds": 327.379061345011,
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "scope": "Finite software/numerical checks; reference and empirical outcome flags have separate scopes",
+  "uncertainty_hash": "b624b38e1310417768f4a6695bf7d23c543297f0d06525fb8abcb2dd9575bcd5",
+  "original_notebook_sha256": "57f997159cbeaa910fcd39c3e8a8751c0b38561b833812426521fed3d5ed5544",
+  "execution": "Complete general notebook and regression suite, isolated uncertainty outputs"
+}

@@ -1,0 +1,5 @@
+case,method,seconds,resolved,order,truncation_bound,maximum_mean_entry,failure
+n7_k6_span8,Codimension-one series,0.002099861012538895,True,35,4.7453766303014435e-11,0.899975366236786,
+n7_k6_span200,Codimension-one series,0.026804234978044406,True,326,7.044273854285948e-11,0.9680694338057577,
+n7_k6_span2000,Codimension-one series,0.043097527988720685,True,2413,9.966100110683646e-11,0.97116368942776,
+n7_k6_span80000,Codimension-one series,0.09090850199572742,False,4096,,,Series accuracy budget unresolved at order 4096: mean truncation bound inf; increase max_order

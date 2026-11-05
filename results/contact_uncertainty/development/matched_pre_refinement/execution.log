@@ -1,0 +1,76 @@
+Matched process 8 / 400
+Matched process 16 / 400
+Matched process 24 / 400
+Matched process 32 / 400
+Matched process 40 / 400
+Matched process 48 / 400
+Matched process 56 / 400
+Matched process 64 / 400
+Matched process 72 / 400
+Matched process 80 / 400
+Matched process 88 / 400
+Matched process 96 / 400
+Matched process 104 / 400
+Matched process 112 / 400
+Matched process 120 / 400
+Matched process 128 / 400
+Matched process 136 / 400
+Matched process 144 / 400
+Matched process 152 / 400
+Matched process 160 / 400
+Matched process 168 / 400
+Matched process 176 / 400
+Matched process 184 / 400
+Matched process 192 / 400
+Matched process 200 / 400
+Matched process 208 / 400
+Matched process 216 / 400
+Matched process 224 / 400
+Matched process 232 / 400
+Matched process 240 / 400
+Matched process 248 / 400
+Matched process 256 / 400
+Matched process 264 / 400
+Matched process 272 / 400
+Matched process 280 / 400
+Matched process 288 / 400
+Matched process 296 / 400
+Matched process 304 / 400
+Matched process 312 / 400
+Matched process 320 / 400
+Matched process 328 / 400
+Matched process 336 / 400
+Matched process 344 / 400
+Matched process 352 / 400
+Matched process 360 / 400
+Matched process 368 / 400
+Matched process 376 / 400
+Matched process 384 / 400
+Matched process 392 / 400
+Matched process 400 / 400
+ kappa                      method  trials  numerical_failures  local_approximation_failures  ball_coverage  ball_low  ball_high  hpd_coverage  hpd_low  hpd_high  clean_coverage  clean_width  interval_score  clean_mse  posterior_risk  prior_log_score
+   4.0 Fixed forgetting diagnostic     200                   0                             0         0.5950  0.525797   0.660622        0.5850 0.515739  0.651057        0.783333     0.581925        1.596362   0.208217        0.081768        -2.073616
+   4.0      Full-density reference      16                   0                             0         0.9375  0.716713   0.988881        0.9375 0.716713  0.988881        0.953704     0.778920        0.819913   0.150048        0.148172        -1.602581
+   4.0             Process Bingham     200                   0                             0         0.9700  0.936106   0.986180        0.9700 0.936106  0.986180        0.955000     0.765348        0.818858   0.132905        0.142276        -1.842431
+   4.0          Recursive Gaussian     200                   0                             0         0.7200  0.654077   0.777631        0.6650 0.597022  0.726759        0.860000     0.714345        1.270526   0.211241        0.121615        -2.601393
+   4.0      Same-parameter Laplace     200                  26                            26         0.9100  0.862234   0.942313        0.9100 0.862234  0.942313        0.930370     0.689845        0.826236   0.133355        0.117251        -1.842431
+  20.0 Fixed forgetting diagnostic     200                   0                             0         0.7750  0.712259   0.827376        0.7500 0.685659  0.804918        0.837407     0.449376        0.908574   0.091105        0.046658        -1.406552
+  20.0      Full-density reference      16                   1                             0         1.0000  0.806392   1.000000        1.0000 0.806392  1.000000        0.972222     0.573880        0.592253   0.056013        0.076279        -1.315506
+  20.0             Process Bingham     200                   0                             0         0.9650  0.929529   0.982944        0.9550 0.916703  0.976147        0.952778     0.581476        0.666412   0.075424        0.078038        -1.340286
+  20.0          Recursive Gaussian     200                   0                             0         0.8800  0.827657   0.918020        0.8850 0.833353  0.922136        0.919815     0.538230        0.764949   0.085358        0.066356        -1.528282
+  20.0      Same-parameter Laplace     200                   1                             1         0.9350  0.891981   0.961624        0.9150 0.868104  0.946254        0.935370     0.531918        0.664263   0.075151        0.066453        -1.340286
+{
+  "trajectories_per_kappa": 200,
+  "reference_trajectories_per_kappa": 16,
+  "reference_targets": 96,
+  "reference_failures": 2,
+  "maximum_inverse_residual": 1.986900699524341e-09,
+  "failures_by_method": {
+    "Fixed forgetting diagnostic": 0,
+    "Full-density reference": 2,
+    "Process Bingham": 0,
+    "Recursive Gaussian": 0,
+    "Same-parameter Laplace": 84
+  },
+  "density_projection": "Approximate; see shape_checks.csv for full recursive density/region/CDF errors"
+}

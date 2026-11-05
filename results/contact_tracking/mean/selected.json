@@ -1,0 +1,230 @@
+{
+  "config": {
+    "schema": 1,
+    "validation_seed": 6245201,
+    "test_seed": 6245202,
+    "validation_trials": 16,
+    "velocity_scan_trials": 8,
+    "test_trials": 64,
+    "T": 600,
+    "dt": 0.05,
+    "d": 10.0,
+    "v0": 0.02,
+    "sigma": 0.001,
+    "betas": [
+      0.2,
+      0.4,
+      0.6,
+      0.7,
+      0.8,
+      0.85,
+      0.9,
+      0.95,
+      0.98,
+      1.0
+    ],
+    "windows": [
+      1,
+      2,
+      3,
+      5,
+      8,
+      12,
+      20
+    ],
+    "velocity_betas": [
+      0.6,
+      0.8,
+      0.9,
+      0.95
+    ],
+    "lags": [
+      2,
+      8,
+      16
+    ],
+    "dampings": [
+      0.25,
+      0.5,
+      1.0
+    ],
+    "refine_candidates": 3,
+    "speed_cap": null,
+    "report_times": [
+      60,
+      180,
+      600
+    ],
+    "main_conditions": [
+      "plane",
+      "sphere_large",
+      "sphere_small",
+      "weak"
+    ],
+    "curved_conditions": [
+      "sphere_large",
+      "sphere_small",
+      "weak"
+    ],
+    "stress_conditions": [
+      "anisotropic"
+    ],
+    "selection": "Minimum terminal clean query MSE, equally weighted curved conditions; separate plane selection. Noiseless and oracle runs never select practical policies.",
+    "boundary": "One validation-only expansion per finite search direction; structural beta=1 and damping=1 are not finite boundaries.",
+    "observation": "Known force and noisy instantaneous velocity only; truth and positions used for scoring only.",
+    "primary_condition": "sphere_small",
+    "primary_time": 600,
+    "uncertainty": "Stage 1 is mode-only; no coverage or posterior claim.",
+    "statistics": "Independent trajectories; paired Student intervals are exploratory except declared primary contrasts.",
+    "fixed_update_variance": "sigma**2 even when measurement noise is removed"
+  },
+  "selected": [
+    {
+      "scope": "plane",
+      "family": "identity",
+      "policy": "identity_b1",
+      "specification": {
+        "prediction": "identity",
+        "beta": 1.0
+      },
+      "validation_loss": 3.940106960036658e-09
+    },
+    {
+      "scope": "plane",
+      "family": "rolling",
+      "policy": "rolling_W48",
+      "specification": {
+        "prediction": "rolling",
+        "beta": 1.0,
+        "likelihood_window": 48
+      },
+      "validation_loss": 5.420501875757062e-08
+    },
+    {
+      "scope": "curved",
+      "family": "identity",
+      "policy": "identity_b0.8",
+      "specification": {
+        "prediction": "identity",
+        "beta": 0.8
+      },
+      "validation_loss": 1.4554656539044272e-06
+    },
+    {
+      "scope": "curved",
+      "family": "rolling",
+      "policy": "rolling_W8",
+      "specification": {
+        "prediction": "rolling",
+        "beta": 1.0,
+        "likelihood_window": 8
+      },
+      "validation_loss": 1.8683388103508685e-06
+    },
+    {
+      "scope": "curved",
+      "family": "velocity",
+      "policy": "velocity_b0.9_l32_d1",
+      "specification": {
+        "prediction": "velocity",
+        "beta": 0.9,
+        "lag": 32,
+        "damping": 1.0
+      },
+      "validation_loss": 5.101998708625e-07
+    },
+    {
+      "scope": "plane",
+      "family": "velocity",
+      "policy": "velocity_b1_l2_d0",
+      "specification": {
+        "prediction": "velocity",
+        "beta": 1.0,
+        "lag": 2,
+        "damping": 0.0
+      },
+      "validation_loss": 3.940106960036658e-09
+    }
+  ],
+  "best_per_scope": {
+    "plane": {
+      "scope": "plane",
+      "family": "identity",
+      "policy": "identity_b1",
+      "specification": {
+        "prediction": "identity",
+        "beta": 1.0
+      },
+      "validation_loss": 3.940106960036658e-09
+    },
+    "curved": {
+      "scope": "curved",
+      "family": "velocity",
+      "policy": "velocity_b0.9_l32_d1",
+      "specification": {
+        "prediction": "velocity",
+        "beta": 0.9,
+        "lag": 32,
+        "damping": 1.0
+      },
+      "validation_loss": 5.101998708625e-07
+    }
+  },
+  "sources": {
+    "lib/contact_tracking.py": "a5d1fc78be70351587b22d8698a4566adeb8ec31d9077101cddeb56c861bade1",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_study.py": "8ce2724d9804d8470604e68de280a9fe503d20bec5debc7559e3883548161df3",
+    "lib/prediction.py": "d204ff6c0d1cb74546ef1b893d1edfe3e34e9fe8a52201b81a9371a7dc18ebda",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "scripts/run_contact_tracking.py": "3850fb7719cb3d57d801161c96e859af3b10229cd0444c991108a26fd7c57f1a",
+    "tests/test_contact_tracking.py": "8fea628ca43cbc47a1ef090bf98bb81969a864cc426098577f83d584e9a35e3a"
+  },
+  "test_observations_used": false,
+  "selection_completed_before_final_test": true,
+  "oracle_excluded_from_selection": true,
+  "boundary_expansion": [
+    {
+      "scope": "plane",
+      "family": "rolling",
+      "winning_boundary": {
+        "prediction": "rolling",
+        "beta": 1.0,
+        "likelihood_window": 20
+      },
+      "expansion": [
+        {
+          "prediction": "rolling",
+          "beta": 1.0,
+          "likelihood_window": 32
+        },
+        {
+          "prediction": "rolling",
+          "beta": 1.0,
+          "likelihood_window": 48
+        }
+      ],
+      "rule": "One coordinatewise validation-only expansion; no second extension."
+    },
+    {
+      "scope": "curved",
+      "family": "velocity",
+      "winning_boundary": {
+        "prediction": "velocity",
+        "beta": 0.9,
+        "lag": 16,
+        "damping": 1.0
+      },
+      "expansion": [
+        {
+          "prediction": "velocity",
+          "beta": 0.9,
+          "lag": 32,
+          "damping": 1.0
+        }
+      ],
+      "rule": "One coordinatewise validation-only expansion; no second extension."
+    }
+  ],
+  "source_hash": "089d2deb2d49bba26ec885cc07fbc93a7d7b33e687148757ec73d5ab2ee1d1e1"
+}

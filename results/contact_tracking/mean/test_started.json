@@ -1,0 +1,50 @@
+{
+  "selection_hash": "089d2deb2d49bba26ec885cc07fbc93a7d7b33e687148757ec73d5ab2ee1d1e1",
+  "gate": {
+    "status": "passed",
+    "core_hash": "8fec00e21cd6498899a96762643b569a305f4e1c169e9a74e5aedb8b2e3a2c99",
+    "tests": 132,
+    "seed": 20,
+    "tracking_repeats": 128,
+    "tracking_terminal": 480,
+    "fixed_time_violations": 0,
+    "violation_upper_95": 0.023132405251746757,
+    "sampler": {
+      "max_rhat": 1.0007026975459008,
+      "max_mean_difference": 0.002296355394263677,
+      "max_standardized_difference": 0.5906998429699951,
+      "min_ess": 1033.3186288425604,
+      "max_mcse": 0.0028725237816521706
+    },
+    "moment_error": 0.003521279454262921,
+    "dimensions": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "seconds": 230.830548619997,
+    "versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "matplotlib": "3.10.8"
+    },
+    "scope": "Finite software/numerical checks; reference and empirical outcome flags have separate scopes",
+    "uncertainty_hash": "79178ea7ffc7f01e209aa5e4a20db5ed9c20eebf45d3858eab54af8ebf6c7389",
+    "original_notebook_sha256": "57f997159cbeaa910fcd39c3e8a8751c0b38561b833812426521fed3d5ed5544",
+    "execution": "Complete general notebook and regression suite, isolated uncertainty outputs"
+  },
+  "source_hashes": {
+    "lib/contact_tracking.py": "a5d1fc78be70351587b22d8698a4566adeb8ec31d9077101cddeb56c861bade1",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_study.py": "8ce2724d9804d8470604e68de280a9fe503d20bec5debc7559e3883548161df3",
+    "lib/prediction.py": "d204ff6c0d1cb74546ef1b893d1edfe3e34e9fe8a52201b81a9371a7dc18ebda",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "scripts/run_contact_tracking.py": "3850fb7719cb3d57d801161c96e859af3b10229cd0444c991108a26fd7c57f1a",
+    "tests/test_contact_tracking.py": "8fea628ca43cbc47a1ef090bf98bb81969a864cc426098577f83d584e9a35e3a"
+  },
+  "test_seed": 6245202
+}

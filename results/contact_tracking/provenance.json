@@ -1,0 +1,15 @@
+{
+  "starting_commit": "f09d3fecd3af11fff5af708c8d1d31a35db75ca4",
+  "archive_notebook_sha256": "c7283029e285df7d2f83cd8db58631e60bc5d267181097c61b861142b31a5c26",
+  "request": "Improve contact mean tracking, distinguish uncertainty calibration from Bingham shape, rewrite the third notebook as a chronological physical walkthrough.",
+  "style_reference": "Attached deepc.ipynb inspected for cell sequence and displayed output figure. No source code copied or reused.",
+  "preserved": "Frozen contact pilot, other notebooks, historical results and manuscripts remain unchanged. The prior third notebook is archived byte-for-byte.",
+  "final_validation_tests": 135,
+  "mode_reports": 9600,
+  "uncertainty_reports": 9600,
+  "matched_trajectories": 400,
+  "reference_unresolved_targets": 2,
+  "feasibility_unresolved_cases": 7,
+  "notebook_code_cells_executed": 9,
+  "notebook_figures": 5
+}

@@ -1,0 +1,40 @@
+{
+  "files": {
+    "boundary_expansion.json": "535cf2b17d41b805f744de8b8467bbcf8eaad7b0d5340358acb481e846e6a1a3",
+    "checks.json": "5cef5be5b6e64b871da0cb87583f1518455a16a6d296227fcc6c3421507c7d4a",
+    "error_paths.npz": "3aa5fc2e3376c7f31010ea59b7de7db99f71da81c4806a5589d2693d36e29abd",
+    "findings.md": "5e11bcb75ba495fc29ffb03f943ff80b585c0e62153afbc9247ba33ce6023007",
+    "information.csv": "af0972f366b4914cd91f6b1d35011d7c65ec09cd86ed4eeb230442d0987e7b8e",
+    "information_paths_anisotropic.npz": "cf6d3ebd6da289b8ea1b5bea8ac1092d41cb5529513c398d4ea00441d08fe767",
+    "information_paths_plane.npz": "de7b7f80b40d5256b9979db4d75adaa10dfab5a961c1dd339ce57e7ed435f30e",
+    "information_paths_sphere_large.npz": "5ecb4356cbdade8a501e3d43f8e017d1df7cd1bdb9a126ef7423ba5a043be7a2",
+    "information_paths_sphere_small.npz": "950a3afaee5ea0689700a8dd859b1e0f490266799a2cd2149f8682a483dd56f0",
+    "information_paths_weak.npz": "f8845f8ca7bda4e16b0900f7c40fdd8bd2b42d94ad9b08fc1e8df39cf18d9789",
+    "metrics.csv": "d3541a8c1beeb05c5c03a93308703bf0b209ca8450e566665eddbf15ada9de80",
+    "motion_diagnostics.csv": "95f70ff13e630f8673aed24692665a01356bafb1811363432469f38beaf4cdad",
+    "paired.csv": "06a9b0ea80192196a18eadcf10c18f0dfe1a7a072d0943612049f846c0f46aa3",
+    "paired_time_average.csv": "a4ee1470b6ab3d4374119d2f5f429cf96c8248afad923235debc47c398cee461",
+    "path_columns.json": "aa1c5859d74d817a7cd95ac1a0ddbc011ac2bf9df5b6fd460c128fdcbc74fcdc",
+    "preregistered.json": "5c343b5a56bce8a776e16967f8851524a94e10245c4c1d718fea08b68b6b579b",
+    "selected.json": "f5eca7d851487606e2efe5b0a4dff3bf13c20176602004124f4ffc1bfe6d53ef",
+    "summary.csv": "2be1da8bed9db6b0512c6e5414ea16013441b63f8f3a6905c1298357ef346b6d",
+    "test_started.json": "e2bc106f12916fb6bd2fd684fdd101eae39b35b041bf2370866f3cd31ff0b836",
+    "trial0_paths.npz": "5b4e4fff22f333dee7fe6dce517091e49fd275ec5c63c66b51a60688916da399",
+    "validation_curves.csv": "aacf1f7942fe400d00f8c1a94b4127cd1dcb733e0a31758de898be4b1a4a0f53",
+    "validation_trials.csv": "bd7048a07844b07cfc53af96947e88ae0e0001838754a557231e5e5294433b22",
+    "velocity_refinement.json": "b957db2f7fb3e67224662c1d9e0c07be96246d80ec370b041171ae829991c254"
+  },
+  "checks": {
+    "ls_parameter_max": 2.473825588822365e-10,
+    "ls_objective_max": 2.974032153307948e-16,
+    "ls_projector_max": 1.323645821867262e-12,
+    "all_variances_fixed": true,
+    "mode_reports": 9600,
+    "independent_trials_per_condition": 64,
+    "conditions": 5,
+    "source_hashes_unchanged": true,
+    "selection_hash": "089d2deb2d49bba26ec885cc07fbc93a7d7b33e687148757ec73d5ab2ee1d1e1",
+    "wall_seconds": 1180.33058381101,
+    "all_errors_finite": true
+  }
+}

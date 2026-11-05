@@ -27,7 +27,7 @@ See [reproducibility](docs/reproducibility.md) for installation, numerical budge
 | [00_theory](notebooks/00_theory.ipynb) | Debugging and validation: likelihoods, excitation, counterexamples, drift bounds, posterior risks, credible geometry, EM, sampling, and scaling |
 | [01_array](notebooks/01_array.ipynb) | Complex array beamforming: orientation, snapshots, drift, held-out power, SINR, mismatch, regional leakage, coverage, and cost |
 | [02_field](notebooks/02_field.ipynb) | Known-input prediction and drift bounds; supplementary passive reconstruction, noise fitting, predictive scores, coverage, and cost |
-| [03_contact](notebooks/03_contact.ipynb) | Separate mechanical contact pilot: force/velocity responses, tangent-plane uncertainty, tuned controls, and resistance mismatch |
+| [03_contact](notebooks/03_contact.ipynb) | Contact walkthrough: force balance, null-space identification, causal motion prediction, response uncertainty, and independent trajectory checks |
 
 Main plots show response uncertainty, projected posterior draws, decision distributions, and the conditions behind the tracking bound. Detailed heatmaps, spatial residuals, coverage forests, and cost comparisons remain supplementary. Both display and export resolution are 200 dpi, with TeX fonts and PDF exports. Executed notebooks embed the corresponding plots. Raw tables, configurations, numerical certificates, and PDF figures are under `results/`.
 
@@ -69,4 +69,20 @@ The main notebook figures now emphasize **16-channel rank-three array prediction
 
 The `dev` branch adds the supplied implementation checkpoints: rolling likelihood memory, causal Grassmann velocity prediction, and a separate stochastic assumed-density predictor. See [development](docs/development.md) and the [checkpoint handoff](results/dev_prediction/README.md). Its certificate, tuning, independent holdouts, numerical failures and figures are isolated under `results/dev_prediction/`; historical notebooks and results are preserved.
 
-The new [contact notebook](notebooks/03_contact.ipynb) tests whether physically generated constrained motion is a useful replacement for the field example. It preserves the field study and uses an idealized maintained bilateral guide with known resistance. [Contact findings](results/contact_pilot/findings.md) record the scope decision, numerical checks, calibrated-model and mismatch outcomes. Reproduction starts with `python scripts/validate_contact.py`, followed by `python scripts/run_contact_pilot.py`; new evidence is isolated under `results/contact_pilot/`.
+The [frozen contact pilot](results/contact_pilot/findings.md) tests physically generated constrained motion on an idealized maintained bilateral guide with known resistance. Its notebook is [archived](results/contact_tracking/archive/03_contact_f09d3fe.ipynb); its results and the field study are preserved. The historical `make_contact_notebook.py` generator reconstructs that original pilot and replaces the contact notebook, so use the tracking generator below for the revised walkthrough.
+
+The revised [contact notebook](notebooks/03_contact.ipynb) connects the known null-space projection model to one mechanical trajectory before comparing independent holdouts. It separates stale-state bias, causal motion prediction, spread calibration, an explicit Bingham process filter and an equally informed recursive Gaussian. Five main figures replace the earlier dense collection of scans. Temperature and transition parameters are defined where they first appear; all plots use TeX and 200 dpi. No code from the supplied style-reference notebook is used.
+
+See the [tracking protocol](docs/contact_tracking.md), [findings](results/contact_tracking/findings.md), and [process/shape assessment](results/contact_uncertainty/findings.md). Reproduction is isolated from the historical results:
+
+```bash
+OPENBLAS_NUM_THREADS=1 python scripts/validate_contact_uncertainty.py
+OPENBLAS_NUM_THREADS=1 python scripts/run_contact_tracking.py --workers 4
+OPENBLAS_NUM_THREADS=1 python scripts/run_contact_tracking_uncertainty.py --workers 4
+OPENBLAS_NUM_THREADS=1 python scripts/run_contact_matched.py --skip-development --workers 2
+python scripts/summarize_contact_tracking.py
+python scripts/make_contact_tracking_notebook.py
+OPENBLAS_NUM_THREADS=1 python scripts/execute_notebook.py notebooks/03_contact.ipynb
+```
+
+The numerical gate runs the complete general notebook and all regression tests into a new directory before the contact notebook can be generated. Held-out selections, source hashes, report failures, raw paired results and timing scopes remain recorded. Mean matching does not imply exact density closure or calibrated physical-contact coverage. The seven-dimensional numerical feasibility check is a separate bounded follow-up; no new robot-arm or controller validation is claimed.

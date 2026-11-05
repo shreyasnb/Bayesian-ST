@@ -1,0 +1,111 @@
+{
+  "config": {
+    "schema": 1,
+    "development_seed": 7315271,
+    "test_seed": 7315272,
+    "kappas": [
+      4.0,
+      20.0
+    ],
+    "T": 24,
+    "s": 0.12,
+    "trials": 200,
+    "reference_trials": 16,
+    "report_times": [
+      8,
+      16,
+      24
+    ],
+    "warmup": 6,
+    "diagnostic_beta": 0.85,
+    "reference_subset": "First sixteen independent trajectory identifiers per kappa, fixed before final testing",
+    "law": "Uniform initial unoriented normal, exact Watson kernel, coordinate known inputs; dimensionless, not mechanical contact",
+    "uncertainty": "Clean intervals only; no Gaussian substitute for noisy mixture intervals",
+    "gaussian": "Kernel-matched angular variance; six-step process Bingham warmup, then recursive local Gaussian",
+    "shape": "Same-parameter Laplace changes reporting only; recursive Gaussian also approximates transition and measurement updates",
+    "reference_resolution": {
+      "coarse_degree": 24,
+      "fine_degree": 32,
+      "coarse_summary_order": 128,
+      "fine_summary_order": 192
+    },
+    "statistics": "Independent trajectories; query/component averages within trajectory; intervals pointwise and exploratory"
+  },
+  "sources": {
+    "lib/contact_spherical_reference.py": "292346eb229d5e34fc7bdee154bf2720b534e40fd32ada5dc6b0aaf398a25f4b",
+    "scripts/run_contact_matched.py": "633578afd21a6cd1c3b03aad8fa2ad9db9ad9eafde6f0faa3fba6ec3f6915fe1",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/contact_gaussian.py": "362722a17fef5ae9e5bdcea1011c264f372931b444796694903aa8a20ed239eb",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_study.py": "8ce2724d9804d8470604e68de280a9fe503d20bec5debc7559e3883548161df3",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7"
+  },
+  "source_hash": "d668245a394fa716835b4cec4ea7cdc15556835c87253ee16da7175f690f2cd9",
+  "gate": {
+    "status": "passed",
+    "core_hash": "e7a40b759d48dd5fda6d6a3eb826b5603e2632e566cf4fc571e865c0448aba24",
+    "tests": 135,
+    "seed": 20,
+    "tracking_repeats": 128,
+    "tracking_terminal": 480,
+    "fixed_time_violations": 0,
+    "violation_upper_95": 0.023132405251746757,
+    "sampler": {
+      "max_rhat": 1.0007026975459008,
+      "max_mean_difference": 0.002296355394263677,
+      "max_standardized_difference": 0.5906998429699951,
+      "min_ess": 1033.3186288425604,
+      "max_mcse": 0.0028725237816521706
+    },
+    "moment_error": 0.003521279454262921,
+    "dimensions": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "seconds": 327.379061345011,
+    "versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "matplotlib": "3.10.8"
+    },
+    "scope": "Finite software/numerical checks; reference and empirical outcome flags have separate scopes",
+    "uncertainty_hash": "b624b38e1310417768f4a6695bf7d23c543297f0d06525fb8abcb2dd9575bcd5",
+    "original_notebook_sha256": "57f997159cbeaa910fcd39c3e8a8751c0b38561b833812426521fed3d5ed5544",
+    "execution": "Complete general notebook and regression suite, isolated uncertainty outputs"
+  },
+  "development_only": false,
+  "development": {
+    "status": "passed",
+    "targets": 24,
+    "failures": 0,
+    "maxima": {
+      "density_tv": 1.5007719948376476e-08,
+      "mean_error": 1.674104072072805e-14,
+      "region_mass_error": 0.0006387989253094917,
+      "scalar_cdf_error": 0.0027547164777874736,
+      "quantile_max_width_relative_error": 0.012815438227652104
+    },
+    "coarse_degree": 24,
+    "fine_degree": 32,
+    "coarse_summary_order": 128,
+    "fine_summary_order": 192,
+    "tables": {
+      "development_checks.csv": "4a20b3206a8c0fb67ca1af50a17d28e2ad3f4fcfe6b9dbbf4b85a67945e28ff1"
+    },
+    "sources": {
+      "lib/contact_spherical_reference.py": "292346eb229d5e34fc7bdee154bf2720b534e40fd32ada5dc6b0aaf398a25f4b",
+      "scripts/run_contact_matched.py": "633578afd21a6cd1c3b03aad8fa2ad9db9ad9eafde6f0faa3fba6ec3f6915fe1"
+    },
+    "scope": "Empirical harmonic/sphere-grid refinement; not a rigorous error enclosure"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  }
+}

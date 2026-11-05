@@ -1,0 +1,46 @@
+{
+  "expansions": [
+    {
+      "scope": "plane",
+      "family": "rolling",
+      "winning_boundary": {
+        "prediction": "rolling",
+        "beta": 1.0,
+        "likelihood_window": 20
+      },
+      "expansion": [
+        {
+          "prediction": "rolling",
+          "beta": 1.0,
+          "likelihood_window": 32
+        },
+        {
+          "prediction": "rolling",
+          "beta": 1.0,
+          "likelihood_window": 48
+        }
+      ],
+      "rule": "One coordinatewise validation-only expansion; no second extension."
+    },
+    {
+      "scope": "curved",
+      "family": "velocity",
+      "winning_boundary": {
+        "prediction": "velocity",
+        "beta": 0.9,
+        "lag": 16,
+        "damping": 1.0
+      },
+      "expansion": [
+        {
+          "prediction": "velocity",
+          "beta": 0.9,
+          "lag": 32,
+          "damping": 1.0
+        }
+      ],
+      "rule": "One coordinatewise validation-only expansion; no second extension."
+    }
+  ],
+  "test_observations_used": false
+}

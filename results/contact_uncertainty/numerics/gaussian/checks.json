@@ -1,0 +1,66 @@
+{
+  "status": "passed",
+  "mean_hermite_reference_error": 2.734483541339364e-16,
+  "jacobian_finite_difference_error": 1.4153844762887502e-11,
+  "iid_cut_locus_mass": 1e-05,
+  "angular_cut_locus_mass": 3.712334616724941e-05,
+  "development_seed": 6245294,
+  "development_observations": 600,
+  "filter_seconds": 0.32715466199442744,
+  "timings": {
+    "prediction_seconds": 0.08356462202209514,
+    "update_seconds": 0.18542228087608237,
+    "warmup_seconds": 0.014070170989725739,
+    "score_seconds": 0.04915404901839793
+  },
+  "final_summary_numerics": {
+    "mean_numerical_ok": true,
+    "response_quantiles_ok": true,
+    "regions_numerical_ok": true,
+    "integration_numerical_ok": true,
+    "local_approximation_ok": true,
+    "numerical_ok": true,
+    "mean_resolution_error": 0.0,
+    "quantile_relative_error": 0.0010959470870699388,
+    "ball_radius_resolution_error": 0.0,
+    "angular_order": 64,
+    "previous_angular_order": 32,
+    "refinements": 1,
+    "radial_tail_bound": 1e-13,
+    "cut_locus_mass": 0.0,
+    "cut_locus_tolerance": 0.01,
+    "mean_seconds": 5.9318990679457784e-05,
+    "degenerate_covariance": false,
+    "local_ellipse_dimension": 2,
+    "interval_seconds": 0.04535191199101973,
+    "region_seconds": 0.022978877008426934,
+    "integration_seconds": 0.11162290300126188,
+    "distribution": "Exponential-map tangent Gaussian; periodic projective response integrated without clipping",
+    "hpd_kind": "Local tangent Gaussian ellipsoid; not invariant-density Grassmann HPD",
+    "unresolved_reason": "",
+    "filter_nonlocal_updates": 0
+  },
+  "nonlocal_update_count": 0,
+  "initialization": "Six coherent process-Bingham corrections from uniform law, followed by same-parameter Laplace initialization; all cost retained",
+  "process_scope": "Exact kernel angular second moment matched; exponential-Gaussian rho generally differs from the kernel rho, particularly for broad increments",
+  "region_scope": "Projective chordal balls under mapped law; local tangent-coordinate Gaussian ellipsoid is not invariant-density Grassmann HPD",
+  "broad_scope": "Cut-locus mass above1% is an explicitly unresolved local approximation; no small variance floor or physical interval clipping",
+  "timing_scope": "Prediction/update/score clocks additive. warmup_seconds is a nested startup subset and must not be added again.",
+  "posterior_scope": "Mapped moments use analytic radial Dawson integral; scalar CDFs use all periodic radial roots and exact Gaussian radial primitives with two angular resolutions",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "sources": {
+    "lib/contact_gaussian.py": "362722a17fef5ae9e5bdcea1011c264f372931b444796694903aa8a20ed239eb",
+    "scripts/check_contact_gaussian.py": "368efdb9043f09c069cc87ce8bc3070b989743a5c49c91d9526991372621b40d",
+    "lib/contact_process_prediction.py": "8832cc135eab98955014207c36e861ef1d6a0589809edf8a27c646bbb112ca88",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef"
+  },
+  "tables": {
+    "same_parameter_shape.csv": "31ea5f69e831d8ea88480983a02fe0a14be6e5ab068db4068e496e48ecefd46f",
+    "process_approximation.csv": "b12f477b9b8e14dbb1183af9da8a26a14dfd36b338564d0f2ef5aabb2e937b7a"
+  }
+}

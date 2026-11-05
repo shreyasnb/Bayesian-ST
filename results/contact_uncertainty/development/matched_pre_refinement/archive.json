@@ -1,0 +1,17 @@
+{
+  "status": "completed_pre_refinement",
+  "reason": "Later independent physical-validation target required bounded angular-order retry in inverse moment backend; old matched outcomes did not select policies or change reference budgets.",
+  "source_hash": "9a3f5c5ffe78d3bb43862c643e4c171d99f1e3601cd6e1ed3ce14fce5ec8e2aa",
+  "source_snapshots": [
+    "lib/contact_spherical_reference.py",
+    "scripts/run_contact_matched.py",
+    "lib/contact_process_prediction.py",
+    "lib/contact_gaussian.py",
+    "lib/contact_posterior.py",
+    "lib/contact_study.py",
+    "lib/models.py",
+    "lib/geometry.py"
+  ],
+  "snapshot_unavailable": [],
+  "reference_failures": 2
+}

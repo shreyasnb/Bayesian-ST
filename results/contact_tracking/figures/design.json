@@ -1,0 +1,19 @@
+{
+  "condition": "sphere_small",
+  "trial": 0,
+  "index": 179,
+  "query_index": 1,
+  "response_component": 0,
+  "posterior_cloud_seed": 47013,
+  "band_methods": [
+    "process_motion",
+    "gaussian_motion"
+  ],
+  "band_centered_on_truth_for_scoring": true,
+  "posterior_cloud_count": 256,
+  "cloud_for_illustration_only": true,
+  "scalar_intervals": "Checked continuous-CDF equal-tailed intervals",
+  "trajectory_chosen_before_test": true,
+  "dpi": 200,
+  "text_usetex": true
+}

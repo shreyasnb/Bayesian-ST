@@ -1,0 +1,485 @@
+{
+  "scope": "Post-evaluation diagnosis only, same predeclared budgets, no parameter/resolution changes",
+  "rows": [
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 1,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 2.220446049250313e-15,
+      "minimum_prediction_density": 1.0
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 2,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 2.220446049250313e-15,
+      "minimum_prediction_density": 0.023625894767894843
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 3,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 2.220446049250313e-15,
+      "minimum_prediction_density": 0.023625894767894843
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 4,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.1086244689504383e-15,
+      "minimum_prediction_density": 0.008611552617315058
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 5,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.1086244689504383e-15,
+      "minimum_prediction_density": 0.0005731149431220614
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 6,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.552713678800501e-15,
+      "minimum_prediction_density": 0.0005731149431220614
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 7,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.552713678800501e-15,
+      "minimum_prediction_density": 0.0005731149431220614
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 8,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.552713678800501e-15,
+      "minimum_prediction_density": 0.0005731149431220614
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 9,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.552713678800501e-15,
+      "minimum_prediction_density": 0.0005731149431220614
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 10,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 6.661338147750939e-15,
+      "minimum_prediction_density": 6.00640595498741e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 11,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 6.661338147750939e-15,
+      "minimum_prediction_density": 6.00640595498741e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 12,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 6.661338147750939e-15,
+      "minimum_prediction_density": 4.053760964308397e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 13,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 7.771561172376096e-15,
+      "minimum_prediction_density": 4.053760964308397e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 14,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 7.771561172376096e-15,
+      "minimum_prediction_density": 4.053760964308397e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 15,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 7.771561172376096e-15,
+      "minimum_prediction_density": 4.053760964308397e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 16,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 7.771561172376096e-15,
+      "minimum_prediction_density": 4.053760964308397e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 17,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 7.771561172376096e-15,
+      "minimum_prediction_density": 4.053760964308397e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 18,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 7.771561172376096e-15,
+      "minimum_prediction_density": 4.053760964308397e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 19,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 7.771561172376096e-15,
+      "minimum_prediction_density": 4.053760964308397e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 20,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 7.771561172376096e-15,
+      "minimum_prediction_density": 4.053760964308397e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 21,
+      "degree": 24,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 7.771561172376096e-15,
+      "minimum_prediction_density": 4.053760964308397e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 22,
+      "degree": 24,
+      "numerical_ok": false,
+      "negative_mass_max": 1.0062278413058843e-09,
+      "normalization_error_max": 7.771561172376096e-15,
+      "minimum_prediction_density": -1.9177089242703948e-07
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 23,
+      "degree": 24,
+      "numerical_ok": false,
+      "negative_mass_max": 1.0062278413058843e-09,
+      "normalization_error_max": 7.771561172376096e-15,
+      "minimum_prediction_density": -1.9177089242703948e-07
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 24,
+      "degree": 24,
+      "numerical_ok": false,
+      "negative_mass_max": 1.0062278413058843e-09,
+      "normalization_error_max": 7.771561172376096e-15,
+      "minimum_prediction_density": -1.9177089242703948e-07
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 1,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 1.3322676295501878e-15,
+      "minimum_prediction_density": 0.9999999999999944
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 2,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.1086244689504383e-15,
+      "minimum_prediction_density": 0.023898942219913833
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 3,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 7.105427357601002e-15,
+      "minimum_prediction_density": 0.023898942219913833
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 4,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 1.199040866595169e-14,
+      "minimum_prediction_density": 0.008497508531346343
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 5,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 1.199040866595169e-14,
+      "minimum_prediction_density": 0.0005863133319798021
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 6,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 1.3766765505351941e-14,
+      "minimum_prediction_density": 0.0005863133319798021
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 7,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 1.3766765505351941e-14,
+      "minimum_prediction_density": 0.0005863133319798021
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 8,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 1.3766765505351941e-14,
+      "minimum_prediction_density": 0.0005863133319798021
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 9,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 1.3766765505351941e-14,
+      "minimum_prediction_density": 0.0005863133319798021
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 10,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 2.9753977059954195e-14,
+      "minimum_prediction_density": 6.434075678617653e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 11,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.197442310920451e-14,
+      "minimum_prediction_density": 6.434075678617653e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 12,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.3084646133829665e-14,
+      "minimum_prediction_density": 3.7744727949393763e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 13,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.68594044175552e-14,
+      "minimum_prediction_density": 3.7744727949393763e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 14,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.68594044175552e-14,
+      "minimum_prediction_density": 3.7744727949393763e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 15,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.68594044175552e-14,
+      "minimum_prediction_density": 3.7744727949393763e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 16,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.68594044175552e-14,
+      "minimum_prediction_density": 3.7744727949393763e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 17,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.68594044175552e-14,
+      "minimum_prediction_density": 3.7744727949393763e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 18,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.68594044175552e-14,
+      "minimum_prediction_density": 3.7744727949393763e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 19,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.68594044175552e-14,
+      "minimum_prediction_density": 3.7744727949393763e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 20,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.68594044175552e-14,
+      "minimum_prediction_density": 3.7744727949393763e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 21,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.68594044175552e-14,
+      "minimum_prediction_density": 3.7744727949393763e-06
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 22,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.68594044175552e-14,
+      "minimum_prediction_density": 2.46527774073149e-07
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 23,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.68594044175552e-14,
+      "minimum_prediction_density": 2.46527774073149e-07
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 24,
+      "degree": 32,
+      "numerical_ok": true,
+      "negative_mass_max": 0.0,
+      "normalization_error_max": 3.68594044175552e-14,
+      "minimum_prediction_density": 2.46527774073149e-07
+    }
+  ]
+}

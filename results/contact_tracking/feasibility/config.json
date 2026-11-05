@@ -1,0 +1,24 @@
+{
+  "seed": 6245299,
+  "draws": 2048,
+  "burnin": 1024,
+  "spans": [
+    8.0,
+    200.0,
+    2000.0,
+    80000.0
+  ],
+  "series_max_order": 4096,
+  "initializations": [
+    "mode",
+    "random",
+    "opposite"
+  ],
+  "purpose": "Numerical feasibility only; no seven-joint robot or physical scaling experiment",
+  "query_norm": 0.02,
+  "input_information": "Not applicable: synthetic posterior parameter stress; no generated inputs or Fisher comparison",
+  "budget": "Fixed once; unresolved independent-chain or tail diagnostics are retained without retries",
+  "diagnostics": "ESS>=50, split Rhat<1.1, standardized mean discrepancy<5, tail batch MCSE<5% of width, between-chain tail discrepancy<15% of width; diagnostics are not accuracy guarantees",
+  "tail_scope": "One preassigned seven-dimensional query response, modal chordal distance, and HPD energy loss",
+  "process_scope": "Gr(6,7) has the existing generic rank-one complement; new 3x3 contact specialization does not apply. Gr(3,7) inverse-moment fitting is unsupported."
+}

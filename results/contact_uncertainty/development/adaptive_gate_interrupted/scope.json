@@ -1,0 +1,4 @@
+{
+  "status": "interrupted_not_a_gate",
+  "reason": "Stopped when independent audit found an objective-resolution inconsistency in the first adaptive-inverse revision. Sources were corrected before any new physical holdout. Final validation supersedes this interrupted run."
+}

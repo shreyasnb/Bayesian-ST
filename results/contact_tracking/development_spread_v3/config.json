@@ -1,0 +1,280 @@
+{
+  "config": {
+    "schema": 1,
+    "validation_seed": 6245201,
+    "test_seed": 6245202,
+    "validation_trials": 1,
+    "test_trials": 1,
+    "T": 18,
+    "dt": 0.05,
+    "d": 10.0,
+    "v0": 0.02,
+    "sigma": 0.001,
+    "main_conditions": [
+      "plane",
+      "sphere_large",
+      "sphere_small",
+      "weak"
+    ],
+    "curved_conditions": [
+      "sphere_large",
+      "sphere_small",
+      "weak"
+    ],
+    "stress_conditions": [
+      "anisotropic"
+    ],
+    "report_times": [
+      6,
+      9,
+      18
+    ],
+    "story_times": [
+      6,
+      9,
+      18
+    ],
+    "story_query": 1,
+    "story_component": 0,
+    "temperatures": [
+      1.0,
+      4.0
+    ],
+    "kappas": [
+      500.0,
+      null
+    ],
+    "temperature_expansion": [
+      0.25,
+      16.0,
+      32.0
+    ],
+    "kappa_expansion": [
+      5.0,
+      2.0,
+      50000.0,
+      200000.0
+    ],
+    "warmup": 6,
+    "alpha": 0.05,
+    "primary_condition": "sphere_small",
+    "primary_time": 18,
+    "primary_endpoint": "Terminal and time-averaged clean vector-response MSE, nine fixed queries averaged within trajectory",
+    "secondary_endpoint": "Terminal 95% clean scalar-response interval score, nine queries and three components averaged within trajectory",
+    "point_policy": "Stage1 validation-selected practical policy; no oracle enters any uncertainty control",
+    "temperature_selection": "Terminal clean interval score on validation; reporting q_(A/T) preserves raw recursion and mode; true geometry required for validation score only",
+    "process_selection": "Mean pre-correction negative log predictive observation density on validation; true sensor variance and full Gaussian constants retained",
+    "scopes": "Stationary plane separately; equally weighted large/small/one-axis force conditions share one curved policy; resistance stress never tunes",
+    "nominal_motion": "Identity or exact same G_t from the Stage1 causal velocity predictor, available through t-1; no process method learns its own favourable rotation",
+    "kernel": "Exact conditional first moment; inverse-moment fit projects predictive density approximately into Bingham family",
+    "gaussian": "Two normal-line rotation coordinates, Joseph update and coordinate transport; kernel-matched E(theta^2)/2; local approximation, not exact transition density",
+    "shrinkage": "Continuous rho in [0,1] minimizes pooled validation clean MSE for rho*mode separately for each selected method",
+    "statistics": "Trajectory-level paired Student intervals; queries/components/times are not replicates; all contrasts exploratory except predeclared small-sphere terminal process versus Gaussian MSE",
+    "timings": "Prediction includes inverse fit; reporting includes means/regions/intervals. Shared causal-forecast tracker cost is counted once per process/Gaussian method; never add nested timers twice.",
+    "sensor_variance_fixed": true,
+    "no_truth_in_estimation": true,
+    "starting_commit": "f09d3fecd3af11fff5af708c8d1d31a35db75ca4"
+  },
+  "sources": {
+    "lib/contact_tracking_uncertainty.py": "b5fab4128eec6ffa52e99140d07d47f039c7fc1e7cea8ec018f327f35e4f0785",
+    "scripts/run_contact_tracking_uncertainty.py": "722bae4ce780f8fcce39ea07d61df57acb30904759cc4a003927bc0479937b52",
+    "lib/contact_tracking.py": "a5d1fc78be70351587b22d8698a4566adeb8ec31d9077101cddeb56c861bade1",
+    "lib/contact_process_prediction.py": "8832cc135eab98955014207c36e861ef1d6a0589809edf8a27c646bbb112ca88",
+    "lib/contact_gaussian.py": "362722a17fef5ae9e5bdcea1011c264f372931b444796694903aa8a20ed239eb",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_study.py": "8ce2724d9804d8470604e68de280a9fe503d20bec5debc7559e3883548161df3",
+    "lib/contact_uncertainty_study.py": "7b3fca89182033d2bec0c0b1247a7e672569ac5ec80f8e23794c82469be8b1c4",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/prediction.py": "d204ff6c0d1cb74546ef1b893d1edfe3e34e9fe8a52201b81a9371a7dc18ebda"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "source_hash": "a0b39d10e0743bfc7ecc13496c5782481fbbf48ae7401a6163437c773aa91a94",
+  "mean_selection_hash": "f5eca7d851487606e2efe5b0a4dff3bf13c20176602004124f4ffc1bfe6d53ef",
+  "policies": {
+    "plane": {
+      "raw": {
+        "prediction": "identity",
+        "beta": 1.0
+      },
+      "motion": {
+        "prediction": "velocity",
+        "beta": 1.0,
+        "lag": 2,
+        "damping": 0.0
+      }
+    },
+    "curved": {
+      "raw": {
+        "prediction": "velocity",
+        "beta": 0.9,
+        "lag": 32,
+        "damping": 1.0
+      },
+      "motion": {
+        "prediction": "velocity",
+        "beta": 0.9,
+        "lag": 32,
+        "damping": 1.0
+      }
+    }
+  },
+  "development_only": true,
+  "workers": 2,
+  "hardware": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "cpu_count": 5,
+    "blas_threads": 1
+  },
+  "gate": null,
+  "tables": {
+    "preregistered.json": "e72200a73500e0f7f55816e8c2d317ba9a69616a61a7f519b536cccad1e41d90",
+    "selected.json": "8292ef0cf842942af9240997ddfea067bc39e65e9242a95d73b7e212792931e8",
+    "test_preregistered.json": "8499020f2a7a722579d7151bec3baad6240a1ea0ca04831e1c274e38426b4f62",
+    "validation_trials.csv": "1898dc4524e3353aaaa2fcb4e4e337b1cdef16f2752c38ed0cea2b774420cde5",
+    "tuning.csv": "746ac20c5b6fea4b77d73f7e9b68269875b1b5a151fa0975db427168b9a6bb26",
+    "selected_validation.csv": "4b4318ad8d0669f94d7b1b76793cacd38ac07755c9028069e1998ef607dd6a74",
+    "metrics.csv": "e64d72b8e903916f2d0f56aea3990068be6079a6b287b542222a3bae13b32b83",
+    "components.csv": "f87667997788c5014d0332240a678cb1fd54a5d5eff6db0f51ec62bdf79f606b",
+    "directional.csv": "042c2fabfc5ada404861128f4b91b8dd0fa00c47e8d1f55ef8e63755f89b4d27",
+    "shape_comparison.csv": "9e1912b4508193448d01dfe21cca9469eab7a0dc2e7993af4116afdf62d8ff32",
+    "story.csv": "1f215219d4bf00d81402dd6660555087e92afbfed849776e7b086691a7931e6c",
+    "summary.csv": "5df418d73a6f3ab7a5c8454d55a154d0fccc0389f0e8dc4e90047eabdd42f014",
+    "paired.csv": "1358758cec6d0ec248c415397d7218a58a5628d664673b025a177cfda1d346e3",
+    "trajectories/anisotropic_trial0.npz": "c88d870c2e47d3075097797f634a2ab37945f2fdd73efe117c6400a1c9a49a07",
+    "trajectories/plane_trial0.npz": "58635c123681abcfa616e601e205a9cf107f613655f923c0bb09e398f8b018c7",
+    "trajectories/sphere_large_trial0.npz": "b37a396558266933edb8976174368e67ca74dc5e8c502009bf19cf67bf3ae64f",
+    "trajectories/sphere_small_trial0.npz": "bf97950147ba3d6f361b0c478e9d3b396b1bd5539b35154353bc37b9ee550f92",
+    "trajectories/weak_trial0.npz": "2e55b37db3e46c85fd97d6360af006b4eec6f63a489993b2e1e77163b477b7d9"
+  },
+  "selected": [
+    {
+      "scope": "plane",
+      "method": "temperature",
+      "kind": "raw",
+      "temperature": 1.0,
+      "selection_value": 0.000728533196595015,
+      "objective": "interval_score",
+      "selection_resolved": true,
+      "rho": 0.9998302294337311
+    },
+    {
+      "scope": "plane",
+      "method": "process_identity",
+      "kind": "process",
+      "kappa": null,
+      "selection_value": -16.441414659447283,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "identity",
+      "rho": 0.9998302294337311
+    },
+    {
+      "scope": "plane",
+      "method": "process_motion",
+      "kind": "process",
+      "kappa": null,
+      "selection_value": -16.441414659447283,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "motion",
+      "rho": 0.9998302294337311
+    },
+    {
+      "scope": "plane",
+      "method": "gaussian_identity",
+      "kind": "gaussian",
+      "kappa": null,
+      "selection_value": -16.439121185030196,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "identity",
+      "rho": 0.9998301300703102
+    },
+    {
+      "scope": "plane",
+      "method": "gaussian_motion",
+      "kind": "gaussian",
+      "kappa": null,
+      "selection_value": -16.439121185030196,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "motion",
+      "rho": 0.9998301300703102
+    },
+    {
+      "scope": "curved",
+      "method": "temperature",
+      "kind": "raw",
+      "temperature": 4.0,
+      "selection_value": 0.004130926215118305,
+      "objective": "interval_score",
+      "selection_resolved": true,
+      "rho": 0.9976603090570524
+    },
+    {
+      "scope": "curved",
+      "method": "process_identity",
+      "kind": "process",
+      "kappa": 500.0,
+      "selection_value": -16.2369558588293,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "identity",
+      "rho": 0.9996081147440345
+    },
+    {
+      "scope": "curved",
+      "method": "process_motion",
+      "kind": "process",
+      "kappa": 500.0,
+      "selection_value": -16.2369558588293,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "motion",
+      "rho": 0.9996081147440345
+    },
+    {
+      "scope": "curved",
+      "method": "gaussian_identity",
+      "kind": "gaussian",
+      "kappa": 500.0,
+      "selection_value": -16.250742488667,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "identity",
+      "rho": 0.9995442178689702
+    },
+    {
+      "scope": "curved",
+      "method": "gaussian_motion",
+      "kind": "gaussian",
+      "kappa": 500.0,
+      "selection_value": -16.250742488667,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "motion",
+      "rho": 0.9995442178689702
+    }
+  ],
+  "expansion": {
+    "temperatures": [],
+    "kappas": []
+  },
+  "checks": {
+    "rows": 150,
+    "mean_failures": 0,
+    "interval_failures": 0,
+    "state_failures": 0,
+    "failures": 0,
+    "no_truth_in_estimation": true,
+    "unchanged_true_sensor_variance": true,
+    "maximum_inverse_residual": 3.6904690414729657e-10,
+    "maximum_moment_uncertainty": 3.469446951953614e-18
+  }
+}

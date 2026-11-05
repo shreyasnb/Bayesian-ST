@@ -1,0 +1,49 @@
+{
+  "repetitions": 3,
+  "condition": "sphere_small",
+  "trial": 0,
+  "test_seed": 6245202,
+  "observations": 600,
+  "methods": [
+    "raw",
+    "temperature",
+    "process_identity",
+    "process_motion",
+    "gaussian_identity",
+    "gaussian_motion"
+  ],
+  "report_times": [
+    60,
+    180,
+    600
+  ],
+  "clean_scalar_queries_per_report": 27,
+  "method_order": "Fixed cyclic shifts by two positions across three repetitions",
+  "numerical_caches": "Cleared before each timed method; rule/kernel preparation and six-observation Gaussian warmup counted",
+  "shared_motion": "Recomputed causal point tracker inside each motion method's timed boundary",
+  "intervals": "Full same-code clean quantiles and state regions at60/180/600; not sampled or reduced queries",
+  "timing_boundary": "Estimator wall/CPU include required shared tracker, allocations, predictive scores, mean calculations and full path storage. Report calls include benchmark truth scoring; numerical summary wall is retained separately.",
+  "nested_clocks": "Inverse fit is within prediction; Gaussian warmup within prediction/update; nested clocks are never added to outer totals",
+  "excluded": "Imports, fixed physical data generation, metadata/hash verification and CSV writing",
+  "realtime_scope": "Averages over600 observations and three fixed reports; not worst-case deadlines or a20Hz control guarantee",
+  "contention_scope": "Run serially only after other formal compute jobs finish; CPU/wall ratios and cgroup status retained",
+  "source_hash": "2090cc4d3beb284577ff709d730ac7fa3952eb06aeaf6bae3a42fe6f88f0d759",
+  "input_arrays_sha256": "9dd31b2fac289c42f09bce734ee7b0cd13f60d270a43580a96f350820255bee4",
+  "evidence_config_sha256": "137e697484d145021708352ce98756fa11118726d49d2219fddeda103e6150b5",
+  "selected_sha256": "0fd04c6be74a377f2dbfeff6a4e0b6e8b0094d2fae83d1ac3a13640fa3a5d90a",
+  "sources": {
+    "lib/contact_tracking_uncertainty.py": "b5fab4128eec6ffa52e99140d07d47f039c7fc1e7cea8ec018f327f35e4f0785",
+    "scripts/run_contact_tracking_uncertainty.py": "722bae4ce780f8fcce39ea07d61df57acb30904759cc4a003927bc0479937b52",
+    "lib/contact_tracking.py": "a5d1fc78be70351587b22d8698a4566adeb8ec31d9077101cddeb56c861bade1",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/contact_gaussian.py": "362722a17fef5ae9e5bdcea1011c264f372931b444796694903aa8a20ed239eb",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_study.py": "8ce2724d9804d8470604e68de280a9fe503d20bec5debc7559e3883548161df3",
+    "lib/contact_uncertainty_study.py": "7b3fca89182033d2bec0c0b1247a7e672569ac5ec80f8e23794c82469be8b1c4",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/prediction.py": "d204ff6c0d1cb74546ef1b893d1edfe3e34e9fe8a52201b81a9371a7dc18ebda",
+    "scripts/time_contact_tracking.py": "b5425edf4e1fb866917cb79dc4d951fa8da93864d3aed0784c38fd455a890595"
+  }
+}

@@ -1,0 +1,1 @@
+Short implementation smoke only (18 observations, one validation and one test trajectory per condition). It verifies execution, serialization and numerical flags; it is not evidence for physical performance or coverage. The full 600-observation study uses the separate uncertainty/ directory.

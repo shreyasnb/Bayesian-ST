@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "source_hash": "2090cc4d3beb284577ff709d730ac7fa3952eb06aeaf6bae3a42fe6f88f0d759",
+  "checks": {
+    "rows": 9600,
+    "mean_failures": 0,
+    "interval_failures": 0,
+    "state_failures": 0,
+    "failures": 0,
+    "no_truth_in_estimation": true,
+    "unchanged_true_sensor_variance": true,
+    "maximum_inverse_residual": 4.57939719478162e-09,
+    "maximum_moment_uncertainty": 4.579272239180199e-09
+  }
+}

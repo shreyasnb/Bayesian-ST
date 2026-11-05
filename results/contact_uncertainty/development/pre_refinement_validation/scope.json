@@ -1,0 +1,5 @@
+{
+  "status": "passed_for_prior_source_snapshot",
+  "reason": "Preserved before adding bounded angular refinement for an inverse-moment target found during physical validation. The general gate itself passed; it did not cover this numerical edge case.",
+  "affects": "Process inverse fit and Gaussian process warm-up; mode-only holdout does not call these backends."
+}

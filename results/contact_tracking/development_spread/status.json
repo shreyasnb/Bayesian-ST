@@ -1,0 +1,7 @@
+{
+  "status": "development_discarded",
+  "stage": "heldout",
+  "source_hash": "fd9de076054ab729e81c0376a3634513a6faa18f035e9639b588510bd59093df",
+  "reason": "Initial smoke stopped before serialization because the plant time field is times, corrected before final sources were frozen.",
+  "formal_evidence": false
+}

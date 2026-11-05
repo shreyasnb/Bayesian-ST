@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "source": "validation numerical target, not heldout",
+  "tolerance_unchanged": 1e-08,
+  "max_fit_angular_order": 256,
+  "previous_parameter": [
+    [
+      126.11994087727798,
+      -1.2670026630210125,
+      46.275939513196285
+    ],
+    [
+      -1.2670026630210125,
+      -68.38334884178512,
+      -0.2466970383671442
+    ],
+    [
+      46.275939513196285,
+      -0.2466970383671442,
+      -57.73659203549288
+    ]
+  ],
+  "checks": [
+    {
+      "kappa": 500.0,
+      "initial_fixed_budget_failure": "Contact inverse unresolved: residual=1.08e-08, backend=1.02e-08, iterations=5, angular_order=64, max_angular_order=64",
+      "passed": true,
+      "residual": 2.5157653738006047e-13,
+      "backend_error": 2.524647157997606e-13,
+      "independent_mean_error": 3.596551587564741e-13,
+      "seconds_all_attempts": 0.03465712201432325,
+      "evaluations_all_attempts": 12,
+      "message": "angular refinement 64->128; initial residual=1.07897e-08, backend=1.01753e-08; two-variable covariance Newton; doubled angular check"
+    },
+    {
+      "kappa": 2000.0,
+      "initial_fixed_budget_failure": "Contact inverse unresolved: residual=1.35e-08, backend=1.3e-08, iterations=5, angular_order=64, max_angular_order=64",
+      "passed": true,
+      "residual": 3.9651615324487466e-13,
+      "backend_error": 3.971267759084185e-13,
+      "independent_mean_error": 4.780604025972251e-13,
+      "seconds_all_attempts": 0.07609134199446999,
+      "evaluations_all_attempts": 12,
+      "message": "angular refinement 64->128; initial residual=1.34994e-08, backend=1.2974e-08; two-variable covariance Newton; doubled angular check"
+    },
+    {
+      "kappa": 10000.0,
+      "initial_fixed_budget_failure": "Contact inverse unresolved: residual=1.43e-08, backend=1.38e-08, iterations=5, angular_order=64, max_angular_order=64",
+      "passed": true,
+      "residual": 4.4420023215252513e-13,
+      "backend_error": 4.425348976155874e-13,
+      "independent_mean_error": 4.710388336508365e-13,
+      "seconds_all_attempts": 0.018611110979691148,
+      "evaluations_all_attempts": 12,
+      "message": "angular refinement 64->128; initial residual=1.42611e-08, backend=1.37636e-08; two-variable covariance Newton; doubled angular check"
+    }
+  ]
+}

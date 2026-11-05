@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "checks": {
+    "trajectories_per_kappa": 200,
+    "reference_trajectories_per_kappa": 16,
+    "reference_targets": 96,
+    "reference_failures": 2,
+    "maximum_inverse_residual": 1.986900699524341e-09,
+    "failures_by_method": {
+      "Fixed forgetting diagnostic": 0,
+      "Full-density reference": 2,
+      "Process Bingham": 0,
+      "Recursive Gaussian": 0,
+      "Same-parameter Laplace": 84
+    },
+    "density_projection": "Approximate; see shape_checks.csv for full recursive density/region/CDF errors"
+  },
+  "source_hash": "9a3f5c5ffe78d3bb43862c643e4c171d99f1e3601cd6e1ed3ce14fce5ec8e2aa"
+}

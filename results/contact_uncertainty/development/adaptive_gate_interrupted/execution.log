@@ -1,0 +1,73 @@
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+[IPKernelApp] ERROR | Exception in message handler:
+Traceback (most recent call last):
+  File "/home/agent/.local/lib/python3.12/site-packages/ipykernel/kernelbase.py", line 508, in dispatch_shell
+    await result
+  File "/home/agent/.local/lib/python3.12/site-packages/ipykernel/ipkernel.py", line 372, in execute_request
+    await super().execute_request(stream, ident, parent)
+  File "/home/agent/.local/lib/python3.12/site-packages/ipykernel/kernelbase.py", line 914, in execute_request
+    reply_msg: dict[str, t.Any] = self.session.send(  # type:ignore[assignment]
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/agent/.local/lib/python3.12/site-packages/jupyter_client/session.py", line 867, in send
+    stream.send_multipart(to_send, copy=copy)
+  File "/home/agent/.local/lib/python3.12/site-packages/zmq/sugar/socket.py", line 765, in send_multipart
+    self.send(msg, zmq.SNDMORE | flags, copy=copy, track=track)
+  File "/home/agent/.local/lib/python3.12/site-packages/zmq/sugar/socket.py", line 713, in send
+    return super().send(data, flags=flags, copy=copy, track=track)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "zmq/backend/cython/_zmq.py", line 1152, in zmq.backend.cython._zmq.Socket.send
+    def send(self, data, flags=0, copy: bint = True, track: bint = False):
+    ^^^^^^^^^^^
+  File "zmq/backend/cython/_zmq.py", line 1194, in zmq.backend.cython._zmq.Socket.send
+    _check_closed(self)
+    ^^^^^^^^^^^
+  File "zmq/backend/cython/_zmq.py", line 1339, in zmq.backend.cython._zmq._check_closed
+    raise ZMQError(ENOTSOCK)
+    ^^^^^^^^^^^
+zmq.error.ZMQError: Socket operation on non-socket
+Traceback (most recent call last):
+  File "/home/agent/.local/lib/python3.12/site-packages/nbclient/client.py", line 657, in async_setup_kernel
+    raise e
+  File "/home/agent/.local/lib/python3.12/site-packages/nbclient/client.py", line 654, in async_setup_kernel
+    yield
+  File "/home/agent/.local/lib/python3.12/site-packages/nbclient/client.py", line 709, in async_execute
+    await self.async_execute_cell(
+  File "/home/agent/.local/lib/python3.12/site-packages/nbclient/client.py", line 1009, in async_execute_cell
+    raise DeadKernelError("Kernel died") from None
+nbclient.exceptions.DeadKernelError: Kernel died
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/workspace/Bayesian-ST/scripts/validate_contact_uncertainty.py", line 45, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/workspace/Bayesian-ST/scripts/validate_contact_uncertainty.py", line 32, in main
+    resources={'metadata':{'path':str(ROOT)}}).execute()
+                                               ^^^^^^^^^
+  File "/home/agent/.local/lib/python3.12/site-packages/jupyter_core/utils/__init__.py", line 165, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/agent/.local/lib/python3.12/site-packages/nbclient/client.py", line 693, in async_execute
+    async with self.async_setup_kernel(**kwargs):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/contextlib.py", line 231, in __aexit__
+    await self.gen.athrow(value)
+  File "/home/agent/.local/lib/python3.12/site-packages/nbclient/client.py", line 660, in async_setup_kernel
+    await self._async_cleanup_kernel()
+  File "/home/agent/.local/lib/python3.12/site-packages/nbclient/client.py", line 504, in _async_cleanup_kernel
+    assert self.km is not None
+           ^^^^^^^^^^^^^^^^^^^
+AssertionError
+Task exception was never retrieved
+future: <Task finished name='Task-6' coro=<NotebookClient._async_poll_kernel_alive() done, defined at /home/agent/.local/lib/python3.12/site-packages/nbclient/client.py:821> exception=AssertionError()>
+Traceback (most recent call last):
+  File "/home/agent/.local/lib/python3.12/site-packages/nbclient/client.py", line 825, in _async_poll_kernel_alive
+    await self._async_check_alive()
+  File "/home/agent/.local/lib/python3.12/site-packages/nbclient/client.py", line 861, in _async_check_alive
+    assert self.kc is not None
+           ^^^^^^^^^^^^^^^^^^^
+AssertionError

@@ -1,0 +1,25 @@
+{
+  "error_paths": [
+    "forecast_chordal",
+    "corrected_chordal",
+    "forecast_mse",
+    "corrected_mse",
+    "forecast_gap",
+    "corrected_gap"
+  ],
+  "information_paths": [
+    "normal_step",
+    "history_rotation",
+    "history_turn",
+    "history_rms_sine",
+    "mean_observation_age",
+    "retained_weight",
+    "input_min",
+    "input_max",
+    "fisher_min",
+    "fisher_max",
+    "current_fisher_min",
+    "current_fisher_max",
+    "normal_input_alignment"
+  ]
+}

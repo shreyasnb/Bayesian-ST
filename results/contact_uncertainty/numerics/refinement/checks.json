@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "fits": 102,
+  "groups": {
+    "independent targets": 24,
+    "cross-grid initial spectra": 63,
+    "rotated axisymmetric ridges": 15
+  },
+  "unresolved_fit_indices": [],
+  "maximum_target_mean_error": 4.334081649126631e-09,
+  "maximum_independent_mean_error": 4.3340815381043285e-09,
+  "maximum_reported_residual_plus_backend": 8.668160800251457e-09,
+  "maximum_reference_refinement_difference": 2.220446049250313e-16,
+  "independent_direct_radial_mean_difference": 2.220446049250313e-16,
+  "independent_direct_radial_integrals": [
+    0.13253402624101687,
+    0.0642957988952761,
+    0.000662993467367472
+  ],
+  "direct_radial_quad": {
+    "radial_epsabs": 1e-12,
+    "radial_epsrel": 1e-12,
+    "azimuth_epsabs": 1e-11,
+    "azimuth_epsrel": 1e-11,
+    "azimuth_points": [
+      0.031415926535897934,
+      0.15707963267948966
+    ],
+    "azimuth_limit": 200
+  },
+  "seconds": 2.4151861449936405,
+  "starting_commit": "f09d3fecd3af11fff5af708c8d1d31a35db75ca4",
+  "sources": {
+    "scripts/check_contact_inverse_refinement.py": "1710b55056b841d88e3fccb24e076f79a61966c9324c9ffa210909c3ca76125d",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d"
+  },
+  "backend_sha256": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+  "inverse_tolerance": 1e-08,
+  "objective_tolerance": 5e-08,
+  "verification": "Returned fit is independently checked using unwarped azimuth references; extra backend order512 doubled to1024 verifies the same returned parameter",
+  "scope": "Numerical resolution comparisons and QUADPACK estimates, not rigorous integration enclosures, calibration theorems, or additional independent physical trajectories",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "tables": {
+    "results.csv": "18d2918eb7903733cf6463b4b912734a5fe470a102290b32342148706f20e838",
+    "reference_targets.csv": "b8edfe7a0b46eae25a88a95f64872965e31e73ca2daa1cf2b02b89a3722f4a0a",
+    "parameters.npz": "f290962131614ed8ad14f9ed596ee9eb5d1852bfb5a29b63ed922a8d69655c51"
+  }
+}

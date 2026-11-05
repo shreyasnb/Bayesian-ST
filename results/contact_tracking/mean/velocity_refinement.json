@@ -1,0 +1,25 @@
+{
+  "scan_trials": 8,
+  "selection": "Best three pooled terminal losses on validation only",
+  "specifications": [
+    {
+      "prediction": "velocity",
+      "beta": 0.9,
+      "lag": 16,
+      "damping": 1.0
+    },
+    {
+      "prediction": "velocity",
+      "beta": 0.95,
+      "lag": 16,
+      "damping": 1.0
+    },
+    {
+      "prediction": "velocity",
+      "beta": 0.95,
+      "lag": 8,
+      "damping": 1.0
+    }
+  ],
+  "test_observations_used": false
+}

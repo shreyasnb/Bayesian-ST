@@ -34,3 +34,11 @@ results/dev_prediction/**/pytest.xml
 !results/contact_pilot/**/
 results/contact_pilot/**/checkpoints/**
 results/contact_pilot/**/pytest.xml
+!results/contact_uncertainty/
+!results/contact_uncertainty/**/
+results/contact_uncertainty/**/checkpoints/**
+results/contact_uncertainty/**/pytest.xml
+!results/contact_tracking/
+!results/contact_tracking/**/
+results/contact_tracking/**/checkpoints/**
+results/contact_tracking/**/pytest.xml

@@ -1,0 +1,73 @@
+{
+  "status": "completed",
+  "started_utc": "2026-11-05T16:57:41.971262+00:00",
+  "finished_utc": "2026-11-05T16:58:07.311274+00:00",
+  "total_wall_seconds": 25.340009815990925,
+  "starting_commit": "f09d3fecd3af11fff5af708c8d1d31a35db75ca4",
+  "protocol_sha256": "32c9559f65aac9fb3601437d5b5369d8c109ff80e9c9eba03e67d784fa694f18",
+  "hardware_start": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "machine": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "visible_cpu_count": 5,
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cgroup_cpu_max": "400000 100000",
+    "cgroup_cpu_stat": "usage_usec 36879457965\nuser_usec 35316302845\nsystem_usec 1563155120\nnice_usec 0\nnr_periods 593665\nnr_throttled 50967\nthrottled_usec 4189656674\nnr_bursts 0\nburst_usec 0",
+    "load_average": [
+      0.5888671875,
+      2.630859375,
+      3.47900390625
+    ],
+    "numerical_threads": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "hardware_end": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "machine": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "visible_cpu_count": 5,
+    "cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "cgroup_cpu_max": "400000 100000",
+    "cgroup_cpu_stat": "usage_usec 36905880242\nuser_usec 35342725122\nsystem_usec 1563155120\nnice_usec 0\nnr_periods 593918\nnr_throttled 50968\nthrottled_usec 4189670319\nnr_bursts 0\nburst_usec 0",
+    "load_average": [
+      0.73046875,
+      2.4990234375,
+      3.412109375
+    ],
+    "numerical_threads": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    }
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "all_completed": true,
+  "all_reports_numerical_ok": true,
+  "minimum_estimation_cpu_wall_ratio": 0.9923729992674449,
+  "possible_estimation_contention": false,
+  "tables": {
+    "runs.csv": "291150199484f833b7a2fca1c99a2fe23b3e3127348b4233a42906813c12731c",
+    "reports.csv": "32da1ef1b2349cdd99a2f4559fd3a3bc7761c0b3760a126c46d786ccab7a1599",
+    "summary.csv": "81a12eba5637e01b4b2271bd5384482313f356d7f47f20c5c680b1306d0826ac",
+    "findings.md": "1e4478f451a192f4ba30cb2e9d7eda713ccd80d2402fa95b852f06e6648b832a"
+  }
+}

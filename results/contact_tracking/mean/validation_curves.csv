@@ -1,0 +1,75 @@
+scope,family,policy,specification,loss,se,time_average_mse,independent_trials,evaluations,complete,selected
+plane,identity,identity_b0.2,"{""beta"": 0.2, ""prediction"": ""identity""}",9.457192385480548e-07,2.5044213208451776e-07,1.3229313751952534e-06,16,16,True,False
+plane,identity,identity_b0.4,"{""beta"": 0.4, ""prediction"": ""identity""}",6.337271702567012e-07,1.623701534417567e-07,8.267168226451888e-07,16,16,True,False
+plane,identity,identity_b0.6,"{""beta"": 0.6, ""prediction"": ""identity""}",4.34879882357509e-07,1.0455226873673363e-07,4.98252169877919e-07,16,16,True,False
+plane,identity,identity_b0.7,"{""beta"": 0.7, ""prediction"": ""identity""}",3.555491805022816e-07,8.49985183270514e-08,3.591217493631693e-07,16,16,True,False
+plane,identity,identity_b0.8,"{""beta"": 0.8, ""prediction"": ""identity""}",2.686755412056962e-07,6.518386322726228e-08,2.333366241506955e-07,16,16,True,False
+plane,identity,identity_b0.85,"{""beta"": 0.85, ""prediction"": ""identity""}",2.1518167190313744e-07,5.3040341069683584e-08,1.7535229940883138e-07,16,16,True,False
+plane,identity,identity_b0.9,"{""beta"": 0.9, ""prediction"": ""identity""}",1.4968715790084696e-07,3.78813110418992e-08,1.2093545548044744e-07,16,16,True,False
+plane,identity,identity_b0.95,"{""beta"": 0.95, ""prediction"": ""identity""}",7.18067900635734e-08,1.803862648946927e-08,7.114775406724984e-08,16,16,True,False
+plane,identity,identity_b0.98,"{""beta"": 0.98, ""prediction"": ""identity""}",2.6657245646428216e-08,6.4395799224211145e-09,4.465477312600452e-08,16,16,True,False
+plane,identity,identity_b1,"{""beta"": 1.0, ""prediction"": ""identity""}",3.940106960036658e-09,1.0650643657666347e-09,3.2426297423952875e-08,16,16,True,True
+plane,rolling,rolling_W1,"{""beta"": 1.0, ""likelihood_window"": 1, ""prediction"": ""rolling""}",1.4223473437390217e-06,3.733475919630813e-07,4.821980204995952e-06,16,16,True,False
+plane,rolling,rolling_W2,"{""beta"": 1.0, ""likelihood_window"": 2, ""prediction"": ""rolling""}",5.727905590266188e-07,1.3506944283015382e-07,1.0884242135467912e-06,16,16,True,False
+plane,rolling,rolling_W3,"{""beta"": 1.0, ""likelihood_window"": 3, ""prediction"": ""rolling""}",5.077332927297066e-07,1.131686884890634e-07,6.760950415372006e-07,16,16,True,False
+plane,rolling,rolling_W5,"{""beta"": 1.0, ""likelihood_window"": 5, ""prediction"": ""rolling""}",4.499362006651354e-07,1.0974774593194526e-07,4.157170143167941e-07,16,16,True,False
+plane,rolling,rolling_W8,"{""beta"": 1.0, ""likelihood_window"": 8, ""prediction"": ""rolling""}",3.601816884003039e-07,7.380110555335393e-08,2.61832288967884e-07,16,16,True,False
+plane,rolling,rolling_W12,"{""beta"": 1.0, ""likelihood_window"": 12, ""prediction"": ""rolling""}",2.57413712324518e-07,5.1976988053118e-08,1.7849274582153446e-07,16,16,True,False
+plane,rolling,rolling_W20,"{""beta"": 1.0, ""likelihood_window"": 20, ""prediction"": ""rolling""}",1.4797748480441312e-07,3.409113126546717e-08,1.1355821119050168e-07,16,16,True,False
+curved,identity,identity_b0.2,"{""beta"": 0.2, ""prediction"": ""identity""}",8.428046034088415e-06,5.599334538224138e-06,1.0423276385769418e-05,16,48,True,False
+curved,identity,identity_b0.4,"{""beta"": 0.4, ""prediction"": ""identity""}",7.060717209964603e-06,5.4574521893025415e-06,8.027933291354435e-06,16,48,True,False
+curved,identity,identity_b0.6,"{""beta"": 0.6, ""prediction"": ""identity""}",5.662751133295741e-06,4.608917602149588e-06,5.509286341190935e-06,16,48,True,False
+curved,identity,identity_b0.7,"{""beta"": 0.7, ""prediction"": ""identity""}",4.15069778553601e-06,3.100122359359617e-06,4.372652070923158e-06,16,48,True,False
+curved,identity,identity_b0.8,"{""beta"": 0.8, ""prediction"": ""identity""}",1.4554656539044272e-06,3.9534306796263574e-07,3.5594921752053242e-06,16,48,True,True
+curved,identity,identity_b0.85,"{""beta"": 0.85, ""prediction"": ""identity""}",2.3414341256514913e-06,6.115154900198755e-07,3.890044819673868e-06,16,48,True,False
+curved,identity,identity_b0.9,"{""beta"": 0.9, ""prediction"": ""identity""}",3.816503294692071e-06,7.230487468039544e-07,5.703672641050593e-06,16,48,True,False
+curved,identity,identity_b0.95,"{""beta"": 0.95, ""prediction"": ""identity""}",9.17370588436995e-06,6.551880002264882e-07,1.4943692378717445e-05,16,48,True,False
+curved,identity,identity_b0.98,"{""beta"": 0.98, ""prediction"": ""identity""}",2.7311430600102866e-05,1.1224596185192266e-06,3.923418614111408e-05,16,48,True,False
+curved,identity,identity_b1,"{""beta"": 1.0, ""prediction"": ""identity""}",0.00011217832143645132,1.0931538680151149e-05,9.530436307238964e-05,16,48,True,False
+curved,rolling,rolling_W1,"{""beta"": 1.0, ""likelihood_window"": 1, ""prediction"": ""rolling""}",1.0219566905706105e-05,5.521010072679748e-06,1.3092160640242825e-05,16,48,True,False
+curved,rolling,rolling_W2,"{""beta"": 1.0, ""likelihood_window"": 2, ""prediction"": ""rolling""}",4.387379133848343e-06,3.1372232335326746e-06,8.973677589617155e-06,16,48,True,False
+curved,rolling,rolling_W3,"{""beta"": 1.0, ""likelihood_window"": 3, ""prediction"": ""rolling""}",5.632574585390817e-06,4.485169839269357e-06,7.210832816765328e-06,16,48,True,False
+curved,rolling,rolling_W5,"{""beta"": 1.0, ""likelihood_window"": 5, ""prediction"": ""rolling""}",3.386728104157116e-06,1.994939721664504e-06,5.3530902391462575e-06,16,48,True,False
+curved,rolling,rolling_W8,"{""beta"": 1.0, ""likelihood_window"": 8, ""prediction"": ""rolling""}",1.8683388103508685e-06,7.221977921572248e-07,4.2749941938614e-06,16,48,True,True
+curved,rolling,rolling_W12,"{""beta"": 1.0, ""likelihood_window"": 12, ""prediction"": ""rolling""}",2.6145642218210244e-06,9.984274235548747e-07,3.8738163056474816e-06,16,48,True,False
+curved,rolling,rolling_W20,"{""beta"": 1.0, ""likelihood_window"": 20, ""prediction"": ""rolling""}",4.390417330019082e-06,7.700917476489399e-07,5.344023631787708e-06,16,48,True,False
+curved,velocity,velocity_b0.6_l2_d0.25,"{""beta"": 0.6, ""damping"": 0.25, ""lag"": 2, ""prediction"": ""velocity""}",1.0235439066208871e-05,9.55178672844517e-06,5.28673382940332e-06,8,24,False,False
+curved,velocity,velocity_b0.6_l2_d0.5,"{""beta"": 0.6, ""damping"": 0.5, ""lag"": 2, ""prediction"": ""velocity""}",1.0549423563038908e-05,9.809804126879684e-06,5.977580806640341e-06,8,24,False,False
+curved,velocity,velocity_b0.6_l2_d1,"{""beta"": 0.6, ""damping"": 1.0, ""lag"": 2, ""prediction"": ""velocity""}",1.1176096165952842e-05,1.0151791483433725e-05,8.125149638758491e-06,8,24,False,False
+curved,velocity,velocity_b0.6_l8_d0.25,"{""beta"": 0.6, ""damping"": 0.25, ""lag"": 8, ""prediction"": ""velocity""}",1.0607564222951396e-05,9.937893808751421e-06,4.891087024254565e-06,8,24,False,False
+curved,velocity,velocity_b0.6_l8_d0.5,"{""beta"": 0.6, ""damping"": 0.5, ""lag"": 8, ""prediction"": ""velocity""}",1.129114759253249e-05,1.0636685859428212e-05,4.988881975395306e-06,8,24,False,False
+curved,velocity,velocity_b0.6_l8_d1,"{""beta"": 0.6, ""damping"": 1.0, ""lag"": 8, ""prediction"": ""velocity""}",1.1770180739587694e-05,1.1110383649125525e-05,5.594562210582822e-06,8,24,False,False
+curved,velocity,velocity_b0.6_l16_d0.25,"{""beta"": 0.6, ""damping"": 0.25, ""lag"": 16, ""prediction"": ""velocity""}",1.0589590652019736e-05,9.924189571481278e-06,4.734616876373867e-06,8,24,False,False
+curved,velocity,velocity_b0.6_l16_d0.5,"{""beta"": 0.6, ""damping"": 0.5, ""lag"": 16, ""prediction"": ""velocity""}",1.1303236381860216e-05,1.0656257210220932e-05,4.6755181013207475e-06,8,24,False,False
+curved,velocity,velocity_b0.6_l16_d1,"{""beta"": 0.6, ""damping"": 1.0, ""lag"": 16, ""prediction"": ""velocity""}",1.1754304894846081e-05,1.1087723464290673e-05,4.8705522059785405e-06,8,24,False,False
+curved,velocity,velocity_b0.8_l2_d0.25,"{""beta"": 0.8, ""damping"": 0.25, ""lag"": 2, ""prediction"": ""velocity""}",1.4365356904676696e-06,6.081496006368582e-07,2.3284341467977695e-06,8,24,False,False
+curved,velocity,velocity_b0.8_l2_d0.5,"{""beta"": 0.8, ""damping"": 0.5, ""lag"": 2, ""prediction"": ""velocity""}",2.3490769813693025e-06,1.6041041607593757e-06,2.285953264746591e-06,8,24,False,False
+curved,velocity,velocity_b0.8_l2_d1,"{""beta"": 0.8, ""damping"": 1.0, ""lag"": 2, ""prediction"": ""velocity""}",2.7873945999392746e-06,1.4964970933805845e-06,5.616318208786312e-06,8,24,False,False
+curved,velocity,velocity_b0.8_l8_d0.25,"{""beta"": 0.8, ""damping"": 0.25, ""lag"": 8, ""prediction"": ""velocity""}",1.4342715814570839e-06,6.268310340447764e-07,2.1280871423714737e-06,8,24,False,False
+curved,velocity,velocity_b0.8_l8_d0.5,"{""beta"": 0.8, ""damping"": 0.5, ""lag"": 8, ""prediction"": ""velocity""}",2.1320624023987713e-06,1.492659226489991e-06,1.848159604806041e-06,8,24,False,False
+curved,velocity,velocity_b0.8_l8_d1,"{""beta"": 0.8, ""damping"": 1.0, ""lag"": 8, ""prediction"": ""velocity""}",4.827690068973677e-06,4.2592107413719336e-06,2.2867021430985606e-06,8,24,False,False
+curved,velocity,velocity_b0.8_l16_d0.25,"{""beta"": 0.8, ""damping"": 0.25, ""lag"": 16, ""prediction"": ""velocity""}",1.1806098668251037e-06,3.733320587129527e-07,2.045333993718069e-06,8,24,False,False
+curved,velocity,velocity_b0.8_l16_d0.5,"{""beta"": 0.8, ""damping"": 0.5, ""lag"": 16, ""prediction"": ""velocity""}",1.3528222074563091e-06,6.291428912636218e-07,1.6701906624310404e-06,8,24,False,False
+curved,velocity,velocity_b0.8_l16_d1,"{""beta"": 0.8, ""damping"": 1.0, ""lag"": 16, ""prediction"": ""velocity""}",1.7766751116239853e-06,1.1229759533626622e-06,1.6203038374265052e-06,8,24,False,False
+curved,velocity,velocity_b0.9_l2_d0.25,"{""beta"": 0.9, ""damping"": 0.25, ""lag"": 2, ""prediction"": ""velocity""}",2.9886027601511724e-06,9.684686202085001e-07,2.5813286780302228e-06,8,24,False,False
+curved,velocity,velocity_b0.9_l2_d0.5,"{""beta"": 0.9, ""damping"": 0.5, ""lag"": 2, ""prediction"": ""velocity""}",2.38147094939708e-06,1.02380246190648e-06,1.5632846891106856e-06,8,24,False,False
+curved,velocity,velocity_b0.9_l2_d1,"{""beta"": 0.9, ""damping"": 1.0, ""lag"": 2, ""prediction"": ""velocity""}",5.524875265701406e-06,4.695737677454089e-06,3.0522435052301743e-06,8,24,False,False
+curved,velocity,velocity_b0.9_l8_d0.25,"{""beta"": 0.9, ""damping"": 0.25, ""lag"": 8, ""prediction"": ""velocity""}",2.913729753100654e-06,9.191283976769514e-07,2.481137148315674e-06,8,24,False,False
+curved,velocity,velocity_b0.9_l8_d0.5,"{""beta"": 0.9, ""damping"": 0.5, ""lag"": 8, ""prediction"": ""velocity""}",2.1668016775076457e-06,8.734504495499537e-07,1.3980545409829024e-06,8,24,False,False
+curved,velocity,velocity_b0.9_l8_d1,"{""beta"": 0.9, ""damping"": 1.0, ""lag"": 8, ""prediction"": ""velocity""}",1.924134946215126e-06,1.0063497872915558e-06,1.1659792496279063e-06,8,24,False,False
+curved,velocity,velocity_b0.9_l16_d0.25,"{""beta"": 0.9, ""damping"": 0.25, ""lag"": 16, ""prediction"": ""velocity""}",2.742460607356387e-06,8.183668651620792e-07,2.450697401870427e-06,8,24,False,False
+curved,velocity,velocity_b0.9_l16_d0.5,"{""beta"": 0.9, ""damping"": 0.5, ""lag"": 16, ""prediction"": ""velocity""}",1.7782223064009126e-06,6.699506194922e-07,1.3059561950580392e-06,8,24,False,False
+curved,velocity,velocity_b0.9_l16_d1,"{""beta"": 0.9, ""damping"": 1.0, ""lag"": 16, ""prediction"": ""velocity""}",6.669937454187344e-07,1.5255975213397164e-07,9.399978700726106e-07,16,48,True,False
+curved,velocity,velocity_b0.95_l2_d0.25,"{""beta"": 0.95, ""damping"": 0.25, ""lag"": 2, ""prediction"": ""velocity""}",6.431405844633097e-06,9.92436608410593e-07,7.221623379169446e-06,8,24,False,False
+curved,velocity,velocity_b0.95_l2_d0.5,"{""beta"": 0.95, ""damping"": 0.5, ""lag"": 2, ""prediction"": ""velocity""}",3.7137105176287725e-06,8.527575592676219e-07,3.402629594139154e-06,8,24,False,False
+curved,velocity,velocity_b0.95_l2_d1,"{""beta"": 0.95, ""damping"": 1.0, ""lag"": 2, ""prediction"": ""velocity""}",5.1021693767061145e-06,2.2212499636660564e-06,2.157996428795456e-06,8,24,False,False
+curved,velocity,velocity_b0.95_l8_d0.25,"{""beta"": 0.95, ""damping"": 0.25, ""lag"": 8, ""prediction"": ""velocity""}",6.351569093987161e-06,9.381237205963298e-07,7.127584385197081e-06,8,24,False,False
+curved,velocity,velocity_b0.95_l8_d0.5,"{""beta"": 0.95, ""damping"": 0.5, ""lag"": 8, ""prediction"": ""velocity""}",3.4647696799971908e-06,7.168727540082851e-07,3.2307890352244063e-06,8,24,False,False
+curved,velocity,velocity_b0.95_l8_d1,"{""beta"": 0.95, ""damping"": 1.0, ""lag"": 8, ""prediction"": ""velocity""}",1.150342250017129e-06,3.4861299294660506e-07,1.2183366830514156e-06,16,48,True,False
+curved,velocity,velocity_b0.95_l16_d0.25,"{""beta"": 0.95, ""damping"": 0.25, ""lag"": 16, ""prediction"": ""velocity""}",6.28195229618407e-06,8.781175808094317e-07,7.120823539746121e-06,8,24,False,False
+curved,velocity,velocity_b0.95_l16_d0.5,"{""beta"": 0.95, ""damping"": 0.5, ""lag"": 16, ""prediction"": ""velocity""}",3.2905070228999534e-06,5.940037264390266e-07,3.1305139178185344e-06,8,24,False,False
+curved,velocity,velocity_b0.95_l16_d1,"{""beta"": 0.95, ""damping"": 1.0, ""lag"": 16, ""prediction"": ""velocity""}",7.026386633402088e-07,1.1635671294899704e-07,1.2913267772885408e-06,16,48,True,False
+plane,velocity,velocity_b1_l2_d0,"{""beta"": 1.0, ""damping"": 0.0, ""lag"": 2, ""prediction"": ""velocity""}",3.940106960036658e-09,1.0650643657666347e-09,3.2426297423952875e-08,16,16,True,True
+plane,rolling,rolling_W32,"{""beta"": 1.0, ""likelihood_window"": 32, ""prediction"": ""rolling""}",7.850736896595149e-08,1.9222906763155896e-08,7.877965904994305e-08,16,16,True,False
+plane,rolling,rolling_W48,"{""beta"": 1.0, ""likelihood_window"": 48, ""prediction"": ""rolling""}",5.420501875757062e-08,1.2314854757717397e-08,6.04259566257228e-08,16,16,True,True
+curved,velocity,velocity_b0.9_l32_d1,"{""beta"": 0.9, ""damping"": 1.0, ""lag"": 32, ""prediction"": ""velocity""}",5.101998708625e-07,8.689201730697262e-08,1.031353434799841e-06,16,48,True,True

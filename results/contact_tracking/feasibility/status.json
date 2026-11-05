@@ -1,0 +1,34 @@
+{
+  "status": "completed",
+  "seconds": 7.2814696230052505,
+  "starting_commit": "f09d3fecd3af11fff5af708c8d1d31a35db75ca4",
+  "small_study_decision": "results/contact_tracking/small_study_decision.md",
+  "small_study_decision_sha256": "24783a13ca82405b16ac1bdc2696310a444bb831914920c3cfcb7e295795b873",
+  "sources": {
+    "scripts/check_contact_higher_dimension.py": "cea9fcf7b3ba46be8ea4fc3049ccdf0c8deb66a0edc6f8bbf964f8217d94ef6a",
+    "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7"
+  },
+  "tables": {
+    "means.csv": "d954dcd1ecc91c386bae6e0a7c538dc7db5d8ed592164a0a1fcef3f10d9ff76a",
+    "summary.csv": "3e29435521ec054c5b8ae65eb346809f18699c4a4a83e10fda5e657857ad1ff8",
+    "chains.csv": "23dbcacaf5f29546f6d3c40f7a01c64ac21159a64ee78831a52a5f885b465f9a",
+    "scalar_tails.csv": "d749e0dc1dab2b49496531e7d1185e88520eeb764f7c46a8133f46d70dfc47ec"
+  },
+  "unresolved_cases": [
+    "n7_k6_span8",
+    "n7_k6_span200",
+    "n7_k6_span2000",
+    "n7_k6_span80000",
+    "n7_k3_span200",
+    "n7_k3_span2000",
+    "n7_k3_span80000"
+  ],
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  }
+}

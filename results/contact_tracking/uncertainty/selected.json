@@ -1,0 +1,149 @@
+{
+  "source_hash": "2090cc4d3beb284577ff709d730ac7fa3952eb06aeaf6bae3a42fe6f88f0d759",
+  "selected": [
+    {
+      "scope": "plane",
+      "method": "temperature",
+      "kind": "raw",
+      "temperature": 1.0,
+      "selection_value": 0.00016797303670123783,
+      "objective": "interval_score",
+      "selection_resolved": true,
+      "rho": 0.99999261229945
+    },
+    {
+      "scope": "plane",
+      "method": "process_identity",
+      "kind": "process",
+      "kappa": null,
+      "selection_value": -16.45649115616142,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "identity",
+      "rho": 0.99999261229945
+    },
+    {
+      "scope": "plane",
+      "method": "process_motion",
+      "kind": "process",
+      "kappa": null,
+      "selection_value": -16.45649115616142,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "motion",
+      "rho": 0.99999261229945
+    },
+    {
+      "scope": "plane",
+      "method": "gaussian_identity",
+      "kind": "gaussian",
+      "kappa": null,
+      "selection_value": -16.45651390370311,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "identity",
+      "rho": 0.9999926111713934
+    },
+    {
+      "scope": "plane",
+      "method": "gaussian_motion",
+      "kind": "gaussian",
+      "kappa": null,
+      "selection_value": -16.45651390370311,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "motion",
+      "rho": 0.9999926111713934
+    },
+    {
+      "scope": "curved",
+      "method": "temperature",
+      "kind": "raw",
+      "temperature": 2.0,
+      "selection_value": 0.0019212144357984137,
+      "objective": "interval_score",
+      "selection_resolved": true,
+      "rho": 0.999043375242133
+    },
+    {
+      "scope": "curved",
+      "method": "process_identity",
+      "kind": "process",
+      "kappa": 500.0,
+      "selection_value": -16.169166862872054,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "identity",
+      "rho": 0.9985154127252918
+    },
+    {
+      "scope": "curved",
+      "method": "process_motion",
+      "kind": "process",
+      "kappa": 2000.0,
+      "selection_value": -16.304316678997818,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "motion",
+      "rho": 0.9990953331381499
+    },
+    {
+      "scope": "curved",
+      "method": "gaussian_identity",
+      "kind": "gaussian",
+      "kappa": 500.0,
+      "selection_value": -16.16900499437957,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "identity",
+      "rho": 0.9985525391549063
+    },
+    {
+      "scope": "curved",
+      "method": "gaussian_motion",
+      "kind": "gaussian",
+      "kappa": 2000.0,
+      "selection_value": -16.30466504109938,
+      "objective": "predictive_nll",
+      "selection_resolved": true,
+      "nominal": "motion",
+      "rho": 0.9990756504848182
+    }
+  ],
+  "expansion": {
+    "temperatures": [],
+    "kappas": []
+  },
+  "policies": {
+    "plane": {
+      "raw": {
+        "prediction": "identity",
+        "beta": 1.0
+      },
+      "motion": {
+        "prediction": "velocity",
+        "beta": 1.0,
+        "lag": 2,
+        "damping": 0.0
+      }
+    },
+    "curved": {
+      "raw": {
+        "prediction": "velocity",
+        "beta": 0.9,
+        "lag": 32,
+        "damping": 1.0
+      },
+      "motion": {
+        "prediction": "velocity",
+        "beta": 0.9,
+        "lag": 32,
+        "damping": 1.0
+      }
+    }
+  },
+  "selection_completed_before_test": true,
+  "test_observations_used": false,
+  "point_regularization": "rho minimized analytically across paired validation records for selected mean/forecast/process family",
+  "remaining_boundaries": "One extension only, not a proof of global optimality"
+}

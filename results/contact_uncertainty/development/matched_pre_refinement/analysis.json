@@ -1,0 +1,15 @@
+{
+  "source_hash": "8d53b51f1937c490f2956f14932dd258aa5f8c01a1ec5ff9a68417186b47f9c4",
+  "input_hashes": {
+    "config.json": "f960e5f4131039d12c2526fe7f2d8606ed51a8e8e553dc9e2761839a97621eb5",
+    "metrics.csv": "79fa62f1604aca66e4a23839abd2789112d5ffcea90cc19c11ae4dee6a104a5a",
+    "reference_checks.csv": "5994094105e41a3395becc79b470d5b804172466b2227af3ec8c0eb05ef5146a",
+    "shape_checks.csv": "1e614d5768daf8008e299152ffc16f71e4ef0ff8242013c92999008340a260f9"
+  },
+  "output_hash": "8e9b98edae76da267e47bed726718d561cf2640c35278c99463ab21bed6da234",
+  "experiment_source_hash": "9a3f5c5ffe78d3bb43862c643e4c171d99f1e3601cd6e1ed3ce14fce5ec8e2aa",
+  "policy": "No filtering on numerical/local-approximation success; undefined paired endpoints remain unresolved",
+  "endpoint_time": 24,
+  "confidence": 0.95,
+  "multiplicity": "Exploratory intervals without multiplicity correction; no superiority claim for unresolved calculations"
+}

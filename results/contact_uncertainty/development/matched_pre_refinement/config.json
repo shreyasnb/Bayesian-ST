@@ -1,0 +1,111 @@
+{
+  "config": {
+    "schema": 1,
+    "development_seed": 7315271,
+    "test_seed": 7315272,
+    "kappas": [
+      4.0,
+      20.0
+    ],
+    "T": 24,
+    "s": 0.12,
+    "trials": 200,
+    "reference_trials": 16,
+    "report_times": [
+      8,
+      16,
+      24
+    ],
+    "warmup": 6,
+    "diagnostic_beta": 0.85,
+    "reference_subset": "First sixteen independent trajectory identifiers per kappa, fixed before final testing",
+    "law": "Uniform initial unoriented normal, exact Watson kernel, coordinate known inputs; dimensionless, not mechanical contact",
+    "uncertainty": "Clean intervals only; no Gaussian substitute for noisy mixture intervals",
+    "gaussian": "Kernel-matched angular variance; six-step process Bingham warmup, then recursive local Gaussian",
+    "shape": "Same-parameter Laplace changes reporting only; recursive Gaussian also approximates transition and measurement updates",
+    "reference_resolution": {
+      "coarse_degree": 24,
+      "fine_degree": 32,
+      "coarse_summary_order": 128,
+      "fine_summary_order": 192
+    },
+    "statistics": "Independent trajectories; query/component averages within trajectory; intervals pointwise and exploratory"
+  },
+  "sources": {
+    "lib/contact_spherical_reference.py": "292346eb229d5e34fc7bdee154bf2720b534e40fd32ada5dc6b0aaf398a25f4b",
+    "scripts/run_contact_matched.py": "633578afd21a6cd1c3b03aad8fa2ad9db9ad9eafde6f0faa3fba6ec3f6915fe1",
+    "lib/contact_process_prediction.py": "8832cc135eab98955014207c36e861ef1d6a0589809edf8a27c646bbb112ca88",
+    "lib/contact_gaussian.py": "362722a17fef5ae9e5bdcea1011c264f372931b444796694903aa8a20ed239eb",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_study.py": "8ce2724d9804d8470604e68de280a9fe503d20bec5debc7559e3883548161df3",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7"
+  },
+  "source_hash": "9a3f5c5ffe78d3bb43862c643e4c171d99f1e3601cd6e1ed3ce14fce5ec8e2aa",
+  "tables": {
+    "metrics.csv": "79fa62f1604aca66e4a23839abd2789112d5ffcea90cc19c11ae4dee6a104a5a",
+    "query_predictions.csv": "418531492ac31799f7237c5e134edd607d1b82dc804e8c67a6150290402b9407",
+    "reference_checks.csv": "5994094105e41a3395becc79b470d5b804172466b2227af3ec8c0eb05ef5146a",
+    "shape_checks.csv": "1e614d5768daf8008e299152ffc16f71e4ef0ff8242013c92999008340a260f9",
+    "predictive_scores.csv": "728048b21fc06666ae34bd66200f774755c7c4280db35ff804fe1db38ad74d42",
+    "summary.csv": "39fbec104c8c58b398039063b8e3002b7f2c36c0e3d9933f8aea5e6c739f77e1"
+  },
+  "checks": {
+    "trajectories_per_kappa": 200,
+    "reference_trajectories_per_kappa": 16,
+    "reference_targets": 96,
+    "reference_failures": 2,
+    "maximum_inverse_residual": 1.986900699524341e-09,
+    "failures_by_method": {
+      "Fixed forgetting diagnostic": 0,
+      "Full-density reference": 2,
+      "Process Bingham": 0,
+      "Recursive Gaussian": 0,
+      "Same-parameter Laplace": 84
+    },
+    "density_projection": "Approximate; see shape_checks.csv for full recursive density/region/CDF errors"
+  },
+  "gate": {
+    "status": "passed",
+    "core_hash": "8fec00e21cd6498899a96762643b569a305f4e1c169e9a74e5aedb8b2e3a2c99",
+    "tests": 132,
+    "seed": 20,
+    "tracking_repeats": 128,
+    "tracking_terminal": 480,
+    "fixed_time_violations": 0,
+    "violation_upper_95": 0.023132405251746757,
+    "sampler": {
+      "max_rhat": 1.0007026975459008,
+      "max_mean_difference": 0.002296355394263677,
+      "max_standardized_difference": 0.5906998429699951,
+      "min_ess": 1033.3186288425604,
+      "max_mcse": 0.0028725237816521706
+    },
+    "moment_error": 0.003521279454262921,
+    "dimensions": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "seconds": 230.830548619997,
+    "versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "matplotlib": "3.10.8"
+    },
+    "scope": "Finite software/numerical checks; reference and empirical outcome flags have separate scopes",
+    "uncertainty_hash": "79178ea7ffc7f01e209aa5e4a20db5ed9c20eebf45d3858eab54af8ebf6c7389",
+    "original_notebook_sha256": "57f997159cbeaa910fcd39c3e8a8751c0b38561b833812426521fed3d5ed5544",
+    "execution": "Complete general notebook and regression suite, isolated uncertainty outputs"
+  },
+  "development_only": false,
+  "workers": 2,
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  }
+}
