@@ -1,0 +1,9 @@
+state,t,region,trajectories,covered,coverage,lower,upper,state_mass_failures,separate_scalar_tail_failures,scope
+coordinate line,8,ball_covered,16,16,1.0,0.8063923194655637,1.0000000000000002,0,10,"Known powers, fixed state, beta=1, uniform ambient-line prior; state inclusion only"
+coordinate line,8,hpd_covered,16,16,1.0,0.8063923194655637,1.0000000000000002,0,10,"Known powers, fixed state, beta=1, uniform ambient-line prior; state inclusion only"
+coordinate line,32,ball_covered,16,16,1.0,0.8063923194655637,1.0000000000000002,0,2,"Known powers, fixed state, beta=1, uniform ambient-line prior; state inclusion only"
+coordinate line,32,hpd_covered,16,16,1.0,0.8063923194655637,1.0000000000000002,0,2,"Known powers, fixed state, beta=1, uniform ambient-line prior; state inclusion only"
+ULA 20 degrees,8,ball_covered,16,15,0.9375,0.7167126242970107,0.9888806552353576,0,14,"Known powers, fixed state, beta=1, uniform ambient-line prior; state inclusion only"
+ULA 20 degrees,8,hpd_covered,16,14,0.875,0.639771727342413,0.9650225122567595,0,14,"Known powers, fixed state, beta=1, uniform ambient-line prior; state inclusion only"
+ULA 20 degrees,32,ball_covered,16,15,0.9375,0.7167126242970107,0.9888806552353576,0,10,"Known powers, fixed state, beta=1, uniform ambient-line prior; state inclusion only"
+ULA 20 degrees,32,hpd_covered,16,15,0.9375,0.7167126242970107,0.9888806552353576,0,10,"Known powers, fixed state, beta=1, uniform ambient-line prior; state inclusion only"

@@ -1,0 +1,20 @@
+{
+  "status": "completed",
+  "source_hash": "401d687e12d7503f8f0e3bb3882d7114b4b16698fc13ad0855466373a3f7d90f",
+  "checks": {
+    "seconds": 1092.7300964870083,
+    "rows": {
+      "metrics": 9408,
+      "reference_checks": 192,
+      "shape_checks": 192,
+      "scan": 60,
+      "scores": 75264
+    },
+    "mean_failures": 0,
+    "native_tail_targets": 1152,
+    "native_tail_failures": 0,
+    "reference_targets": 192,
+    "reference_failures": 4,
+    "maximum_inverse_residual": 4.998878471487869e-09
+  }
+}

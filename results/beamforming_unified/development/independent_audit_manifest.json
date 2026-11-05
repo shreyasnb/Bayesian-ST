@@ -1,0 +1,61 @@
+{
+  "status": "completed with one explicit rejection-budget limitation",
+  "development_only": true,
+  "development_seed": 81536029,
+  "formal_test_outcomes_opened": false,
+  "created_utc": "2026-11-05T21:58:08.650406+00:00",
+  "summary": {
+    "completed": true,
+    "development_seed": 81536029,
+    "checks": 31,
+    "seconds": 5.396385138999904
+  },
+  "source_hashes": {
+    "scripts/audit_beamforming_independent.py": "414a1df1f0dcf5048b51e271f6d931e3e976bdcb137c80b7f8b2cfeab664cec2",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/beamforming_theory.py": "8cf21d381a44756818177130fd097b8c6458e541c0595e46fa2577348aace486",
+    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+    "lib/beamforming_inference.py": "8fa9720a5240f235aa133b4746bcd00aee9e92418c1dd2d04ffc1f994f39b684",
+    "lib/beamforming_tracking.py": "04aeef7093a00bd0efa037e65e7e88404ef79e825b94509dbea4a0a45283ebe5",
+    "lib/beamforming_reference.py": "ea42160013d0360bed36d244af1f836e1c637bfda1430b1cf2ba6cec6c8173e4",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+    "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342",
+    "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3"
+  },
+  "raw_output": "independent_audit.jsonl",
+  "raw_output_sha256": "4141189f467ca004972f3a555f347a079430b847ab6d83dfcb13ef324bd91ca8",
+  "readme_sha256": "a1a2418b739ada02054cc105231173b383847e961366fa6a521439b0db43262c",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "thread_environment": {
+    "OPENBLAS_NUM_THREADS": 1,
+    "OMP_NUM_THREADS": 1
+  },
+  "retained_limitations": [
+    {
+      "check": "tilted_beta",
+      "n": 16,
+      "m": 7,
+      "kappa": 100.0,
+      "logZ_error": 9.947598300641403e-14,
+      "mean_error": 6.727951529228449e-14,
+      "rotation_error": 2.0072498908383805e-15,
+      "acceptance": 0.0007939453125,
+      "acceptance_theory": 0.0008012381918888124,
+      "proposals": 8192000,
+      "sampling_ok": false,
+      "retained_draws": 6504,
+      "status": "explicit budget limit"
+    }
+  ],
+  "interpretation": "Independent development mathematical checks, including exact references and finite-Monte-Carlo checks. Not a proof of Gibbs mixing, dynamic credible coverage, or statistical superiority."
+}

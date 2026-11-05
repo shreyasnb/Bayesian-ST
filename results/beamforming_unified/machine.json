@@ -1,0 +1,15 @@
+{
+  "recorded_utc": "2026-11-05T22:44:42.892475+00:00",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matplotlib": "3.10.8",
+  "logical_cpu_count": 5,
+  "affinity_cpu_count": 5,
+  "cgroup_cpu_max": "400000 100000",
+  "cgroup_memory_max": "34359738368",
+  "numerical_blas_threads": 1,
+  "scheduling": "Decision, tracking/process and inference initially used two workers each on a four-CPU quota. Inference resumed from the same verified checkpoints at four workers after other pools exited. See development/inference_paper_scheduling.json.",
+  "timing_scope": "Reported wall clocks include shared-host scheduling. CPU clocks are separate where available. Representative operation clocks, held-out generation-stage clocks and estimator clocks have different scopes; they do not establish universal complexity or dedicated latency."
+}

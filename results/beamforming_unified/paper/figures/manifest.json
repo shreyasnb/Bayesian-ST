@@ -1,0 +1,62 @@
+{
+  "profile": "paper",
+  "figure_dpi": 200,
+  "savefig_dpi": 200,
+  "text_usetex": true,
+  "display_choices": {
+    "n": 8,
+    "s": 0.2,
+    "q": 1.0,
+    "trial": 0,
+    "posterior_N": 8,
+    "parameter_N": 32
+  },
+  "captions": {
+    "01_setup": "Eight half-wavelength-spaced sensors observe zero-mean complex snapshots. The hidden spatial line and its posterior are inferred from passive covariance information; the desired steering vector enters only the beamforming decision.",
+    "02_information": "One-snapshot Fisher information is isotropic in the 14 real native-complex tangent coordinates. Small score-covariance residuals are Monte Carlo fluctuations, not population anisotropy. Physical arrival-angle information is a separate pullback along the ULA steering curve, in inverse radians squared.",
+    "03_tracking": "The physical moving-ULA record is preassigned trial zero at s=0.2. The scan uses modal covariance, not the actual beamforming weights. Noise and truth-dependent drift budgets are evaluated at predeclared fixed times; drift is unavailable to the estimator. Only valid certificates are compared with actual modal error; the valid long stationary cohort has n=4.",
+    "04_decisions": "Each scatter point is an independent training stream at N=8. Posterior expected-power optimality does not imply a win at every true covariance. The complete horizon/noise map retains losses; open circles mark paired pointwise 95% intervals containing zero. Purple boxes mark exact one-snapshot isotropization ties. The final panel is the actual weight beampattern, not covariance scanning power.",
+    "05_uncertainty": "The preassigned stationary-ULA record at N=8 shows scalar central 50/95% power quantiles and, separately, the image of one common 95% state HPD region. The scalar inclusion experiment uses three fixed angular queries, averaged within each trajectory before uncertainty across independent trajectories. At an exact interferer query the truth s+q is a support endpoint and finite continuous-posterior equal-tail intervals exclude it. These fixed-state checks are distinct from prior-predictive Bayesian calibration.",
+    "05_state_coverage": "Fixed stationary states, known powers, n=8 and independent observation streams. Markers show the fraction of true states contained in the computed 95% HPD region or posterior ball, with pointwise 95% Wilson binomial intervals. The horizontal scale is the full 0 to 1 coverage range. Eight cells are displayed without a simultaneous or all-cells calibration claim. State-region numerical flags are separate from scalar-tail flags; unresolved state calculations are marked rather than excluded.",
+    "06_prediction_and_risk": "The cloud is only the two-coordinate projection Re/Im(e2^H P v), not a full-state credible region. The directional risk curve is derived from the same saved posterior mean M using v^H(M-M^2)v; these queries are not known training inputs. Binned risk checks use independent random-query trajectories, averaging queries within each trajectory, with pointwise Student intervals across independent trajectories.",
+    "07_parameter_inference": "The joint posterior of s=b and q=a-b and data-amount intervals use preassigned stationary trial zero. The last panel averages independent streams at N=32 and scores the next observation and next true covariance before assimilation. Prospective log density and output power are different losses. A filled joint point requires parameter and joint covariance-mean diagnostics; the full-state tail diagnostic is reported separately. Horizontal bars show only 1.96 times the recorded score Monte Carlo standard error of the mean, not variability across data sets or a convergence certificate for the full mixture density.",
+    "08_process_and_cost": "The native eight-sensor complex predictive moment law is checked against independent transition draws, including real and imaginary entries. Exact first-moment matching does not imply exact predictive density: the separate two-channel CP1 reference reports density total variation against inverse-moment residual. Timings cover native numerical operations, not end-to-end comparisons against tracking algorithms. The full report includes its nested sampling and moment work and should not be added to those rows."
+  },
+  "sources": {
+    "lib/beamforming_visuals.py": "fac1f230b75dfb4300a6562dedee79bef8b013c5a1b899a0ccc259882a60c036",
+    "scripts/plot_beamforming_unified.py": "97b7bb44d6a5111b8047c38764973bb50b2dd59a95ef759069e0ed1fee018105",
+    "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392"
+  },
+  "input_manifests": {
+    "results/beamforming_unified/paper/information/config.json": "e6f9d4974ee3e7c0605a5a66a36743dec89c71e37464c6c7f35b6508de55d50c",
+    "results/beamforming_unified/paper/decisions/manifest.json": "e534f5eb9e429e2a2ea018a0304e9b2dc44b66445c9029a3163209410f9b6d4d",
+    "results/beamforming_unified/paper/tracking/manifest.json": "f00f23f0f15d79ecdb44cbd39fc28812d04f1199f0dbe55600f9e71e9b026158",
+    "results/beamforming_unified/paper/process/manifest.json": "97190284b555fb97805fcd1b81a83e1b487cd9dbcdb96219e1bfc6417469ab08",
+    "results/beamforming_unified/paper/inference/manifest.json": "d56ebdbc105ee5bf467559c98a86cad04892c0eb61384e8ad6e019a365d19a0d",
+    "results/beamforming_unified/paper/numerics/config.json": "8dad17c684a1f57c83d1052bdf0960dcb560f5bbde859bf5532671b1cb675d22"
+  },
+  "files": {
+    "01_setup.pdf": "f9c803d26baaee4734c8141e9b839924232e0f5d39db68d048d888ed43ee555c",
+    "01_setup.png": "6d526a7f527853cd4b35c5d54929a90d1a6c1afa05a74c9ec91fe02bb13b9a87",
+    "02_information.pdf": "2a3e223bc8ac75db95bc76a9f3fd50ddb04a1bd1cfa9a583d503d60522d3492a",
+    "02_information.png": "9fde67728208bacd175909f3b165c36917980137485a849e4a329b9cf77cf432",
+    "03_tracking.pdf": "896c5c8f7c36dc6fd3f90c8c3db8f6cf04bcc9ff4146b4abf91b4dbaa9c67d22",
+    "03_tracking.png": "e05ff3626f7700ad7c9a2186545c67c5c1ded1e7621f44455e9a660ba2c8ab6f",
+    "04_complete_comparison.pdf": "2a450112253e174a227a428db1dd37f7abb988ed306c140e9159b97c948ad05c",
+    "04_complete_comparison.png": "2eb6fa29913c80a1e3ef3e335999279a60569dc1673b0d7db3b9dcff4f213a86",
+    "04_decisions.pdf": "dc128ca98087ba8ea4b7ced75dd973ce8023624971b9155ba5709bfb963e2dd9",
+    "04_decisions.png": "589fed79227bf07f0774bacd306b0b79c2a25e5e04ab61941b9d0a3b7b1b64ce",
+    "05_state_coverage.pdf": "45e65bf6dd6e614d2e1b59aadf59941836e71e2e6ce91aa352b1ef945c75d0c0",
+    "05_state_coverage.png": "f71760758cdab6291faa1d2615284b5f5279114ac179b85ed700e3b1ecc68ac3",
+    "05_uncertainty.pdf": "2a987ba44561da27f43c43d4c0bc1e3d513b88441bddc59ecfcbd0a9256a33f6",
+    "05_uncertainty.png": "f39ca2917b0ef96157c2e22126780def7ad74453dd9de75aaff0e9b3ffee2bd9",
+    "06_prediction_and_risk.pdf": "ad2121405384ed1731b598ffcc7d52d0b672e4d1bff57ad07b2b9719aa6e1013",
+    "06_prediction_and_risk.png": "a110e04f4fdc3b0d9c13ca02c13a9b1d359a9efc61adc7052aa82e4f8e2f4f16",
+    "07_parameter_inference.pdf": "7cb4ce3f7bf6f49ab93d03d23d327f206562acc9409ae1482d68c93a201d08f2",
+    "07_parameter_inference.png": "5df852960c401b9d7e0328e23583f1a8c7a044d5c23f8ea4d8d0a0f810810cce",
+    "07_process_parameters.pdf": "4c3803acde0430be342ada68892e4e02f3aa610d7e27dfa2d7094bf145f4c6d7",
+    "07_process_parameters.png": "9a8d3285835b4335a20fff569c9dd3e76cbd7b7103802e49487a96e526738a98",
+    "08_process_and_cost.pdf": "cb6e2b4be319148ac3e0ba976e921ca2468a3ea4438b7adaff8ab92559407f4e",
+    "08_process_and_cost.png": "be2df35a6691f0cec006d159d9e69d64f7e7880568af1ecf9a6ac4f0f35bb69b"
+  }
+}

@@ -1,0 +1,198 @@
+{
+  "config": {
+    "name": "quick",
+    "n": 8,
+    "k": 1,
+    "q": 1.0,
+    "noises": [
+      1.0,
+      0.2
+    ],
+    "snapshots": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "validation_trials": 8,
+    "test_trials": 16,
+    "desired_angle": -0.3490658503988659,
+    "interferer_angle": 0.3490658503988659,
+    "motion_amplitude": 0.20943951023931956,
+    "motion_period": 128,
+    "base_commit": "3b47f8d7765d125fff6a1bbe8c8e9d43a8627517",
+    "model": "u=h*z+e; z~CN(0,q), e~CN(0,sI); latent z and h unavailable to estimator",
+    "prior": "Uniform on all native complex lines; not restricted to the ULA angle curve",
+    "validation_seed": 6581021,
+    "test_seed": 6581022,
+    "process_development_seed": 6581031,
+    "process_test_seed": 6581032,
+    "physical_T": 64,
+    "physical_reports": [
+      8,
+      32,
+      64
+    ],
+    "betas": [
+      1.0,
+      0.995,
+      0.98,
+      0.95,
+      0.9
+    ],
+    "long_n": 4,
+    "long_T": 4096,
+    "long_reports": [
+      256,
+      1024,
+      4096
+    ],
+    "long_trials": 16,
+    "delta": 0.05,
+    "coverage_trials": 16,
+    "coverage_snapshots": [
+      8,
+      32
+    ],
+    "coverage_s": 0.2,
+    "coverage_states": [
+      "coordinate line",
+      "ULA 20 degrees"
+    ],
+    "posterior_draws": 2048,
+    "physical_tail_trials": 4,
+    "physical_tail_times": [
+      32,
+      64
+    ],
+    "process_n": [
+      2,
+      8
+    ],
+    "process_kappas": [
+      4.0,
+      20.0
+    ],
+    "process_T": 16,
+    "process_reports": [
+      8,
+      16
+    ],
+    "process_s": 0.2,
+    "process_trials": 16,
+    "process_tail_trials": 4,
+    "reference_trials": 4,
+    "reference_development_trials": 2,
+    "reference_coarse": {
+      "degree": 24,
+      "z_order": 48,
+      "phi_order": 96
+    },
+    "reference_fine": {
+      "degree": 32,
+      "z_order": 64,
+      "phi_order": 128
+    },
+    "scan_degrees": [
+      -60.0,
+      -58.0,
+      -56.0,
+      -54.0,
+      -52.0,
+      -50.0,
+      -48.0,
+      -46.0,
+      -44.0,
+      -42.0,
+      -40.0,
+      -38.0,
+      -36.0,
+      -34.0,
+      -32.0,
+      -30.0,
+      -28.0,
+      -26.0,
+      -24.0,
+      -22.0,
+      -20.0,
+      -18.0,
+      -16.0,
+      -14.0,
+      -12.0,
+      -10.0,
+      -8.0,
+      -6.0,
+      -4.0,
+      -2.0,
+      0.0,
+      2.0,
+      4.0,
+      6.0,
+      8.0,
+      10.0,
+      12.0,
+      14.0,
+      16.0,
+      18.0,
+      20.0,
+      22.0,
+      24.0,
+      26.0,
+      28.0,
+      30.0,
+      32.0,
+      34.0,
+      36.0,
+      38.0,
+      40.0,
+      42.0,
+      44.0,
+      46.0,
+      48.0,
+      50.0,
+      52.0,
+      54.0,
+      56.0,
+      58.0,
+      60.0
+    ],
+    "heldout_snapshots": 32,
+    "selection": "Per-noise beta minimizes terminal physical-ULA modal population beamformer power on independent validation; same beta for mode, mean and isotropization.",
+    "certificate": "Known fixed powers, uniform initialization, deterministic physical path and identity transport; fixed reporting times only. Drift uses scoring truth.",
+    "tails": "Native iid posterior reports only on a predeclared first-trajectory subset; mean accuracy and tail Monte Carlo accuracy have separate flags.",
+    "process": "Known kappa matched invariant complex-line transition; physical ULA is a different deterministic path. No true kappa is assigned to ULA motion.",
+    "reference": "Full-density CP1 Bloch-sphere filter on the first predeclared trajectories. It is not an n8 array reference.",
+    "statistics": "Independent trajectories; query averages within a trajectory, and pointwise intervals at declared times. No optional stopping or success-selected references."
+  },
+  "sources": {
+    "lib/beamforming_tracking.py": "04aeef7093a00bd0efa037e65e7e88404ef79e825b94509dbea4a0a45283ebe5",
+    "lib/beamforming_reference.py": "ea42160013d0360bed36d244af1f836e1c637bfda1430b1cf2ba6cec6c8173e4",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/beamforming_theory.py": "8cf21d381a44756818177130fd097b8c6458e541c0595e46fa2577348aace486",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53",
+    "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "scripts/run_beamforming_tracking.py": "98f62cd13a1ee25f354eb426490c384f36b886e5e50015cacdfc9272b60893f6"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "source_hash": "403fcbb03d43157e57e22cd77acfa9708b9e77ffae0e3244d2172ee91ce6b649",
+  "component": "tracking",
+  "hardware": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "cpu_count": 5,
+    "blas_threads": 1,
+    "cgroup_cpu_max": "400000 100000"
+  },
+  "numerical_status": "Mean, state and scalar-tail flags are separate; missing tails are not resolved tails."
+}

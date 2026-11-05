@@ -1,0 +1,192 @@
+{
+  "config": {
+    "name": "paper",
+    "n": 8,
+    "k": 1,
+    "q": 1.0,
+    "noises": [
+      1.0,
+      0.2
+    ],
+    "snapshots": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "validation_trials": 128,
+    "test_trials": 256,
+    "desired_angle": -0.3490658503988659,
+    "interferer_angle": 0.3490658503988659,
+    "motion_amplitude": 0.20943951023931956,
+    "motion_period": 128,
+    "base_commit": "3b47f8d7765d125fff6a1bbe8c8e9d43a8627517",
+    "model": "u=h*z+e; z~CN(0,q), e~CN(0,sI); latent z and h unavailable to estimator",
+    "prior": "Uniform on all native complex lines; not restricted to the ULA angle curve",
+    "component": "inference",
+    "schema": 1,
+    "seed_data": 6571141,
+    "seed_validation": 6571040,
+    "seed_chains": 6571142,
+    "Ns": [
+      8,
+      32,
+      64
+    ],
+    "stationary_trials": 64,
+    "moving_trials": 8,
+    "moving_T": 24,
+    "chains": 3,
+    "draws": 512,
+    "burnin": 256,
+    "moving_draws": 512,
+    "moving_burnin": 256,
+    "heldout_snapshots": 128,
+    "known_full_path_trials": 2,
+    "kappa_matched": 20.0,
+    "kappa_physical_control": 50.0,
+    "fixed_s": [
+      0.1,
+      0.2,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "fixed_q": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "validation_N": 32,
+    "priors": [
+      {
+        "a_shape": 3.0,
+        "a_scale": 3.0,
+        "b_shape": 3.0,
+        "b_scale": 1.0,
+        "kappa_shape": 2.0,
+        "kappa_rate": 0.04,
+        "label": "Default"
+      },
+      {
+        "a_shape": 3.0,
+        "a_scale": 1.5,
+        "b_shape": 3.0,
+        "b_scale": 0.5,
+        "kappa_shape": 2.0,
+        "kappa_rate": 0.02,
+        "label": "Sensitivity"
+      }
+    ],
+    "primary": "Parameter-inference pilot; primary decision study has its own 256-trajectory design.",
+    "replication": "64 stationary data sets per noise and 8 moving data sets per law/noise in paper profile; queries/draws are not repetitions.",
+    "stationary_model": "One common complex-line projector, constant ordered a=s+q>b=s. Uniform state prior.",
+    "moving_model": "Full path of 24 states, uniform state 1, 23 transitions, constant powers and concentration; G=I.",
+    "moving_controls": "Known/fixed powers use single-Bingham assumed-density prediction; they are not exact full-path posterior references.",
+    "known_full_path_control": "First two matched-motion data sets per noise have a separate known-power/known-kappa full-path Gibbs control, shared across priors; no outcome selection.",
+    "physical_scope": "Deterministic ULA motion is a process mismatch; no true kappa is assigned.",
+    "prior_scope": "Joint product IG(a)IG(b) restricted to a>b, with one global normalizer. Not independent s,q priors.",
+    "prospective_scope": "Each fit uses observations through N only; the target is observation N+1 before assimilation.",
+    "decision_scope": "Weights use the joint next covariance E[bI+(a-b)P_next], not a product of marginal means.",
+    "EM_scope": "Every pre-correction prior is recorded once and frozen for EM; final correction and future prediction use fitted powers without refitting history.",
+    "mixing_scope": "Three independent starts; ESS, split Rhat and between-chain tails are finite diagnostics, not convergence proofs.",
+    "display": "Preassigned trial 0, s=.2, default prior; stationary N32 plus both moving laws. No outcome-based target selection.",
+    "excluded_raw": "Full Gibbs state arrays are regenerated from seeded scripts; compact preassigned scalar draws and all per-fit diagnostics are committed.",
+    "seed_scope": "Quick roots6571041/6571042; unopened paper roots6571141/6571142, split before paper simulation because quick exposed its original prefix. Validation root6571040 is independent."
+  },
+  "sources": {
+    "lib/beamforming_inference.py": "8fa9720a5240f235aa133b4746bcd00aee9e92418c1dd2d04ffc1f994f39b684",
+    "scripts/run_beamforming_inference.py": "fdedeb6727e69f637a0841bcd64fba313e8209abef9a8d974f74106cb73f9972",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "tests/test_beamforming_inference.py": "adcca8eec058722be0c77ab97fd49735b2cf4e27813bb61fc4ed358b2a79c17b"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "source_hash": "a482fb6bd8fc73774ebfce7d6e505fc16fe34edc1b85cd66e875eee35d23df3c",
+  "base_commit": "3b47f8d7765d125fff6a1bbe8c8e9d43a8627517",
+  "gate": {
+    "status": "passed",
+    "core_hash": "2ea66397d81e79751745b67eb44eb4c857feede273068e733b159f0e884acbc7",
+    "tests": 178,
+    "seed": 20,
+    "tracking_repeats": 128,
+    "tracking_terminal": 480,
+    "fixed_time_violations": 0,
+    "violation_upper_95": 0.023132405251746757,
+    "sampler": {
+      "max_rhat": 1.0007026975459008,
+      "max_mean_difference": 0.002296355394263677,
+      "max_standardized_difference": 0.5906998429699951,
+      "min_ess": 1033.3186288425604,
+      "max_mcse": 0.0028725237816521706
+    },
+    "moment_error": 0.003521279454262921,
+    "dimensions": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "seconds": 112.94107022302342,
+    "versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "matplotlib": "3.10.8"
+    },
+    "scope": "Complete general notebook and regression suite; empirical and numerical study flags have separate scopes",
+    "beamforming_hash": "f3892ba51503faf7653b905a471fd89a7512843f92919deca84ce3d8997c98de",
+    "sources": {
+      "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+      "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+      "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+      "lib/beamforming_inference.py": "8fa9720a5240f235aa133b4746bcd00aee9e92418c1dd2d04ffc1f994f39b684",
+      "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+      "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+      "lib/beamforming_reference.py": "ea42160013d0360bed36d244af1f836e1c637bfda1430b1cf2ba6cec6c8173e4",
+      "lib/beamforming_theory.py": "8cf21d381a44756818177130fd097b8c6458e541c0595e46fa2577348aace486",
+      "lib/beamforming_tracking.py": "04aeef7093a00bd0efa037e65e7e88404ef79e825b94509dbea4a0a45283ebe5",
+      "lib/beamforming_validation.py": "e90c6259725d79c19284d5609be788c84d2bd33717b7634f1749054a8807d280",
+      "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342",
+      "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+      "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+      "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+      "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+      "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+      "lib/reference.py": "4aa76180e4b46cafb5f29f96023f11430fabcd44d56344de610a90497de853cf",
+      "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+      "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53",
+      "scripts/run_beamforming_decisions.py": "32d8107c66dcbf5540cd35b289003ce79c7ba9a9335951f3f40d67a2d255c0f5",
+      "scripts/run_beamforming_inference.py": "fdedeb6727e69f637a0841bcd64fba313e8209abef9a8d974f74106cb73f9972",
+      "scripts/run_beamforming_tracking.py": "98f62cd13a1ee25f354eb426490c384f36b886e5e50015cacdfc9272b60893f6",
+      "scripts/validate_beamforming.py": "f03f2a70968c24d60278110945ec3087199ab564fd565567609c403eee35e885"
+    },
+    "original_notebook_sha256": "57f997159cbeaa910fcd39c3e8a8751c0b38561b833812426521fed3d5ed5544"
+  },
+  "status": "running",
+  "workers": 4,
+  "selected": {
+    "s": 0.5,
+    "q": 1.0,
+    "negative_log_score": 14.560905404946608,
+    "valid": true,
+    "evaluations": 256
+  },
+  "selection_sha256": "7775af2b9a8ca8821b1cf914dd08953b57d1ca4dbf86ede3752f9d4481f16dd5",
+  "heldout_opened_after_selection": true
+}

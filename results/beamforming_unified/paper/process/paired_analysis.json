@@ -1,0 +1,16 @@
+{
+  "script_sha256": "bc651ffde1fbc08d78735aaf2308e2a893bc7ddbecff27b7e6d7a6042a29b974",
+  "experiment_source_hash": "401d687e12d7503f8f0e3bb3882d7114b4b16698fc13ad0855466373a3f7d90f",
+  "inputs": {
+    "metrics.csv": "7804c16503a5dc3f2361a5a6920139fb7451b1926492e3917652d3f8481faa12",
+    "preregistered.json": "d9b8ffd019047a4c063a2215d2ee4368dfc3a4467cf51807a766fac5a8fa139a",
+    "scores.csv": "c9c28f5da18db627441d85c1679b9dc9e233755c4079abc48331844f5d0884cc"
+  },
+  "outputs": {
+    "paired.csv": "d350de6888ec4757018fdc964c62f3a9ef01a2998ff52f7cfdb7d82620c9d09d",
+    "risk_calibration.csv": "6ebb0f2f2011c9a8e0d89e5ff9870a298af2a0c4bffd7da5457d3f917e6c6074",
+    "predictive_by_trajectory.csv": "a3333989b684a2d7e5b82050607485c03461c3f5df6c05f0c11ba96674e6c405",
+    "predictive_paired.csv": "6245780b9a73cf2432d971b74dee4a24eb868c06c8675c731e39087529a9732a"
+  },
+  "analysis": "No omission of unresolved pairs; finite descriptive estimates retain separate numerical-resolution status. Mean and scalar flags are endpoint-specific; the full reference-density guard remains visible in reference_checks.csv and is also propagated to full-reference trajectory log-score comparisons."
+}

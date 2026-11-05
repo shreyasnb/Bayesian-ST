@@ -1,0 +1,16 @@
+operation,n,repetition,seconds,cpu_seconds,cpu_wall_ratio,scope
+Native mean,2,0,0.00015341199468821287,0.0001495679999998778,0.9749433237202383,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,2,0,0.009554516989737749,0.005561176999999917,0.5820469005364718,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,2,0,0.008887380012311041,0.008889592000000057,1.0002488908638938,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,2,0,0.003971283993450925,0.00397291700000002,1.0004112036690875,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,2,0,0.0038281710003502667,0.003829736000000139,1.000408811322621,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,8,0,0.012434208008926362,0.012433348999999927,0.9999309156702366,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,8,0,0.017143007018603384,0.01714650799999995,1.0002042221293361,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,8,0,0.03539215799537487,0.018158337000000024,0.51306102901024,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,8,0,0.047309149987995625,0.047313382000000015,1.0000894544079837,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,8,0,0.08332132999203168,0.06602025700000014,0.7923572152090455,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,16,0,0.026028241991298273,0.01415262199999967,0.5437409873756036,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,16,0,0.03951768099796027,0.022210577999999703,0.5620415327798743,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,16,0,0.099060776992701,0.07752931000000007,0.7826438713045083,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,16,0,0.09644036000827327,0.07913052099999973,0.8205125011272397,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,16,0,0.1382323159778025,0.11693684799999993,0.8459443594852145,Whole inverse fit; includes its forward means; not added to prediction twice

@@ -1,0 +1,8 @@
+{
+  "base_commit": "3b47f8d7765d125fff6a1bbe8c8e9d43a8627517",
+  "branch": "test",
+  "worktree": "/workspace/Bayesian-ST-test",
+  "old_array_notebook_sha256": "b4507b2e1b363a664db8b49ba45236d8b70c1057da051f3d1a1b05edb5f4e61e",
+  "manuscripts_available": false,
+  "guide_sha256": "7d2eaa747be6a0a5374848e7f8ed0a70f5e3862a80aa921a1616482d3f267dcb"
+}

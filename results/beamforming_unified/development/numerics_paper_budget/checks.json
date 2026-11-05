@@ -1,0 +1,11 @@
+{
+  "actual_mean_failures": 0,
+  "declared_out_of_range_targets": 2,
+  "transition_failures": 0,
+  "reference_failures": 0,
+  "risk_failures": 0,
+  "tail_report_failures": 0,
+  "inverse_failures": 0,
+  "seconds": 20.651972943014698,
+  "tail_scope": "Exact iid law, finite independent Monte Carlo quantiles; no deterministic tail-accuracy claim"
+}

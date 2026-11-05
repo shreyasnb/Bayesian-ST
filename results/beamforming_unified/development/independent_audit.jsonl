@@ -1,0 +1,32 @@
+{"check": "tilted_beta", "n": 8, "m": 3, "kappa": 0.001, "logZ_error": 1.2590482042357243e-12, "mean_error": 4.9960036108132044e-15, "rotation_error": 1.6520026002439913e-16, "acceptance": 0.9994303385416666, "acceptance_theory": 0.9993752082834726, "proposals": 12288, "sampling_ok": true, "retained_draws": 8192, "status": "verified"}
+{"check": "tilted_beta", "n": 8, "m": 3, "kappa": 60.0, "logZ_error": 1.4210854715202004e-14, "mean_error": 6.994405055138486e-15, "rotation_error": 2.197981273114618e-15, "acceptance": 0.4249844366051048, "acceptance_theory": 0.42083333333332673, "proposals": 19276, "sampling_ok": true, "retained_draws": 8192, "status": "verified"}
+{"check": "tilted_beta", "n": 8, "m": 3, "kappa": 400.0, "logZ_error": 4.547473508864641e-13, "mean_error": 3.331779296900095e-13, "rotation_error": 3.710648778461957e-14, "acceptance": 0.4932859637502258, "acceptance_theory": 0.4875937499997771, "proposals": 16607, "sampling_ok": true, "retained_draws": 8192, "status": "verified"}
+{"check": "tilted_beta", "n": 16, "m": 7, "kappa": 100.0, "logZ_error": 9.947598300641403e-14, "mean_error": 6.727951529228449e-14, "rotation_error": 2.0072498908383805e-15, "acceptance": 0.0007939453125, "acceptance_theory": 0.0008012381918888124, "proposals": 8192000, "sampling_ok": false, "retained_draws": 6504, "status": "explicit budget limit"}
+{"check": "tilted_beta", "n": 8, "m": 1, "kappa": 1000.0, "logZ_error": 0.0, "mean_error": 3.008704396734174e-14, "rotation_error": 4.2364943903379123e-16, "acceptance": 1.0, "acceptance_theory": 1.0, "proposals": 12288, "sampling_ok": true, "retained_draws": 8192, "status": "verified"}
+{"check": "native_uniform_measure", "coordinate_mean": 0.12494250176639068, "coordinate_second": 0.027569707203496066, "phase_first": 0.00494860388244089, "phase_second": 0.012831763112842723}
+{"check": "CP1_boundary_CDF", "gap": 0.01, "aligned": true, "threshold": 0.37, "CDF": 0.3688350073125478, "analytic_error": 0.0}
+{"check": "CP1_boundary_CDF", "gap": 0.01, "aligned": false, "threshold": 0.37, "CDF": 0.3711660027845914, "analytic_error": 0.0}
+{"check": "CP1_boundary_CDF", "gap": 300.0, "aligned": true, "threshold": 0.9966666666666667, "CDF": 0.36787944117144605, "analytic_error": 0.0}
+{"check": "CP1_boundary_CDF", "gap": 300.0, "aligned": false, "threshold": 0.0033333333333333335, "CDF": 0.6321205588285577, "analytic_error": 0.0}
+{"check": "CP1_boundary_CDF", "gap": 10000.0, "aligned": true, "threshold": 0.9999, "CDF": 0.36787944117148286, "analytic_error": 0.0}
+{"check": "CP1_boundary_CDF", "gap": 10000.0, "aligned": false, "threshold": 0.0001, "CDF": 0.6321205588285577, "analytic_error": 0.0}
+{"check": "CP1_boundary_CDF", "gap": 1000000.0, "aligned": true, "threshold": 0.999999, "CDF": 0.3678794411608637, "analytic_error": 0.0}
+{"check": "CP1_boundary_CDF", "gap": 1000000.0, "aligned": false, "threshold": 1e-06, "CDF": 0.6321205588285577, "analytic_error": 0.0}
+{"check": "CP1_nonaligned_boundary_CDF", "gap": 1000000.0, "threshold": 0.2295, "CDF": 0.20020109146552958, "iid_empirical": 0.203125, "iid_CDF_standard_error": 0.0022105414179885226}
+{"check": "CP1_nonaligned_boundary_CDF", "gap": 1000000.0, "threshold": 0.23, "CDF": 0.49981901194119716, "iid_empirical": 0.502044677734375, "iid_CDF_standard_error": 0.0027621356830531585}
+{"check": "CP1_nonaligned_boundary_CDF", "gap": 1000000.0, "threshold": 0.2305, "CDF": 0.7993650519266918, "iid_empirical": 0.80279541015625, "iid_CDF_standard_error": 0.0022123350657216275}
+{"check": "inverse_warm_start", "residual": 2.8403887782907345e-11, "iterations": 4}
+{"check": "complex_fisher", "coefficient": 8.333333333333334, "KL_hessian_max_error": 1.9867532863315773e-07, "MC_frobenius_relative_error": 0.023330081016119487}
+{"check": "fixed_time_bound", "eta": 0.257026939124442, "bound": 0.34594382038778715, "transported_drift": 1.4989831480333028e-16}
+{"check": "transition_mean", "kappa": 0.0, "rho": 0.0, "moment_error": 0.008882362924422297}
+{"check": "transition_mean", "kappa": 0.001, "rho": 1.388993061127164e-05, "moment_error": 0.010499586343997409}
+{"check": "transition_mean", "kappa": 4.0, "rho": 0.0759595610297814, "moment_error": 0.010428202759240236}
+{"check": "transition_mean", "kappa": 20.0, "rho": 0.6002094404676352, "moment_error": 0.007630588982106958}
+{"check": "transition_mean", "kappa": 10000.0, "rho": 0.9992, "moment_error": 0.00032996403618598105}
+{"check": "single_snapshot_isotropization", "residual": 5.201424518411711e-15}
+{"check": "ordered_prior", "normalizer": 0.896484375, "integration_error": 1.1102230246251565e-16}
+{"check": "ordered_prior", "normalizer": 0.6135353217507795, "integration_error": 1.1102230246251565e-16}
+{"check": "ordered_prior", "normalizer": 1.3022792739504801e-08, "integration_error": 8.404155023538761e-22}
+{"check": "kappa_density_normalizers", "max_error": 7.105427357601002e-15}
+{"check": "response_covariance_scope", "MC_risk": 0.14862883781157826, "analytic_risk": 0.14850860977970345, "full_covariance_difference": 0.19102888345242475}
+{"completed": true, "development_seed": 81536029, "checks": 31, "seconds": 5.396385138999904}

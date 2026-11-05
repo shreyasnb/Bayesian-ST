@@ -1,0 +1,19 @@
+{
+  "selected": [
+    {
+      "s": 1.0,
+      "beta": 0.995,
+      "validation_loss": 1.0235116991770585
+    },
+    {
+      "s": 0.2,
+      "beta": 0.98,
+      "validation_loss": 0.20846737182568206
+    }
+  ],
+  "source_hash": "cb1d2bbc6eff604c7c6562c3dc750dbe45ebecc523c8f41e9cb78ffd6ace77c7",
+  "expansion": [],
+  "selection_completed_before_test": true,
+  "test_observations_used": false,
+  "boundary_status": "One declared extension only; any remaining boundary is reported, not extended on test."
+}

@@ -1,0 +1,22 @@
+{
+  "status": "completed",
+  "source_hash": "cb1d2bbc6eff604c7c6562c3dc750dbe45ebecc523c8f41e9cb78ffd6ace77c7",
+  "checks": {
+    "seconds": 142.43705104402034,
+    "rows": {
+      "metrics": 16384,
+      "tails": 256,
+      "scan": 244,
+      "regional": 244,
+      "bounds": 4864,
+      "coverage": 1024
+    },
+    "valid_bounds": 256,
+    "bound_violations": 0,
+    "mean_failures": 0,
+    "coverage_state_failures": 0,
+    "coverage_functional_tail_failures": 0,
+    "physical_tail_failures": 0,
+    "maximum_regional_dual_gap": 1.3271323134889101e-07
+  }
+}

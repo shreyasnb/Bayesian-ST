@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "source_hash": "a3e10d6e0985c963b364f05b8dc2baf2c5273e8284538df99fcdc7b439af9384",
+  "checks": {
+    "trajectories_per_condition": 256,
+    "conditions": 3,
+    "noise_regimes": 2,
+    "metric_rows": 86016,
+    "mean_failures": 0,
+    "tail_reports": 3072,
+    "tail_unresolved": 0,
+    "one_snapshot_max_anisotropy": 5.6785420795943786e-15,
+    "maximum_unit_gain_error": 4.545902364027965e-16,
+    "maximum_expected_power_identity_error": 1.276539637884433e-15,
+    "maximum_mode_pca_error": 1.9742848536919193e-14,
+    "heldout_wall_seconds": 514.0995490729983,
+    "numerical_status": "All flags retained; iid tail checks and mean truncation have different error scopes"
+  }
+}

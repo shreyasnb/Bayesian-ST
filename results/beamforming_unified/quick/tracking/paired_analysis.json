@@ -1,0 +1,14 @@
+{
+  "script_sha256": "bc651ffde1fbc08d78735aaf2308e2a893bc7ddbecff27b7e6d7a6042a29b974",
+  "experiment_source_hash": "403fcbb03d43157e57e22cd77acfa9708b9e77ffae0e3244d2172ee91ce6b649",
+  "inputs": {
+    "metrics.csv": "369469b53f31e5b57cbdddde0b1f715667c7d308dd083fe14137401cf894e203",
+    "preregistered.json": "7f53d02dc9e69551642ca942823bcde6c1549cc4bd73cdf436c9dcf21f793f60"
+  },
+  "outputs": {
+    "paired.csv": "56161e731240dd7d45e0e118e363307320ac1be69b34f005235f454a1f978b2b",
+    "risk_calibration.csv": "e95367df90484067fbe4763b639e47a9b1bb7d2d5bcd4262df534b78e1e4ff75",
+    "state_coverage_summary.csv": "4894825fa0c281a626a60812b41fbf3434a8e344851054ae2abc221a46036d9c"
+  },
+  "analysis": "No omission of unresolved pairs; finite descriptive estimates retain separate numerical-resolution status. Mean and scalar flags are endpoint-specific; the full reference-density guard remains visible in reference_checks.csv and is also propagated to full-reference trajectory log-score comparisons."
+}

@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "executed_utc": "2026-11-05T22:48:00.906466+00:00",
+  "notebook": "notebooks/01_array.ipynb",
+  "notebook_sha256": "69713e6dda38e11b4c0ecf78e71681b43ea8003866c8bb590f84bd624334dbad",
+  "code_cells": 12,
+  "error_outputs": 0,
+  "executed_cells": 12,
+  "sources": {
+    "scripts/make_beamforming_notebook.py": "8fd48df65a90323321072ea52aba8b4dbbf457aa17a2d344af04c35cae25d173",
+    "scripts/execute_beamforming_notebook.py": "86c136c45a7463bf2edff100a0f963f2a8f5f8f15a41ab7a3aaecf24eb54bf51",
+    "lib/beamforming_visuals.py": "fac1f230b75dfb4300a6562dedee79bef8b013c5a1b899a0ccc259882a60c036",
+    "scripts/plot_beamforming_unified.py": "97b7bb44d6a5111b8047c38764973bb50b2dd59a95ef759069e0ed1fee018105"
+  },
+  "figure_manifest_sha256": "cda10691a3cd060480599769b4f1b66b6c71c80c04fd701c209d251006df4b4a",
+  "validation_sha256": "fa5e1ef39eed5b31f49c3fe227c9196d76a1836d416a5131019be95a72a9d50d",
+  "findings_sha256": "97a5ccca30775ef16c18f754f5b56acb8fd1f134084835344332151e19cb872e",
+  "main_summary_sha256": "63d6a391d4815eab843f3c9dcfd6d461a0cf3738a2eb88a942a52ceb14477a57",
+  "summary_manifest_sha256": "45da8b335baff583451368da125b2b0c6f24c10c0f36b84bd4aa4707703335df",
+  "scope": "The notebook checks source/table/figure hashes, displays the frozen paper figures and verifies selected identities. Scientific simulation is run by the component commands, separately from rendering."
+}

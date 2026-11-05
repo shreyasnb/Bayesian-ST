@@ -1,0 +1,6 @@
+n,gap,mean_error,log_normalizer_error,numerical_ok,source
+2,0.0,0.0,0.0,True,Independent Gauss-Legendre integration of native complex uniform-simplex coordinate
+2,0.01,1.3100631690576847e-14,3.3480163086352377e-16,True,Independent Gauss-Legendre integration of native complex uniform-simplex coordinate
+2,5.0,1.9984014443252818e-15,5.773159728050814e-15,True,Independent Gauss-Legendre integration of native complex uniform-simplex coordinate
+2,50.0,3.1086244689504383e-15,1.2789769243681803e-13,True,Independent Gauss-Legendre integration of native complex uniform-simplex coordinate
+2,300.0,2.7755575615628914e-15,9.094947017729282e-13,True,Independent Gauss-Legendre integration of native complex uniform-simplex coordinate

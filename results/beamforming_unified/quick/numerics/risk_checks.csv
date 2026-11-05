@@ -1,0 +1,10 @@
+n,query,analytic,empirical,mcse,numerical_ok,scope
+2,0,0.2947753859839095,0.29568771849120384,0.000420028346443616,True,"Derived P*v query, not a known-input training experiment"
+2,1,1.7436417815523981,1.744195940405318,0.00026832278181760033,True,"Derived P*v query, not a known-input training experiment"
+2,2,1.470224776630907,1.4697888352351482,0.0005554145907683622,True,"Derived P*v query, not a known-input training experiment"
+8,0,0.779836785951992,0.7803534986401903,0.0003759200622707079,True,"Derived P*v query, not a known-input training experiment"
+8,1,1.9058230535112168,1.9047488976932836,0.0012411493587452676,True,"Derived P*v query, not a known-input training experiment"
+8,2,0.77138065275524,0.7713074310726986,0.0005093662569057866,True,"Derived P*v query, not a known-input training experiment"
+16,0,1.0791766102332216,1.0793806019768366,0.00020532290091449193,True,"Derived P*v query, not a known-input training experiment"
+16,1,3.1744709481430577,3.172971309118677,0.0015004072856830517,True,"Derived P*v query, not a known-input training experiment"
+16,2,1.608181469428259,1.6078915152260613,0.0002678488830838905,True,"Derived P*v query, not a known-input training experiment"

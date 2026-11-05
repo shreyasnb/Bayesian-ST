@@ -1,0 +1,4 @@
+{
+  "status": "development_discarded",
+  "reason": "Quick run completed its jobs, then the frozen-source guard detected the numerics module changed during execution. The change was auxiliary-RNG provenance, not a scientific ranking; no final tables or paper results were released."
+}

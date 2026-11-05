@@ -1,0 +1,52 @@
+{
+  "source_hash": "2fa0a94dae4de9b2dc3af261a725fbf06a831615996507a476321507a4b3351f",
+  "sources": {
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "scripts/run_beamforming_decisions.py": "32d8107c66dcbf5540cd35b289003ce79c7ba9a9335951f3f40d67a2d255c0f5",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+    "tests/test_beamforming_decisions.py": "6417cbed38879d0be88fc6f17b07d3f5b46e8f0961f42de26438738665a7df50"
+  },
+  "tables": {
+    "preregistered.json": "547c6d2bbf963581f273bef3487c0a0a0df0f5fbe4538bea2473f725f3a9529f",
+    "selected.json": "0436850b53474c1710769cb0b81747778092a4eba47129318747c7655fae3ab9",
+    "test_preregistered.json": "14dc5be52880ccfa3a1ec9ecae65e3fcd88ce64d1bfcd726ba12bcd460301a52",
+    "validation_initial.csv": "26aaed8f35aaf72f80177c83676895bd7a346a7b4fcce75df2da75f48fcd4b49",
+    "validation_trials.csv": "3fc39f9f1fb08d2504933c27d5bba3d220ad788112db4aad724c07249c2ee11b",
+    "tuning.csv": "5e7e2854cc46b8f82c86c30abb636b9db513b68263f7a2bd19ceccd6822f36e3",
+    "metrics.csv": "5e95b5d118385f882f76e429746f741ef9f46bdaf384e1bb798823415535fc5a",
+    "shape.csv": "d0e4a26f746895c45f07f7e7f698f1d2143072cde6f838aa927560b8013fe2ee",
+    "spectra.csv": "6b8643e39319515373b93da621f0e6683f4b9bd3bd86aafe701baa1b0228ef69",
+    "coverage.csv": "710ba9c118ef42f56c3ade4cb0a9f775a185da664b95fcd496dc7aaea9cbedea",
+    "power_components.csv": "52957769c1145334b720e1cc9448674da7d5c7cbeb16f72a0e73f83763e34241",
+    "scans.csv": "6a92d8edd87d4f2b7a31c0fd6aa134042d0177fbd426fdab9e971baefb473960",
+    "weight_beampattern.csv": "6a0d81dab33049c6743cd526e42d506b3ed8fbc9f0818145c80b1f0c2e3285ec",
+    "projection_cloud.csv": "11e62968a22ba917a60bc8855cc52af8e713339e8571676c8e7df737b069069d",
+    "summary.csv": "f9f95f9b6e7209ad7b7a5c28e4392264acb6c7dcb121edfd5692dbf5b97f82be",
+    "coverage_summary.csv": "953ac82cd29a60b451dcc02768a9da368cd5fb4eff72e8f50cb00afc7a21df97",
+    "paired.csv": "06cbe883cf269abb88a3fcc912e20c175c7b23475fe2cbb961534eda43afac35",
+    "risk.csv": "f00bf6c0874b0a23edb5178cf14117c4fbb2a44f449323eba9574261d60c1618",
+    "story.npz": "6d3c14041cbb50980e7935d58e147b2f47dc3f31e7b7375c6f51a0a25b8af137"
+  },
+  "checks": {
+    "trajectories_per_condition": 16,
+    "conditions": 3,
+    "noise_regimes": 2,
+    "metric_rows": 5376,
+    "mean_failures": 0,
+    "tail_reports": 192,
+    "tail_unresolved": 0,
+    "one_snapshot_max_anisotropy": 1.5228779096091541e-15,
+    "maximum_unit_gain_error": 4.454424009010536e-16,
+    "maximum_expected_power_identity_error": 1.3600232051658168e-15,
+    "maximum_mode_pca_error": 6.63525515258969e-15,
+    "heldout_wall_seconds": 21.177288225007942,
+    "numerical_status": "All flags retained; iid tail checks and mean truncation have different error scopes"
+  }
+}

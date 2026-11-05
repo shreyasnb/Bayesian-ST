@@ -1,0 +1,16 @@
+{
+  "selected": {
+    "s": 0.5,
+    "q": 1.0,
+    "negative_log_score": 14.477371131520467,
+    "valid": true,
+    "evaluations": 16
+  },
+  "source_hash": "74e30c984ac63ad059bd4aa2242a38d1f3bde8037116f77efcbff3a4c3caa061",
+  "expansion": {
+    "s": [],
+    "q": []
+  },
+  "selected_before_test": true,
+  "criterion": "Mean next-observation negative log predictive density at prefix 32, equally weighted true-noise conditions"
+}

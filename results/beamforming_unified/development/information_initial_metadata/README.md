@@ -1,0 +1,1 @@
+The numerical checks passed. This snapshot precedes adding the complete source/table manifest to config.json for the shared component verifier. Numerical methods, seeds, and budgets are unchanged. The quick profile was rerun after the metadata-only correction.

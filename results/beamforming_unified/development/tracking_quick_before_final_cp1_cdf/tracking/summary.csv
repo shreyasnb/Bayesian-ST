@@ -1,0 +1,49 @@
+s,t,policy,method,population_power
+0.2,8,All history,Matched isotropization,0.21426300194356743
+0.2,8,All history,Mode,0.21880375185736756
+0.2,8,All history,Oracle,0.20000015273991145
+0.2,8,All history,Posterior mean,0.21594430618721633
+0.2,8,Selected memory,Matched isotropization,0.21506195285891067
+0.2,8,Selected memory,Mode,0.2253627075539192
+0.2,8,Selected memory,Oracle,0.20000015273991145
+0.2,8,Selected memory,Posterior mean,0.21600100915288928
+0.2,32,All history,Matched isotropization,0.21100149659363793
+0.2,32,All history,Mode,0.21112908400000138
+0.2,32,All history,Oracle,0.2027454085759522
+0.2,32,All history,Posterior mean,0.21071216083169614
+0.2,32,Selected memory,Matched isotropization,0.2110511403203125
+0.2,32,Selected memory,Mode,0.21244339543386137
+0.2,32,Selected memory,Oracle,0.2027454085759522
+0.2,32,Selected memory,Posterior mean,0.21109471655749332
+0.2,64,All history,Matched isotropization,0.22140909459781907
+0.2,64,All history,Mode,0.22160089326712182
+0.2,64,All history,Oracle,0.20141059722017823
+0.2,64,All history,Posterior mean,0.2212434228218771
+0.2,64,Selected memory,Matched isotropization,0.2150155678447853
+0.2,64,Selected memory,Mode,0.21596352330797666
+0.2,64,Selected memory,Oracle,0.20141059722017823
+0.2,64,Selected memory,Posterior mean,0.2146496860523919
+1.0,8,All history,Matched isotropization,1.0047192124937214
+1.0,8,All history,Mode,1.0390251736956648
+1.0,8,All history,Oracle,1.0000004582195943
+1.0,8,All history,Posterior mean,1.00508509918335
+1.0,8,Selected memory,Matched isotropization,1.0035913209945753
+1.0,8,Selected memory,Mode,1.0428651083033897
+1.0,8,Selected memory,Oracle,1.0000004582195943
+1.0,8,Selected memory,Posterior mean,1.0039092447117852
+1.0,32,All history,Matched isotropization,1.0249766141332506
+1.0,32,All history,Mode,1.0393509843940825
+1.0,32,All history,Oracle,1.0081912490769294
+1.0,32,All history,Posterior mean,1.0250017489379606
+1.0,32,Selected memory,Matched isotropization,1.0196521480541754
+1.0,32,Selected memory,Mode,1.039720516271348
+1.0,32,Selected memory,Oracle,1.0081912490769294
+1.0,32,Selected memory,Posterior mean,1.0197578567087486
+1.0,64,All history,Matched isotropization,1.0226020978185961
+1.0,64,All history,Mode,1.0287147553493776
+1.0,64,All history,Oracle,1.0042198865400886
+1.0,64,All history,Posterior mean,1.022644233786338
+1.0,64,Selected memory,Matched isotropization,1.0152598166018802
+1.0,64,Selected memory,Mode,1.03429581879783
+1.0,64,Selected memory,Oracle,1.0042198865400886
+1.0,64,Selected memory,Posterior mean,1.0158742885270053

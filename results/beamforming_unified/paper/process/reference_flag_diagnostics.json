@@ -1,0 +1,155 @@
+{
+  "scope": "Diagnostic replay of the same four flagged predeclared targets with identical frozen budgets. No new cohort, filtering, refitting or accuracy repair.",
+  "budgets": {
+    "coarse": {
+      "degree": 24,
+      "z_order": 48,
+      "phi_order": 96
+    },
+    "fine": {
+      "degree": 32,
+      "z_order": 64,
+      "phi_order": 128
+    }
+  },
+  "rows": [
+    {
+      "kappa": 4.0,
+      "trial": 6,
+      "t": 16,
+      "coarse": {
+        "numerical_ok": false,
+        "negative_mass": 4.804659159101603e-09,
+        "maximum_negative_mass": 0.0,
+        "minimum_density": 0.09427239274065723,
+        "normalization_error": 1.7763568394002505e-15,
+        "hpd_mass": 0.9500529387978658,
+        "hpd_mass_error": 5.293879786583133e-05,
+        "summary_seconds": 0.126629543985473,
+        "hpd_tie_kind": "Continuous density threshold",
+        "density_representation": "All-degree real spherical harmonics on the complex-line Bloch sphere",
+        "ball_center": "Leading eigenspace of the full-density mean; not claimed as the density mode"
+      },
+      "fine": {
+        "numerical_ok": true,
+        "negative_mass": 0.0,
+        "maximum_negative_mass": 0.0,
+        "minimum_density": 0.09417086827296745,
+        "normalization_error": 7.771561172376096e-16,
+        "hpd_mass": 0.9500488741791613,
+        "hpd_mass_error": 4.887417916132897e-05,
+        "summary_seconds": 0.18691325699910522,
+        "hpd_tie_kind": "Continuous density threshold",
+        "density_representation": "All-degree real spherical harmonics on the complex-line Bloch sphere",
+        "ball_center": "Leading eigenspace of the full-density mean; not claimed as the density mode"
+      }
+    },
+    {
+      "kappa": 20.0,
+      "trial": 8,
+      "t": 24,
+      "coarse": {
+        "numerical_ok": false,
+        "negative_mass": 1.6751867437780334e-08,
+        "maximum_negative_mass": 0.0,
+        "minimum_density": 5.813155187752846e-07,
+        "normalization_error": 1.4432899320127035e-14,
+        "hpd_mass": 0.9498737935003223,
+        "hpd_mass_error": 0.00012620649967765019,
+        "summary_seconds": 0.10551029400085099,
+        "hpd_tie_kind": "Continuous density threshold",
+        "density_representation": "All-degree real spherical harmonics on the complex-line Bloch sphere",
+        "ball_center": "Leading eigenspace of the full-density mean; not claimed as the density mode"
+      },
+      "fine": {
+        "numerical_ok": true,
+        "negative_mass": 8.288627451339763e-14,
+        "maximum_negative_mass": 0.0,
+        "minimum_density": 5.784872123509328e-07,
+        "normalization_error": 4.773959005888173e-15,
+        "hpd_mass": 0.9500193758138219,
+        "hpd_mass_error": 1.9375813821942423e-05,
+        "summary_seconds": 0.2177164450113196,
+        "hpd_tie_kind": "Continuous density threshold",
+        "density_representation": "All-degree real spherical harmonics on the complex-line Bloch sphere",
+        "ball_center": "Leading eigenspace of the full-density mean; not claimed as the density mode"
+      }
+    },
+    {
+      "kappa": 20.0,
+      "trial": 9,
+      "t": 16,
+      "coarse": {
+        "numerical_ok": false,
+        "negative_mass": 8.36712101326217e-06,
+        "maximum_negative_mass": 0.0,
+        "minimum_density": 4.3015838907270895e-07,
+        "normalization_error": 8.43769498715119e-15,
+        "hpd_mass": 0.9498762306596291,
+        "hpd_mass_error": 0.00012376934037083842,
+        "summary_seconds": 0.12967795098666102,
+        "hpd_tie_kind": "Continuous density threshold",
+        "density_representation": "All-degree real spherical harmonics on the complex-line Bloch sphere",
+        "ball_center": "Leading eigenspace of the full-density mean; not claimed as the density mode"
+      },
+      "fine": {
+        "numerical_ok": false,
+        "negative_mass": 2.2810464309713058e-09,
+        "maximum_negative_mass": 0.0,
+        "minimum_density": 4.313080346230261e-07,
+        "normalization_error": 2.886579864025407e-15,
+        "hpd_mass": 0.9501846998596021,
+        "hpd_mass_error": 0.0001846998596021221,
+        "summary_seconds": 0.23668585601262748,
+        "hpd_tie_kind": "Continuous density threshold",
+        "density_representation": "All-degree real spherical harmonics on the complex-line Bloch sphere",
+        "ball_center": "Leading eigenspace of the full-density mean; not claimed as the density mode"
+      }
+    },
+    {
+      "kappa": 20.0,
+      "trial": 10,
+      "t": 24,
+      "coarse": {
+        "numerical_ok": false,
+        "negative_mass": 1.822599216442862e-09,
+        "maximum_negative_mass": 0.0,
+        "minimum_density": 3.419797069514916e-07,
+        "normalization_error": 5.329070518200751e-15,
+        "hpd_mass": 0.9499225265888498,
+        "hpd_mass_error": 7.747341115016404e-05,
+        "summary_seconds": 0.14905056200223044,
+        "hpd_tie_kind": "Continuous density threshold",
+        "density_representation": "All-degree real spherical harmonics on the complex-line Bloch sphere",
+        "ball_center": "Leading eigenspace of the full-density mean; not claimed as the density mode"
+      },
+      "fine": {
+        "numerical_ok": true,
+        "negative_mass": 7.808082253195627e-17,
+        "maximum_negative_mass": 0.0,
+        "minimum_density": 3.4151718750626504e-07,
+        "normalization_error": 1.7763568394002505e-15,
+        "hpd_mass": 0.9499685595228814,
+        "hpd_mass_error": 3.144047711856057e-05,
+        "summary_seconds": 0.22887223900761455,
+        "hpd_tie_kind": "Continuous density threshold",
+        "density_representation": "All-degree real spherical harmonics on the complex-line Bloch sphere",
+        "ball_center": "Leading eigenspace of the full-density mean; not claimed as the density mode"
+      }
+    }
+  ],
+  "sources": {
+    "lib/beamforming_tracking.py": "04aeef7093a00bd0efa037e65e7e88404ef79e825b94509dbea4a0a45283ebe5",
+    "lib/beamforming_reference.py": "ea42160013d0360bed36d244af1f836e1c637bfda1430b1cf2ba6cec6c8173e4",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/beamforming_theory.py": "8cf21d381a44756818177130fd097b8c6458e541c0595e46fa2577348aace486",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53",
+    "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "scripts/run_beamforming_tracking.py": "98f62cd13a1ee25f354eb426490c384f36b886e5e50015cacdfc9272b60893f6"
+  }
+}

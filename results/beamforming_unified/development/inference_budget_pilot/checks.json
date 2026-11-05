@@ -1,0 +1,156 @@
+{
+  "seed_data": 6571099,
+  "seed_chains": 6571199,
+  "draws": 512,
+  "burnin": 256,
+  "chains": 3,
+  "scope": "Development-only numerical mixing/runtime targets; no paper outcome used and no decision performance inspected",
+  "results": [
+    {
+      "law": "stationary",
+      "s": 0.2,
+      "seconds": 1.4789471279946156,
+      "completed": true,
+      "mixing_ok": false,
+      "min_chain_ess": 363.51049205434396,
+      "max_rhat": 1.002218637836357,
+      "max_between_chain_tail_fraction": 0.29088591905315087,
+      "scalar_diagnostics": [
+        {
+          "quantity": "a",
+          "min_chain_ess": 411.1846885724529,
+          "rhat": 0.9984820431864763,
+          "chain_mean_mcse": 0.003085993683157275,
+          "tail_difference_fraction": 0.043091460410218566
+        },
+        {
+          "quantity": "b",
+          "min_chain_ess": 416.71001544230705,
+          "rhat": 1.0017809787443044,
+          "chain_mean_mcse": 0.0005475220859427433,
+          "tail_difference_fraction": 0.07233353367147019
+        },
+        {
+          "quantity": "q",
+          "min_chain_ess": 411.944501885047,
+          "rhat": 0.9984693432348571,
+          "chain_mean_mcse": 0.0029113905198565673,
+          "tail_difference_fraction": 0.05762313992626286
+        }
+      ]
+    },
+    {
+      "law": "stationary",
+      "s": 1.0,
+      "seconds": 1.5496351219771896,
+      "completed": true,
+      "mixing_ok": false,
+      "min_chain_ess": 190.5389710442316,
+      "max_rhat": 1.0035158592458806,
+      "max_between_chain_tail_fraction": 0.20724938734209025,
+      "scalar_diagnostics": [
+        {
+          "quantity": "a",
+          "min_chain_ess": 206.7454229411424,
+          "rhat": 1.002932493942466,
+          "chain_mean_mcse": 0.00955711451769906,
+          "tail_difference_fraction": 0.07649220140719011
+        },
+        {
+          "quantity": "b",
+          "min_chain_ess": 250.2402747912981,
+          "rhat": 1.0000991597424556,
+          "chain_mean_mcse": 0.001979338711782929,
+          "tail_difference_fraction": 0.10219309818844771
+        },
+        {
+          "quantity": "q",
+          "min_chain_ess": 190.5389710442316,
+          "rhat": 1.002762538847021,
+          "chain_mean_mcse": 0.010857789093117416,
+          "tail_difference_fraction": 0.0892388153799389
+        }
+      ]
+    },
+    {
+      "law": "matched_motion",
+      "s": 0.2,
+      "seconds": 18.41798495600233,
+      "completed": true,
+      "mixing_ok": false,
+      "min_chain_ess": 5.933583811723905,
+      "max_rhat": 1.6585427361470195,
+      "max_between_chain_tail_fraction": 0.6762675314791579,
+      "scalar_diagnostics": [
+        {
+          "quantity": "a",
+          "min_chain_ess": 19.028869472571934,
+          "rhat": 1.1453890402287366,
+          "chain_mean_mcse": 0.12353306264988625,
+          "tail_difference_fraction": 0.30399568820807965
+        },
+        {
+          "quantity": "b",
+          "min_chain_ess": 15.377159220227938,
+          "rhat": 1.3520784404807296,
+          "chain_mean_mcse": 0.02005362540980166,
+          "tail_difference_fraction": 0.3805942230460375
+        },
+        {
+          "quantity": "q",
+          "min_chain_ess": 16.691227953621055,
+          "rhat": 1.1759247867334648,
+          "chain_mean_mcse": 0.14357226895879932,
+          "tail_difference_fraction": 0.2975094306879635
+        },
+        {
+          "quantity": "kappa",
+          "min_chain_ess": 5.933583811723905,
+          "rhat": 1.6585427361470195,
+          "chain_mean_mcse": 9.3144386830005,
+          "tail_difference_fraction": 0.6762675314791579
+        }
+      ]
+    },
+    {
+      "law": "ula_motion",
+      "s": 0.2,
+      "seconds": 21.283412879012758,
+      "completed": true,
+      "mixing_ok": false,
+      "min_chain_ess": 9.872164117705807,
+      "max_rhat": 1.0621037177759227,
+      "max_between_chain_tail_fraction": 0.3308866215867253,
+      "scalar_diagnostics": [
+        {
+          "quantity": "a",
+          "min_chain_ess": 157.2365814250561,
+          "rhat": 1.003160495922954,
+          "chain_mean_mcse": 0.010969571638454037,
+          "tail_difference_fraction": 0.07330295906732401
+        },
+        {
+          "quantity": "b",
+          "min_chain_ess": 42.83367604470093,
+          "rhat": 1.019044750659107,
+          "chain_mean_mcse": 0.001036803709732706,
+          "tail_difference_fraction": 0.08634809688614996
+        },
+        {
+          "quantity": "q",
+          "min_chain_ess": 130.97563931405324,
+          "rhat": 1.004328892171244,
+          "chain_mean_mcse": 0.011874081970664772,
+          "tail_difference_fraction": 0.06952767060651369
+        },
+        {
+          "quantity": "kappa",
+          "min_chain_ess": 9.872164117705807,
+          "rhat": 1.0479509953357997,
+          "chain_mean_mcse": 1.2182649306047035,
+          "tail_difference_fraction": 0.3133765426233767
+        }
+      ]
+    }
+  ]
+}

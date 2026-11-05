@@ -2,6 +2,8 @@
 
 Implementation and simulations for **Bayesian Subspace Tracking with Grassmann Bingham Distributions** (supplied L4DC 2027 draft). The code separates exact conjugate parameter updates from numerical posterior moments, credible regions, and frozen-prior noise fitting.
 
+The `test` branch adds an executed [passive beamforming walkthrough](notebooks/01_array.ipynb): eight-sensor complex rank-one estimation, Fisher information, a passive covariance tracking certificate, posterior decisions, functional uncertainty, joint power inference and stochastic prediction. Follow its [reproduction commands](results/beamforming_unified/README.md), [findings](results/beamforming_unified/findings.md) and [claim map](docs/beamforming_claims.md). The earlier complex rank-three and real low-data array studies remain in a source-verified historical appendix. The older generic example generator below reconstructs the historical array notebook; use `make_beamforming_notebook.py` for the new walkthrough.
+
 ## Run
 
 Use Python 3.12 and a working TeX installation (`latex`, `dvipng`, `type1cm`, and `type1ec`). Every Matplotlib figure uses `text.usetex = True`; there is no fallback to non-TeX rendering.
@@ -10,22 +12,23 @@ Use Python 3.12 and a working TeX installation (`latex`, `dvipng`, `type1cm`, an
 bash scripts/setup.sh
 source .venv/bin/activate
 export OPENBLAS_NUM_THREADS=1
-python scripts/execute_notebook.py notebooks/00_theory.ipynb
-python scripts/make_example_notebooks.py
-python scripts/execute_notebook.py notebooks/01_array.ipynb
-python scripts/execute_notebook.py notebooks/02_field.ipynb
+python scripts/validate_beamforming.py
+python scripts/plot_beamforming_unified.py --profile paper
+python scripts/summarize_beamforming.py --profile paper
+python scripts/make_beamforming_notebook.py
+python scripts/execute_beamforming_notebook.py
 ```
 
-The general notebook must pass before the example generator or example simulations can run. Its certificate hashes the numerical core, benchmark code, tests, controlled theory studies, and theory notebook generator. A source change invalidates the certificate. Example tables have separate source/configuration hashes and checksum-verified caching. Set `refresh=True` in an example to resimulate. Regenerating notebooks replaces their saved outputs.
+These commands validate and render the committed unified paper evidence. See the [full protocol](results/beamforming_unified/README.md) to regenerate every quick/paper simulation and its findings before rendering. The general notebook must pass before formal array simulations and notebook generation; its isolated certificate hashes the numerical core, benchmarks, tests and new scientific sources. A source change invalidates the certificate. Component tables have separate source/configuration hashes and verified caching. Regenerating a notebook replaces its saved outputs. The original `make_example_notebooks.py` workflow reconstructs historical examples and should not replace the new array walkthrough.
 
-See [reproducibility](docs/reproducibility.md) for installation, numerical budgets, and CI. The executed example notebooks use eight repetitions per scenario, 72 training observations, and adaptive independent chains with a predeclared cap. The array runner uses four workers and resumable checkpoints; separate longer-chain follow-ups retain and investigate original capped failures. These are reproducible pilot studies; increase repetitions for precise lower-tail and coverage claims.
+See [reproducibility](docs/reproducibility.md) for installation and historical numerical budgets. The historical array pilots use eight repetitions per scenario, 72 observations and capped adaptive chains, with separate longer-chain investigations. The unified decision study instead uses 128 validation and 256 test trajectories per condition/noise; its parameter-learning and full-density-reference cohorts have separately stated smaller budgets. Earlier executed field/contact notebooks and their original certificates are preserved rather than silently rerun by the new protocol.
 
 ## Notebooks
 
 | File | Purpose |
 | --- | --- |
 | [00_theory](notebooks/00_theory.ipynb) | Debugging and validation: likelihoods, excitation, counterexamples, drift bounds, posterior risks, credible geometry, EM, sampling, and scaling |
-| [01_array](notebooks/01_array.ipynb) | Complex array beamforming: orientation, snapshots, drift, held-out power, SINR, mismatch, regional leakage, coverage, and cost |
+| [01_array](notebooks/01_array.ipynb) | Passive complex beamforming: information, tracking, posterior decisions, uncertainty, unknown powers, process approximation and cost; historical studies in the appendix |
 | [02_field](notebooks/02_field.ipynb) | Known-input prediction and drift bounds; supplementary passive reconstruction, noise fitting, predictive scores, coverage, and cost |
 | [03_contact](notebooks/03_contact.ipynb) | Contact walkthrough: force balance, null-space identification, causal motion prediction, response uncertainty, and independent trajectory checks |
 
@@ -65,7 +68,7 @@ See [interpretation](docs/interpretation.md) for what the comparisons support, t
 
 The latest [computational audit](docs/latent_paper_audit.md) checks the supplied latent-information paper's appendices. A new adaptive spectral backend evaluates real/complex rank-one means and normalizers (and codimension-one quantities by duality). It rejects unresolved truncation budgets and does not substitute unchecked general-rank Jack truncations.
 
-The main notebook figures now emphasize **16-channel rank-three array prediction bands** and **eight-dimensional rank-three tracking, prediction clouds, and Monte Carlo errors**. Dense comparisons and the earlier three-dimensional diagnostic are retained as supplementary sections. [Modeling and drift](docs/modeling_and_drift.md) explains why identity-frame modal certificates and credible-region calibration are distinct, with explicit informative and failed regimes.
+The historical array figures emphasize **16-channel rank-three prediction bands**; the field/contact studies also use higher-dimensional states. The new array narrative above uses a native complex eight-channel rank-one model. [Modeling and drift](docs/modeling_and_drift.md) explains why identity-frame modal certificates and credible-region calibration are distinct, with explicit informative and failed regimes.
 
 The `dev` branch adds the supplied implementation checkpoints: rolling likelihood memory, causal Grassmann velocity prediction, and a separate stochastic assumed-density predictor. See [development](docs/development.md) and the [checkpoint handoff](results/dev_prediction/README.md). Its certificate, tuning, independent holdouts, numerical failures and figures are isolated under `results/dev_prediction/`; historical notebooks and results are preserved.
 

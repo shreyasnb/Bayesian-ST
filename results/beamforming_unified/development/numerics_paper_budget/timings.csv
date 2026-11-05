@@ -1,0 +1,46 @@
+operation,n,repetition,seconds,cpu_seconds,cpu_wall_ratio,scope
+Native mean,2,0,0.000305163994198665,0.00030239999999981393,0.9909425939776771,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,2,0,0.004716624011052772,0.0047191060000000284,1.0005262214968673,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,2,0,0.0438959939929191,0.04390056499999995,1.000104132670548,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,2,0,0.010136361990589648,0.010139437999999945,1.0003034628610494,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,2,0,0.007854800001950935,0.007857481999999916,1.0003414470194423,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,2,1,0.0001499490172136575,0.0001503070000001827,1.0023873633397353,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,2,1,0.004826606018468738,0.004828514999999811,1.0003955121929922,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,2,1,0.03408808200038038,0.03409178699999993,1.0001086890022004,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,2,1,0.005735165002988651,0.005737594000000179,1.0004235269622168,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,2,1,0.007660513976588845,0.007662483999999914,1.0002571659574135,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,2,2,0.00014088599709793925,0.00014113100000034962,1.0017390152851036,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,2,2,0.00321624698699452,0.0032177879999997216,1.0004791339133572,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,2,2,0.0418095649802126,0.04181254799999978,1.0000713477834222,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,2,2,0.006945647997781634,0.006949339999999804,1.000531556194519,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,2,2,0.007867128995712847,0.007870528999999848,1.0004321785353787,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,8,0,0.01704895799048245,0.017050251000000127,1.0000758409703632,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,8,0,0.019128151005133986,0.019076119999999808,0.9972798727320684,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,8,0,0.13475955900503322,0.13371537400000033,0.992251495828998,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,8,0,0.07092406300944276,0.07092853900000007,1.0000631096184762,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,8,0,0.10355095600243658,0.10355693899999974,1.0000577782938385,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,8,1,0.010346841998398304,0.0103515660000002,1.0004565645829546,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,8,1,0.02181411301717162,0.02187015800000003,1.0025692075026975,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,8,1,0.12305367799126543,0.12305953800000013,1.0000476215650793,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,8,1,0.07538889700663276,0.0753949089999999,1.0000797464030626,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,8,1,0.0953669399896171,0.095373441,1.0000681683860635,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,8,2,0.01156463599181734,0.011567640999999629,1.0002598445973063,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,8,2,0.018506730993976817,0.01850971300000026,1.0001611308893188,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,8,2,0.11305491300299764,0.11291090599999976,0.9987262207437719,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,8,2,0.10622685099951923,0.07186103799999977,0.6764865692980487,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,8,2,0.12380723899696022,0.09793098300000036,0.790995613773479,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,16,0,0.01328542799456045,0.013284555000000253,0.999934289316042,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,16,0,0.026919418014585972,0.026925338999999937,1.00021995220739,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,16,0,0.24326207101694308,0.24325998700000007,0.999991433037899,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,16,0,0.09349043999100104,0.09349660300000018,1.0000659212749425,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,16,0,0.20867371099302545,0.2086818509999997,1.0000390083012158,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,16,1,0.014869118022033945,0.014873247999998895,1.000277755409489,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,16,1,0.03401016801944934,0.03401901299999999,1.0002600687107923,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,16,1,0.24440153999603353,0.24024502899999867,0.9829931063605314,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,16,1,0.08490914601134136,0.08491593399999964,1.0000799441400268,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,16,1,0.20753269499982707,0.20748530100000018,0.9997716311647814,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,16,2,0.013535800011595711,0.01354144799999979,1.0004172629914183,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,16,2,0.03358530602417886,0.03308506900000019,0.9851054796458147,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,16,2,0.2227940739830956,0.2227562719999998,0.9998303276993865,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,16,2,0.09311457999865524,0.09312133999999972,1.0000725987417285,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,16,2,0.21548846398945898,0.21538875400000101,0.9995372838637764,Whole inverse fit; includes its forward means; not added to prediction twice

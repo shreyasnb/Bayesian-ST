@@ -1,0 +1,16 @@
+operation,n,repetition,seconds,cpu_seconds,cpu_wall_ratio,scope
+Native mean,2,0,9.283699910156429e-05,8.97479999999451e-05,0.9667266377466617,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,2,0,0.0025625790003687143,0.0025643950000000526,1.0007086609353613,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,2,0,0.005360003997338936,0.0053620629999999725,1.0003841420010244,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,2,0,0.00296558701666072,0.002967068000000017,1.000499389608525,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,2,0,0.0025791490043047816,0.0025816920000000243,1.0009859824659213,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,8,0,0.004527196026174352,0.00452608099999996,0.9997537049052116,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,8,0,0.011023547005606815,0.011026652999999942,1.0002817599808433,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,8,0,0.01512103498680517,0.015125148999999949,1.0002720721960083,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,8,0,0.02310825200402178,0.023115376999999993,1.0003083312392895,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,8,0,0.03195017299731262,0.03195685300000006,1.0002090756343638,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,16,0,0.006680746999336407,0.006679686000000018,0.9998411855236407,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,16,0,0.014002936979522929,0.014008881999999945,1.0004245552547804,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,16,0,0.02586139299091883,0.025866565000000064,1.0001999895784055,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,16,0,0.04024869200657122,0.04025482299999994,1.0001523277682594,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,16,0,0.05802642597700469,0.05803186099999991,1.0000936646175205,Whole inverse fit; includes its forward means; not added to prediction twice

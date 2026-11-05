@@ -42,3 +42,7 @@ results/contact_uncertainty/**/pytest.xml
 !results/contact_tracking/**/
 results/contact_tracking/**/checkpoints/**
 results/contact_tracking/**/pytest.xml
+!results/beamforming_unified/
+!results/beamforming_unified/**/
+results/beamforming_unified/**/checkpoints/**
+results/beamforming_unified/**/pytest.xml

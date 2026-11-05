@@ -1,0 +1,15 @@
+{
+  "status": "completed",
+  "source_hash": "02424893317d36e141913bedba73ba36e8e85dbf769632f8c76caa6746060a84",
+  "checks": {
+    "rows": 82,
+    "calculation_failures": 0,
+    "joint_fits": 32,
+    "unresolved_joint_mixing": 32,
+    "resolved_joint_parameter_checks": 10,
+    "resolved_joint_covariance_mean_checks": 14,
+    "max_unit_gain_error": 2.6945789820192466e-16,
+    "max_posterior_optimality_residual": 7.494005416219807e-16,
+    "stationary_reference_ok": true
+  }
+}

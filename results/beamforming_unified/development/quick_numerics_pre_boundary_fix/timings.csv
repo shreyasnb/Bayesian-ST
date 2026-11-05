@@ -1,0 +1,16 @@
+operation,n,repetition,seconds,cpu_seconds,cpu_wall_ratio,scope
+Native mean,2,0,0.00011535402154549956,0.00011220400000000463,0.9726925728007458,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,2,0,0.003948892990592867,0.003952390000000028,1.0008855670223253,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,2,0,0.004793577012605965,0.004795843000000022,1.0004727132552784,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,2,0,0.002446868020342663,0.0024483440000000467,1.0006032117977401,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,2,0,0.0027712309965863824,0.002773298000000035,1.000745879147642,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,8,0,0.0048997169942595065,0.0048992180000000385,0.9998981585548609,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,8,0,0.01037938499939628,0.010381071000000075,1.0001624374280262,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,8,0,0.01707632199395448,0.017079282000000084,1.0001733397886647,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,8,0,0.02357053302694112,0.023573420000000067,1.00012248229837,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,8,0,0.03245819199946709,0.03225948599999995,0.9938780940272212,Whole inverse fit; includes its forward means; not added to prediction twice
+Native mean,16,0,0.006755234993761405,0.006754254000000071,0.9998547802167888,"Whole native-complex mean/log-normalizer call, no tails"
+Iid 8192 draws,16,0,0.014759218000108376,0.014765351999999954,1.0004156046676411,Whole exact iid sampler including eigenvectors and phases
+Full posterior report,16,0,0.02334675900056027,0.022469253000000133,0.9624142262941474,Mean + two iid batches + state regions + three scalar queries; nested costs not added
+Inverse mean fit,16,0,0.040844914998160675,0.04085063499999997,1.0001400419572315,Whole inverse fit; includes its forward means; not added to prediction twice
+Inverse mean fit,16,0,0.061653986980672926,0.061660842999999854,1.0001112015566662,Whole inverse fit; includes its forward means; not added to prediction twice

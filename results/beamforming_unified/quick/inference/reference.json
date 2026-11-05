@@ -1,0 +1,10 @@
+{
+  "order": 240,
+  "a": 1.849767811441842,
+  "b": 0.16416007701417848,
+  "q": 1.6856077344276637,
+  "log_integral": -10.67512125731349,
+  "refinement_error": 3.0375701953744283e-13,
+  "numerical_ok": true,
+  "scope": "Native complex CP1 analytical state marginalization, log b/log q quadrature; not a native n=8 reference"
+}

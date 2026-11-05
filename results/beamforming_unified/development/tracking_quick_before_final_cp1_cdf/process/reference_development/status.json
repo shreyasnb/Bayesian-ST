@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "targets": 8,
+  "failures": 0,
+  "maxima": {
+    "density_tv": 8.454309083925249e-13,
+    "mean_error": 1.544818589221821e-14,
+    "scalar_cdf_error": 1.0854650511760155e-12,
+    "quantile_width_relative_error": 9.933749396169211e-14,
+    "region_mass_error": 0.0009676233360605968
+  },
+  "budgets": {
+    "coarse": {
+      "degree": 24,
+      "z_order": 48,
+      "phi_order": 96
+    },
+    "fine": {
+      "degree": 32,
+      "z_order": 64,
+      "phi_order": 128
+    }
+  },
+  "seed": 6581031,
+  "source_hashes": {
+    "lib/beamforming_reference.py": "ea42160013d0360bed36d244af1f836e1c637bfda1430b1cf2ba6cec6c8173e4",
+    "scripts/run_beamforming_tracking.py": "98f62cd13a1ee25f354eb426490c384f36b886e5e50015cacdfc9272b60893f6"
+  },
+  "test_data_used": false,
+  "numerical_scope": "Empirical harmonic/grid refinement, not rigorous all-density enclosures"
+}

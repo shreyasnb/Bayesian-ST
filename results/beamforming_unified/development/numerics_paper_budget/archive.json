@@ -1,0 +1,12 @@
+{
+  "reason": "Auxiliary CP1 CDF boundary-layer reference fixed before scientific evaluation; sampler/mean/process law unchanged.",
+  "verified_source_snapshots": {
+    "lib/beamforming_numerics.py": true,
+    "lib/beamforming_protocol.py": true,
+    "lib/spectral_series.py": true,
+    "lib/geometry.py": true,
+    "lib/process_prediction.py": true,
+    "scripts/check_beamforming_numerics.py": true,
+    "tests/test_beamforming_numerics.py": true
+  }
+}
