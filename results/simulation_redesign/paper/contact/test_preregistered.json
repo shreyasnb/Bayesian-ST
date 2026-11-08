@@ -1,0 +1,195 @@
+{
+  "config": {
+    "schema": 1,
+    "profile": "paper",
+    "n": 3,
+    "k": 2,
+    "v0": 0.02,
+    "sigma_static": 0.01,
+    "static_times": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      32
+    ],
+    "static_inputs": [
+      "balanced",
+      "unbalanced"
+    ],
+    "static_validation_trials": 32,
+    "static_test_trials": 128,
+    "dynamic_conditions": [
+      "plane",
+      "sphere"
+    ],
+    "dynamic_T": 160,
+    "dynamic_times": [
+      8,
+      40,
+      80,
+      160
+    ],
+    "dynamic_dt": 0.05,
+    "sigma_dynamic": 0.004,
+    "dynamic_validation_trials": 16,
+    "dynamic_test_trials": 64,
+    "betas": [
+      1.0,
+      0.98,
+      0.95,
+      0.9,
+      0.8,
+      0.6
+    ],
+    "ridge_loadings": [
+      0.0,
+      0.0001,
+      0.001,
+      0.01,
+      0.1,
+      1.0,
+      10.0,
+      100.0
+    ],
+    "gaussian_variances": [
+      0.0,
+      0.0001,
+      0.0004,
+      0.0016,
+      0.0064
+    ],
+    "gaussian_warmup": 6,
+    "lambdas": [
+      1.0,
+      10.0
+    ],
+    "higher_dimensions": [
+      8,
+      16,
+      32
+    ],
+    "higher_trials": 32,
+    "higher_samples_per_dimension": 4,
+    "certificate_trials": 128,
+    "certificate_times": [
+      1024,
+      4096
+    ],
+    "certificate_delta": 0.05,
+    "seed_validation": 8113101,
+    "seed_test": 8113102,
+    "seed_story": 8113103,
+    "sigma_story": [
+      0.01,
+      0.004
+    ],
+    "story_normal": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "geometry": "Real Gr(N-1,N); contact-normal lines are Gr(1,N), with C=-A.",
+    "mechanics": "Maintained ideal bilateral guide with known isotropic resistance; u=P_X v+e.",
+    "wrist": "Known rotation independent of hidden surface normal; R maps wrist to world, G_t=R_t.T@R_(t-1).",
+    "inputs": "Every static command has norm v0. Balanced axes versus directions mostly along e1; this is not a truth-aligned adaptive probe.",
+    "statistical_units": "Independent contact/data trajectories; query coordinates are averaged within each trajectory.",
+    "primary": "Static broad-posterior full-vector response loss; dynamic terminal and time-average losses are separate.",
+    "gaussian": "Local normal-coordinate EKF, six actual-observation conditional-Bingham warmup; independently validated Q.",
+    "exclusions": "No latent geometry, true normal rotations, future observations, learned motion, temperature or stochastic kappa supplied to estimators.",
+    "higher_scope": "Generalized isotropic-resistance one-constraint velocity model, not a physical high-DOF robot with known Jacobians."
+  },
+  "sources": {
+    "lib/contact_geometry_study.py": "f8d0e5b18eadff493fbcca05b5ae42adacf27755735e9928be3343aa0ebe8874",
+    "scripts/run_contact_geometry.py": "d2b5a37d58dfffa85e3c21f348d5eb8ac51be310ad6df2ba432ae754afcae7b5",
+    "tests/test_contact_geometry.py": "2abc7c0b29e57f930d35c2ca436ed3fb843d41d7340f029c30ff14c88f52b6ec",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/contact_gaussian.py": "362722a17fef5ae9e5bdcea1011c264f372931b444796694903aa8a20ed239eb",
+    "lib/reference.py": "4aa76180e4b46cafb5f29f96023f11430fabcd44d56344de610a90497de853cf",
+    "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "source_hash": "33042c793453fc0ac60c36d7c9d4c27fa7013cc9c5d085aff57b20982a609af9",
+  "gate": {
+    "status": "passed",
+    "core_hash": "7e46f16da5ff43a33ad157b001a98998195f82a6500bed1838571391d69279ca",
+    "tests": 209,
+    "seed": 20,
+    "tracking_repeats": 128,
+    "tracking_terminal": 480,
+    "fixed_time_violations": 0,
+    "violation_upper_95": 0.023132405251746757,
+    "sampler": {
+      "max_rhat": 1.0007026975459008,
+      "max_mean_difference": 0.002296355394263677,
+      "max_standardized_difference": 0.5906998429699951,
+      "min_ess": 1033.3186288425604,
+      "max_mcse": 0.0028725237816521706
+    },
+    "moment_error": 0.003521279454262921,
+    "dimensions": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "seconds": 64.88966887800007,
+    "versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "matplotlib": "3.10.8"
+    },
+    "scope": "Complete general notebook and regression suite; finite scientific/numerical qualifications are recorded separately",
+    "science_hash": "521541a512f7f153460e2a8f0b5dbb32da24029d11c0d4f6d3958471e85342dc",
+    "sources": {
+      "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+      "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+      "lib/anisotropy_study.py": "b7ab40a999d74cb94983a1d1d0e0e6772ec57000bbd0ad0048dfae71ab68bfed",
+      "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+      "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+      "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+      "lib/contact_gaussian.py": "362722a17fef5ae9e5bdcea1011c264f372931b444796694903aa8a20ed239eb",
+      "lib/contact_geometry_study.py": "f8d0e5b18eadff493fbcca05b5ae42adacf27755735e9928be3343aa0ebe8874",
+      "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+      "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+      "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342",
+      "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+      "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+      "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+      "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+      "lib/reference.py": "4aa76180e4b46cafb5f29f96023f11430fabcd44d56344de610a90497de853cf",
+      "lib/simulation_scaling.py": "0c6bed44460c1df2d11f74b3372ec7c6c39d67efbcf019a065d8c5262284a6ca",
+      "lib/simulation_validation.py": "ce44d35f15f3557196aa77f5c45851b5245de3abaaf2cb27b6d82a291b5d72a6",
+      "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+      "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53",
+      "scripts/run_anisotropy_study.py": "580a4bbc34a7b6a9b25beb3d2d77037f820d57c2a3fd16881f6b90a099c178c8",
+      "scripts/run_array_geometry.py": "bd8a1bd896515c63c5683a85400e4170c61580c4be7f405b81e5f21827eb8193",
+      "scripts/run_contact_geometry.py": "d2b5a37d58dfffa85e3c21f348d5eb8ac51be310ad6df2ba432ae754afcae7b5",
+      "scripts/run_simulation_scaling.py": "ddc7914b66b063fe01c6b2ee805588e9183712fab4c0c8e2ba8cf17d3525ae4e",
+      "scripts/validate_simulation_redesign.py": "509ad21ebce190b7b412115cc0535f48998074d8dc844292f9710dbe09b49f74"
+    },
+    "original_notebook_sha256": "57f997159cbeaa910fcd39c3e8a8751c0b38561b833812426521fed3d5ed5544"
+  },
+  "workers": 2,
+  "hardware": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "logical_cpus": 5,
+    "blas_threads": 1
+  },
+  "base_commit": "2a8697c7e7fa27b3779f3abeaed32ca8b323a9ef",
+  "status": "running",
+  "selected_sha256": "57581c8c1bc95f51a6a3bf3b94185d98f32e722c4e51ef39fa3a889e9f46d813",
+  "heldout_opened_after_selection": true
+}

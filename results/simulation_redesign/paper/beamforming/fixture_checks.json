@@ -1,0 +1,9 @@
+{
+  "radius_pair_error": 2.3869795029440866e-15,
+  "predictive_mean_rotation_error": 1.1406720186167115e-14,
+  "passive_selected_data_recovery_error": 8.531852659757913e-14,
+  "same_mode": true,
+  "same_spectrum": true,
+  "equal_entire_radius_distribution": "Exact unitary pushforward fixing the mode; numerical pairs verify it",
+  "fixture_scope": "Selected-data posterior calculation, not a random-training performance claim. Two parameters share spectrum, mode and every centered chordal-distance quantile, but swap complementary axes relative to the desired steering."
+}

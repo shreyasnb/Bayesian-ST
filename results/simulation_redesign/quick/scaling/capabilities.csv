@@ -1,0 +1,37 @@
+model,N,k,case,span,parameter_bytes,scalar_bytes,mean_supported,report_evaluated,report_reason,general_rank_supported
+conditional_real,3,2,span_80,79.99999999999997,72,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,3,2,span_400,400.00000000000006,72,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,3,2,data_T64,193.30883169936664,72,8,True,True,Predeclared continuous or iid report cohort,False
+conditional_real,8,7,span_80,80.00000000000003,512,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,8,7,span_400,400.00000000000006,512,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,8,7,data_T64,285.83527524332777,512,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,16,15,span_80,80.00000000000007,2048,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,16,15,span_400,400.0,2048,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,16,15,data_T64,284.7384234355237,2048,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,32,31,span_80,80.00000000000003,8192,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,32,31,span_400,400.0,8192,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,32,31,data_T64,369.7151128594622,8192,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,64,63,span_80,79.99999999999997,32768,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,64,63,span_400,399.99999999999955,32768,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,64,63,data_T64,535.6613458306454,32768,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,128,127,span_80,79.99999999999999,131072,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,128,127,span_400,399.9999999999996,131072,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+conditional_real,128,127,data_T64,822.889265143602,131072,8,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,3,1,span_80,80.00000000000003,144,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,3,1,span_400,400.0,144,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,3,1,data_T64,174.52953568061162,144,16,True,True,Predeclared continuous or iid report cohort,False
+marginal_complex,8,1,span_80,80.00000000000001,1024,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,8,1,span_400,399.9999999999998,1024,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,8,1,data_T64,171.82727449057305,1024,16,True,True,Predeclared continuous or iid report cohort,False
+marginal_complex,16,1,span_80,80.0,4096,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,16,1,span_400,400.0,4096,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,16,1,data_T64,138.29483408273336,4096,16,True,True,Predeclared continuous or iid report cohort,False
+marginal_complex,32,1,span_80,79.99999999999991,16384,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,32,1,span_400,400.0000000000003,16384,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,32,1,data_T64,184.0316060843419,16384,16,True,True,Predeclared continuous or iid report cohort,False
+marginal_complex,64,1,span_80,80.00000000000001,65536,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,64,1,span_400,400.00000000000006,65536,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,64,1,data_T64,206.03339101825736,65536,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,128,1,span_80,79.9999999999999,262144,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,128,1,span_400,400.00000000000034,262144,16,True,False,No tail computation in this declared dimension/concentration cohort,False
+marginal_complex,128,1,data_T64,291.99487473457185,262144,16,True,False,No tail computation in this declared dimension/concentration cohort,False

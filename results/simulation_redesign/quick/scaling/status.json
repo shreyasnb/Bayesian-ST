@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "fingerprint": "c6816d4263a82ac9044e08312782b67ee106e1997a353c53b546ad6d82a4d9a4",
+  "checks": {
+    "seconds": 20.10198094300017,
+    "cases": 36,
+    "operations": 203,
+    "unresolved_operations": 0,
+    "measured_repetitions": 1,
+    "means_do_not_certify_tails": true,
+    "all_targets_retained": true
+  }
+}

@@ -46,3 +46,7 @@ results/contact_tracking/**/pytest.xml
 !results/beamforming_unified/**/
 results/beamforming_unified/**/checkpoints/**
 results/beamforming_unified/**/pytest.xml
+!results/simulation_redesign/
+!results/simulation_redesign/**/
+results/simulation_redesign/**/checkpoints/**
+results/simulation_redesign/**/pytest.xml

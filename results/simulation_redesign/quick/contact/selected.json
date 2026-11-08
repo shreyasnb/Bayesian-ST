@@ -1,0 +1,156 @@
+{
+  "source_hash": "3b3bb687ec253534ab2319ff2f5fdfda0af00c6b0c0dcbda81c648a54de8a61e",
+  "static": [
+    {
+      "kind": "balanced",
+      "t": 1,
+      "rho": 0.5422437524925141,
+      "loading": 10.0,
+      "loading_boundary": false
+    },
+    {
+      "kind": "balanced",
+      "t": 2,
+      "rho": 0.8630277171537094,
+      "loading": 10.0,
+      "loading_boundary": false
+    },
+    {
+      "kind": "balanced",
+      "t": 4,
+      "rho": 0.8540045727387047,
+      "loading": 10.0,
+      "loading_boundary": false
+    },
+    {
+      "kind": "balanced",
+      "t": 8,
+      "rho": 0.8899136358546283,
+      "loading": 1.0,
+      "loading_boundary": false
+    },
+    {
+      "kind": "balanced",
+      "t": 16,
+      "rho": 0.9748684706563305,
+      "loading": 1.0,
+      "loading_boundary": false
+    },
+    {
+      "kind": "balanced",
+      "t": 32,
+      "rho": 0.9745858201317318,
+      "loading": 0.1,
+      "loading_boundary": false
+    },
+    {
+      "kind": "unbalanced",
+      "t": 1,
+      "rho": 0.5422437524925141,
+      "loading": 10.0,
+      "loading_boundary": false
+    },
+    {
+      "kind": "unbalanced",
+      "t": 2,
+      "rho": 0.7802776459269696,
+      "loading": 10.0,
+      "loading_boundary": false
+    },
+    {
+      "kind": "unbalanced",
+      "t": 4,
+      "rho": 0.7961266893659084,
+      "loading": 1.0,
+      "loading_boundary": false
+    },
+    {
+      "kind": "unbalanced",
+      "t": 8,
+      "rho": 0.7221487088368286,
+      "loading": 1.0,
+      "loading_boundary": false
+    },
+    {
+      "kind": "unbalanced",
+      "t": 16,
+      "rho": 0.9656594179338618,
+      "loading": 1.0,
+      "loading_boundary": false
+    },
+    {
+      "kind": "unbalanced",
+      "t": 32,
+      "rho": 0.9695191071692021,
+      "loading": 1.0,
+      "loading_boundary": false
+    }
+  ],
+  "dynamic": [
+    {
+      "condition": "plane",
+      "family": "mean",
+      "beta": 1.0,
+      "validation_loss": 2.0525229626433948e-07
+    },
+    {
+      "condition": "plane",
+      "family": "mode",
+      "beta": 1.0,
+      "validation_loss": 2.0464169259730655e-07
+    },
+    {
+      "condition": "plane",
+      "family": "residual_pca",
+      "beta": 0.98,
+      "validation_loss": 5.815692339631738e-07
+    },
+    {
+      "condition": "plane",
+      "family": "ridge",
+      "beta": 1.0,
+      "loading": 0.0,
+      "validation_loss": 2.320120530013819e-06
+    },
+    {
+      "condition": "plane",
+      "family": "gaussian",
+      "Q": 0.0,
+      "validation_loss": 1.757796616276586e-07
+    },
+    {
+      "condition": "sphere",
+      "family": "mean",
+      "beta": 0.8,
+      "validation_loss": 1.7429316402889276e-05
+    },
+    {
+      "condition": "sphere",
+      "family": "mode",
+      "beta": 0.8,
+      "validation_loss": 6.578855195354245e-06
+    },
+    {
+      "condition": "sphere",
+      "family": "residual_pca",
+      "beta": 0.95,
+      "validation_loss": 4.940201774154593e-05
+    },
+    {
+      "condition": "sphere",
+      "family": "ridge",
+      "beta": 0.8,
+      "loading": 0.1,
+      "validation_loss": 5.983524824830033e-05
+    },
+    {
+      "condition": "sphere",
+      "family": "gaussian",
+      "Q": 0.0064,
+      "validation_loss": 1.1863526118351516e-05
+    }
+  ],
+  "selection_completed_before_test": true,
+  "test_data_used": false,
+  "criterion": "Terminal complete-vector response loss on independent validation trajectories"
+}

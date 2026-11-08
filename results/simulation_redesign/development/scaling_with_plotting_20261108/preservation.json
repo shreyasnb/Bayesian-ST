@@ -1,0 +1,18 @@
+{
+  "reason": "A plotting process overlapped the timing interval; this complete first run is engineering evidence, not the final isolated timing. Repeated unchanged after all renderers stopped.",
+  "recorded_utc": "2026-11-08T01:01:25.431096+00:00",
+  "files_preserved_byte_for_byte": {
+    "timings.csv": "0a92f31567e448d8237f01412ca7f5d75b7d94cd449d53bbba6fd6b836bab608",
+    "status.json": "76ff2ba5a18ab0fda1d22affcb152817993c77dc830510be7eb55f5a960b1fc9",
+    "preregistered.json": "ab73995b013e8e9f8ecd07089540619ced741c1288f0d794d174a28df3018e55",
+    "manifest.json": "da9dcc44d3de8e43f1b5f97c4c1393e2c3804bad005dcdeba96808cbd62c8b58",
+    "summary.csv": "e2460a2a9f3b75fa111543063324088fd261a452ff8a9cbd0d02ee8769755f6b",
+    "capabilities.csv": "6cd1b4c462a054655a84cfdd4795f7fca56ef01a6bcdde5c4a8f1d7a2481beb4",
+    "parameters.npz": "fd59bf81beef9927ab08d3c7f8c28ccaf2754ae9ab9567d6116f6df1d29fe460",
+    "memory.csv": "8f1eb25e7478454e091ef76c68e360ea01807454244c8ed0e17c4a13dffe384f",
+    "config.json": "da9dcc44d3de8e43f1b5f97c4c1393e2c3804bad005dcdeba96808cbd62c8b58"
+  },
+  "scientific_sources_changed": false,
+  "configuration_changed": false,
+  "rerun_command": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python scripts/run_simulation_scaling.py --profile paper"
+}

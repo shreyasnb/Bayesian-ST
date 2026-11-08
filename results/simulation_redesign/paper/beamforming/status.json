@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "source_hash": "35b93a2ecadca07a830015127ba263a7f93b938baac3f819a2a85c7a5890cafa",
+  "checks": {
+    "metric_rows": 98304,
+    "trajectories": 3072,
+    "mean_failures": 0,
+    "tail_reports": 320,
+    "unresolved_tail_reports": 0,
+    "unresolved_state_reports": 0,
+    "maximum_unit_gain_error": 4.518280359883027e-16,
+    "maximum_expected_power_identity_error": 1.2351231148954867e-15,
+    "one_snapshot_maximum_anisotropy": 7.711701136162376e-15,
+    "maximum_independent_pca_error": 3.933587522106455e-14,
+    "maximum_parameter_scatter_error": 1.8017159869453198e-13,
+    "total_seconds": 154.41655968800023,
+    "fixture": {
+      "radius_pair_error": 2.3869795029440866e-15,
+      "predictive_mean_rotation_error": 1.1406720186167115e-14,
+      "passive_selected_data_recovery_error": 8.531852659757913e-14,
+      "same_mode": true,
+      "same_spectrum": true,
+      "equal_entire_radius_distribution": "Exact unitary pushforward fixing the mode; numerical pairs verify it",
+      "fixture_scope": "Selected-data posterior calculation, not a random-training performance claim. Two parameters share spectrum, mode and every centered chordal-distance quantile, but swap complementary axes relative to the desired steering."
+    },
+    "uncertainty_scope": "Mean/normalizer accuracy, iid Monte Carlo reports, and repeated-data coverage are separate checks; all flags retained."
+  }
+}

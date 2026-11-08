@@ -1,0 +1,28 @@
+{
+  "status": "completed",
+  "source_hash": "33042c793453fc0ac60c36d7c9d4c27fa7013cc9c5d085aff57b20982a609af9",
+  "checks": {
+    "seconds": 123.9123755720002,
+    "rows": {
+      "static_metrics": 10752,
+      "static_fisher": 1536,
+      "dynamic_metrics": 4608,
+      "dynamic_bounds": 1024,
+      "higher_dimension": 384,
+      "bounds": 256,
+      "paired_static": 72,
+      "paired_dynamic": 64,
+      "story_checks": 32
+    },
+    "static_numerical_failures": 0,
+    "static_local_gaussian_unresolved": 323,
+    "dynamic_numerical_failures": 0,
+    "dynamic_local_gaussian_unresolved": 7,
+    "higher_numerical_failures": 0,
+    "story_numerical_failures": 0,
+    "bound_valid": 448,
+    "bound_violations": 0,
+    "maximum_modal_audit_error": 1.9895196601282805e-12,
+    "maximum_decision_identity_error": 6.505213034913027e-19
+  }
+}

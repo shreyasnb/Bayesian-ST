@@ -1,0 +1,77 @@
+{
+  "profile": "quick",
+  "sources": {
+    "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
+    "lib/distribution_geometry_visuals.py": "d6ef85dad23163409a52400fe58786888cd9314db0b7b9a828487272e1c6f5d8",
+    "lib/simulation_story_visuals.py": "58b805a6e43aef3ccc2c4e54c9792d271e8a0ae207f10b5588ce71414b93e6bf",
+    "scripts/plot_geometry_studies.py": "39e8a7c974ac273de2d9f426d7576a2a665efe010145aee9a224f1f52a021d21"
+  },
+  "input_manifests": {
+    "results/simulation_redesign/quick/geometry/manifest.json": "9eb7ce7629fca68e21b531ec067cef6c8b6d3041fb3423be65e6def1e1223e18",
+    "results/simulation_redesign/quick/beamforming/manifest.json": "e5b1b3c28b95d283c7d92550aa2f0a10ab95833ca3229b21b252ae196a52725a",
+    "results/simulation_redesign/quick/contact/manifest.json": "1171bd5269c27016eaf061931844b5acdb629ab9880c5ca44d71b3bd7fde44a3",
+    "results/simulation_redesign/quick/scaling/manifest.json": "114dd85f42b0813435c7d5a518d37b15f2db0e02f38d5f6097a15ce862501d16"
+  },
+  "files": {
+    "beamforming_01_setup.pdf": "396b8cede87081d17368e132461419a4fba800c0f26e8a73e2b1daf07bde20a0",
+    "beamforming_01_setup.png": "3c35a64afde9539cd2f8fdf79347ca7d59585b3c7cd48e79c1b2b34611c70010",
+    "beamforming_02_posterior.pdf": "36e5b56e0c875565f64c657cf90c95403d37d7bd04391627e0cc03ca390e79f4",
+    "beamforming_02_posterior.png": "4015fff75a4ff0c6aeb1c5f135897f2e4c6f951aa116a1ceb4dde508fd35a67b",
+    "beamforming_03_directional.pdf": "0762694138fa81b4a0ec1f9edd4aca03ec72b231f2d01d43822aacf77f58d8a1",
+    "beamforming_03_directional.png": "2b391a9abda8a4ebb2aee7864c10ac963c3e734b56faaed189be34eb39026914",
+    "beamforming_04_benchmarks.pdf": "81401a9211d2ae6c80f12f1f312bfff2bf5a729dd1c17e3770bdece454131dad",
+    "beamforming_04_benchmarks.png": "ec777fbdf2f1e04fcb41db619f09d893287a97dfab2ccd4597659e729189a73a",
+    "beamforming_05_responses.pdf": "12f4c457383cae1c0e5ae7fdd8b03370664d0ace38c5c7701a4cb28b750bdbed",
+    "beamforming_05_responses.png": "07a5f8234802589a374473e99f81ed473ab31692b1883f6841155fa6923b6f6f",
+    "beamforming_06_scaling.pdf": "bbd3c3c4f3d3dc3dbf2b49a09d33fa20ca7a35253415e1dc2c0c83a578b557c0",
+    "beamforming_06_scaling.png": "529b04076fc1e0d9a59d1b2ab812429a27d055551d75a78f2cb2c7888a3c0116",
+    "contact_01_mechanics.pdf": "bcd7074d5523baad6e1beb291877837692e2f4f7b836ef9a4d755afc335cb3cf",
+    "contact_01_mechanics.png": "251857ef5912534529a001bc055f089bf8043a7d01c1f24a8e46b418dd02f386",
+    "contact_02_posterior.pdf": "ef004fd2270f40c4e83643bbc996c54a34cc47f352bf281ca5edf8a52251bb85",
+    "contact_02_posterior.png": "14a7f1e061ff09c27c5377669ea2490558a959edc86f8e508e650e398b84fa59",
+    "contact_03_directional.pdf": "140c0137bc322481eb0c9be9c05b085839039ac96b3ec37560215b598f5b9b79",
+    "contact_03_directional.png": "4237923ed6d5f3eab5a8d335f651dec32be407487d21b88629b05ce4d097b3d1",
+    "contact_04_benchmarks.pdf": "a750d935d62b24289eee12f0eff7282e4c6a753a895e141d8e5ea3f290d380c7",
+    "contact_04_benchmarks.png": "f1c1bd1542ac27197aea21f29af7a4d9bd4ffe714a86b1b701e13fef5d2e9033",
+    "contact_05_tracking.pdf": "76e50a54298c109922a57aa388ac73f1bce26610a1a60e320c722529fc8133cc",
+    "contact_05_tracking.png": "65d4c0696a36cc68740b96c0c105d5d1091a7bad73f75374c04f331a3ed35b29",
+    "contact_06_higher_dimension.pdf": "710e9c653904731d9f0a9a7c382f4fe70b32ba7eb2ad3db4113cd5c6bf3a1ef7",
+    "contact_06_higher_dimension.png": "2b120f7482c22afe2786b60d055469c06220f4dd09df0136bcd4b4550bf2a9ee"
+  },
+  "groups": {
+    "beamforming": [
+      "beamforming_01_setup",
+      "beamforming_02_posterior",
+      "beamforming_03_directional",
+      "beamforming_04_benchmarks",
+      "beamforming_05_responses",
+      "beamforming_06_scaling"
+    ],
+    "contact": [
+      "contact_01_mechanics",
+      "contact_02_posterior",
+      "contact_03_directional",
+      "contact_04_benchmarks",
+      "contact_05_tracking",
+      "contact_06_higher_dimension"
+    ]
+  },
+  "text_usetex": true,
+  "figure_dpi": 200,
+  "savefig_dpi": 200,
+  "captions": {
+    "beamforming_01_setup": "Passive interference-plus-noise snapshots identify a spatial line. The desired steering signature $a$ enters only the distortionless decision. The latent coefficients and true interferer enter generation and scoring, never estimation. Powers $s$ and $\\tau^2$ are variances. The displayed ULA trajectory was fixed in advance.",
+    "beamforming_02_posterior": "This is an actual $N=8$ proper-complex posterior at $t=16$. The sphere is the real-coefficient section $h=U_3x$, $x\\in S^2$, through its mode and the least/most concentrated complementary eigenvectors. Colors are $q_A([U_3x])/q_A(\\widehat{\\mathcal X})$, not a normalized sphere marginal. State-region curves are intersections, not 95%-mass surface regions. All complementary gaps and all mean eigenvalues are shown alongside it.",
+    "beamforming_03_directional": "Selected-data complex beliefs have the same mode, spectrum and entire centered chordal-distance distribution, with two complementary directions interchanged relative to the fixed desired steering vector. Both spheres use one fixed $U_3$ frame; gray curves are equal-radius intersections. Conditional expected-power excess is evaluated under each stated belief and is not a repeated-training performance claim.",
+    "beamforming_04_benchmarks": "Each paired point is an independent held-out trajectory at $s=0.2$, $t=16$. Ledoit--Wolf adapts its covariance regularization to each dataset. The first two panels use Haar spatial signatures at $N=8$ and $N=16$; the final panel is the $N=8$, $10^\\circ$ ULA comparison. Positive reference-minus-mean power differences favor the posterior mean. All other conditions and comparators remain in saved tables; no universal ranking is assumed.",
+    "beamforming_05_responses": "The actual weight beampattern and the uncertain covariance scanning response are different quantities. The middle bands are pointwise central posterior 50% and 95% intervals, not simultaneous confidence bands. At the exact interferer direction the truth is the support maximum, so a finite central interval excludes that endpoint. The small grid retains every predeclared ULA separation and horizon at $N=8$, $s=0.2$; open circles mark pointwise paired intervals crossing zero.",
+    "beamforming_06_scaling": "Serial, warmed, randomized-order engineering timings use a common fixed spectral span of 80 to separate dimension from concentration. Correction costs, eigenspace extraction and native means have different scopes; the mean already includes its eigensystem, so clocks are not additive. The real mean uses a common rank-one complement backend rather than the specialized 3D contact integrator. Storage is exact array bytes. More concentrations, endpoint streams, numerical flags and optional report costs are retained in the scaling tables; these points are not complexity proofs or worst-case latency guarantees.",
+    "contact_01_mechanics": "The plant solves ideal maintained bilateral contact with known isotropic resistance. Its clean velocity is the Euclidean projection of the requested free velocity. True geometry appears only in this explanatory rendering and in scoring. The estimator observes the request, noisy realized response and measured wrist orientation. The normal is an unoriented line $[n]$: $n$ and $-n$ describe the same constraint plane.",
+    "contact_02_posterior": "Actual post-correction normal laws $q_{-A_t^+}$ at $t=8$ for two equal-energy request programs. Colors are densities relative to normalized invariant measure $d\\Omega/(4\\pi)$; antipodal points describe one plane. The expected conditional Fisher information is evaluated at the true fixed normal for explanation, not supplied to the estimator. It is different from the realized posterior curvature. Purple outlines are state HPD boundaries; gray outlines are centered chordal balls.",
+    "contact_03_directional": "The real $\\mathrm{Gr}(1,3)$ example in the draft is interpreted as a contact-normal line: the tangent-plane mean is $I-\\mathbb E[nn^\\top]$. Both beliefs have the same mode and every centered distance quantile. The right panel uses the same $v_t^{\\rm des}$ and $\\lambda=20$ in Eq. (36); $v_t^{\\rm B}$ is an expected-penalty action, not a guaranteed feasible contact controller. Region bounds in the tables concern the blocked normal component $\\|nn^\\top v\\|$, not admissible-plane speed.",
+    "contact_04_benchmarks": "Paired independent stationary trajectories with requests near $e_1$, $t=8$. Response losses and Eq. (35) command costs are in $(\\mathrm{mm}/\\mathrm{s})^2$. Ridge regression is a strong response-map reference and is not assigned an invalid projector-based command. Matched axial uncertainty preserves the modal normal and its expected squared chordal distance. The command panel uses $\\lambda=10$. Complete baselines, local-Gaussian validity flags and both request programs remain available.",
+    "contact_05_tracking": "The normal line evolves along an independently generated physical sphere. Measured wrist-frame rotations are supplied equally to every practical method; they do not reveal the changing surface normal. Signs are aligned only for this display/scoring. The middle panel averages modal state errors over independent trajectories; $\\overline P_t^+$ is not assigned a modal normal. The response violins are post-correction, current-state counterfactual predictions for $v^\\star=v_0e_1$, at predeclared report times. Visual particles are resampled integration nodes; checked central 50%/95% quantiles come from continuous integration. This is not a future forecast or a repeated-data coverage claim. Each dynamic method selects its own validation memory; the same-$A$ shape controls are separate.",
+    "contact_06_higher_dimension": "These are generalized single linear maintained constraints, not a fabricated high-DOF robot with known Jacobians withheld from a comparator. The accuracy cohort uses $t=4N$ requests and plots Frobenius response-map error, avoiding the artificial $1/N$ reduction in average isotropic-query MSE. The separate serial timing cohort uses 64 dimensionless observations and one endpoint output; it is not mechanical-controller latency. Generic-rank moments are not substituted for the native rank-one/complement backend."
+  },
+  "selections": "Predeclared trajectory zero and fixed reporting times; all comparator outcomes retained"
+}
