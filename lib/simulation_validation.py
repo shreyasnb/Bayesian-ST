@@ -39,8 +39,20 @@ def require_gate(root):
     gate=json.loads(path.read_text())
     if (gate.get('status')!='passed' or gate.get('core_hash')!=core_hash(root)
             or gate.get('science_hash')!=science_hash(root)):
-        raise RuntimeError('Draft-5 general validation is missing or stale')
+        # Later guide additions run the entire notebook and regression suite
+        # into a separate directory. Keep the earlier certificate byte-exact;
+        # accept only a current, fully source-verified superset validation.
+        from .implementation_validation import require_gate as require_implementation_gate
+        return require_implementation_gate(root)
     return gate
+
+
+def gate_path(root):
+    """Location of the current validated gate, including a later superset."""
+    root=Path(root).resolve()
+    gate=require_gate(root)
+    namespace='implementation_audit' if gate.get('implementation_hash') else 'simulation_redesign'
+    return root/'results'/namespace/'validation/validation.json'
 
 
 def verify_component(root,profile,component):

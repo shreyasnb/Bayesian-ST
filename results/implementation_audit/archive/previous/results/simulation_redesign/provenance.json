@@ -1,0 +1,20 @@
+{
+  "base_commit": "2a8697c7e7fa27b3779f3abeaed32ca8b323a9ef",
+  "branch": "test",
+  "source_document": "L4DC2027_SB_BM_CM-5.pdf",
+  "source_sha256": "5da236d72780e13645c17d7541ba1b3525e71e34491bc892281427431a265c99",
+  "source_scope": "Theory and appendices; fresh simulation protocols. PDF is not published in this repository.",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.17.0",
+  "matplotlib": "3.10.8",
+  "logical_cpu_count": 5,
+  "cgroup_cpu_max": "400000 100000",
+  "plotting": {
+    "text_usetex": true,
+    "figure_dpi": 200.0,
+    "savefig_dpi": 200.0
+  },
+  "timing": "Final scaling serial after worker pools; BLAS one thread. Engineering/simulation wall clocks can be contended."
+}

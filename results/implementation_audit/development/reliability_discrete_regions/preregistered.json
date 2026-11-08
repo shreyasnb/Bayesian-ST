@@ -1,0 +1,88 @@
+{
+  "config": {
+    "profile": "smoke",
+    "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+    "n": 3,
+    "horizon": 16,
+    "models": [
+      "beamforming",
+      "contact"
+    ],
+    "regimes": [
+      "prior_predictive",
+      "fixed_state",
+      "drifting"
+    ],
+    "validation_episodes": 3,
+    "test_episodes": 3,
+    "adaptation_episodes": 3,
+    "mismatch_episodes": 3,
+    "nominal": [
+      0.5,
+      0.8,
+      0.95
+    ],
+    "target_coverage": 0.95,
+    "width_multipliers": [
+      0.6,
+      0.8,
+      1.0,
+      1.2,
+      1.5,
+      2.0,
+      3.0
+    ],
+    "posterior_draws": 1024,
+    "real_orders": [
+      [
+        48,
+        96
+      ],
+      [
+        64,
+        192
+      ]
+    ],
+    "validation_seed": 2026110901,
+    "test_seed": 2026110902,
+    "adaptation_seed": 2026110903,
+    "mismatch_seed": 2026110904,
+    "seed_offset": 100000,
+    "s": 0.2,
+    "tau2": 1.0,
+    "drift_angle": 0.8,
+    "block_length": 24,
+    "em_iterations": 25,
+    "em_starts": [
+      [
+        0.15,
+        0.4
+      ],
+      [
+        0.6,
+        1.5
+      ]
+    ],
+    "variance_floor": 1e-05,
+    "moment_tolerance": 1e-10,
+    "state_mass_tolerance": 0.035,
+    "quantile_resolution_tolerance": 0.006,
+    "precision": "128 independent test episodes give binomial MCSE <=0.0193 at coverage .95; exact binomial intervals and achieved widths are retained. Three smoke episodes check execution only.",
+    "variance_convention": "s is variance per real coordinate, or proper-complex covariance; real/imaginary beam noise has variance s/2.",
+    "scope": "N=3 native-complex marginal lines and real conditional codimension-one constraints; no general-rank or physical controller claim."
+  },
+  "sources": {
+    "lib/guide_reliability.py": "c36805e8b03732ab4c130391bfae1fc85b98dd8432fe930d671bf393d98caeb0",
+    "scripts/run_guide_reliability.py": "e1d15752af32217b2c18aad066f6d44f42b9f6a55920f20ed1016cbd04eb986d",
+    "tests/test_guide_reliability.py": "cf3a48b832556e3b6dae2a63b267d76aeccebd52d4d86eecffdd479e79414db4",
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011"
+  },
+  "created_utc": "2026-11-08T16:41:27.275056+00:00",
+  "gate": null
+}

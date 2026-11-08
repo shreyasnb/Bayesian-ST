@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "reason": "Corrected non-dissipative friction by clamping tangential force; no scientific grid, seed, counts or other parameter values changed.",
+  "unchanged_files": {
+    "calibration.csv": {
+      "old_sha256": "177566373577af33d370757ddf790f0558446514816b5cf1d3c1e17035b62073",
+      "new_sha256": "177566373577af33d370757ddf790f0558446514816b5cf1d3c1e17035b62073",
+      "byte_identical": true
+    },
+    "calibration_summary.csv": {
+      "old_sha256": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+      "new_sha256": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+      "byte_identical": true
+    },
+    "scores.csv": {
+      "old_sha256": "cf296bafde77e196599341253115dbe8bc6c2c6163fe1b7744ec529d851fde3a",
+      "new_sha256": "cf296bafde77e196599341253115dbe8bc6c2c6163fe1b7744ec529d851fde3a",
+      "byte_identical": true
+    },
+    "score_summary.csv": {
+      "old_sha256": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+      "new_sha256": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+      "byte_identical": true
+    },
+    "matched_widths.csv": {
+      "old_sha256": "d2e11c390ab321c99dc27a95f38fc6adfd44b954debf85af86e7eb0b83ab8415",
+      "new_sha256": "d2e11c390ab321c99dc27a95f38fc6adfd44b954debf85af86e7eb0b83ab8415",
+      "byte_identical": true
+    },
+    "adaptation.csv": {
+      "old_sha256": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+      "new_sha256": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+      "byte_identical": true
+    },
+    "em_start_histories.json": {
+      "old_sha256": "932dee55862a2547708b8464737271e48ce876268e55ee872e532ed467aa36a6",
+      "new_sha256": "932dee55862a2547708b8464737271e48ce876268e55ee872e532ed467aa36a6",
+      "byte_identical": true
+    },
+    "sensor_diagnostics.json": {
+      "old_sha256": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+      "new_sha256": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+      "byte_identical": true
+    },
+    "failures.json": {
+      "old_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "new_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "byte_identical": true
+    }
+  },
+  "unchanged_nonfriction_rows": 192,
+  "corrected_friction_rows": 32,
+  "old_mismatch_sha256": "20e47a82a27a78a91b186805c06b2070ac7a2a799ae2a8957bbf175e166fc8b9",
+  "new_mismatch_sha256": "b338116a942abdb4247e5bad9b37283cbcc0bf1089af67c7533c3e263ab7e35e",
+  "old_producers": "development/reliability_before_friction_fix/sources",
+  "regression": "tests/test_guide_reliability.py",
+  "current_library_sha256": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029"
+}

@@ -1,0 +1,119 @@
+{
+  "config": {
+    "profile": "paper",
+    "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+    "seed": 2026110901,
+    "algebra_seed": 2026110902,
+    "cases": [
+      {
+        "n": 3,
+        "k": 1,
+        "complex_data": false
+      },
+      {
+        "n": 3,
+        "k": 2,
+        "complex_data": false
+      },
+      {
+        "n": 5,
+        "k": 2,
+        "complex_data": false
+      },
+      {
+        "n": 3,
+        "k": 1,
+        "complex_data": true
+      },
+      {
+        "n": 5,
+        "k": 2,
+        "complex_data": true
+      }
+    ],
+    "sensor_variances": [
+      0.2,
+      1.0,
+      4.0
+    ],
+    "signal_variance": 1.3,
+    "score_episodes": 65536,
+    "discounted_episodes": 32768,
+    "finite_difference_steps": [
+      0.03,
+      0.01,
+      0.003,
+      0.001
+    ],
+    "curvature_datasets": 128,
+    "curvature_observations": [
+      1,
+      4,
+      16
+    ],
+    "quadrature_orders": [
+      32,
+      64,
+      96
+    ],
+    "native_tolerance": 1e-11,
+    "betas": [
+      1.0,
+      0.8
+    ],
+    "weighted_observations": 6,
+    "thresholds": {
+      "maximum_product_z": 7.0,
+      "maximum_score_mean_z": 7.0,
+      "final_fd_relative_error": 5e-05,
+      "likelihood_absolute": 2e-09,
+      "reference_resolution": 2e-09,
+      "native_reference": 2e-09
+    },
+    "variance_convention": "s and tau2 are variances; each real/imag noise coordinate has variance s/2 for proper complex data",
+    "coordinate_order": "vec_F Z (real), [Re vec_F Z, Im vec_F Z] (complex); identical canonical tangent basis for all matrix comparisons",
+    "observation_scope": "Known truth evaluates reference information only. Conditional inputs are independently prescribed, never reconstructed from measured vectors.",
+    "score_scope": "Each repeated score is one independent dataset; products have reported Monte Carlo SEs, not deterministic confidence enclosures.",
+    "curvature_scope": "Realized posterior curvature at its own mode is 2 times selected/complementary eigenvalue gaps. Expected information is at fixed truth; only spectra are compared across these different tangent frames."
+  },
+  "sources": {
+    "lib/guide_information.py": "23a4c48bf43ccb3d25b550ff37c25b7920897d9cf066335c625890e8f37faa00",
+    "scripts/run_guide_information.py": "a37f4e7d254ab6a4c1f85317050867311769af19c547f95e6bf89e9f5adcbe14",
+    "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+    "lib/beamforming_theory.py": "8cf21d381a44756818177130fd097b8c6458e541c0595e46fa2577348aace486",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53"
+  },
+  "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+  "status": "completed",
+  "checks": {
+    "algebra_failures": 0,
+    "unresolved_score_cases": 0,
+    "final_fd_relative_error": 1.003032798392012e-06,
+    "final_kl_relative_error": 1.0004694166020863e-06,
+    "maximum_native_reference_mean_error": 6.024272381577049e-13,
+    "maximum_native_reference_logz_error": 9.992007221626409e-14,
+    "maximum_reference_resolution": 8.881784197001252e-15
+  },
+  "numerical_ok": true,
+  "seconds": 11.191078133000701,
+  "created_utc": "2026-11-08T16:48:31.846341+00:00",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "tables": {
+    "case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+    "curvature.csv": "d71ca96fee6f7ff5365d25e0a11732343ec0ad0d438b8afff6d765f5dce4a3bb",
+    "finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+    "fisher_matrices.csv": "bfbc9434eb15c0be2f9ddd8c36936137805709615b9a99b5a4326cb695a3073d",
+    "kl_grid.npz": "accf730437bfe190200bd82f525946bb5872d47c0cf232f1c01e0f97fd60caae",
+    "likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+    "quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+    "weighted_mixture.csv": "223c16463acfedadc7d18794993ba6c2a41180c0b1ce8959266f04f6cccf1e12"
+  },
+  "scope": "Deterministic mathematical references and independent score simulations; not tracking performance, an estimator CRB, or posterior-normalizer Hessian validation."
+}

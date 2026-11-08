@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "profile": "paper",
+  "status": "completed",
+  "paper_evidence": true,
+  "created_utc": "2026-11-08T01:04:59.078732+00:00",
+  "generator": {
+    "path": "scripts/summarize_simulation_redesign.py",
+    "sha256": "03495c53e93ff3e39aad7f71819fb02572dfdc19100f155b0ae7bdbae28bd858"
+  },
+  "source_hashes": {
+    "lib/anisotropy_study.py": "b7ab40a999d74cb94983a1d1d0e0e6772ec57000bbd0ad0048dfae71ab68bfed",
+    "scripts/run_anisotropy_study.py": "580a4bbc34a7b6a9b25beb3d2d77037f820d57c2a3fd16881f6b90a099c178c8",
+    "tests/test_anisotropy_study.py": "e6575f205c423a0b9a646c03e6b21c99c14bcb43f32f6ea6da2589295b1dffda",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/reference.py": "4aa76180e4b46cafb5f29f96023f11430fabcd44d56344de610a90497de853cf",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+    "scripts/run_array_geometry.py": "bd8a1bd896515c63c5683a85400e4170c61580c4be7f405b81e5f21827eb8193",
+    "tests/test_array_geometry.py": "6d209b467482af25f262d7457de6ee7f61417992d5838d618a5ed5411e68f775",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+    "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+    "lib/contact_geometry_study.py": "f8d0e5b18eadff493fbcca05b5ae42adacf27755735e9928be3343aa0ebe8874",
+    "scripts/run_contact_geometry.py": "d2b5a37d58dfffa85e3c21f348d5eb8ac51be310ad6df2ba432ae754afcae7b5",
+    "tests/test_contact_geometry.py": "2abc7c0b29e57f930d35c2ca436ed3fb843d41d7340f029c30ff14c88f52b6ec",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/contact_gaussian.py": "362722a17fef5ae9e5bdcea1011c264f372931b444796694903aa8a20ed239eb",
+    "lib/simulation_scaling.py": "0c6bed44460c1df2d11f74b3372ec7c6c39d67efbcf019a065d8c5262284a6ca",
+    "scripts/run_simulation_scaling.py": "ddc7914b66b063fe01c6b2ee805588e9183712fab4c0c8e2ba8cf17d3525ae4e",
+    "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
+    "lib/distribution_geometry_visuals.py": "d6ef85dad23163409a52400fe58786888cd9314db0b7b9a828487272e1c6f5d8",
+    "lib/simulation_story_visuals.py": "58b805a6e43aef3ccc2c4e54c9792d271e8a0ae207f10b5588ce71414b93e6bf",
+    "scripts/plot_geometry_studies.py": "39e8a7c974ac273de2d9f426d7576a2a665efe010145aee9a224f1f52a021d21"
+  },
+  "verified_input_hashes": {
+    "results/simulation_redesign/paper/geometry/manifest.json": "47d66a25fedff73a417cbe955d80a963303d3b58bb06a15d57064be221293602",
+    "results/simulation_redesign/paper/beamforming/manifest.json": "d1b5fc4a8fc4a8d4aaaf7280286c284eeeaf06f2d383cad33fe57f1632574812",
+    "results/simulation_redesign/paper/contact/manifest.json": "208fc2d728a42439acadc5d68825572c5c5ceb2b1753b6835e9486e94b4a4a5a",
+    "results/simulation_redesign/paper/scaling/manifest.json": "0ad0e8b4b945f35ed3e5ccb08fee0e2e1f18764143f4843b7cc9b4be87b3ffba",
+    "results/simulation_redesign/paper/figures/manifest.json": "898f5aab89cf4cf909b78891830f41100c06c9147b78e92e9f80a4bb8675bb6c"
+  },
+  "verified_components": [
+    "geometry",
+    "beamforming",
+    "contact",
+    "scaling"
+  ],
+  "pending": {},
+  "figures_verified": true,
+  "gate_sha256": "062c1c357634d9e5befd75c2a3e755a81ffd30be49e082b7ee5647d7c9746262",
+  "science_hash": "521541a512f7f153460e2a8f0b5dbb32da24029d11c0d4f6d3958471e85342dc",
+  "outputs": {
+    "results/simulation_redesign/findings.md": "b1dfdc7dae3d6bd07513586b54eb2e03f3a29e17c443f2170600b1ab3dd3d39f",
+    "results/simulation_redesign/beamforming_summary.md": "2f777e62ff70be784288eb3e50f8326b901811d178733b39c57f7318d24e50c6",
+    "results/simulation_redesign/contact_summary.md": "11aa3e808717f40be5fc260bfcef35d69c3fbd65d70444879f04066d679384c4",
+    "results/simulation_redesign/contact_paired_static.csv": "164d637bc04177b0aaf88c892c4ca8d4aa0a867e5cc5d8e19e46ef5ff6db001a",
+    "results/simulation_redesign/contact_paired_dynamic.csv": "79e966c0eebdfc52fb993279f1c5cc66e60444da19262b86349dfc2c81946365"
+  },
+  "application_summaries": {
+    "beamforming_summary.md": {
+      "words": 194,
+      "paragraphs": 2
+    },
+    "contact_summary.md": {
+      "words": 217,
+      "paragraphs": 2
+    }
+  },
+  "generated_contact_pair_rows": {
+    "static": 216,
+    "dynamic": 192
+  },
+  "statistics": "Paired independent-trajectory pointwise Student95% intervals; no multiplicity correction. Finite numerical/local-invalid comparisons are retained but not labeled resolved gains; undefined functionals are separate."
+}

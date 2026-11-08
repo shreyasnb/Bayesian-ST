@@ -1,0 +1,73 @@
+{
+  "status": "passed",
+  "tests": 241,
+  "executed_utc": "2026-11-08T17:18:02.160671+00:00",
+  "notebooks": {
+    "notebooks/01_array.ipynb": {
+      "sha256": "445d23341b5a26360ac312a20db2e6524927163c1041bd824ce89c9761fc6992",
+      "source_hash": "c26a4985cfe13a4220cfc72a8d7e8209c0cb3d59445b3d6df070acc84d89ebad",
+      "code_cells": 8,
+      "error_outputs": 0,
+      "image_outputs": 6,
+      "figure_names": [
+        "beamforming_01_setup",
+        "beamforming_02_posterior",
+        "beamforming_03_directional",
+        "beamforming_04_benchmarks",
+        "beamforming_05_responses",
+        "beamforming_06_scaling"
+      ]
+    },
+    "notebooks/03_contact.ipynb": {
+      "sha256": "a5d841b5fbdcfc128476b47840cf403e423ff852aace2f4459de1974908206ad",
+      "source_hash": "542ee68be522b5b9556980172591ee6f49eb4dc96a9036114def6946fea118db",
+      "code_cells": 8,
+      "error_outputs": 0,
+      "image_outputs": 6,
+      "figure_names": [
+        "contact_01_mechanics",
+        "contact_02_posterior",
+        "contact_03_directional",
+        "contact_04_benchmarks",
+        "contact_05_tracking",
+        "contact_06_higher_dimension"
+      ]
+    },
+    "notebooks/04_implementation_audit.ipynb": {
+      "sha256": "6728a973127aa5badb4c1083b9a7423aafb3592b6334e35622fb7d27a6ef7af9",
+      "source_hash": "9e3065911e2152f9b6cc81a4207957fb97b365d7c36c31bfbf1a0ea6c07041cf",
+      "code_cells": 16,
+      "error_outputs": 0,
+      "image_outputs": 12,
+      "figure_names": [
+        "B2a_C2_information",
+        "B2a_count_error",
+        "B2b_posterior_curvature",
+        "B3_C4_modal_bounds",
+        "B3_C4_validity",
+        "B5_heldout_decisions",
+        "B5_tracking_decisions",
+        "B6_beam_calibration",
+        "C5_contact_calibration",
+        "B7a_C6a_block_evidence",
+        "B7b_C6b_scale_adaptation",
+        "C5_model_mismatch"
+      ]
+    }
+  },
+  "input_hashes": {
+    "results/implementation_audit/validation/validation.json": "4c7c05707aca66041875e6eee794f18a8ca7b03bb05868417596b9f6cfbc704d",
+    "results/implementation_audit/summary_manifest.json": "8bd698e0fdb1c006c392fdae4d7a9c5d935483a7a96d45762ef1e9298c5849db",
+    "results/implementation_audit/paper/figures/manifest.json": "1fecdaa5fa926b32c6114688e30ed4c57ed31639033170e9e6633c4660361162",
+    "results/simulation_redesign/summary_manifest.json": "9a32eaf1863632db2f797d56b09f010d350c2f472655a255c099d9d4e73deecc",
+    "results/simulation_redesign/paper/figures/manifest.json": "67ec2eaf3a793e72bbeec6df02b511cc0eac2a2b07af3f21c63b48d7a516fa64"
+  },
+  "sources": {
+    "scripts/execute_implementation_audit.py": "43b1c454d4e993fdcdc3730fcd0f0a9514399333f362886308dfc6842ee5570b",
+    "scripts/execute_geometry_notebooks.py": "64f525d4c6e9e82caa4904b800c8241eef6c1eb70e1dc16840145f6fc51fc1be",
+    "scripts/make_geometry_notebooks.py": "ad34059aed2c6508cc70f2a0dd3c358faea8a988f95b5475b0d13b5f2edaa78d",
+    "scripts/make_implementation_audit_notebook.py": "da7b8bfdab1b35460449cdede1401f11b0530c405fe72ba34ae4a4bb858932b5",
+    "scripts/summarize_implementation_audit.py": "8808714a78ec5c25689f5fc388c379c3f66e96951650b56dc5528aedbafffd94"
+  },
+  "scope": "Clean-kernel execution of the two applications and computational supplement. Every embedded PNG is byte-checked against the final source-verified figure export. No new inference or performance tuning occurs during notebook execution."
+}

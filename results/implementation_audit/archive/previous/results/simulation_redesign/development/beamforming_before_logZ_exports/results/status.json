@@ -1,0 +1,26 @@
+{
+  "status": "completed",
+  "source_hash": "b82529e5a7c3857e3b72bb11e969209eb7b45ce7b9ea91ffd5d672c6e25dc104",
+  "checks": {
+    "metric_rows": 6144,
+    "trajectories": 192,
+    "mean_failures": 0,
+    "tail_reports": 80,
+    "unresolved_tail_reports": 0,
+    "unresolved_state_reports": 0,
+    "maximum_unit_gain_error": 4.129254715934394e-10,
+    "maximum_expected_power_identity_error": 1.1293049828609014e-15,
+    "one_snapshot_maximum_anisotropy": 1.6623985905262406e-15,
+    "total_seconds": 10.506200441000146,
+    "fixture": {
+      "radius_pair_error": 2.1094237467877974e-15,
+      "predictive_mean_rotation_error": 1.1406720186167115e-14,
+      "passive_selected_data_recovery_error": 8.531852659757913e-14,
+      "same_mode": true,
+      "same_spectrum": true,
+      "equal_entire_radius_distribution": "Exact unitary pushforward fixing the mode; numerical pairs verify it",
+      "fixture_scope": "Selected-data posterior calculation, not a random-training performance claim. Two parameters share spectrum, mode and every centered chordal-distance quantile, but swap complementary axes relative to the desired steering."
+    },
+    "uncertainty_scope": "Mean/normalizer accuracy, iid Monte Carlo reports, and repeated-data coverage are separate checks; all flags retained."
+  }
+}

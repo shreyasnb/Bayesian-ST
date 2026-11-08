@@ -24,10 +24,15 @@ from matplotlib.lines import Line2D
 
 BLUE = '#0072B2'
 ORANGE = '#D55E00'
-PURPLE = '#A55AA3'
+HPD_COLOR = '#252525'
 GREY = '#68737A'
 DENSITY_CMAP = colors.LinearSegmentedColormap.from_list(
-    'bingham_density', ['#F2F6FA', '#BED7E8', '#679FC7', '#17639B', '#003B67'])
+    'bingham_density_blue_pink',
+    ['#245FA8', '#4A65B2', '#8260B1', '#B75DA9', '#E66DAB', '#FF94C2'], N=256)
+# A continuous blue-to-pink scale keeps low-density parts blue; values below
+# the displayed logarithmic floor keep that same blue instead of becoming white.
+DENSITY_CMAP.set_under('#245FA8')
+DENSITY_CMAP.set_over('#FF94C2')
 
 
 @dataclass(frozen=True)
@@ -326,10 +331,10 @@ def draw_density_sphere(ax, mesh, log_density, *, norm=None, rotation=None,
     circles = [np.column_stack([np.cos(phi), np.sin(phi), np.zeros_like(phi)]),
                np.column_stack([np.cos(phi), np.zeros_like(phi), np.sin(phi)]),
                np.column_stack([np.zeros_like(phi), np.cos(phi), np.sin(phi)])]
-    _curve(ax, circles, R, color=GREY, linewidth=.65, alpha=.18, zorder=2,
+    _curve(ax, circles, R, color='#BAC6D9', linewidth=.75, alpha=.48, zorder=2,
            visible_direction=camera)
     if A is not None and hpd_loss is not None:
-        _curve(ax, hpd_curves(A, float(hpd_loss)), R, color=PURPLE,
+        _curve(ax, hpd_curves(A, float(hpd_loss)), R, color=HPD_COLOR,
                linewidth=2., label=hpd_label, visible_direction=camera)
     if mode is not None:
         h = np.asarray(mode, float)
@@ -458,7 +463,7 @@ def draw_bloch_bingham(ax, A, log_normalizer, *, mesh=None, hpd_loss=None,
         phi = np.linspace(0., 2*np.pi, 1441)
         curve = cosine*mode[:, None] + np.sqrt(1-cosine*cosine)*(
             e2[:, None]*np.cos(phi)+e3[:, None]*np.sin(phi))
-        _curve(ax, [curve.T], R, color=PURPLE, linewidth=2.,
+        _curve(ax, [curve.T], R, color=HPD_COLOR, linewidth=2.,
                visible_direction=camera)
     return mapping
 
@@ -506,7 +511,7 @@ def real_bingham_comparison(parameters, log_normalizers, *, titles=None,
     colorbar.set_label(colorbar_label)
     handles = []
     if any(value is not None for value in hpd_losses):
-        handles.append(Line2D([0], [0], color=PURPLE, lw=2., label=r'$\mathrm{HPD}$'))
+        handles.append(Line2D([0], [0], color=HPD_COLOR, lw=2., label=r'$\mathrm{HPD}$'))
     if any(value is not None for value in ball_radii):
         handles.append(Line2D([0], [0], color=GREY, ls='--', label=r'$d_c=\rho_{t,\alpha}$'))
     handles.append(Line2D([0], [0], marker='o', color='none', markerfacecolor=ORANGE,
@@ -518,6 +523,8 @@ def real_bingham_comparison(parameters, log_normalizers, *, titles=None,
         measure='normalized invariant measure; uniform q_A=1',
         density_color_floor=float(norm.vmin), density_color_maximum=float(norm.vmax),
         density_color_decades=float(decades),
+        density_colormap=DENSITY_CMAP.name,
+        density_colormap_low='#245FA8', density_colormap_high='#FF94C2',
         color_floor_scope='Colors below the floor saturate; probability mass is not truncated',
         view='Front hemisphere visible; the antipodal rear lobe represents the same real line',
         normalization='Supplied verified log normalizer; no normalization from the display mesh',

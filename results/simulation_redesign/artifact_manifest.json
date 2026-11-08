@@ -1,11 +1,11 @@
 {
   "branch": "test",
   "base_commit": "2a8697c7e7fa27b3779f3abeaed32ca8b323a9ef",
-  "created_utc": "2026-11-08T01:06:43.032997+00:00",
+  "created_utc": "2026-11-08T17:19:09.125655+00:00",
   "retained": {
     "results/simulation_redesign/README.md": {
-      "sha256": "cce9efd2e9845df02323065a63b14bf2ea2a59876245e0aadfc40b1c59b45af5",
-      "bytes": 3308
+      "sha256": "137ba76c27766c705d02e35c05d37cadb2f8e71fb6f8fa1560dac6af64921ce5",
+      "bytes": 3669
     },
     "results/simulation_redesign/archive/01_array_2a8697c.ipynb": {
       "sha256": "69713e6dda38e11b4c0ecf78e71681b43ea8003866c8bb590f84bd624334dbad",
@@ -700,8 +700,8 @@
       "bytes": 245544
     },
     "results/simulation_redesign/execution.json": {
-      "sha256": "345f39d1702902c4db9baaa3f73c982a1b2bee2983e2cb85ada09e9f47b4a5f6",
-      "bytes": 1635
+      "sha256": "f74a30621792ee0127582195c15da9cae92a5faf26569aea6a35eb979889942b",
+      "bytes": 1715
     },
     "results/simulation_redesign/findings.md": {
       "sha256": "b1dfdc7dae3d6bd07513586b54eb2e03f3a29e17c443f2170600b1ab3dd3d39f",
@@ -868,7 +868,7 @@
       "bytes": 7997
     },
     "results/simulation_redesign/paper/figures/beamforming_01_setup.pdf": {
-      "sha256": "89bb0147a34921f7be923d36030d255c95d587a2d5685ec3530756e216cac680",
+      "sha256": "1e600c6a94e630bc261224ea624b8ff7450f6f50d1e5ef9b6a0e9932a13f3318",
       "bytes": 333236
     },
     "results/simulation_redesign/paper/figures/beamforming_01_setup.png": {
@@ -876,23 +876,23 @@
       "bytes": 72886
     },
     "results/simulation_redesign/paper/figures/beamforming_02_posterior.pdf": {
-      "sha256": "9125987cd35b3e9c525b51f7c2f9ebfd11cb35a8577439bec7d7aed5db74893e",
-      "bytes": 541684
+      "sha256": "c838b1ff4d53552632ecfde60667c0a3bcb76acb7b6acba45b79032d323ae21b",
+      "bytes": 541521
     },
     "results/simulation_redesign/paper/figures/beamforming_02_posterior.png": {
-      "sha256": "61aba251876551503eaa1e64f1dbc193104cf994e0ade90bb197887aebd06d89",
-      "bytes": 127822
+      "sha256": "fdf128a16e667b32cbcc4e3f12768763b5228dc438f0c716bac360b0090d0c97",
+      "bytes": 127226
     },
     "results/simulation_redesign/paper/figures/beamforming_03_directional.pdf": {
-      "sha256": "fd8e1abc2d486f548758f805e76b7af42a94418b911652af02fb3dde64a410d8",
-      "bytes": 442251
+      "sha256": "1d22320bece5c0c8556f3d158eb1cfaa388fb95c8ae7c6f26b712a623bd27fe1",
+      "bytes": 441439
     },
     "results/simulation_redesign/paper/figures/beamforming_03_directional.png": {
-      "sha256": "9ae28e48a75a44d76a96eb40eeaffc043985dd99fc16d7ed6a3ce2dd58c2a45e",
-      "bytes": 177738
+      "sha256": "0a01bc42609fda1e37ca1206afee63a4901e24070f44358cedcff4ee749b134f",
+      "bytes": 173950
     },
     "results/simulation_redesign/paper/figures/beamforming_04_benchmarks.pdf": {
-      "sha256": "87fc39fb420fa43894800351417c2bf0a724ae1057c76c3062ebd636e3a7ab30",
+      "sha256": "d71e02d3eed7a2db7aef182fd00ea733ca6285d8e4fb8cf4a7283c2b3f734692",
       "bytes": 405339
     },
     "results/simulation_redesign/paper/figures/beamforming_04_benchmarks.png": {
@@ -900,7 +900,7 @@
       "bytes": 232687
     },
     "results/simulation_redesign/paper/figures/beamforming_05_responses.pdf": {
-      "sha256": "a18189b9f9dd3cd12cbc1511f5458da118acb87afe8eedc9236d90cba5154d90",
+      "sha256": "33e52b28912d92b82cf23379bbb8ce1c48d4901f300e77905643769bccea55f2",
       "bytes": 537221
     },
     "results/simulation_redesign/paper/figures/beamforming_05_responses.png": {
@@ -908,7 +908,7 @@
       "bytes": 297868
     },
     "results/simulation_redesign/paper/figures/beamforming_06_scaling.pdf": {
-      "sha256": "fcf526e2ce3a46d65a66cf003c96430f6379ee7648aa65b948e6ccb6b4f0f403",
+      "sha256": "3e652b4e8c317bf4c87acca985a3acaa1f6a898b8370c9187ace311654bf2d60",
       "bytes": 327268
     },
     "results/simulation_redesign/paper/figures/beamforming_06_scaling.png": {
@@ -916,7 +916,7 @@
       "bytes": 173619
     },
     "results/simulation_redesign/paper/figures/contact_01_mechanics.pdf": {
-      "sha256": "71be618b7e58b20b6dd3f1787d784d4a61d9d9925a4661150ccabc0a6b1b6d8a",
+      "sha256": "3c7713ed7d180fa44b6880b752cc22058eae627a990ba03629795ac729256eab",
       "bytes": 303735
     },
     "results/simulation_redesign/paper/figures/contact_01_mechanics.png": {
@@ -924,23 +924,23 @@
       "bytes": 233552
     },
     "results/simulation_redesign/paper/figures/contact_02_posterior.pdf": {
-      "sha256": "73eade0e6b34e8efb943a885b6b079cfa38388d95973dafdc2498889e7b9d719",
-      "bytes": 441058
+      "sha256": "9a2f3e64a10f2d34dfe08983de261fc9f6f845371c5f6a6b2a36889d6bfe4333",
+      "bytes": 438366
     },
     "results/simulation_redesign/paper/figures/contact_02_posterior.png": {
-      "sha256": "14a7f1e061ff09c27c5377669ea2490558a959edc86f8e508e650e398b84fa59",
-      "bytes": 286158
+      "sha256": "9e146f0b7e5c8d2418d1ca9816ebffeb28fd67492eacc2ce8a04b60e3fa6d421",
+      "bytes": 278961
     },
     "results/simulation_redesign/paper/figures/contact_03_directional.pdf": {
-      "sha256": "6d9568d5d104e69b414b8a14ba2e9d4a93ffe7c67df162848ad16577ba48a44d",
-      "bytes": 545364
+      "sha256": "7550aad6fbd9b4900e6b056abb9e645f5707dc738ada5e93c343420ea6560195",
+      "bytes": 544575
     },
     "results/simulation_redesign/paper/figures/contact_03_directional.png": {
-      "sha256": "4237923ed6d5f3eab5a8d335f651dec32be407487d21b88629b05ce4d097b3d1",
-      "bytes": 209581
+      "sha256": "485537605d1b42fe4a54709b38759afc576cd4de5af62d3ea7c054554abb00b8",
+      "bytes": 210023
     },
     "results/simulation_redesign/paper/figures/contact_04_benchmarks.pdf": {
-      "sha256": "9d3cdc9393088834beb9990866ec92103c6582b54d5ef5c353ef83ff1bf451b6",
+      "sha256": "c4bd78e77568c67b2c55305928e5377a06a0bc02dd52054e25c34accc071718c",
       "bytes": 404175
     },
     "results/simulation_redesign/paper/figures/contact_04_benchmarks.png": {
@@ -948,7 +948,7 @@
       "bytes": 213235
     },
     "results/simulation_redesign/paper/figures/contact_05_tracking.pdf": {
-      "sha256": "09372571998607424cb30086ba6940bd48340c19269e2336fcece199277c3069",
+      "sha256": "104fa035e02aabece33f11db56bc9f7b11d487ac4cf607fd651c980cfbef178e",
       "bytes": 553538
     },
     "results/simulation_redesign/paper/figures/contact_05_tracking.png": {
@@ -956,7 +956,7 @@
       "bytes": 383061
     },
     "results/simulation_redesign/paper/figures/contact_06_higher_dimension.pdf": {
-      "sha256": "845588c33ae83645d70a066d63872cd05795eb714f811337f84b76a4c4755ef2",
+      "sha256": "7ab46fe50e0d0034620b06de5309ad720b2065c482562488453e55508fb0f478",
       "bytes": 495819
     },
     "results/simulation_redesign/paper/figures/contact_06_higher_dimension.png": {
@@ -964,8 +964,8 @@
       "bytes": 82086
     },
     "results/simulation_redesign/paper/figures/manifest.json": {
-      "sha256": "898f5aab89cf4cf909b78891830f41100c06c9147b78e92e9f80a4bb8675bb6c",
-      "bytes": 10443
+      "sha256": "67ec2eaf3a793e72bbeec6df02b511cc0eac2a2b07af3f21c63b48d7a516fa64",
+      "bytes": 10447
     },
     "results/simulation_redesign/paper/geometry/allcases.npz": {
       "sha256": "f2571c0f042e47b04acf4eb11208447990b7c895d72336c55a37b516a9ae8514",
@@ -1220,7 +1220,7 @@
       "bytes": 4350
     },
     "results/simulation_redesign/quick/figures/beamforming_01_setup.pdf": {
-      "sha256": "396b8cede87081d17368e132461419a4fba800c0f26e8a73e2b1daf07bde20a0",
+      "sha256": "66fe21d8b5fa23f3bad3b1922bf07972a336bc80bfcf943f58d209de0d1c572c",
       "bytes": 333348
     },
     "results/simulation_redesign/quick/figures/beamforming_01_setup.png": {
@@ -1228,23 +1228,23 @@
       "bytes": 74974
     },
     "results/simulation_redesign/quick/figures/beamforming_02_posterior.pdf": {
-      "sha256": "36e5b56e0c875565f64c657cf90c95403d37d7bd04391627e0cc03ca390e79f4",
-      "bytes": 541320
+      "sha256": "b07c1262680266b2ce206ab924039c88b911f727a4f427eadc4e194a0934a28d",
+      "bytes": 541018
     },
     "results/simulation_redesign/quick/figures/beamforming_02_posterior.png": {
-      "sha256": "4015fff75a4ff0c6aeb1c5f135897f2e4c6f951aa116a1ceb4dde508fd35a67b",
-      "bytes": 130182
+      "sha256": "c21b4c764d4df43df82913dcb3dddceb4fc836d56818490020ea19e226edbba9",
+      "bytes": 129722
     },
     "results/simulation_redesign/quick/figures/beamforming_03_directional.pdf": {
-      "sha256": "0762694138fa81b4a0ec1f9edd4aca03ec72b231f2d01d43822aacf77f58d8a1",
-      "bytes": 442283
+      "sha256": "7b89fcddf55eefdd6d1d77d1ca0da7ffbd6b3421851806629e2548a3d834b1fc",
+      "bytes": 441472
     },
     "results/simulation_redesign/quick/figures/beamforming_03_directional.png": {
-      "sha256": "2b391a9abda8a4ebb2aee7864c10ac963c3e734b56faaed189be34eb39026914",
-      "bytes": 177967
+      "sha256": "b61c7c3722934842a59658cd017569156f024ffefaa71922e333f47e4bcc7e04",
+      "bytes": 173929
     },
     "results/simulation_redesign/quick/figures/beamforming_04_benchmarks.pdf": {
-      "sha256": "81401a9211d2ae6c80f12f1f312bfff2bf5a729dd1c17e3770bdece454131dad",
+      "sha256": "6cc71a0ed0304fa3fbc3d686fa389a4d73d1f350aff6670feed8b7c7dd8ad5ec",
       "bytes": 395946
     },
     "results/simulation_redesign/quick/figures/beamforming_04_benchmarks.png": {
@@ -1252,7 +1252,7 @@
       "bytes": 155540
     },
     "results/simulation_redesign/quick/figures/beamforming_05_responses.pdf": {
-      "sha256": "12f4c457383cae1c0e5ae7fdd8b03370664d0ace38c5c7701a4cb28b750bdbed",
+      "sha256": "9c853380cdfeb8352180cae760415b2aaccfa0146299f5a87ec881bd52d09009",
       "bytes": 537647
     },
     "results/simulation_redesign/quick/figures/beamforming_05_responses.png": {
@@ -1260,7 +1260,7 @@
       "bytes": 313526
     },
     "results/simulation_redesign/quick/figures/beamforming_06_scaling.pdf": {
-      "sha256": "bbd3c3c4f3d3dc3dbf2b49a09d33fa20ca7a35253415e1dc2c0c83a578b557c0",
+      "sha256": "ae0fa67e0fa4a8b15c624a9fcc9638f9e6d927fed0919cbdd56d8a7fb729b5bb",
       "bytes": 327300
     },
     "results/simulation_redesign/quick/figures/beamforming_06_scaling.png": {
@@ -1268,7 +1268,7 @@
       "bytes": 186441
     },
     "results/simulation_redesign/quick/figures/contact_01_mechanics.pdf": {
-      "sha256": "bcd7074d5523baad6e1beb291877837692e2f4f7b836ef9a4d755afc335cb3cf",
+      "sha256": "6e1951f1eea6ccb18272ae05eab5ee4771cb7502625288d2f29a478f24545231",
       "bytes": 304067
     },
     "results/simulation_redesign/quick/figures/contact_01_mechanics.png": {
@@ -1276,23 +1276,23 @@
       "bytes": 232983
     },
     "results/simulation_redesign/quick/figures/contact_02_posterior.pdf": {
-      "sha256": "ef004fd2270f40c4e83643bbc996c54a34cc47f352bf281ca5edf8a52251bb85",
-      "bytes": 441058
+      "sha256": "d7d10fa04c8e5be9bacfc95786d014cbe89727f33b3f9fb540b2321214e87a72",
+      "bytes": 438366
     },
     "results/simulation_redesign/quick/figures/contact_02_posterior.png": {
-      "sha256": "14a7f1e061ff09c27c5377669ea2490558a959edc86f8e508e650e398b84fa59",
-      "bytes": 286158
+      "sha256": "9e146f0b7e5c8d2418d1ca9816ebffeb28fd67492eacc2ce8a04b60e3fa6d421",
+      "bytes": 278961
     },
     "results/simulation_redesign/quick/figures/contact_03_directional.pdf": {
-      "sha256": "140c0137bc322481eb0c9be9c05b085839039ac96b3ec37560215b598f5b9b79",
-      "bytes": 545364
+      "sha256": "7d5fffe7d9f073119b691cc1ff8c7b56b19c547e0609934e7f252f115411d02c",
+      "bytes": 544575
     },
     "results/simulation_redesign/quick/figures/contact_03_directional.png": {
-      "sha256": "4237923ed6d5f3eab5a8d335f651dec32be407487d21b88629b05ce4d097b3d1",
-      "bytes": 209581
+      "sha256": "485537605d1b42fe4a54709b38759afc576cd4de5af62d3ea7c054554abb00b8",
+      "bytes": 210023
     },
     "results/simulation_redesign/quick/figures/contact_04_benchmarks.pdf": {
-      "sha256": "a750d935d62b24289eee12f0eff7282e4c6a753a895e141d8e5ea3f290d380c7",
+      "sha256": "c4b7b84eaedbc39ce7dc50bf58485b69c4c963441e76b7f3168a0d13d246dbad",
       "bytes": 397829
     },
     "results/simulation_redesign/quick/figures/contact_04_benchmarks.png": {
@@ -1300,7 +1300,7 @@
       "bytes": 136185
     },
     "results/simulation_redesign/quick/figures/contact_05_tracking.pdf": {
-      "sha256": "76e50a54298c109922a57aa388ac73f1bce26610a1a60e320c722529fc8133cc",
+      "sha256": "4d5802a33ca1bb4513ba15a593c050a65dd29911e5ca751fbece8bfb22cff360",
       "bytes": 549986
     },
     "results/simulation_redesign/quick/figures/contact_05_tracking.png": {
@@ -1308,7 +1308,7 @@
       "bytes": 380272
     },
     "results/simulation_redesign/quick/figures/contact_06_higher_dimension.pdf": {
-      "sha256": "710e9c653904731d9f0a9a7c382f4fe70b32ba7eb2ad3db4113cd5c6bf3a1ef7",
+      "sha256": "4be2c2c22624af5b30091a67bc9fac71078fdb34ca402c73858c8ec5ca6a3983",
       "bytes": 495121
     },
     "results/simulation_redesign/quick/figures/contact_06_higher_dimension.png": {
@@ -1316,8 +1316,8 @@
       "bytes": 90902
     },
     "results/simulation_redesign/quick/figures/manifest.json": {
-      "sha256": "19bd333851f705a916833ce3059ff2023fbe2e63fd04870bf80794a4106f59b2",
-      "bytes": 10443
+      "sha256": "e83a1d806e1fb83956920693b50027da9ca2404039cb19b4694d1e9cfb145eb1",
+      "bytes": 10447
     },
     "results/simulation_redesign/quick/geometry/allcases.npz": {
       "sha256": "4d4be0dc0ec0c489755ec22acd15da8274e776a816cc92b521634d5ecaf0278b",
@@ -1408,8 +1408,8 @@
       "bytes": 35067
     },
     "results/simulation_redesign/summary_manifest.json": {
-      "sha256": "03aecf87fd10d1d50cb205f99d998d8b1ded585dfa0ee49d19acb01d96dd3e3a",
-      "bytes": 5624
+      "sha256": "9a32eaf1863632db2f797d56b09f010d350c2f472655a255c099d9d4e73deecc",
+      "bytes": 5698
     },
     "results/simulation_redesign/validation/spectral_series_timing.csv": {
       "sha256": "78aecc847710acef345029ca398fef256075bd53e62716b715ac93e47bf57ad9",
@@ -25291,32 +25291,32 @@
     }
   },
   "sources": {
-    ".gitignore": "1ab0fa74713663f3fc86a5865c2c2334c804a11f967784569f0ae6ec932b6a54",
-    "README.md": "cb0e7bd521c1e83e1a2327fc8eb4f1f31dcaec7f4dfc5a51ced4ab2d90712311",
+    ".gitignore": "ec991057117da956aafef786c47b430a702258130bb06e4c47ed91d0d21a4055",
+    "README.md": "d0d0d32103f1b11d96ed986aa92af77d3bbc138e872e430974e68b317d847773",
     "docs/simulation_redesign.md": "425aa81958000dcdd8db5d964413a7de393e31b90ce344672fea8ca83dc483d5",
     "docs/simulation_redesign_checks.md": "337c6069207528d639ffb30d9c2f922f10703a6a59d8ca7bb0557be70c671ea3",
     "docs/simulation_redesign_notation.md": "54a4a654777c3f5774053de7c6b9be727e1cc222eeb9f2e7b86d71135a896ea6",
     "lib/anisotropy_study.py": "b7ab40a999d74cb94983a1d1d0e0e6772ec57000bbd0ad0048dfae71ab68bfed",
     "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
     "lib/contact_geometry_study.py": "f8d0e5b18eadff493fbcca05b5ae42adacf27755735e9928be3343aa0ebe8874",
-    "lib/distribution_geometry_visuals.py": "d6ef85dad23163409a52400fe58786888cd9314db0b7b9a828487272e1c6f5d8",
+    "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
     "lib/simulation_scaling.py": "0c6bed44460c1df2d11f74b3372ec7c6c39d67efbcf019a065d8c5262284a6ca",
     "lib/simulation_story_visuals.py": "58b805a6e43aef3ccc2c4e54c9792d271e8a0ae207f10b5588ce71414b93e6bf",
-    "lib/simulation_validation.py": "ce44d35f15f3557196aa77f5c45851b5245de3abaaf2cb27b6d82a291b5d72a6",
-    "notebooks/01_array.ipynb": "721fb2e604896f2f6c0fd608cc21e16a52d4e3559d2842cb9a5eab6333dcf8a1",
-    "notebooks/03_contact.ipynb": "893eddc142948d9a7e4e5882b6f28c4bfcba01ee67c256e2dd571aee373df389",
+    "lib/simulation_validation.py": "663e62ab9186251faa5b251648ebd05c51a12f426884b690cccdddea3ae81bef",
+    "notebooks/01_array.ipynb": "445d23341b5a26360ac312a20db2e6524927163c1041bd824ce89c9761fc6992",
+    "notebooks/03_contact.ipynb": "a5d841b5fbdcfc128476b47840cf403e423ff852aace2f4459de1974908206ad",
     "pyproject.toml": "0498d9c2bb16172511ace03ccf7597a65f2c7242058af12952df738b492689c3",
     "scripts/archive_simulation_redesign.py": "eb94b85ffbbd9dcbbab251770e701472829295b0a44780ceaf19ca3eaa94baea",
-    "scripts/check_simulation_redesign_handoff.py": "1b8a1ad2297a168c765d406cd8903efe45568c1ad2310ec5854d3c4ad8f66c2e",
-    "scripts/execute_geometry_notebooks.py": "d46c1a6801e7a90ac78183c4a861cf25692ae16bbaef66c895cbae3afbd9828d",
-    "scripts/make_geometry_notebooks.py": "beab2a9be6597a2577185b6d457bd96e389d0f700fae13abe8962270943b5f14",
+    "scripts/check_simulation_redesign_handoff.py": "33650d8c2f447290f9ebb21e8e183ce84b4ae1b7e53a335eac50d25ba58abe6e",
+    "scripts/execute_geometry_notebooks.py": "64f525d4c6e9e82caa4904b800c8241eef6c1eb70e1dc16840145f6fc51fc1be",
+    "scripts/make_geometry_notebooks.py": "ad34059aed2c6508cc70f2a0dd3c358faea8a988f95b5475b0d13b5f2edaa78d",
     "scripts/manifest_simulation_redesign.py": "e8548cd6c22a96f1889727d6d9e1b1f86459756616dcc3bfc155cd2176da3aeb",
-    "scripts/plot_geometry_studies.py": "39e8a7c974ac273de2d9f426d7576a2a665efe010145aee9a224f1f52a021d21",
+    "scripts/plot_geometry_studies.py": "408070031bcc7c1bc382cd6a3ffad8b571d0e6009d30840a3e274cb1962bf79d",
     "scripts/run_anisotropy_study.py": "580a4bbc34a7b6a9b25beb3d2d77037f820d57c2a3fd16881f6b90a099c178c8",
     "scripts/run_array_geometry.py": "bd8a1bd896515c63c5683a85400e4170c61580c4be7f405b81e5f21827eb8193",
     "scripts/run_contact_geometry.py": "d2b5a37d58dfffa85e3c21f348d5eb8ac51be310ad6df2ba432ae754afcae7b5",
     "scripts/run_simulation_scaling.py": "ddc7914b66b063fe01c6b2ee805588e9183712fab4c0c8e2ba8cf17d3525ae4e",
-    "scripts/summarize_simulation_redesign.py": "03495c53e93ff3e39aad7f71819fb02572dfdc19100f155b0ae7bdbae28bd858",
+    "scripts/summarize_simulation_redesign.py": "538e2eb2f35b18404eaf3e83ef57e67cdc053d8cb0c8d309652d536248b8c04c",
     "scripts/validate_simulation_redesign.py": "509ad21ebce190b7b412115cc0535f48998074d8dc844292f9710dbe09b49f74",
     "tests/test_anisotropy_study.py": "e6575f205c423a0b9a646c03e6b21c99c14bcb43f32f6ea6da2589295b1dffda",
     "tests/test_array_geometry.py": "6d209b467482af25f262d7457de6ee7f61417992d5838d618a5ed5411e68f775",

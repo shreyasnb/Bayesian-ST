@@ -1,0 +1,1859 @@
+{
+  "schema": 1,
+  "kind": "coverage plan and baseline inventory, not an acceptance certificate",
+  "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+  "guide_file": "implementation_prompt.md",
+  "guide_sha256": "4f715f894fd52604f05de6d2ce97a3a14ed32824cd1de0e0dfb81e9273e06f00",
+  "manuscript_sources": {
+    "main_tex": "not supplied",
+    "supplementary_tex": "not supplied",
+    "latest_pdf": {
+      "filename": "L4DC2027_SB_BM_CM-5.pdf",
+      "sha256": "5da236d72780e13645c17d7541ba1b3525e71e34491bc892281427431a265c99"
+    },
+    "scope": "Theory and appendices of the identified PDF plus explicit guide equations; exact agreement with unavailable TeX files remains unverified."
+  },
+  "status_values": [
+    "passed",
+    "failed",
+    "inconclusive",
+    "not applicable"
+  ],
+  "rows": [
+    {
+      "id": "source_spec",
+      "claim": "Compare the explicit guide and supplied draft; distinguish unavailable exact TeX source",
+      "assumptions": [
+        "main.tex and supplementary.tex are absent; exact source-text agreement cannot be asserted"
+      ],
+      "status": "inconclusive",
+      "baseline_at_6e78cc9": "Exact named source files absent; latest PDF can supply checked formulas",
+      "owner": "root",
+      "evidence": [
+        "docs/implementation_guide_audit.md"
+      ],
+      "routine": [
+        "docs/implementation_guide_audit.md"
+      ],
+      "metric": [
+        "manuscript_source_availability"
+      ],
+      "figure": [],
+      "pending_reason": "main.tex and supplementary.tex are not supplied; exact source-wording agreement cannot be established."
+    },
+    {
+      "id": "reproduction",
+      "claim": "Preserve historical work and publish current source/config/result hashes",
+      "assumptions": [
+        "test branch only; no force push"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing source-verified study and historical archive",
+      "owner": "root",
+      "evidence": [
+        "results/implementation_audit/archive/preservation.json",
+        "results/implementation_audit/validation/validation.json",
+        "results/implementation_audit/provenance.json"
+      ],
+      "routine": [
+        "lib/implementation_validation.py:verify_preservation",
+        "lib/implementation_validation.py:verify_component",
+        "scripts/validate_implementation_audit.py"
+      ],
+      "metric": [
+        "source_hashes",
+        "table_hashes",
+        "archive_hashes",
+        "general_validation_tests"
+      ],
+      "figure": [],
+      "pending_reason": "",
+      "result_scope": "All five current paper components, 241-test general gate, and 567 preserved historical files verify. Saved notebook execution is a later independent handoff check, not a premise of this scientific report."
+    },
+    {
+      "id": "likelihood_algebra",
+      "claim": "Normalized Gaussian likelihoods, constants, trace gauge and additive one-time correction",
+      "assumptions": [
+        "Fixed scales; real and proper complex observations"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing tests cover likelihoods and one-time correction; expanded deterministic guide audit required",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/models.py:increment",
+        "lib/models.py:constant",
+        "lib/models.py:log_likelihood"
+      ],
+      "metric": [
+        "direct_gaussian_error",
+        "gauge_error",
+        "block_sequential_error"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "rank_two_reference",
+      "claim": "Include one rank-two real deterministic case in N<=6",
+      "assumptions": [
+        "Real N<=6; state and tangent chart explicitly fixed"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "General core supports rank two; guide-specific reference audit missing",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "likelihood_error",
+        "fisher_error",
+        "hessian_error"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "modal_equality",
+      "claim": "Bingham marginal mode equals EW covariance PCA at matched weights, initialization and scales",
+      "assumptions": [
+        "Uniform or explicitly matching prior; identical beta and known scales"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Passed in previous paper study; must retain semantic control",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/array_geometry_study.py:test_task",
+        "lib/beamforming_decisions.py:weighted_paths"
+      ],
+      "metric": [
+        "pca_mode_error",
+        "parameter_scatter_error"
+      ],
+      "figure": [
+        "B2b"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "real_marginal_information",
+      "claim": "Real marginal Fisher coefficient L*(tau2)^2/[s(s+tau2)]",
+      "assumptions": [
+        "Fixed state; independent Gaussian snapshots; tangent vec_F convention"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Analytic helper existed; complete real multi-method guide study missing",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/beamforming_theory.py:passive_fisher_information",
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "analytic_fisher",
+        "score_covariance",
+        "expected_negative_hessian",
+        "KL_hessian"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "fisher_snr_observation_count",
+      "claim": "Directly check Fisher score covariance over signal-to-noise ratio and actual observations per independent dataset",
+      "routine": [
+        "lib/guide_information_counts.py:score_prefixes",
+        "lib/guide_information_counts.py:gaussian_stream",
+        "scripts/run_guide_information_counts.py"
+      ],
+      "metric": [
+        "observations",
+        "sensor_variance",
+        "analytic_information",
+        "relative_frobenius_error",
+        "maximum_product_z",
+        "independent_datasets"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "assumptions": [
+        "Real and proper-complex N=3 k=1; tau2=1.3; s=0.2,1,4; L=1,4,16,64; 8192 independent datasets per field/variance; common prefixes and noise draws induce cross-cell dependence, not extra repetitions"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "No actual sample-count Fisher error cohort; prior curvature observations were a different check",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information_counts/manifest.json",
+        "results/implementation_audit/paper/information_counts/summary.csv",
+        "results/implementation_audit/paper/information_counts/matrices.csv",
+        "tests/test_guide_information_counts.py"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "conditional_information",
+      "claim": "Conditional Fisher uses recorded inputs and the correct compressed design",
+      "assumptions": [
+        "Recorded V independently prescribed; never inferred from U"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing conditional theory tests; expanded chart audit required",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/theory.py",
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "analytic_fisher",
+        "empirical_score_covariance",
+        "expected_negative_hessian",
+        "KL_hessian"
+      ],
+      "figure": [
+        "C2"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "mixed_information",
+      "claim": "Independent observation-type mixture has additive information",
+      "assumptions": [
+        "Observation types and conditional designs prescribed independently"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Missing explicit mixed-type audit",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "mixed_information_additivity_error"
+      ],
+      "figure": [
+        "B2a",
+        "C2"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "discounted_information",
+      "claim": "Discounted Hessian weights w differ from score-covariance weights w squared",
+      "assumptions": [
+        "Independent observations at fixed state; fixed deterministic weights"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Missing explicit w versus w squared evidence",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "weighted_hessian_error",
+        "weighted_score_error",
+        "w_w2_difference"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "tangent_curvature",
+      "claim": "Align tangent charts and repeat FD steps for scores, Hessian and KL",
+      "assumptions": [
+        "Real/imaginary chart and complement fixed; multiple FD resolutions"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Historical complex check exists; new expanded check required",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "finite_difference_step",
+        "relative_error",
+        "tangent_alignment"
+      ],
+      "figure": [
+        "B2a",
+        "B2b"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "realized_curvature",
+      "claim": "Realized Bingham modal Hessian follows eigenvalue gaps but differs from expected information",
+      "assumptions": [
+        "Finite datasets; no expected-information/posterior-curvature identification"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Visual eigengaps existed; repeated-data curvature audit missing",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "posterior_gap",
+        "modal_hessian_error",
+        "gap_distribution"
+      ],
+      "figure": [
+        "B2b"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "proper_complex",
+      "claim": "Proper complex increment has no half and real/imag Fisher is twice the real coefficient",
+      "assumptions": [
+        "Proper complex covariance convention CN(0,R)"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing direct complex tests and passive information; retain and extend",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/models.py",
+        "lib/beamforming_theory.py",
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "direct_complex_density_error",
+        "complex_fisher_error",
+        "tangent_dimension"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "realification",
+      "claim": "Structured realification uses half block covariance and rejects complex input to real bound routines",
+      "assumptions": [
+        "Preserve complex linear structure; no arbitrary rank-two real replacement"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Historical structured-real tests; explicit revised-bound rejection required",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "scripts/check_paper_realification.py",
+        "lib/guide_information.py",
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "realification_density_error",
+        "covariance_error",
+        "input_rejection"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "moment_references",
+      "claim": "Independent small-state references stabilize moments and normalizers",
+      "assumptions": [
+        "Real sphere and complex reference measures distinguished; bounded budgets"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Passed rank-one/complement references under previous study; new study reference flags required",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/reference.py",
+        "lib/spectral_series.py",
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "mean_error",
+        "log_normalizer_error",
+        "reference_resolution",
+        "resolved"
+      ],
+      "figure": [
+        "S1"
+      ],
+      "pending_reason": "",
+      "result_scope": "Independent real-sphere/complex-simplex reference and refinement checks pass at their declared low dimensions. This does not certify arbitrary-rank moments."
+    },
+    {
+      "id": "marginal_bound",
+      "claim": "Use exact guide real/complex marginal constants, initialization and aggregate drift",
+      "assumptions": [
+        "Fixed true scales, deterministic path/transport, fixed memory"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Previous passive bound has different constants; cannot be relabeled",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "eta",
+        "h",
+        "gap",
+        "initialization",
+        "drift",
+        "fluctuation_allowance",
+        "epsilon"
+      ],
+      "figure": [
+        "B3"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "conditional_bound",
+      "claim": "Keep the recorded-input real conditional theorem separate from marginal constants",
+      "assumptions": [
+        "Recorded fixed design; fixed true noise; exact named TeX unavailable"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Real printed-draft wrapper existed; current guide extension must be explicit",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "gap",
+        "initialization",
+        "drift",
+        "noise",
+        "epsilon"
+      ],
+      "figure": [
+        "C4"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "conditional_complex_extension",
+      "claim": "Audit the separately derived proper-complex recorded-input extension and distinguish manuscript agreement",
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "conditional_complex_decomposition_error",
+        "complex_noise_allowance",
+        "exact_manuscript_agreement"
+      ],
+      "figure": [
+        "C4"
+      ],
+      "assumptions": [
+        "Conjugate transposes and proper-complex convention; exact supplementary.tex not supplied"
+      ],
+      "status": "inconclusive",
+      "baseline_at_6e78cc9": "Real conditional wrapper existed; complex conditional extension not manuscript-certified",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "lib/guide_tracking.py",
+        "tests/test_guide_tracking.py",
+        "docs/implementation_guide_audit.md"
+      ],
+      "pending_reason": "The proper-complex Gaussian union-bound extension passes decomposition/numerical checks, but exact constants/wording in unavailable supplementary.tex cannot be certified.",
+      "numerical_status": "passed"
+    },
+    {
+      "id": "bound_decomposition",
+      "claim": "Check matrix decompositions and actual perturbation before modal implication",
+      "assumptions": [
+        "Population state quantities evaluation-only"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Legacy tests exist; exact revised formulas need new check",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "decomposition_error",
+        "actual_operator_perturbation",
+        "allowance",
+        "modal_error"
+      ],
+      "figure": [
+        "B3",
+        "C4"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "bound_preflight",
+      "claim": "Preflight long static and fixed-memory limit; distinguish gap validity and informative ceiling",
+      "assumptions": [
+        "No longer-horizon remedy for permanently vacuous fixed memory"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Missing explicit asymptotic preflight in current walkthrough",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "epsilon_gap_ratio",
+        "asymptotic_ratio",
+        "sufficient_condition",
+        "below_ceiling",
+        "distance_ceiling"
+      ],
+      "figure": [
+        "B3",
+        "C4"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "bound_sampling",
+      "claim": "Frozen path across independent episodes and fixed-time violation intervals",
+      "assumptions": [
+        "Per-time claim; no implicit trajectory-wide guarantee"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Earlier fixed-time experiments exist; revised bound requires new evidence",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "violation_count",
+        "episode_count",
+        "binomial_lower",
+        "binomial_upper",
+        "informative_fraction"
+      ],
+      "figure": [
+        "B3",
+        "C4"
+      ],
+      "pending_reason": "",
+      "result_scope": "Of 7680 reports in 60 fixed-time cells, 2048 reports in 16 cells satisfy the condition and informative ceiling, with zero eligible violations. Every eligible cell has 128 episodes and exact two-sided 95% upper violation limit .028408; invalid cells retain zero eligible episodes and NaN violation intervals."
+    },
+    {
+      "id": "beam_observation",
+      "claim": "Interference-only proper complex training learns from snapshots alone",
+      "assumptions": [
+        "Latent coefficients, desired signature and truth excluded from correction"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Passed previous static study",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/simulation_redesign/paper/beamforming/manifest.json",
+        "results/simulation_redesign/paper/beamforming/findings.md"
+      ],
+      "routine": [
+        "lib/array_geometry_study.py:dataset",
+        "lib/array_geometry_study.py:test_task"
+      ],
+      "metric": [
+        "available_measurements",
+        "unit_gain_error",
+        "passive_scatter_error"
+      ],
+      "figure": [
+        "B1"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "beam_motion",
+      "claim": "Compare static and deterministic drift with identity primary transport and independent tuning",
+      "assumptions": [
+        "No oracle motion; fitting does not inherit fixed-scale theorem"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Historical moving-array study exists but new guide-aligned run missing",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "paired_heldout_power",
+        "selected_beta",
+        "drift_rate"
+      ],
+      "figure": [
+        "B1",
+        "B3",
+        "B5"
+      ],
+      "pending_reason": "",
+      "result_scope": "The declared comparison/stress and its numerical checks are complete; passed does not assert Bayesian dominance or calibration under mismatch. Negative and inconclusive episode-level comparisons remain in the linked tables."
+    },
+    {
+      "id": "separate_factors",
+      "claim": "Change noise, interference power and direction separately",
+      "assumptions": [
+        "Do not confound power/noise/motion changes"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Current static geometry varied s and law; tau2 and dynamic factorial checks missing",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py",
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "s",
+        "tau2",
+        "direction_speed",
+        "condition"
+      ],
+      "figure": [
+        "B3",
+        "B5"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "beam_baselines",
+      "claim": "Compare own mode, EW covariance/PCA, validated loading, LW and GROUSE with shared data",
+      "assumptions": [
+        "Independent validation; within-episode averaging; no noise/latent oracle estimator inputs"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Strong static baselines already present; dynamic guide comparison added",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/array_geometry_study.py",
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "paired_true_power",
+        "paired_heldout_power",
+        "validation_loss",
+        "selected_parameters"
+      ],
+      "figure": [
+        "B5"
+      ],
+      "pending_reason": "",
+      "result_scope": "The declared comparison/stress and its numerical checks are complete; passed does not assert Bayesian dominance or calibration under mismatch. Negative and inconclusive episode-level comparisons remain in the linked tables."
+    },
+    {
+      "id": "bingham_2017",
+      "claim": "Use 2017 tracker only if implementation is verified",
+      "assumptions": [
+        "No implementation may be relabeled as an unverified published algorithm"
+      ],
+      "status": "not applicable",
+      "baseline_at_6e78cc9": "No verified 2017 implementation; optional baseline not applicable",
+      "owner": "root",
+      "evidence": [
+        "docs/implementation_guide_audit.md",
+        "benchmarks/case1/baselines.py"
+      ],
+      "routine": [
+        "docs/implementation_guide_audit.md"
+      ],
+      "metric": [
+        "baseline_availability"
+      ],
+      "figure": [
+        "B5"
+      ],
+      "pending_reason": "No verified implementation is supplied; guide makes this reference optional. Other baselines are not relabeled as it."
+    },
+    {
+      "id": "isotropy_control",
+      "claim": "Matched isotropy preserves trace, mode and expected squared chordal loss",
+      "assumptions": [
+        "N>=3 rank one for nontrivial anisotropy; specified axial law for probabilities"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing exact pair/singleton negative control and matched axial law",
+      "owner": "guide_information",
+      "evidence": [
+        "results/simulation_redesign/paper/beamforming/manifest.json",
+        "results/simulation_redesign/paper/beamforming/findings.md"
+      ],
+      "routine": [
+        "lib/beamforming_decisions.py:isotropized_mean",
+        "lib/array_geometry_study.py:fixture"
+      ],
+      "metric": [
+        "trace_error",
+        "modal_overlap_error",
+        "same_radius_distribution",
+        "decision_excess"
+      ],
+      "figure": [
+        "B4",
+        "B5"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "isotropic_loading_identity",
+      "claim": "Check explicit matched-isotropy covariance and equivalent modal loading including equality",
+      "assumptions": [
+        "alpha>xi for finite equivalent loading; alpha=xi isotropic endpoint"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing action controls but no named equivalent-loading regression found",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "covariance_identity_error",
+        "loading_decision_error",
+        "isotropic_endpoint_error"
+      ],
+      "figure": [
+        "B4",
+        "B5"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "decision_scope",
+      "claim": "Use posterior expected covariance and expected output-power objective with matched ablations",
+      "assumptions": [
+        "Fixed scales or conditioned plugin; no expected SINR claim; fixed A for decision controls"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Passed previous study; retain distinction under new adaptation",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/simulation_redesign/paper/beamforming/manifest.json",
+        "results/simulation_redesign/paper/beamforming/findings.md"
+      ],
+      "routine": [
+        "lib/beamforming_decisions.py:conditional_excess",
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "unit_gain_error",
+        "quadratic_excess_identity",
+        "paired_cost"
+      ],
+      "figure": [
+        "B4",
+        "B5"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "contact_plant",
+      "claim": "Plane and curved bilateral plant solved independently from KKT and checked against projection",
+      "assumptions": [
+        "Known damping, negligible inertia, no friction, maintained bilateral contact"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Independent KKT plane/sphere plant already implemented and tested",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/contact_mechanics.py:solve_contact_velocity",
+        "lib/contact_mechanics.py:generate_contact"
+      ],
+      "metric": [
+        "KKT_residual",
+        "constraint_residual",
+        "projection_residual",
+        "integration_error"
+      ],
+      "figure": [
+        "C1"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "contact_observations",
+      "claim": "Use recorded applied force and noisy instantaneous velocity, without hidden normal transport",
+      "assumptions": [
+        "Measured wrist orientation may be supplied equally; surface geometry not estimator input"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing causality and hidden-geometry tampering tests passed",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/contact_geometry_study.py",
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "causality_checks",
+        "available_inputs",
+        "normal_oracle_absent"
+      ],
+      "figure": [
+        "C1",
+        "C2"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "contact_design_control",
+      "claim": "Hold normal path fixed while changing recorded excitation and retain abrupt/weak stresses",
+      "assumptions": [
+        "Controlled observation tests separated from physical radius/force paths"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Equal-energy static study existed; abrupt/frozen-path expanded controls missing",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py",
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "design_eigenvalues",
+        "Fisher_spectrum",
+        "normal_speed",
+        "abrupt_motion"
+      ],
+      "figure": [
+        "C2",
+        "C4"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "contact_baselines",
+      "claim": "Identical pairs for full mean, mode/LS, validated regularization, ridge, residual PCA and local Gaussian",
+      "assumptions": [
+        "Local failures retained; ridge maps not passed to projector-based action"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Previous study retained local-invalid Gaussian flags and EKF wins",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/contact_geometry_study.py:static_test",
+        "lib/contact_geometry_study.py:dynamic_test"
+      ],
+      "metric": [
+        "paired_response_MSE",
+        "paired_soft_cost",
+        "local_chart_validity"
+      ],
+      "figure": [
+        "C3"
+      ],
+      "pending_reason": "",
+      "result_scope": "The declared comparison/stress and its numerical checks are complete; passed does not assert Bayesian dominance or calibration under mismatch. Negative and inconclusive episode-level comparisons remain in the linked tables."
+    },
+    {
+      "id": "contact_heldout",
+      "claim": "Evaluate fresh held-out directions, clean-response risk and realized expected-command cost",
+      "assumptions": [
+        "Fresh directions are available evaluation queries, not hidden training inputs"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing Frobenius/risk/cost identities; additional fresh-response reports requested",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/contact_geometry_study.py:response_mse",
+        "lib/contact_geometry_study.py:soft_cost",
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "response_risk_calibration",
+        "heldout_response_error",
+        "realized_soft_cost"
+      ],
+      "figure": [
+        "C3"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "anisotropic_damping",
+      "claim": "Known damping uses scaled coordinates and the transformed sensor covariance",
+      "assumptions": [
+        "sqrt(D)Sigma sqrt(D) retained; original isotropic noise generally becomes anisotropic"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Not covered by existing isotropic contact likelihood",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "scaled_KKT_error",
+        "transformed_noise_covariance_error",
+        "isotropic_conjugacy_flag"
+      ],
+      "figure": [
+        "C1",
+        "C5"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "contact_mismatch",
+      "claim": "Declare unmodeled damping/friction/contact loss as mismatch",
+      "assumptions": [
+        "No exact conditional theorem claim under mismatch"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Not part of current matched contact pilot",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "mismatch_bias",
+        "response_error",
+        "coverage",
+        "score"
+      ],
+      "figure": [
+        "C5",
+        "C6b"
+      ],
+      "pending_reason": "",
+      "result_scope": "The declared comparison/stress and its numerical checks are complete; passed does not assert Bayesian dominance or calibration under mismatch. Negative and inconclusive episode-level comparisons remain in the linked tables."
+    },
+    {
+      "id": "position_differences",
+      "claim": "Differenced noisy positions create correlated velocity errors",
+      "assumptions": [
+        "Sensor-model stress only; theorem uses independent direct velocity noise"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Missing explicit sensor-law stress",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "velocity_noise_covariance",
+        "lag_one_covariance"
+      ],
+      "figure": [
+        "C5"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "beam_mismatch",
+      "claim": "Desired contamination and unequal higher-rank powers are mismatch",
+      "assumptions": [
+        "Not exact rank-one equal-power training"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Not in current static primary benchmark",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "covariance_mismatch",
+        "coverage",
+        "score",
+        "decision_cost"
+      ],
+      "figure": [
+        "B6"
+      ],
+      "pending_reason": "",
+      "result_scope": "The declared comparison/stress and its numerical checks are complete; passed does not assert Bayesian dominance or calibration under mismatch. Negative and inconclusive episode-level comparisons remain in the linked tables."
+    },
+    {
+      "id": "fixed_boundary_block_em",
+      "claim": "Every E step rebuilds common-state block from one excluded-block boundary prior",
+      "assumptions": [
+        "One stationary subspace per block; boundary independent of block"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Missing: lib/em.py uses different recorded-singleton-prior objective",
+      "owner": "guide_em",
+      "evidence": [
+        "results/implementation_audit/paper/em/manifest.json",
+        "results/implementation_audit/paper/em/fits.csv",
+        "results/implementation_audit/paper/em/iterations.csv",
+        "results/implementation_audit/paper/em/references.csv",
+        "results/implementation_audit/paper/em/residuals.csv",
+        "tests/test_block_em.py"
+      ],
+      "routine": [
+        "lib/block_em.py"
+      ],
+      "metric": [
+        "block_sequential_error",
+        "boundary_replay_error",
+        "evidence_history"
+      ],
+      "figure": [
+        "B7a",
+        "C6a"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "em_m_steps",
+      "claim": "Ordered marginal variances and conditional expected residual include posterior uncertainty",
+      "assumptions": [
+        "Correct real/complex shape constants; nonnegative signal variance"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Old formulas not complete new block objective",
+      "owner": "guide_em",
+      "evidence": [
+        "results/implementation_audit/paper/em/manifest.json",
+        "results/implementation_audit/paper/em/fits.csv",
+        "results/implementation_audit/paper/em/iterations.csv",
+        "results/implementation_audit/paper/em/references.csv",
+        "results/implementation_audit/paper/em/residuals.csv",
+        "tests/test_block_em.py"
+      ],
+      "routine": [
+        "lib/block_em.py"
+      ],
+      "metric": [
+        "ordered_variance_error",
+        "expected_residual_error",
+        "floor_status"
+      ],
+      "figure": [
+        "B7a",
+        "C6a"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "em_initialization",
+      "claim": "Positive interior multistarts selected by normalized evidence and absorbing zero signal boundary",
+      "assumptions": [
+        "Uniform boundary prior for absorbing-boundary identity"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "No current fifth-draft stationary-block initialization study",
+      "owner": "guide_em",
+      "evidence": [
+        "results/implementation_audit/paper/em/manifest.json",
+        "results/implementation_audit/paper/em/fits.csv",
+        "results/implementation_audit/paper/em/iterations.csv",
+        "results/implementation_audit/paper/em/references.csv",
+        "results/implementation_audit/paper/em/residuals.csv",
+        "tests/test_block_em.py"
+      ],
+      "routine": [
+        "lib/block_em.py",
+        "scripts/run_block_em_study.py"
+      ],
+      "metric": [
+        "start",
+        "final_evidence",
+        "tau2_zero_boundary",
+        "selected_start"
+      ],
+      "figure": [
+        "B7a",
+        "C6a"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "em_evidence",
+      "claim": "Independent normalized block evidence restores gauge constants and checks EM ascent",
+      "assumptions": [
+        "Exact/reference objective fixed; approximation safeguarded and reported"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Legacy EM ascent does not establish new objective ascent",
+      "owner": "guide_em",
+      "evidence": [
+        "results/implementation_audit/paper/em/manifest.json",
+        "results/implementation_audit/paper/em/fits.csv",
+        "results/implementation_audit/paper/em/iterations.csv",
+        "results/implementation_audit/paper/em/references.csv",
+        "results/implementation_audit/paper/em/residuals.csv",
+        "tests/test_block_em.py"
+      ],
+      "routine": [
+        "lib/block_em.py"
+      ],
+      "metric": [
+        "evidence_reference_error",
+        "tight_reference_change",
+        "minimum_evidence_increment",
+        "rejected_step"
+      ],
+      "figure": [
+        "B7a",
+        "C6a"
+      ],
+      "pending_reason": "",
+      "result_scope": "360 stationary-block fits converge within the declared numerical budget; minimum evidence increment -7.39e-13 is inside the 1e-8 ascent tolerance. Fixed-objective ascent does not establish a global optimum or online monotonicity."
+    },
+    {
+      "id": "adaptive_scales",
+      "claim": "Compare calibrated/misspecified fixed scales, block EM and residual-only fitting",
+      "assumptions": [
+        "Plugin intervals omit parameter uncertainty; fixed-scale bound separate"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Historical recorded-prior/Gibbs comparisons not new block EM evidence",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/em_start_histories.json"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "noise_recovery",
+        "signal_recovery",
+        "preobservation_score",
+        "paired_loss"
+      ],
+      "figure": [
+        "B7b",
+        "C6b"
+      ],
+      "pending_reason": "",
+      "numerical_status": "passed",
+      "result_scope": "The requested calibrated/misspecified/block-EM/residual comparisons and excluded-observation scores are complete. Finite-iteration convergence and learned-scale uncertainty are not inferred from completion; the former has its own inconclusive outcome row, and no credible intervals are claimed for fitted scales."
+    },
+    {
+      "id": "finite_iteration_convergence",
+      "claim": "Determine whether all selected finite-budget block-EM adaptation fits converge",
+      "assumptions": [
+        "Plugin intervals omit parameter uncertainty; fixed-scale bound separate"
+      ],
+      "status": "inconclusive",
+      "baseline_at_6e78cc9": "New fixed-boundary block EM objective not implemented",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/em_start_histories.json"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "noise_recovery",
+        "signal_recovery",
+        "preobservation_score",
+        "paired_loss"
+      ],
+      "figure": [
+        "B7b",
+        "C6b"
+      ],
+      "pending_reason": "Four of 192 selected adaptation fits reach the declared finite iteration limit; their finite values remain numerically resolved. This does not establish universal or online convergence.",
+      "numerical_status": "passed"
+    },
+    {
+      "id": "noise_motion_separation",
+      "claim": "Sensor-noise change at fixed motion and motion change at fixed sensor variance",
+      "assumptions": [
+        "Do not interpret mismatch-induced residuals as recovered sensor noise"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Missing guide-aligned block adaptation study",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "learned_noise",
+        "motion_rate",
+        "true_noise",
+        "preobservation_score"
+      ],
+      "figure": [
+        "B7b",
+        "C6b"
+      ],
+      "pending_reason": "",
+      "result_scope": "The declared comparison/stress and its numerical checks are complete; passed does not assert Bayesian dominance or calibration under mismatch. Negative and inconclusive episode-level comparisons remain in the linked tables."
+    },
+    {
+      "id": "calibration_prior",
+      "claim": "Prior-predictive coverage with independent prior states and exact static known-scale beta1 inference",
+      "assumptions": [
+        "Average across independent episodes; Bayesian calibration identity applies jointly"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Current fixed-state and subset tail checks are not this experiment",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "nominal_mass",
+        "empirical_mass",
+        "binomial_interval",
+        "interval_width",
+        "risk_ratio"
+      ],
+      "figure": [
+        "B6",
+        "C5"
+      ],
+      "pending_reason": "",
+      "result_scope": "All 24 prior-predictive posterior target/nominal/model summaries include nominal mass inside their pointwise 95% binomial intervals, with zero numerical flags. This is finite Monte Carlo evidence without a simultaneous/multiplicity guarantee."
+    },
+    {
+      "id": "calibration_fixed_drift",
+      "claim": "Separate fixed-state and deterministic drift repeated-data coverage",
+      "assumptions": [
+        "Posterior mass does not promise fixed-state or drifting frequentist coverage"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Current notebooks explain boundary issue; full guide reliability experiment missing",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "coverage",
+        "width",
+        "fixed_state_support_boundary",
+        "local_validity"
+      ],
+      "figure": [
+        "B6",
+        "C5"
+      ],
+      "pending_reason": "",
+      "numerical_status": "passed",
+      "result_scope": "The regime separation and independent-episode coverage calculation are complete. Empirical nominal inclusion failure is recorded separately as nominal_fixed_drift_inclusion."
+    },
+    {
+      "id": "nominal_fixed_drift_inclusion",
+      "claim": "Assess nominal posterior inclusion under fixed states and deterministic drifting paths",
+      "assumptions": [
+        "Posterior mass does not promise fixed-state or drifting frequentist coverage"
+      ],
+      "status": "failed",
+      "baseline_at_6e78cc9": "Earlier stories explained limitations; complete known-scale repeated-data calibration cohort added",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "coverage",
+        "width",
+        "fixed_state_support_boundary",
+        "local_validity"
+      ],
+      "figure": [
+        "B6",
+        "C5"
+      ],
+      "pending_reason": "",
+      "numerical_status": "passed",
+      "result_scope": "A negative calibration diagnostic, not a failed implementation or a contradiction of a theorem: drift violates the stationary inference model. At nominal .95, drifting HPD inclusion is 13/128 for beamforming and 42/128 for contact; fixed-state beamforming noisy inclusion is 114/128. Prior-averaged calibration and deterministic modal guarantees remain distinct."
+    },
+    {
+      "id": "prediction_targets",
+      "claim": "State regions, clean-response intervals and noisy predictive intervals are distinct",
+      "assumptions": [
+        "Each interval target and MC precision labeled"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Current plots retain some targets; complete calibrated table missing",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "state_inclusion",
+        "clean_response_inclusion",
+        "noisy_prediction_inclusion",
+        "matched_coverage_width"
+      ],
+      "figure": [
+        "B6",
+        "C5"
+      ],
+      "pending_reason": "",
+      "result_scope": "State ball/HPD, clean-response and noisy-observation reports are separately evaluated with numerical precision checks. Achieved matched-coverage width superiority is a different, inconclusive row."
+    },
+    {
+      "id": "achieved_matched_coverage",
+      "claim": "Establish whether validation-calibrated widths support comparisons at achieved matched test coverage",
+      "routine": [
+        "scripts/run_guide_reliability.py:matched_widths"
+      ],
+      "metric": [
+        "validation_target_reached",
+        "selected_multiplier",
+        "test_coverage",
+        "test_lower",
+        "test_upper",
+        "matched_width"
+      ],
+      "figure": [
+        "B6",
+        "C5"
+      ],
+      "assumptions": [
+        "Width multipliers selected using 32 independent validation episodes only; 128 disjoint test episodes; empirical test coverage must actually match before claiming a width advantage"
+      ],
+      "status": "inconclusive",
+      "baseline_at_6e78cc9": "No validation-calibrated achieved-width study",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/matched_widths.csv"
+      ],
+      "pending_reason": "Width computation is numerically resolved, but one validation target is unattained at the multiplier cap and some test inclusions miss the target. A universal matched-test-coverage width advantage is unsupported.",
+      "numerical_status": "passed"
+    },
+    {
+      "id": "proper_predictive_score",
+      "claim": "Score new data before assimilation using normalized singleton mixture evidence ratio",
+      "assumptions": [
+        "Gaussian moment surrogate separately labeled; no fit/score data leakage"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Historical joint-mixture score existed; guide fixed-block score integration missing",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py",
+        "lib/block_em.py"
+      ],
+      "metric": [
+        "preobservation_log_score",
+        "mixture_integral_error",
+        "prefix_causality"
+      ],
+      "figure": [
+        "B6",
+        "C5"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "timing_feasibility",
+      "claim": "Separate correction, eigenspace, means, reports, whole estimators and reference-quality integration",
+      "assumptions": [
+        "Serial one-thread warm randomized repeats; no generic-rank implication"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Previous 36-case 7-repeat study plus retained initial overlapping-timing run",
+      "owner": "root",
+      "evidence": [
+        "results/simulation_redesign/paper/scaling/manifest.json",
+        "results/simulation_redesign/paper/scaling/capabilities.csv",
+        "results/simulation_redesign/paper/scaling/summary.csv"
+      ],
+      "routine": [
+        "lib/simulation_scaling.py"
+      ],
+      "metric": [
+        "wall_seconds",
+        "CPU_seconds",
+        "memory_bytes",
+        "mean_accuracy",
+        "tail_resolution",
+        "failure_count"
+      ],
+      "figure": [
+        "S1"
+      ],
+      "pending_reason": ""
+    },
+    {
+      "id": "figures_protocol",
+      "claim": "Guide figure IDs in filenames, headings and manifest; LaTeX 200dpi and continuous blue-to-pink spheres",
+      "assumptions": [
+        "Normalized colors and sphere/section semantics unchanged; shared scales"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing protocol satisfied but old sphere palette and guide IDs missing",
+      "owner": "guide_visuals",
+      "evidence": [
+        "results/implementation_audit/smoke/figures/manifest.json",
+        "results/implementation_audit/paper/figures/manifest.json",
+        "results/simulation_redesign/quick/figures/manifest.json",
+        "results/simulation_redesign/paper/figures/manifest.json",
+        "lib/plotting.py",
+        "lib/distribution_geometry_visuals.py"
+      ],
+      "routine": [
+        "lib/distribution_geometry_visuals.py",
+        "scripts/plot_implementation_audit.py",
+        "scripts/make_implementation_audit_notebook.py"
+      ],
+      "metric": [
+        "text_usetex",
+        "DPI",
+        "figure_IDs",
+        "source_hashes",
+        "PNG_PDF_SVG_exports"
+      ],
+      "figure": [
+        "B1",
+        "B2a",
+        "B2b",
+        "B3",
+        "B4",
+        "B5",
+        "B6",
+        "B7a",
+        "B7b",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6a",
+        "C6b",
+        "S1"
+      ],
+      "pending_reason": "",
+      "result_scope": "All 12 new guide-paper layouts and both recolored main profiles were personally inspected by the presentation owner. Independent checks verify current producer/input/export hashes, all 17 guide IDs, actual TeX settings, 200-dpi PNGs and large dimensions. Guide figures include matching PDF/PNG/SVG; aliases retain the original experimental scope."
+    },
+    {
+      "id": "acceptance_manifest",
+      "claim": "Every scientific claim maps routine, metric, figure, assumptions and status with retained raw diagnostics",
+      "assumptions": [
+        "Only passed/failed/inconclusive/not applicable; plans never passed; saved notebook execution is checked separately after report publication by execution.json and the final handoff checker"
+      ],
+      "status": "inconclusive",
+      "baseline_at_6e78cc9": "Previous redesign claim map is scoped differently",
+      "owner": "root",
+      "evidence": [],
+      "routine": [
+        "docs/implementation_guide_audit.md"
+      ],
+      "metric": [
+        "claim_status",
+        "evidence_hash",
+        "status_counts"
+      ],
+      "figure": [],
+      "pending_reason": "The strict report generator sets this row passed only when completed scientific studies, figures and gate produce the actual claim manifest."
+    },
+    {
+      "id": "conditional_uniform_identifiability",
+      "claim": "Check the supplied PDF's distinction between local information and uniform identifiability, including constructive ambiguity and worst-orientation information",
+      "routine": [
+        "lib/theory.py:fisher_information",
+        "tests/test_identities.py:test_local_identifiability_does_not_imply_global",
+        "tests/test_theory.py:TheoryTests.test_global_ambiguity_and_worst_orientation"
+      ],
+      "metric": [
+        "minimum_Fisher_eigenvalue",
+        "distinct_projector_equal_response",
+        "worst_orientation_eigenvalue"
+      ],
+      "figure": [
+        "C2"
+      ],
+      "assumptions": [
+        "Real conditional model; fixed recorded design; prescribed rank; local positive information is not uniform injectivity"
+      ],
+      "status": "passed",
+      "pending_reason": "",
+      "baseline_at_6e78cc9": "Independent core counterexamples and worst-orientation tests already implemented",
+      "owner": "guide_coverage",
+      "evidence": [
+        "results/implementation_audit/validation/validation.json",
+        "tests/test_identities.py",
+        "tests/test_theory.py",
+        "lib/theory.py"
+      ],
+      "result_scope": "Current 241-test gate reruns the rank-deficient global-ambiguity counterexample and the two-least-excited-direction worst-orientation equality. These finite checks illustrate the supplied PDF proposition; they are not an exhaustive proof over every design or an assertion of absent TeX agreement."
+    },
+    {
+      "id": "posterior_response_and_soft_action",
+      "claim": "Check posterior response mean/risk, competing-map excess loss and the soft expected-command identity from the supplied PDF",
+      "routine": [
+        "lib/geometry.py:risk",
+        "lib/anisotropy_study.py:response_summary",
+        "lib/anisotropy_study.py:soft_action",
+        "lib/anisotropy_study.py:soft_cost",
+        "tests/test_contact_geometry_audit.py:test_nonprojector_soft_penalty_equals_actual_projector_mixture",
+        "tests/test_identities.py:test_response_risk_and_modal_excess"
+      ],
+      "metric": [
+        "response_risk_identity_error",
+        "soft_decision_identity_error",
+        "soft_decision_quadrature_error",
+        "nonprojector_penalty_error"
+      ],
+      "figure": [
+        "B4",
+        "C3"
+      ],
+      "assumptions": [
+        "Expectations under one supplied belief; squared response loss; penalty linear in I-M; full covariance requires second moments; soft action is not guaranteed feasible"
+      ],
+      "status": "passed",
+      "pending_reason": "",
+      "baseline_at_6e78cc9": "Independent projector-mixture and continuous-quadrature checks already implemented",
+      "owner": "guide_coverage",
+      "evidence": [
+        "results/implementation_audit/validation/validation.json",
+        "results/simulation_redesign/paper/geometry/manifest.json",
+        "results/simulation_redesign/paper/geometry/checks.json",
+        "results/simulation_redesign/paper/geometry/directional.csv",
+        "results/simulation_redesign/paper/geometry/decisions.csv",
+        "tests/test_contact_geometry_audit.py",
+        "tests/test_identities.py"
+      ],
+      "result_scope": "Four verified geometry cases resolve, with maximum mean-response-risk identity error 7.91e-13, soft optimality identity error 8.89e-16 and independent quadrature expected-cost error 1.99e-11. These are conditional task identities, not universal repeated-training gains."
+    },
+    {
+      "id": "credible_regions_and_task_bounds",
+      "claim": "Check posterior RMS distance, HPD/centered-ball mass and directional regional task bounds from the supplied PDF",
+      "routine": [
+        "lib/reference.py:rank_one_regions_gr13",
+        "lib/anisotropy_study.py:continuous_region_mass",
+        "lib/anisotropy_study.py:continuous_regions",
+        "lib/anisotropy_study.py:query_bounds",
+        "lib/theory.py:regional_bound",
+        "tests/test_theory.py:TheoryTests.test_dual_tie_requires_rotation",
+        "tests/test_theory.py:TheoryTests.test_complex_dual_against_dense_rank_one_search"
+      ],
+      "metric": [
+        "RMS_distance",
+        "posterior_region_mass_error",
+        "same_entire_distance_CDF_error",
+        "regional_duality_gap",
+        "constraint_feasibility"
+      ],
+      "figure": [
+        "B4",
+        "C3",
+        "C5"
+      ],
+      "assumptions": [
+        "Posterior credible mass under the supplied law; continuous threshold distribution; normal leakage bounds not tangent speed bounds; equal mass does not imply HPD uniformly tighter; no automatic frequentist or drifting coverage"
+      ],
+      "status": "passed",
+      "pending_reason": "",
+      "baseline_at_6e78cc9": "Independent continuous regions and regional duality/tie checks already implemented",
+      "owner": "guide_coverage",
+      "evidence": [
+        "results/implementation_audit/validation/validation.json",
+        "results/simulation_redesign/paper/geometry/manifest.json",
+        "results/simulation_redesign/paper/geometry/checks.json",
+        "results/simulation_redesign/paper/geometry/geometry.csv",
+        "results/simulation_redesign/paper/geometry/distance_cdf.csv",
+        "results/simulation_redesign/paper/geometry/regions.csv",
+        "tests/test_theory.py"
+      ],
+      "result_scope": "Verified real rank-one/complement region mass error is below 4.4e-12, same-pair distance-CDF error below 3.4e-16 and maximum regional dual gap below 6.9e-10. General Hermitian regional optimization tests include tied-eigenvalue feasibility; low-dimensional posterior integration does not establish arbitrary-rank integration accuracy."
+    }
+  ],
+  "audit_finalized": true,
+  "reviewed_components": {
+    "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+    "results/implementation_audit/paper/information_counts/manifest.json": "ab9daeead07af4109eea012f7f9086adda82deb013d06def5b492c5b182e946f",
+    "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+    "results/implementation_audit/paper/em/manifest.json": "ab71dc035fbca39539295acca58e56060200a0bc0d62a5df8d10c918ed370e94",
+    "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+    "results/simulation_redesign/paper/geometry/manifest.json": "47d66a25fedff73a417cbe955d80a963303d3b58bb06a15d57064be221293602",
+    "results/simulation_redesign/paper/beamforming/manifest.json": "d1b5fc4a8fc4a8d4aaaf7280286c284eeeaf06f2d383cad33fe57f1632574812",
+    "results/simulation_redesign/paper/contact/manifest.json": "208fc2d728a42439acadc5d68825572c5c5ceb2b1753b6835e9486e94b4a4a5a",
+    "results/simulation_redesign/paper/scaling/manifest.json": "0ad0e8b4b945f35ed3e5ccb08fee0e2e1f18764143f4843b7cc9b4be87b3ffba"
+  },
+  "reviewed_validation_sha256": "4c7c05707aca66041875e6eee794f18a8ca7b03bb05868417596b9f6cfbc704d",
+  "reviewed_general_tests": 241,
+  "reviewed_figure_manifests": {
+    "results/implementation_audit/smoke/figures/manifest.json": "d3f3171faca038514ada1d2b62e70a74b6322e9251e0cecac4e811ec43bf3604",
+    "results/implementation_audit/paper/figures/manifest.json": "1fecdaa5fa926b32c6114688e30ed4c57ed31639033170e9e6633c4660361162",
+    "results/simulation_redesign/quick/figures/manifest.json": "e83a1d806e1fb83956920693b50027da9ca2404039cb19b4694d1e9cfb145eb1",
+    "results/simulation_redesign/paper/figures/manifest.json": "67ec2eaf3a793e72bbeec6df02b511cc0eac2a2b07af3f21c63b48d7a516fa64"
+  },
+  "review_scope": "Current scientific procedures and actual outputs reviewed. Empirical failure/inconclusive outcomes remain separate. Exact unavailable-source agreement is unverified. Notebook generation/execution and final push remain separate subsequent handoff actions, never presumed by this scientific audit."
+}

@@ -4,6 +4,8 @@ This is the separate draft-5 redesign of the beamforming and contact-normal note
 
 The four scientific components are `geometry`, `beamforming`, `contact` and `scaling`, each under `quick/` and `paper/`. Component manifests record configuration, seeds, source hashes, compact table hashes and numerical status. Quick data are engineering checks, not the paper comparison. Predeclared display examples do not replace the independent trajectory cohorts.
 
+For the current test branch, use the [implementation-guide reproduction workflow](../implementation_audit/README.md). It preserves this original certificate and validates the expanded suite into a separate directory. The command sequence below documents the original redesign workflow; its old validation command should not overwrite the retained certificate.
+
 ## Reproduce scientific outputs
 
 Use the repository dependencies, working LaTeX/dvipng and the shared `lib.plotting` settings. All figures require `text.usetex=True`, 200-dpi display/export and PDF plus PNG output.

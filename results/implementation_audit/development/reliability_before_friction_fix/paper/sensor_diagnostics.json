@@ -1,0 +1,79 @@
+{
+  "scaled_projection_residual": 2.7755575615628914e-17,
+  "original_isotropic_transformed_covariance": [
+    [
+      0.2,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.4000000000000001,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.8
+    ]
+  ],
+  "original_isotropic_expected_transformed_covariance": [
+    [
+      0.2,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.4,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.8
+    ]
+  ],
+  "physical_inverse_damping_transformed_covariance": [
+    [
+      0.2,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.20000000000000004,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.2
+    ]
+  ],
+  "physical_inverse_damping_expected_transformed_covariance": [
+    [
+      0.2,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.2,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.2
+    ]
+  ],
+  "position_difference_samples": 30000,
+  "position_noise_sigma": 0.001,
+  "dt": 0.05,
+  "differenced_noise_variance": 0.000793704428000624,
+  "theoretical_variance": 0.0007999999999999998,
+  "lag_one_covariance": -0.0003936602592457805,
+  "theoretical_lag_one_covariance": -0.0003999999999999999,
+  "warning": "Independent isotropic position errors create temporally correlated velocity errors. Known anisotropic damping with isotropic physical velocity noise produces anisotropic scaled noise; it is not the isotropic conjugate conditional likelihood."
+}

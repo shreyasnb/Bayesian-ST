@@ -1,0 +1,160 @@
+{
+  "config": {
+    "schema": 1,
+    "profile": "paper",
+    "seed": 2026110816,
+    "dimensions": [
+      3,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "models": [
+      "conditional_real",
+      "marginal_complex"
+    ],
+    "spans": [
+      80.0,
+      400.0
+    ],
+    "observations": 64,
+    "s": 0.2,
+    "tau2": 1.0,
+    "beta": 0.98,
+    "repetitions": 7,
+    "correction_batch": 64,
+    "warmup_calls": 1,
+    "moment_tolerance": 1e-10,
+    "series_max_order": 4096,
+    "complex_report_dimensions": [
+      3,
+      8,
+      16,
+      32
+    ],
+    "real_report_dimensions": [
+      3
+    ],
+    "report_draws": 16384,
+    "report_proposal_cap": 1000000,
+    "report_relative_mcse": 0.025,
+    "report_queries": 3,
+    "grouse_step": 0.02,
+    "covariance_loading": 0.1,
+    "timing_order": "One warmed repetition of every operation, then independently shuffled operations in each measured repetition; serial, BLAS one thread.",
+    "scope": "Engineering costs, not accuracy rankings, dedicated worst-case latency or asymptotic complexity proofs.",
+    "rank_scope": "Real conditional codimension one and native proper-complex marginal rank one. General-rank moments are not substituted.",
+    "fixed_span_scope": "Span80 and400 isolate matrix dimension from concentration; T64 generated data are a separate factor.",
+    "report_scope": "Real N3 deterministic sphere integration; complex N3/8/16/32 independent threshold/check batches with finite exact-rejection proposal caps. Other report dimensions are explicitly not evaluated.",
+    "report_repetition_scope": "Repeated clocks reuse the same predeclared seeded report draws; clock repetitions are not independent statistical datasets.",
+    "stream_scope": "All endpoint streams assimilate64 snapshots and output once. Known v is supplied to both real conditional methods. GROUSE and SCM are marginal-model references only.",
+    "memory_scope": "Exact persistent array bytes and separate Python/NumPy-tracked temporary-allocation peaks. Native BLAS/LAPACK workspaces and total process RSS are not measured."
+  },
+  "sources": {
+    "lib/simulation_scaling.py": "0c6bed44460c1df2d11f74b3372ec7c6c39d67efbcf019a065d8c5262284a6ca",
+    "scripts/run_simulation_scaling.py": "ddc7914b66b063fe01c6b2ee805588e9183712fab4c0c8e2ba8cf17d3525ae4e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/reference.py": "4aa76180e4b46cafb5f29f96023f11430fabcd44d56344de610a90497de853cf",
+    "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3"
+  },
+  "fingerprint": "e32bb180e5bc771bc7088d86e48fc4235c602126ee2ddd1784efc97c72fdfa53",
+  "hardware": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "logical_cpu_count": 5,
+    "cpu_affinity": 5,
+    "cpu_quota": "400000 100000",
+    "memory_limit": "34359738368",
+    "blas_threads": 1,
+    "timing": "Serial process; CPU and wall clocks are separate. Other host activity can still affect wall clocks."
+  },
+  "created_utc": "2026-11-08T01:01:26.369072+00:00",
+  "gate": {
+    "status": "passed",
+    "core_hash": "7e46f16da5ff43a33ad157b001a98998195f82a6500bed1838571391d69279ca",
+    "tests": 209,
+    "seed": 20,
+    "tracking_repeats": 128,
+    "tracking_terminal": 480,
+    "fixed_time_violations": 0,
+    "violation_upper_95": 0.023132405251746757,
+    "sampler": {
+      "max_rhat": 1.0007026975459008,
+      "max_mean_difference": 0.002296355394263677,
+      "max_standardized_difference": 0.5906998429699951,
+      "min_ess": 1033.3186288425604,
+      "max_mcse": 0.0028725237816521706
+    },
+    "moment_error": 0.003521279454262921,
+    "dimensions": [
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "seconds": 64.88966887800007,
+    "versions": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "scipy": "1.17.0",
+      "matplotlib": "3.10.8"
+    },
+    "scope": "Complete general notebook and regression suite; finite scientific/numerical qualifications are recorded separately",
+    "science_hash": "521541a512f7f153460e2a8f0b5dbb32da24029d11c0d4f6d3958471e85342dc",
+    "sources": {
+      "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+      "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+      "lib/anisotropy_study.py": "b7ab40a999d74cb94983a1d1d0e0e6772ec57000bbd0ad0048dfae71ab68bfed",
+      "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+      "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+      "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+      "lib/contact_gaussian.py": "362722a17fef5ae9e5bdcea1011c264f372931b444796694903aa8a20ed239eb",
+      "lib/contact_geometry_study.py": "f8d0e5b18eadff493fbcca05b5ae42adacf27755735e9928be3343aa0ebe8874",
+      "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+      "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+      "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342",
+      "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+      "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+      "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+      "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+      "lib/reference.py": "4aa76180e4b46cafb5f29f96023f11430fabcd44d56344de610a90497de853cf",
+      "lib/simulation_scaling.py": "0c6bed44460c1df2d11f74b3372ec7c6c39d67efbcf019a065d8c5262284a6ca",
+      "lib/simulation_validation.py": "ce44d35f15f3557196aa77f5c45851b5245de3abaaf2cb27b6d82a291b5d72a6",
+      "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+      "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53",
+      "scripts/run_anisotropy_study.py": "580a4bbc34a7b6a9b25beb3d2d77037f820d57c2a3fd16881f6b90a099c178c8",
+      "scripts/run_array_geometry.py": "bd8a1bd896515c63c5683a85400e4170c61580c4be7f405b81e5f21827eb8193",
+      "scripts/run_contact_geometry.py": "d2b5a37d58dfffa85e3c21f348d5eb8ac51be310ad6df2ba432ae754afcae7b5",
+      "scripts/run_simulation_scaling.py": "ddc7914b66b063fe01c6b2ee805588e9183712fab4c0c8e2ba8cf17d3525ae4e",
+      "scripts/validate_simulation_redesign.py": "509ad21ebce190b7b412115cc0535f48998074d8dc844292f9710dbe09b49f74"
+    },
+    "original_notebook_sha256": "57f997159cbeaa910fcd39c3e8a8751c0b38561b833812426521fed3d5ed5544"
+  },
+  "status": "completed",
+  "tables": {
+    "capabilities.csv": "6cd1b4c462a054655a84cfdd4795f7fca56ef01a6bcdde5c4a8f1d7a2481beb4",
+    "memory.csv": "becdd8b585e2ea7f7c5a2bbfb4605193a7dccdbaebdd705d43a400201417ed39",
+    "parameters.npz": "fd59bf81beef9927ab08d3c7f8c28ccaf2754ae9ab9567d6116f6df1d29fe460",
+    "summary.csv": "c8cd307f6a9966f660fe0b3252df2406bf25e75bc6bcac31fe22fdbd18c249ce",
+    "timings.csv": "b70c1018d18325327a0d2ca3a73beadbb330d6cc805d5805b82fe96d5e82a6a3"
+  },
+  "checks": {
+    "seconds": 21.80023440900004,
+    "cases": 36,
+    "operations": 1421,
+    "unresolved_operations": 0,
+    "measured_repetitions": 7,
+    "means_do_not_certify_tails": true,
+    "all_targets_retained": true
+  }
+}

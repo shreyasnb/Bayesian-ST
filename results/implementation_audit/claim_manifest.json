@@ -1,0 +1,2836 @@
+{
+  "schema": 1,
+  "status": "completed",
+  "profile": "paper",
+  "interpretation": "Audit completion does not mean every claim passed. Negative, inconclusive and unavailable-source checks retain their own status.",
+  "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+  "status_counts": {
+    "inconclusive": 4,
+    "passed": 51,
+    "not applicable": 1,
+    "failed": 1
+  },
+  "gate_tests": 241,
+  "implementation_hash": "74d8425d8d50be7558e9307843d786ef4225be3827856de1292bb454017136a5",
+  "sources": {
+    "scripts/summarize_implementation_audit.py": "8808714a78ec5c25689f5fc388c379c3f66e96951650b56dc5528aedbafffd94",
+    "lib/guide_information.py": "23a4c48bf43ccb3d25b550ff37c25b7920897d9cf066335c625890e8f37faa00",
+    "scripts/run_guide_information.py": "a37f4e7d254ab6a4c1f85317050867311769af19c547f95e6bf89e9f5adcbe14",
+    "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+    "lib/beamforming_theory.py": "8cf21d381a44756818177130fd097b8c6458e541c0595e46fa2577348aace486",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53",
+    "lib/guide_information_counts.py": "e459d0ac66fcb442dc4246bd44cdd5135a89891d2c71623f43b73d8119feaa38",
+    "scripts/run_guide_information_counts.py": "0b95bb0f2c0e6882c684718cae645b7d471aa5f07fec28763f3d612d8bc5eb82",
+    "tests/test_guide_information_counts.py": "48b785b2007f0b15e45a756aae2dae4f166f75f88e1b8e2d0b87f68b221c882e",
+    "lib/guide_tracking.py": "c63c9f9fe0691649ec88b9709a9c859bb7d421fd21c4b526099846a62a6f789b",
+    "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1",
+    "scripts/run_guide_tracking.py": "61ca85f3ef6e98d047915581cbfbc74020eca7ac93baaebeadfd9f1ed5af1f8f",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "scripts/run_block_em_study.py": "9b32a45cbc0166dc4d0059d2fdf7e2595cd343a0171fd9ad02fc8bc5f648f6fb",
+    "tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+    "scripts/run_guide_reliability.py": "e1d15752af32217b2c18aad066f6d44f42b9f6a55920f20ed1016cbd04eb986d",
+    "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/anisotropy_study.py": "b7ab40a999d74cb94983a1d1d0e0e6772ec57000bbd0ad0048dfae71ab68bfed",
+    "scripts/run_anisotropy_study.py": "580a4bbc34a7b6a9b25beb3d2d77037f820d57c2a3fd16881f6b90a099c178c8",
+    "tests/test_anisotropy_study.py": "e6575f205c423a0b9a646c03e6b21c99c14bcb43f32f6ea6da2589295b1dffda",
+    "lib/reference.py": "4aa76180e4b46cafb5f29f96023f11430fabcd44d56344de610a90497de853cf",
+    "scripts/run_array_geometry.py": "bd8a1bd896515c63c5683a85400e4170c61580c4be7f405b81e5f21827eb8193",
+    "tests/test_array_geometry.py": "6d209b467482af25f262d7457de6ee7f61417992d5838d618a5ed5411e68f775",
+    "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+    "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+    "lib/contact_geometry_study.py": "f8d0e5b18eadff493fbcca05b5ae42adacf27755735e9928be3343aa0ebe8874",
+    "scripts/run_contact_geometry.py": "d2b5a37d58dfffa85e3c21f348d5eb8ac51be310ad6df2ba432ae754afcae7b5",
+    "tests/test_contact_geometry.py": "2abc7c0b29e57f930d35c2ca436ed3fb843d41d7340f029c30ff14c88f52b6ec",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/contact_gaussian.py": "362722a17fef5ae9e5bdcea1011c264f372931b444796694903aa8a20ed239eb",
+    "lib/simulation_scaling.py": "0c6bed44460c1df2d11f74b3372ec7c6c39d67efbcf019a065d8c5262284a6ca",
+    "scripts/run_simulation_scaling.py": "ddc7914b66b063fe01c6b2ee805588e9183712fab4c0c8e2ba8cf17d3525ae4e",
+    "scripts/plot_implementation_audit.py": "167566a4e66eb1b0981c367c1317a316d4710ca9cab54e48655cbe2bbf8afe95",
+    "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
+    "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+    "lib/simulation_story_visuals.py": "58b805a6e43aef3ccc2c4e54c9792d271e8a0ae207f10b5588ce71414b93e6bf",
+    "lib/contact_spherical_reference.py": "292346eb229d5e34fc7bdee154bf2720b534e40fd32ada5dc6b0aaf398a25f4b",
+    "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342",
+    "lib/implementation_validation.py": "ebef04c425a72c4f1fe8a05eaaab2d5417e356afc5c2476928dc0c019ce6bf6d",
+    "lib/simulation_validation.py": "663e62ab9186251faa5b251648ebd05c51a12f426884b690cccdddea3ae81bef",
+    "scripts/validate_implementation_audit.py": "e41704bf72459cc47a8f77d5f0ddb8fba53e73597ca69074ccd0c77b5d44016a",
+    "scripts/validate_simulation_redesign.py": "509ad21ebce190b7b412115cc0535f48998074d8dc844292f9710dbe09b49f74"
+  },
+  "input_manifests": {
+    "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+    "results/implementation_audit/paper/information_counts/manifest.json": "ab9daeead07af4109eea012f7f9086adda82deb013d06def5b492c5b182e946f",
+    "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+    "results/implementation_audit/paper/em/manifest.json": "ab71dc035fbca39539295acca58e56060200a0bc0d62a5df8d10c918ed370e94",
+    "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+    "results/simulation_redesign/paper/geometry/manifest.json": "47d66a25fedff73a417cbe955d80a963303d3b58bb06a15d57064be221293602",
+    "results/simulation_redesign/paper/beamforming/manifest.json": "d1b5fc4a8fc4a8d4aaaf7280286c284eeeaf06f2d383cad33fe57f1632574812",
+    "results/simulation_redesign/paper/contact/manifest.json": "208fc2d728a42439acadc5d68825572c5c5ceb2b1753b6835e9486e94b4a4a5a",
+    "results/simulation_redesign/paper/scaling/manifest.json": "0ad0e8b4b945f35ed3e5ccb08fee0e2e1f18764143f4843b7cc9b4be87b3ffba",
+    "results/implementation_audit/coverage_plan.json": "0d81afbacabf4a8f890ebbb5867ce00bef88e473805bbf41fd7ec10129da6b39",
+    "results/implementation_audit/paper/figures/manifest.json": "1fecdaa5fa926b32c6114688e30ed4c57ed31639033170e9e6633c4660361162",
+    "results/implementation_audit/validation/validation.json": "4c7c05707aca66041875e6eee794f18a8ca7b03bb05868417596b9f6cfbc704d",
+    "results/implementation_audit/provenance.json": "421dd23261097b6e5cdb652fabdf96464dacb11d1ec950d23020d10448c41298",
+    "results/implementation_audit/archive/preservation.json": "c47c87e8aed7c5cf2e36d4e6264d833c8aca05b7a3379c0d63420c8d7607d1b6",
+    "docs/implementation_guide.md": "4f715f894fd52604f05de6d2ce97a3a14ed32824cd1de0e0dfb81e9273e06f00",
+    "docs/implementation_guide_audit.md": "2c1c249ac3613eb68985c962ad8bbccf0ed868f0551072b70f50e2a287f83504"
+  },
+  "claims": [
+    {
+      "id": "source_spec",
+      "claim": "Compare the explicit guide and supplied draft; distinguish unavailable exact TeX source",
+      "assumptions": [
+        "main.tex and supplementary.tex are absent; exact source-text agreement cannot be asserted"
+      ],
+      "status": "inconclusive",
+      "baseline_at_6e78cc9": "Exact named source files absent; latest PDF can supply checked formulas",
+      "owner": "root",
+      "evidence": [
+        "docs/implementation_guide_audit.md"
+      ],
+      "routine": [
+        "docs/implementation_guide_audit.md"
+      ],
+      "metric": [
+        "manuscript_source_availability"
+      ],
+      "figure": [],
+      "pending_reason": "main.tex and supplementary.tex are not supplied; exact source-wording agreement cannot be established.",
+      "evidence_hashes": {
+        "docs/implementation_guide_audit.md": "2c1c249ac3613eb68985c962ad8bbccf0ed868f0551072b70f50e2a287f83504"
+      },
+      "figure_files": {}
+    },
+    {
+      "id": "reproduction",
+      "claim": "Preserve historical work and publish current source/config/result hashes",
+      "assumptions": [
+        "test branch only; no force push"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing source-verified study and historical archive",
+      "owner": "root",
+      "evidence": [
+        "results/implementation_audit/archive/preservation.json",
+        "results/implementation_audit/validation/validation.json",
+        "results/implementation_audit/provenance.json"
+      ],
+      "routine": [
+        "lib/implementation_validation.py:verify_preservation",
+        "lib/implementation_validation.py:verify_component",
+        "scripts/validate_implementation_audit.py"
+      ],
+      "metric": [
+        "source_hashes",
+        "table_hashes",
+        "archive_hashes",
+        "general_validation_tests"
+      ],
+      "figure": [],
+      "pending_reason": "",
+      "result_scope": "All five current paper components, 241-test general gate, and 567 preserved historical files verify. Saved notebook execution is a later independent handoff check, not a premise of this scientific report.",
+      "evidence_hashes": {
+        "results/implementation_audit/archive/preservation.json": "c47c87e8aed7c5cf2e36d4e6264d833c8aca05b7a3379c0d63420c8d7607d1b6",
+        "results/implementation_audit/validation/validation.json": "4c7c05707aca66041875e6eee794f18a8ca7b03bb05868417596b9f6cfbc704d",
+        "results/implementation_audit/provenance.json": "421dd23261097b6e5cdb652fabdf96464dacb11d1ec950d23020d10448c41298"
+      },
+      "figure_files": {}
+    },
+    {
+      "id": "likelihood_algebra",
+      "claim": "Normalized Gaussian likelihoods, constants, trace gauge and additive one-time correction",
+      "assumptions": [
+        "Fixed scales; real and proper complex observations"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing tests cover likelihoods and one-time correction; expanded deterministic guide audit required",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/models.py:increment",
+        "lib/models.py:constant",
+        "lib/models.py:log_likelihood"
+      ],
+      "metric": [
+        "direct_gaussian_error",
+        "gauge_error",
+        "block_sequential_error"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+        "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+        "results/implementation_audit/paper/information/likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+        "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+        "results/implementation_audit/paper/information/quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff"
+      },
+      "figure_files": {
+        "B2a": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/B2a_count_error.pdf"
+        ]
+      }
+    },
+    {
+      "id": "rank_two_reference",
+      "claim": "Include one rank-two real deterministic case in N<=6",
+      "assumptions": [
+        "Real N<=6; state and tangent chart explicitly fixed"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "General core supports rank two; guide-specific reference audit missing",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "likelihood_error",
+        "fisher_error",
+        "hessian_error"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+        "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+        "results/implementation_audit/paper/information/likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+        "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+        "results/implementation_audit/paper/information/quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff"
+      },
+      "figure_files": {
+        "B2a": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/B2a_count_error.pdf"
+        ]
+      }
+    },
+    {
+      "id": "modal_equality",
+      "claim": "Bingham marginal mode equals EW covariance PCA at matched weights, initialization and scales",
+      "assumptions": [
+        "Uniform or explicitly matching prior; identical beta and known scales"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Passed in previous paper study; must retain semantic control",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/array_geometry_study.py:test_task",
+        "lib/beamforming_decisions.py:weighted_paths"
+      ],
+      "metric": [
+        "pca_mode_error",
+        "parameter_scatter_error"
+      ],
+      "figure": [
+        "B2b"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+        "results/implementation_audit/paper/tracking/bounds.csv": "063d8b18799ea74865588866e5f24314897fcb08d5a2136c2ac5d99c3cc107be",
+        "results/implementation_audit/paper/tracking/summary.csv": "a7d4ec30109609abce6bccade25dca907e08ed29aed0167042724f6581c0415c",
+        "results/implementation_audit/paper/tracking/phase.csv": "ec4ba91e7e138ad98b1f9b6c95b273dd4e909570f858f238cda3418194407211",
+        "results/implementation_audit/paper/tracking/paired.csv": "84f756fbb8edc50ac9e9b056cc15be0ea2e416585f9fa672da0f2c4b40c853b1",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1"
+      },
+      "figure_files": {
+        "B2b": [
+          "results/implementation_audit/paper/figures/B2b_posterior_curvature.pdf"
+        ]
+      }
+    },
+    {
+      "id": "real_marginal_information",
+      "claim": "Real marginal Fisher coefficient L*(tau2)^2/[s(s+tau2)]",
+      "assumptions": [
+        "Fixed state; independent Gaussian snapshots; tangent vec_F convention"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Analytic helper existed; complete real multi-method guide study missing",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/beamforming_theory.py:passive_fisher_information",
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "analytic_fisher",
+        "score_covariance",
+        "expected_negative_hessian",
+        "KL_hessian"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+        "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+        "results/implementation_audit/paper/information/likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+        "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+        "results/implementation_audit/paper/information/quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff"
+      },
+      "figure_files": {
+        "B2a": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/B2a_count_error.pdf"
+        ]
+      }
+    },
+    {
+      "id": "fisher_snr_observation_count",
+      "claim": "Directly check Fisher score covariance over signal-to-noise ratio and actual observations per independent dataset",
+      "routine": [
+        "lib/guide_information_counts.py:score_prefixes",
+        "lib/guide_information_counts.py:gaussian_stream",
+        "scripts/run_guide_information_counts.py"
+      ],
+      "metric": [
+        "observations",
+        "sensor_variance",
+        "analytic_information",
+        "relative_frobenius_error",
+        "maximum_product_z",
+        "independent_datasets"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "assumptions": [
+        "Real and proper-complex N=3 k=1; tau2=1.3; s=0.2,1,4; L=1,4,16,64; 8192 independent datasets per field/variance; common prefixes and noise draws induce cross-cell dependence, not extra repetitions"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "No actual sample-count Fisher error cohort; prior curvature observations were a different check",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information_counts/manifest.json",
+        "results/implementation_audit/paper/information_counts/summary.csv",
+        "results/implementation_audit/paper/information_counts/matrices.csv",
+        "tests/test_guide_information_counts.py"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information_counts/manifest.json": "ab9daeead07af4109eea012f7f9086adda82deb013d06def5b492c5b182e946f",
+        "results/implementation_audit/paper/information_counts/summary.csv": "298d0df3436d889e3f53a7643cf604c635f740baf4687d706f26c2240039171c",
+        "results/implementation_audit/paper/information_counts/matrices.csv": "8209b46281c992af7a8e519bc4e56e5041c0e853da2463e2b9e82231f7768565",
+        "tests/test_guide_information_counts.py": "48b785b2007f0b15e45a756aae2dae4f166f75f88e1b8e2d0b87f68b221c882e"
+      },
+      "figure_files": {
+        "B2a": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/B2a_count_error.pdf"
+        ]
+      }
+    },
+    {
+      "id": "conditional_information",
+      "claim": "Conditional Fisher uses recorded inputs and the correct compressed design",
+      "assumptions": [
+        "Recorded V independently prescribed; never inferred from U"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing conditional theory tests; expanded chart audit required",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/theory.py",
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "analytic_fisher",
+        "empirical_score_covariance",
+        "expected_negative_hessian",
+        "KL_hessian"
+      ],
+      "figure": [
+        "C2"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+        "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+        "results/implementation_audit/paper/information/likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+        "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+        "results/implementation_audit/paper/information/quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff"
+      },
+      "figure_files": {
+        "C2": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/C2_directional_contact_information.pdf"
+        ]
+      }
+    },
+    {
+      "id": "mixed_information",
+      "claim": "Independent observation-type mixture has additive information",
+      "assumptions": [
+        "Observation types and conditional designs prescribed independently"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Missing explicit mixed-type audit",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "mixed_information_additivity_error"
+      ],
+      "figure": [
+        "B2a",
+        "C2"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+        "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+        "results/implementation_audit/paper/information/likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+        "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+        "results/implementation_audit/paper/information/quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff"
+      },
+      "figure_files": {
+        "B2a": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/B2a_count_error.pdf"
+        ],
+        "C2": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/C2_directional_contact_information.pdf"
+        ]
+      }
+    },
+    {
+      "id": "discounted_information",
+      "claim": "Discounted Hessian weights w differ from score-covariance weights w squared",
+      "assumptions": [
+        "Independent observations at fixed state; fixed deterministic weights"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Missing explicit w versus w squared evidence",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "weighted_hessian_error",
+        "weighted_score_error",
+        "w_w2_difference"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+        "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+        "results/implementation_audit/paper/information/likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+        "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+        "results/implementation_audit/paper/information/quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff"
+      },
+      "figure_files": {
+        "B2a": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/B2a_count_error.pdf"
+        ]
+      }
+    },
+    {
+      "id": "tangent_curvature",
+      "claim": "Align tangent charts and repeat FD steps for scores, Hessian and KL",
+      "assumptions": [
+        "Real/imaginary chart and complement fixed; multiple FD resolutions"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Historical complex check exists; new expanded check required",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "finite_difference_step",
+        "relative_error",
+        "tangent_alignment"
+      ],
+      "figure": [
+        "B2a",
+        "B2b"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+        "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+        "results/implementation_audit/paper/information/likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+        "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+        "results/implementation_audit/paper/information/quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff"
+      },
+      "figure_files": {
+        "B2a": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/B2a_count_error.pdf"
+        ],
+        "B2b": [
+          "results/implementation_audit/paper/figures/B2b_posterior_curvature.pdf"
+        ]
+      }
+    },
+    {
+      "id": "realized_curvature",
+      "claim": "Realized Bingham modal Hessian follows eigenvalue gaps but differs from expected information",
+      "assumptions": [
+        "Finite datasets; no expected-information/posterior-curvature identification"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Visual eigengaps existed; repeated-data curvature audit missing",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "posterior_gap",
+        "modal_hessian_error",
+        "gap_distribution"
+      ],
+      "figure": [
+        "B2b"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+        "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+        "results/implementation_audit/paper/information/likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+        "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+        "results/implementation_audit/paper/information/quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff"
+      },
+      "figure_files": {
+        "B2b": [
+          "results/implementation_audit/paper/figures/B2b_posterior_curvature.pdf"
+        ]
+      }
+    },
+    {
+      "id": "proper_complex",
+      "claim": "Proper complex increment has no half and real/imag Fisher is twice the real coefficient",
+      "assumptions": [
+        "Proper complex covariance convention CN(0,R)"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing direct complex tests and passive information; retain and extend",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/models.py",
+        "lib/beamforming_theory.py",
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "direct_complex_density_error",
+        "complex_fisher_error",
+        "tangent_dimension"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+        "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+        "results/implementation_audit/paper/information/likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+        "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+        "results/implementation_audit/paper/information/quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff"
+      },
+      "figure_files": {
+        "B2a": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/B2a_count_error.pdf"
+        ]
+      }
+    },
+    {
+      "id": "realification",
+      "claim": "Structured realification uses half block covariance and rejects complex input to real bound routines",
+      "assumptions": [
+        "Preserve complex linear structure; no arbitrary rank-two real replacement"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Historical structured-real tests; explicit revised-bound rejection required",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "scripts/check_paper_realification.py",
+        "lib/guide_information.py",
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "realification_density_error",
+        "covariance_error",
+        "input_rejection"
+      ],
+      "figure": [
+        "B2a"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+        "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+        "results/implementation_audit/paper/information/likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+        "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+        "results/implementation_audit/paper/information/quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff"
+      },
+      "figure_files": {
+        "B2a": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/B2a_count_error.pdf"
+        ]
+      }
+    },
+    {
+      "id": "moment_references",
+      "claim": "Independent small-state references stabilize moments and normalizers",
+      "assumptions": [
+        "Real sphere and complex reference measures distinguished; bounded budgets"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Passed rank-one/complement references under previous study; new study reference flags required",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/reference.py",
+        "lib/spectral_series.py",
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "mean_error",
+        "log_normalizer_error",
+        "reference_resolution",
+        "resolved"
+      ],
+      "figure": [
+        "S1"
+      ],
+      "pending_reason": "",
+      "result_scope": "Independent real-sphere/complex-simplex reference and refinement checks pass at their declared low dimensions. This does not certify arbitrary-rank moments.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+        "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+        "results/implementation_audit/paper/information/likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+        "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+        "results/implementation_audit/paper/information/quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff"
+      },
+      "figure_files": {
+        "S1": [
+          "results/implementation_audit/paper/figures/S1_native_scaling.pdf",
+          "results/implementation_audit/paper/figures/S1_generalized_constraints.pdf"
+        ]
+      }
+    },
+    {
+      "id": "marginal_bound",
+      "claim": "Use exact guide real/complex marginal constants, initialization and aggregate drift",
+      "assumptions": [
+        "Fixed true scales, deterministic path/transport, fixed memory"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Previous passive bound has different constants; cannot be relabeled",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "eta",
+        "h",
+        "gap",
+        "initialization",
+        "drift",
+        "fluctuation_allowance",
+        "epsilon"
+      ],
+      "figure": [
+        "B3"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+        "results/implementation_audit/paper/tracking/bounds.csv": "063d8b18799ea74865588866e5f24314897fcb08d5a2136c2ac5d99c3cc107be",
+        "results/implementation_audit/paper/tracking/summary.csv": "a7d4ec30109609abce6bccade25dca907e08ed29aed0167042724f6581c0415c",
+        "results/implementation_audit/paper/tracking/phase.csv": "ec4ba91e7e138ad98b1f9b6c95b273dd4e909570f858f238cda3418194407211",
+        "results/implementation_audit/paper/tracking/paired.csv": "84f756fbb8edc50ac9e9b056cc15be0ea2e416585f9fa672da0f2c4b40c853b1",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1"
+      },
+      "figure_files": {
+        "B3": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ]
+      }
+    },
+    {
+      "id": "conditional_bound",
+      "claim": "Keep the recorded-input real conditional theorem separate from marginal constants",
+      "assumptions": [
+        "Recorded fixed design; fixed true noise; exact named TeX unavailable"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Real printed-draft wrapper existed; current guide extension must be explicit",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "gap",
+        "initialization",
+        "drift",
+        "noise",
+        "epsilon"
+      ],
+      "figure": [
+        "C4"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+        "results/implementation_audit/paper/tracking/bounds.csv": "063d8b18799ea74865588866e5f24314897fcb08d5a2136c2ac5d99c3cc107be",
+        "results/implementation_audit/paper/tracking/summary.csv": "a7d4ec30109609abce6bccade25dca907e08ed29aed0167042724f6581c0415c",
+        "results/implementation_audit/paper/tracking/phase.csv": "ec4ba91e7e138ad98b1f9b6c95b273dd4e909570f858f238cda3418194407211",
+        "results/implementation_audit/paper/tracking/paired.csv": "84f756fbb8edc50ac9e9b056cc15be0ea2e416585f9fa672da0f2c4b40c853b1",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1"
+      },
+      "figure_files": {
+        "C4": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ]
+      }
+    },
+    {
+      "id": "conditional_complex_extension",
+      "claim": "Audit the separately derived proper-complex recorded-input extension and distinguish manuscript agreement",
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "conditional_complex_decomposition_error",
+        "complex_noise_allowance",
+        "exact_manuscript_agreement"
+      ],
+      "figure": [
+        "C4"
+      ],
+      "assumptions": [
+        "Conjugate transposes and proper-complex convention; exact supplementary.tex not supplied"
+      ],
+      "status": "inconclusive",
+      "baseline_at_6e78cc9": "Real conditional wrapper existed; complex conditional extension not manuscript-certified",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "lib/guide_tracking.py",
+        "tests/test_guide_tracking.py",
+        "docs/implementation_guide_audit.md"
+      ],
+      "pending_reason": "The proper-complex Gaussian union-bound extension passes decomposition/numerical checks, but exact constants/wording in unavailable supplementary.tex cannot be certified.",
+      "numerical_status": "passed",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+        "lib/guide_tracking.py": "c63c9f9fe0691649ec88b9709a9c859bb7d421fd21c4b526099846a62a6f789b",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1",
+        "docs/implementation_guide_audit.md": "2c1c249ac3613eb68985c962ad8bbccf0ed868f0551072b70f50e2a287f83504"
+      },
+      "figure_files": {
+        "C4": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ]
+      }
+    },
+    {
+      "id": "bound_decomposition",
+      "claim": "Check matrix decompositions and actual perturbation before modal implication",
+      "assumptions": [
+        "Population state quantities evaluation-only"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Legacy tests exist; exact revised formulas need new check",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "decomposition_error",
+        "actual_operator_perturbation",
+        "allowance",
+        "modal_error"
+      ],
+      "figure": [
+        "B3",
+        "C4"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+        "results/implementation_audit/paper/tracking/bounds.csv": "063d8b18799ea74865588866e5f24314897fcb08d5a2136c2ac5d99c3cc107be",
+        "results/implementation_audit/paper/tracking/summary.csv": "a7d4ec30109609abce6bccade25dca907e08ed29aed0167042724f6581c0415c",
+        "results/implementation_audit/paper/tracking/phase.csv": "ec4ba91e7e138ad98b1f9b6c95b273dd4e909570f858f238cda3418194407211",
+        "results/implementation_audit/paper/tracking/paired.csv": "84f756fbb8edc50ac9e9b056cc15be0ea2e416585f9fa672da0f2c4b40c853b1",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1"
+      },
+      "figure_files": {
+        "B3": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ],
+        "C4": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ]
+      }
+    },
+    {
+      "id": "bound_preflight",
+      "claim": "Preflight long static and fixed-memory limit; distinguish gap validity and informative ceiling",
+      "assumptions": [
+        "No longer-horizon remedy for permanently vacuous fixed memory"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Missing explicit asymptotic preflight in current walkthrough",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "epsilon_gap_ratio",
+        "asymptotic_ratio",
+        "sufficient_condition",
+        "below_ceiling",
+        "distance_ceiling"
+      ],
+      "figure": [
+        "B3",
+        "C4"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+        "results/implementation_audit/paper/tracking/bounds.csv": "063d8b18799ea74865588866e5f24314897fcb08d5a2136c2ac5d99c3cc107be",
+        "results/implementation_audit/paper/tracking/summary.csv": "a7d4ec30109609abce6bccade25dca907e08ed29aed0167042724f6581c0415c",
+        "results/implementation_audit/paper/tracking/phase.csv": "ec4ba91e7e138ad98b1f9b6c95b273dd4e909570f858f238cda3418194407211",
+        "results/implementation_audit/paper/tracking/paired.csv": "84f756fbb8edc50ac9e9b056cc15be0ea2e416585f9fa672da0f2c4b40c853b1",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1"
+      },
+      "figure_files": {
+        "B3": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ],
+        "C4": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ]
+      }
+    },
+    {
+      "id": "bound_sampling",
+      "claim": "Frozen path across independent episodes and fixed-time violation intervals",
+      "assumptions": [
+        "Per-time claim; no implicit trajectory-wide guarantee"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Earlier fixed-time experiments exist; revised bound requires new evidence",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "violation_count",
+        "episode_count",
+        "binomial_lower",
+        "binomial_upper",
+        "informative_fraction"
+      ],
+      "figure": [
+        "B3",
+        "C4"
+      ],
+      "pending_reason": "",
+      "result_scope": "Of 7680 reports in 60 fixed-time cells, 2048 reports in 16 cells satisfy the condition and informative ceiling, with zero eligible violations. Every eligible cell has 128 episodes and exact two-sided 95% upper violation limit .028408; invalid cells retain zero eligible episodes and NaN violation intervals.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+        "results/implementation_audit/paper/tracking/bounds.csv": "063d8b18799ea74865588866e5f24314897fcb08d5a2136c2ac5d99c3cc107be",
+        "results/implementation_audit/paper/tracking/summary.csv": "a7d4ec30109609abce6bccade25dca907e08ed29aed0167042724f6581c0415c",
+        "results/implementation_audit/paper/tracking/phase.csv": "ec4ba91e7e138ad98b1f9b6c95b273dd4e909570f858f238cda3418194407211",
+        "results/implementation_audit/paper/tracking/paired.csv": "84f756fbb8edc50ac9e9b056cc15be0ea2e416585f9fa672da0f2c4b40c853b1",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1"
+      },
+      "figure_files": {
+        "B3": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ],
+        "C4": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ]
+      }
+    },
+    {
+      "id": "beam_observation",
+      "claim": "Interference-only proper complex training learns from snapshots alone",
+      "assumptions": [
+        "Latent coefficients, desired signature and truth excluded from correction"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Passed previous static study",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/simulation_redesign/paper/beamforming/manifest.json",
+        "results/simulation_redesign/paper/beamforming/findings.md"
+      ],
+      "routine": [
+        "lib/array_geometry_study.py:dataset",
+        "lib/array_geometry_study.py:test_task"
+      ],
+      "metric": [
+        "available_measurements",
+        "unit_gain_error",
+        "passive_scatter_error"
+      ],
+      "figure": [
+        "B1"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/simulation_redesign/paper/beamforming/manifest.json": "d1b5fc4a8fc4a8d4aaaf7280286c284eeeaf06f2d383cad33fe57f1632574812",
+        "results/simulation_redesign/paper/beamforming/findings.md": "4e0f6555863e848d04d6762d3be3c74440631099fc9510c169e3f9a847bab87f"
+      },
+      "figure_files": {
+        "B1": [
+          "results/implementation_audit/paper/figures/B1_array_measurements.pdf"
+        ]
+      }
+    },
+    {
+      "id": "beam_motion",
+      "claim": "Compare static and deterministic drift with identity primary transport and independent tuning",
+      "assumptions": [
+        "No oracle motion; fitting does not inherit fixed-scale theorem"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Historical moving-array study exists but new guide-aligned run missing",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "paired_heldout_power",
+        "selected_beta",
+        "drift_rate"
+      ],
+      "figure": [
+        "B1",
+        "B3",
+        "B5"
+      ],
+      "pending_reason": "",
+      "result_scope": "The declared comparison/stress and its numerical checks are complete; passed does not assert Bayesian dominance or calibration under mismatch. Negative and inconclusive episode-level comparisons remain in the linked tables.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+        "results/implementation_audit/paper/tracking/bounds.csv": "063d8b18799ea74865588866e5f24314897fcb08d5a2136c2ac5d99c3cc107be",
+        "results/implementation_audit/paper/tracking/summary.csv": "a7d4ec30109609abce6bccade25dca907e08ed29aed0167042724f6581c0415c",
+        "results/implementation_audit/paper/tracking/phase.csv": "ec4ba91e7e138ad98b1f9b6c95b273dd4e909570f858f238cda3418194407211",
+        "results/implementation_audit/paper/tracking/paired.csv": "84f756fbb8edc50ac9e9b056cc15be0ea2e416585f9fa672da0f2c4b40c853b1",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1"
+      },
+      "figure_files": {
+        "B1": [
+          "results/implementation_audit/paper/figures/B1_array_measurements.pdf"
+        ],
+        "B3": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ],
+        "B5": [
+          "results/implementation_audit/paper/figures/B5_heldout_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_tracking_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_covariance_decisions.pdf"
+        ]
+      }
+    },
+    {
+      "id": "separate_factors",
+      "claim": "Change noise, interference power and direction separately",
+      "assumptions": [
+        "Do not confound power/noise/motion changes"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Current static geometry varied s and law; tau2 and dynamic factorial checks missing",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py",
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "s",
+        "tau2",
+        "direction_speed",
+        "condition"
+      ],
+      "figure": [
+        "B3",
+        "B5"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+        "results/implementation_audit/paper/tracking/bounds.csv": "063d8b18799ea74865588866e5f24314897fcb08d5a2136c2ac5d99c3cc107be",
+        "results/implementation_audit/paper/tracking/summary.csv": "a7d4ec30109609abce6bccade25dca907e08ed29aed0167042724f6581c0415c",
+        "results/implementation_audit/paper/tracking/phase.csv": "ec4ba91e7e138ad98b1f9b6c95b273dd4e909570f858f238cda3418194407211",
+        "results/implementation_audit/paper/tracking/paired.csv": "84f756fbb8edc50ac9e9b056cc15be0ea2e416585f9fa672da0f2c4b40c853b1",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1"
+      },
+      "figure_files": {
+        "B3": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ],
+        "B5": [
+          "results/implementation_audit/paper/figures/B5_heldout_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_tracking_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_covariance_decisions.pdf"
+        ]
+      }
+    },
+    {
+      "id": "beam_baselines",
+      "claim": "Compare own mode, EW covariance/PCA, validated loading, LW and GROUSE with shared data",
+      "assumptions": [
+        "Independent validation; within-episode averaging; no noise/latent oracle estimator inputs"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Strong static baselines already present; dynamic guide comparison added",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/array_geometry_study.py",
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "paired_true_power",
+        "paired_heldout_power",
+        "validation_loss",
+        "selected_parameters"
+      ],
+      "figure": [
+        "B5"
+      ],
+      "pending_reason": "",
+      "result_scope": "The declared comparison/stress and its numerical checks are complete; passed does not assert Bayesian dominance or calibration under mismatch. Negative and inconclusive episode-level comparisons remain in the linked tables.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+        "results/implementation_audit/paper/tracking/bounds.csv": "063d8b18799ea74865588866e5f24314897fcb08d5a2136c2ac5d99c3cc107be",
+        "results/implementation_audit/paper/tracking/summary.csv": "a7d4ec30109609abce6bccade25dca907e08ed29aed0167042724f6581c0415c",
+        "results/implementation_audit/paper/tracking/phase.csv": "ec4ba91e7e138ad98b1f9b6c95b273dd4e909570f858f238cda3418194407211",
+        "results/implementation_audit/paper/tracking/paired.csv": "84f756fbb8edc50ac9e9b056cc15be0ea2e416585f9fa672da0f2c4b40c853b1",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1"
+      },
+      "figure_files": {
+        "B5": [
+          "results/implementation_audit/paper/figures/B5_heldout_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_tracking_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_covariance_decisions.pdf"
+        ]
+      }
+    },
+    {
+      "id": "bingham_2017",
+      "claim": "Use 2017 tracker only if implementation is verified",
+      "assumptions": [
+        "No implementation may be relabeled as an unverified published algorithm"
+      ],
+      "status": "not applicable",
+      "baseline_at_6e78cc9": "No verified 2017 implementation; optional baseline not applicable",
+      "owner": "root",
+      "evidence": [
+        "docs/implementation_guide_audit.md",
+        "benchmarks/case1/baselines.py"
+      ],
+      "routine": [
+        "docs/implementation_guide_audit.md"
+      ],
+      "metric": [
+        "baseline_availability"
+      ],
+      "figure": [
+        "B5"
+      ],
+      "pending_reason": "No verified implementation is supplied; guide makes this reference optional. Other baselines are not relabeled as it.",
+      "evidence_hashes": {
+        "docs/implementation_guide_audit.md": "2c1c249ac3613eb68985c962ad8bbccf0ed868f0551072b70f50e2a287f83504",
+        "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac"
+      },
+      "figure_files": {
+        "B5": [
+          "results/implementation_audit/paper/figures/B5_heldout_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_tracking_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_covariance_decisions.pdf"
+        ]
+      }
+    },
+    {
+      "id": "isotropy_control",
+      "claim": "Matched isotropy preserves trace, mode and expected squared chordal loss",
+      "assumptions": [
+        "N>=3 rank one for nontrivial anisotropy; specified axial law for probabilities"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing exact pair/singleton negative control and matched axial law",
+      "owner": "guide_information",
+      "evidence": [
+        "results/simulation_redesign/paper/beamforming/manifest.json",
+        "results/simulation_redesign/paper/beamforming/findings.md"
+      ],
+      "routine": [
+        "lib/beamforming_decisions.py:isotropized_mean",
+        "lib/array_geometry_study.py:fixture"
+      ],
+      "metric": [
+        "trace_error",
+        "modal_overlap_error",
+        "same_radius_distribution",
+        "decision_excess"
+      ],
+      "figure": [
+        "B4",
+        "B5"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/simulation_redesign/paper/beamforming/manifest.json": "d1b5fc4a8fc4a8d4aaaf7280286c284eeeaf06f2d383cad33fe57f1632574812",
+        "results/simulation_redesign/paper/beamforming/findings.md": "4e0f6555863e848d04d6762d3be3c74440631099fc9510c169e3f9a847bab87f"
+      },
+      "figure_files": {
+        "B4": [
+          "results/implementation_audit/paper/figures/B4_posterior_section.pdf",
+          "results/implementation_audit/paper/figures/B4_directional_decisions.pdf",
+          "results/implementation_audit/paper/figures/B4_power_uncertainty.pdf"
+        ],
+        "B5": [
+          "results/implementation_audit/paper/figures/B5_heldout_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_tracking_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_covariance_decisions.pdf"
+        ]
+      }
+    },
+    {
+      "id": "isotropic_loading_identity",
+      "claim": "Check explicit matched-isotropy covariance and equivalent modal loading including equality",
+      "assumptions": [
+        "alpha>xi for finite equivalent loading; alpha=xi isotropic endpoint"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing action controls but no named equivalent-loading regression found",
+      "owner": "guide_information",
+      "evidence": [
+        "results/implementation_audit/paper/information/manifest.json",
+        "results/implementation_audit/paper/information/case_checks.csv",
+        "results/implementation_audit/paper/information/likelihood_checks.csv",
+        "results/implementation_audit/paper/information/finite_differences.csv",
+        "results/implementation_audit/paper/information/quadrature_reference.csv",
+        "tests/test_guide_information.py"
+      ],
+      "routine": [
+        "lib/guide_information.py"
+      ],
+      "metric": [
+        "covariance_identity_error",
+        "loading_decision_error",
+        "isotropic_endpoint_error"
+      ],
+      "figure": [
+        "B4",
+        "B5"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+        "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+        "results/implementation_audit/paper/information/likelihood_checks.csv": "9f24b70726739906a0f73ce4bc749400f4d5fe0533f21d9899c9d10263e33f7d",
+        "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+        "results/implementation_audit/paper/information/quadrature_reference.csv": "f8408b297a6217fd22c9be27ef7016019101468dc4d9953ed06008545d27cb52",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff"
+      },
+      "figure_files": {
+        "B4": [
+          "results/implementation_audit/paper/figures/B4_posterior_section.pdf",
+          "results/implementation_audit/paper/figures/B4_directional_decisions.pdf",
+          "results/implementation_audit/paper/figures/B4_power_uncertainty.pdf"
+        ],
+        "B5": [
+          "results/implementation_audit/paper/figures/B5_heldout_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_tracking_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_covariance_decisions.pdf"
+        ]
+      }
+    },
+    {
+      "id": "decision_scope",
+      "claim": "Use posterior expected covariance and expected output-power objective with matched ablations",
+      "assumptions": [
+        "Fixed scales or conditioned plugin; no expected SINR claim; fixed A for decision controls"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Passed previous study; retain distinction under new adaptation",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/simulation_redesign/paper/beamforming/manifest.json",
+        "results/simulation_redesign/paper/beamforming/findings.md"
+      ],
+      "routine": [
+        "lib/beamforming_decisions.py:conditional_excess",
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "unit_gain_error",
+        "quadratic_excess_identity",
+        "paired_cost"
+      ],
+      "figure": [
+        "B4",
+        "B5"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/simulation_redesign/paper/beamforming/manifest.json": "d1b5fc4a8fc4a8d4aaaf7280286c284eeeaf06f2d383cad33fe57f1632574812",
+        "results/simulation_redesign/paper/beamforming/findings.md": "4e0f6555863e848d04d6762d3be3c74440631099fc9510c169e3f9a847bab87f"
+      },
+      "figure_files": {
+        "B4": [
+          "results/implementation_audit/paper/figures/B4_posterior_section.pdf",
+          "results/implementation_audit/paper/figures/B4_directional_decisions.pdf",
+          "results/implementation_audit/paper/figures/B4_power_uncertainty.pdf"
+        ],
+        "B5": [
+          "results/implementation_audit/paper/figures/B5_heldout_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_tracking_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_covariance_decisions.pdf"
+        ]
+      }
+    },
+    {
+      "id": "contact_plant",
+      "claim": "Plane and curved bilateral plant solved independently from KKT and checked against projection",
+      "assumptions": [
+        "Known damping, negligible inertia, no friction, maintained bilateral contact"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Independent KKT plane/sphere plant already implemented and tested",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/contact_mechanics.py:solve_contact_velocity",
+        "lib/contact_mechanics.py:generate_contact"
+      ],
+      "metric": [
+        "KKT_residual",
+        "constraint_residual",
+        "projection_residual",
+        "integration_error"
+      ],
+      "figure": [
+        "C1"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/mismatch.csv": "b338116a942abdb4247e5bad9b37283cbcc0bf1089af67c7533c3e263ab7e35e",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+        "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3"
+      },
+      "figure_files": {
+        "C1": [
+          "results/implementation_audit/paper/figures/C1_contact_mechanics.pdf",
+          "results/implementation_audit/paper/figures/C1_current_contact_predictions.pdf"
+        ]
+      }
+    },
+    {
+      "id": "contact_observations",
+      "claim": "Use recorded applied force and noisy instantaneous velocity, without hidden normal transport",
+      "assumptions": [
+        "Measured wrist orientation may be supplied equally; surface geometry not estimator input"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing causality and hidden-geometry tampering tests passed",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/contact_geometry_study.py",
+        "lib/guide_tracking.py"
+      ],
+      "metric": [
+        "causality_checks",
+        "available_inputs",
+        "normal_oracle_absent"
+      ],
+      "figure": [
+        "C1",
+        "C2"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+        "results/implementation_audit/paper/tracking/bounds.csv": "063d8b18799ea74865588866e5f24314897fcb08d5a2136c2ac5d99c3cc107be",
+        "results/implementation_audit/paper/tracking/summary.csv": "a7d4ec30109609abce6bccade25dca907e08ed29aed0167042724f6581c0415c",
+        "results/implementation_audit/paper/tracking/phase.csv": "ec4ba91e7e138ad98b1f9b6c95b273dd4e909570f858f238cda3418194407211",
+        "results/implementation_audit/paper/tracking/paired.csv": "84f756fbb8edc50ac9e9b056cc15be0ea2e416585f9fa672da0f2c4b40c853b1",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1"
+      },
+      "figure_files": {
+        "C1": [
+          "results/implementation_audit/paper/figures/C1_contact_mechanics.pdf",
+          "results/implementation_audit/paper/figures/C1_current_contact_predictions.pdf"
+        ],
+        "C2": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/C2_directional_contact_information.pdf"
+        ]
+      }
+    },
+    {
+      "id": "contact_design_control",
+      "claim": "Hold normal path fixed while changing recorded excitation and retain abrupt/weak stresses",
+      "assumptions": [
+        "Controlled observation tests separated from physical radius/force paths"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Equal-energy static study existed; abrupt/frozen-path expanded controls missing",
+      "owner": "guide_bounds",
+      "evidence": [
+        "results/implementation_audit/paper/tracking/manifest.json",
+        "results/implementation_audit/paper/tracking/bounds.csv",
+        "results/implementation_audit/paper/tracking/summary.csv",
+        "results/implementation_audit/paper/tracking/phase.csv",
+        "results/implementation_audit/paper/tracking/paired.csv",
+        "tests/test_guide_tracking.py"
+      ],
+      "routine": [
+        "lib/guide_tracking.py",
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "design_eigenvalues",
+        "Fisher_spectrum",
+        "normal_speed",
+        "abrupt_motion"
+      ],
+      "figure": [
+        "C2",
+        "C4"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+        "results/implementation_audit/paper/tracking/bounds.csv": "063d8b18799ea74865588866e5f24314897fcb08d5a2136c2ac5d99c3cc107be",
+        "results/implementation_audit/paper/tracking/summary.csv": "a7d4ec30109609abce6bccade25dca907e08ed29aed0167042724f6581c0415c",
+        "results/implementation_audit/paper/tracking/phase.csv": "ec4ba91e7e138ad98b1f9b6c95b273dd4e909570f858f238cda3418194407211",
+        "results/implementation_audit/paper/tracking/paired.csv": "84f756fbb8edc50ac9e9b056cc15be0ea2e416585f9fa672da0f2c4b40c853b1",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1"
+      },
+      "figure_files": {
+        "C2": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/C2_directional_contact_information.pdf"
+        ],
+        "C4": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ]
+      }
+    },
+    {
+      "id": "contact_baselines",
+      "claim": "Identical pairs for full mean, mode/LS, validated regularization, ridge, residual PCA and local Gaussian",
+      "assumptions": [
+        "Local failures retained; ridge maps not passed to projector-based action"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Previous study retained local-invalid Gaussian flags and EKF wins",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/contact_geometry_study.py:static_test",
+        "lib/contact_geometry_study.py:dynamic_test"
+      ],
+      "metric": [
+        "paired_response_MSE",
+        "paired_soft_cost",
+        "local_chart_validity"
+      ],
+      "figure": [
+        "C3"
+      ],
+      "pending_reason": "",
+      "result_scope": "The declared comparison/stress and its numerical checks are complete; passed does not assert Bayesian dominance or calibration under mismatch. Negative and inconclusive episode-level comparisons remain in the linked tables.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/mismatch.csv": "b338116a942abdb4247e5bad9b37283cbcc0bf1089af67c7533c3e263ab7e35e",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+        "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3"
+      },
+      "figure_files": {
+        "C3": [
+          "results/implementation_audit/paper/figures/C1_current_contact_predictions.pdf",
+          "results/implementation_audit/paper/figures/C3_expected_contact_commands.pdf",
+          "results/implementation_audit/paper/figures/C3_stationary_contact_costs.pdf"
+        ]
+      }
+    },
+    {
+      "id": "contact_heldout",
+      "claim": "Evaluate fresh held-out directions, clean-response risk and realized expected-command cost",
+      "assumptions": [
+        "Fresh directions are available evaluation queries, not hidden training inputs"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing Frobenius/risk/cost identities; additional fresh-response reports requested",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/contact_geometry_study.py:response_mse",
+        "lib/contact_geometry_study.py:soft_cost",
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "response_risk_calibration",
+        "heldout_response_error",
+        "realized_soft_cost"
+      ],
+      "figure": [
+        "C3"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/mismatch.csv": "b338116a942abdb4247e5bad9b37283cbcc0bf1089af67c7533c3e263ab7e35e",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+        "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3"
+      },
+      "figure_files": {
+        "C3": [
+          "results/implementation_audit/paper/figures/C1_current_contact_predictions.pdf",
+          "results/implementation_audit/paper/figures/C3_expected_contact_commands.pdf",
+          "results/implementation_audit/paper/figures/C3_stationary_contact_costs.pdf"
+        ]
+      }
+    },
+    {
+      "id": "anisotropic_damping",
+      "claim": "Known damping uses scaled coordinates and the transformed sensor covariance",
+      "assumptions": [
+        "sqrt(D)Sigma sqrt(D) retained; original isotropic noise generally becomes anisotropic"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Not covered by existing isotropic contact likelihood",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "scaled_KKT_error",
+        "transformed_noise_covariance_error",
+        "isotropic_conjugacy_flag"
+      ],
+      "figure": [
+        "C1",
+        "C5"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/mismatch.csv": "b338116a942abdb4247e5bad9b37283cbcc0bf1089af67c7533c3e263ab7e35e",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+        "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3"
+      },
+      "figure_files": {
+        "C1": [
+          "results/implementation_audit/paper/figures/C1_contact_mechanics.pdf",
+          "results/implementation_audit/paper/figures/C1_current_contact_predictions.pdf"
+        ],
+        "C5": [
+          "results/implementation_audit/paper/figures/C5_contact_calibration.pdf",
+          "results/implementation_audit/paper/figures/C5_model_mismatch.pdf"
+        ]
+      }
+    },
+    {
+      "id": "contact_mismatch",
+      "claim": "Declare unmodeled damping/friction/contact loss as mismatch",
+      "assumptions": [
+        "No exact conditional theorem claim under mismatch"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Not part of current matched contact pilot",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "mismatch_bias",
+        "response_error",
+        "coverage",
+        "score"
+      ],
+      "figure": [
+        "C5",
+        "C6b"
+      ],
+      "pending_reason": "",
+      "result_scope": "The declared comparison/stress and its numerical checks are complete; passed does not assert Bayesian dominance or calibration under mismatch. Negative and inconclusive episode-level comparisons remain in the linked tables.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/mismatch.csv": "b338116a942abdb4247e5bad9b37283cbcc0bf1089af67c7533c3e263ab7e35e",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+        "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3"
+      },
+      "figure_files": {
+        "C5": [
+          "results/implementation_audit/paper/figures/C5_contact_calibration.pdf",
+          "results/implementation_audit/paper/figures/C5_model_mismatch.pdf"
+        ],
+        "C6b": [
+          "results/implementation_audit/paper/figures/B7b_C6b_scale_adaptation.pdf"
+        ]
+      }
+    },
+    {
+      "id": "position_differences",
+      "claim": "Differenced noisy positions create correlated velocity errors",
+      "assumptions": [
+        "Sensor-model stress only; theorem uses independent direct velocity noise"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Missing explicit sensor-law stress",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "velocity_noise_covariance",
+        "lag_one_covariance"
+      ],
+      "figure": [
+        "C5"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/mismatch.csv": "b338116a942abdb4247e5bad9b37283cbcc0bf1089af67c7533c3e263ab7e35e",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+        "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3"
+      },
+      "figure_files": {
+        "C5": [
+          "results/implementation_audit/paper/figures/C5_contact_calibration.pdf",
+          "results/implementation_audit/paper/figures/C5_model_mismatch.pdf"
+        ]
+      }
+    },
+    {
+      "id": "beam_mismatch",
+      "claim": "Desired contamination and unequal higher-rank powers are mismatch",
+      "assumptions": [
+        "Not exact rank-one equal-power training"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Not in current static primary benchmark",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "covariance_mismatch",
+        "coverage",
+        "score",
+        "decision_cost"
+      ],
+      "figure": [
+        "B6"
+      ],
+      "pending_reason": "",
+      "result_scope": "The declared comparison/stress and its numerical checks are complete; passed does not assert Bayesian dominance or calibration under mismatch. Negative and inconclusive episode-level comparisons remain in the linked tables.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/mismatch.csv": "b338116a942abdb4247e5bad9b37283cbcc0bf1089af67c7533c3e263ab7e35e",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+        "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3"
+      },
+      "figure_files": {
+        "B6": [
+          "results/implementation_audit/paper/figures/B6_beam_calibration.pdf"
+        ]
+      }
+    },
+    {
+      "id": "fixed_boundary_block_em",
+      "claim": "Every E step rebuilds common-state block from one excluded-block boundary prior",
+      "assumptions": [
+        "One stationary subspace per block; boundary independent of block"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Missing: lib/em.py uses different recorded-singleton-prior objective",
+      "owner": "guide_em",
+      "evidence": [
+        "results/implementation_audit/paper/em/manifest.json",
+        "results/implementation_audit/paper/em/fits.csv",
+        "results/implementation_audit/paper/em/iterations.csv",
+        "results/implementation_audit/paper/em/references.csv",
+        "results/implementation_audit/paper/em/residuals.csv",
+        "tests/test_block_em.py"
+      ],
+      "routine": [
+        "lib/block_em.py"
+      ],
+      "metric": [
+        "block_sequential_error",
+        "boundary_replay_error",
+        "evidence_history"
+      ],
+      "figure": [
+        "B7a",
+        "C6a"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/em/manifest.json": "ab71dc035fbca39539295acca58e56060200a0bc0d62a5df8d10c918ed370e94",
+        "results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+        "results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+        "results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+        "results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03",
+        "tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc"
+      },
+      "figure_files": {
+        "B7a": [
+          "results/implementation_audit/paper/figures/B7a_C6a_block_evidence.pdf"
+        ],
+        "C6a": [
+          "results/implementation_audit/paper/figures/B7a_C6a_block_evidence.pdf"
+        ]
+      }
+    },
+    {
+      "id": "em_m_steps",
+      "claim": "Ordered marginal variances and conditional expected residual include posterior uncertainty",
+      "assumptions": [
+        "Correct real/complex shape constants; nonnegative signal variance"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Old formulas not complete new block objective",
+      "owner": "guide_em",
+      "evidence": [
+        "results/implementation_audit/paper/em/manifest.json",
+        "results/implementation_audit/paper/em/fits.csv",
+        "results/implementation_audit/paper/em/iterations.csv",
+        "results/implementation_audit/paper/em/references.csv",
+        "results/implementation_audit/paper/em/residuals.csv",
+        "tests/test_block_em.py"
+      ],
+      "routine": [
+        "lib/block_em.py"
+      ],
+      "metric": [
+        "ordered_variance_error",
+        "expected_residual_error",
+        "floor_status"
+      ],
+      "figure": [
+        "B7a",
+        "C6a"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/em/manifest.json": "ab71dc035fbca39539295acca58e56060200a0bc0d62a5df8d10c918ed370e94",
+        "results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+        "results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+        "results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+        "results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03",
+        "tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc"
+      },
+      "figure_files": {
+        "B7a": [
+          "results/implementation_audit/paper/figures/B7a_C6a_block_evidence.pdf"
+        ],
+        "C6a": [
+          "results/implementation_audit/paper/figures/B7a_C6a_block_evidence.pdf"
+        ]
+      }
+    },
+    {
+      "id": "em_initialization",
+      "claim": "Positive interior multistarts selected by normalized evidence and absorbing zero signal boundary",
+      "assumptions": [
+        "Uniform boundary prior for absorbing-boundary identity"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "No current fifth-draft stationary-block initialization study",
+      "owner": "guide_em",
+      "evidence": [
+        "results/implementation_audit/paper/em/manifest.json",
+        "results/implementation_audit/paper/em/fits.csv",
+        "results/implementation_audit/paper/em/iterations.csv",
+        "results/implementation_audit/paper/em/references.csv",
+        "results/implementation_audit/paper/em/residuals.csv",
+        "tests/test_block_em.py"
+      ],
+      "routine": [
+        "lib/block_em.py",
+        "scripts/run_block_em_study.py"
+      ],
+      "metric": [
+        "start",
+        "final_evidence",
+        "tau2_zero_boundary",
+        "selected_start"
+      ],
+      "figure": [
+        "B7a",
+        "C6a"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/em/manifest.json": "ab71dc035fbca39539295acca58e56060200a0bc0d62a5df8d10c918ed370e94",
+        "results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+        "results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+        "results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+        "results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03",
+        "tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc"
+      },
+      "figure_files": {
+        "B7a": [
+          "results/implementation_audit/paper/figures/B7a_C6a_block_evidence.pdf"
+        ],
+        "C6a": [
+          "results/implementation_audit/paper/figures/B7a_C6a_block_evidence.pdf"
+        ]
+      }
+    },
+    {
+      "id": "em_evidence",
+      "claim": "Independent normalized block evidence restores gauge constants and checks EM ascent",
+      "assumptions": [
+        "Exact/reference objective fixed; approximation safeguarded and reported"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Legacy EM ascent does not establish new objective ascent",
+      "owner": "guide_em",
+      "evidence": [
+        "results/implementation_audit/paper/em/manifest.json",
+        "results/implementation_audit/paper/em/fits.csv",
+        "results/implementation_audit/paper/em/iterations.csv",
+        "results/implementation_audit/paper/em/references.csv",
+        "results/implementation_audit/paper/em/residuals.csv",
+        "tests/test_block_em.py"
+      ],
+      "routine": [
+        "lib/block_em.py"
+      ],
+      "metric": [
+        "evidence_reference_error",
+        "tight_reference_change",
+        "minimum_evidence_increment",
+        "rejected_step"
+      ],
+      "figure": [
+        "B7a",
+        "C6a"
+      ],
+      "pending_reason": "",
+      "result_scope": "360 stationary-block fits converge within the declared numerical budget; minimum evidence increment -7.39e-13 is inside the 1e-8 ascent tolerance. Fixed-objective ascent does not establish a global optimum or online monotonicity.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/em/manifest.json": "ab71dc035fbca39539295acca58e56060200a0bc0d62a5df8d10c918ed370e94",
+        "results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+        "results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+        "results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+        "results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03",
+        "tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc"
+      },
+      "figure_files": {
+        "B7a": [
+          "results/implementation_audit/paper/figures/B7a_C6a_block_evidence.pdf"
+        ],
+        "C6a": [
+          "results/implementation_audit/paper/figures/B7a_C6a_block_evidence.pdf"
+        ]
+      }
+    },
+    {
+      "id": "adaptive_scales",
+      "claim": "Compare calibrated/misspecified fixed scales, block EM and residual-only fitting",
+      "assumptions": [
+        "Plugin intervals omit parameter uncertainty; fixed-scale bound separate"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Historical recorded-prior/Gibbs comparisons not new block EM evidence",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/em_start_histories.json"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "noise_recovery",
+        "signal_recovery",
+        "preobservation_score",
+        "paired_loss"
+      ],
+      "figure": [
+        "B7b",
+        "C6b"
+      ],
+      "pending_reason": "",
+      "numerical_status": "passed",
+      "result_scope": "The requested calibrated/misspecified/block-EM/residual comparisons and excluded-observation scores are complete. Finite-iteration convergence and learned-scale uncertainty are not inferred from completion; the former has its own inconclusive outcome row, and no credible intervals are claimed for fitted scales.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/em_start_histories.json": "932dee55862a2547708b8464737271e48ce876268e55ee872e532ed467aa36a6"
+      },
+      "figure_files": {
+        "B7b": [
+          "results/implementation_audit/paper/figures/B7b_C6b_scale_adaptation.pdf"
+        ],
+        "C6b": [
+          "results/implementation_audit/paper/figures/B7b_C6b_scale_adaptation.pdf"
+        ]
+      }
+    },
+    {
+      "id": "finite_iteration_convergence",
+      "claim": "Determine whether all selected finite-budget block-EM adaptation fits converge",
+      "assumptions": [
+        "Plugin intervals omit parameter uncertainty; fixed-scale bound separate"
+      ],
+      "status": "inconclusive",
+      "baseline_at_6e78cc9": "New fixed-boundary block EM objective not implemented",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/em_start_histories.json"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "noise_recovery",
+        "signal_recovery",
+        "preobservation_score",
+        "paired_loss"
+      ],
+      "figure": [
+        "B7b",
+        "C6b"
+      ],
+      "pending_reason": "Four of 192 selected adaptation fits reach the declared finite iteration limit; their finite values remain numerically resolved. This does not establish universal or online convergence.",
+      "numerical_status": "passed",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/em_start_histories.json": "932dee55862a2547708b8464737271e48ce876268e55ee872e532ed467aa36a6"
+      },
+      "figure_files": {
+        "B7b": [
+          "results/implementation_audit/paper/figures/B7b_C6b_scale_adaptation.pdf"
+        ],
+        "C6b": [
+          "results/implementation_audit/paper/figures/B7b_C6b_scale_adaptation.pdf"
+        ]
+      }
+    },
+    {
+      "id": "noise_motion_separation",
+      "claim": "Sensor-noise change at fixed motion and motion change at fixed sensor variance",
+      "assumptions": [
+        "Do not interpret mismatch-induced residuals as recovered sensor noise"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Missing guide-aligned block adaptation study",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "learned_noise",
+        "motion_rate",
+        "true_noise",
+        "preobservation_score"
+      ],
+      "figure": [
+        "B7b",
+        "C6b"
+      ],
+      "pending_reason": "",
+      "result_scope": "The declared comparison/stress and its numerical checks are complete; passed does not assert Bayesian dominance or calibration under mismatch. Negative and inconclusive episode-level comparisons remain in the linked tables.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/mismatch.csv": "b338116a942abdb4247e5bad9b37283cbcc0bf1089af67c7533c3e263ab7e35e",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+        "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3"
+      },
+      "figure_files": {
+        "B7b": [
+          "results/implementation_audit/paper/figures/B7b_C6b_scale_adaptation.pdf"
+        ],
+        "C6b": [
+          "results/implementation_audit/paper/figures/B7b_C6b_scale_adaptation.pdf"
+        ]
+      }
+    },
+    {
+      "id": "calibration_prior",
+      "claim": "Prior-predictive coverage with independent prior states and exact static known-scale beta1 inference",
+      "assumptions": [
+        "Average across independent episodes; Bayesian calibration identity applies jointly"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Current fixed-state and subset tail checks are not this experiment",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "nominal_mass",
+        "empirical_mass",
+        "binomial_interval",
+        "interval_width",
+        "risk_ratio"
+      ],
+      "figure": [
+        "B6",
+        "C5"
+      ],
+      "pending_reason": "",
+      "result_scope": "All 24 prior-predictive posterior target/nominal/model summaries include nominal mass inside their pointwise 95% binomial intervals, with zero numerical flags. This is finite Monte Carlo evidence without a simultaneous/multiplicity guarantee.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/mismatch.csv": "b338116a942abdb4247e5bad9b37283cbcc0bf1089af67c7533c3e263ab7e35e",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+        "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3"
+      },
+      "figure_files": {
+        "B6": [
+          "results/implementation_audit/paper/figures/B6_beam_calibration.pdf"
+        ],
+        "C5": [
+          "results/implementation_audit/paper/figures/C5_contact_calibration.pdf",
+          "results/implementation_audit/paper/figures/C5_model_mismatch.pdf"
+        ]
+      }
+    },
+    {
+      "id": "calibration_fixed_drift",
+      "claim": "Separate fixed-state and deterministic drift repeated-data coverage",
+      "assumptions": [
+        "Posterior mass does not promise fixed-state or drifting frequentist coverage"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Current notebooks explain boundary issue; full guide reliability experiment missing",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "coverage",
+        "width",
+        "fixed_state_support_boundary",
+        "local_validity"
+      ],
+      "figure": [
+        "B6",
+        "C5"
+      ],
+      "pending_reason": "",
+      "numerical_status": "passed",
+      "result_scope": "The regime separation and independent-episode coverage calculation are complete. Empirical nominal inclusion failure is recorded separately as nominal_fixed_drift_inclusion.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6"
+      },
+      "figure_files": {
+        "B6": [
+          "results/implementation_audit/paper/figures/B6_beam_calibration.pdf"
+        ],
+        "C5": [
+          "results/implementation_audit/paper/figures/C5_contact_calibration.pdf",
+          "results/implementation_audit/paper/figures/C5_model_mismatch.pdf"
+        ]
+      }
+    },
+    {
+      "id": "nominal_fixed_drift_inclusion",
+      "claim": "Assess nominal posterior inclusion under fixed states and deterministic drifting paths",
+      "assumptions": [
+        "Posterior mass does not promise fixed-state or drifting frequentist coverage"
+      ],
+      "status": "failed",
+      "baseline_at_6e78cc9": "Earlier stories explained limitations; complete known-scale repeated-data calibration cohort added",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "coverage",
+        "width",
+        "fixed_state_support_boundary",
+        "local_validity"
+      ],
+      "figure": [
+        "B6",
+        "C5"
+      ],
+      "pending_reason": "",
+      "numerical_status": "passed",
+      "result_scope": "A negative calibration diagnostic, not a failed implementation or a contradiction of a theorem: drift violates the stationary inference model. At nominal .95, drifting HPD inclusion is 13/128 for beamforming and 42/128 for contact; fixed-state beamforming noisy inclusion is 114/128. Prior-averaged calibration and deterministic modal guarantees remain distinct.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6"
+      },
+      "figure_files": {
+        "B6": [
+          "results/implementation_audit/paper/figures/B6_beam_calibration.pdf"
+        ],
+        "C5": [
+          "results/implementation_audit/paper/figures/C5_contact_calibration.pdf",
+          "results/implementation_audit/paper/figures/C5_model_mismatch.pdf"
+        ]
+      }
+    },
+    {
+      "id": "prediction_targets",
+      "claim": "State regions, clean-response intervals and noisy predictive intervals are distinct",
+      "assumptions": [
+        "Each interval target and MC precision labeled"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Current plots retain some targets; complete calibrated table missing",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py"
+      ],
+      "metric": [
+        "state_inclusion",
+        "clean_response_inclusion",
+        "noisy_prediction_inclusion",
+        "matched_coverage_width"
+      ],
+      "figure": [
+        "B6",
+        "C5"
+      ],
+      "pending_reason": "",
+      "result_scope": "State ball/HPD, clean-response and noisy-observation reports are separately evaluated with numerical precision checks. Achieved matched-coverage width superiority is a different, inconclusive row.",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/mismatch.csv": "b338116a942abdb4247e5bad9b37283cbcc0bf1089af67c7533c3e263ab7e35e",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+        "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3"
+      },
+      "figure_files": {
+        "B6": [
+          "results/implementation_audit/paper/figures/B6_beam_calibration.pdf"
+        ],
+        "C5": [
+          "results/implementation_audit/paper/figures/C5_contact_calibration.pdf",
+          "results/implementation_audit/paper/figures/C5_model_mismatch.pdf"
+        ]
+      }
+    },
+    {
+      "id": "achieved_matched_coverage",
+      "claim": "Establish whether validation-calibrated widths support comparisons at achieved matched test coverage",
+      "routine": [
+        "scripts/run_guide_reliability.py:matched_widths"
+      ],
+      "metric": [
+        "validation_target_reached",
+        "selected_multiplier",
+        "test_coverage",
+        "test_lower",
+        "test_upper",
+        "matched_width"
+      ],
+      "figure": [
+        "B6",
+        "C5"
+      ],
+      "assumptions": [
+        "Width multipliers selected using 32 independent validation episodes only; 128 disjoint test episodes; empirical test coverage must actually match before claiming a width advantage"
+      ],
+      "status": "inconclusive",
+      "baseline_at_6e78cc9": "No validation-calibrated achieved-width study",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/matched_widths.csv"
+      ],
+      "pending_reason": "Width computation is numerically resolved, but one validation target is unattained at the multiplier cap and some test inclusions miss the target. A universal matched-test-coverage width advantage is unsupported.",
+      "numerical_status": "passed",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/matched_widths.csv": "d2e11c390ab321c99dc27a95f38fc6adfd44b954debf85af86e7eb0b83ab8415"
+      },
+      "figure_files": {
+        "B6": [
+          "results/implementation_audit/paper/figures/B6_beam_calibration.pdf"
+        ],
+        "C5": [
+          "results/implementation_audit/paper/figures/C5_contact_calibration.pdf",
+          "results/implementation_audit/paper/figures/C5_model_mismatch.pdf"
+        ]
+      }
+    },
+    {
+      "id": "proper_predictive_score",
+      "claim": "Score new data before assimilation using normalized singleton mixture evidence ratio",
+      "assumptions": [
+        "Gaussian moment surrogate separately labeled; no fit/score data leakage"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Historical joint-mixture score existed; guide fixed-block score integration missing",
+      "owner": "guide_reliability",
+      "evidence": [
+        "results/implementation_audit/paper/reliability/manifest.json",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv",
+        "results/implementation_audit/paper/reliability/score_summary.csv",
+        "results/implementation_audit/paper/reliability/adaptation.csv",
+        "results/implementation_audit/paper/reliability/mismatch.csv",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json",
+        "tests/test_guide_reliability.py"
+      ],
+      "routine": [
+        "lib/guide_reliability.py",
+        "lib/block_em.py"
+      ],
+      "metric": [
+        "preobservation_log_score",
+        "mixture_integral_error",
+        "prefix_causality"
+      ],
+      "figure": [
+        "B6",
+        "C5"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+        "results/implementation_audit/paper/reliability/calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+        "results/implementation_audit/paper/reliability/score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+        "results/implementation_audit/paper/reliability/adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+        "results/implementation_audit/paper/reliability/mismatch.csv": "b338116a942abdb4247e5bad9b37283cbcc0bf1089af67c7533c3e263ab7e35e",
+        "results/implementation_audit/paper/reliability/sensor_diagnostics.json": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e",
+        "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3"
+      },
+      "figure_files": {
+        "B6": [
+          "results/implementation_audit/paper/figures/B6_beam_calibration.pdf"
+        ],
+        "C5": [
+          "results/implementation_audit/paper/figures/C5_contact_calibration.pdf",
+          "results/implementation_audit/paper/figures/C5_model_mismatch.pdf"
+        ]
+      }
+    },
+    {
+      "id": "timing_feasibility",
+      "claim": "Separate correction, eigenspace, means, reports, whole estimators and reference-quality integration",
+      "assumptions": [
+        "Serial one-thread warm randomized repeats; no generic-rank implication"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Previous 36-case 7-repeat study plus retained initial overlapping-timing run",
+      "owner": "root",
+      "evidence": [
+        "results/simulation_redesign/paper/scaling/manifest.json",
+        "results/simulation_redesign/paper/scaling/capabilities.csv",
+        "results/simulation_redesign/paper/scaling/summary.csv"
+      ],
+      "routine": [
+        "lib/simulation_scaling.py"
+      ],
+      "metric": [
+        "wall_seconds",
+        "CPU_seconds",
+        "memory_bytes",
+        "mean_accuracy",
+        "tail_resolution",
+        "failure_count"
+      ],
+      "figure": [
+        "S1"
+      ],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "results/simulation_redesign/paper/scaling/manifest.json": "0ad0e8b4b945f35ed3e5ccb08fee0e2e1f18764143f4843b7cc9b4be87b3ffba",
+        "results/simulation_redesign/paper/scaling/capabilities.csv": "6cd1b4c462a054655a84cfdd4795f7fca56ef01a6bcdde5c4a8f1d7a2481beb4",
+        "results/simulation_redesign/paper/scaling/summary.csv": "c8cd307f6a9966f660fe0b3252df2406bf25e75bc6bcac31fe22fdbd18c249ce"
+      },
+      "figure_files": {
+        "S1": [
+          "results/implementation_audit/paper/figures/S1_native_scaling.pdf",
+          "results/implementation_audit/paper/figures/S1_generalized_constraints.pdf"
+        ]
+      }
+    },
+    {
+      "id": "figures_protocol",
+      "claim": "Guide figure IDs in filenames, headings and manifest; LaTeX 200dpi and continuous blue-to-pink spheres",
+      "assumptions": [
+        "Normalized colors and sphere/section semantics unchanged; shared scales"
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Existing protocol satisfied but old sphere palette and guide IDs missing",
+      "owner": "guide_visuals",
+      "evidence": [
+        "results/implementation_audit/smoke/figures/manifest.json",
+        "results/implementation_audit/paper/figures/manifest.json",
+        "results/simulation_redesign/quick/figures/manifest.json",
+        "results/simulation_redesign/paper/figures/manifest.json",
+        "lib/plotting.py",
+        "lib/distribution_geometry_visuals.py"
+      ],
+      "routine": [
+        "lib/distribution_geometry_visuals.py",
+        "scripts/plot_implementation_audit.py",
+        "scripts/make_implementation_audit_notebook.py"
+      ],
+      "metric": [
+        "text_usetex",
+        "DPI",
+        "figure_IDs",
+        "source_hashes",
+        "PNG_PDF_SVG_exports"
+      ],
+      "figure": [
+        "B1",
+        "B2a",
+        "B2b",
+        "B3",
+        "B4",
+        "B5",
+        "B6",
+        "B7a",
+        "B7b",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6a",
+        "C6b",
+        "S1"
+      ],
+      "pending_reason": "",
+      "result_scope": "All 12 new guide-paper layouts and both recolored main profiles were personally inspected by the presentation owner. Independent checks verify current producer/input/export hashes, all 17 guide IDs, actual TeX settings, 200-dpi PNGs and large dimensions. Guide figures include matching PDF/PNG/SVG; aliases retain the original experimental scope.",
+      "evidence_hashes": {
+        "results/implementation_audit/smoke/figures/manifest.json": "d3f3171faca038514ada1d2b62e70a74b6322e9251e0cecac4e811ec43bf3604",
+        "results/implementation_audit/paper/figures/manifest.json": "1fecdaa5fa926b32c6114688e30ed4c57ed31639033170e9e6633c4660361162",
+        "results/simulation_redesign/quick/figures/manifest.json": "e83a1d806e1fb83956920693b50027da9ca2404039cb19b4694d1e9cfb145eb1",
+        "results/simulation_redesign/paper/figures/manifest.json": "67ec2eaf3a793e72bbeec6df02b511cc0eac2a2b07af3f21c63b48d7a516fa64",
+        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
+        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e"
+      },
+      "figure_files": {
+        "B1": [
+          "results/implementation_audit/paper/figures/B1_array_measurements.pdf"
+        ],
+        "B2a": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/B2a_count_error.pdf"
+        ],
+        "B2b": [
+          "results/implementation_audit/paper/figures/B2b_posterior_curvature.pdf"
+        ],
+        "B3": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ],
+        "B4": [
+          "results/implementation_audit/paper/figures/B4_posterior_section.pdf",
+          "results/implementation_audit/paper/figures/B4_directional_decisions.pdf",
+          "results/implementation_audit/paper/figures/B4_power_uncertainty.pdf"
+        ],
+        "B5": [
+          "results/implementation_audit/paper/figures/B5_heldout_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_tracking_decisions.pdf",
+          "results/implementation_audit/paper/figures/B5_covariance_decisions.pdf"
+        ],
+        "B6": [
+          "results/implementation_audit/paper/figures/B6_beam_calibration.pdf"
+        ],
+        "B7a": [
+          "results/implementation_audit/paper/figures/B7a_C6a_block_evidence.pdf"
+        ],
+        "B7b": [
+          "results/implementation_audit/paper/figures/B7b_C6b_scale_adaptation.pdf"
+        ],
+        "C1": [
+          "results/implementation_audit/paper/figures/C1_contact_mechanics.pdf",
+          "results/implementation_audit/paper/figures/C1_current_contact_predictions.pdf"
+        ],
+        "C2": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/C2_directional_contact_information.pdf"
+        ],
+        "C3": [
+          "results/implementation_audit/paper/figures/C1_current_contact_predictions.pdf",
+          "results/implementation_audit/paper/figures/C3_expected_contact_commands.pdf",
+          "results/implementation_audit/paper/figures/C3_stationary_contact_costs.pdf"
+        ],
+        "C4": [
+          "results/implementation_audit/paper/figures/B3_C4_modal_bounds.pdf",
+          "results/implementation_audit/paper/figures/B3_C4_validity.pdf"
+        ],
+        "C5": [
+          "results/implementation_audit/paper/figures/C5_contact_calibration.pdf",
+          "results/implementation_audit/paper/figures/C5_model_mismatch.pdf"
+        ],
+        "C6a": [
+          "results/implementation_audit/paper/figures/B7a_C6a_block_evidence.pdf"
+        ],
+        "C6b": [
+          "results/implementation_audit/paper/figures/B7b_C6b_scale_adaptation.pdf"
+        ],
+        "S1": [
+          "results/implementation_audit/paper/figures/S1_native_scaling.pdf",
+          "results/implementation_audit/paper/figures/S1_generalized_constraints.pdf"
+        ]
+      }
+    },
+    {
+      "id": "acceptance_manifest",
+      "claim": "Every scientific claim maps routine, metric, figure, assumptions and status with retained raw diagnostics",
+      "assumptions": [
+        "Only passed/failed/inconclusive/not applicable; plans never passed; saved notebook execution is checked separately after report publication by execution.json and the final handoff checker",
+        "This row certifies the verified claim/routine/metric/figure/assumption/status mapping. Clean-kernel notebook execution is checked separately in execution.json."
+      ],
+      "status": "passed",
+      "baseline_at_6e78cc9": "Previous redesign claim map is scoped differently",
+      "owner": "root",
+      "evidence": [
+        "scripts/summarize_implementation_audit.py"
+      ],
+      "routine": [
+        "docs/implementation_guide_audit.md"
+      ],
+      "metric": [
+        "claim_status",
+        "evidence_hash",
+        "status_counts"
+      ],
+      "figure": [],
+      "pending_reason": "",
+      "evidence_hashes": {
+        "scripts/summarize_implementation_audit.py": "8808714a78ec5c25689f5fc388c379c3f66e96951650b56dc5528aedbafffd94"
+      },
+      "figure_files": {}
+    },
+    {
+      "id": "conditional_uniform_identifiability",
+      "claim": "Check the supplied PDF's distinction between local information and uniform identifiability, including constructive ambiguity and worst-orientation information",
+      "routine": [
+        "lib/theory.py:fisher_information",
+        "tests/test_identities.py:test_local_identifiability_does_not_imply_global",
+        "tests/test_theory.py:TheoryTests.test_global_ambiguity_and_worst_orientation"
+      ],
+      "metric": [
+        "minimum_Fisher_eigenvalue",
+        "distinct_projector_equal_response",
+        "worst_orientation_eigenvalue"
+      ],
+      "figure": [
+        "C2"
+      ],
+      "assumptions": [
+        "Real conditional model; fixed recorded design; prescribed rank; local positive information is not uniform injectivity"
+      ],
+      "status": "passed",
+      "pending_reason": "",
+      "baseline_at_6e78cc9": "Independent core counterexamples and worst-orientation tests already implemented",
+      "owner": "guide_coverage",
+      "evidence": [
+        "results/implementation_audit/validation/validation.json",
+        "tests/test_identities.py",
+        "tests/test_theory.py",
+        "lib/theory.py"
+      ],
+      "result_scope": "Current 241-test gate reruns the rank-deficient global-ambiguity counterexample and the two-least-excited-direction worst-orientation equality. These finite checks illustrate the supplied PDF proposition; they are not an exhaustive proof over every design or an assertion of absent TeX agreement.",
+      "evidence_hashes": {
+        "results/implementation_audit/validation/validation.json": "4c7c05707aca66041875e6eee794f18a8ca7b03bb05868417596b9f6cfbc704d",
+        "tests/test_identities.py": "9a37668798817451ddd5294271729f9e4de1d1bc2ec4204e163ff7b0afe433f6",
+        "tests/test_theory.py": "d5c436c5c3cd75e2aeba0c1c0190ddde0941f75a83f4ebbd56727def52de600f",
+        "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53"
+      },
+      "figure_files": {
+        "C2": [
+          "results/implementation_audit/paper/figures/B2a_C2_information.pdf",
+          "results/implementation_audit/paper/figures/C2_directional_contact_information.pdf"
+        ]
+      }
+    },
+    {
+      "id": "posterior_response_and_soft_action",
+      "claim": "Check posterior response mean/risk, competing-map excess loss and the soft expected-command identity from the supplied PDF",
+      "routine": [
+        "lib/geometry.py:risk",
+        "lib/anisotropy_study.py:response_summary",
+        "lib/anisotropy_study.py:soft_action",
+        "lib/anisotropy_study.py:soft_cost",
+        "tests/test_contact_geometry_audit.py:test_nonprojector_soft_penalty_equals_actual_projector_mixture",
+        "tests/test_identities.py:test_response_risk_and_modal_excess"
+      ],
+      "metric": [
+        "response_risk_identity_error",
+        "soft_decision_identity_error",
+        "soft_decision_quadrature_error",
+        "nonprojector_penalty_error"
+      ],
+      "figure": [
+        "B4",
+        "C3"
+      ],
+      "assumptions": [
+        "Expectations under one supplied belief; squared response loss; penalty linear in I-M; full covariance requires second moments; soft action is not guaranteed feasible"
+      ],
+      "status": "passed",
+      "pending_reason": "",
+      "baseline_at_6e78cc9": "Independent projector-mixture and continuous-quadrature checks already implemented",
+      "owner": "guide_coverage",
+      "evidence": [
+        "results/implementation_audit/validation/validation.json",
+        "results/simulation_redesign/paper/geometry/manifest.json",
+        "results/simulation_redesign/paper/geometry/checks.json",
+        "results/simulation_redesign/paper/geometry/directional.csv",
+        "results/simulation_redesign/paper/geometry/decisions.csv",
+        "tests/test_contact_geometry_audit.py",
+        "tests/test_identities.py"
+      ],
+      "result_scope": "Four verified geometry cases resolve, with maximum mean-response-risk identity error 7.91e-13, soft optimality identity error 8.89e-16 and independent quadrature expected-cost error 1.99e-11. These are conditional task identities, not universal repeated-training gains.",
+      "evidence_hashes": {
+        "results/implementation_audit/validation/validation.json": "4c7c05707aca66041875e6eee794f18a8ca7b03bb05868417596b9f6cfbc704d",
+        "results/simulation_redesign/paper/geometry/manifest.json": "47d66a25fedff73a417cbe955d80a963303d3b58bb06a15d57064be221293602",
+        "results/simulation_redesign/paper/geometry/checks.json": "63521d420287ff52521aba36bc54c452394e9ef9919df145f852958412d601db",
+        "results/simulation_redesign/paper/geometry/directional.csv": "3247cb9ac8662c73efa7671448386936345d221c4e65fbf123caab84d72dfd5f",
+        "results/simulation_redesign/paper/geometry/decisions.csv": "f0cdfd4e4223e5b8d8b0603dc5efbd4173ee34794ccfe6442dddd7ba751f311a",
+        "tests/test_contact_geometry_audit.py": "8cb9ecba1963c9c4146bcccd4b3c26be70913d94b64991a52f6c3ca143fa487d",
+        "tests/test_identities.py": "9a37668798817451ddd5294271729f9e4de1d1bc2ec4204e163ff7b0afe433f6"
+      },
+      "figure_files": {
+        "B4": [
+          "results/implementation_audit/paper/figures/B4_posterior_section.pdf",
+          "results/implementation_audit/paper/figures/B4_directional_decisions.pdf",
+          "results/implementation_audit/paper/figures/B4_power_uncertainty.pdf"
+        ],
+        "C3": [
+          "results/implementation_audit/paper/figures/C1_current_contact_predictions.pdf",
+          "results/implementation_audit/paper/figures/C3_expected_contact_commands.pdf",
+          "results/implementation_audit/paper/figures/C3_stationary_contact_costs.pdf"
+        ]
+      }
+    },
+    {
+      "id": "credible_regions_and_task_bounds",
+      "claim": "Check posterior RMS distance, HPD/centered-ball mass and directional regional task bounds from the supplied PDF",
+      "routine": [
+        "lib/reference.py:rank_one_regions_gr13",
+        "lib/anisotropy_study.py:continuous_region_mass",
+        "lib/anisotropy_study.py:continuous_regions",
+        "lib/anisotropy_study.py:query_bounds",
+        "lib/theory.py:regional_bound",
+        "tests/test_theory.py:TheoryTests.test_dual_tie_requires_rotation",
+        "tests/test_theory.py:TheoryTests.test_complex_dual_against_dense_rank_one_search"
+      ],
+      "metric": [
+        "RMS_distance",
+        "posterior_region_mass_error",
+        "same_entire_distance_CDF_error",
+        "regional_duality_gap",
+        "constraint_feasibility"
+      ],
+      "figure": [
+        "B4",
+        "C3",
+        "C5"
+      ],
+      "assumptions": [
+        "Posterior credible mass under the supplied law; continuous threshold distribution; normal leakage bounds not tangent speed bounds; equal mass does not imply HPD uniformly tighter; no automatic frequentist or drifting coverage"
+      ],
+      "status": "passed",
+      "pending_reason": "",
+      "baseline_at_6e78cc9": "Independent continuous regions and regional duality/tie checks already implemented",
+      "owner": "guide_coverage",
+      "evidence": [
+        "results/implementation_audit/validation/validation.json",
+        "results/simulation_redesign/paper/geometry/manifest.json",
+        "results/simulation_redesign/paper/geometry/checks.json",
+        "results/simulation_redesign/paper/geometry/geometry.csv",
+        "results/simulation_redesign/paper/geometry/distance_cdf.csv",
+        "results/simulation_redesign/paper/geometry/regions.csv",
+        "tests/test_theory.py"
+      ],
+      "result_scope": "Verified real rank-one/complement region mass error is below 4.4e-12, same-pair distance-CDF error below 3.4e-16 and maximum regional dual gap below 6.9e-10. General Hermitian regional optimization tests include tied-eigenvalue feasibility; low-dimensional posterior integration does not establish arbitrary-rank integration accuracy.",
+      "evidence_hashes": {
+        "results/implementation_audit/validation/validation.json": "4c7c05707aca66041875e6eee794f18a8ca7b03bb05868417596b9f6cfbc704d",
+        "results/simulation_redesign/paper/geometry/manifest.json": "47d66a25fedff73a417cbe955d80a963303d3b58bb06a15d57064be221293602",
+        "results/simulation_redesign/paper/geometry/checks.json": "63521d420287ff52521aba36bc54c452394e9ef9919df145f852958412d601db",
+        "results/simulation_redesign/paper/geometry/geometry.csv": "e2a6c5d40bb7cc9f510b89e2693f202f8641924be76974f81026524f784154a1",
+        "results/simulation_redesign/paper/geometry/distance_cdf.csv": "c9e3995a92423b46a2b1a71ac68ee8aee18b49ee42519897b1d21a482edfbbe4",
+        "results/simulation_redesign/paper/geometry/regions.csv": "1c8134f7c3d37ab6250ebf15c919b49a7d0c6d3071c317e5f42c4574e4804692",
+        "tests/test_theory.py": "d5c436c5c3cd75e2aeba0c1c0190ddde0941f75a83f4ebbd56727def52de600f"
+      },
+      "figure_files": {
+        "B4": [
+          "results/implementation_audit/paper/figures/B4_posterior_section.pdf",
+          "results/implementation_audit/paper/figures/B4_directional_decisions.pdf",
+          "results/implementation_audit/paper/figures/B4_power_uncertainty.pdf"
+        ],
+        "C3": [
+          "results/implementation_audit/paper/figures/C1_current_contact_predictions.pdf",
+          "results/implementation_audit/paper/figures/C3_expected_contact_commands.pdf",
+          "results/implementation_audit/paper/figures/C3_stationary_contact_costs.pdf"
+        ],
+        "C5": [
+          "results/implementation_audit/paper/figures/C5_contact_calibration.pdf",
+          "results/implementation_audit/paper/figures/C5_model_mismatch.pdf"
+        ]
+      }
+    }
+  ],
+  "diagnostics": {
+    "tracking_maximum_scaled_decomposition_error": 4.7199592713232565e-14,
+    "information_counts": {
+      "cells": 24,
+      "unresolved_cells": 0,
+      "maximum_score_product_z": 2.727067528915093,
+      "maximum_score_mean_z": 2.435309998075198,
+      "maximum_relative_frobenius_error": 0.04379376164250851,
+      "minimum_expected_information": 0.07971698113207548,
+      "maximum_expected_information": 721.0666666666666
+    }
+  }
+}

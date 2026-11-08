@@ -13,7 +13,7 @@ sys.path.insert(0,str(ROOT))
 import numpy as np
 import pandas as pd
 from scipy.stats import t as student_t
-from lib.simulation_validation import require_gate,verify_component,science_hash
+from lib.simulation_validation import require_gate,verify_component,science_hash,gate_path
 
 COMPONENTS=("geometry","beamforming","contact","scaling")
 LABELS={"mean":r"$\overline P_t^+$","mode":r"$P_{\widehat{\mathcal X}_t}$",
@@ -350,13 +350,14 @@ def main():
     for name,frame in contact_pairs.items():
         path=base/("contact_paired_"+name+".csv");frame.to_csv(path,index=False)
         outputs[str(path.relative_to(ROOT))]=sha(path);generated[name]=len(frame)
-    gate_path=base/"validation/validation.json"
+    validation_path=gate_path(ROOT) if gate else None
     metadata=dict(schema=1,profile=args.profile,status="completed" if not pending else "engineering incomplete",
         paper_evidence=bool(args.profile=="paper" and not pending and figures_ok),
         created_utc=datetime.now(timezone.utc).isoformat(),
         generator=dict(path="scripts/summarize_simulation_redesign.py",sha256=sha(__file__)),
         source_hashes=sources,verified_input_hashes=inputs,verified_components=list(data),pending=pending,
-        figures_verified=figures_ok,gate_sha256=sha(gate_path) if gate else None,
+        figures_verified=figures_ok,gate_sha256=sha(validation_path) if gate else None,
+        gate_path=str(validation_path.relative_to(ROOT)) if gate else None,
         science_hash=gate["science_hash"] if gate else science_hash(ROOT),outputs=outputs,
         application_summaries={name:dict(words=len(paths[name].split()),paragraphs=len(paths[name].strip().split("\n\n")))
             for name in ["beamforming_summary.md","contact_summary.md"]},

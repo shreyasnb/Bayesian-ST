@@ -1,0 +1,120 @@
+{
+  "status": "completed",
+  "config": {
+    "profile": "paper",
+    "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+    "n": 3,
+    "horizon": 16,
+    "models": [
+      "beamforming",
+      "contact"
+    ],
+    "regimes": [
+      "prior_predictive",
+      "fixed_state",
+      "drifting"
+    ],
+    "validation_episodes": 32,
+    "test_episodes": 128,
+    "adaptation_episodes": 24,
+    "mismatch_episodes": 32,
+    "nominal": [
+      0.5,
+      0.8,
+      0.95
+    ],
+    "target_coverage": 0.95,
+    "width_multipliers": [
+      0.6,
+      0.8,
+      1.0,
+      1.2,
+      1.5,
+      2.0,
+      3.0
+    ],
+    "posterior_draws": 4096,
+    "real_orders": [
+      [
+        48,
+        96
+      ],
+      [
+        64,
+        192
+      ]
+    ],
+    "validation_seed": 2026110901,
+    "test_seed": 2026110902,
+    "adaptation_seed": 2026110903,
+    "mismatch_seed": 2026110904,
+    "seed_offset": 0,
+    "s": 0.2,
+    "tau2": 1.0,
+    "drift_angle": 0.8,
+    "block_length": 24,
+    "em_iterations": 25,
+    "em_starts": [
+      [
+        0.15,
+        0.4
+      ],
+      [
+        0.6,
+        1.5
+      ]
+    ],
+    "variance_floor": 1e-05,
+    "moment_tolerance": 1e-10,
+    "state_mass_tolerance": 0.035,
+    "quantile_resolution_tolerance": 0.006,
+    "precision": "128 independent test episodes give binomial MCSE <=0.0193 at coverage .95; exact binomial intervals and achieved widths are retained. Three smoke episodes check execution only.",
+    "variance_convention": "s is variance per real coordinate, or proper-complex covariance; real/imaginary beam noise has variance s/2.",
+    "scope": "N=3 native-complex marginal lines and real conditional codimension-one constraints; no general-rank or physical controller claim."
+  },
+  "sources": {
+    "lib/guide_reliability.py": "802fee43effc1cedd873a50c08bf5b84ffae5b3bf8c31417c6aee9a1b8c8204d",
+    "scripts/run_guide_reliability.py": "e1d15752af32217b2c18aad066f6d44f42b9f6a55920f20ed1016cbd04eb986d",
+    "tests/test_guide_reliability.py": "c014a447039e59c0169abdf841be7447c1bdf5c1ac5429fb36f85913ede62803",
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011"
+  },
+  "tables": {
+    "adaptation.csv": "8d4dfc332c82cc0dc7f32b1e016a71aaf844703034f111c7e4937beb1ba790c7",
+    "calibration.csv": "177566373577af33d370757ddf790f0558446514816b5cf1d3c1e17035b62073",
+    "calibration_summary.csv": "fa08d5b85fa1335efe797ff2cfe29eba68cd70bd190d2a2bb7daabe61a0e73de",
+    "checks.json": "2eae3b1f4ff4e2063beec4a8558eb38106d01d14036aeb8b5db020568c8604bd",
+    "em_start_histories.json": "932dee55862a2547708b8464737271e48ce876268e55ee872e532ed467aa36a6",
+    "failures.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "matched_widths.csv": "d2e11c390ab321c99dc27a95f38fc6adfd44b954debf85af86e7eb0b83ab8415",
+    "mismatch.csv": "20e47a82a27a78a91b186805c06b2070ac7a2a799ae2a8957bbf175e166fc8b9",
+    "preregistered.json": "d89a7860b9cc3bc4bd7c12b78b1170c83195a9a3636962cd059849285c2159e2",
+    "score_summary.csv": "1a01a7dd541494aa4ba39590855f8e7af6e905adbde500cbe1201f99f436c5e6",
+    "scores.csv": "cf296bafde77e196599341253115dbe8bc6c2c6163fe1b7744ec529d851fde3a",
+    "sensor_diagnostics.json": "e519cb17011457ffc39ab428823732422db258e2cb1e144f46c23159ee6b4c4e"
+  },
+  "checks": {
+    "seconds": 86.4387648089978,
+    "requested_jobs": 1120,
+    "completed_jobs": 1120,
+    "failed_jobs": 0,
+    "unresolved_calibration_rows": 0,
+    "unresolved_score_rows": 0,
+    "unresolved_adaptation_rows": 0,
+    "unresolved_mismatch_rows": 0,
+    "scaled_projection_residual": 2.7755575615628914e-17,
+    "error_scope": "Mean accuracy, finite posterior integration precision, repeated-data inclusion and model correctness have separate flags."
+  },
+  "figures": [
+    "B6",
+    "C5",
+    "B7b",
+    "C6b"
+  ],
+  "assumptions": "Exact static prior-predictive experiments are model matched; fixed-state and deterministic drift experiments are distinct. Fits use one boundary prior per disjoint block. No fitted-scale interval includes hyperparameter uncertainty. Mismatch rows do not invoke the theorem."
+}

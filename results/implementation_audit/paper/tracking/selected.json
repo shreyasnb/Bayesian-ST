@@ -1,0 +1,52 @@
+[
+  {
+    "condition": "static",
+    "beta": 1.0,
+    "scm_beta": 1.0,
+    "alpha": 0.2631682114598332,
+    "grouse_step": 0.1,
+    "mode_validation_loss": 0.29990862048696687,
+    "scm_validation_loss": 0.3121893745168936,
+    "selection_scope": "One mode-selected beta shared by mean/mode/isotropic; own SCM beta/loading and own GROUSE step. All outcomes averaged within episode first."
+  },
+  {
+    "condition": "drift",
+    "beta": 0.95,
+    "scm_beta": 0.95,
+    "alpha": 0.3572617627301547,
+    "grouse_step": 0.1,
+    "mode_validation_loss": 0.3771977512387759,
+    "scm_validation_loss": 0.3803976391557486,
+    "selection_scope": "One mode-selected beta shared by mean/mode/isotropic; own SCM beta/loading and own GROUSE step. All outcomes averaged within episode first."
+  },
+  {
+    "condition": "abrupt",
+    "beta": 0.99,
+    "scm_beta": 0.99,
+    "alpha": 0.2701639029622108,
+    "grouse_step": 0.1,
+    "mode_validation_loss": 0.7477093364359723,
+    "scm_validation_loss": 0.7593076681606143,
+    "selection_scope": "One mode-selected beta shared by mean/mode/isotropic; own SCM beta/loading and own GROUSE step. All outcomes averaged within episode first."
+  },
+  {
+    "condition": "noise",
+    "beta": 0.95,
+    "scm_beta": 0.99,
+    "alpha": 0.6848094853856621,
+    "grouse_step": 0.1,
+    "mode_validation_loss": 1.3132164326331273,
+    "scm_validation_loss": 1.3013255771622751,
+    "selection_scope": "One mode-selected beta shared by mean/mode/isotropic; own SCM beta/loading and own GROUSE step. All outcomes averaged within episode first."
+  },
+  {
+    "condition": "power",
+    "beta": 0.9,
+    "scm_beta": 0.9,
+    "alpha": 0.1894233398475603,
+    "grouse_step": 0.1,
+    "mode_validation_loss": 0.4748940927125883,
+    "scm_validation_loss": 0.49245882115281614,
+    "selection_scope": "One mode-selected beta shared by mean/mode/isotropic; own SCM beta/loading and own GROUSE step. All outcomes averaged within episode first."
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "checks": {
+    "bound_reports": 132,
+    "bound_cells": 44,
+    "valid_reports": 9,
+    "informative_reports": 9,
+    "violations": 0,
+    "maximum_decomposition_error": 4.778031405296343e-12,
+    "beam_episodes": 15,
+    "beam_metric_rows": 270,
+    "native_mean_failures": 0,
+    "maximum_mode_pca_error": 2.2039691746085987e-15,
+    "maximum_unit_gain_error": 4.531055013333089e-16,
+    "seconds": 1.284590291994391,
+    "complex_conditional_manuscript_match": "not applicable: supplementary.tex absent; separate conservative derivation labeled explicitly"
+  }
+}

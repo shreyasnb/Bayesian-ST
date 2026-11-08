@@ -1,0 +1,99 @@
+{
+  "config": {
+    "schema": 1,
+    "profile": "quick",
+    "seed": 2026110815,
+    "dimensions": [
+      3,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "models": [
+      "conditional_real",
+      "marginal_complex"
+    ],
+    "spans": [
+      80.0,
+      400.0
+    ],
+    "observations": 64,
+    "s": 0.2,
+    "tau2": 1.0,
+    "beta": 0.98,
+    "repetitions": 1,
+    "correction_batch": 8,
+    "warmup_calls": 1,
+    "moment_tolerance": 1e-10,
+    "series_max_order": 4096,
+    "complex_report_dimensions": [
+      3,
+      8,
+      16,
+      32
+    ],
+    "real_report_dimensions": [
+      3
+    ],
+    "report_draws": 2048,
+    "report_proposal_cap": 200000,
+    "report_relative_mcse": 0.08,
+    "report_queries": 3,
+    "grouse_step": 0.02,
+    "covariance_loading": 0.1,
+    "timing_order": "One warmed repetition of every operation, then independently shuffled operations in each measured repetition; serial, BLAS one thread.",
+    "scope": "Engineering costs, not accuracy rankings, dedicated worst-case latency or asymptotic complexity proofs.",
+    "rank_scope": "Real conditional codimension one and native proper-complex marginal rank one. General-rank moments are not substituted.",
+    "fixed_span_scope": "Span80 and400 isolate matrix dimension from concentration; T64 generated data are a separate factor.",
+    "report_scope": "Real N3 deterministic sphere integration; complex N3/8/16/32 independent threshold/check batches with finite exact-rejection proposal caps. Other report dimensions are explicitly not evaluated.",
+    "report_repetition_scope": "Repeated clocks reuse the same predeclared seeded report draws; clock repetitions are not independent statistical datasets.",
+    "stream_scope": "All endpoint streams assimilate64 snapshots and output once. Known v is supplied to both real conditional methods. GROUSE and SCM are marginal-model references only.",
+    "memory_scope": "Exact persistent array bytes and separate Python/NumPy-tracked temporary-allocation peaks. Native BLAS/LAPACK workspaces and total process RSS are not measured."
+  },
+  "sources": {
+    "lib/simulation_scaling.py": "0c6bed44460c1df2d11f74b3372ec7c6c39d67efbcf019a065d8c5262284a6ca",
+    "scripts/run_simulation_scaling.py": "ddc7914b66b063fe01c6b2ee805588e9183712fab4c0c8e2ba8cf17d3525ae4e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/reference.py": "4aa76180e4b46cafb5f29f96023f11430fabcd44d56344de610a90497de853cf",
+    "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3"
+  },
+  "fingerprint": "c6816d4263a82ac9044e08312782b67ee106e1997a353c53b546ad6d82a4d9a4",
+  "hardware": {
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "logical_cpu_count": 5,
+    "cpu_affinity": 5,
+    "cpu_quota": "400000 100000",
+    "memory_limit": "34359738368",
+    "blas_threads": 1,
+    "timing": "Serial process; CPU and wall clocks are separate. Other host activity can still affect wall clocks."
+  },
+  "created_utc": "2026-11-08T00:18:53.736127+00:00",
+  "gate": null,
+  "status": "completed",
+  "tables": {
+    "capabilities.csv": "143258cfd49a8cc16afb3bbef861f2fd9458cbe81904acf1a81925c9aa9b4afb",
+    "memory.csv": "875e4bc0f5a1fcd06a2b20d609966c9d678e8130774823c3f7c13be45b04b2cb",
+    "parameters.npz": "278ac790a362ee82421797fdd0d435cffe4eb464c675752ee6329666fede54b2",
+    "summary.csv": "0dc99dda9bf4597f45dff69e7430856004f91f506b666072be40f5baefe5d5f1",
+    "timings.csv": "9ecd916055d336752bcf8ab1ee0eca29773271b1b1c3dc19a381bbbea6944b93"
+  },
+  "checks": {
+    "seconds": 20.10198094300017,
+    "cases": 36,
+    "operations": 203,
+    "unresolved_operations": 0,
+    "measured_repetitions": 1,
+    "means_do_not_certify_tails": true,
+    "all_targets_retained": true
+  }
+}

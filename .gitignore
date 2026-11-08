@@ -50,3 +50,7 @@ results/beamforming_unified/**/pytest.xml
 !results/simulation_redesign/**/
 results/simulation_redesign/**/checkpoints/**
 results/simulation_redesign/**/pytest.xml
+!results/implementation_audit/
+!results/implementation_audit/**/
+results/implementation_audit/**/checkpoints/**
+results/implementation_audit/**/pytest.xml

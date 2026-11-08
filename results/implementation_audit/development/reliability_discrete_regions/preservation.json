@@ -1,0 +1,23 @@
+{
+  "status": "superseded numerical development smoke",
+  "files": {
+    "mismatch.csv": "429ef86b76eeb076f15c2c3bb0d68070207fffc9fd0986175caf2c862bec7cd6",
+    "adaptation.csv": "aa705dcd76845a8c62b12a1c7cdaabc7c675c5b7d6e4ee55046a19e7b81dca69",
+    "em_start_histories.json": "65aa2053a9e5377fcb47809bc60ebb9ccffbb6f12057c9ae2cd80d5c19d00c96",
+    "checks.json": "13637ba884c2ad4f53d329610548458a0e98fa70d99a30934273c49ccacdcbac",
+    "preregistered.json": "68f1f9305b1f562c7bb40b977acf6ed59c0320585cd993e6e3fac987134e27fc",
+    "manifest.json": "dba6c93b05a598e16f0061d3ec733dfa6c085f235b2b0e7d2808f153d5c27547",
+    "development_note.json": "db5cf2535e4853e851331b5d78b6db097130ffc08dfaa57d190d74fb37ea92b5",
+    "matched_widths.csv": "1b35c8ca00e411949cda806fe3d72a55493c49d862dae97f9fb53008983b4c38",
+    "scores.csv": "18d257b5f52ad9fb6a006c2521d983176a348bb391f0a22db44e6dcdc69c0cf8",
+    "failures.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "calibration_summary.csv": "882f629e92480c8e19ca2b2ab5600eb76fd81edf0badf3981bbd300f3f2bdf27",
+    "score_summary.csv": "c7cd204bf3f81217fa74889b459d5905d36df7913a34e602cf4f5a7326dca0f9",
+    "sensor_diagnostics.json": "1a861c86423a8fb403546206231d07047995734a55212ba89c19e121b5a72adf",
+    "calibration.csv": "f653347a5099a71435a465a1550aa2d34b312a8c687ac06e06fa279d26138f58",
+    "sources/lib/guide_reliability.py": "c36805e8b03732ab4c130391bfae1fc85b98dd8432fe930d671bf393d98caeb0",
+    "sources/scripts/run_guide_reliability.py": "e1d15752af32217b2c18aad066f6d44f42b9f6a55920f20ed1016cbd04eb986d",
+    "sources/tests/test_guide_reliability.py": "cf3a48b832556e3b6dae2a63b267d76aeccebd52d4d86eecffdd479e79414db4"
+  },
+  "source_snapshots_verified_against_original_manifest": true
+}

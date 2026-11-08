@@ -1,30 +1,31 @@
 {
   "status": "passed",
-  "executed_utc": "2026-11-08T01:06:16.188107+00:00",
+  "executed_utc": "2026-11-08T17:17:59.165460+00:00",
   "notebooks": {
     "notebooks/01_array.ipynb": {
-      "sha256": "721fb2e604896f2f6c0fd608cc21e16a52d4e3559d2842cb9a5eab6333dcf8a1",
+      "sha256": "445d23341b5a26360ac312a20db2e6524927163c1041bd824ce89c9761fc6992",
       "code_cells": 8,
       "error_outputs": 0,
       "image_outputs": 6
     },
     "notebooks/03_contact.ipynb": {
-      "sha256": "893eddc142948d9a7e4e5882b6f28c4bfcba01ee67c256e2dd571aee373df389",
+      "sha256": "a5d841b5fbdcfc128476b47840cf403e423ff852aace2f4459de1974908206ad",
       "code_cells": 8,
       "error_outputs": 0,
       "image_outputs": 6
     }
   },
   "sources": {
-    "scripts/make_geometry_notebooks.py": "beab2a9be6597a2577185b6d457bd96e389d0f700fae13abe8962270943b5f14",
-    "scripts/execute_geometry_notebooks.py": "d46c1a6801e7a90ac78183c4a861cf25692ae16bbaef66c895cbae3afbd9828d",
-    "scripts/plot_geometry_studies.py": "39e8a7c974ac273de2d9f426d7576a2a665efe010145aee9a224f1f52a021d21",
+    "scripts/make_geometry_notebooks.py": "ad34059aed2c6508cc70f2a0dd3c358faea8a988f95b5475b0d13b5f2edaa78d",
+    "scripts/execute_geometry_notebooks.py": "64f525d4c6e9e82caa4904b800c8241eef6c1eb70e1dc16840145f6fc51fc1be",
+    "scripts/plot_geometry_studies.py": "408070031bcc7c1bc382cd6a3ffad8b571d0e6009d30840a3e274cb1962bf79d",
     "lib/simulation_story_visuals.py": "58b805a6e43aef3ccc2c4e54c9792d271e8a0ae207f10b5588ce71414b93e6bf",
-    "lib/distribution_geometry_visuals.py": "d6ef85dad23163409a52400fe58786888cd9314db0b7b9a828487272e1c6f5d8",
+    "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
     "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392"
   },
-  "figure_manifest_sha256": "898f5aab89cf4cf909b78891830f41100c06c9147b78e92e9f80a4bb8675bb6c",
-  "validation_sha256": "062c1c357634d9e5befd75c2a3e755a81ffd30be49e082b7ee5647d7c9746262",
-  "summary_manifest_sha256": "03aecf87fd10d1d50cb205f99d998d8b1ded585dfa0ee49d19acb01d96dd3e3a",
+  "figure_manifest_sha256": "67ec2eaf3a793e72bbeec6df02b511cc0eac2a2b07af3f21c63b48d7a516fa64",
+  "validation_sha256": "4c7c05707aca66041875e6eee794f18a8ca7b03bb05868417596b9f6cfbc704d",
+  "validation_path": "results/implementation_audit/validation/validation.json",
+  "summary_manifest_sha256": "9a32eaf1863632db2f797d56b09f010d350c2f472655a255c099d9d4e73deecc",
   "scope": "Executed narratives verify and display frozen paper results. Simulation and figure layout are separate commands; retained scientific limitations are not relabeled as successes."
 }

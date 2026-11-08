@@ -1,0 +1,5 @@
+{
+  "status": "superseded engineering smoke",
+  "reason": "Discrete polar quadrature rings produced spurious credible-mass errors. Corrected using continuous radial CDFs before freezing paper settings. These failed smoke diagnostics are preserved and are not paper evidence.",
+  "historical_source_hashes": "Exact owned producer and test snapshots are in sources/ and match the SHA256 values recorded in the original manifest. This superseded engineering smoke is not paper evidence."
+}

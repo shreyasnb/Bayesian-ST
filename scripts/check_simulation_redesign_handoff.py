@@ -10,7 +10,7 @@ BASE = ROOT / 'results/simulation_redesign'
 sys.path.insert(0, str(ROOT))
 import nbformat
 from PIL import Image
-from lib.simulation_validation import require_gate, verify_component, verify_legacy
+from lib.simulation_validation import require_gate, verify_component, verify_legacy, gate_path
 
 
 def sha(path):
@@ -40,8 +40,8 @@ def main():
         if tip != historical['branch_tips'][name]:
             raise RuntimeError('Historical branch changed: ' + name)
     gate = require_gate(ROOT)
-    if gate['tests'] != 209:
-        raise RuntimeError('Unexpected general-validation test count')
+    if gate['tests'] < 209:
+        raise RuntimeError('The current gate must include the original regression suite')
     original = ROOT / 'notebooks/00_theory.ipynb'
     if sha(original) != gate['original_notebook_sha256']:
         raise RuntimeError('The original general notebook was changed')
@@ -82,7 +82,7 @@ def main():
     verify(summary['source_hashes'])
     verify(summary['verified_input_hashes'])
     verify(summary['outputs'])
-    if summary['gate_sha256'] != sha(BASE / 'validation/validation.json'):
+    if summary['gate_sha256'] != sha(gate_path(ROOT)):
         raise RuntimeError('Summary validation is stale')
     execution = read(BASE / 'execution.json')
     if execution['status'] != 'passed':
@@ -92,7 +92,7 @@ def main():
         raise RuntimeError('Notebook figures are stale')
     if execution['summary_manifest_sha256'] != sha(BASE / 'summary_manifest.json'):
         raise RuntimeError('Notebook findings are stale')
-    if execution['validation_sha256'] != sha(BASE / 'validation/validation.json'):
+    if execution['validation_sha256'] != sha(gate_path(ROOT)):
         raise RuntimeError('Notebook validation is stale')
     for name, record in execution['notebooks'].items():
         path = ROOT / name

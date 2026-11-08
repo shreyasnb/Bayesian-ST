@@ -1,0 +1,18 @@
+{
+  "status": "completed",
+  "checks": {
+    "numerical_ok": true,
+    "cases": 4,
+    "primary_same_distance_cdf_error": 2.220446049250313e-16,
+    "primary_radius_difference": 0.0,
+    "maximum_native_mean_error": 9.95009630244681e-13,
+    "maximum_native_logz_error": 2.0961010704922955e-13,
+    "maximum_independent_mass_error": 4.388489571738319e-12,
+    "maximum_response_risk_identity_error": 7.907285937136521e-13,
+    "maximum_soft_decision_identity_error": 8.881784197001252e-16,
+    "maximum_soft_decision_quadrature_error": 1.9895640690492655e-11,
+    "maximum_region_dual_gap": 6.801366136954812e-10,
+    "seconds": 1.650455951999902,
+    "scope": "Deterministic calculations with independent numerical checks; no frequentist tracking or controller-performance claim"
+  }
+}

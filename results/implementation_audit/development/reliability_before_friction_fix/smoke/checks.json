@@ -1,0 +1,12 @@
+{
+  "seconds": 5.41529381100554,
+  "requested_jobs": 54,
+  "completed_jobs": 54,
+  "failed_jobs": 0,
+  "unresolved_calibration_rows": 0,
+  "unresolved_score_rows": 0,
+  "unresolved_adaptation_rows": 0,
+  "unresolved_mismatch_rows": 0,
+  "scaled_projection_residual": 2.7755575615628914e-17,
+  "error_scope": "Mean accuracy, finite posterior integration precision, repeated-data inclusion and model correctness have separate flags."
+}

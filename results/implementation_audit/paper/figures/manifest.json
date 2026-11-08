@@ -1,0 +1,277 @@
+{
+  "profile": "paper",
+  "status": "completed",
+  "sources": {
+    "scripts/plot_implementation_audit.py": "167566a4e66eb1b0981c367c1317a316d4710ca9cab54e48655cbe2bbf8afe95",
+    "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
+    "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+    "lib/simulation_story_visuals.py": "58b805a6e43aef3ccc2c4e54c9792d271e8a0ae207f10b5588ce71414b93e6bf"
+  },
+  "input_manifests": {
+    "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+    "results/implementation_audit/paper/information_counts/manifest.json": "ab9daeead07af4109eea012f7f9086adda82deb013d06def5b492c5b182e946f",
+    "results/implementation_audit/paper/tracking/manifest.json": "18e7fad866dd9bc3a32fb173548deaf7080def65c865a78f82543aeada61a6b0",
+    "results/implementation_audit/paper/em/manifest.json": "ab71dc035fbca39539295acca58e56060200a0bc0d62a5df8d10c918ed370e94",
+    "results/implementation_audit/paper/reliability/manifest.json": "f2fc0d446229aedf80d4c1ab864647f0c7a491be2965d58b03e697a01f8f81ae",
+    "results/simulation_redesign/paper/figures/manifest.json": "67ec2eaf3a793e72bbeec6df02b511cc0eac2a2b07af3f21c63b48d7a516fa64"
+  },
+  "files": {
+    "B1_array_measurements.pdf": "1e600c6a94e630bc261224ea624b8ff7450f6f50d1e5ef9b6a0e9932a13f3318",
+    "B1_array_measurements.png": "c6eb9add528c7936eda83a4a2deb3b0bd239b9e21b1f323c9fbdc2c06c4a39ba",
+    "B2a_C2_information.pdf": "4bd3b45230543626904b005f49c0aec016cdc55b533ab2fa30c9462ca07c14a1",
+    "B2a_C2_information.png": "7647082d2a50b670442811ab4895aa52c6a446b0de2b6eaaa90976a85d2c190f",
+    "B2a_C2_information.svg": "0fce2e30f6f8828cad92db262d2214e1e537fd046d5168bcf8e884af3168452c",
+    "B2a_count_error.pdf": "2c71f4acedb658a4abe744ffc1c47b8c0a1916ca5cd92a74b1dc562dec3180ee",
+    "B2a_count_error.png": "a481666df986915718af2ce70476c2abadc885f987f9fdf1a5409710e0a83bd1",
+    "B2a_count_error.svg": "b29be6ecda92acbc86d204951bbb8ebcc64a6b9571290a955e19334711b7a2f5",
+    "B2b_posterior_curvature.pdf": "220ef044ad7dcb31a44b21f539315cc9380a04ad921cda2ea64744849e051a7d",
+    "B2b_posterior_curvature.png": "b3eeb83fd3ee6cdf2e907ed6d987b295709ca85a7ec63083772cfb5d3a007ff2",
+    "B2b_posterior_curvature.svg": "9ef45ec497f5e18645a849b5a40564dcd5ce1d482d0816f6c02c1645d0ac6633",
+    "B3_C4_modal_bounds.pdf": "dc09964fca3cf4f300163e9e92f342dfb4ca469c5104686f6bbc3d3ce3951ff8",
+    "B3_C4_modal_bounds.png": "c9c6bda3df9179c7892c107475165d39dcdfe32faf165f7eaf965eb9196d4d92",
+    "B3_C4_modal_bounds.svg": "9e5dbbfc8f6ef501ce0aced6301c05c6344299174275b0264d213d7ae6a655a2",
+    "B3_C4_validity.pdf": "e29eccf091123be70b64973c63ba3a2f63eb29f82654ddffcf98bf777eee5971",
+    "B3_C4_validity.png": "a695a188cdbf347b2ba8f5df0d2e8c63b9ac94fc32ee739bcc2b4a9ad276c811",
+    "B3_C4_validity.svg": "23ae75197685798b968ff2d59e09f25e66175820203b9e12bb6c39702f1caf08",
+    "B4_directional_decisions.pdf": "1d22320bece5c0c8556f3d158eb1cfaa388fb95c8ae7c6f26b712a623bd27fe1",
+    "B4_directional_decisions.png": "0a01bc42609fda1e37ca1206afee63a4901e24070f44358cedcff4ee749b134f",
+    "B4_posterior_section.pdf": "c838b1ff4d53552632ecfde60667c0a3bcb76acb7b6acba45b79032d323ae21b",
+    "B4_posterior_section.png": "fdf128a16e667b32cbcc4e3f12768763b5228dc438f0c716bac360b0090d0c97",
+    "B4_power_uncertainty.pdf": "33e52b28912d92b82cf23379bbb8ce1c48d4901f300e77905643769bccea55f2",
+    "B4_power_uncertainty.png": "756d0759918eed838794aab57189512b5ec6a268e24f4ca60366562af71f54fb",
+    "B5_covariance_decisions.pdf": "d71e02d3eed7a2db7aef182fd00ea733ca6285d8e4fb8cf4a7283c2b3f734692",
+    "B5_covariance_decisions.png": "c18cc21fce35fe329f20bc35f815f92c6dbab3b03b5135d03908bd8788d3911e",
+    "B5_heldout_decisions.pdf": "a08bfb22bb9eb89f953775fb61f423f88c56a38a07220fd8500739eeaa9aa183",
+    "B5_heldout_decisions.png": "12b9f3ace77ef80d1b03c2f059ebc81f9b035113c558079bb0b331bfdfb3f840",
+    "B5_heldout_decisions.svg": "50fb9c7103a38a96c1dcb5aa100f180d0670cd2dbc516f1a9226be3aba530961",
+    "B5_tracking_decisions.pdf": "a7fcef63f94efa62d3128404b2850512cd428a66bc53a379fa0440519a0ede63",
+    "B5_tracking_decisions.png": "ef090d187ba97820c9e374f29551de31ace6793447ff7b0d26f8c55d6d3f0c04",
+    "B5_tracking_decisions.svg": "11bfa04e5471c8da2483b3b91bde1073dbf5e5ff6fecd646bf0838de43bc40b9",
+    "B6_beam_calibration.pdf": "028b87e04207d50d464bdee75e2ec0a1a8cd3d64d3846300a95231ffc8d9ab01",
+    "B6_beam_calibration.png": "733489f1e6a8ed4cc5ff911f1c79f094d13830829c4d189b4e40d99f79ebe3f2",
+    "B6_beam_calibration.svg": "83387a7a3ddc55a67a3adbb5e0f6d6d1d0d5dc1d86edfc27abac960c66bae8bc",
+    "B7a_C6a_block_evidence.pdf": "e276389441cd1e6c80792ca447107ce06e93be78e41a8d59a22ff78ffa492604",
+    "B7a_C6a_block_evidence.png": "d13b859498400bfcccecc1a2bf4e9a3ad4f04deaffe024d54e25f04e76930ca8",
+    "B7a_C6a_block_evidence.svg": "4a890b3829ad3699045568113404291f6d9b56f1c3b77de3c326efa62a2df76c",
+    "B7b_C6b_scale_adaptation.pdf": "e24ae862061fb9f1f5b782fcdefff405fa4305efd18ec4b53d863a30c22c0a74",
+    "B7b_C6b_scale_adaptation.png": "aee250144601c90a47011c14a4c6291960bdc64b6eac326986ee8b96615dbef7",
+    "B7b_C6b_scale_adaptation.svg": "accef6c79dc18a1b07ba7d8bb4bd616e2acdf8ffff9de0e76bbaf11697e7dda1",
+    "C1_contact_mechanics.pdf": "3c7713ed7d180fa44b6880b752cc22058eae627a990ba03629795ac729256eab",
+    "C1_contact_mechanics.png": "3d53c901318cfdb5fd5c23150890cbab78e64a967bdc9aa9707a9f539b48ae14",
+    "C1_current_contact_predictions.pdf": "104fa035e02aabece33f11db56bc9f7b11d487ac4cf607fd651c980cfbef178e",
+    "C1_current_contact_predictions.png": "0ba4fc8f3b0ac14548796760cc46945abf815432a44dfbc7f8b180a60f970c90",
+    "C2_directional_contact_information.pdf": "9a2f3e64a10f2d34dfe08983de261fc9f6f845371c5f6a6b2a36889d6bfe4333",
+    "C2_directional_contact_information.png": "9e146f0b7e5c8d2418d1ca9816ebffeb28fd67492eacc2ce8a04b60e3fa6d421",
+    "C3_expected_contact_commands.pdf": "7550aad6fbd9b4900e6b056abb9e645f5707dc738ada5e93c343420ea6560195",
+    "C3_expected_contact_commands.png": "485537605d1b42fe4a54709b38759afc576cd4de5af62d3ea7c054554abb00b8",
+    "C3_stationary_contact_costs.pdf": "c4bd78e77568c67b2c55305928e5377a06a0bc02dd52054e25c34accc071718c",
+    "C3_stationary_contact_costs.png": "f77cb3bbd0893bd8ac1d7e7e85d89ab1592266266c042b8b61880967bdd154e9",
+    "C5_contact_calibration.pdf": "fb79cc4dfb022e08514d59ed44e62e346bd6d987f6dbf14c41be5a835d21a330",
+    "C5_contact_calibration.png": "b2b3133beea620864867655bd19e10173e72e8816a7defb366c738542ab169f7",
+    "C5_contact_calibration.svg": "874f764ac67a3a94ec82445c232aa9c7dc9c105b44f578d30b500be90c3444a5",
+    "C5_model_mismatch.pdf": "e30812cd1809e9422b7bee51c12d6387679ff6a153fb596e66fa15e1d5229605",
+    "C5_model_mismatch.png": "19c2a3ef6702e78c0c7d10bc8523b0ad6031661109638e3827ffb3eabbb81f06",
+    "C5_model_mismatch.svg": "e07a58bbf242c8f2e0e9dbb6a4dda836eaa9ad9aca754a7bb87176df480358c9",
+    "S1_generalized_constraints.pdf": "7ab46fe50e0d0034620b06de5309ad720b2065c482562488453e55508fb0f478",
+    "S1_generalized_constraints.png": "0520d93f364f563d0bed0e5f63e865ce2985490479cb5d1aa3150b10fa3961b9",
+    "S1_native_scaling.pdf": "3e652b4e8c317bf4c87acca985a3acaa1f6a898b8370c9187ace311654bf2d60",
+    "S1_native_scaling.png": "80e816c3a6cc8fa0e32267f5774b75921d895574774c19eaf929c715506d0584"
+  },
+  "figure_ids": {
+    "B2a": [
+      "B2a_C2_information",
+      "B2a_count_error"
+    ],
+    "C2": [
+      "B2a_C2_information",
+      "C2_directional_contact_information"
+    ],
+    "B2b": [
+      "B2b_posterior_curvature"
+    ],
+    "B3": [
+      "B3_C4_modal_bounds",
+      "B3_C4_validity"
+    ],
+    "C4": [
+      "B3_C4_modal_bounds",
+      "B3_C4_validity"
+    ],
+    "B5": [
+      "B5_heldout_decisions",
+      "B5_tracking_decisions",
+      "B5_covariance_decisions"
+    ],
+    "B6": [
+      "B6_beam_calibration"
+    ],
+    "C5": [
+      "C5_contact_calibration",
+      "C5_model_mismatch"
+    ],
+    "B7a": [
+      "B7a_C6a_block_evidence"
+    ],
+    "C6a": [
+      "B7a_C6a_block_evidence"
+    ],
+    "B7b": [
+      "B7b_C6b_scale_adaptation"
+    ],
+    "C6b": [
+      "B7b_C6b_scale_adaptation"
+    ],
+    "B1": [
+      "B1_array_measurements"
+    ],
+    "B4": [
+      "B4_posterior_section",
+      "B4_directional_decisions",
+      "B4_power_uncertainty"
+    ],
+    "C1": [
+      "C1_contact_mechanics",
+      "C1_current_contact_predictions"
+    ],
+    "C3": [
+      "C1_current_contact_predictions",
+      "C3_expected_contact_commands",
+      "C3_stationary_contact_costs"
+    ],
+    "S1": [
+      "S1_native_scaling",
+      "S1_generalized_constraints"
+    ]
+  },
+  "aliases": {
+    "B1_array_measurements": {
+      "source_files": {
+        "results/simulation_redesign/paper/figures/beamforming_01_setup.png": "c6eb9add528c7936eda83a4a2deb3b0bd239b9e21b1f323c9fbdc2c06c4a39ba",
+        "results/simulation_redesign/paper/figures/beamforming_01_setup.pdf": "1e600c6a94e630bc261224ea624b8ff7450f6f50d1e5ef9b6a0e9932a13f3318"
+      },
+      "source_figure": "beamforming_01_setup",
+      "scope": "Filename alias of the existing verified main panel; no additional independent evidence"
+    },
+    "B4_posterior_section": {
+      "source_files": {
+        "results/simulation_redesign/paper/figures/beamforming_02_posterior.png": "fdf128a16e667b32cbcc4e3f12768763b5228dc438f0c716bac360b0090d0c97",
+        "results/simulation_redesign/paper/figures/beamforming_02_posterior.pdf": "c838b1ff4d53552632ecfde60667c0a3bcb76acb7b6acba45b79032d323ae21b"
+      },
+      "source_figure": "beamforming_02_posterior",
+      "scope": "Filename alias of the existing verified main panel; no additional independent evidence"
+    },
+    "B4_directional_decisions": {
+      "source_files": {
+        "results/simulation_redesign/paper/figures/beamforming_03_directional.png": "0a01bc42609fda1e37ca1206afee63a4901e24070f44358cedcff4ee749b134f",
+        "results/simulation_redesign/paper/figures/beamforming_03_directional.pdf": "1d22320bece5c0c8556f3d158eb1cfaa388fb95c8ae7c6f26b712a623bd27fe1"
+      },
+      "source_figure": "beamforming_03_directional",
+      "scope": "Filename alias of the existing verified main panel; no additional independent evidence"
+    },
+    "B4_power_uncertainty": {
+      "source_files": {
+        "results/simulation_redesign/paper/figures/beamforming_05_responses.png": "756d0759918eed838794aab57189512b5ec6a268e24f4ca60366562af71f54fb",
+        "results/simulation_redesign/paper/figures/beamforming_05_responses.pdf": "33e52b28912d92b82cf23379bbb8ce1c48d4901f300e77905643769bccea55f2"
+      },
+      "source_figure": "beamforming_05_responses",
+      "scope": "Filename alias of the existing verified main panel; no additional independent evidence"
+    },
+    "B5_covariance_decisions": {
+      "source_files": {
+        "results/simulation_redesign/paper/figures/beamforming_04_benchmarks.png": "c18cc21fce35fe329f20bc35f815f92c6dbab3b03b5135d03908bd8788d3911e",
+        "results/simulation_redesign/paper/figures/beamforming_04_benchmarks.pdf": "d71e02d3eed7a2db7aef182fd00ea733ca6285d8e4fb8cf4a7283c2b3f734692"
+      },
+      "source_figure": "beamforming_04_benchmarks",
+      "scope": "Filename alias of the existing verified main panel; no additional independent evidence"
+    },
+    "C1_contact_mechanics": {
+      "source_files": {
+        "results/simulation_redesign/paper/figures/contact_01_mechanics.png": "3d53c901318cfdb5fd5c23150890cbab78e64a967bdc9aa9707a9f539b48ae14",
+        "results/simulation_redesign/paper/figures/contact_01_mechanics.pdf": "3c7713ed7d180fa44b6880b752cc22058eae627a990ba03629795ac729256eab"
+      },
+      "source_figure": "contact_01_mechanics",
+      "scope": "Filename alias of the existing verified main panel; no additional independent evidence"
+    },
+    "C1_current_contact_predictions": {
+      "source_files": {
+        "results/simulation_redesign/paper/figures/contact_05_tracking.png": "0ba4fc8f3b0ac14548796760cc46945abf815432a44dfbc7f8b180a60f970c90",
+        "results/simulation_redesign/paper/figures/contact_05_tracking.pdf": "104fa035e02aabece33f11db56bc9f7b11d487ac4cf607fd651c980cfbef178e"
+      },
+      "source_figure": "contact_05_tracking",
+      "scope": "Filename alias of the existing verified main panel; no additional independent evidence"
+    },
+    "C2_directional_contact_information": {
+      "source_files": {
+        "results/simulation_redesign/paper/figures/contact_02_posterior.png": "9e146f0b7e5c8d2418d1ca9816ebffeb28fd67492eacc2ce8a04b60e3fa6d421",
+        "results/simulation_redesign/paper/figures/contact_02_posterior.pdf": "9a2f3e64a10f2d34dfe08983de261fc9f6f845371c5f6a6b2a36889d6bfe4333"
+      },
+      "source_figure": "contact_02_posterior",
+      "scope": "Filename alias of the existing verified main panel; no additional independent evidence"
+    },
+    "C3_expected_contact_commands": {
+      "source_files": {
+        "results/simulation_redesign/paper/figures/contact_03_directional.png": "485537605d1b42fe4a54709b38759afc576cd4de5af62d3ea7c054554abb00b8",
+        "results/simulation_redesign/paper/figures/contact_03_directional.pdf": "7550aad6fbd9b4900e6b056abb9e645f5707dc738ada5e93c343420ea6560195"
+      },
+      "source_figure": "contact_03_directional",
+      "scope": "Filename alias of the existing verified main panel; no additional independent evidence"
+    },
+    "C3_stationary_contact_costs": {
+      "source_files": {
+        "results/simulation_redesign/paper/figures/contact_04_benchmarks.png": "f77cb3bbd0893bd8ac1d7e7e85d89ab1592266266c042b8b61880967bdd154e9",
+        "results/simulation_redesign/paper/figures/contact_04_benchmarks.pdf": "c4bd78e77568c67b2c55305928e5377a06a0bc02dd52054e25c34accc071718c"
+      },
+      "source_figure": "contact_04_benchmarks",
+      "scope": "Filename alias of the existing verified main panel; no additional independent evidence"
+    },
+    "S1_native_scaling": {
+      "source_files": {
+        "results/simulation_redesign/paper/figures/beamforming_06_scaling.png": "80e816c3a6cc8fa0e32267f5774b75921d895574774c19eaf929c715506d0584",
+        "results/simulation_redesign/paper/figures/beamforming_06_scaling.pdf": "3e652b4e8c317bf4c87acca985a3acaa1f6a898b8370c9187ace311654bf2d60"
+      },
+      "source_figure": "beamforming_06_scaling",
+      "scope": "Filename alias of the existing verified main panel; no additional independent evidence"
+    },
+    "S1_generalized_constraints": {
+      "source_files": {
+        "results/simulation_redesign/paper/figures/contact_06_higher_dimension.png": "0520d93f364f563d0bed0e5f63e865ce2985490479cb5d1aa3150b10fa3961b9",
+        "results/simulation_redesign/paper/figures/contact_06_higher_dimension.pdf": "7ab46fe50e0d0034620b06de5309ad720b2065c482562488453e55508fb0f478"
+      },
+      "source_figure": "contact_06_higher_dimension",
+      "scope": "Filename alias of the existing verified main panel; no additional independent evidence"
+    }
+  },
+  "captions": {
+    "B2a_C2_information": "Fisher eigenvalues use aligned tangent coordinates and directly recorded inputs for the conditional law. Finite-difference bands show the range across the declared cases, not confidence intervals. Exact Gaussian KL contours and the Fisher quadratic use the same displayed levels and tangent coordinates.",
+    "B2a_count_error": "The observation-count and signal-to-noise axes correspond to a separate declared Fisher experiment. Score sums are formed inside each independent episode before estimating covariance across episodes. Common within-episode prefixes pair counts; coordinates are not independent repetitions. Cells report relative Frobenius Monte Carlo error of score information, with the independent episode count fixed across observation counts. The relative Monte Carlo error need not decrease as one over the square root of the observation count. Product-level checks remain in the tables.",
+    "B2b_posterior_curvature": "Boxes retain the distribution of realized curvature eigenvalues across independently generated datasets. Expected likelihood information is evaluated at the generating state; posterior curvature is evaluated at its own mode. A spectral comparison does not assert equality of those two tangent frames.",
+    "B3_C4_modal_bounds": "The fixed deterministic state path is repeated with independent signal and sensor noise. Blue bands are the interquartile spread of modal errors, not credible or confidence intervals. Gray bands and crosses mark reported checkpoints with insufficient gap conditions; the shading makes no claim about unreported times. The theorem envelope and geometric ceiling are different quantities; bounds use true fixed scales for evaluation.",
+    "B3_C4_validity": "The phase diagram uses the predeclared largest horizon and smallest dimension. A sufficient gap condition can hold while the envelope remains above the geometric ceiling. Actual perturbations and theoretical allowances retain all trials. These truth-dependent diagnostics are not online confidence radii.",
+    "B5_heldout_decisions": "Each dot is one independent training episode at the preassigned Haar-signature setting, 16 snapshots and sensor variance 0.2. Both decisions are scored on exactly the same independent held-out snapshots. Below the diagonal favors the posterior mean. These observations complement the complete true-covariance and held-out paired tables; this display is not a universal ranking.",
+    "B5_tracking_decisions": "All five declared conditions are retained at the final reporting time. Each box contains paired independent test episodes. The left difference is loaded-covariance power minus posterior-mean power. The right difference is beta=1 modal power minus modal power with independently validation-selected fixed memory; the decision rule is held fixed there. Positive differences favor the second decision. No hidden input or oracle motion enters the tracker. Numerical flags and pointwise paired intervals remain in the tables.",
+    "B6_beam_calibration": "State inclusion uses independent episodes, with the saved pointwise binomial 95% intervals shaded. Prior-predictive, fixed-state and drifting experiments have different probability interpretations. Scores are computed before fitting or assimilation; the full normalized mixture and Gaussian moment surrogate are separate densities. Risk points average independent episodes in bins, and do not turn repeated time samples into extra trials.",
+    "C5_contact_calibration": "State inclusion uses independent episodes, with the saved pointwise binomial 95% intervals shaded. Clean-response intervals and noisy predictive intervals are distinct in the tables. Prior-predictive calibration does not imply fixed-state or drifting-state coverage. Mixture scores are evaluated before assimilation, and risk bins use episode averages.",
+    "B7a_C6a_block_evidence": "The displayed episode and starts are fixed before the test comparisons. Each E-step reconstructs the entire stationary block from one boundary prior excluding that block. Curves show the full normalized block evidence relative to its own initial value. A boundary signal-variance start can remain absorbing. Rejected updates and independent reference discrepancies remain in the tables.",
+    "B7b_C6b_scale_adaptation": "Separate noise-only and motion-only interventions use the final declared block. Box distributions contain independent episodes. The horizontal line is the true sensor variance. Motion-induced variance inflation is evidence of model mismatch, not recovery of a physical sensor parameter. Plug-in scale decisions omit scale uncertainty and do not inherit the fixed-scale tracking theorem.",
+    "C5_model_mismatch": "Each box contains episode-averaged clean-response loss. Friction, contact loss, anisotropic damping or correlated velocity errors are explicitly identified mismatch cases. They do not validate the isotropic independent-noise likelihood under changed physics. Correct scaled-coordinate mechanics and sensor covariance checks are recorded separately.",
+    "B1_array_measurements": "Passive interference-plus-noise snapshots identify a spatial line. The desired steering signature $a$ enters only the distortionless decision. The latent coefficients and true interferer enter generation and scoring, never estimation. Powers $s$ and $\\tau^2$ are variances. The displayed ULA trajectory was fixed in advance.",
+    "B4_posterior_section": "This is an actual $N=8$ proper-complex posterior at $t=16$. The sphere is the real-coefficient section $h=U_3x$, $x\\in S^2$, through its mode and the least/most concentrated complementary eigenvectors. Colors are $q_A([U_3x])/q_A(\\widehat{\\mathcal X})$, not a normalized sphere marginal. State-region curves are intersections, not 95%-mass surface regions. All complementary gaps and all mean eigenvalues are shown alongside it.",
+    "B4_directional_decisions": "Selected-data complex beliefs have the same mode, spectrum and entire centered chordal-distance distribution, with two complementary directions interchanged relative to the fixed desired steering vector. Both spheres use one fixed $U_3$ frame; gray curves are equal-radius intersections. Conditional expected-power excess is evaluated under each stated belief and is not a repeated-training performance claim.",
+    "B4_power_uncertainty": "The actual weight beampattern and the uncertain covariance scanning response are different quantities. The middle bands are pointwise central posterior 50% and 95% intervals, not simultaneous confidence bands. At the exact interferer direction the truth is the support maximum, so a finite central interval excludes that endpoint. The small grid retains every predeclared ULA separation and horizon at $N=8$, $s=0.2$; open circles mark pointwise paired intervals crossing zero.",
+    "B5_covariance_decisions": "Each paired point is an independent held-out trajectory at $s=0.2$, $t=16$. Ledoit--Wolf adapts its covariance regularization to each dataset. The first two panels use Haar spatial signatures at $N=8$ and $N=16$; the final panel is the $N=8$, $10^\\circ$ ULA comparison. Positive reference-minus-mean power differences favor the posterior mean. All other conditions and comparators remain in saved tables; no universal ranking is assumed.",
+    "C1_contact_mechanics": "The plant solves ideal maintained bilateral contact with known isotropic resistance. Its clean velocity is the Euclidean projection of the requested free velocity. True geometry appears only in this explanatory rendering and in scoring. The estimator observes the request, noisy realized response and measured wrist orientation. The normal is an unoriented line $[n]$: $n$ and $-n$ describe the same constraint plane.",
+    "C1_current_contact_predictions": "The normal line evolves along an independently generated physical sphere. Measured wrist-frame rotations are supplied equally to every practical method; they do not reveal the changing surface normal. Signs are aligned only for this display/scoring. The middle panel averages modal state errors over independent trajectories; $\\overline P_t^+$ is not assigned a modal normal. The response violins are post-correction, current-state counterfactual predictions for $v^\\star=v_0e_1$, at predeclared report times. Visual particles are resampled integration nodes; checked central 50%/95% quantiles come from continuous integration. This is not a future forecast or a repeated-data coverage claim. Each dynamic method selects its own validation memory; the same-$A$ shape controls are separate.",
+    "C2_directional_contact_information": "Actual post-correction normal laws $q_{-A_t^+}$ at $t=8$ for two equal-energy request programs. Colors are densities relative to normalized invariant measure $d\\Omega/(4\\pi)$; antipodal points describe one plane. The expected conditional Fisher information is evaluated at the true fixed normal for explanation, not supplied to the estimator. It is different from the realized posterior curvature. Solid dark outlines are state HPD boundaries; gray outlines are centered chordal balls.",
+    "C3_expected_contact_commands": "The real $\\mathrm{Gr}(1,3)$ example in the draft is interpreted as a contact-normal line: the tangent-plane mean is $I-\\mathbb E[nn^\\top]$. Both beliefs have the same mode and every centered distance quantile. The right panel uses the same $v_t^{\\rm des}$ and $\\lambda=20$ in Eq. (36); $v_t^{\\rm B}$ is an expected-penalty action, not a guaranteed feasible contact controller. Region bounds in the tables concern the blocked normal component $\\|nn^\\top v\\|$, not admissible-plane speed.",
+    "C3_stationary_contact_costs": "Paired independent stationary trajectories with requests near $e_1$, $t=8$. Response losses and Eq. (35) command costs are in $(\\mathrm{mm}/\\mathrm{s})^2$. Ridge regression is a strong response-map reference and is not assigned an invalid projector-based command. Matched axial uncertainty preserves the modal normal and its expected squared chordal distance. The command panel uses $\\lambda=10$. Complete baselines, local-Gaussian validity flags and both request programs remain available.",
+    "S1_native_scaling": "Serial, warmed, randomized-order engineering timings use a common fixed spectral span of 80 to separate dimension from concentration. Correction costs, eigenspace extraction and native means have different scopes; the mean already includes its eigensystem, so clocks are not additive. The real mean uses a common rank-one complement backend rather than the specialized 3D contact integrator. Storage is exact array bytes. More concentrations, endpoint streams, numerical flags and optional report costs are retained in the scaling tables; these points are not complexity proofs or worst-case latency guarantees.",
+    "S1_generalized_constraints": "These are generalized single linear maintained constraints, not a fabricated high-DOF robot with known Jacobians withheld from a comparator. The accuracy cohort uses $t=4N$ requests and plots Frobenius response-map error, avoiding the artificial $1/N$ reduction in average isotropic-query MSE. The separate serial timing cohort uses 64 dimensionless observations and one endpoint output; it is not mechanical-controller latency. Generic-rank moments are not substituted for the native rank-one/complement backend."
+  },
+  "validation_sha256": "4c7c05707aca66041875e6eee794f18a8ca7b03bb05868417596b9f6cfbc704d",
+  "text_usetex": true,
+  "figure_dpi": 200,
+  "savefig_dpi": 200,
+  "density_colormap": "continuous blue-purple-pink, blue floor and pink maximum",
+  "svg_scope": "New Matplotlib panels export SVG. Exact main-panel aliases retain their verified PDF and PNG forms.",
+  "scope": "Plotting reads verified scientific artifacts only; main aliases do not add independent evidence."
+}

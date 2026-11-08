@@ -1,0 +1,35 @@
+{
+  "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+  "branch": "test",
+  "created_utc": "2026-11-08T16:43:21.699498+00:00",
+  "user_timezone": "Asia/Singapore",
+  "inputs": {
+    "guide": {
+      "path": "docs/implementation_guide.md",
+      "sha256": "4f715f894fd52604f05de6d2ce97a3a14ed32824cd1de0e0dfb81e9273e06f00"
+    },
+    "draft": {
+      "filename": "L4DC2027_SB_BM_CM-5.pdf",
+      "sha256": "5da236d72780e13645c17d7541ba1b3525e71e34491bc892281427431a265c99"
+    }
+  },
+  "unavailable_sources": [
+    "main.tex",
+    "supplementary.tex"
+  ],
+  "specification": "Explicit equations in the supplied implementation guide and theory/appendices of the supplied PDF. Exact agreement with absent TeX sources is inconclusive. The PDF simulations are not reused as scientific evidence.",
+  "plotting": {
+    "text.usetex": true,
+    "figure.dpi": 200,
+    "savefig.dpi": 200,
+    "density_colors": "continuous blue through violet to pink; fixed-radius unshaded sphere; original probability/log normalization"
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "matplotlib": "3.10.8"
+  },
+  "preservation_manifest": "results/implementation_audit/archive/preservation.json",
+  "scope": "New complementary studies do not replace prior numerical evidence or claim a universal benchmark advantage."
+}

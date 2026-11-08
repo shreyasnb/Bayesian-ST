@@ -1,0 +1,121 @@
+{
+  "config": {
+    "schema": 1,
+    "profile": "paper",
+    "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+    "test_seed": 2026110903,
+    "validation_seed": 2026110904,
+    "episodes": 128,
+    "validation_episodes": 32,
+    "dimension": 3,
+    "rank": 1,
+    "s": 0.2,
+    "tau2": 1.0,
+    "delta": 0.05,
+    "static_T": 16384,
+    "static_times": [
+      64,
+      256,
+      1024,
+      4096,
+      16384
+    ],
+    "dynamic_T": 4096,
+    "dynamic_rates": [
+      0.0001,
+      0.001
+    ],
+    "bound_betas": [
+      1.0,
+      0.999,
+      0.99
+    ],
+    "conditional_T": 4096,
+    "conditional_times": [
+      64,
+      256,
+      1024,
+      4096
+    ],
+    "abrupt_T": 1024,
+    "beam_n": 6,
+    "beam_T": 256,
+    "beam_times": [
+      16,
+      64,
+      128,
+      256
+    ],
+    "beam_betas": [
+      1.0,
+      0.99,
+      0.95,
+      0.9,
+      0.8
+    ],
+    "beam_grouse_steps": [
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "beam_conditions": [
+      {
+        "name": "static",
+        "motion": "static",
+        "s": 0.2,
+        "tau2": 1.0
+      },
+      {
+        "name": "drift",
+        "motion": "drift",
+        "s": 0.2,
+        "tau2": 1.0
+      },
+      {
+        "name": "abrupt",
+        "motion": "abrupt",
+        "s": 0.2,
+        "tau2": 1.0
+      },
+      {
+        "name": "noise",
+        "motion": "drift",
+        "s": 1.0,
+        "tau2": 1.0
+      },
+      {
+        "name": "power",
+        "motion": "drift",
+        "s": 0.2,
+        "tau2": 4.0
+      }
+    ],
+    "heldout": 256,
+    "precision": "128 independent episodes give a 0.0231 one-sided exact 95% upper bound after zero violations; actual intervals are recorded. No multiplicity or trajectory-wide claim.",
+    "variance_convention": "Real e~N(0,sI); proper-complex e~CN(0,sI), real and imaginary component variances s/2.",
+    "assumptions": "Fixed true scales and fixed memory per theorem cell; deterministic paths/designs/transports shared across repeated noise realizations. Primary tracking G=I; hidden coefficient/geometry used only for simulation/evaluation.",
+    "manuscript_sources": "Explicit marginal equations in implementation_prompt.md and real conditional Theorem4 in supplied draft5. main.tex/supplementary.tex absent; complex conditional conservative derivation is separate and manuscript matching is not applicable.",
+    "tolerances": {
+      "decomposition_relative": 1e-10,
+      "algebra": 2e-10,
+      "mode_pca": 2e-09
+    },
+    "selection": "Independent validation; one beta per method/condition minimizes average held-out-time true covariance power. SCM loading continuously selected including exact isotropic endpoint. Test data never select settings."
+  },
+  "sources": {
+    "lib/guide_tracking.py": "c63c9f9fe0691649ec88b9709a9c859bb7d421fd21c4b526099846a62a6f789b",
+    "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1",
+    "scripts/run_guide_tracking.py": "61ca85f3ef6e98d047915581cbfbc74020eca7ac93baaebeadfd9f1ed5af1f8f",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3"
+  },
+  "registered_utc": "2026-11-08T16:48:28.003353+00:00"
+}

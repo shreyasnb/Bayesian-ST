@@ -7,7 +7,7 @@ from pathlib import Path
 import hashlib,json,sys
 import nbformat as nbf
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from lib.simulation_validation import require_gate,verify_component,verify_legacy
+from lib.simulation_validation import require_gate,verify_component,verify_legacy,gate_path
 
 
 def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -20,7 +20,7 @@ def verify_summary(gate):
     if (summary.get('profile')!='paper' or summary.get('status')!='completed'
             or summary.get('paper_evidence') is not True or summary.get('figures_verified') is not True):
         raise RuntimeError('Generate the completed paper summary after the final figures first')
-    if (summary.get('gate_sha256')!=sha(folder/'validation/validation.json')
+    if (summary.get('gate_sha256')!=sha(gate_path(ROOT))
             or summary.get('science_hash')!=gate['science_hash']):
         raise RuntimeError('Summary validation provenance is stale')
     producer=summary['generator']
@@ -45,6 +45,8 @@ def verified():
         for name,expected in manifest[mapping].items():
             if sha(folder/name)!=expected:raise RuntimeError('Stale figure input/export: '+name)
     verify_summary(gate)
+    from scripts.make_implementation_audit_notebook import verify_audit
+    verify_audit()
     return base,manifest
 
 
@@ -102,7 +104,7 @@ This notebook follows the attached draft's theory and notation. Its proper-compl
 ''')
     code(n,SETUP)
     md(n,r'''
-## 1. What is measured?
+## B1. What is measured?
 
 The array observes $u_t=h_tz_t+e_t$, with $\|h_t\|=1$, $z_t\sim\mathcal{CN}(0,\tau^2)$ and $e_t\sim\mathcal{CN}(0,sI)$. Integrating the unknown coefficient gives $u_t\mid\mathcal X_t\sim\mathcal{CN}(0,sI+\tau^2P_{\mathcal X_t})$. The estimator receives only the snapshots. The desired unit steering signature $a$ is supplied later, for the constraint $w^Ha=1$.
 
@@ -110,7 +112,7 @@ The physical array is a half-wavelength ULA. Desired/interferer separations $3^\
 ''')
     code(n,"show('beamforming_01_setup')")
     md(n,r'''
-## 2. What does the posterior look like?
+## B4. What does the posterior look like?
 
 For proper-complex data, $B_t=\tau^2u_tu_t^H/[s(s+\tau^2)]$, with **no factor $1/2$**. Algorithm 1 adds this statistic once per observation and recenters the parameter to trace zero. A uniform prior and stationary $\beta=1$ make the mode the leading sample-covariance eigenspace. We write the modal projector $P_{\widehat{\mathcal X}_t}$ and full mean $\overline P_t^+=\mathbb E[P_{\mathcal X_t}\mid\mathcal D_t]$ exactly as in the draft.
 
@@ -118,7 +120,7 @@ The sphere below evaluates the actual density on $h=U_3x$, $x\in S^2$, where $U_
 ''')
     code(n,"show('beamforming_02_posterior')\nassert D['beamforming']['shape'].pca_mode_error.max() < 1e-7")
     md(n,r'''
-## 3. Can the mode and a radius determine a decision?
+## B4. Can the mode and a radius determine a decision?
 
 Here two selected-data posteriors have identical modes, spectra and **every** centered chordal-distance quantile. A unitary transformation fixes the mode and interchanges two complementary directions relative to the desired steering vector. Their directional mean projectors therefore differ.
 
@@ -128,7 +130,7 @@ This controlled calculation illustrates information that one radius loses. It is
 ''')
     code(n,"show('beamforming_03_directional')")
     md(n,r'''
-## 4. Does it improve repeated-training performance?
+## B5. Does it improve repeated-training performance?
 
 Ledoit--Wolf covariance shrinkage adapts to each observed dataset. Loaded covariance and GROUSE receive independent validation choices; a regularized spectral control uses a continuously selected coefficient. These references test whether a gain over the mode can be explained by cheaper regularization. Every method sees the same training and held-out snapshots.
 
@@ -136,7 +138,7 @@ The paired points are independent trajectories, not steering-grid locations or p
 ''')
     code(n,"show('beamforming_04_benchmarks')")
     md(n,r'''
-## 5. What is uncertain, and where does geometry matter?
+## B4. What is uncertain, and where does geometry matter?
 
 The left panel is the actual weight beampattern $|w^Ha(\theta)|^2$. The middle is the different covariance functional $s+\tau^2a(\theta)^HP_{\mathcal X}a(\theta)$, with central 50% and 95% posterior intervals. At the exact true interferer direction this functional is at its support maximum, so a finite continuous equal-tail interval excludes the endpoint. This is not a failure of the posterior sampler; arbitrary scalar intervals are not uniform frequentist confidence bands.
 
@@ -144,7 +146,7 @@ The small complete separation/horizon grid asks where the posterior mean improve
 ''')
     code(n,"show('beamforming_05_responses')")
     md(n,r'''
-## 6. What scales, and what costs extra?
+## S1. What scales, and what costs extra?
 
 The dense correction has $O(N^2)$ storage and arithmetic. Eigenvector extraction, posterior moments and optional credible reports are separate computations. The scaling study holds spectral span fixed when varying dimension, and retains a separate data-generated case. Rank-one/codimension-one means are not general-rank Grassmann calculations.
 
@@ -158,7 +160,7 @@ Serial warmed timing repeats randomize operation order and record CPU and wall c
 
 The distribution is useful when its directional predictions or expected decisions improve the actual task enough to justify their cost. The mode already duplicates covariance PCA under matched weights. Conditional expected-power optimality does not promise a universal empirical win, and a fitted ambient prior need not exploit a particular ULA geometry as well as validation-tuned covariance regularization.
 
-Read the [recorded findings](../results/simulation_redesign/findings.md), [protocol and reproduction commands](../results/simulation_redesign/README.md), and [notation and claim scope](../docs/simulation_redesign_notation.md). Complete independent comparisons and numerical flags remain in the component tables. Historical moving-array, unknown-parameter and rank-three results are preserved under their original source manifests; they are not silently presented as results of this redesigned protocol. No manuscript text is changed.
+Read the [recorded findings](../results/simulation_redesign/findings.md), [protocol and reproduction commands](../results/simulation_redesign/README.md), and [notation and claim scope](../docs/simulation_redesign_notation.md). Complete independent comparisons and numerical flags remain in the component tables. Historical moving-array, unknown-parameter and rank-three results are preserved under their original source manifests; they are not silently presented as results of this redesigned protocol. The [implementation supplement](04_implementation_audit.ipynb) adds the guide checks for Fisher information, revised modal bounds, block EM, pre-observation scores and model mismatch. Its figure IDs and [claim manifest](../results/implementation_audit/claim_manifest.json) identify the evidence and assumptions. No manuscript text is changed.
 ''')
     return n
 
@@ -176,7 +178,7 @@ The physical model is maintained ideal bilateral contact with known isotropic re
 ''')
     code(n,SETUP)
     md(n,r'''
-## 1. From applied force to the measured response
+## C1. From applied force to the measured response
 
 With known isotropic resistance $dI$, the free requested velocity is $v_t=F_t/d$. The plant independently solves force balance and $n_t^\top\bar u_t=0$, giving the closest admissible velocity $\bar u_t=P_{\mathcal X_t}v_t$, $\mathcal X_t=n_t^\perp$. The measurement is $u_t=\bar u_t+e_t$, $e_t\sim\mathcal N(0,sI)$.
 
@@ -184,7 +186,7 @@ The estimator receives the request and noisy response, not the surface normal or
 ''')
     code(n,"show('contact_01_mechanics')")
     md(n,r'''
-## 2. Known requests create directional information
+## C2. Known requests create directional information
 
 The conditional correction is $B_t=(u_tv_t^\top+v_tu_t^\top-v_tv_t^\top)/(2s)$. The negative term matters: a blocked request $u_t\approx0$ still informs the normal. Identical-likelihood spectral least squares is the modal reference. PCA of residuals uses the known requests as well; velocity-only PCA would discard available information and would be a weaker comparison.
 
@@ -194,7 +196,7 @@ The expected Fisher eigenvalues follow the draft's $F_t=(C_{11,t}\otimes I+I\oti
 ''')
     code(n,"show('contact_02_posterior')")
     md(n,r'''
-## 3. The same mode and radius can hide different commands
+## C3. The same mode and radius can hide different commands
 
 The draft's deterministic example has $A^{(1)}=\operatorname{diag}(0,-8,-80)$ and $A^{(2)}=\operatorname{diag}(0,-80,-8)$. Here these are **normal-line** parameters; their dual tangent-plane parameters are $-A^{(i)}$. The modes and entire centered chordal-distance distributions agree, but the mean-response risks for $e_2$ and $e_3$ differ by about tenfold.
 
@@ -204,7 +206,7 @@ This is an expected-penalty command, not a guaranteed feasible controller. The H
 ''')
     code(n,"show('contact_03_directional')")
     md(n,r'''
-## 4. Do the mean and its directional structure improve actual loss?
+## C3. Do the mean and its directional structure improve actual loss?
 
 The fresh stationary benchmark uses independent Haar normal lines, equal-energy requests and known sensor variance. References include the identical-likelihood point estimate, matched axial uncertainty, validation-regularized spectral response $\widetilde M_t v$, ridge regression, residual PCA, and a local Gaussian approximation with its validity flags. The axial tangent-plane law $q_{\kappa P_{\widehat{\mathcal X}_t}}$ is equivalently $q_{\kappa P_{[\widehat n_t]}}$ on normal lines; it matches the normal modal overlap and $r_{t,\mathrm{rms}}$.
 
@@ -212,7 +214,7 @@ The paired response plots and soft-command costs answer different questions. Rid
 ''')
     code(n,"show('contact_04_benchmarks')")
     md(n,r'''
-## 5. Track the normal as the contact and coordinates change
+## C1; C3. Track the normal as the contact and coordinates change
 
 On the physical sphere the admissible plane changes even in the world frame. Wrist motion adds a measured coordinate change, handled by $A_t^-=\beta G_tA_{t-1}^+G_t^\top$. It does not reveal the changing surface geometry. Each practical method receives the same measured rotations and independently selects its declared memory/noise settings on validation data.
 
@@ -220,7 +222,7 @@ The response distributions are **post-correction, current-state** predictions fo
 ''')
     code(n,"show('contact_05_tracking')")
     md(n,r'''
-## 6. Beyond three coordinates
+## S1. Beyond three coordinates
 
 The same conditional model describes an unknown codimension-one linear constraint in $\mathbb R^N$. These generalized velocity examples use $N=8,16,32$ and $t=4N$ requests. No robot Jacobian is hidden from a structured competitor, and these are not claimed as a physical high-DOF robot simulation.
 
@@ -236,7 +238,7 @@ The full mean predicts an expected velocity; it is generally not one feasible co
 
 The fixed-state visual story uses a coordinate-aligned true normal and coordinate requests. Some scalar responses then lie at support boundaries, so finite central intervals can exclude them even under the correct likelihood. This does not contradict posterior mass or a state-region coverage result. The independent Haar-normal cohort and the single displayed physical trajectory have different probability interpretations.
 
-Read the [findings](../results/simulation_redesign/findings.md), [reproduction protocol](../results/simulation_redesign/README.md), and [notation/assumptions](../docs/simulation_redesign_notation.md). General validation checks the existing EM routines under their original objective; it does not establish the revised draft's fixed-boundary-block EM procedure. Noise is fixed in these new comparisons, which make no EM implementation claim. Historical temperature, learned-motion and stochastic-process studies remain separately labelled in the archived notebook. No code or inference is rerun merely to adjust a figure layout.
+Read the [findings](../results/simulation_redesign/findings.md), [reproduction protocol](../results/simulation_redesign/README.md), and [notation/assumptions](../docs/simulation_redesign_notation.md). Noise is fixed in this notebook's original comparison cohorts. The added [implementation supplement](04_implementation_audit.ipynb) separately implements and checks fixed-boundary-block EM; it distinguishes that objective from the historical per-observation-prior routine. These fixed-scale comparisons do not claim a scale-learning advantage. Historical temperature, learned-motion and stochastic-process studies remain separately labelled in the archived notebook. No code or inference is rerun merely to adjust a figure layout.
 ''')
     return n
 

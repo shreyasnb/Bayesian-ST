@@ -1,0 +1,107 @@
+{
+  "profile": "smoke",
+  "status": "completed",
+  "config": {
+    "profile": "smoke",
+    "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+    "model": "One constant subspace and one fixed boundary prior per disjoint block",
+    "variance_convention": "Real per-coordinate variance; proper-complex covariance, not real/imaginary variance",
+    "seeds": [
+      915130,
+      915131,
+      915132
+    ],
+    "block_length": 12,
+    "n": 3,
+    "iterations": 12,
+    "floor": 1e-06,
+    "moment_tolerance": 1e-10,
+    "max_order": 4096,
+    "ascent_tolerance": 1e-08,
+    "reference_orders": [
+      40,
+      64
+    ],
+    "real_signal_variance": 0.9,
+    "real_sensor_variance": 0.3,
+    "conditional_sensor_variance": 0.04,
+    "input_scale": 0.6,
+    "models": [
+      "real_marginal_rank_one",
+      "real_marginal_rank_two",
+      "complex_marginal_rank_one",
+      "conditional_contact_plane"
+    ],
+    "marginal_starts": [
+      {
+        "name": "1",
+        "s": 0.12,
+        "tau2": 0.15
+      },
+      {
+        "name": "2",
+        "s": 0.6,
+        "tau2": 0.7
+      },
+      {
+        "name": "3",
+        "s": 1.2,
+        "tau2": 0.25
+      },
+      {
+        "name": "0",
+        "s": 0.6,
+        "tau2": 0.0
+      }
+    ],
+    "conditional_starts": [
+      {
+        "name": "1",
+        "s": 0.02
+      },
+      {
+        "name": "2",
+        "s": 0.2
+      },
+      {
+        "name": "3",
+        "s": 0.6
+      }
+    ],
+    "selection": "Largest normalized block evidence among positive-signal starts; zero boundary is a declared initialization diagnostic",
+    "performance_scope": "Finite disjoint-block noise estimates, not online adaptation, theorem-scale estimation or global EM convergence",
+    "guide_source": "Uploaded implementation_prompt.md; named main.tex/supplementary.tex unavailable in checkout"
+  },
+  "sources": {
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "scripts/run_block_em_study.py": "9b32a45cbc0166dc4d0059d2fdf7e2595cd343a0171fd9ad02fc8bc5f648f6fb",
+    "tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e"
+  },
+  "tables": {
+    "failures.csv": "e7a2fa51a93ca99e5f588316c55c5d3663e37c7df49fa40d02223c6ee12cc888",
+    "fits.csv": "57c8758582aed5265f444444e1789c6fb5ca7b53724950f76bf8ba6577043623",
+    "iterations.csv": "1d3d5db3def8190ec8d45c3f154031fa0a41389d139fe5f6459e604e33066137",
+    "preregistered.json": "86d560c472d8ff654cda274ba27395d52be1bbd9ecce4fd8927184f2dfbcfc2c",
+    "references.csv": "071e3d65717896bf94a4128b0db9e1109ebb279151139b85198175d8adfe2733",
+    "residuals.csv": "7d4a939b200e369ac5548ade0a0402fb269cbbe90858beb6d962cf1be50feef8"
+  },
+  "checks": {
+    "independent_blocks": 12,
+    "fits": 45,
+    "numerical_failures": 0,
+    "rejected_steps": 0,
+    "maximum_reference_evidence_error": 3.2152058793144533e-13,
+    "maximum_reference_mean_error": 4.730635592855537e-12,
+    "minimum_evidence_increment": -2.8421709430404007e-13,
+    "boundary_signal_maximum": 0.0,
+    "converged_fits": 20,
+    "seconds": 1.3866432089998852,
+    "fixed_boundary_prior": true,
+    "evidence_guard": true,
+    "scope": "Numerical ascent under one stationary-block objective; finite iterations and scale recovery do not prove global/online convergence"
+  }
+}

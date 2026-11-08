@@ -1,0 +1,8 @@
+{
+  "reason": "First smoke run retained before adding an explicit unresolved-candidate budget regression; scientific settings and outputs were unchanged.",
+  "sources": {
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "scripts/run_block_em_study.py": "9b32a45cbc0166dc4d0059d2fdf7e2595cd343a0171fd9ad02fc8bc5f648f6fb",
+    "tests/test_block_em.py": "2a549021583280afcf5448d5de97a28ff5613a650c82b6fe154bf47ba9566413"
+  }
+}

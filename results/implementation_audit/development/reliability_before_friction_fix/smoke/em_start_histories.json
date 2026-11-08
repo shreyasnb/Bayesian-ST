@@ -1,0 +1,458 @@
+[
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": 0.4,
+      "objective": -90.82252603108628,
+      "accepted": 7,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": 1.5,
+      "objective": -90.8225260310864,
+      "accepted": 9,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": 0.4,
+      "objective": -136.2451018441406,
+      "accepted": 25,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": 1.5,
+      "objective": -136.24510130057934,
+      "accepted": 25,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": 0.4,
+      "objective": -81.21566218186567,
+      "accepted": 8,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": 1.5,
+      "objective": -81.21566218186578,
+      "accepted": 10,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": 0.4,
+      "objective": -153.6868774164248,
+      "accepted": 11,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": 1.5,
+      "objective": -153.68687741642472,
+      "accepted": 10,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": 0.4,
+      "objective": -77.33827298422017,
+      "accepted": 9,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": 1.5,
+      "objective": -77.33827298422014,
+      "accepted": 10,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": 0.4,
+      "objective": -163.79276496757396,
+      "accepted": 25,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": 1.5,
+      "objective": -163.792764967574,
+      "accepted": 25,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": 0.4,
+      "objective": -91.44154355265366,
+      "accepted": 8,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": 1.5,
+      "objective": -91.44154355265351,
+      "accepted": 9,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": 0.4,
+      "objective": -88.29890767261857,
+      "accepted": 10,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": 1.5,
+      "objective": -88.29890767261857,
+      "accepted": 10,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": 0.4,
+      "objective": -83.11100825277893,
+      "accepted": 8,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": 1.5,
+      "objective": -83.1110082527789,
+      "accepted": 9,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": 0.4,
+      "objective": -92.32163551331283,
+      "accepted": 9,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": 1.5,
+      "objective": -92.32163551331288,
+      "accepted": 10,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": 0.4,
+      "objective": -93.51054221346232,
+      "accepted": 8,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": 1.5,
+      "objective": -93.51054221346234,
+      "accepted": 9,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": 0.4,
+      "objective": -113.45562205249215,
+      "accepted": 9,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": 1.5,
+      "objective": -113.45562205249222,
+      "accepted": 10,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": null,
+      "objective": -49.97897373921759,
+      "accepted": 7,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": null,
+      "objective": -49.97897373921756,
+      "accepted": 8,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": null,
+      "objective": -89.12978880308256,
+      "accepted": 8,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": null,
+      "objective": -89.12978880308259,
+      "accepted": 7,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": null,
+      "objective": -50.57430003251324,
+      "accepted": 7,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": null,
+      "objective": -50.57430003251323,
+      "accepted": 8,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": null,
+      "objective": -79.63233914939727,
+      "accepted": 8,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": null,
+      "objective": -79.63233914939727,
+      "accepted": 7,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": null,
+      "objective": -47.16005818878726,
+      "accepted": 7,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": null,
+      "objective": -47.16005818878721,
+      "accepted": 8,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": null,
+      "objective": -102.97778311446395,
+      "accepted": 8,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": null,
+      "objective": -102.97778311446396,
+      "accepted": 8,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": null,
+      "objective": -50.54523213846695,
+      "accepted": 7,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": null,
+      "objective": -50.545232138466986,
+      "accepted": 8,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": null,
+      "objective": -51.528068642478914,
+      "accepted": 7,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": null,
+      "objective": -51.52806864247892,
+      "accepted": 8,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": null,
+      "objective": -37.70378069343424,
+      "accepted": 6,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": null,
+      "objective": -37.70378069343428,
+      "accepted": 8,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": null,
+      "objective": -47.97266079475808,
+      "accepted": 7,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": null,
+      "objective": -47.972660794758085,
+      "accepted": 8,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": null,
+      "objective": -59.40920949801402,
+      "accepted": 7,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": null,
+      "objective": -59.40920949801404,
+      "accepted": 8,
+      "rejected": 0
+    }
+  ],
+  null,
+  null,
+  null,
+  [
+    {
+      "initial_s": 0.15,
+      "initial_tau2": null,
+      "objective": -50.54903111498486,
+      "accepted": 7,
+      "rejected": 0
+    },
+    {
+      "initial_s": 0.6,
+      "initial_tau2": null,
+      "objective": -50.54903111498484,
+      "accepted": 8,
+      "rejected": 0
+    }
+  ],
+  null
+]

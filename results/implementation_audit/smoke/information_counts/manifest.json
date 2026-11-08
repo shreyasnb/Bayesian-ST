@@ -1,0 +1,66 @@
+{
+  "config": {
+    "profile": "smoke",
+    "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+    "seed": 2026110903,
+    "n": 3,
+    "k": 1,
+    "complex_fields": [
+      false,
+      true
+    ],
+    "sensor_variances": [
+      0.2,
+      1.0,
+      4.0
+    ],
+    "signal_variance": 1.3,
+    "observations": [
+      1,
+      4,
+      16,
+      64
+    ],
+    "episodes": 512,
+    "thresholds": {
+      "maximum_product_z": 7.0,
+      "maximum_score_mean_z": 7.0
+    },
+    "variance_convention": "s and tau2 are variances; each real/imag coordinate has variance s/2 for proper-complex sensor noise",
+    "coordinates": "Canonical X=e1 and Q=[e2,e3]; vec_F Z (real), [Re vec_F Z, Im vec_F Z] (complex)",
+    "independence": "Independent datasets and independent snapshots within a dataset; same dataset prefixes across L and same underlying Gaussian draws across sensor variances are common random numbers. Cells are correlated, not extra independent replications.",
+    "interpretation": "Expected total information is L times the one-snapshot Fisher matrix. Monte Carlo error is estimated across independent datasets. The L axis counts observations in each dataset, never simulation episodes or posterior draws.",
+    "selection": "All fields, variances, counts, seeds and precision diagnostics are frozen before the paper run; statistical failures remain visible."
+  },
+  "sources": {
+    "lib/guide_information_counts.py": "e459d0ac66fcb442dc4246bd44cdd5135a89891d2c71623f43b73d8119feaa38",
+    "scripts/run_guide_information_counts.py": "0b95bb0f2c0e6882c684718cae645b7d471aa5f07fec28763f3d612d8bc5eb82",
+    "tests/test_guide_information_counts.py": "48b785b2007f0b15e45a756aae2dae4f166f75f88e1b8e2d0b87f68b221c882e",
+    "lib/beamforming_theory.py": "8cf21d381a44756818177130fd097b8c6458e541c0595e46fa2577348aace486",
+    "lib/guide_information.py": "23a4c48bf43ccb3d25b550ff37c25b7920897d9cf066335c625890e8f37faa00"
+  },
+  "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+  "status": "completed",
+  "checks": {
+    "cells": 24,
+    "unresolved_cells": 0,
+    "maximum_score_product_z": 2.439226062057102,
+    "maximum_score_mean_z": 2.7529799443188026,
+    "maximum_relative_frobenius_error": 0.1855494134282839,
+    "minimum_expected_information": 0.07971698113207548,
+    "maximum_expected_information": 721.0666666666666
+  },
+  "numerical_ok": true,
+  "gate_sha256": null,
+  "seconds": 0.09650608499941882,
+  "created_utc": "2026-11-08T16:54:47.661354+00:00",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "tables": {
+    "matrices.csv": "de03ac0123fc7121ab3568f9ffafd5ae7b1576feee1f489f3f818d5e560ba402",
+    "summary.csv": "b746a5b19287b3eb6edaffda9c01e2c8334f4fd4b0f49c33d38389825cf5f5f0"
+  },
+  "scope": "Mathematical Gaussian score experiment only; sampling error does not establish an estimator performance advantage or a uniform confidence guarantee."
+}

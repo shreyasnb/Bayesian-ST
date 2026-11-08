@@ -1,0 +1,2 @@
+Completed engineering quick run before exporting already computed normalizers for the figure interface. Original source/table hashes and exact source snapshots are retained. No paper outcomes were opened and no scientific budget was selected from a method ranking.
+The final producer additionally uses a genuinely independent single-assimilation/PCA check and refines both boundary-adjacent validation intervals (a review regression found that an interior minimum near an endpoint could be missed). These changes precede paper validation/test generation.

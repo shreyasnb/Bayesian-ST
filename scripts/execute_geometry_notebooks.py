@@ -9,7 +9,7 @@ os.environ.setdefault('IPYTHONDIR','/tmp/bayesian-st-ipython')
 import nbformat
 from nbclient import NotebookClient
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
-from lib.simulation_validation import require_gate,verify_component,verify_legacy,sha
+from lib.simulation_validation import require_gate,verify_component,verify_legacy,sha,gate_path
 BASE=ROOT/'results/simulation_redesign'
 
 
@@ -44,7 +44,8 @@ def main():
         'lib/distribution_geometry_visuals.py','lib/plotting.py']
     meta=dict(status='passed',executed_utc=datetime.now(timezone.utc).isoformat(),notebooks=reports,
         sources={name:sha(ROOT/name) for name in names},figure_manifest_sha256=before,
-        validation_sha256=sha(BASE/'validation/validation.json'),summary_manifest_sha256=sha(summary),
+        validation_sha256=sha(gate_path(ROOT)),
+        validation_path=str(gate_path(ROOT).relative_to(ROOT)),summary_manifest_sha256=sha(summary),
         scope='Executed narratives verify and display frozen paper results. Simulation and figure layout are separate commands; retained scientific limitations are not relabeled as successes.')
     (BASE/'execution.json').write_text(json.dumps(meta,indent=2)+'\n')
 

@@ -1,0 +1,31 @@
+kind,sigma,t,source,numerical_ok,mean_reference_error
+balanced,0.01,1,preassigned stationary density,True,1.1289721731947123e-12
+balanced,0.01,2,preassigned stationary density,True,2.943892494215748e-13
+balanced,0.01,4,preassigned stationary density,True,5.423640811410278e-13
+balanced,0.01,8,preassigned stationary density,True,1.7899210617564347e-13
+balanced,0.01,16,preassigned stationary density,True,6.129113875840703e-14
+balanced,0.01,32,preassigned stationary density,True,8.155880221643689e-14
+balanced,0.004,1,preassigned stationary density,True,4.767814499524136e-13
+balanced,0.004,2,preassigned stationary density,True,1.374158426155443e-13
+balanced,0.004,4,preassigned stationary density,True,9.851456791519757e-14
+balanced,0.004,8,preassigned stationary density,True,2.161715475991225e-14
+balanced,0.004,16,preassigned stationary density,True,2.514484567367981e-14
+balanced,0.004,32,preassigned stationary density,True,4.377995816020775e-13
+unbalanced,0.01,1,preassigned stationary density,True,1.1289721731947123e-12
+unbalanced,0.01,2,preassigned stationary density,True,2.725892480285229e-13
+unbalanced,0.01,4,preassigned stationary density,True,7.465989941175186e-13
+unbalanced,0.01,8,preassigned stationary density,True,5.963411449732464e-13
+unbalanced,0.01,16,preassigned stationary density,True,6.371712703219743e-13
+unbalanced,0.01,32,preassigned stationary density,True,1.4232979221461992e-13
+unbalanced,0.004,1,preassigned stationary density,True,4.767814499524136e-13
+unbalanced,0.004,2,preassigned stationary density,True,2.1266674794298946e-13
+unbalanced,0.004,4,preassigned stationary density,True,1.1989179742786927e-13
+unbalanced,0.004,8,preassigned stationary density,True,9.279940557525668e-14
+unbalanced,0.004,16,preassigned stationary density,True,1.2598087970369388e-13
+unbalanced,0.004,32,preassigned stationary density,True,7.280147759613826e-14
+plane,0.004,8,preassigned physical trajectory zero,True,2.100858489780555e-14
+plane,0.004,24,preassigned physical trajectory zero,True,6.456688445741961e-15
+plane,0.004,48,preassigned physical trajectory zero,True,2.51074719285422e-13
+sphere,0.004,8,preassigned physical trajectory zero,True,1.3028498282602047e-13
+sphere,0.004,24,preassigned physical trajectory zero,True,1.0005498851012946e-13
+sphere,0.004,48,preassigned physical trajectory zero,True,4.240544654880122e-14

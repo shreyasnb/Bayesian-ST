@@ -3,10 +3,10 @@
   "profile": "paper",
   "status": "completed",
   "paper_evidence": true,
-  "created_utc": "2026-11-08T01:04:59.078732+00:00",
+  "created_utc": "2026-11-08T17:16:09.668897+00:00",
   "generator": {
     "path": "scripts/summarize_simulation_redesign.py",
-    "sha256": "03495c53e93ff3e39aad7f71819fb02572dfdc19100f155b0ae7bdbae28bd858"
+    "sha256": "538e2eb2f35b18404eaf3e83ef57e67cdc053d8cb0c8d309652d536248b8c04c"
   },
   "source_hashes": {
     "lib/anisotropy_study.py": "b7ab40a999d74cb94983a1d1d0e0e6772ec57000bbd0ad0048dfae71ab68bfed",
@@ -37,16 +37,16 @@
     "lib/simulation_scaling.py": "0c6bed44460c1df2d11f74b3372ec7c6c39d67efbcf019a065d8c5262284a6ca",
     "scripts/run_simulation_scaling.py": "ddc7914b66b063fe01c6b2ee805588e9183712fab4c0c8e2ba8cf17d3525ae4e",
     "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-    "lib/distribution_geometry_visuals.py": "d6ef85dad23163409a52400fe58786888cd9314db0b7b9a828487272e1c6f5d8",
+    "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
     "lib/simulation_story_visuals.py": "58b805a6e43aef3ccc2c4e54c9792d271e8a0ae207f10b5588ce71414b93e6bf",
-    "scripts/plot_geometry_studies.py": "39e8a7c974ac273de2d9f426d7576a2a665efe010145aee9a224f1f52a021d21"
+    "scripts/plot_geometry_studies.py": "408070031bcc7c1bc382cd6a3ffad8b571d0e6009d30840a3e274cb1962bf79d"
   },
   "verified_input_hashes": {
     "results/simulation_redesign/paper/geometry/manifest.json": "47d66a25fedff73a417cbe955d80a963303d3b58bb06a15d57064be221293602",
     "results/simulation_redesign/paper/beamforming/manifest.json": "d1b5fc4a8fc4a8d4aaaf7280286c284eeeaf06f2d383cad33fe57f1632574812",
     "results/simulation_redesign/paper/contact/manifest.json": "208fc2d728a42439acadc5d68825572c5c5ceb2b1753b6835e9486e94b4a4a5a",
     "results/simulation_redesign/paper/scaling/manifest.json": "0ad0e8b4b945f35ed3e5ccb08fee0e2e1f18764143f4843b7cc9b4be87b3ffba",
-    "results/simulation_redesign/paper/figures/manifest.json": "898f5aab89cf4cf909b78891830f41100c06c9147b78e92e9f80a4bb8675bb6c"
+    "results/simulation_redesign/paper/figures/manifest.json": "67ec2eaf3a793e72bbeec6df02b511cc0eac2a2b07af3f21c63b48d7a516fa64"
   },
   "verified_components": [
     "geometry",
@@ -56,8 +56,9 @@
   ],
   "pending": {},
   "figures_verified": true,
-  "gate_sha256": "062c1c357634d9e5befd75c2a3e755a81ffd30be49e082b7ee5647d7c9746262",
-  "science_hash": "521541a512f7f153460e2a8f0b5dbb32da24029d11c0d4f6d3958471e85342dc",
+  "gate_sha256": "4c7c05707aca66041875e6eee794f18a8ca7b03bb05868417596b9f6cfbc704d",
+  "gate_path": "results/implementation_audit/validation/validation.json",
+  "science_hash": "bc55664c48d74e3b1f0083f07ad11505a8dae70fb76b459146a45278d9ef8be8",
   "outputs": {
     "results/simulation_redesign/findings.md": "b1dfdc7dae3d6bd07513586b54eb2e03f3a29e17c443f2170600b1ab3dd3d39f",
     "results/simulation_redesign/beamforming_summary.md": "2f777e62ff70be784288eb3e50f8326b901811d178733b39c57f7318d24e50c6",
