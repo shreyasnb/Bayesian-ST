@@ -2,7 +2,8 @@
 
 Working branch: `test`. Starting revision:
 `a91faabeb10a63b1d1c613d75cc32503cfc0cac6`.
-Scientific content revision: recorded at publication after the final checks.
+Scientific content revision: [`eee4c1e30882c5530eda8d25fe6afcc349f0ddf7`](https://github.com/shreyasnb/Bayesian-ST/commit/eee4c1e30882c5530eda8d25fe6afcc349f0ddf7).
+A subsequent metadata-only commit records this identifier and its inventory.
 The final pushed head is reported in the accompanying handoff.
 
 ## Specification and validation

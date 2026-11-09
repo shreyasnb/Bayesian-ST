@@ -2,7 +2,7 @@
   "schema": 1,
   "status": "inventoried",
   "base_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
-  "scientific_content_commit": null,
+  "scientific_content_commit": "eee4c1e30882c5530eda8d25fe6afcc349f0ddf7",
   "final_science_hash": "d3e5f91e4bc9ca18bf34d595fe6d2ed0137361dff835dccc72b552ad7bb5ec47",
   "files": {
     ".gitignore": {
@@ -942,8 +942,8 @@
       "bytes": 9642
     },
     "completion_report.md": {
-      "sha256": "97001004ce899796c822a11dfed972cee04a29d6b80a7c9f1b9fcc3b86c2c3af",
-      "bytes": 12588
+      "sha256": "591924de711c34f9db0b6f9c77df856f6bba635b82536fa7801afd3cbdea0000",
+      "bytes": 12753
     },
     "docs/final_manuscript_checks.md": {
       "sha256": "52c664a63d46ec61a44498cae35e5fafd3fb0152a34024723119c3835622e719",
@@ -6603,7 +6603,7 @@
     }
   },
   "retained_files": 1649,
-  "retained_bytes": 382418177,
+  "retained_bytes": 382418342,
   "excluded_regenerable_files": 11194,
   "excluded_regenerable_bytes": 1257382437,
   "excluded_scope": "Git-ignored checkpoint caches, pytest XML and original general-notebook diagnostic PDF/PNG exports. Component manifests exclude these caches; required raw arrays/tables and executed general notebook are retained.",
