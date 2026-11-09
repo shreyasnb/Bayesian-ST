@@ -205,3 +205,24 @@ stage/component manifests and the complete retained-file inventory. An
 independent actual-PDF audit passed for all 38 files / 144 pages: seven-inch
 widths, Type 1 fonts, empty PDF titles and no out-of-page text. Preview images
 are 200 dpi. Regenerable checkpoint caches are excluded from Git.
+
+## Sphere display revision
+
+Continuous multicolor density views now expose the anisotropy already in the
+saved posteriors. A rigid, disclosed display rotation brings the cap into view;
+matched laws retain a shared rotation and logarithmic color scale. Exact
+exp(-1)/exp(-2) density contours show shape without changing the posterior or
+claiming a credible-region interpretation. The original beamforming t=64
+view and comparisons remain, alongside its existing t=16 prefix. Both
+notebooks explain these coordinates and the chronological/controlled pair.
+All final pages remain seven inches wide, with LaTeX/vector text and curves
+and 200-dpi raster layers/previews.
+
+The rendering audit passed 20 beamforming and 464 contact laws, plus shared
+rotation checks. Maximum pointwise log-density discrepancy was 2.84e-12;
+the independent ambient complex-section discrepancy was 1.09e-11. All 574
+frozen numerical artifacts, 25 scientific manifests and 132 scientific/core
+sources match the preceding `ded5499` revision exactly. Estimators, tuning,
+seeds, benchmarks, numerical tolerances, timing records and conclusions were
+retained. The unchanged regression suite passed 313 tests and two subtests.
+See [the display audit and reproduction commands](docs/final_simulations.md).

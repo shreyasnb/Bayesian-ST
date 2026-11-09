@@ -82,6 +82,42 @@ python scripts/build_final_inventory.py
 python scripts/check_final_simulations.py
 ```
 
+For the sphere-display revision, also run the independent numerical and
+actual-PDF audits (the optional PDF audit uses PyMuPDF and Pillow):
+
+```bash
+python scripts/check_sphere_visuals.py
+python scripts/check_final_pdf_layout.py --write
+python scripts/build_final_inventory.py --content-commit eee4c1e30882c5530eda8d25fe6afcc349f0ddf7
+python scripts/check_final_simulations.py
+```
+
+Sphere colors now use a continuous multicolor logarithmic scale, with the
+same four-decade floor and shared normalization within comparisons. Rigid
+display coordinates bring the modal cap towards the unchanged orthographic
+camera. Tildes identify these coordinates; they are not wrist components or
+the original array-section coefficients. Matched laws share one reference
+rotation. The exact white contours mark density ratios exp(-1) and exp(-2),
+where closed; they are not posterior credible regions. Density values,
+angular widths and unit-sphere radii are preserved, without tempering.
+
+The beamforming anisotropy figure keeps the original n=64, t=64 endpoint and
+its numerical comparisons, and adds the already-saved t=16 prefix of that
+same preassigned episode. Their gap ratios are 2.97 and 2.13 at t=16 and
+t=64, respectively. These are real-coefficient sections of a complex
+posterior, not normalized sphere marginals. Contact's original concentrated
+input checkpoint already has a gap ratio of 11.04: the new view exposes its
+elongation without changing its fitted-isotropic comparison or task study.
+
+The sphere audit compares against commit `ded5499`: all 574 frozen numerical
+artifacts (including constructed geometry), 25 scientific manifests and 132
+scientific/core source files must remain byte-identical. It also checks
+rotation congruence, exact contour levels and full unit-sphere coverage for
+20 beamforming and 464 contact laws. Reports are saved under each
+application's `data/validation/`. These checks validate the presentation
+change; they do not add independent experimental repetitions or improve a
+statistical performance claim.
+
 The notebook maker requires completed figure evidence. The execution command
 uses clean kernels and saves both notebooks before the last check. They verify
 and display saved figures; executing them does not repeat the Monte Carlo

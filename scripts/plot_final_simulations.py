@@ -87,6 +87,7 @@ def page_notes(figures):
         if hasattr(fig,'_final_selection'):record['selection']=fig._final_selection
         if hasattr(fig,'_final_repetition_unit'):record['repetition_unit']=fig._final_repetition_unit
         record['panel_selections']=[getattr(ax,'_final_selection') for ax in fig.axes if hasattr(ax,'_final_selection')]
+        record['sphere_displays']=[getattr(ax,'_sphere_display') for ax in fig.axes if hasattr(ax,'_sphere_display')]
         records.append(record)
     return records
 
@@ -150,7 +151,9 @@ def caption_for(name,evidence):
             caption+=' The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons.'
         else:
             caption=beam.strip()
-            caption+=' Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval.'
+            caption+=' Panels (a,b) show the already-saved n=64 stationary episode 0 at t=16,64 with common relative-density colors. Panel (c) retains the t=64 complementary mean eigenvalues; panel (d) retains the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval.'
+    if name=='posterior_anisotropy' or (evidence.example=='contact' and name in ('paper_summary','noise_adaptation')):
+        caption+=r" Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\widetilde n=Rn$ or $\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened."
     if name=='predictive_calibration':
         target=(r'$q^H Pq$ for a known unit complex query $q$' if evidence.example=='beamforming'
             else r'$e_1^T Pq$ for a known unit real query $q$')

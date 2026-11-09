@@ -20,7 +20,7 @@ from matplotlib import colors
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 from .distribution_geometry_visuals import (
-    DENSITY_CMAP, bingham_sphere_mesh, sphere_mesh,
+    bingham_sphere_mesh, sphere_mesh,
     real_bingham_log_density, restriction_log_density, shared_density_norm)
 
 
@@ -76,6 +76,12 @@ GREY = '#70777D'
 BLACK = '#222222'
 CAMERA = dict(elev=25., azim=-50.)
 FIGURE_WIDTH = 7.0
+# A continuous multicolor display; only the presentation changes.  Keep this
+# local so historical figures retain their original palette and provenance.
+DENSITY_CMAP = colors.LinearSegmentedColormap.from_list(
+    'density_turbo', plt.colormaps['turbo'](np.linspace(.08, .95, 256)))
+DENSITY_CMAP.set_under(DENSITY_CMAP(0.))
+DENSITY_CMAP.set_over(DENSITY_CMAP(1.))
 PAPER_STYLE = {
     'text.usetex': True, 'text.latex.preamble': r'\usepackage{amsmath}\usepackage{amssymb}',
     'font.family': 'serif', 'font.size': 9.,
@@ -83,6 +89,7 @@ PAPER_STYLE = {
     'xtick.labelsize': 9., 'ytick.labelsize': 9.,
     'lines.linewidth': 1.35, 'lines.markersize': 3.5,
     'figure.dpi': 200, 'savefig.dpi': 200, 'savefig.bbox': None,
+    'figure.figsize': (FIGURE_WIDTH, 3.2),
     'figure.max_open_warning': 0,
     'axes.spines.top': False, 'axes.spines.right': False,
 }
@@ -134,7 +141,9 @@ def verify_title_free(fig):
     for ax in fig.axes:
         if any(ax.get_title(loc=loc) for loc in ('left', 'center', 'right')):
             raise RuntimeError('Paper figures must not contain plot titles')
-    if plt.rcParams['text.usetex'] is not True or fig.dpi != 200:
+    if (plt.rcParams['text.usetex'] is not True or fig.dpi != 200
+            or plt.rcParams['savefig.dpi'] != 200
+            or not np.isclose(fig.get_figwidth(), FIGURE_WIDTH)):
         raise RuntimeError('Actual LaTeX and 200-dpi display layers are required')
 
 
@@ -324,36 +333,114 @@ def _optional(record, *keys):
     return None
 
 
-def density_sphere(ax, nodes, log_density, norm, coordinate='n', mode=None, truth=None):
+def display_sphere_geometry(A, nodes=None, rotation=None):
+    """Rigid display coordinates and exact quadratic-density level curves.
+
+    R maps native coordinates to display coordinates; B=R A R^T.  The default
+    convention brings the mode towards the fixed camera and its soft tangent
+    direction horizontally across the screen.  This changes neither the law,
+    sphere radius, real section, nor any angular width. Comparative laws must
+    pass the SAME reference rotation. Display nodes are never quadrature.
+    """
+    A = np.asarray(A)
+    if (A.shape != (3, 3) or not np.isfinite(A).all()
+            or np.max(np.abs(A.imag)) > 1e-10
+            or not np.allclose(A, A.T, atol=1e-10, rtol=1e-12)):
+        raise ValueError('Display geometry needs a real symmetric 3 by 3 parameter')
+    A = (A.real + A.real.T)/2
+    values, U = np.linalg.eigh(A)
+    mode, soft = U[:, -1].copy(), U[:, -2].copy()
+    for vector in (mode, soft):
+        if vector[np.argmax(np.abs(vector))] < 0:
+            vector *= -1
+    hard = np.cross(mode, soft)
+    native_frame = np.column_stack([soft, hard, mode])
+    gaps = values[-1]-values[-2::-1]
+    if rotation is None:
+        el, az = np.deg2rad([CAMERA['elev'], CAMERA['azim']])
+        facing = np.array([np.cos(el)*np.cos(az), np.cos(el)*np.sin(az), np.sin(el)])
+        right = np.array([-np.sin(az), np.cos(az), 0.])
+        screen_frame = np.column_stack([right, np.cross(facing, right), facing])
+        rotation = screen_frame @ native_frame.T
+    R = np.asarray(rotation, float)
+    if (R.shape != (3, 3) or not np.allclose(R @ R.T, np.eye(3), atol=1e-12)
+            or not np.isclose(np.linalg.det(R), 1., atol=1e-12)):
+        raise ValueError('A display change must be a proper rigid rotation')
+    native = bingham_sphere_mesh(A, 161, 321).nodes if nodes is None else np.asarray(nodes, float)
+    if native.shape[-1] != 3 or not np.allclose(np.sum(native*native, axis=-1), 1., atol=1e-10):
+        raise ValueError('Display coordinates must remain on the unit sphere')
+    phi = np.linspace(0., 2*np.pi, 241)
+    contours = {}
+    for level in (1., 2.):
+        if level >= gaps[0]:
+            continue
+        s = np.sqrt(level/gaps[0])*np.cos(phi)
+        h = np.sqrt(level/gaps[1])*np.sin(phi)
+        m = np.sqrt(np.maximum(0., 1-s*s-h*h))
+        cap = m[:, None]*mode + s[:, None]*soft + h[:, None]*hard
+        contours[level] = np.stack([cap @ R.T, -cap @ R.T])
+    return dict(rotation=R, parameter=R @ A @ R.T, mode=R @ mode,
+                native_mode=mode, eigenvalues=values, gaps=gaps,
+                native_nodes=native, nodes=native @ R.T, contours=contours)
+
+
+def density_sphere(ax, nodes, log_density, norm, coordinate='n', mode=None, truth=None,
+                   parameter=None, rotation=None):
     """True orthographic fixed-radius sphere with visible native 3D axes."""
     nodes, log_density = np.asarray(nodes), np.asarray(log_density)
     if nodes.shape[-1] != 3 or not np.allclose(np.sum(nodes*nodes, axis=-1), 1., atol=1e-10):
         raise ValueError('Density display vertices must remain on the unit sphere')
+    geometry = None
+    if parameter is not None:
+        geometry = display_sphere_geometry(parameter, nodes, rotation)
+        nodes = geometry['nodes']
+        R = geometry['rotation']
+        mode = None if mode is None else R @ mode
+        truth = None if truth is None else R @ truth
+        coordinate = r'\widetilde{' + coordinate + '}'
+        ax._sphere_display = dict(rotation_native_to_display=R.tolist(),
+            native_parameter=np.asarray(parameter).real.tolist(),
+            native_mode=geometry['native_mode'].tolist(),
+            curvature_gaps=geometry['gaps'].tolist(),
+            density_drop_contours=list(geometry['contours']),
+            normalization='Unchanged supplied log density and common logarithmic color normalization',
+            coordinates='Rigid display coordinates; not physical component coordinates',
+            display_mesh_only=True, cmap='density_turbo')
     rgba = DENSITY_CMAP(norm(np.exp(log_density)))
     surface = ax.plot_surface(nodes[..., 0], nodes[..., 1], nodes[..., 2],
         facecolors=rgba, shade=False, linewidth=0, antialiased=False,
         rstride=1, cstride=1, zorder=1)
     # Only the colored surface is rasterized; text, axes and curves stay vector.
     surface.set_rasterized(True)
-    phi = np.linspace(0., 2*np.pi, 241)
-    for plane in ((0, 1), (0, 2), (1, 2)):
-        ring = np.zeros((len(phi), 3))
-        ring[:, plane[0]], ring[:, plane[1]] = 1.006*np.cos(phi), 1.006*np.sin(phi)
-        ax.plot(*ring.T, color='#B7C0CB', linewidth=.55, alpha=.65, zorder=2)
+    el, az = np.deg2rad([CAMERA['elev'], CAMERA['azim']])
+    facing = np.array([np.cos(el)*np.cos(az), np.cos(el)*np.sin(az), np.sin(el)])
+    if geometry is not None:
+        for level, pairs in geometry['contours'].items():
+            for curve in pairs:
+                visible = np.where((curve @ facing > 0.)[:, None], curve*1.003, np.nan)
+                ax.plot(*visible.T, color='white', linewidth=.65,
+                        linestyle='-' if level == 1. else '--', zorder=3)
     for vector, symbol, edge in ((mode, 'o', '#D55E00'), (truth, 'x', BLACK)):
         if vector is not None:
             vector = np.asarray(vector, float)
             vector /= np.linalg.norm(vector)
-            ax.scatter(*vector, marker=symbol, s=14, color=edge, depthshade=False, zorder=4)
-            ax.scatter(*(-vector), marker=symbol, s=14, color=edge, depthshade=False, zorder=4)
+            visible = vector if vector @ facing >= 0 else -vector
+            ax.scatter(*(visible*1.005), marker=symbol, s=10, facecolors='none' if symbol=='o' else edge,
+                       edgecolors=edge, depthshade=False, zorder=4)
     ax.set_proj_type('ortho')
     ax.view_init(**CAMERA)
-    ax.set_box_aspect((1., 1., 1.))
+    ax.set_box_aspect((1., 1., 1.), zoom=.92)
     ax.set(xlim=(-1.12, 1.12), ylim=(-1.12, 1.12), zlim=(-1.12, 1.12),
            xticks=(-1., 0., 1.), yticks=(-1., 0., 1.), zticks=(-1., 0., 1.))
     ax.set_xlabel(r'$' + coordinate + r'_1$', labelpad=-2)
     ax.set_ylabel(r'$' + coordinate + r'_2$', labelpad=-2)
-    ax.set_zlabel(r'$' + coordinate + r'_3$', labelpad=-2)
+    # Axes3D's native z-label can extend underneath the adjacent subplot:
+    # constrained_layout does not account for that projected bounding box.
+    # Retain the complete native axis/ticks and anchor its label INSIDE this
+    # axes, so it remains vector text and cannot be obscured by its neighbour.
+    ax.set_zlabel('')
+    ax.text2D(.95, .67, r'$' + coordinate + r'_3$', transform=ax.transAxes,
+              rotation=90, ha='center', va='center', fontsize=9.)
     ax.tick_params(labelsize=9., pad=-2, length=1)
     ax.grid(False)
     for axis in (ax.xaxis, ax.yaxis, ax.zaxis):
@@ -638,7 +725,7 @@ def _draw_contact_risk(ax, record):
 
 
 def posterior_anisotropy(evidence):
-    fig = plt.figure(figsize=(FIGURE_WIDTH, 5.3), layout='constrained')
+    fig = plt.figure(figsize=(FIGURE_WIDTH, 6.1), layout='constrained')
     grid = fig.add_gridspec(2,2,height_ratios=(1.25,1.))
     if evidence.example == 'contact':
         axes = [fig.add_subplot(grid[0, i], projection='3d') for i in range(2)]
@@ -647,32 +734,40 @@ def posterior_anisotropy(evidence):
         iso_A = _saved(record, 'iso_normal_A', 'isotropic_normal_A')
         logz = float(_saved(record, 'normal_logz'))
         iso_logz = float(_saved(record, 'iso_normal_logz', 'iso_logz'))
-        first = bingham_sphere_mesh(A, 81, 161).nodes
-        second = bingham_sphere_mesh(iso_A, 81, 161).nodes
+        first = bingham_sphere_mesh(A, 161, 321).nodes
+        second = bingham_sphere_mesh(iso_A, 161, 321).nodes
         densities = [real_bingham_log_density(A, logz, first),
                      real_bingham_log_density(iso_A, iso_logz, second)]
         norm = shared_density_norm(densities)
         mode = _saved(record, 'mode_normal')
-        for ax, nodes, density in zip(axes, [first, second], densities):
-            density_sphere(ax, nodes, density, norm, coordinate='n', mode=mode)
+        R = display_sphere_geometry(A)['rotation']
+        for ax, nodes, density, parameter in zip(axes, [first, second], densities, [A, iso_A]):
+            density_sphere(ax, nodes, density, norm, coordinate='n', mode=mode,
+                           parameter=parameter, rotation=R)
         fig.colorbar(plt.cm.ScalarMappable(norm=norm, cmap=DENSITY_CMAP),
-                     ax=axes, label=r'$q([n])$', shrink=.64, pad=.015)
+                     ax=axes, label=r'$q([n])$', shrink=.64, pad=.07)
         risk_ax = fig.add_subplot(grid[1,:]); _draw_contact_risk(risk_ax, record)
     else:
-        axes = [fig.add_subplot(grid[0, 0], projection='3d')]
+        axes = [fig.add_subplot(grid[0, i], projection='3d') for i in range(2)]
         record = evidence.array('performance', 'stories', 'story')
-        A = _saved(record, 'section_A', 'setup_A')
-        frame = _saved(record, 'section_frame', 'setup_section_frame')
-        mesh = sphere_mesh(81, 161).nodes
-        restricted = frame.conj().T @ A @ frame
-        eigenvalues = _saved(record, 'section_eigenvalues', 'setup_eigenvalues')
-        density = np.einsum('...i,ij,...j->...', mesh, restricted.real, mesh)-float(np.max(eigenvalues))
-        norm = shared_density_norm([density])
-        density_sphere(axes[0], mesh, density, norm, coordinate='x',
-                       mode=np.array([1., 0., 0.]))
-        fig.colorbar(plt.cm.ScalarMappable(norm=norm, cmap=DENSITY_CMAP), ax=axes[0],
-                     label=r'$q(U_3x)/q(\widehat{\mathcal X})$', shrink=.64, pad=.015)
-        ax = fig.add_subplot(grid[0, 1])
+        # Both are existing prefixes of the SAME fixed, preassigned episode.
+        # Retain the original t=64 posterior and all benchmark comparisons.
+        parameters = [_saved(record, 'static_n64_t16_section_parameter').real,
+                      _saved(record, 'section_parameter', 'setup_section_parameter').real]
+        meshes = [bingham_sphere_mesh(B, 161, 321).nodes for B in parameters]
+        densities = [np.einsum('...i,ij,...j->...', mesh, B, mesh)-np.linalg.eigvalsh(B)[-1]
+                     for B, mesh in zip(parameters, meshes)]
+        norm = shared_density_norm(densities)
+        R = display_sphere_geometry(parameters[0])['rotation']
+        for ax, mesh, density, B, t in zip(axes, meshes, densities, parameters, [16, 64]):
+            density_sphere(ax, mesh, density, norm, coordinate='x',
+                           mode=np.array([1., 0., 0.]), parameter=B, rotation=R)
+            ax._final_selection=dict(cohort='stationary', n=64, t=t, episode=0,
+                section_frame_key=('static_n64_t16_section_frame' if t==16 else 'setup_section_frame'),
+                display_frame='Native saved complex frame multiplied by R.T')
+        fig.colorbar(plt.cm.ScalarMappable(norm=norm, cmap=DENSITY_CMAP), ax=axes,
+                     label=r'$q_t(U_{3,t}x)/q_t(\widehat{\mathcal X}_t)$', shrink=.64, pad=.07)
+        ax = fig.add_subplot(grid[1, 0])
         axes.append(ax)
         p = _saved(record, 'section_mean_eigenvalues', 'setup_mean_eigenvalues')
         pi = _saved(record, 'section_iso_mean_eigenvalues', 'setup_iso_mean_eigenvalues')
@@ -680,7 +775,7 @@ def posterior_anisotropy(evidence):
         ax.plot(np.arange(2, len(pi)+1), pi[1:], '^--', color=color('iso'), label=r'$M_{\mathrm{iso}}$')
         ax.set_yscale('log'); ax.set_xlabel('Complementary direction')
         ax.set_ylabel('Mean eigenvalue'); ax.legend(frameon=False, fontsize=9.); clean(ax)
-        risk_ax = fig.add_subplot(grid[1,:])
+        risk_ax = fig.add_subplot(grid[1,1])
         frame_data = _normalize(evidence.frame('performance', 'stationary'))
         frame_data = frame_data[frame_data.n.eq(64)]
         horizon = _column(frame_data, 'L', 't', 'observations')
@@ -694,11 +789,12 @@ def posterior_anisotropy(evidence):
         risk_ax.axvline(0., color=GREY, linestyle='--', linewidth=1.)
         risk_ax.set_xlabel('Isotropic minus full (dB)'); risk_ax.set_ylabel('Fraction of episodes')
         clean(risk_ax)
-    for ax, tag in zip(axes+[risk_ax], ['(a)', '(b)', '(c)']):
+    for ax, tag in zip(axes+[risk_ax], ['(a)', '(b)', '(c)', '(d)']):
         letter(ax, tag)
     fig._final_selection=(dict(condition=evidence.config('performance').get('anisotropy_input','static_concentrated'),
         episode=0,t=evidence.config('performance').get('anisotropy_time',16),query_family=1)
         if evidence.example=='contact' else dict(cohort='stationary',n=64,t=64,
+        density_checkpoints=[16,64],episode=0,
         section='Real coefficient great sphere in the saved complex three-frame; not a normalized marginal'))
     figures=[fig]
     if evidence.example=='contact':
@@ -723,11 +819,13 @@ def _constructed_anisotropy(evidence):
     directional=pd.read_csv(folder/'directional.csv');cdf=pd.read_csv(folder/'distance_cdf.csv')
     fig=plt.figure(figsize=(FIGURE_WIDTH,5.5),layout='constrained');grid=fig.add_gridspec(2,2,height_ratios=(1.2,1.))
     spheres=[fig.add_subplot(grid[0,i],projection='3d') for i in range(2)]
-    meshes=[bingham_sphere_mesh(A,81,161).nodes for A in parameters]
+    meshes=[bingham_sphere_mesh(A,161,321).nodes for A in parameters]
     densities=[real_bingham_log_density(A,z,mesh) for A,z,mesh in zip(parameters,logz,meshes)]
     norm=shared_density_norm(densities)
-    for ax,mesh,q,mode in zip(spheres,meshes,densities,modes):density_sphere(ax,mesh,q,norm,mode=mode)
-    fig.colorbar(plt.cm.ScalarMappable(norm=norm,cmap=DENSITY_CMAP),ax=spheres,label=r'$q([n])$',shrink=.7,pad=.015)
+    R=display_sphere_geometry(parameters[0])['rotation']
+    for ax,mesh,q,mode,A in zip(spheres,meshes,densities,modes,parameters):
+        density_sphere(ax,mesh,q,norm,mode=mode,parameter=A,rotation=R)
+    fig.colorbar(plt.cm.ScalarMappable(norm=norm,cmap=DENSITY_CMAP),ax=spheres,label=r'$q([n])$',shrink=.7,pad=.07)
     lower=[fig.add_subplot(grid[1,i]) for i in range(2)]
     for case,c,style in [(0,color('mean'),'-'),(1,color('iso'),'--')]:
         g=cdf[cdf.case.eq(case)];label=r'$q_{A^{('+str(case+1)+r')}}$'
@@ -875,23 +973,25 @@ def _contact_adaptive_beliefs(evidence):
         plane_A=_saved(story,name+'A')
         normal_A=-plane_A
         normal_logz=float(_saved(story,name+'log_normalizer'))-float(np.trace(plane_A))
-        mesh=bingham_sphere_mesh(normal_A,81,161).nodes
+        mesh=bingham_sphere_mesh(normal_A,161,321).nodes
         parameters.append(normal_A);meshes.append(mesh)
         densities.append(real_bingham_log_density(normal_A,normal_logz,mesh))
         M=_saved(story,name+'M');v=_saved(story,prefix+'V')[t-1]
         risks.append(float(v@(M-M@M)@v)*1e6)
     norm=shared_density_norm(densities)
+    R=display_sphere_geometry(parameters[0])['rotation']
     fig=plt.figure(figsize=(FIGURE_WIDTH,3.6),layout='constrained')
     spheres=[fig.add_subplot(1,2,i+1,projection='3d') for i in range(2)]
-    for ax,mesh,q,tag in zip(spheres,meshes[:2],densities[:2],['(a)','(b)']):
-        density_sphere(ax,mesh,q,norm,coordinate='n');letter(ax,tag)
+    for ax,mesh,q,A,tag in zip(spheres,meshes[:2],densities[:2],parameters[:2],['(a)','(b)']):
+        density_sphere(ax,mesh,q,norm,coordinate='n',parameter=A,rotation=R);letter(ax,tag)
     fig.colorbar(plt.cm.ScalarMappable(norm=norm,cmap=DENSITY_CMAP),ax=spheres,
         label=r'$q_t^-([n])$',shrink=.7,pad=.07)
     first=fig
     fig=plt.figure(figsize=(FIGURE_WIDTH,4.1),layout='constrained')
     grid=fig.add_gridspec(1,2,width_ratios=(1.15,1.))
     sphere=fig.add_subplot(grid[0,0],projection='3d')
-    density_sphere(sphere,meshes[2],densities[2],norm,coordinate='n');letter(sphere,'(a)')
+    density_sphere(sphere,meshes[2],densities[2],norm,coordinate='n',
+                   parameter=parameters[2],rotation=R);letter(sphere,'(a)')
     ax=fig.add_subplot(grid[0,1]);dt=float(evidence.config('prediction')['primary_contact_dt'])
     ax.plot((np.asarray(checkpoints)-1)*dt,risks,'o-',color=color('mean'))
     ax.set_xlabel('Time (s)')
@@ -905,7 +1005,7 @@ def _contact_adaptive_beliefs(evidence):
         page._final_selection=dict(condition='noise_change',episode=0,checkpoints=times,
             shared_density_scale_checkpoints=list(checkpoints),
             timing='Pre-correction A_t^- and M_t^-; before assimilating observation t',
-            coordinates='Measured wrist frame at each checkpoint',
+            coordinates='One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates',
             parameter_conversion='A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)',
             response_risk='v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t')
         page._final_repetition_unit='One predeclared test episode; individual posterior densities, no repeated-experiment calibration claim'
@@ -1462,15 +1562,16 @@ def paper_summary(evidence):
         ax0 = fig.add_subplot(grid[0, 0], projection='3d')
         ax1 = fig.add_subplot(grid[0, 1], projection='3d')
         A, Ai = _saved(record, 'normal_A'), _saved(record, 'iso_normal_A')
-        mesh0, mesh1 = bingham_sphere_mesh(A, 81, 161).nodes, bingham_sphere_mesh(Ai, 81, 161).nodes
+        mesh0, mesh1 = bingham_sphere_mesh(A, 161, 321).nodes, bingham_sphere_mesh(Ai, 161, 321).nodes
         q0 = real_bingham_log_density(A, float(_saved(record, 'normal_logz')), mesh0)
         q1 = real_bingham_log_density(Ai, float(_saved(record, 'iso_normal_logz')), mesh1)
         norm = shared_density_norm([q0, q1])
         mode = _saved(record, 'mode_normal')
-        density_sphere(ax0, mesh0, q0, norm, mode=mode)
-        density_sphere(ax1, mesh1, q1, norm, mode=mode)
+        R = display_sphere_geometry(A)['rotation']
+        density_sphere(ax0, mesh0, q0, norm, mode=mode, parameter=A, rotation=R)
+        density_sphere(ax1, mesh1, q1, norm, mode=mode, parameter=Ai, rotation=R)
         fig.colorbar(plt.cm.ScalarMappable(norm=norm, cmap=DENSITY_CMAP), ax=[ax0, ax1],
-                     label=r'$q([n])$', shrink=.68, pad=.02)
+                     label=r'$q([n])$', shrink=.68, pad=.07)
         ax2, ax3 = fig.add_subplot(grid[1, 0]), fig.add_subplot(grid[1, 1])
         _draw_contact_risk(ax2, record)
         _draw_paired_tasks(ax3, evidence)
@@ -1507,7 +1608,7 @@ BUNDLES = {
 CAPTIONS = {
     'setup': r'Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved episode, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information.',
     'task_performance': r'Task losses on common independent test episodes. Held-out disturbance or query losses are averaged within each episode before computing pointwise Student 95\% intervals. Only the posterior-mean curve carries a confidence band in the main absolute-loss panels. The contact paired panel isolates the same-data modal, matched-isotropic and regularized spectral controls; response-only GREAT remains in its absolute-loss panel and the full supplementary grid. Contact paired points show mean loss differences and pointwise Student 95\% confidence intervals across independent episodes, including every episode outlier; they are not posterior intervals. Beamforming paired boxes show the distribution of episode differences, not confidence intervals. The same-$A_t$ modal and matched-isotropic controls isolate posterior moments; GREAT and application-specific controls have separately validated settings and their stated information. Beamforming power ratios are $10\log_{10}(P/P_{\mathrm{oracle}})$, where the denominator is true-covariance oracle output power. Oracle quantities are evaluation-only.',
-    'posterior_anisotropy': r'Contact: actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; orange antipodal markers are their common mode. Panel (c) uses $v(\theta)=\cos\theta\,e_2+\sin\theta\,e_3$ and plots $v(\theta)^T(M-M^2)v(\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. Beamforming: a real-coefficient section $h=U_3x$, $x\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons.',
+    'posterior_anisotropy': r'Contact: actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\theta)=\cos\theta\,e_2+\sin\theta\,e_3$ and plots $v(\theta)^T(M-M^2)v(\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. Beamforming: a real-coefficient section $h=U_3x$, $x\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons.',
     'noise_adaptation': r'Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\psi_1(-A_t^-)=\psi_2(A_t^-)-\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem.',
     'information': r'Independent Gaussian Fisher, score and curvature checks. Expected information is distinguished from finite-data posterior curvature. All matrix comparisons use aligned tangent coordinates; proper-complex information uses real/imaginary coordinates and its correct factor. Recorded-input excitation and marginalized-input information use the stated common data law. Monte Carlo dataset count differs from observations per dataset. Reused mathematical reference cohorts keep their actual source hashes and repetition counts.',
     'posterior_curvature': r'Invariant-density Hessian and local accuracy diagnostics. Empirical bounded log-coordinate spread is compared with $H_A^{-1}$ only under recorded locality conditions; broad/nonlocal cases remain visible. The stationary inverse-Fisher study uses fixed known variances and $\beta=1$, reports estimation bias and local fractions, and treats inverse Fisher as a local reference rather than a global intrinsic Cramer--Rao equality. The real graph-density volume term is a separate quantity, retained in the tables. Forgetting sampling references use squared weights.',

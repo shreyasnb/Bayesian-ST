@@ -2,127 +2,1523 @@
   "status": "passed",
   "example": "contact",
   "tool": "PyMuPDF 1.26.6",
+  "producer": "scripts/check_final_pdf_layout.py",
+  "producer_sha256": "310bc36512d15cc07de7029b6cb650c0892b08b05e5dd8b954d63d59631713c6",
+  "figure_manifest_sha256": "59dab3b1ebcb80c208e16e7ed8ac773f147ec5e48b3287ac5beb5ca131f6ab39",
   "pdf_files": 19,
   "pdf_pages": 70,
   "font_types": [
     "Type1"
   ],
   "out_of_page_text": [],
+  "raster_layers": 44,
+  "preview_files": 36,
   "files": {
     "setup.pdf": {
-      "sha256": "427f5c13af53518bab888c983b405ad8136f8a76b430dc980246f2b7e930bb06",
+      "sha256": "4fd2006b8e9ce62215ecb1b4ccaeb33ca99122bc5d4dd122c40cea7480aa9bd3",
       "pages": 1,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 1,
+      "raster_dpi_range": [
+        199.99999935535322,
+        200.00000297442287
+      ],
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            216.0
+          ],
+          "text_spans": 75,
+          "raster_layers": 1
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "task_performance.pdf": {
-      "sha256": "fe3a82c30833a41c6f602319eff291e47d7aa7953158dfdb256148ef388855e8",
+      "sha256": "123d2ef4d62003f1998d387990e111203afa41be26fd2b570439d67322258232",
       "pages": 1,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            273.6000061035156
+          ],
+          "text_spans": 63,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "posterior_anisotropy.pdf": {
-      "sha256": "72dfef1c4655a47f7ea9d8ed65da7bfa9465c16215c1f1043f37481978138551",
+      "sha256": "6ea18a30da790913581fbc54837b8df4a5d7c6a68892895311528dfbd0b8e44a",
       "pages": 2,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 6,
+      "raster_dpi_range": [
+        199.99999205271433,
+        200.00000429220518
+      ],
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            439.20001220703125
+          ],
+          "text_spans": 92,
+          "raster_layers": 3
+        },
+        {
+          "page": 2,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            396.0
+          ],
+          "text_spans": 131,
+          "raster_layers": 3
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "noise_adaptation.pdf": {
-      "sha256": "4fc7fe0e67e02f6eea1bbe31aacbc144243ccda6a03f419dcee6f7bb1d7d7750",
+      "sha256": "95c27362a8133f89e4138c3a937fedb0de35f9847c0a4d426f8c0827abf8f0ae",
       "pages": 4,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 5,
+      "raster_dpi_range": [
+        199.99999205271433,
+        200.0000055135644
+      ],
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            367.20001220703125
+          ],
+          "text_spans": 53,
+          "raster_layers": 0
+        },
+        {
+          "page": 2,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            367.20001220703125
+          ],
+          "text_spans": 57,
+          "raster_layers": 0
+        },
+        {
+          "page": 3,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            259.20001220703125
+          ],
+          "text_spans": 57,
+          "raster_layers": 3
+        },
+        {
+          "page": 4,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            295.20001220703125
+          ],
+          "text_spans": 70,
+          "raster_layers": 2
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "information.pdf": {
-      "sha256": "d3b2a1b2f5d28f16cf3e3744a4f633e4055d92699d202cd76cf380e1cebb84c0",
+      "sha256": "8f361d03339138c32ce866f2676173a394e3ebc305ddbca2c26e86231eb1048c",
       "pages": 1,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            194.39999389648438
+          ],
+          "text_spans": 30,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "posterior_curvature.pdf": {
-      "sha256": "0f3b78c0e39e173a263182d4ca788af4afd05b12ee41693f6ce4c3740e187738",
+      "sha256": "ccaed92ac1362d79a0edb1719dd1c5a0ebd7bfb43a02970f9b4500efacdce6b0",
       "pages": 1,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            381.6000061035156
+          ],
+          "text_spans": 87,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "tracking_bound.pdf": {
-      "sha256": "b4a3ca74823e6fddeef0949d5ba0933b8cfc5e71513c26fc9a638f5f092ed4bc",
+      "sha256": "c641185a2018293582cf72d43289d9bf75b8788c2adb65619bbd55d589500a92",
       "pages": 4,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 1,
+      "raster_dpi_range": [
+        199.9999952241663,
+        200.00000215519623
+      ],
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            396.0
+          ],
+          "text_spans": 66,
+          "raster_layers": 1
+        },
+        {
+          "page": 2,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            266.3999938964844
+          ],
+          "text_spans": 59,
+          "raster_layers": 0
+        },
+        {
+          "page": 3,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            216.0
+          ],
+          "text_spans": 14,
+          "raster_layers": 0
+        },
+        {
+          "page": 4,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            216.0
+          ],
+          "text_spans": 15,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "block_updates.pdf": {
-      "sha256": "6c57c8bde11ebec5459d025f2cb61121ba8c226fe8ada4af8d031a8d6fbe317a",
+      "sha256": "85a6b5c611d7ffc1fa49dc5c2d1c0d328899fb6e21626ae0840560eaf7e484de",
       "pages": 1,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            201.60000610351562
+          ],
+          "text_spans": 74,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "additional_comparisons.pdf": {
-      "sha256": "53ecd7020afae8d8ca39a8c0abeadaa905e3f837051803961609e14c8b5afc68",
+      "sha256": "623228617d794330ff031502e62f8ef4386e303c2d2331b68f4f2026a64fb990",
       "pages": 4,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 8,
+      "raster_dpi_range": [
+        199.99999335129039,
+        200.00000282963177
+      ],
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            316.79998779296875
+          ],
+          "text_spans": 29,
+          "raster_layers": 2
+        },
+        {
+          "page": 2,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            316.79998779296875
+          ],
+          "text_spans": 29,
+          "raster_layers": 2
+        },
+        {
+          "page": 3,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            316.79998779296875
+          ],
+          "text_spans": 46,
+          "raster_layers": 2
+        },
+        {
+          "page": 4,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            316.79998779296875
+          ],
+          "text_spans": 46,
+          "raster_layers": 2
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "variance_estimation.pdf": {
-      "sha256": "91618d413a4b04245d707c83f9c28886848c9d6b8b67cd1b58dd3d14640ab0ec",
+      "sha256": "28c272022a4575cf1e8637bf21847bb966f66600d077ce2e6b02bc07d27bd687",
       "pages": 1,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            201.60000610351562
+          ],
+          "text_spans": 90,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "predictive_calibration.pdf": {
-      "sha256": "f1430f7ed6357b371432bdaaa9e1af4fbab8e9d932a902bb5aa7b597d1947da5",
+      "sha256": "dd5e1580d7d822550fa1a87d268372fc8b012a0361a1603ee8786e515bb23466",
       "pages": 9,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            237.60000610351562
+          ],
+          "text_spans": 96,
+          "raster_layers": 0
+        },
+        {
+          "page": 2,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            237.60000610351562
+          ],
+          "text_spans": 96,
+          "raster_layers": 0
+        },
+        {
+          "page": 3,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            237.60000610351562
+          ],
+          "text_spans": 96,
+          "raster_layers": 0
+        },
+        {
+          "page": 4,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            237.60000610351562
+          ],
+          "text_spans": 96,
+          "raster_layers": 0
+        },
+        {
+          "page": 5,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            237.60000610351562
+          ],
+          "text_spans": 96,
+          "raster_layers": 0
+        },
+        {
+          "page": 6,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            237.60000610351562
+          ],
+          "text_spans": 96,
+          "raster_layers": 0
+        },
+        {
+          "page": 7,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            489.6000061035156
+          ],
+          "text_spans": 98,
+          "raster_layers": 0
+        },
+        {
+          "page": 8,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            489.6000061035156
+          ],
+          "text_spans": 86,
+          "raster_layers": 0
+        },
+        {
+          "page": 9,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            489.6000061035156
+          ],
+          "text_spans": 113,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "predictive_scores.pdf": {
-      "sha256": "5a54d989c04a757d8a3d233f67184e2fb980031e4c2d578daa8042ccf872b6d7",
+      "sha256": "d054a6d7a9f934bd1ae9ef5b76a53532e5b0b5b6e6420cffc42efffc6af19cbe",
       "pages": 1,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            201.60000610351562
+          ],
+          "text_spans": 70,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "model_mismatch.pdf": {
-      "sha256": "623c438d69252799327c907ebe9ac3c154f66fa754b39ebb80bbf260c72397d8",
+      "sha256": "aac519f787e2eb0b8ecf5f2a7fc428f85c24167f059ba12a8c52326e18e3c6e2",
       "pages": 1,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            216.0
+          ],
+          "text_spans": 33,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "computation_time.pdf": {
-      "sha256": "de3bf2776f3d3a86764960b184894f6f6998c699678da97219cce2d3b9029a56",
+      "sha256": "e94d7be29a3d03c1c1aad99447e9e06b1269621f3d7f8bb1e11cee8e6d4cb059",
       "pages": 1,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            453.6000061035156
+          ],
+          "text_spans": 64,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "numerical_accuracy.pdf": {
-      "sha256": "ef04ce1d76305623095576135962c8490c5d08d04b160b3e3afb64af7ad62631",
+      "sha256": "16e869c0ab46aa7ea73a9f5e7ca39dda20240168836e24d4dc9ee9bdb3b0211c",
       "pages": 3,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            201.60000610351562
+          ],
+          "text_spans": 45,
+          "raster_layers": 0
+        },
+        {
+          "page": 2,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            201.60000610351562
+          ],
+          "text_spans": 37,
+          "raster_layers": 0
+        },
+        {
+          "page": 3,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            252.0
+          ],
+          "text_spans": 17,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "paper_summary.pdf": {
-      "sha256": "7c24e295bf49d4487186d482c3e20cee1eda6481b1d490d80c2f54dff3d2dbd9",
+      "sha256": "62abd92390cc60b4b5c344bd6e917ed969d479f9148fd5a23eb6ea49a62156b6",
       "pages": 1,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 3,
+      "raster_dpi_range": [
+        199.99999689862017,
+        200.0000061372708
+      ],
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            388.79998779296875
+          ],
+          "text_spans": 105,
+          "raster_layers": 3
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "supp_information_tracking.pdf": {
-      "sha256": "db2bca318b58b041d0d25730c5c09c909cbf9ae1da28f1537d23f955a692d621",
+      "sha256": "0327a0b36b00ee1903837f6aa7fe7ed039d54dee59b41ac99000d01948ba83e3",
       "pages": 6,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 1,
+      "raster_dpi_range": [
+        199.9999952241663,
+        200.00000215519623
+      ],
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            194.39999389648438
+          ],
+          "text_spans": 30,
+          "raster_layers": 0
+        },
+        {
+          "page": 2,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            381.6000061035156
+          ],
+          "text_spans": 87,
+          "raster_layers": 0
+        },
+        {
+          "page": 3,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            396.0
+          ],
+          "text_spans": 66,
+          "raster_layers": 1
+        },
+        {
+          "page": 4,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            266.3999938964844
+          ],
+          "text_spans": 59,
+          "raster_layers": 0
+        },
+        {
+          "page": 5,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            216.0
+          ],
+          "text_spans": 14,
+          "raster_layers": 0
+        },
+        {
+          "page": 6,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            216.0
+          ],
+          "text_spans": 15,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "supp_comparisons.pdf": {
-      "sha256": "cdbd7c684a91449d7e3fc497d518da9476095cde9263b6a91660c9af06c70a55",
+      "sha256": "03588f12e8dc7667a9b2450c4e7d0e6d767bdee4636f43421c017cfba52c856f",
       "pages": 8,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 14,
+      "raster_dpi_range": [
+        199.99999205271433,
+        200.00000529819079
+      ],
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            273.6000061035156
+          ],
+          "text_spans": 63,
+          "raster_layers": 0
+        },
+        {
+          "page": 2,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            201.60000610351562
+          ],
+          "text_spans": 74,
+          "raster_layers": 0
+        },
+        {
+          "page": 3,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            316.79998779296875
+          ],
+          "text_spans": 29,
+          "raster_layers": 2
+        },
+        {
+          "page": 4,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            316.79998779296875
+          ],
+          "text_spans": 29,
+          "raster_layers": 2
+        },
+        {
+          "page": 5,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            316.79998779296875
+          ],
+          "text_spans": 46,
+          "raster_layers": 2
+        },
+        {
+          "page": 6,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            316.79998779296875
+          ],
+          "text_spans": 46,
+          "raster_layers": 2
+        },
+        {
+          "page": 7,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            439.20001220703125
+          ],
+          "text_spans": 92,
+          "raster_layers": 3
+        },
+        {
+          "page": 8,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            396.0
+          ],
+          "text_spans": 131,
+          "raster_layers": 3
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     },
     "supp_variance_prediction_cost.pdf": {
-      "sha256": "da1deb362bbda1c8c685f66bd4e05dce0e986a6481bbdf51f3e7ce2af072d7ee",
+      "sha256": "1bd6a182cab5ec76822f34c1a5f10c41b11b87674fb038a37df46f529e0b933a",
       "pages": 20,
       "width_in": 7.0,
-      "pdf_title_empty": true
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 5,
+      "raster_dpi_range": [
+        199.9999927597682,
+        200.0000055135644
+      ],
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            201.60000610351562
+          ],
+          "text_spans": 90,
+          "raster_layers": 0
+        },
+        {
+          "page": 2,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            367.20001220703125
+          ],
+          "text_spans": 53,
+          "raster_layers": 0
+        },
+        {
+          "page": 3,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            367.20001220703125
+          ],
+          "text_spans": 57,
+          "raster_layers": 0
+        },
+        {
+          "page": 4,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            259.20001220703125
+          ],
+          "text_spans": 57,
+          "raster_layers": 3
+        },
+        {
+          "page": 5,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            295.20001220703125
+          ],
+          "text_spans": 70,
+          "raster_layers": 2
+        },
+        {
+          "page": 6,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            237.60000610351562
+          ],
+          "text_spans": 96,
+          "raster_layers": 0
+        },
+        {
+          "page": 7,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            237.60000610351562
+          ],
+          "text_spans": 96,
+          "raster_layers": 0
+        },
+        {
+          "page": 8,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            237.60000610351562
+          ],
+          "text_spans": 96,
+          "raster_layers": 0
+        },
+        {
+          "page": 9,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            237.60000610351562
+          ],
+          "text_spans": 96,
+          "raster_layers": 0
+        },
+        {
+          "page": 10,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            237.60000610351562
+          ],
+          "text_spans": 96,
+          "raster_layers": 0
+        },
+        {
+          "page": 11,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            237.60000610351562
+          ],
+          "text_spans": 96,
+          "raster_layers": 0
+        },
+        {
+          "page": 12,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            489.6000061035156
+          ],
+          "text_spans": 98,
+          "raster_layers": 0
+        },
+        {
+          "page": 13,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            489.6000061035156
+          ],
+          "text_spans": 86,
+          "raster_layers": 0
+        },
+        {
+          "page": 14,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            489.6000061035156
+          ],
+          "text_spans": 113,
+          "raster_layers": 0
+        },
+        {
+          "page": 15,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            201.60000610351562
+          ],
+          "text_spans": 70,
+          "raster_layers": 0
+        },
+        {
+          "page": 16,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            216.0
+          ],
+          "text_spans": 33,
+          "raster_layers": 0
+        },
+        {
+          "page": 17,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            453.6000061035156
+          ],
+          "text_spans": 64,
+          "raster_layers": 0
+        },
+        {
+          "page": 18,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            201.60000610351562
+          ],
+          "text_spans": 45,
+          "raster_layers": 0
+        },
+        {
+          "page": 19,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            201.60000610351562
+          ],
+          "text_spans": 37,
+          "raster_layers": 0
+        },
+        {
+          "page": 20,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            252.0
+          ],
+          "text_spans": 17,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
     }
   },
-  "scope": "Independent actual-PDF MediaBox/title/font/text-bound audit. Fonts include smaller mathematical indices; base-font/title/200dpi checks are separately source-asserted in figure_manifest.json. Manual visual review covers main and representative supplementary pages."
+  "previews": {
+    "preview/setup.png": {
+      "sha256": "2c3dfbd67de2a3a6a82cb25284be33babdbee93e1fdd05c6f804a1bc7f7e4060",
+      "size_px": [
+        1400,
+        600
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/task_performance.png": {
+      "sha256": "3f9e9b1ab6e00f21c7bc9b11e1d3a438f2a128e3776d6dd96d2b3694db2910f7",
+      "size_px": [
+        1400,
+        760
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/posterior_anisotropy.png": {
+      "sha256": "61ecd79d14880dbb94e72d55ceef49502429177ed259ad2202234af983027ac0",
+      "size_px": [
+        1400,
+        1220
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/posterior_anisotropy_page2.png": {
+      "sha256": "9251c7473061a08c94619c5350ccff842934fca8bfeb6d4c8c5d1f6b5299b427",
+      "size_px": [
+        1400,
+        1100
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/noise_adaptation.png": {
+      "sha256": "dc1021db19af540397297090ac91e88e6f69373b1a22a35a50c37728add68524",
+      "size_px": [
+        1400,
+        1019
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/noise_adaptation_page2.png": {
+      "sha256": "0ea3c477eaa05e8b00118d33ddf67944c68e5be670f2bd3497109c4741141803",
+      "size_px": [
+        1400,
+        1019
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/noise_adaptation_page3.png": {
+      "sha256": "2d5b46306b44bd6ceb5d4465cefe5ca71d75c7d26e3812ca7894faf6cb5c900a",
+      "size_px": [
+        1400,
+        720
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/noise_adaptation_page4.png": {
+      "sha256": "6b92f53c1c71fc4582f1335e96d8867128865fafdf07d70e024a165da73a145b",
+      "size_px": [
+        1400,
+        819
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/information.png": {
+      "sha256": "9d23e76b8660fd036530a1706d9c149a952c35280e20228a5af3ad7288369c49",
+      "size_px": [
+        1400,
+        540
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/posterior_curvature.png": {
+      "sha256": "82bd17385015399a9ff8aacea7fe70886eca9c748afe3597371a791b5b047beb",
+      "size_px": [
+        1400,
+        1060
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/tracking_bound.png": {
+      "sha256": "1da012caa19aa5921eca6ef0f4ad94a9b36380ab3c09bb9f028331903ac969d3",
+      "size_px": [
+        1400,
+        1100
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/tracking_bound_page2.png": {
+      "sha256": "1bcfd552c0a43458f9d317fff192dd48d2c4672955ac1652097a87c6c57fe86d",
+      "size_px": [
+        1400,
+        740
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/tracking_bound_page3.png": {
+      "sha256": "9e4d70218318dc1faea7f4a8ca87f8008612fa17d274694dd587ac3042461513",
+      "size_px": [
+        1400,
+        600
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/tracking_bound_page4.png": {
+      "sha256": "f121e96f3e546680430aba700e203be5a69e3d6b9e86a03e565695b453dc1091",
+      "size_px": [
+        1400,
+        600
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/block_updates.png": {
+      "sha256": "fd629242527eadc8ea874ce4774fde03096602e6bc61db1975759f45a99a84d0",
+      "size_px": [
+        1400,
+        560
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/additional_comparisons.png": {
+      "sha256": "ef7e1b3ac5af4e23bf8c4b0c7bd428e52d78ed43a50b481059cc58df79217397",
+      "size_px": [
+        1400,
+        880
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/additional_comparisons_page2.png": {
+      "sha256": "6710720369e3ce7d68c9c435abd785b29d61b16e569ccf42313e29fcf05297c4",
+      "size_px": [
+        1400,
+        880
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/additional_comparisons_page3.png": {
+      "sha256": "ec39cf21080637e572903fc161c5d3f93b589dd10c09a59b9608816046b9d1ff",
+      "size_px": [
+        1400,
+        880
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/additional_comparisons_page4.png": {
+      "sha256": "a438201a528c17f6cbbd76952cb17efbe1dfb7d31bff28a0307fbfc9fbe99bca",
+      "size_px": [
+        1400,
+        880
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/variance_estimation.png": {
+      "sha256": "c07091d62db61433d34d7eb35e6f73c20765672169ae126b65d87f2212646e78",
+      "size_px": [
+        1400,
+        560
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/predictive_calibration.png": {
+      "sha256": "4f5778b7bca28b3736abe16ed4edb62470d2e11aea9eea5e71648b0cbdd23542",
+      "size_px": [
+        1400,
+        660
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/predictive_calibration_page2.png": {
+      "sha256": "97139f4424cb822a3d03182d37580a7f3d72496387a02a45aaa00407b1962e54",
+      "size_px": [
+        1400,
+        660
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/predictive_calibration_page3.png": {
+      "sha256": "303772e75f668943edff4012280c1d0b9cfb040d91c1753eca90422c4c260ed0",
+      "size_px": [
+        1400,
+        660
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/predictive_calibration_page4.png": {
+      "sha256": "efa23eae309ece96e97329076717df544b4610dddcec46c2e991bcc1bca20979",
+      "size_px": [
+        1400,
+        660
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/predictive_calibration_page5.png": {
+      "sha256": "86397731aea3f89b8fe594faf5ca68fa74c39623095a8e7e050da21bca8ae199",
+      "size_px": [
+        1400,
+        660
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/predictive_calibration_page6.png": {
+      "sha256": "dec49ea9d12a775f3f300dfac59014035c6cf706d94062b383469bf829dc6e10",
+      "size_px": [
+        1400,
+        660
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/predictive_calibration_page7.png": {
+      "sha256": "626400d13107fed12f0722234d084a0a5b62cb5b3a92091db150c35bf9924cf3",
+      "size_px": [
+        1400,
+        1360
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/predictive_calibration_page8.png": {
+      "sha256": "1614f98960b074f9b0379e75ed565070e2e3fa62d905073b67c53b225e533dac",
+      "size_px": [
+        1400,
+        1360
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/predictive_calibration_page9.png": {
+      "sha256": "904224a8b03c7b7111fdd882150112efc67271f287339b3aea53376134865134",
+      "size_px": [
+        1400,
+        1360
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/predictive_scores.png": {
+      "sha256": "01301525859511ef95ff815727c343b59f3aee399bfe99b5f782006ac1132ed4",
+      "size_px": [
+        1400,
+        560
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/model_mismatch.png": {
+      "sha256": "ad1dc30e0dcbe81cf1409d5d078d1eb90d697c382559c16defe469a1b9107408",
+      "size_px": [
+        1400,
+        600
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/computation_time.png": {
+      "sha256": "38129dd2910868c8c43908bed863c44cc25997f19849244cb9b35833df3782be",
+      "size_px": [
+        1400,
+        1260
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/numerical_accuracy.png": {
+      "sha256": "8cf9207c9e28a2f083a689afdcc32a560babb6f1fcd296a7b34d0bc61c4fc327",
+      "size_px": [
+        1400,
+        560
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/numerical_accuracy_page2.png": {
+      "sha256": "3d6ca6e5052964de0f384ce4c15b69919b9911cbb3f04fe6774200cb9c3d4c34",
+      "size_px": [
+        1400,
+        560
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/numerical_accuracy_page3.png": {
+      "sha256": "90c09595c99b42e039e83c23fb6004f97f9ea7f0690fdf62a6b430d3b96ed650",
+      "size_px": [
+        1400,
+        700
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    },
+    "preview/paper_summary.png": {
+      "sha256": "362c5af0f2b11a39a5cf12290e8f3df15def99131ee7f65f052a7d3008961c73",
+      "size_px": [
+        1400,
+        1080
+      ],
+      "dpi": [
+        199.9996,
+        199.9996
+      ]
+    }
+  },
+  "errors": [],
+  "tolerances": {
+    "page_points": 0.01,
+    "text_bounds_points": 0.5,
+    "dpi": 0.1
+  },
+  "scope": "Independent actual-PDF MediaBox/CropBox, page-count, metadata-title, embedded Type1 font, traced-text-bound and placed-raster-resolution audit; PNG resolution is checked from file metadata. PDF vector layers have no dpi. LaTeX and absence of in-panel titles are declared by the figure manifest; font size, overlapping labels and graphical clarity still require visual review."
 }

@@ -3,7 +3,7 @@
   "status": "completed",
   "example": "contact",
   "stage": "paper",
-  "created_utc": "2026-11-09T22:33:39.132940+00:00",
+  "created_utc": "2026-11-09T23:49:54.519627+00:00",
   "component_stages": {
     "computation": "paper",
     "performance": "paper",
@@ -11,8 +11,8 @@
     "theory": "paper"
   },
   "sources": {
-    "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-    "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+    "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+    "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
     "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
     "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
     "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -880,8 +880,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -1461,11 +1461,12 @@
             "story": {},
             "contact_condition": "sphere"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "setup.pdf": "427f5c13af53518bab888c983b405ad8136f8a76b430dc980246f2b7e930bb06",
+        "setup.pdf": "4fd2006b8e9ce62215ecb1b4ccaeb33ca99122bc5d4dd122c40cea7480aa9bd3",
         "preview/setup.png": "2c3dfbd67de2a3a6a82cb25284be33babdbee93e1fdd05c6f804a1bc7f7e4060"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
@@ -2265,8 +2266,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -2862,11 +2863,12 @@
               "omitted_references": "Every remaining comparison is retained in additional_comparisons.pdf and paired raw summaries",
               "statistical_unit": "Independent episode; within-episode losses averaged"
             }
-          ]
+          ],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "task_performance.pdf": "fe3a82c30833a41c6f602319eff291e47d7aa7953158dfdb256148ef388855e8",
+        "task_performance.pdf": "123d2ef4d62003f1998d387990e111203afa41be26fd2b570439d67322258232",
         "preview/task_performance.png": "3f9e9b1ab6e00f21c7bc9b11e1d3a438f2a128e3776d6dd96d2b3694db2910f7"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
@@ -2876,7 +2878,7 @@
     "posterior_anisotropy.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; orange antipodal markers are their common mode. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons.",
+      "formula_or_claim": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.posterior_anisotropy",
       "configurations": {
@@ -4075,8 +4077,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -4681,14 +4683,14 @@
           "results/simulation_redesign/paper/geometry/distance_cdf.csv"
         ]
       },
-      "proposed_latex_caption": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; orange antipodal markers are their common mode. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons.",
+      "proposed_latex_caption": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
       "placement": "contact main; beamforming supplementary",
       "pages": [
         {
           "page": 1,
           "figure_size_in": [
             7.0,
-            5.3
+            6.1
           ],
           "axes": 4,
           "titles": false,
@@ -4711,6 +4713,114 @@
             {
               "query_family": 1,
               "normalization": "Squared norm of saved query"
+            }
+          ],
+          "sphere_displays": [
+            {
+              "rotation_native_to_display": [
+                [
+                  0.4649969926793218,
+                  0.8580458739091583,
+                  0.2180254000492941
+                ],
+                [
+                  -0.26984850214379436,
+                  0.37191929768630394,
+                  -0.8881766839426019
+                ],
+                [
+                  -0.843184192623377,
+                  0.35416565936859884,
+                  0.40448374878858656
+                ]
+              ],
+              "native_parameter": [
+                [
+                  -22.165244155780933,
+                  7.0266499648359675,
+                  0.9697839878259369
+                ],
+                [
+                  7.0266499648359675,
+                  9.203720662391287,
+                  1.066517166774871
+                ],
+                [
+                  0.9697839878259369,
+                  1.066517166774871,
+                  12.961523493389647
+                ]
+              ],
+              "native_mode": [
+                0.10189346986134991,
+                0.39132983976628755,
+                0.9145920824652406
+              ],
+              "curvature_gaps": [
+                3.3701310720442006,
+                37.20757011878946
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            },
+            {
+              "rotation_native_to_display": [
+                [
+                  0.4649969926793218,
+                  0.8580458739091583,
+                  0.2180254000492941
+                ],
+                [
+                  -0.26984850214379436,
+                  0.37191929768630394,
+                  -0.8881766839426019
+                ],
+                [
+                  -0.843184192623377,
+                  0.35416565936859884,
+                  0.40448374878858656
+                ]
+              ],
+              "native_parameter": [
+                [
+                  -1.9202972290053821,
+                  0.23709427408759653,
+                  0.5541221850290402
+                ],
+                [
+                  0.23709427408759653,
+                  -1.07145213194877,
+                  2.1281495877353827
+                ],
+                [
+                  0.5541221850290402,
+                  2.1281495877353827,
+                  2.9917493609541523
+                ]
+              ],
+              "native_mode": [
+                0.10189346986134992,
+                0.39132983976628777,
+                0.9145920824652407
+              ],
+              "curvature_gaps": [
+                5.946093701910828,
+                5.946093701910829
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
             }
           ]
         },
@@ -4773,13 +4883,121 @@
             "same_entire_centered_chordal_distance_law": true
           },
           "repetition_unit": "Deterministic continuous integration and identities; no independent episode interpretation",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": [
+            {
+              "rotation_native_to_display": [
+                [
+                  0.5825634160695854,
+                  0.766044443118978,
+                  -0.27165378227418446
+                ],
+                [
+                  -0.6942720440148838,
+                  0.6427876096865394,
+                  0.3237443709670646
+                ],
+                [
+                  0.42261826174069944,
+                  0.0,
+                  0.9063077870366499
+                ]
+              ],
+              "native_parameter": [
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -8.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -80.0
+                ]
+              ],
+              "native_mode": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "curvature_gaps": [
+                8.0,
+                80.0
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            },
+            {
+              "rotation_native_to_display": [
+                [
+                  0.5825634160695854,
+                  0.766044443118978,
+                  -0.27165378227418446
+                ],
+                [
+                  -0.6942720440148838,
+                  0.6427876096865394,
+                  0.3237443709670646
+                ],
+                [
+                  0.42261826174069944,
+                  0.0,
+                  0.9063077870366499
+                ]
+              ],
+              "native_parameter": [
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -80.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -8.0
+                ]
+              ],
+              "native_mode": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "curvature_gaps": [
+                8.0,
+                80.0
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            }
+          ]
         }
       ],
       "output_hashes": {
-        "posterior_anisotropy.pdf": "72dfef1c4655a47f7ea9d8ed65da7bfa9465c16215c1f1043f37481978138551",
-        "preview/posterior_anisotropy.png": "6a7ca4e74c3cae57b1a242af4922ffe826be27b1492a724f4f02aa7598060d76",
-        "preview/posterior_anisotropy_page2.png": "71ef9b798ebbecd37a0fcab48664e2344b0bf61237703b64bbe0da27db240119"
+        "posterior_anisotropy.pdf": "6ea18a30da790913581fbc54837b8df4a5d7c6a68892895311528dfbd0b8e44a",
+        "preview/posterior_anisotropy.png": "61ecd79d14880dbb94e72d55ceef49502429177ed259ad2202234af983027ac0",
+        "preview/posterior_anisotropy_page2.png": "9251c7473061a08c94619c5350ccff842934fca8bfeb6d4c8c5d1f6b5299b427"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -4791,7 +5009,7 @@
     "noise_adaptation.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem.",
+      "formula_or_claim": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.noise_adaptation",
       "configurations": {
@@ -5990,8 +6208,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -6173,7 +6391,7 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "Measured wrist frame at each checkpoint",
+            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
@@ -6189,7 +6407,7 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "Measured wrist frame at each checkpoint",
+            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           }
@@ -6584,7 +6802,7 @@
           "results/simulation_redesign/paper/geometry/distance_cdf.csv"
         ]
       },
-      "proposed_latex_caption": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem.",
+      "proposed_latex_caption": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
       "placement": "beamforming main candidate; contact supplementary",
       "pages": [
         {
@@ -6605,7 +6823,8 @@
             9.0
           ],
           "condition": "noise_change",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 2,
@@ -6625,7 +6844,8 @@
             9.0
           ],
           "condition": "fast_sphere",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 3,
@@ -6658,12 +6878,120 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "Measured wrist frame at each checkpoint",
+            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
           "repetition_unit": "One predeclared test episode; individual posterior densities, no repeated-experiment calibration claim",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": [
+            {
+              "rotation_native_to_display": [
+                [
+                  0.6182344210390287,
+                  0.7736003536741558,
+                  0.1390276714821873
+                ],
+                [
+                  0.2868216948094555,
+                  -0.0573626175660209,
+                  -0.956265049812345
+                ],
+                [
+                  -0.7317919895907371,
+                  0.6310721217905261,
+                  -0.2573489092062278
+                ]
+              ],
+              "native_parameter": [
+                [
+                  -81.19006610949799,
+                  -12.697873575313288,
+                  -42.90896330948159
+                ],
+                [
+                  -12.697873575313288,
+                  65.21425624495241,
+                  119.15387611207173
+                ],
+                [
+                  -42.90896330948159,
+                  119.15387611207173,
+                  15.975809864545571
+                ]
+              ],
+              "native_mode": [
+                -0.14824018666748037,
+                0.7571991296007882,
+                0.6361401773104735
+              ],
+              "curvature_gaps": [
+                226.57864006801856,
+                276.833511869391
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            },
+            {
+              "rotation_native_to_display": [
+                [
+                  0.6182344210390287,
+                  0.7736003536741558,
+                  0.1390276714821873
+                ],
+                [
+                  0.2868216948094555,
+                  -0.0573626175660209,
+                  -0.956265049812345
+                ],
+                [
+                  -0.7317919895907371,
+                  0.6310721217905261,
+                  -0.2573489092062278
+                ]
+              ],
+              "native_parameter": [
+                [
+                  -23.01999193979427,
+                  15.002099801330612,
+                  17.773419070539724
+                ],
+                [
+                  15.002099801330612,
+                  -2.4507735920830034,
+                  46.664436504085884
+                ],
+                [
+                  17.773419070539724,
+                  46.664436504085884,
+                  25.470765531877273
+                ]
+              ],
+              "native_mode": [
+                0.25171848891803156,
+                0.5807671964608228,
+                0.7741752165058366
+              ],
+              "curvature_gaps": [
+                95.08811604726742,
+                103.68048238177697
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            }
+          ]
         },
         {
           "page": 4,
@@ -6695,20 +7023,75 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "Measured wrist frame at each checkpoint",
+            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
           "repetition_unit": "One predeclared test episode; individual posterior densities, no repeated-experiment calibration claim",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": [
+            {
+              "rotation_native_to_display": [
+                [
+                  0.6182344210390287,
+                  0.7736003536741558,
+                  0.1390276714821873
+                ],
+                [
+                  0.2868216948094555,
+                  -0.0573626175660209,
+                  -0.956265049812345
+                ],
+                [
+                  -0.7317919895907371,
+                  0.6310721217905261,
+                  -0.2573489092062278
+                ]
+              ],
+              "native_parameter": [
+                [
+                  -1.1762633265569815,
+                  3.476465835385847,
+                  3.0949790680813334
+                ],
+                [
+                  3.476465835385847,
+                  -2.571553350966951,
+                  7.451876198070963
+                ],
+                [
+                  3.0949790680813334,
+                  7.451876198070963,
+                  3.747816677523932
+                ]
+              ],
+              "native_mode": [
+                0.3633260698052187,
+                0.5342869117591111,
+                0.7632376189122263
+              ],
+              "curvature_gaps": [
+                13.10534707973713,
+                18.207579515943475
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            }
+          ]
         }
       ],
       "output_hashes": {
-        "noise_adaptation.pdf": "4fc7fe0e67e02f6eea1bbe31aacbc144243ccda6a03f419dcee6f7bb1d7d7750",
+        "noise_adaptation.pdf": "95c27362a8133f89e4138c3a937fedb0de35f9847c0a4d426f8c0827abf8f0ae",
         "preview/noise_adaptation.png": "dc1021db19af540397297090ac91e88e6f69373b1a22a35a50c37728add68524",
         "preview/noise_adaptation_page2.png": "0ea3c477eaa05e8b00118d33ddf67944c68e5be670f2bd3497109c4741141803",
-        "preview/noise_adaptation_page3.png": "3cd1f75839a20da51e22e52dee72a267614b859917fec2e8fa64d89d54d13ad4",
-        "preview/noise_adaptation_page4.png": "965ce21d5fbca467b8e3eef1f81b08e6764b280e8d725a32823bd5dbc18830d2"
+        "preview/noise_adaptation_page3.png": "2d5b46306b44bd6ceb5d4465cefe5ca71d75c7d26e3812ca7894faf6cb5c900a",
+        "preview/noise_adaptation_page4.png": "6b92f53c1c71fc4582f1335e96d8867128865fafdf07d70e024a165da73a145b"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -8031,8 +8414,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -8615,11 +8998,12 @@
           "font_sizes_pt": [
             9.0
           ],
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "information.pdf": "d3b2a1b2f5d28f16cf3e3744a4f633e4055d92699d202cd76cf380e1cebb84c0",
+        "information.pdf": "8f361d03339138c32ce866f2676173a394e3ebc305ddbca2c26e86231eb1048c",
         "preview/information.png": "9d23e76b8660fd036530a1706d9c149a952c35280e20228a5af3ad7288369c49"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
@@ -9940,8 +10324,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -10524,11 +10908,12 @@
           "font_sizes_pt": [
             9.0
           ],
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "posterior_curvature.pdf": "0f3b78c0e39e173a263182d4ca788af4afd05b12ee41693f6ce4c3740e187738",
+        "posterior_curvature.pdf": "ccaed92ac1362d79a0edb1719dd1c5a0ebd7bfb43a02970f9b4500efacdce6b0",
         "preview/posterior_curvature.png": "82bd17385015399a9ff8aacea7fe70886eca9c748afe3597371a791b5b047beb"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
@@ -11849,8 +12234,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -12528,7 +12913,8 @@
             "nonuniform_prior": false,
             "zero_signal": false
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 2,
@@ -12615,7 +13001,8 @@
             ],
             "quantity": "epsilon = initialization + drift + noise; gamma/2 shown separately"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 3,
@@ -12641,7 +13028,8 @@
             "zero_signal": false,
             "design": "balanced"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 4,
@@ -12667,11 +13055,12 @@
             "zero_signal": false,
             "design": "concentrated"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "tracking_bound.pdf": "b4a3ca74823e6fddeef0949d5ba0933b8cfc5e71513c26fc9a638f5f092ed4bc",
+        "tracking_bound.pdf": "c641185a2018293582cf72d43289d9bf75b8788c2adb65619bbd55d589500a92",
         "preview/tracking_bound.png": "1da012caa19aa5921eca6ef0f4ad94a9b36380ab3c09bb9f028331903ac969d3",
         "preview/tracking_bound_page2.png": "1bcfd552c0a43458f9d317fff192dd48d2c4672955ac1652097a87c6c57fe86d",
         "preview/tracking_bound_page3.png": "9e4d70218318dc1faea7f4a8ca87f8008612fa17d274694dd587ac3042461513",
@@ -13995,8 +14384,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -14579,11 +14968,12 @@
           "font_sizes_pt": [
             9.0
           ],
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "block_updates.pdf": "6c57c8bde11ebec5459d025f2cb61121ba8c226fe8ada4af8d031a8d6fbe317a",
+        "block_updates.pdf": "85a6b5c611d7ffc1fa49dc5c2d1c0d328899fb6e21626ae0840560eaf7e484de",
         "preview/block_updates.png": "fd629242527eadc8ea874ce4774fde03096602e6bc61db1975759f45a99a84d0"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
@@ -15904,8 +16294,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -16580,7 +16970,8 @@
             ],
             "paired_interval": "Pointwise Student95% interval of independent-episode differences; not simultaneous"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 2,
@@ -16616,7 +17007,8 @@
             ],
             "paired_interval": "Pointwise Student95% interval of independent-episode differences; not simultaneous"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 3,
@@ -16656,7 +17048,8 @@
             ],
             "paired_interval": "Pointwise Student95% interval of independent-episode differences; not simultaneous"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 4,
@@ -16696,11 +17089,12 @@
             ],
             "paired_interval": "Pointwise Student95% interval of independent-episode differences; not simultaneous"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "additional_comparisons.pdf": "53ecd7020afae8d8ca39a8c0abeadaa905e3f837051803961609e14c8b5afc68",
+        "additional_comparisons.pdf": "623228617d794330ff031502e62f8ef4386e303c2d2331b68f4f2026a64fb990",
         "preview/additional_comparisons.png": "ef7e1b3ac5af4e23bf8c4b0c7bd428e52d78ed43a50b481059cc58df79217397",
         "preview/additional_comparisons_page2.png": "6710720369e3ce7d68c9c435abd785b29d61b16e569ccf42313e29fcf05297c4",
         "preview/additional_comparisons_page3.png": "ec39cf21080637e572903fc161c5d3f93b589dd10c09a59b9608816046b9d1ff",
@@ -18183,8 +18577,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -18775,11 +19169,12 @@
           "font_sizes_pt": [
             9.0
           ],
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "variance_estimation.pdf": "91618d413a4b04245d707c83f9c28886848c9d6b8b67cd1b58dd3d14640ab0ec",
+        "variance_estimation.pdf": "28c272022a4575cf1e8637bf21847bb966f66600d077ce2e6b02bc07d27bd687",
         "preview/variance_estimation.png": "c07091d62db61433d34d7eb35e6f73c20765672169ae126b65d87f2212646e78"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
@@ -20259,8 +20654,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -20958,7 +21353,8 @@
             "t": 32,
             "diagnostic": "inclusion"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 2,
@@ -20983,7 +21379,8 @@
             "t": 64,
             "diagnostic": "inclusion"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 3,
@@ -21008,7 +21405,8 @@
             "t": 32,
             "diagnostic": "inclusion"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 4,
@@ -21033,7 +21431,8 @@
             "t": 64,
             "diagnostic": "inclusion"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 5,
@@ -21058,7 +21457,8 @@
             "t": 32,
             "diagnostic": "inclusion"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 6,
@@ -21083,7 +21483,8 @@
             "t": 64,
             "diagnostic": "inclusion"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 7,
@@ -21128,7 +21529,8 @@
             "distribution": "Median, interquartile box, 1.5-IQR whiskers and every episode outlier; not a confidence interval or posterior distribution over width"
           },
           "repetition_unit": "Independent test episode; each value is one recorded 95% report size at t=64",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 8,
@@ -21173,7 +21575,8 @@
             "distribution": "Median, interquartile box, 1.5-IQR whiskers and every episode outlier; not a confidence interval or posterior distribution over width"
           },
           "repetition_unit": "Independent test episode; each value is one recorded 95% report size at t=64",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 9,
@@ -21218,11 +21621,12 @@
             "distribution": "Median, interquartile box, 1.5-IQR whiskers and every episode outlier; not a confidence interval or posterior distribution over width"
           },
           "repetition_unit": "Independent test episode; each value is one recorded 95% report size at t=64",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "predictive_calibration.pdf": "f1430f7ed6357b371432bdaaa9e1af4fbab8e9d932a902bb5aa7b597d1947da5",
+        "predictive_calibration.pdf": "dd5e1580d7d822550fa1a87d268372fc8b012a0361a1603ee8786e515bb23466",
         "preview/predictive_calibration.png": "4f5778b7bca28b3736abe16ed4edb62470d2e11aea9eea5e71648b0cbdd23542",
         "preview/predictive_calibration_page2.png": "97139f4424cb822a3d03182d37580a7f3d72496387a02a45aaa00407b1962e54",
         "preview/predictive_calibration_page3.png": "303772e75f668943edff4012280c1d0b9cfb040d91c1753eca90422c4c260ed0",
@@ -22710,8 +23114,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -23313,11 +23717,12 @@
             "method": "learned",
             "averaging": "Reporting times averaged within episode and regime; regimes remain distinct points"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "predictive_scores.pdf": "5a54d989c04a757d8a3d233f67184e2fb980031e4c2d578daa8042ccf872b6d7",
+        "predictive_scores.pdf": "d054a6d7a9f934bd1ae9ef5b76a53532e5b0b5b6e6420cffc42efffc6af19cbe",
         "preview/predictive_scores.png": "01301525859511ef95ff815727c343b59f3aee399bfe99b5f782006ac1132ed4"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
@@ -24797,8 +25202,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -25418,11 +25823,12 @@
             ],
             "endpoint": "response_loss_mean"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "model_mismatch.pdf": "623c438d69252799327c907ebe9ac3c154f66fa754b39ebb80bbf260c72397d8",
+        "model_mismatch.pdf": "aac519f787e2eb0b8ecf5f2a7fc428f85c24167f059ba12a8c52326e18e3c6e2",
         "preview/model_mismatch.png": "ad1dc30e0dcbe81cf1409d5d078d1eb90d697c382559c16defe469a1b9107408"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
@@ -26902,8 +27308,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -27500,11 +27906,12 @@
               "method": "mean",
               "case": "data_T64"
             }
-          ]
+          ],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "computation_time.pdf": "de3bf2776f3d3a86764960b184894f6f6998c699678da97219cce2d3b9029a56",
+        "computation_time.pdf": "e94d7be29a3d03c1c1aad99447e9e06b1269621f3d7f8bb1e11cee8e6d4cb059",
         "preview/computation_time.png": "38129dd2910868c8c43908bed863c44cc25997f19849244cb9b35833df3782be"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
@@ -28984,8 +29391,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -29580,7 +29987,8 @@
           "font_sizes_pt": [
             9.0
           ],
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 2,
@@ -29599,7 +30007,8 @@
           "font_sizes_pt": [
             9.0
           ],
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 3,
@@ -29621,11 +30030,12 @@
           "selection": {
             "scope": "Large-dimension numerical rows, separate mean/normalizer/reference/second-moment/tail/state flags; unevaluated targets never counted as resolved"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "numerical_accuracy.pdf": "ef04ce1d76305623095576135962c8490c5d08d04b160b3e3afb64af7ad62631",
+        "numerical_accuracy.pdf": "16e869c0ab46aa7ea73a9f5e7ca39dda20240168836e24d4dc9ee9bdb3b0211c",
         "preview/numerical_accuracy.png": "8cf9207c9e28a2f083a689afdcc32a560babb6f1fcd296a7b34d0bc61c4fc327",
         "preview/numerical_accuracy_page2.png": "3d6ca6e5052964de0f384ce4c15b69919b9911cbb3f04fe6774200cb9c3d4c34",
         "preview/numerical_accuracy_page3.png": "90c09595c99b42e039e83c23fb6004f97f9ea7f0690fdf62a6b430d3b96ed650"
@@ -29637,7 +30047,7 @@
     "paper_summary.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and matched-cadence computational cost. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries.",
+      "formula_or_claim": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and matched-cadence computational cost. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.paper_summary",
       "configurations": {
@@ -31107,8 +31517,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -31679,7 +32089,7 @@
           "results/implementation_audit/paper/em/residuals.csv"
         ]
       },
-      "proposed_latex_caption": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and matched-cadence computational cost. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries.",
+      "proposed_latex_caption": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and matched-cadence computational cost. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
       "placement": "main",
       "pages": [
         {
@@ -31720,12 +32130,120 @@
               "omitted_references": "Every remaining comparison is retained in additional_comparisons.pdf and paired raw summaries",
               "statistical_unit": "Independent episode; within-episode losses averaged"
             }
+          ],
+          "sphere_displays": [
+            {
+              "rotation_native_to_display": [
+                [
+                  0.4649969926793218,
+                  0.8580458739091583,
+                  0.2180254000492941
+                ],
+                [
+                  -0.26984850214379436,
+                  0.37191929768630394,
+                  -0.8881766839426019
+                ],
+                [
+                  -0.843184192623377,
+                  0.35416565936859884,
+                  0.40448374878858656
+                ]
+              ],
+              "native_parameter": [
+                [
+                  -22.165244155780933,
+                  7.0266499648359675,
+                  0.9697839878259369
+                ],
+                [
+                  7.0266499648359675,
+                  9.203720662391287,
+                  1.066517166774871
+                ],
+                [
+                  0.9697839878259369,
+                  1.066517166774871,
+                  12.961523493389647
+                ]
+              ],
+              "native_mode": [
+                0.10189346986134991,
+                0.39132983976628755,
+                0.9145920824652406
+              ],
+              "curvature_gaps": [
+                3.3701310720442006,
+                37.20757011878946
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            },
+            {
+              "rotation_native_to_display": [
+                [
+                  0.4649969926793218,
+                  0.8580458739091583,
+                  0.2180254000492941
+                ],
+                [
+                  -0.26984850214379436,
+                  0.37191929768630394,
+                  -0.8881766839426019
+                ],
+                [
+                  -0.843184192623377,
+                  0.35416565936859884,
+                  0.40448374878858656
+                ]
+              ],
+              "native_parameter": [
+                [
+                  -1.9202972290053821,
+                  0.23709427408759653,
+                  0.5541221850290402
+                ],
+                [
+                  0.23709427408759653,
+                  -1.07145213194877,
+                  2.1281495877353827
+                ],
+                [
+                  0.5541221850290402,
+                  2.1281495877353827,
+                  2.9917493609541523
+                ]
+              ],
+              "native_mode": [
+                0.10189346986134992,
+                0.39132983976628777,
+                0.9145920824652407
+              ],
+              "curvature_gaps": [
+                5.946093701910828,
+                5.946093701910829
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            }
           ]
         }
       ],
       "output_hashes": {
-        "paper_summary.pdf": "7c24e295bf49d4487186d482c3e20cee1eda6481b1d490d80c2f54dff3d2dbd9",
-        "preview/paper_summary.png": "e374f4f379ae0afb2d529a594afb37325063086c62e6da3dd01c1a5785e5a623"
+        "paper_summary.pdf": "62abd92390cc60b4b5c344bd6e917ed969d479f9148fd5a23eb6ea49a62156b6",
+        "preview/paper_summary.png": "362c5af0f2b11a39a5cf12290e8f3df15def99131ee7f65f052a7d3008961c73"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -31764,7 +32282,8 @@
           "font_sizes_pt": [
             9.0
           ],
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 2,
@@ -31783,7 +32302,8 @@
           "font_sizes_pt": [
             9.0
           ],
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 3,
@@ -31809,7 +32329,8 @@
             "nonuniform_prior": false,
             "zero_signal": false
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 4,
@@ -31896,7 +32417,8 @@
             ],
             "quantity": "epsilon = initialization + drift + noise; gamma/2 shown separately"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 5,
@@ -31922,7 +32444,8 @@
             "zero_signal": false,
             "design": "balanced"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 6,
@@ -31948,7 +32471,8 @@
             "zero_signal": false,
             "design": "concentrated"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "configurations": {
@@ -33909,8 +34433,8 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -34080,7 +34604,7 @@
         "results/contact/tables/paper/theory/numerical_accuracy.csv": "70149bed8eff2c2a0b6d251a86ac289a582cd4c2e5e60724b9851b3ed25f3f4a"
       },
       "output_hashes": {
-        "supp_information_tracking.pdf": "db2bca318b58b041d0d25730c5c09c909cbf9ae1da28f1537d23f955a692d621"
+        "supp_information_tracking.pdf": "0327a0b36b00ee1903837f6aa7fe7ed039d54dee59b41ac99000d01948ba83e3"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     },
@@ -34095,7 +34619,7 @@
         "additional_comparisons.pdf",
         "posterior_anisotropy.pdf"
       ],
-      "proposed_latex_caption": "Task losses on common independent test episodes. Held-out disturbance or query losses are averaged within each episode before computing pointwise Student 95\\% intervals. Only the posterior-mean curve carries a confidence band in the main absolute-loss panels. The contact paired panel isolates the same-data modal, matched-isotropic and regularized spectral controls; response-only GREAT remains in its absolute-loss panel and the full supplementary grid. Contact paired points show mean loss differences and pointwise Student 95\\% confidence intervals across independent episodes, including every episode outlier; they are not posterior intervals. Beamforming paired boxes show the distribution of episode differences, not confidence intervals. The same-$A_t$ modal and matched-isotropic controls isolate posterior moments; GREAT and application-specific controls have separately validated settings and their stated information. Beamforming power ratios are $10\\log_{10}(P/P_{\\mathrm{oracle}})$, where the denominator is true-covariance oracle output power. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode. Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing/action cadence cost is reported in the computation output. Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms. actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; orange antipodal markers are their common mode. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons.",
+      "proposed_latex_caption": "Task losses on common independent test episodes. Held-out disturbance or query losses are averaged within each episode before computing pointwise Student 95\\% intervals. Only the posterior-mean curve carries a confidence band in the main absolute-loss panels. The contact paired panel isolates the same-data modal, matched-isotropic and regularized spectral controls; response-only GREAT remains in its absolute-loss panel and the full supplementary grid. Contact paired points show mean loss differences and pointwise Student 95\\% confidence intervals across independent episodes, including every episode outlier; they are not posterior intervals. Beamforming paired boxes show the distribution of episode differences, not confidence intervals. The same-$A_t$ modal and matched-isotropic controls isolate posterior moments; GREAT and application-specific controls have separately validated settings and their stated information. Beamforming power ratios are $10\\log_{10}(P/P_{\\mathrm{oracle}})$, where the denominator is true-covariance oracle output power. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode. Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing/action cadence cost is reported in the computation output. Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms. actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
       "placement": "supplementary",
       "pages": [
         {
@@ -34140,7 +34664,8 @@
               "omitted_references": "Every remaining comparison is retained in additional_comparisons.pdf and paired raw summaries",
               "statistical_unit": "Independent episode; within-episode losses averaged"
             }
-          ]
+          ],
+          "sphere_displays": []
         },
         {
           "page": 2,
@@ -34159,7 +34684,8 @@
           "font_sizes_pt": [
             9.0
           ],
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 3,
@@ -34195,7 +34721,8 @@
             ],
             "paired_interval": "Pointwise Student95% interval of independent-episode differences; not simultaneous"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 4,
@@ -34231,7 +34758,8 @@
             ],
             "paired_interval": "Pointwise Student95% interval of independent-episode differences; not simultaneous"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 5,
@@ -34271,7 +34799,8 @@
             ],
             "paired_interval": "Pointwise Student95% interval of independent-episode differences; not simultaneous"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 6,
@@ -34311,13 +34840,14 @@
             ],
             "paired_interval": "Pointwise Student95% interval of independent-episode differences; not simultaneous"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 7,
           "figure_size_in": [
             7.0,
-            5.3
+            6.1
           ],
           "axes": 4,
           "titles": false,
@@ -34340,6 +34870,114 @@
             {
               "query_family": 1,
               "normalization": "Squared norm of saved query"
+            }
+          ],
+          "sphere_displays": [
+            {
+              "rotation_native_to_display": [
+                [
+                  0.4649969926793218,
+                  0.8580458739091583,
+                  0.2180254000492941
+                ],
+                [
+                  -0.26984850214379436,
+                  0.37191929768630394,
+                  -0.8881766839426019
+                ],
+                [
+                  -0.843184192623377,
+                  0.35416565936859884,
+                  0.40448374878858656
+                ]
+              ],
+              "native_parameter": [
+                [
+                  -22.165244155780933,
+                  7.0266499648359675,
+                  0.9697839878259369
+                ],
+                [
+                  7.0266499648359675,
+                  9.203720662391287,
+                  1.066517166774871
+                ],
+                [
+                  0.9697839878259369,
+                  1.066517166774871,
+                  12.961523493389647
+                ]
+              ],
+              "native_mode": [
+                0.10189346986134991,
+                0.39132983976628755,
+                0.9145920824652406
+              ],
+              "curvature_gaps": [
+                3.3701310720442006,
+                37.20757011878946
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            },
+            {
+              "rotation_native_to_display": [
+                [
+                  0.4649969926793218,
+                  0.8580458739091583,
+                  0.2180254000492941
+                ],
+                [
+                  -0.26984850214379436,
+                  0.37191929768630394,
+                  -0.8881766839426019
+                ],
+                [
+                  -0.843184192623377,
+                  0.35416565936859884,
+                  0.40448374878858656
+                ]
+              ],
+              "native_parameter": [
+                [
+                  -1.9202972290053821,
+                  0.23709427408759653,
+                  0.5541221850290402
+                ],
+                [
+                  0.23709427408759653,
+                  -1.07145213194877,
+                  2.1281495877353827
+                ],
+                [
+                  0.5541221850290402,
+                  2.1281495877353827,
+                  2.9917493609541523
+                ]
+              ],
+              "native_mode": [
+                0.10189346986134992,
+                0.39132983976628777,
+                0.9145920824652407
+              ],
+              "curvature_gaps": [
+                5.946093701910828,
+                5.946093701910829
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
             }
           ]
         },
@@ -34402,7 +35040,115 @@
             "same_entire_centered_chordal_distance_law": true
           },
           "repetition_unit": "Deterministic continuous integration and identities; no independent episode interpretation",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": [
+            {
+              "rotation_native_to_display": [
+                [
+                  0.5825634160695854,
+                  0.766044443118978,
+                  -0.27165378227418446
+                ],
+                [
+                  -0.6942720440148838,
+                  0.6427876096865394,
+                  0.3237443709670646
+                ],
+                [
+                  0.42261826174069944,
+                  0.0,
+                  0.9063077870366499
+                ]
+              ],
+              "native_parameter": [
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -8.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -80.0
+                ]
+              ],
+              "native_mode": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "curvature_gaps": [
+                8.0,
+                80.0
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            },
+            {
+              "rotation_native_to_display": [
+                [
+                  0.5825634160695854,
+                  0.766044443118978,
+                  -0.27165378227418446
+                ],
+                [
+                  -0.6942720440148838,
+                  0.6427876096865394,
+                  0.3237443709670646
+                ],
+                [
+                  0.42261826174069944,
+                  0.0,
+                  0.9063077870366499
+                ]
+              ],
+              "native_parameter": [
+                [
+                  0.0,
+                  0.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  -80.0,
+                  0.0
+                ],
+                [
+                  0.0,
+                  0.0,
+                  -8.0
+                ]
+              ],
+              "native_mode": [
+                1.0,
+                0.0,
+                0.0
+              ],
+              "curvature_gaps": [
+                8.0,
+                80.0
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            }
+          ]
         }
       ],
       "configurations": {
@@ -36397,8 +37143,8 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -36568,7 +37314,7 @@
         "results/contact/tables/paper/theory/numerical_accuracy.csv": "70149bed8eff2c2a0b6d251a86ac289a582cd4c2e5e60724b9851b3ed25f3f4a"
       },
       "output_hashes": {
-        "supp_comparisons.pdf": "cdbd7c684a91449d7e3fc497d518da9476095cde9263b6a91660c9af06c70a55"
+        "supp_comparisons.pdf": "03588f12e8dc7667a9b2450c4e7d0e6d767bdee4636f43421c017cfba52c856f"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     },
@@ -36586,7 +37332,7 @@
         "computation_time.pdf",
         "numerical_accuracy.pdf"
       ],
-      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes. Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime. Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee. Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood. Warmed single-thread pipeline cost at actual action, reporting and learning schedules. Action cadence is labelled in observations and is distinct from the fixed $L=32$ observations per EM fit. EM bars use two or four iterations, and optional uncertainty reports occur every 32 observations. Correction, modal/mean action, uncertainty report and variance fitting are nonoverlapping phases; a native moment routine already includes its eigensystem. Medians and upper quantiles use the declared randomized repetitions. Phase stacks sum per-phase medians and need not equal the median full-cycle wall time. Stored state and tracked allocation have separate scopes; native workspaces and RSS are not silently included. Timings are host measurements, not worst-case deadlines. Synthetic spectra and statistical-state task fixtures remain distinct. Task/cost trade-off points use the same predeclared episode 0, not the population task-loss mean; clock repetitions quantify execution variability only. Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration.",
+      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes. Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened. Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime. Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee. Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood. Warmed single-thread pipeline cost at actual action, reporting and learning schedules. Action cadence is labelled in observations and is distinct from the fixed $L=32$ observations per EM fit. EM bars use two or four iterations, and optional uncertainty reports occur every 32 observations. Correction, modal/mean action, uncertainty report and variance fitting are nonoverlapping phases; a native moment routine already includes its eigensystem. Medians and upper quantiles use the declared randomized repetitions. Phase stacks sum per-phase medians and need not equal the median full-cycle wall time. Stored state and tracked allocation have separate scopes; native workspaces and RSS are not silently included. Timings are host measurements, not worst-case deadlines. Synthetic spectra and statistical-state task fixtures remain distinct. Task/cost trade-off points use the same predeclared episode 0, not the population task-loss mean; clock repetitions quantify execution variability only. Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration.",
       "placement": "supplementary",
       "pages": [
         {
@@ -36606,7 +37352,8 @@
           "font_sizes_pt": [
             9.0
           ],
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 2,
@@ -36626,7 +37373,8 @@
             9.0
           ],
           "condition": "noise_change",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 3,
@@ -36646,7 +37394,8 @@
             9.0
           ],
           "condition": "fast_sphere",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 4,
@@ -36679,12 +37428,120 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "Measured wrist frame at each checkpoint",
+            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
           "repetition_unit": "One predeclared test episode; individual posterior densities, no repeated-experiment calibration claim",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": [
+            {
+              "rotation_native_to_display": [
+                [
+                  0.6182344210390287,
+                  0.7736003536741558,
+                  0.1390276714821873
+                ],
+                [
+                  0.2868216948094555,
+                  -0.0573626175660209,
+                  -0.956265049812345
+                ],
+                [
+                  -0.7317919895907371,
+                  0.6310721217905261,
+                  -0.2573489092062278
+                ]
+              ],
+              "native_parameter": [
+                [
+                  -81.19006610949799,
+                  -12.697873575313288,
+                  -42.90896330948159
+                ],
+                [
+                  -12.697873575313288,
+                  65.21425624495241,
+                  119.15387611207173
+                ],
+                [
+                  -42.90896330948159,
+                  119.15387611207173,
+                  15.975809864545571
+                ]
+              ],
+              "native_mode": [
+                -0.14824018666748037,
+                0.7571991296007882,
+                0.6361401773104735
+              ],
+              "curvature_gaps": [
+                226.57864006801856,
+                276.833511869391
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            },
+            {
+              "rotation_native_to_display": [
+                [
+                  0.6182344210390287,
+                  0.7736003536741558,
+                  0.1390276714821873
+                ],
+                [
+                  0.2868216948094555,
+                  -0.0573626175660209,
+                  -0.956265049812345
+                ],
+                [
+                  -0.7317919895907371,
+                  0.6310721217905261,
+                  -0.2573489092062278
+                ]
+              ],
+              "native_parameter": [
+                [
+                  -23.01999193979427,
+                  15.002099801330612,
+                  17.773419070539724
+                ],
+                [
+                  15.002099801330612,
+                  -2.4507735920830034,
+                  46.664436504085884
+                ],
+                [
+                  17.773419070539724,
+                  46.664436504085884,
+                  25.470765531877273
+                ]
+              ],
+              "native_mode": [
+                0.25171848891803156,
+                0.5807671964608228,
+                0.7741752165058366
+              ],
+              "curvature_gaps": [
+                95.08811604726742,
+                103.68048238177697
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            }
+          ]
         },
         {
           "page": 5,
@@ -36716,12 +37573,67 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "Measured wrist frame at each checkpoint",
+            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
           "repetition_unit": "One predeclared test episode; individual posterior densities, no repeated-experiment calibration claim",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": [
+            {
+              "rotation_native_to_display": [
+                [
+                  0.6182344210390287,
+                  0.7736003536741558,
+                  0.1390276714821873
+                ],
+                [
+                  0.2868216948094555,
+                  -0.0573626175660209,
+                  -0.956265049812345
+                ],
+                [
+                  -0.7317919895907371,
+                  0.6310721217905261,
+                  -0.2573489092062278
+                ]
+              ],
+              "native_parameter": [
+                [
+                  -1.1762633265569815,
+                  3.476465835385847,
+                  3.0949790680813334
+                ],
+                [
+                  3.476465835385847,
+                  -2.571553350966951,
+                  7.451876198070963
+                ],
+                [
+                  3.0949790680813334,
+                  7.451876198070963,
+                  3.747816677523932
+                ]
+              ],
+              "native_mode": [
+                0.3633260698052187,
+                0.5342869117591111,
+                0.7632376189122263
+              ],
+              "curvature_gaps": [
+                13.10534707973713,
+                18.207579515943475
+              ],
+              "density_drop_contours": [
+                1.0,
+                2.0
+              ],
+              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
+              "coordinates": "Rigid display coordinates; not physical component coordinates",
+              "display_mesh_only": true,
+              "cmap": "density_turbo"
+            }
+          ]
         },
         {
           "page": 6,
@@ -36746,7 +37658,8 @@
             "t": 32,
             "diagnostic": "inclusion"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 7,
@@ -36771,7 +37684,8 @@
             "t": 64,
             "diagnostic": "inclusion"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 8,
@@ -36796,7 +37710,8 @@
             "t": 32,
             "diagnostic": "inclusion"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 9,
@@ -36821,7 +37736,8 @@
             "t": 64,
             "diagnostic": "inclusion"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 10,
@@ -36846,7 +37762,8 @@
             "t": 32,
             "diagnostic": "inclusion"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 11,
@@ -36871,7 +37788,8 @@
             "t": 64,
             "diagnostic": "inclusion"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 12,
@@ -36916,7 +37834,8 @@
             "distribution": "Median, interquartile box, 1.5-IQR whiskers and every episode outlier; not a confidence interval or posterior distribution over width"
           },
           "repetition_unit": "Independent test episode; each value is one recorded 95% report size at t=64",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 13,
@@ -36961,7 +37880,8 @@
             "distribution": "Median, interquartile box, 1.5-IQR whiskers and every episode outlier; not a confidence interval or posterior distribution over width"
           },
           "repetition_unit": "Independent test episode; each value is one recorded 95% report size at t=64",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 14,
@@ -37006,7 +37926,8 @@
             "distribution": "Median, interquartile box, 1.5-IQR whiskers and every episode outlier; not a confidence interval or posterior distribution over width"
           },
           "repetition_unit": "Independent test episode; each value is one recorded 95% report size at t=64",
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 15,
@@ -37031,7 +37952,8 @@
             "method": "learned",
             "averaging": "Reporting times averaged within episode and regime; regimes remain distinct points"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 16,
@@ -37065,7 +37987,8 @@
             ],
             "endpoint": "response_loss_mean"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 17,
@@ -37090,7 +38013,8 @@
               "method": "mean",
               "case": "data_T64"
             }
-          ]
+          ],
+          "sphere_displays": []
         },
         {
           "page": 18,
@@ -37109,7 +38033,8 @@
           "font_sizes_pt": [
             9.0
           ],
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 19,
@@ -37128,7 +38053,8 @@
           "font_sizes_pt": [
             9.0
           ],
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         },
         {
           "page": 20,
@@ -37150,7 +38076,8 @@
           "selection": {
             "scope": "Large-dimension numerical rows, separate mean/normalizer/reference/second-moment/tail/state flags; unevaluated targets never counted as resolved"
           },
-          "panel_selections": []
+          "panel_selections": [],
+          "sphere_displays": []
         }
       ],
       "configurations": {
@@ -38638,7 +39565,7 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "Measured wrist frame at each checkpoint",
+            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
@@ -38654,7 +39581,7 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "Measured wrist frame at each checkpoint",
+            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
@@ -39185,8 +40112,8 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "6d4a1c0e7bc022e76ae5f6babf9d8a1ed81ca7a2952bd9ea9eca5c2269dcd1ec",
-        "scripts/plot_final_simulations.py": "07464d2f0ac01dfbc53e4aa755b9234f5490c5e84673fd3d3e80123eae04f7fa",
+        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
         "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
         "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
@@ -39356,43 +40283,43 @@
         "results/contact/tables/paper/theory/numerical_accuracy.csv": "70149bed8eff2c2a0b6d251a86ac289a582cd4c2e5e60724b9851b3ed25f3f4a"
       },
       "output_hashes": {
-        "supp_variance_prediction_cost.pdf": "da1deb362bbda1c8c685f66bd4e05dce0e986a6481bbdf51f3e7ce2af072d7ee"
+        "supp_variance_prediction_cost.pdf": "1bd6a182cab5ec76822f34c1a5f10c41b11b87674fb038a37df46f529e0b933a"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     }
   },
   "files": {
-    "setup.pdf": "427f5c13af53518bab888c983b405ad8136f8a76b430dc980246f2b7e930bb06",
+    "setup.pdf": "4fd2006b8e9ce62215ecb1b4ccaeb33ca99122bc5d4dd122c40cea7480aa9bd3",
     "preview/setup.png": "2c3dfbd67de2a3a6a82cb25284be33babdbee93e1fdd05c6f804a1bc7f7e4060",
-    "task_performance.pdf": "fe3a82c30833a41c6f602319eff291e47d7aa7953158dfdb256148ef388855e8",
+    "task_performance.pdf": "123d2ef4d62003f1998d387990e111203afa41be26fd2b570439d67322258232",
     "preview/task_performance.png": "3f9e9b1ab6e00f21c7bc9b11e1d3a438f2a128e3776d6dd96d2b3694db2910f7",
-    "posterior_anisotropy.pdf": "72dfef1c4655a47f7ea9d8ed65da7bfa9465c16215c1f1043f37481978138551",
-    "preview/posterior_anisotropy.png": "6a7ca4e74c3cae57b1a242af4922ffe826be27b1492a724f4f02aa7598060d76",
-    "preview/posterior_anisotropy_page2.png": "71ef9b798ebbecd37a0fcab48664e2344b0bf61237703b64bbe0da27db240119",
-    "noise_adaptation.pdf": "4fc7fe0e67e02f6eea1bbe31aacbc144243ccda6a03f419dcee6f7bb1d7d7750",
+    "posterior_anisotropy.pdf": "6ea18a30da790913581fbc54837b8df4a5d7c6a68892895311528dfbd0b8e44a",
+    "preview/posterior_anisotropy.png": "61ecd79d14880dbb94e72d55ceef49502429177ed259ad2202234af983027ac0",
+    "preview/posterior_anisotropy_page2.png": "9251c7473061a08c94619c5350ccff842934fca8bfeb6d4c8c5d1f6b5299b427",
+    "noise_adaptation.pdf": "95c27362a8133f89e4138c3a937fedb0de35f9847c0a4d426f8c0827abf8f0ae",
     "preview/noise_adaptation.png": "dc1021db19af540397297090ac91e88e6f69373b1a22a35a50c37728add68524",
     "preview/noise_adaptation_page2.png": "0ea3c477eaa05e8b00118d33ddf67944c68e5be670f2bd3497109c4741141803",
-    "preview/noise_adaptation_page3.png": "3cd1f75839a20da51e22e52dee72a267614b859917fec2e8fa64d89d54d13ad4",
-    "preview/noise_adaptation_page4.png": "965ce21d5fbca467b8e3eef1f81b08e6764b280e8d725a32823bd5dbc18830d2",
-    "information.pdf": "d3b2a1b2f5d28f16cf3e3744a4f633e4055d92699d202cd76cf380e1cebb84c0",
+    "preview/noise_adaptation_page3.png": "2d5b46306b44bd6ceb5d4465cefe5ca71d75c7d26e3812ca7894faf6cb5c900a",
+    "preview/noise_adaptation_page4.png": "6b92f53c1c71fc4582f1335e96d8867128865fafdf07d70e024a165da73a145b",
+    "information.pdf": "8f361d03339138c32ce866f2676173a394e3ebc305ddbca2c26e86231eb1048c",
     "preview/information.png": "9d23e76b8660fd036530a1706d9c149a952c35280e20228a5af3ad7288369c49",
-    "posterior_curvature.pdf": "0f3b78c0e39e173a263182d4ca788af4afd05b12ee41693f6ce4c3740e187738",
+    "posterior_curvature.pdf": "ccaed92ac1362d79a0edb1719dd1c5a0ebd7bfb43a02970f9b4500efacdce6b0",
     "preview/posterior_curvature.png": "82bd17385015399a9ff8aacea7fe70886eca9c748afe3597371a791b5b047beb",
-    "tracking_bound.pdf": "b4a3ca74823e6fddeef0949d5ba0933b8cfc5e71513c26fc9a638f5f092ed4bc",
+    "tracking_bound.pdf": "c641185a2018293582cf72d43289d9bf75b8788c2adb65619bbd55d589500a92",
     "preview/tracking_bound.png": "1da012caa19aa5921eca6ef0f4ad94a9b36380ab3c09bb9f028331903ac969d3",
     "preview/tracking_bound_page2.png": "1bcfd552c0a43458f9d317fff192dd48d2c4672955ac1652097a87c6c57fe86d",
     "preview/tracking_bound_page3.png": "9e4d70218318dc1faea7f4a8ca87f8008612fa17d274694dd587ac3042461513",
     "preview/tracking_bound_page4.png": "f121e96f3e546680430aba700e203be5a69e3d6b9e86a03e565695b453dc1091",
-    "block_updates.pdf": "6c57c8bde11ebec5459d025f2cb61121ba8c226fe8ada4af8d031a8d6fbe317a",
+    "block_updates.pdf": "85a6b5c611d7ffc1fa49dc5c2d1c0d328899fb6e21626ae0840560eaf7e484de",
     "preview/block_updates.png": "fd629242527eadc8ea874ce4774fde03096602e6bc61db1975759f45a99a84d0",
-    "additional_comparisons.pdf": "53ecd7020afae8d8ca39a8c0abeadaa905e3f837051803961609e14c8b5afc68",
+    "additional_comparisons.pdf": "623228617d794330ff031502e62f8ef4386e303c2d2331b68f4f2026a64fb990",
     "preview/additional_comparisons.png": "ef7e1b3ac5af4e23bf8c4b0c7bd428e52d78ed43a50b481059cc58df79217397",
     "preview/additional_comparisons_page2.png": "6710720369e3ce7d68c9c435abd785b29d61b16e569ccf42313e29fcf05297c4",
     "preview/additional_comparisons_page3.png": "ec39cf21080637e572903fc161c5d3f93b589dd10c09a59b9608816046b9d1ff",
     "preview/additional_comparisons_page4.png": "a438201a528c17f6cbbd76952cb17efbe1dfb7d31bff28a0307fbfc9fbe99bca",
-    "variance_estimation.pdf": "91618d413a4b04245d707c83f9c28886848c9d6b8b67cd1b58dd3d14640ab0ec",
+    "variance_estimation.pdf": "28c272022a4575cf1e8637bf21847bb966f66600d077ce2e6b02bc07d27bd687",
     "preview/variance_estimation.png": "c07091d62db61433d34d7eb35e6f73c20765672169ae126b65d87f2212646e78",
-    "predictive_calibration.pdf": "f1430f7ed6357b371432bdaaa9e1af4fbab8e9d932a902bb5aa7b597d1947da5",
+    "predictive_calibration.pdf": "dd5e1580d7d822550fa1a87d268372fc8b012a0361a1603ee8786e515bb23466",
     "preview/predictive_calibration.png": "4f5778b7bca28b3736abe16ed4edb62470d2e11aea9eea5e71648b0cbdd23542",
     "preview/predictive_calibration_page2.png": "97139f4424cb822a3d03182d37580a7f3d72496387a02a45aaa00407b1962e54",
     "preview/predictive_calibration_page3.png": "303772e75f668943edff4012280c1d0b9cfb040d91c1753eca90422c4c260ed0",
@@ -39402,21 +40329,21 @@
     "preview/predictive_calibration_page7.png": "626400d13107fed12f0722234d084a0a5b62cb5b3a92091db150c35bf9924cf3",
     "preview/predictive_calibration_page8.png": "1614f98960b074f9b0379e75ed565070e2e3fa62d905073b67c53b225e533dac",
     "preview/predictive_calibration_page9.png": "904224a8b03c7b7111fdd882150112efc67271f287339b3aea53376134865134",
-    "predictive_scores.pdf": "5a54d989c04a757d8a3d233f67184e2fb980031e4c2d578daa8042ccf872b6d7",
+    "predictive_scores.pdf": "d054a6d7a9f934bd1ae9ef5b76a53532e5b0b5b6e6420cffc42efffc6af19cbe",
     "preview/predictive_scores.png": "01301525859511ef95ff815727c343b59f3aee399bfe99b5f782006ac1132ed4",
-    "model_mismatch.pdf": "623c438d69252799327c907ebe9ac3c154f66fa754b39ebb80bbf260c72397d8",
+    "model_mismatch.pdf": "aac519f787e2eb0b8ecf5f2a7fc428f85c24167f059ba12a8c52326e18e3c6e2",
     "preview/model_mismatch.png": "ad1dc30e0dcbe81cf1409d5d078d1eb90d697c382559c16defe469a1b9107408",
-    "computation_time.pdf": "de3bf2776f3d3a86764960b184894f6f6998c699678da97219cce2d3b9029a56",
+    "computation_time.pdf": "e94d7be29a3d03c1c1aad99447e9e06b1269621f3d7f8bb1e11cee8e6d4cb059",
     "preview/computation_time.png": "38129dd2910868c8c43908bed863c44cc25997f19849244cb9b35833df3782be",
-    "numerical_accuracy.pdf": "ef04ce1d76305623095576135962c8490c5d08d04b160b3e3afb64af7ad62631",
+    "numerical_accuracy.pdf": "16e869c0ab46aa7ea73a9f5e7ca39dda20240168836e24d4dc9ee9bdb3b0211c",
     "preview/numerical_accuracy.png": "8cf9207c9e28a2f083a689afdcc32a560babb6f1fcd296a7b34d0bc61c4fc327",
     "preview/numerical_accuracy_page2.png": "3d6ca6e5052964de0f384ce4c15b69919b9911cbb3f04fe6774200cb9c3d4c34",
     "preview/numerical_accuracy_page3.png": "90c09595c99b42e039e83c23fb6004f97f9ea7f0690fdf62a6b430d3b96ed650",
-    "paper_summary.pdf": "7c24e295bf49d4487186d482c3e20cee1eda6481b1d490d80c2f54dff3d2dbd9",
-    "preview/paper_summary.png": "e374f4f379ae0afb2d529a594afb37325063086c62e6da3dd01c1a5785e5a623",
-    "supp_information_tracking.pdf": "db2bca318b58b041d0d25730c5c09c909cbf9ae1da28f1537d23f955a692d621",
-    "supp_comparisons.pdf": "cdbd7c684a91449d7e3fc497d518da9476095cde9263b6a91660c9af06c70a55",
-    "supp_variance_prediction_cost.pdf": "da1deb362bbda1c8c685f66bd4e05dce0e986a6481bbdf51f3e7ce2af072d7ee"
+    "paper_summary.pdf": "62abd92390cc60b4b5c344bd6e917ed969d479f9148fd5a23eb6ea49a62156b6",
+    "preview/paper_summary.png": "362c5af0f2b11a39a5cf12290e8f3df15def99131ee7f65f052a7d3008961c73",
+    "supp_information_tracking.pdf": "0327a0b36b00ee1903837f6aa7fe7ed039d54dee59b41ac99000d01948ba83e3",
+    "supp_comparisons.pdf": "03588f12e8dc7667a9b2450c4e7d0e6d767bdee4636f43421c017cfba52c856f",
+    "supp_variance_prediction_cost.pdf": "1bd6a182cab5ec76822f34c1a5f10c41b11b87674fb038a37df46f529e0b933a"
   },
   "unresolved": {},
   "text_usetex": true,

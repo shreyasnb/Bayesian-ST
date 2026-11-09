@@ -119,6 +119,32 @@ def verify_notebook(name):
     return dict(code_cells=len(code), embedded_images=images, sha256=sha(path))
 
 
+def verify_display_audits(example):
+    """Require current independent geometry and actual-export audit reports."""
+    folder = ROOT / 'results' / example
+    geometry = json.loads((folder / 'data/validation/sphere_visual_checks.json').read_text())
+    assert geometry['status'] == 'passed' and geometry['example'] == example
+    assert geometry['audit_source_sha256'] == sha(ROOT / 'scripts/check_sphere_visuals.py')
+    assert geometry['display_source_sha256'] == sha(ROOT / 'lib/final_paper_visuals.py')
+    assert geometry['laws_checked'] == geometry['shared_rotation_checks'] == len(geometry['laws'])
+    assert geometry['laws_checked'] == (20 if example == 'beamforming' else 464)
+    preservation = geometry['preservation']
+    assert preservation['status'] == 'passed'
+    for category, mapping in preservation['unchanged_files'].items():
+        assert len(mapping) == preservation['unchanged_file_counts'][category]
+        verify_mapping(ROOT, mapping)
+    exported = json.loads((folder / 'data/validation/pdf_layout_checks.json').read_text())
+    assert exported['status'] == 'passed' and not exported['errors']
+    assert exported['producer_sha256'] == sha(ROOT / 'scripts/check_final_pdf_layout.py')
+    assert exported['figure_manifest_sha256'] == sha(folder / 'figure_manifest.json')
+    assert exported['pdf_files'] == 19 and not exported['out_of_page_text']
+    verify_mapping(folder, {name: record['sha256'] for name, record in exported['files'].items()})
+    verify_mapping(folder, {name: record['sha256'] for name, record in exported['previews'].items()})
+    return dict(status='verified', laws_checked=geometry['laws_checked'],
+                unchanged_file_counts=preservation['unchanged_file_counts'],
+                actual_pdf_pages=exported['pdf_pages'])
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--science-only', action='store_true')
@@ -146,6 +172,7 @@ def main():
         result['figures'] = {example: verify_figures(example) for example in EXAMPLES}
         result['notebooks'] = {name: verify_notebook(name)
                                for name in ('01_array.ipynb', '03_contact.ipynb')}
+        result['display_audits'] = {example: verify_display_audits(example) for example in EXAMPLES}
         report = (ROOT / 'completion_report.md').read_text()
         assert 'runs are in progress' not in report and 'will be replaced' not in report
         inventory = json.loads((ROOT / 'final_artifact_inventory.json').read_text())

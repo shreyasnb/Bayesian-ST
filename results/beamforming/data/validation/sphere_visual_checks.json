@@ -1,0 +1,1754 @@
+{
+  "schema": 1,
+  "status": "passed",
+  "example": "beamforming",
+  "audit_source_sha256": "9aef04053a14f5374293dfc226a3a2f988b52f9b98981ef26ad21af622dcb043",
+  "display_source_sha256": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+  "baseline_snapshot_sha256": "9dd279c57949f578aa9b76578198b076779933a17120c8936915234fcaed6e2e",
+  "preservation": {
+    "status": "passed",
+    "baseline_commit": "ded5499e6974a0078022434235c4d2a5c9b25424",
+    "core_hash": "2e40ff85e8582880406878e840b6f67ddfec10bc8c8cda89d4304839d2bc74c4",
+    "final_science_hash": "d3e5f91e4bc9ca18bf34d595fe6d2ed0137361dff835dccc72b552ad7bb5ec47",
+    "unchanged_file_counts": {
+      "artifacts": 574,
+      "manifests": 25,
+      "sources": 132
+    },
+    "unchanged_files": {
+      "artifacts": {
+        "results/beamforming/data/paper/computation/checks.json": "39a1bd0d49bef6378fae3a1564f96a928303396e3cf16f4f5531f1286b972653",
+        "results/beamforming/data/paper/computation/hardware.json": "54276ae85216c7b4a9d0a0e0c0477031e0461d0dc6e7db56fdf675b76f80130f",
+        "results/beamforming/data/paper/computation/parameters.npz": "2321088ed41202a5b3ad27d26db7b1213ea95c0910980db32473742fc4579006",
+        "results/beamforming/data/paper/computation/preregistered.json": "9668363e2dfae0d8417785b42fd16a39f217f581ddb1acbabd82c22347b4d769",
+        "results/beamforming/data/paper/computation/task_inputs.npz": "1cc8f7a701c856140052e7f8c80a6479a0c11a2ef126e2aafedcdd05a45c8e17",
+        "results/beamforming/data/paper/computation/task_matching.json": "429e1331700c9d77ed7556c05be544c2a3589a59280e6e1136f65d3b9ad16eb7",
+        "results/beamforming/data/paper/performance/block_updates.csv": "877b3b472e6c3203d79ded2c257b90bd146fbe7d271be339f38a9feb92fb4fee",
+        "results/beamforming/data/paper/performance/checks.json": "bf2b3df36bc1266cef742ee9f629f38f858181c0e196062737d038ed7a8c117c",
+        "results/beamforming/data/paper/performance/legacy_evidence.json": "3829b4d27adce756d336dbebb50c2ba76cb055a72ba8078687a59a77b9b03edc",
+        "results/beamforming/data/paper/performance/method_information.json": "8a3d15f859dc3c77b68cddd0bcc5182911bcba51caa11126a165f59deaa9b1f0",
+        "results/beamforming/data/paper/performance/moving_checkpoints.csv.gz": "6f07236c41f8ca8696bc9b6cbf5e576411127c65f3f58385068bbb402bea5b29",
+        "results/beamforming/data/paper/performance/preregistered.json": "b80032023d92ba491051265c7f1a56aa0d657bf05ce140d805af7449fff9dfcf",
+        "results/beamforming/data/paper/performance/selected.json": "81c9d90aeb8a7ae779367d21a4fb857082ce46dddcd3cd932fbcb6af5f947eb7",
+        "results/beamforming/data/paper/performance/stationary.csv": "337ed1e5267631474093c3de35b649d18381339d4c228da6a16eb78d20865016",
+        "results/beamforming/data/paper/performance/stories.npz": "9cb008124703a4fd6d3ee17f8beb96c7270c90472eeeb0c1d89cc82fa38cd8dd",
+        "results/beamforming/data/paper/prediction/checks.json": "078488e0b546d3546d9e8c99e917004bf00c00ac8cb84ea98ff9915cd3278d90",
+        "results/beamforming/data/paper/prediction/failures.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "results/beamforming/data/paper/prediction/fit_events.json.gz": "4f069d5191d8e801d86701bc72da232e77e46198a9eee83874d17793a51326ad",
+        "results/beamforming/data/paper/prediction/preregistered.json": "4b6b5359c350ff20c3d9e902ac93509f33ea4a124e112f8e9a41de0a7fd14065",
+        "results/beamforming/data/paper/prediction/producers/benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+        "results/beamforming/data/paper/prediction/producers/benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+        "results/beamforming/data/paper/prediction/producers/benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+        "results/beamforming/data/paper/prediction/producers/lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+        "results/beamforming/data/paper/prediction/producers/lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+        "results/beamforming/data/paper/prediction/producers/lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+        "results/beamforming/data/paper/prediction/producers/lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+        "results/beamforming/data/paper/prediction/producers/lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+        "results/beamforming/data/paper/prediction/producers/lib/causal_variance.py": "f89348e57ee850d91f1317e1ce443e95849f15c497a4170c0caa49143ddf5af0",
+        "results/beamforming/data/paper/prediction/producers/lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+        "results/beamforming/data/paper/prediction/producers/lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+        "results/beamforming/data/paper/prediction/producers/lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+        "results/beamforming/data/paper/prediction/producers/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "results/beamforming/data/paper/prediction/producers/lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+        "results/beamforming/data/paper/prediction/producers/lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
+        "results/beamforming/data/paper/prediction/producers/lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+        "results/beamforming/data/paper/prediction/producers/lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+        "results/beamforming/data/paper/prediction/producers/lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+        "results/beamforming/data/paper/prediction/producers/lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+        "results/beamforming/data/paper/prediction/producers/results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+        "results/beamforming/data/paper/prediction/producers/results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+        "results/beamforming/data/paper/prediction/producers/results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+        "results/beamforming/data/paper/prediction/producers/results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03",
+        "results/beamforming/data/paper/prediction/producers/scripts/run_block_em_study.py": "9b32a45cbc0166dc4d0059d2fdf7e2595cd343a0171fd9ad02fc8bc5f648f6fb",
+        "results/beamforming/data/paper/prediction/producers/scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
+        "results/beamforming/data/paper/prediction/producers/tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc",
+        "results/beamforming/data/paper/prediction/producers/tests/test_causal_variance.py": "1f5e2189151c4b51ee5c5606cb03018e71b5d679fbe2246d499498e8360a2744",
+        "results/beamforming/data/paper/prediction/selected.json": "b10bfed63509ef355d44a2370393a887404840fa7f4d171724864e9557404185",
+        "results/beamforming/data/paper/prediction/stories.npz": "d3ec359cc802aa750d7024f75514f1b52652436efc654a87c32e6a7465388810",
+        "results/beamforming/data/paper/prediction/stories/test_00000.npz": "21f83c2e66fe76361ced07a9e88b1b54dc4862ac5f67aee24d9ee4602c696be0",
+        "results/beamforming/data/paper/prediction/stories/test_00256.npz": "16c28086fa203144073676f56a1c95cec663964dba9623c4c8827799ecd2d8c7",
+        "results/beamforming/data/paper/prediction/stories/test_00512.npz": "a3048d59ddb9ff823d8b6842880a1f3b28b50603ac879e08d1aff6b3ec0b2b26",
+        "results/beamforming/data/paper/prediction/variance_reference_provenance.json": "acb5079db09b1dcd5e1d871352368caf01476fa38cd57b38ac0cbd9a29426476",
+        "results/beamforming/data/paper/theory/checks.json": "b607ed09b8cf5b4b038a64c695ffea42ee7f5e828c54882a7d9bc77510906920",
+        "results/beamforming/data/paper/theory/preregistered.json": "79129882cd3ebfbdd20ca426fe5d0fef129f24a4ee0fcec9dd9bdeb70b56fcb5",
+        "results/beamforming/data/pilot/computation/checks.json": "c67dfe9d3a1937ff03ec20ba6608620a21c78357ad41401be2e18c6e6a2cf26b",
+        "results/beamforming/data/pilot/computation/hardware.json": "eb5ebb9e7473b534493cc1fefa40b1a2a3e64abce8598b0e76f1b054ce967468",
+        "results/beamforming/data/pilot/computation/parameters.npz": "039644d9f058a769daa9a0260ca4d529a15323408ff114fc74a4f07e4e93516a",
+        "results/beamforming/data/pilot/computation/preregistered.json": "1eb91d5aa2c4e71d6bbc5d2ebbbc9bf830a36586f26d9332e519fd38a33c14d7",
+        "results/beamforming/data/pilot/computation/task_inputs.npz": "46273715b5dc63a603fcd6cca24c7a5b2946e5ef6a23f8bddd7f47db9e626fe5",
+        "results/beamforming/data/pilot/computation/task_matching.json": "430fb210017d485948f92810c521a20e9deac840c0840a46a3b943d3832b55b3",
+        "results/beamforming/data/pilot/performance/block_updates.csv": "73b61421a508c9aaec4a7fb0e17d7c648603fb4104fb8421e52789f4b663bb73",
+        "results/beamforming/data/pilot/performance/checks.json": "76ad01c4270c4c7a895a9427ab799684a914ae3d5666eb4aa2030f975720633a",
+        "results/beamforming/data/pilot/performance/legacy_evidence.json": "3829b4d27adce756d336dbebb50c2ba76cb055a72ba8078687a59a77b9b03edc",
+        "results/beamforming/data/pilot/performance/method_information.json": "8a3d15f859dc3c77b68cddd0bcc5182911bcba51caa11126a165f59deaa9b1f0",
+        "results/beamforming/data/pilot/performance/moving_checkpoints.csv.gz": "941799e3fa83535029e2fde3f08359dcaa9920f509d24090d6cb2858d23a2a59",
+        "results/beamforming/data/pilot/performance/preregistered.json": "5f1c58ae5c3f77fb264d5d8236dee7ca8f13661d25590549dcf592ce206de6ec",
+        "results/beamforming/data/pilot/performance/selected.json": "5cdb94cb1337dd6f002a7cd19190444c6724cafb675028a772edc962da697be0",
+        "results/beamforming/data/pilot/performance/stationary.csv": "2e06767e2b24e818d7aef2f3a1f0cd220e15f40e6bad5de72704cb959e652c6d",
+        "results/beamforming/data/pilot/performance/stories.npz": "0747288f5d6a13cee9e2b9e293d574b254a2de37b7c6e9feb98df0a574a8d236",
+        "results/beamforming/data/pilot/prediction/checks.json": "64095273f4e324224b1bb4c77003458dda1eeef7089f179f91478aa2dbcfa94b",
+        "results/beamforming/data/pilot/prediction/failures.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "results/beamforming/data/pilot/prediction/fit_events.json.gz": "767b3fd1431569f1d529b93984117f654495a1fbf25d7ebf905f6b10ecae1c4b",
+        "results/beamforming/data/pilot/prediction/frozen_paper_budget.json": "6b7a95a197b8c9133a40d768c349e9511427aac9018ee37a4665b1d6c36b31e3",
+        "results/beamforming/data/pilot/prediction/preregistered.json": "5a975a22a873056414dd7fe4726e8d577441c2b21728ca5fc4824890289c6721",
+        "results/beamforming/data/pilot/prediction/producers/benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+        "results/beamforming/data/pilot/prediction/producers/benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+        "results/beamforming/data/pilot/prediction/producers/benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+        "results/beamforming/data/pilot/prediction/producers/lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+        "results/beamforming/data/pilot/prediction/producers/lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+        "results/beamforming/data/pilot/prediction/producers/lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+        "results/beamforming/data/pilot/prediction/producers/lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+        "results/beamforming/data/pilot/prediction/producers/lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+        "results/beamforming/data/pilot/prediction/producers/lib/causal_variance.py": "f89348e57ee850d91f1317e1ce443e95849f15c497a4170c0caa49143ddf5af0",
+        "results/beamforming/data/pilot/prediction/producers/lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+        "results/beamforming/data/pilot/prediction/producers/lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+        "results/beamforming/data/pilot/prediction/producers/lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+        "results/beamforming/data/pilot/prediction/producers/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "results/beamforming/data/pilot/prediction/producers/lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+        "results/beamforming/data/pilot/prediction/producers/lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
+        "results/beamforming/data/pilot/prediction/producers/lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+        "results/beamforming/data/pilot/prediction/producers/lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+        "results/beamforming/data/pilot/prediction/producers/lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+        "results/beamforming/data/pilot/prediction/producers/lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+        "results/beamforming/data/pilot/prediction/producers/results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+        "results/beamforming/data/pilot/prediction/producers/results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+        "results/beamforming/data/pilot/prediction/producers/results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+        "results/beamforming/data/pilot/prediction/producers/results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03",
+        "results/beamforming/data/pilot/prediction/producers/scripts/run_block_em_study.py": "9b32a45cbc0166dc4d0059d2fdf7e2595cd343a0171fd9ad02fc8bc5f648f6fb",
+        "results/beamforming/data/pilot/prediction/producers/scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
+        "results/beamforming/data/pilot/prediction/producers/tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc",
+        "results/beamforming/data/pilot/prediction/producers/tests/test_causal_variance.py": "1f5e2189151c4b51ee5c5606cb03018e71b5d679fbe2246d499498e8360a2744",
+        "results/beamforming/data/pilot/prediction/selected.json": "b10bfed63509ef355d44a2370393a887404840fa7f4d171724864e9557404185",
+        "results/beamforming/data/pilot/prediction/stories.npz": "e71d9797864c01f7e28268b3459ddae0cd729437fe0fb4f7d287491841468eb0",
+        "results/beamforming/data/pilot/prediction/stories/test_00000.npz": "d4632c41d94637d21a4fd18d213f822365e9105364059293c16a34baee8962b5",
+        "results/beamforming/data/pilot/prediction/stories/test_00003.npz": "83d530d2a93ad5abdefb7145de91461b308c8943d2c84f12761225e8363ad83d",
+        "results/beamforming/data/pilot/prediction/stories/test_00006.npz": "ef12a90dfb413741f6bd1b3e628e73ae71422d5fa681b0a7fbb44ebe3aca38d7",
+        "results/beamforming/data/pilot/prediction/variance_reference_provenance.json": "acb5079db09b1dcd5e1d871352368caf01476fa38cd57b38ac0cbd9a29426476",
+        "results/beamforming/data/pilot/theory/checks.json": "8e60c974158a9e65b461e5abeb38e81e161afd08c26e915e511bedee883813b9",
+        "results/beamforming/data/pilot/theory/preregistered.json": "1ac71cf827449c58458623247445a3f03bf10b2b6db4848c0b64ec027d13d1ae",
+        "results/beamforming/data/verify/computation/checks.json": "7c8cfbbd145f80422105595781049eb91e41d583d8b8bc2bb82a1e757ae1b127",
+        "results/beamforming/data/verify/computation/hardware.json": "eb5ebb9e7473b534493cc1fefa40b1a2a3e64abce8598b0e76f1b054ce967468",
+        "results/beamforming/data/verify/computation/parameters.npz": "40ecdb525de01e2f3a23f406c18bf954971b8aa60993dd5e91786bea35623e41",
+        "results/beamforming/data/verify/computation/preregistered.json": "417ba991229e8083477dd2bb21c093a1f163fb5c885cb150011e2f15246a6221",
+        "results/beamforming/data/verify/computation/task_inputs.npz": "1bc45716de267307722914d5f43f32d66fe8c674657f6531dcd0190b456b2101",
+        "results/beamforming/data/verify/computation/task_matching.json": "4b3439ecc7d1e80fcd54429a7af3453922df553f1a4c6740aa780478a2936fd2",
+        "results/beamforming/data/verify/performance/block_updates.csv": "9d404a30fbe6fc27fba9487ad552075a2f4447a6e056c2dfdd888010bc9490e3",
+        "results/beamforming/data/verify/performance/checks.json": "619b3331900183a3be0d5cb9d6ef4f799926b1bd6c58d59850b9add579fe8c38",
+        "results/beamforming/data/verify/performance/legacy_evidence.json": "3829b4d27adce756d336dbebb50c2ba76cb055a72ba8078687a59a77b9b03edc",
+        "results/beamforming/data/verify/performance/method_information.json": "8a3d15f859dc3c77b68cddd0bcc5182911bcba51caa11126a165f59deaa9b1f0",
+        "results/beamforming/data/verify/performance/moving_checkpoints.csv.gz": "8c6f79715f73e78c7b94e95b2231afe9a20b8236e5ba548542fe93194311eebc",
+        "results/beamforming/data/verify/performance/preregistered.json": "231314ec52e51e3e5883375c694b33ba7e097cdc97d688e528e472d3dd1127a3",
+        "results/beamforming/data/verify/performance/selected.json": "7b3e4137bf22afe825708e325f3056be87dd974ca016e163ad39580876df985e",
+        "results/beamforming/data/verify/performance/stationary.csv": "fe17b08f5292d95e709fa92cc63707955a17ab5d5e22fb5b27932e664e7101c1",
+        "results/beamforming/data/verify/performance/stories.npz": "1270605c5fb22b11f429d70370f3af540cb0511ff4239598cde58fb09aaa0f72",
+        "results/beamforming/data/verify/prediction/checks.json": "598a93736f824fc011572f3da74eab2de06f20e875178a235e0b6bec4b6c2285",
+        "results/beamforming/data/verify/prediction/failures.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "results/beamforming/data/verify/prediction/fit_events.json.gz": "a0408c9cc785f92da5c0d37bf6afad6fbbb4f6aa85567d974cd4aacb12bb5c87",
+        "results/beamforming/data/verify/prediction/preregistered.json": "c87c1903874b6737fc950f30daff59defbefa1839a6203d4cabdcf919d1470af",
+        "results/beamforming/data/verify/prediction/producers/benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+        "results/beamforming/data/verify/prediction/producers/benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+        "results/beamforming/data/verify/prediction/producers/benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+        "results/beamforming/data/verify/prediction/producers/lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+        "results/beamforming/data/verify/prediction/producers/lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+        "results/beamforming/data/verify/prediction/producers/lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+        "results/beamforming/data/verify/prediction/producers/lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+        "results/beamforming/data/verify/prediction/producers/lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+        "results/beamforming/data/verify/prediction/producers/lib/causal_variance.py": "f89348e57ee850d91f1317e1ce443e95849f15c497a4170c0caa49143ddf5af0",
+        "results/beamforming/data/verify/prediction/producers/lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+        "results/beamforming/data/verify/prediction/producers/lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+        "results/beamforming/data/verify/prediction/producers/lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+        "results/beamforming/data/verify/prediction/producers/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "results/beamforming/data/verify/prediction/producers/lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+        "results/beamforming/data/verify/prediction/producers/lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
+        "results/beamforming/data/verify/prediction/producers/lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+        "results/beamforming/data/verify/prediction/producers/lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+        "results/beamforming/data/verify/prediction/producers/lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+        "results/beamforming/data/verify/prediction/producers/lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+        "results/beamforming/data/verify/prediction/producers/results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+        "results/beamforming/data/verify/prediction/producers/results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+        "results/beamforming/data/verify/prediction/producers/results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+        "results/beamforming/data/verify/prediction/producers/results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03",
+        "results/beamforming/data/verify/prediction/producers/scripts/run_block_em_study.py": "9b32a45cbc0166dc4d0059d2fdf7e2595cd343a0171fd9ad02fc8bc5f648f6fb",
+        "results/beamforming/data/verify/prediction/producers/scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
+        "results/beamforming/data/verify/prediction/producers/tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc",
+        "results/beamforming/data/verify/prediction/producers/tests/test_causal_variance.py": "1f5e2189151c4b51ee5c5606cb03018e71b5d679fbe2246d499498e8360a2744",
+        "results/beamforming/data/verify/prediction/selected.json": "b10bfed63509ef355d44a2370393a887404840fa7f4d171724864e9557404185",
+        "results/beamforming/data/verify/prediction/stories.npz": "67f6e6fccb21f474e4d70c3058ee5a88c6f3c8fccc5fac27b948562049da7738",
+        "results/beamforming/data/verify/prediction/stories/test_00000.npz": "3f834e60f071d91efa68942d1797a32cd49b682e3364575fbb88fcf2637aa064",
+        "results/beamforming/data/verify/prediction/stories/test_00003.npz": "f4eddca7c84cc1df5c5206e462af61f307ff2018dc837c1dcc6f60d80f8f3a77",
+        "results/beamforming/data/verify/prediction/stories/test_00006.npz": "a6847b8e312b0e84b4ed21ae1188473bd6b5e95ef229adc19d3aef75f5fe7968",
+        "results/beamforming/data/verify/prediction/variance_reference_provenance.json": "acb5079db09b1dcd5e1d871352368caf01476fa38cd57b38ac0cbd9a29426476",
+        "results/beamforming/data/verify/theory/checks.json": "44512410c724e0fc3e99aa46e8c9f30cf8e0ed4e81680f8cff85b94a11783674",
+        "results/beamforming/data/verify/theory/preregistered.json": "b74a937aa6378e54f5a2a64350e8c633fc95463317c7d074f1be675f6f20d644",
+        "results/beamforming/tables/paper/computation/accuracy.csv": "2c4c8f759c7c1b2aacf4bdbf3e0f748820c5a7c270b446f02a60b1f2eecf5c32",
+        "results/beamforming/tables/paper/computation/memory.csv": "6cba6a1d421829954d340f0ab6a3fa0695a4cf9cc160532611fbe9f7cc76fe99",
+        "results/beamforming/tables/paper/computation/pipeline_timings.csv": "33b97b5e031ee30cceabfcfa4740d7dca14d12602d621a68bf1a803a8228e9b2",
+        "results/beamforming/tables/paper/computation/primitives.csv": "806e8e6157f6611398c7bb849e299d0434ed1781694ebcbf87523770db3f5a63",
+        "results/beamforming/tables/paper/computation/summary.csv": "b935da03b267b806ce6fd7add289add3899200dbdb1a02c6b417f360cb93db02",
+        "results/beamforming/tables/paper/performance/block_summary.csv": "79db9675d2a591ac1ea2152ca41c79e9093a0fe9cbd367ca774a6a89a31decfb",
+        "results/beamforming/tables/paper/performance/execution_times.csv": "caef93a2c16e9a38f0652f98c874d5281c7e845afe27418e97c17e140da320b6",
+        "results/beamforming/tables/paper/performance/moving_episodes.csv": "ecc419a8433dea32c01eec824b9b06778843353d3970f97d4a7589f88a786419",
+        "results/beamforming/tables/paper/performance/moving_summary.csv": "b0604772ce2ea9e61744498af12e417a693f3375149f544cd4d532fcff4c92b7",
+        "results/beamforming/tables/paper/performance/moving_time_summary.csv": "755ab78ae4dc771f195ca51d782f77949ceaa98c1a9ec8106810484278582937",
+        "results/beamforming/tables/paper/performance/paired_moving.csv": "c954548ae4438a4de61656fb9bbaadde79d99af94a8f893295cbfa8aabda151a",
+        "results/beamforming/tables/paper/performance/paired_stationary.csv": "1b040c3d1bc70ed26865613092d250c7c5bcf32dbea893a7ebdaf5d1dd4c5f01",
+        "results/beamforming/tables/paper/performance/stationary_summary.csv": "362ea8799522c4999a4224a0e2bdfb7cb2a6dd144961c2d2e03c1a4dc5463eb9",
+        "results/beamforming/tables/paper/performance/validation_curves.csv": "8c5b8025efb2e911cb5402f1b1e64674220a92337687ebff383fc4fcb9d0c433",
+        "results/beamforming/tables/paper/prediction/adaptation.csv": "d2b5e403e0b4ac7a3bc7c02b881b04fee07426a707ad694c39a9b7ae6d8c0a20",
+        "results/beamforming/tables/paper/prediction/adaptation_summary.csv": "b74f43bceaa64b7b91dfbf18eaa67f4906faefc5e884e8e12ca5c36476f26194",
+        "results/beamforming/tables/paper/prediction/calibration.csv": "17feb4a493ecb26b5252d90c769eb78c9ec01153a8a13ca29f292e63caf5cfbb",
+        "results/beamforming/tables/paper/prediction/calibration_summary.csv": "d1bea1f7a8369d8648040ba61aa9a4930e2d2eb38cf973ef71ca288d9ff65610",
+        "results/beamforming/tables/paper/prediction/mismatch.csv": "be977475bd5ea699399acce38fdf5af111e4d894dde16befed0fd3785a5e7961",
+        "results/beamforming/tables/paper/prediction/paired.csv": "29965c0282ba373ed5305c2a991df1c1967af0e26d8d67292a20555de6042e69",
+        "results/beamforming/tables/paper/prediction/score_summary.csv": "083b1c82a92adb20b16c78444593a269e5c0e619398301e04951e13a55e969cd",
+        "results/beamforming/tables/paper/prediction/scores.csv": "fffa12cf4d5ab285d4159f0c1013d82cb55e3ced9c4739619a9bdaa5d2744732",
+        "results/beamforming/tables/paper/prediction/validation.csv": "f0df8dee5d45364a969da956568fd9a191ef3871d9fc341e06aa429184a2f40e",
+        "results/beamforming/tables/paper/prediction/variance_boundary_checks.csv": "a9c8f1d48d7ea8c34cbebaf4fdc4c34690317263764308aa792eff1cf992601f",
+        "results/beamforming/tables/paper/prediction/variance_fits.csv": "66e7c4061c94b637087104353149cb6eedf3954d9c4e53a2447efb0e7c6f7cf0",
+        "results/beamforming/tables/paper/prediction/variance_iterations.csv": "8ad8d387992a5a9bbfeb061cf758558e79b20340019d5e4bae6d4af8a77c0d45",
+        "results/beamforming/tables/paper/prediction/variance_references.csv": "a42b1a156a3c16b0a3e51b772910d57bf36c3393857327d31156eecee0fd8bef",
+        "results/beamforming/tables/paper/prediction/variance_residuals.csv": "6b5e7583a17a6a47f0dfca1ee042a17744d057d6a9dafd33189c42fb28b9b940",
+        "results/beamforming/tables/paper/theory/block_checks.csv": "fd9f026d5e0be5a1edad5dcb26460423e7350e51976ecf5ec0d074a9184daf4c",
+        "results/beamforming/tables/paper/theory/curvature.csv": "1b89f459b85ce793ed7bb8efb59efaab493c2701cfa9ceb565574a885014d3fd",
+        "results/beamforming/tables/paper/theory/global_kl.csv": "f75c52a2cec357dcdd6628bc7bbd00c9d57a7ba16ae0b8259f7ea6fb5fe27c17",
+        "results/beamforming/tables/paper/theory/information.csv": "acaa342b4c6f5453fa3292b1a2999bb342b24454ea90d87b14b8c680d00c9918",
+        "results/beamforming/tables/paper/theory/information_counts.csv": "1b35630b47b384e5a35748706d1e4fa17dc6d425a92a6819f7299ed713298b64",
+        "results/beamforming/tables/paper/theory/information_derivatives.csv": "ce1dd87d24493cb923735adddc48ed59ea9f8f56b809af9bd3d4ae47f38a853c",
+        "results/beamforming/tables/paper/theory/information_loss.csv": "f632a0e8e0f9293ced3579f28060432af80895a6cae103d4a5d8c1b5c01d866f",
+        "results/beamforming/tables/paper/theory/inverse_fisher.csv": "d8366e12452339f3ccda6bbb3e91f86f11db078d0ce898ac661ec1e06110dc3d",
+        "results/beamforming/tables/paper/theory/inverse_fisher_summary.csv": "21864fce3fc4d720ab3a07c6856ac100206afa8b7acb150d93e55c2b099fcd81",
+        "results/beamforming/tables/paper/theory/numerical_accuracy.csv": "4dc95fd795299aa7924d25b31865ead35d814bec571f86367a561aa5c40e712d",
+        "results/beamforming/tables/paper/theory/scalar_checks.csv": "1aa60d29a43f1ba541399118c5d73ec3b598c4fc9960a4d040706d12379158cb",
+        "results/beamforming/tables/paper/theory/tracking.csv": "7df14149a48b421c283e22b6e4a8e6c271b62cb575f39b016a4f8dcd9ff06baf",
+        "results/beamforming/tables/paper/theory/tracking_phase.csv": "27401cc16ba250cab3fc861abc71340c3d19e2eb43657038f9e711a0a3e243d3",
+        "results/beamforming/tables/paper/theory/tracking_summary.csv": "652c05760cce6519d14c93a25623756db7501147503b38efcc12ef5c4cd65808",
+        "results/beamforming/tables/pilot/computation/accuracy.csv": "3c3dd32f6ce18a3fdbcdc12bde65c1b7e7d074bfafc86c563dca769b208895f2",
+        "results/beamforming/tables/pilot/computation/memory.csv": "8c6dc3998ab8bc5605489925a183055a0e6e8a10e74465e94c6f04feded4afae",
+        "results/beamforming/tables/pilot/computation/pipeline_timings.csv": "af5d4f22ad3938859774e8537ecf154e16fc03e49767a94bea01ebc148fef626",
+        "results/beamforming/tables/pilot/computation/primitives.csv": "4d90df39a5bf2700662fa05c58470ae198da01dc05c0cb7cfd704640a1123fac",
+        "results/beamforming/tables/pilot/computation/summary.csv": "523dae8c06359928e7dfa65479a45db10ce3a2b3b4c5cf4d4122b187eef51fce",
+        "results/beamforming/tables/pilot/performance/block_summary.csv": "fba87cc99533cc1f4c74e8b6d358819d7dae41827ee4d2f81d5e4f363febacbd",
+        "results/beamforming/tables/pilot/performance/execution_times.csv": "ed3ee5bf82d1e03879c43ede565f093a7153bce5fe55d859d58c8f7524d7b900",
+        "results/beamforming/tables/pilot/performance/moving_episodes.csv": "7b1af1108b94c564286ec87a0d0ec522fcf2b1dc4e03f95fa8a3720487bbd5bb",
+        "results/beamforming/tables/pilot/performance/moving_summary.csv": "c03e82fcaf772865a1192e2b42651429466492a296dc7632db3a58ca9ab02bd5",
+        "results/beamforming/tables/pilot/performance/moving_time_summary.csv": "48a278e763945dc2c181eae6cc4cc15186edbc9988ce99ef5116c18579223d5a",
+        "results/beamforming/tables/pilot/performance/paired_moving.csv": "c300acef056d7f1108654604e8c1b2622082a196ba63fdb5a6898fdcf3807572",
+        "results/beamforming/tables/pilot/performance/paired_stationary.csv": "630eca60d2a4a2b275cc8552a6e5826e72a14fb335f0210225ec965c4e559981",
+        "results/beamforming/tables/pilot/performance/stationary_summary.csv": "d4e9ab569c9f4d1d9e96d27acf38f9b24f25bfda3eaf947c9a2eeb26ea37e337",
+        "results/beamforming/tables/pilot/performance/validation_curves.csv": "01ae8f4249c883a590ce821e9198a35ac195f390c4ed158dd039c8f625d40779",
+        "results/beamforming/tables/pilot/prediction/adaptation.csv": "41e0cea7203eb0dc58da9bd6ef9a2f5e45fe3478e3604b66d0eae970aff0effd",
+        "results/beamforming/tables/pilot/prediction/adaptation_summary.csv": "0ceb2f75e2ce2e1674d4aa3a19de5f857d9af200844575b98976fb94a439fae3",
+        "results/beamforming/tables/pilot/prediction/calibration.csv": "5f83e41c5c9355ba95628d1f08eb021326f86c984f10dc0211ae30a4655f5719",
+        "results/beamforming/tables/pilot/prediction/calibration_summary.csv": "90dde0a3d273968187d1253a2f318b84e4fb478abab1c3c5841d74af5e30b959",
+        "results/beamforming/tables/pilot/prediction/mismatch.csv": "19f3d2a30d63d4d74e8df9a063eb59167a65e1b0d604ffc3033976844dc0b2cd",
+        "results/beamforming/tables/pilot/prediction/paired.csv": "6ecb5c7387ea5a426fefb68e4700b8089febaf4069a265b68daa48ee4c2974c5",
+        "results/beamforming/tables/pilot/prediction/score_summary.csv": "7cdfb758887d7fd83a971400b68124638db1516680de722415ba22b5eb0d431a",
+        "results/beamforming/tables/pilot/prediction/scores.csv": "efc7ab455de29138f2939f02e0f5d07e84a4ea74661578d60904eb934ec6c41f",
+        "results/beamforming/tables/pilot/prediction/validation.csv": "345975fc5f0a3e6a7b2bf5ade57fa20bcd507656c7d200dfa82c40470a1c377a",
+        "results/beamforming/tables/pilot/prediction/variance_boundary_checks.csv": "a9c8f1d48d7ea8c34cbebaf4fdc4c34690317263764308aa792eff1cf992601f",
+        "results/beamforming/tables/pilot/prediction/variance_fits.csv": "66e7c4061c94b637087104353149cb6eedf3954d9c4e53a2447efb0e7c6f7cf0",
+        "results/beamforming/tables/pilot/prediction/variance_iterations.csv": "8ad8d387992a5a9bbfeb061cf758558e79b20340019d5e4bae6d4af8a77c0d45",
+        "results/beamforming/tables/pilot/prediction/variance_references.csv": "a42b1a156a3c16b0a3e51b772910d57bf36c3393857327d31156eecee0fd8bef",
+        "results/beamforming/tables/pilot/prediction/variance_residuals.csv": "6b5e7583a17a6a47f0dfca1ee042a17744d057d6a9dafd33189c42fb28b9b940",
+        "results/beamforming/tables/pilot/theory/block_checks.csv": "fd9f026d5e0be5a1edad5dcb26460423e7350e51976ecf5ec0d074a9184daf4c",
+        "results/beamforming/tables/pilot/theory/curvature.csv": "1b89f459b85ce793ed7bb8efb59efaab493c2701cfa9ceb565574a885014d3fd",
+        "results/beamforming/tables/pilot/theory/global_kl.csv": "bff22b3b8de3db8c1233489910c657c071fa4cfc556f5eaf1551c64232a5148a",
+        "results/beamforming/tables/pilot/theory/information.csv": "acaa342b4c6f5453fa3292b1a2999bb342b24454ea90d87b14b8c680d00c9918",
+        "results/beamforming/tables/pilot/theory/information_counts.csv": "1b35630b47b384e5a35748706d1e4fa17dc6d425a92a6819f7299ed713298b64",
+        "results/beamforming/tables/pilot/theory/information_derivatives.csv": "ce1dd87d24493cb923735adddc48ed59ea9f8f56b809af9bd3d4ae47f38a853c",
+        "results/beamforming/tables/pilot/theory/information_loss.csv": "0594066eb8fb6a94cb8cef56dcf60023997a921fb27af87d1de0f3bffe6eb146",
+        "results/beamforming/tables/pilot/theory/inverse_fisher.csv": "7e1d37bb6740d441a581014ee5fa741df457bbcf3bc20fcefb119c75f7247c19",
+        "results/beamforming/tables/pilot/theory/inverse_fisher_summary.csv": "1beb47bcfb84d2740c0ed345d28b9029a63089dd90b3ba2a42668aa7d0f9d8af",
+        "results/beamforming/tables/pilot/theory/numerical_accuracy.csv": "c6635f6b91d2ee70e9ae501d478b5bcdf7aaf1e65a390d4ac040a16fe0980c5c",
+        "results/beamforming/tables/pilot/theory/scalar_checks.csv": "1aa60d29a43f1ba541399118c5d73ec3b598c4fc9960a4d040706d12379158cb",
+        "results/beamforming/tables/pilot/theory/tracking.csv": "2c6594d35f0ab4c854e4f8497ca13f2ad84785986526350931e7a94528de8f2d",
+        "results/beamforming/tables/pilot/theory/tracking_phase.csv": "73470875013d1512d5835b5a4dfef0e6e85869212595d4bf009a309157ec7a85",
+        "results/beamforming/tables/pilot/theory/tracking_summary.csv": "98f75b8c88d1fe609120bb799ce6b47061873b5d029f83410402a1ad53091ff5",
+        "results/beamforming/tables/verify/computation/accuracy.csv": "ba715a61a235a31dfe7bb41bc501089b9624660a5bf7ab422a5bdbf0266bb1ce",
+        "results/beamforming/tables/verify/computation/memory.csv": "03918ce7a0fc8a96593ea21f5af98b26649789735927204c668940ad444789af",
+        "results/beamforming/tables/verify/computation/pipeline_timings.csv": "2ea5ea3635a26aa54199f60ef00df509a371909e9612f045a684921be887443d",
+        "results/beamforming/tables/verify/computation/primitives.csv": "4c60b3671bf4592aa2dee0fb9b5629cf92a0ba503373eadd88d6c648adc6de28",
+        "results/beamforming/tables/verify/computation/summary.csv": "ac5812f42d2fa4ebd0b111acbd10d4ae34fbb283da0e46283c2c619dd7d5e839",
+        "results/beamforming/tables/verify/performance/block_summary.csv": "254f5cf3c3c4147a2719c72c059a8beea2ba4911f6e06071a5b39fff1c0c9d3a",
+        "results/beamforming/tables/verify/performance/execution_times.csv": "66c04774fa3f482f041c8e36e08c2892dc8ff3079211d1fcc87191f3c285e295",
+        "results/beamforming/tables/verify/performance/moving_episodes.csv": "da43510af20b95907fd4a07b82cc544c280d869a3476c9e68133fde5622933d5",
+        "results/beamforming/tables/verify/performance/moving_summary.csv": "9552a677acded169dd206eeae85a56ab6e3eec2201d87f7ecc197a499389abd7",
+        "results/beamforming/tables/verify/performance/moving_time_summary.csv": "5018b630585f2e0305fded3deaf0d58a5ed3624a370b2094b0ffc791c985e323",
+        "results/beamforming/tables/verify/performance/paired_moving.csv": "9b7b8ee0668c7daf3fa67cb4f5827549f06f2d9a68b7196cbec9dd1f70a5aba6",
+        "results/beamforming/tables/verify/performance/paired_stationary.csv": "c0ca05cc39399f8ff511d926ff74dcee7f67c25eaa28a96b5ef45716b510ed7c",
+        "results/beamforming/tables/verify/performance/stationary_summary.csv": "66d63ce32e5a8589e7a433b2c361efd55ae4193c711fe9833f88ad9ff25d360d",
+        "results/beamforming/tables/verify/performance/validation_curves.csv": "c44fae5972d76cef3e8b9a8597998de1b14fa758663b0f80bd9d18679ea97eba",
+        "results/beamforming/tables/verify/prediction/adaptation.csv": "f966383fb0b2554d6c971ea751e28b038c6a15d59f0521bcc817f8157df3b942",
+        "results/beamforming/tables/verify/prediction/adaptation_summary.csv": "fd0e0e58de67c504f63a0e1586e4ccc662e4543c41fcb3799ea82c3588e2db16",
+        "results/beamforming/tables/verify/prediction/calibration.csv": "4d7db75091952a8ca8ebbef96a570959627e8a7590cb30e72873f2b3c4c0e8ef",
+        "results/beamforming/tables/verify/prediction/calibration_summary.csv": "790ec84ae0cf613510d3c7b711505dec8825c2b171d997a02c6afbe31b227e3f",
+        "results/beamforming/tables/verify/prediction/mismatch.csv": "574f1029eaccdbcab32ae9dddb36ff0ded2510d316f4b7fe4719db67f1ea0662",
+        "results/beamforming/tables/verify/prediction/paired.csv": "a49bc1f67b7337283585a56dd7dff1ae34fb554cae4e53e40b5f104b1975e255",
+        "results/beamforming/tables/verify/prediction/score_summary.csv": "b99fae715eea25559845b262c46395b332e25ff83fa28a1ee54695a29c02bdda",
+        "results/beamforming/tables/verify/prediction/scores.csv": "aa2de7d8ff90a0a036ae7c41c7e834e74071f674c4f5742a4235d39fc4d60607",
+        "results/beamforming/tables/verify/prediction/validation.csv": "8e8ef0d0d74a6b574206b72580190c04edf0219ca09942a54c6b1595de459f04",
+        "results/beamforming/tables/verify/prediction/variance_boundary_checks.csv": "a9c8f1d48d7ea8c34cbebaf4fdc4c34690317263764308aa792eff1cf992601f",
+        "results/beamforming/tables/verify/prediction/variance_fits.csv": "66e7c4061c94b637087104353149cb6eedf3954d9c4e53a2447efb0e7c6f7cf0",
+        "results/beamforming/tables/verify/prediction/variance_iterations.csv": "8ad8d387992a5a9bbfeb061cf758558e79b20340019d5e4bae6d4af8a77c0d45",
+        "results/beamforming/tables/verify/prediction/variance_references.csv": "a42b1a156a3c16b0a3e51b772910d57bf36c3393857327d31156eecee0fd8bef",
+        "results/beamforming/tables/verify/prediction/variance_residuals.csv": "6b5e7583a17a6a47f0dfca1ee042a17744d057d6a9dafd33189c42fb28b9b940",
+        "results/beamforming/tables/verify/theory/block_checks.csv": "fd9f026d5e0be5a1edad5dcb26460423e7350e51976ecf5ec0d074a9184daf4c",
+        "results/beamforming/tables/verify/theory/curvature.csv": "585df02c5f5d528fa84ea60907efcdea42e67cae7bf0e3d17a8cea297317cb8a",
+        "results/beamforming/tables/verify/theory/global_kl.csv": "bff22b3b8de3db8c1233489910c657c071fa4cfc556f5eaf1551c64232a5148a",
+        "results/beamforming/tables/verify/theory/information.csv": "acaa342b4c6f5453fa3292b1a2999bb342b24454ea90d87b14b8c680d00c9918",
+        "results/beamforming/tables/verify/theory/information_counts.csv": "1b35630b47b384e5a35748706d1e4fa17dc6d425a92a6819f7299ed713298b64",
+        "results/beamforming/tables/verify/theory/information_derivatives.csv": "ce1dd87d24493cb923735adddc48ed59ea9f8f56b809af9bd3d4ae47f38a853c",
+        "results/beamforming/tables/verify/theory/information_loss.csv": "0594066eb8fb6a94cb8cef56dcf60023997a921fb27af87d1de0f3bffe6eb146",
+        "results/beamforming/tables/verify/theory/inverse_fisher.csv": "18fde5bcac344740aa3132e9df5a9d8ca11d977a9a63948b875e01fca59a3569",
+        "results/beamforming/tables/verify/theory/inverse_fisher_summary.csv": "bcb95e5cd2be0ef8accc3566cde63c094ab59a00afbc7d58e964c54673ceae3f",
+        "results/beamforming/tables/verify/theory/numerical_accuracy.csv": "c6635f6b91d2ee70e9ae501d478b5bcdf7aaf1e65a390d4ac040a16fe0980c5c",
+        "results/beamforming/tables/verify/theory/scalar_checks.csv": "1aa60d29a43f1ba541399118c5d73ec3b598c4fc9960a4d040706d12379158cb",
+        "results/beamforming/tables/verify/theory/tracking.csv": "01d44cc50a6d12888f3b937fc6294c0669be8397d4451ab3e18faa89fe122aca",
+        "results/beamforming/tables/verify/theory/tracking_phase.csv": "73470875013d1512d5835b5a4dfef0e6e85869212595d4bf009a309157ec7a85",
+        "results/beamforming/tables/verify/theory/tracking_summary.csv": "580d6f17d7da4401b13174f3ae9c28d48efe32d94018b85671df29ce5c6f38cc",
+        "results/contact/data/paper/computation/checks.json": "376fb0e27210a42fe91b48450e70317bb9be2ecf33c9248b49dbeb8c767d2a74",
+        "results/contact/data/paper/computation/hardware.json": "54276ae85216c7b4a9d0a0e0c0477031e0461d0dc6e7db56fdf675b76f80130f",
+        "results/contact/data/paper/computation/parameters.npz": "97fd2fa90799fb3f4dd2e4ccfb3f90c18daa1545a368fb02d5efac6ad2016ff1",
+        "results/contact/data/paper/computation/preregistered.json": "c3c3d49b294d88fcbf1a257144e8d0070eb75a3864727e9934a51ccdccac2ba5",
+        "results/contact/data/paper/computation/task_inputs.npz": "0306ed548413985bececb49a60881595f0729e3bb6c956be88f75f57df2dea1e",
+        "results/contact/data/paper/computation/task_matching.json": "aa894d437ebb24f46348cd05dbf84cfe8e6a062e4287b8160163ac8c7b544fae",
+        "results/contact/data/paper/performance/anisotropy.npz": "d3e7afc0ff19d80534c7385a4ee71956b883bb5a371f8c7f8602ee6685eec311",
+        "results/contact/data/paper/performance/anisotropy_checks.json": "ee6676edcbf624e83dcebd7a8904ab53a9acedc99cd734545dbe78bd27523217",
+        "results/contact/data/paper/performance/checks.json": "d9827f6144546154610365bda77cd361098b44f3a1e6a6bd1321590b6af93307",
+        "results/contact/data/paper/performance/preregistered.json": "91eeb749d9192eb47ce82beb33104e30366f590e40e1f46f2b414f2b038c9ccb",
+        "results/contact/data/paper/performance/selected.json": "0548b0e434a3c1cf278d8b1e29593e2533a9c9da0b96e5dfcec424e03b2a3c57",
+        "results/contact/data/paper/performance/story.npz": "d86191c85660423022e0c9bb0e49269e2a59ac531c666a3afe77aa40a228eebc",
+        "results/contact/data/paper/performance/validation_observations_plane.npz": "ef64090c6178f7dfb397a6d290fcacb550ba5911ad0ceefa76e8c9234c2f4498",
+        "results/contact/data/paper/performance/validation_observations_sphere.npz": "55624546c6f05b7e9d084b52929e68db4cf6b6bd0bfe151c5ca5abd71f885142",
+        "results/contact/data/paper/performance/validation_observations_static_balanced.npz": "feb4f136b7b2bb566a4aeaac16baf8b98d21503c725d1150b71f483128be9396",
+        "results/contact/data/paper/performance/validation_observations_static_concentrated.npz": "e5de4aef6b1f431e2a74c7c4807fe7e8190b8fbfe52d4129adbb86bec8516e84",
+        "results/contact/data/paper/prediction/checks.json": "03f8eb35f589c9d9afcaf90de776d7f7c7e7ff62d064639f7b4d5ce32a1009d3",
+        "results/contact/data/paper/prediction/failures.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "results/contact/data/paper/prediction/fit_events.json.gz": "9eb7a722aa54fda42852afea9deb46c048a991892ff1e7f7a5cd8d176fba314a",
+        "results/contact/data/paper/prediction/preregistered.json": "150d5a317817c40eb74602ae696b7f8c52e42b5f3289878350bb9dbefb2e8328",
+        "results/contact/data/paper/prediction/producers/benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+        "results/contact/data/paper/prediction/producers/benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+        "results/contact/data/paper/prediction/producers/benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+        "results/contact/data/paper/prediction/producers/lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+        "results/contact/data/paper/prediction/producers/lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+        "results/contact/data/paper/prediction/producers/lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+        "results/contact/data/paper/prediction/producers/lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+        "results/contact/data/paper/prediction/producers/lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+        "results/contact/data/paper/prediction/producers/lib/causal_variance.py": "f89348e57ee850d91f1317e1ce443e95849f15c497a4170c0caa49143ddf5af0",
+        "results/contact/data/paper/prediction/producers/lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+        "results/contact/data/paper/prediction/producers/lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+        "results/contact/data/paper/prediction/producers/lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+        "results/contact/data/paper/prediction/producers/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "results/contact/data/paper/prediction/producers/lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+        "results/contact/data/paper/prediction/producers/lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
+        "results/contact/data/paper/prediction/producers/lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+        "results/contact/data/paper/prediction/producers/lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+        "results/contact/data/paper/prediction/producers/lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+        "results/contact/data/paper/prediction/producers/lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+        "results/contact/data/paper/prediction/producers/results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+        "results/contact/data/paper/prediction/producers/results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+        "results/contact/data/paper/prediction/producers/results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+        "results/contact/data/paper/prediction/producers/results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03",
+        "results/contact/data/paper/prediction/producers/scripts/run_block_em_study.py": "9b32a45cbc0166dc4d0059d2fdf7e2595cd343a0171fd9ad02fc8bc5f648f6fb",
+        "results/contact/data/paper/prediction/producers/scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
+        "results/contact/data/paper/prediction/producers/tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc",
+        "results/contact/data/paper/prediction/producers/tests/test_causal_variance.py": "1f5e2189151c4b51ee5c5606cb03018e71b5d679fbe2246d499498e8360a2744",
+        "results/contact/data/paper/prediction/selected.json": "7782b0a0affe506f23ba502aec110b71ba71d5363826001d30ed44e6eb0a6f5d",
+        "results/contact/data/paper/prediction/stories.npz": "131d1605e957375543ccaf6b128f0bc0aafce5c7ad888e14ffaafa5f24399a5f",
+        "results/contact/data/paper/prediction/stories/test_00000.npz": "677df56308dff39aaa03a498856d29d2167b8d165cf6d71d687a4abcb54d62ee",
+        "results/contact/data/paper/prediction/stories/test_00256.npz": "45f9d7f995c4df36e53c071eeae22a0376c719d4cc13e0f142d48d73195aa983",
+        "results/contact/data/paper/prediction/variance_reference_provenance.json": "3536c755f91ce5b281afcbb678280186089b051c1578e0bdc432e20af22f1b1e",
+        "results/contact/data/paper/theory/checks.json": "8e83283c578440f7bd9b2206ff985ae4e2067c73dcb94976f9d19e501e24d14c",
+        "results/contact/data/paper/theory/preregistered.json": "86482653ce37aab5b7e470f28f56314361ec6a563879262e36e35fb9099f493f",
+        "results/contact/data/pilot/computation/checks.json": "91259d6e08bd4df52d7eb15d142f0eb148f0223e78d93c617a4fdd9bc3b4344b",
+        "results/contact/data/pilot/computation/hardware.json": "eb5ebb9e7473b534493cc1fefa40b1a2a3e64abce8598b0e76f1b054ce967468",
+        "results/contact/data/pilot/computation/parameters.npz": "dc0bc51d1a5e16c739c306bdc25f2e9561242e3e84d7b1e2c5f6384f4ebe7ded",
+        "results/contact/data/pilot/computation/preregistered.json": "df0dee209c86a15fc4fcd7c3a961f29e32ce2fdf7fbda6c531b1b69961c5f711",
+        "results/contact/data/pilot/computation/task_inputs.npz": "a9a1b0b77cce6f78a6b1eb03b037a9632d13b11781a36a6bd92960ccdf83ef6a",
+        "results/contact/data/pilot/computation/task_matching.json": "2f07629af7559979f2f2c61e916b68c6fb3bfea028b277f6c890eff7ce5951e1",
+        "results/contact/data/pilot/performance/anisotropy.npz": "d3e7afc0ff19d80534c7385a4ee71956b883bb5a371f8c7f8602ee6685eec311",
+        "results/contact/data/pilot/performance/anisotropy_checks.json": "ee6676edcbf624e83dcebd7a8904ab53a9acedc99cd734545dbe78bd27523217",
+        "results/contact/data/pilot/performance/checks.json": "c60286e4bc4d75a1e441376fdf444b104f515bcc76dde1075031f7b6a5c55c1f",
+        "results/contact/data/pilot/performance/preregistered.json": "160ee768b030e566425d5b28246a7e10785e10451f0a19f3dcb6d714dc4bec4d",
+        "results/contact/data/pilot/performance/selected.json": "ad3be5332d1154e3f1b1483c6d822c1c79d173aeaa6e2b95bc81c04318682d81",
+        "results/contact/data/pilot/performance/story.npz": "fc8b50e1757febc4948b5031879532a9003c4d1dfb90e52542b192738871feb2",
+        "results/contact/data/pilot/performance/validation_observations_plane.npz": "e33a0ca84f8ebb23a9d17bcce6201669d28a7e80a18493df9a74b077431ae736",
+        "results/contact/data/pilot/performance/validation_observations_sphere.npz": "3a910ef5aa2431bb153c01ae42d79a751abe6265e92c87a3902f15897d871fcf",
+        "results/contact/data/pilot/performance/validation_observations_static_balanced.npz": "90e6598bb8c7d2c28ca0859c4ee546e7379f61de0ffe4d2efb9f37458ee41851",
+        "results/contact/data/pilot/performance/validation_observations_static_concentrated.npz": "b77ce55f1d6a88631cb1687858c11a46276155328b045fe62e80a2e3dc0ad7f2",
+        "results/contact/data/pilot/prediction/checks.json": "e183c632f0c59c7388fe2595e2049d92d8e346446f3f2582628b701a48578d1a",
+        "results/contact/data/pilot/prediction/failures.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "results/contact/data/pilot/prediction/fit_events.json.gz": "755b177f93af745b23b959d4b32768c01798c1c031cbfed50b95f3658bfa0f78",
+        "results/contact/data/pilot/prediction/frozen_paper_budget.json": "6b7a95a197b8c9133a40d768c349e9511427aac9018ee37a4665b1d6c36b31e3",
+        "results/contact/data/pilot/prediction/preregistered.json": "281e8f8a5780649530afb54d217294c66eb770c5b1365a185a9ca6f5b71debcc",
+        "results/contact/data/pilot/prediction/producers/benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+        "results/contact/data/pilot/prediction/producers/benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+        "results/contact/data/pilot/prediction/producers/benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+        "results/contact/data/pilot/prediction/producers/lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+        "results/contact/data/pilot/prediction/producers/lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+        "results/contact/data/pilot/prediction/producers/lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+        "results/contact/data/pilot/prediction/producers/lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+        "results/contact/data/pilot/prediction/producers/lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+        "results/contact/data/pilot/prediction/producers/lib/causal_variance.py": "f89348e57ee850d91f1317e1ce443e95849f15c497a4170c0caa49143ddf5af0",
+        "results/contact/data/pilot/prediction/producers/lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+        "results/contact/data/pilot/prediction/producers/lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+        "results/contact/data/pilot/prediction/producers/lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+        "results/contact/data/pilot/prediction/producers/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "results/contact/data/pilot/prediction/producers/lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+        "results/contact/data/pilot/prediction/producers/lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
+        "results/contact/data/pilot/prediction/producers/lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+        "results/contact/data/pilot/prediction/producers/lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+        "results/contact/data/pilot/prediction/producers/lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+        "results/contact/data/pilot/prediction/producers/lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+        "results/contact/data/pilot/prediction/producers/results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+        "results/contact/data/pilot/prediction/producers/results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+        "results/contact/data/pilot/prediction/producers/results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+        "results/contact/data/pilot/prediction/producers/results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03",
+        "results/contact/data/pilot/prediction/producers/scripts/run_block_em_study.py": "9b32a45cbc0166dc4d0059d2fdf7e2595cd343a0171fd9ad02fc8bc5f648f6fb",
+        "results/contact/data/pilot/prediction/producers/scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
+        "results/contact/data/pilot/prediction/producers/tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc",
+        "results/contact/data/pilot/prediction/producers/tests/test_causal_variance.py": "1f5e2189151c4b51ee5c5606cb03018e71b5d679fbe2246d499498e8360a2744",
+        "results/contact/data/pilot/prediction/selected.json": "7782b0a0affe506f23ba502aec110b71ba71d5363826001d30ed44e6eb0a6f5d",
+        "results/contact/data/pilot/prediction/stories.npz": "f4e59ab5907be78b8210d90c651756a32c2b653d12a751b05bf3c38c3d30db75",
+        "results/contact/data/pilot/prediction/stories/test_00000.npz": "34bf244b5c48a21074b635b5ff157aed4eff5cc3953e56f1f5e66e61835bd8d4",
+        "results/contact/data/pilot/prediction/stories/test_00003.npz": "3a77e21cfb7ad25377e9f3006567dc578ff2058d30a9dcd23374221e3eb8ac21",
+        "results/contact/data/pilot/prediction/variance_reference_provenance.json": "3536c755f91ce5b281afcbb678280186089b051c1578e0bdc432e20af22f1b1e",
+        "results/contact/data/pilot/theory/checks.json": "d1a6f3c514884b5b28e4d9ed48f5d62d6c46aa046b8e47934d2b594115bf41eb",
+        "results/contact/data/pilot/theory/preregistered.json": "cf3ae45b1e8c3a5b03983fcb12517d75f5938a01ffc7a87ee2391102290c9c1e",
+        "results/contact/data/verify/computation/checks.json": "4e507f52eddd2313317f6706322563138c1de99565c459bee96890d25bd43f14",
+        "results/contact/data/verify/computation/hardware.json": "eb5ebb9e7473b534493cc1fefa40b1a2a3e64abce8598b0e76f1b054ce967468",
+        "results/contact/data/verify/computation/parameters.npz": "6c80305d67c9482cc0d74a1e5f29ff48e2081d0e7cd802106233615645b9ced0",
+        "results/contact/data/verify/computation/preregistered.json": "11a4bcffa584505a0b28384ef542b971052ecdc1bae257bcc6d41e93fc581eef",
+        "results/contact/data/verify/computation/task_inputs.npz": "56f768cac2d6e650db3312703c6b6889c40f52fe30d1015b7d02f886bc798c55",
+        "results/contact/data/verify/computation/task_matching.json": "fa465aeb0cc0a77b5d8292730e47a144e16f649c646d6a72645ce05d37e5c3df",
+        "results/contact/data/verify/performance/anisotropy.npz": "d3e7afc0ff19d80534c7385a4ee71956b883bb5a371f8c7f8602ee6685eec311",
+        "results/contact/data/verify/performance/anisotropy_checks.json": "ee6676edcbf624e83dcebd7a8904ab53a9acedc99cd734545dbe78bd27523217",
+        "results/contact/data/verify/performance/checks.json": "a6d7189a61c0cc61534ffc0c31b8d29e5f0d0fa179b60c0d5bdc1283800fc32d",
+        "results/contact/data/verify/performance/preregistered.json": "dd359d038ba56c811d80e23ab3aee6fa9ec7a4c2218a9885f3bf33c004ed0cb1",
+        "results/contact/data/verify/performance/selected.json": "294c173be4e755011c06f2d664c5b7fe94e67840b9cf1d31507497c19e7ad71e",
+        "results/contact/data/verify/performance/story.npz": "46c1fe5ab2375f8bf938bce0c654558d8d422a04f62c67ea07b88155b63b3739",
+        "results/contact/data/verify/performance/validation_observations_plane.npz": "ffcae48dac3edfa851ef2eed6b1cc9550176cc9afff8474f2ea0611c0951145e",
+        "results/contact/data/verify/performance/validation_observations_sphere.npz": "277118f08ced436e046e2d89d129dc496689641768dc9628e1aa3de6697bd7c7",
+        "results/contact/data/verify/performance/validation_observations_static_balanced.npz": "a130ffcc1cdaa3bbcf4c57b694bf5973789d405e5f0cb1475994e12d3f1b68da",
+        "results/contact/data/verify/performance/validation_observations_static_concentrated.npz": "1b34d0089584b64f640988d47d8a3a7464f01f0d7b701c70dcfc2a46ee44700a",
+        "results/contact/data/verify/prediction/checks.json": "da81a32cda160b5cb4c9978ae6a099206e19871e943775e55ddb87f98e8250d7",
+        "results/contact/data/verify/prediction/failures.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+        "results/contact/data/verify/prediction/fit_events.json.gz": "a757f57752423284f2a9e489eff981196deffe5e1f4b14ecf5933ac21b844ee7",
+        "results/contact/data/verify/prediction/preregistered.json": "681aba5c3d26af12603df7eb32a9d074dc7cc1410f183ab07d26bc1a5554f933",
+        "results/contact/data/verify/prediction/producers/benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+        "results/contact/data/verify/prediction/producers/benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+        "results/contact/data/verify/prediction/producers/benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+        "results/contact/data/verify/prediction/producers/lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+        "results/contact/data/verify/prediction/producers/lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+        "results/contact/data/verify/prediction/producers/lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+        "results/contact/data/verify/prediction/producers/lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+        "results/contact/data/verify/prediction/producers/lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+        "results/contact/data/verify/prediction/producers/lib/causal_variance.py": "f89348e57ee850d91f1317e1ce443e95849f15c497a4170c0caa49143ddf5af0",
+        "results/contact/data/verify/prediction/producers/lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+        "results/contact/data/verify/prediction/producers/lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+        "results/contact/data/verify/prediction/producers/lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+        "results/contact/data/verify/prediction/producers/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "results/contact/data/verify/prediction/producers/lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+        "results/contact/data/verify/prediction/producers/lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
+        "results/contact/data/verify/prediction/producers/lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+        "results/contact/data/verify/prediction/producers/lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+        "results/contact/data/verify/prediction/producers/lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+        "results/contact/data/verify/prediction/producers/lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+        "results/contact/data/verify/prediction/producers/results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+        "results/contact/data/verify/prediction/producers/results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+        "results/contact/data/verify/prediction/producers/results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+        "results/contact/data/verify/prediction/producers/results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03",
+        "results/contact/data/verify/prediction/producers/scripts/run_block_em_study.py": "9b32a45cbc0166dc4d0059d2fdf7e2595cd343a0171fd9ad02fc8bc5f648f6fb",
+        "results/contact/data/verify/prediction/producers/scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
+        "results/contact/data/verify/prediction/producers/tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc",
+        "results/contact/data/verify/prediction/producers/tests/test_causal_variance.py": "1f5e2189151c4b51ee5c5606cb03018e71b5d679fbe2246d499498e8360a2744",
+        "results/contact/data/verify/prediction/selected.json": "7782b0a0affe506f23ba502aec110b71ba71d5363826001d30ed44e6eb0a6f5d",
+        "results/contact/data/verify/prediction/stories.npz": "e3af26847bd61ba784dc7ee58ac6dfb2ed8857319c246de6949b8eb6fa348e96",
+        "results/contact/data/verify/prediction/stories/test_00000.npz": "b1abda7e4b3110c1f2089bedffa5406f073e4f808a06be745cbb97e11358983d",
+        "results/contact/data/verify/prediction/stories/test_00003.npz": "5b4e9cd719ae700dcc759e853584ec0433a355738cadb2311de200c40bacbbf8",
+        "results/contact/data/verify/prediction/variance_reference_provenance.json": "3536c755f91ce5b281afcbb678280186089b051c1578e0bdc432e20af22f1b1e",
+        "results/contact/data/verify/theory/checks.json": "2f8dd9f70650b4b23585f9e296edf7af9e9ad5252847809ae22e493be2cc1edf",
+        "results/contact/data/verify/theory/preregistered.json": "1a28f8af141f4b27982c9e0c425367735af4b570abd3e14b2b756733ae83fd25",
+        "results/contact/tables/paper/computation/accuracy.csv": "d6d255d9598e76d58e16290c686ff58a8b938f3362b2e9ddfbac8c9625634f9b",
+        "results/contact/tables/paper/computation/memory.csv": "291c51621b6738a4dfb5333d990897bac2a13332ec7da1d5e8cdc0bf341aaf8a",
+        "results/contact/tables/paper/computation/pipeline_timings.csv": "b5779cd2ffe1297ebf0705688de53fe8e6bf41e0503432eeb6cbf2e9663292fa",
+        "results/contact/tables/paper/computation/primitives.csv": "2a2931c4feced61ab38cc8b41d7cc483cdbc2ea91cc979874ede844e93555c2e",
+        "results/contact/tables/paper/computation/summary.csv": "fb057ff2b296b6c14ac80eeaaac1df5800fced091b8657f94b495ec9c7664dd3",
+        "results/contact/tables/paper/performance/blocks.csv": "3117af1610981bac9d6f8d09a73cae89c3f7f7b3279379b519dcde019d6424eb",
+        "results/contact/tables/paper/performance/mechanics.csv": "18f88128367c397264ef99b7b311caca23836cacb492e8f62c8debe08adf094e",
+        "results/contact/tables/paper/performance/metrics.csv": "6fbf39129be8b26863f972f57dd2448cb67827881e129951fa87cacd0a4a5367",
+        "results/contact/tables/paper/performance/paired.csv": "2a9e0d9023e3ae9cf97b337556da4af605535e841289470788d7de87c485ba45",
+        "results/contact/tables/paper/performance/validation.csv": "d8887f78810e98a8cea13c156eed4995c4668354b33bf7508a29291d3acb98d2",
+        "results/contact/tables/paper/prediction/adaptation.csv": "acc54b61abba21a93e002114af396dc5437a5ffec040896ac296daff23b89648",
+        "results/contact/tables/paper/prediction/adaptation_summary.csv": "d340d0c7b55cf5cc054eaa2a99cda22dde7b64663c15965aa3b7dbc8eaf48ffe",
+        "results/contact/tables/paper/prediction/calibration.csv": "c376c903e73b046b7c011437d21901cc0640e1f4b491a3b680ad638cba6f071d",
+        "results/contact/tables/paper/prediction/calibration_summary.csv": "5e68f63effe7c9a78d1d3287103ba93a4eabf9d71dd41d0d98c56b8e13ce5083",
+        "results/contact/tables/paper/prediction/mismatch.csv": "3a42e8650905d4a6ec30d8388d84ea5b4fad2df1e097f4e27606465050b7f18b",
+        "results/contact/tables/paper/prediction/paired.csv": "912773360e6ee99c2ddbcf97de85e770e76fcfcf7a6bcfc9060bc11029cd8fa7",
+        "results/contact/tables/paper/prediction/score_summary.csv": "dfd52ce4391320dcc9aad9dd537740ce6b84dd910a722f28556f27e6b9f2c851",
+        "results/contact/tables/paper/prediction/scores.csv": "e0e009db80a1610e2694decd5e277122623102b5993761c5f4cd242a75a83cae",
+        "results/contact/tables/paper/prediction/validation.csv": "c19e5290384395aac634bb25084d89f9b16e84bcf3fc60d736de510db9393c22",
+        "results/contact/tables/paper/prediction/variance_boundary_checks.csv": "a9c8f1d48d7ea8c34cbebaf4fdc4c34690317263764308aa792eff1cf992601f",
+        "results/contact/tables/paper/prediction/variance_fits.csv": "c22585ab8f43d71bcf200464b0ecef2ef4c51770a3c1ba1de37d3f320c075051",
+        "results/contact/tables/paper/prediction/variance_iterations.csv": "52bd31d0b918bdeda7ea275c06cee3e75fbe7ccd7e07e684a03a445787b2419e",
+        "results/contact/tables/paper/prediction/variance_references.csv": "99e27762fa7445a6516fed1184cc0920837c7a916fe8953094932868ee2a368a",
+        "results/contact/tables/paper/prediction/variance_residuals.csv": "d1b50a02ebcb053d85b6a2db218c85b725617cc658207ef0cd6bfc759e3c5dc6",
+        "results/contact/tables/paper/theory/block_checks.csv": "f2c6924af04f8fdfa639480b9b65ed9eccc310270d57521faa02b9d0382f753e",
+        "results/contact/tables/paper/theory/curvature.csv": "56939ea2d7610a87d84526ce415ecb31192e91f162481f1ab408085812d68da8",
+        "results/contact/tables/paper/theory/global_kl.csv": "f75c52a2cec357dcdd6628bc7bbd00c9d57a7ba16ae0b8259f7ea6fb5fe27c17",
+        "results/contact/tables/paper/theory/information.csv": "185d8819ab64cd45e56f82607fc1b76094ef6e2233184cfc2eed6f235e5f974e",
+        "results/contact/tables/paper/theory/information_counts.csv": "1b35630b47b384e5a35748706d1e4fa17dc6d425a92a6819f7299ed713298b64",
+        "results/contact/tables/paper/theory/information_derivatives.csv": "e6676d96b7d3e8bbb38a0011c842545cc5cfc3d30ee72d9884e60348bffd284b",
+        "results/contact/tables/paper/theory/information_loss.csv": "f632a0e8e0f9293ced3579f28060432af80895a6cae103d4a5d8c1b5c01d866f",
+        "results/contact/tables/paper/theory/inverse_fisher.csv": "e20e6b7bb718e6fbb0259bef75dee0b2a7492f4373dc0881d8bb7957800284a9",
+        "results/contact/tables/paper/theory/inverse_fisher_summary.csv": "3885574d769ce0877c2515950ccccc115c575c01e19ee3a356c1b0352e71d3f3",
+        "results/contact/tables/paper/theory/numerical_accuracy.csv": "70149bed8eff2c2a0b6d251a86ac289a582cd4c2e5e60724b9851b3ed25f3f4a",
+        "results/contact/tables/paper/theory/scalar_checks.csv": "35ec3bb0bebb47c647b26d10c4a0ad7fc167e269961872d7ed64cc75410984d6",
+        "results/contact/tables/paper/theory/tracking.csv": "5178dc74f21a4b86a5d3ee3cadb2e1ff43e0f456c711dccd6cd23680f1053d99",
+        "results/contact/tables/paper/theory/tracking_phase.csv": "bd2ba5f15ac5ed9f5699b3cd25b3dc6b84edadf7281441d72cdba0a589c0da05",
+        "results/contact/tables/paper/theory/tracking_summary.csv": "8d591ab54b342c1aee3dc5e89f26ce1d1707ca9227c00e3d6aa25f821c92b866",
+        "results/contact/tables/pilot/computation/accuracy.csv": "8319fb220831ead006b3c5898a9e446ddee59c8e90f06bf1ceadb8038bd3b66a",
+        "results/contact/tables/pilot/computation/memory.csv": "49899e1e41bae2e3e15d1855b7e9ccd25db9e63965fd7f46ed2f82ad3b5fcb2d",
+        "results/contact/tables/pilot/computation/pipeline_timings.csv": "0f572654edb2271cba6c8fbf34c050ddee4cdb8ddfeafaaee294f1653d06b958",
+        "results/contact/tables/pilot/computation/primitives.csv": "3cf6474ce404cd6eb14d3bd7bbeebed984c5a7d3b368f3be9a43ff2cf6411a0e",
+        "results/contact/tables/pilot/computation/summary.csv": "2964eb6c9131c761fa14d0ea19cf527a6208f4aa3a782dedd4c1459650eaaf81",
+        "results/contact/tables/pilot/performance/blocks.csv": "88090627289a41113c58397323d31d68e315b7c69ee2e2d5d1d74ea882ec2231",
+        "results/contact/tables/pilot/performance/mechanics.csv": "ae424cc3cb51acc9ff846d640b03d0b7c810ab01eae9054a74db39c2b51cd693",
+        "results/contact/tables/pilot/performance/metrics.csv": "8adf7a0258f53289dc5b572d803d73a9a85b2bd14603c52c3c6dfdb0156a04ac",
+        "results/contact/tables/pilot/performance/paired.csv": "05d09c7668e90ed1963d1a5838f0a93c436fc2667e23fafd8908f28863495890",
+        "results/contact/tables/pilot/performance/validation.csv": "72de5d6a8a653281bd3cd8259841f506bb809668b2212833e454964d236f3b86",
+        "results/contact/tables/pilot/prediction/adaptation.csv": "948d624904764975639043f5eb882177f683f315d372895dfa38b07bc80802d3",
+        "results/contact/tables/pilot/prediction/adaptation_summary.csv": "7b8b50527c71c64a7cc316607517754a3f957e972057ebc12aca9c22eb916166",
+        "results/contact/tables/pilot/prediction/calibration.csv": "e877fff096a9ed99f7b7a1308885ed471953e978f29e22bb8d38a3b36b5fda51",
+        "results/contact/tables/pilot/prediction/calibration_summary.csv": "bb538b044474a770c99483e41146b54aa35e22e0f7e34386171a7672d78d0ac4",
+        "results/contact/tables/pilot/prediction/mismatch.csv": "372357ec160e1a1cf083cda1a97e41f1f8ba4d07633a608cbcaf079b8beb41a8",
+        "results/contact/tables/pilot/prediction/paired.csv": "ea42cb154de75a0ed3911623b560726066225de8f3b2a9a78148abb77459c854",
+        "results/contact/tables/pilot/prediction/score_summary.csv": "1e1734eaba2c536e4cce7169dcc6e486aff97f2d37957499e7ffb49ebe8d8ac2",
+        "results/contact/tables/pilot/prediction/scores.csv": "df8ddc40524e957b3eead87452d097f8eba5225989f225d8f2d2aba448b3063b",
+        "results/contact/tables/pilot/prediction/validation.csv": "c04bcee74f55b4ea1a3bd9472f3a655ed0f3af7f3e157d1b3a1e6972d60a6338",
+        "results/contact/tables/pilot/prediction/variance_boundary_checks.csv": "a9c8f1d48d7ea8c34cbebaf4fdc4c34690317263764308aa792eff1cf992601f",
+        "results/contact/tables/pilot/prediction/variance_fits.csv": "c22585ab8f43d71bcf200464b0ecef2ef4c51770a3c1ba1de37d3f320c075051",
+        "results/contact/tables/pilot/prediction/variance_iterations.csv": "52bd31d0b918bdeda7ea275c06cee3e75fbe7ccd7e07e684a03a445787b2419e",
+        "results/contact/tables/pilot/prediction/variance_references.csv": "99e27762fa7445a6516fed1184cc0920837c7a916fe8953094932868ee2a368a",
+        "results/contact/tables/pilot/prediction/variance_residuals.csv": "d1b50a02ebcb053d85b6a2db218c85b725617cc658207ef0cd6bfc759e3c5dc6",
+        "results/contact/tables/pilot/theory/block_checks.csv": "f2c6924af04f8fdfa639480b9b65ed9eccc310270d57521faa02b9d0382f753e",
+        "results/contact/tables/pilot/theory/curvature.csv": "56939ea2d7610a87d84526ce415ecb31192e91f162481f1ab408085812d68da8",
+        "results/contact/tables/pilot/theory/global_kl.csv": "bff22b3b8de3db8c1233489910c657c071fa4cfc556f5eaf1551c64232a5148a",
+        "results/contact/tables/pilot/theory/information.csv": "185d8819ab64cd45e56f82607fc1b76094ef6e2233184cfc2eed6f235e5f974e",
+        "results/contact/tables/pilot/theory/information_counts.csv": "1b35630b47b384e5a35748706d1e4fa17dc6d425a92a6819f7299ed713298b64",
+        "results/contact/tables/pilot/theory/information_derivatives.csv": "e6676d96b7d3e8bbb38a0011c842545cc5cfc3d30ee72d9884e60348bffd284b",
+        "results/contact/tables/pilot/theory/information_loss.csv": "0594066eb8fb6a94cb8cef56dcf60023997a921fb27af87d1de0f3bffe6eb146",
+        "results/contact/tables/pilot/theory/inverse_fisher.csv": "223f057f1634429a3b04360e31247ef255448c1803578e0d8f606665063b9193",
+        "results/contact/tables/pilot/theory/inverse_fisher_summary.csv": "2eb0c8322998ceb3767f91a0045c97069147fab8ab0371a26cfc13ec8cb0b951",
+        "results/contact/tables/pilot/theory/numerical_accuracy.csv": "0286677ae23e3e332d245fece987fb5f497a644f324e58dee2cb5eddee4c7cea",
+        "results/contact/tables/pilot/theory/scalar_checks.csv": "35ec3bb0bebb47c647b26d10c4a0ad7fc167e269961872d7ed64cc75410984d6",
+        "results/contact/tables/pilot/theory/tracking.csv": "bc78efa5bc7383a3b6b59e96e2d089c8d8778d6a46e090e4d79553fc74b2fcf6",
+        "results/contact/tables/pilot/theory/tracking_phase.csv": "b44114963ee888e0d42fd9af93437a429c2bf9c6ad3866351ca675d4219f42d1",
+        "results/contact/tables/pilot/theory/tracking_summary.csv": "41dc5eae6d47e8d9f6437e42c85355ec21067070cf59d3b1351781af2c8a4276",
+        "results/contact/tables/verify/computation/accuracy.csv": "216545d17b0595c7a135386a251bb55c6a6fda0bc2ff90ffae7722a7e0b60435",
+        "results/contact/tables/verify/computation/memory.csv": "8b3408554f9dccaa7a9fc78ee63fe70fc636bb5b8b93b25fa585452e0c0cad96",
+        "results/contact/tables/verify/computation/pipeline_timings.csv": "708fffbef5913bc1f30ed6b7646a643e744613ded73df7abc5da64da64ede1b6",
+        "results/contact/tables/verify/computation/primitives.csv": "783615e894e761d0661cdda6bd3a065bc4576cf2cae76e6505d1ef7a43d96de4",
+        "results/contact/tables/verify/computation/summary.csv": "80390f631be8857c868711e2b72e82a97bd3a3d5426b76b076d43779aab195c7",
+        "results/contact/tables/verify/performance/blocks.csv": "8b995fa0d31e13edc6ffd32421f8a0e41d73c487a0590cc70c33626b0e1d4906",
+        "results/contact/tables/verify/performance/mechanics.csv": "c909a5f0d0239a3f3fce9c1ae6b7eb9db99647ddc5e43161c7db70e2e39e213e",
+        "results/contact/tables/verify/performance/metrics.csv": "6d352fc5902073c54541c0ce1cf28307e94b653a0e865dfe3386f1b41f578971",
+        "results/contact/tables/verify/performance/paired.csv": "4fd1d3f7c4cdc5473effd676a54737268c11c4860ec436d0904d346008c2eede",
+        "results/contact/tables/verify/performance/validation.csv": "10fcf1c70ab63e4dd0710fddba2c877cef36999f876de8cff751b70bf68f1985",
+        "results/contact/tables/verify/prediction/adaptation.csv": "56c9f01453bf3666e7d5b525639913750635ade04a63abcf026ea07cc2032560",
+        "results/contact/tables/verify/prediction/adaptation_summary.csv": "7469ac49ddb6f3b6ed38ba42151e5cdc2fafd41359ad2cbe3ce23cb4b9684d16",
+        "results/contact/tables/verify/prediction/calibration.csv": "7df695f8e026974561a2c1c184c99c82f9524e6277143084fb831239412e1608",
+        "results/contact/tables/verify/prediction/calibration_summary.csv": "76e94101c291fbbf44e7db5000d65e384c8df954abee1fd2060ab054499f24a6",
+        "results/contact/tables/verify/prediction/mismatch.csv": "73864fad0f19df0d94602b471b54aa8a774201175f363105c188330b573d7a06",
+        "results/contact/tables/verify/prediction/paired.csv": "386d2031dc70d2a9122db44d2ec01a66bf9b13b79c75782ba4bee133039628d7",
+        "results/contact/tables/verify/prediction/score_summary.csv": "9c902c4dd716ef3f5c347c0f649bcf07ec0046f252d6d2aea7b6a3ff762f1406",
+        "results/contact/tables/verify/prediction/scores.csv": "bb2454b2ef1f92219ff63f3ddd0b949a75ff1dfb527278cba4c5e50bcd9c509d",
+        "results/contact/tables/verify/prediction/validation.csv": "9c2375071388930d886136df0b633a991c221826a6564b7bf4ba13df4dac6712",
+        "results/contact/tables/verify/prediction/variance_boundary_checks.csv": "a9c8f1d48d7ea8c34cbebaf4fdc4c34690317263764308aa792eff1cf992601f",
+        "results/contact/tables/verify/prediction/variance_fits.csv": "c22585ab8f43d71bcf200464b0ecef2ef4c51770a3c1ba1de37d3f320c075051",
+        "results/contact/tables/verify/prediction/variance_iterations.csv": "52bd31d0b918bdeda7ea275c06cee3e75fbe7ccd7e07e684a03a445787b2419e",
+        "results/contact/tables/verify/prediction/variance_references.csv": "99e27762fa7445a6516fed1184cc0920837c7a916fe8953094932868ee2a368a",
+        "results/contact/tables/verify/prediction/variance_residuals.csv": "d1b50a02ebcb053d85b6a2db218c85b725617cc658207ef0cd6bfc759e3c5dc6",
+        "results/contact/tables/verify/theory/block_checks.csv": "f2c6924af04f8fdfa639480b9b65ed9eccc310270d57521faa02b9d0382f753e",
+        "results/contact/tables/verify/theory/curvature.csv": "145ed73c193563e16125eba18388d953e92041c11c946948f84a00de82c0b0bc",
+        "results/contact/tables/verify/theory/global_kl.csv": "bff22b3b8de3db8c1233489910c657c071fa4cfc556f5eaf1551c64232a5148a",
+        "results/contact/tables/verify/theory/information.csv": "185d8819ab64cd45e56f82607fc1b76094ef6e2233184cfc2eed6f235e5f974e",
+        "results/contact/tables/verify/theory/information_counts.csv": "1b35630b47b384e5a35748706d1e4fa17dc6d425a92a6819f7299ed713298b64",
+        "results/contact/tables/verify/theory/information_derivatives.csv": "e6676d96b7d3e8bbb38a0011c842545cc5cfc3d30ee72d9884e60348bffd284b",
+        "results/contact/tables/verify/theory/information_loss.csv": "0594066eb8fb6a94cb8cef56dcf60023997a921fb27af87d1de0f3bffe6eb146",
+        "results/contact/tables/verify/theory/inverse_fisher.csv": "3d75205bb3821b963115e88479b16bbcb1bb788da153336ca726451b9da3ad26",
+        "results/contact/tables/verify/theory/inverse_fisher_summary.csv": "45e18731b0033da12e6437a0a6f8eef64bba69507426232ae83bbc83c10f90fb",
+        "results/contact/tables/verify/theory/numerical_accuracy.csv": "0286677ae23e3e332d245fece987fb5f497a644f324e58dee2cb5eddee4c7cea",
+        "results/contact/tables/verify/theory/scalar_checks.csv": "35ec3bb0bebb47c647b26d10c4a0ad7fc167e269961872d7ed64cc75410984d6",
+        "results/contact/tables/verify/theory/tracking.csv": "b67da89a04132324550c73f68acc2ad09216975c70c217178c6532ea0170846c",
+        "results/contact/tables/verify/theory/tracking_phase.csv": "b44114963ee888e0d42fd9af93437a429c2bf9c6ad3866351ca675d4219f42d1",
+        "results/contact/tables/verify/theory/tracking_summary.csv": "d3420591815157bfe7b9c3eeda481f00f02c37fbbcbc3aedb3f58566d06867e1",
+        "results/simulation_redesign/paper/beamforming/manifest.json": "d1b5fc4a8fc4a8d4aaaf7280286c284eeeaf06f2d383cad33fe57f1632574812",
+        "results/simulation_redesign/paper/beamforming/metrics.csv": "07b1fbb781d60cc2971db0dc77c15a72268ff27af64ba892011e71d3d9aba094",
+        "results/simulation_redesign/paper/beamforming/paired.csv": "67568464f60d775387e4a24b8164bb6aca8b93e610dfa389a4e0c6614f95bf90",
+        "results/simulation_redesign/paper/beamforming/summary.csv": "767971a6b46810a87cf12bbacb8f902e03d069f622d7b5897004b10ce63aded6",
+        "results/simulation_redesign/paper/geometry/directional.csv": "3247cb9ac8662c73efa7671448386936345d221c4e65fbf123caab84d72dfd5f",
+        "results/simulation_redesign/paper/geometry/distance_cdf.csv": "c9e3995a92423b46a2b1a71ac68ee8aee18b49ee42519897b1d21a482edfbbe4",
+        "results/simulation_redesign/paper/geometry/manifest.json": "47d66a25fedff73a417cbe955d80a963303d3b58bb06a15d57064be221293602",
+        "results/simulation_redesign/paper/geometry/matrices.npz": "277c5c8f84a509fee80e567b9f317cae16729a26fdd812abdd66f7a88f820d68"
+      },
+      "manifests": {
+        "results/beamforming/data/paper/computation/manifest.json": "6b44c036d88145433b51473085223547d95215d128ee63b7e42408d8a7b336c6",
+        "results/beamforming/data/paper/performance/manifest.json": "473a680b450c3b350fb2ad9259f4678d3ac56bca26ab18581dc88d0bd8cd4dcb",
+        "results/beamforming/data/paper/prediction/manifest.json": "362662cf020e0950e2c9c5e072c3b846b73f419f0efba80cc30f587730c55062",
+        "results/beamforming/data/paper/theory/manifest.json": "2e4eff63ef8dab0f14c5532b7f928edd172960b5b88c49fffb8032dd36d9aff0",
+        "results/beamforming/data/pilot/computation/manifest.json": "42b1b89ee7d606c1df0c9cf3ef56eb07018309b5eeec87ec1542f5c7eaaeef4f",
+        "results/beamforming/data/pilot/performance/manifest.json": "4dcb580187b360238d67ad3e41f2fd96b113da9eae0fa7a9731b945bfc9fde49",
+        "results/beamforming/data/pilot/prediction/manifest.json": "b6efea6af006d17becd7b698de79169a2c66187209696799e38b9efbaa735366",
+        "results/beamforming/data/pilot/theory/manifest.json": "4c3dd5e70ef299560ad0fa5d18d15f754849d8feaafac96eb829db65c3b072d6",
+        "results/beamforming/data/validation/validation.json": "9d4746230f45733ca612dee26fbb6576b9d24751389624fbe2f8252ed76a2c85",
+        "results/beamforming/data/verify/computation/manifest.json": "226c5027af613e993d4559382ce5f8063dcd2b40d3eafb4c39dec163f064c577",
+        "results/beamforming/data/verify/performance/manifest.json": "e88eb2d0964dd96f11a08e9813211cb576d06900c56563ee5cea34e4476f1fbb",
+        "results/beamforming/data/verify/prediction/manifest.json": "4ea9cecdee812803cdafd589b797d4416e8d9c894b5b8ec06baf5aabd916e0f6",
+        "results/beamforming/data/verify/theory/manifest.json": "2f3a14fab41b137e04faecd9ef2b0010b755aa9cf830a6e72959117c009ec3b2",
+        "results/contact/data/paper/computation/manifest.json": "f9b32f692d8da5ce589ce42e88b1559b4df25b1a1ff0a843212cfec1d536b6d9",
+        "results/contact/data/paper/performance/manifest.json": "73d1be8e70beca6aaf76a50300c8f8653c0ce973c6fc97f9b8932ddd4dbd2044",
+        "results/contact/data/paper/prediction/manifest.json": "b139116146c43aa0017b38242c45ad678c6bdcdaaade4ad4f5faee23597d2dcc",
+        "results/contact/data/paper/theory/manifest.json": "f4c1fca964d723d382aa1af37b17f89993731c8486a49a9c85c1b92f5a201733",
+        "results/contact/data/pilot/computation/manifest.json": "00e67c7009217a9dd9a1afd1c467eb15b331558ba202cb8a3893e5386673102f",
+        "results/contact/data/pilot/performance/manifest.json": "cf15d71b6c618fd07cd2867cb1964be75376e04eca330fa3865a9e90c39b06aa",
+        "results/contact/data/pilot/prediction/manifest.json": "fdc639072d4757bac027d3917893cbe93356fba572925648773278248f0ec75a",
+        "results/contact/data/pilot/theory/manifest.json": "979357300883099d002116f4b796def9905906480eb99955ebcba31841bd4f77",
+        "results/contact/data/verify/computation/manifest.json": "00d552ecae7c9d85ca5f708ddd755aee52b38bc6ac025a4fcb427cd9ff1d255d",
+        "results/contact/data/verify/performance/manifest.json": "1d0373d22da84773354582aafa754f2b90f98ce9c660a142c8782d4c47da1211",
+        "results/contact/data/verify/prediction/manifest.json": "1fb27c73c9eabff08e7fdd8194034ad30689c33f85744165542c9c2ede1576fb",
+        "results/contact/data/verify/theory/manifest.json": "d0d1d21d34cb02aa65e60e93d0630474a00171197d092e56c06c92479ded86f5"
+      },
+      "sources": {
+        "benchmarks/__init__.py": "50c281d4d60b665fd82b63b668df4113a7ec36ac653f621c00392a2f82b17d98",
+        "benchmarks/case1/__init__.py": "439d0403c18210be7fa2bfe21b6ba5ed05d17ed54de88449f3ff6753e761ea95",
+        "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+        "benchmarks/case2/__init__.py": "0f3bdf156d3f8d794231c2fc1ed88e2bb44ac217ea3aa63afa0833098683f5f8",
+        "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+        "benchmarks/common/__init__.py": "1b45903cc938c76c7b9f44eae5fcf1115e0b3b805237acedb399ee3e4f9815d6",
+        "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+        "lib/anisotropy_study.py": "b7ab40a999d74cb94983a1d1d0e0e6772ec57000bbd0ad0048dfae71ab68bfed",
+        "lib/application_ablation.py": "c0e8f6ca6781e79eebb83d96d36ed9b7d054594af33b9105fb7437e4e334edb4",
+        "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+        "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+        "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+        "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+        "lib/beamforming_theory.py": "8cf21d381a44756818177130fd097b8c6458e541c0595e46fa2577348aace486",
+        "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+        "lib/causal_variance.py": "f89348e57ee850d91f1317e1ce443e95849f15c497a4170c0caa49143ddf5af0",
+        "lib/contact_gaussian.py": "362722a17fef5ae9e5bdcea1011c264f372931b444796694903aa8a20ed239eb",
+        "lib/contact_geometry_study.py": "f8d0e5b18eadff493fbcca05b5ae42adacf27755735e9928be3343aa0ebe8874",
+        "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+        "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+        "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+        "lib/contact_spherical_reference.py": "292346eb229d5e34fc7bdee154bf2720b534e40fd32ada5dc6b0aaf398a25f4b",
+        "lib/em.py": "7dcfa820900db547a99bfba1a74be25f449f49f29a975a5b548e208ec8320342",
+        "lib/filter.py": "70867a8466cf316f8bda90e3a5f0c0b1b6ae01e74f800cba2aa60a8ebb8fa592",
+        "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
+        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
+        "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+        "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
+        "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+        "lib/final_validation.py": "77b400c9848cdf2be39d511e3909553e619f4d1375bc8308ac9c49ef053b66a1",
+        "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+        "lib/guide_information.py": "23a4c48bf43ccb3d25b550ff37c25b7920897d9cf066335c625890e8f37faa00",
+        "lib/guide_information_counts.py": "e459d0ac66fcb442dc4246bd44cdd5135a89891d2c71623f43b73d8119feaa38",
+        "lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+        "lib/guide_tracking.py": "c63c9f9fe0691649ec88b9709a9c859bb7d421fd21c4b526099846a62a6f789b",
+        "lib/implementation_validation.py": "ebef04c425a72c4f1fe8a05eaaab2d5417e356afc5c2476928dc0c019ce6bf6d",
+        "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+        "lib/moments.py": "2a98c490ea4c03bca295d78030e6bfcb67329956ed7f6a5fe67360404491ed5d",
+        "lib/prediction.py": "d204ff6c0d1cb74546ef1b893d1edfe3e34e9fe8a52201b81a9371a7dc18ebda",
+        "lib/prediction_study.py": "47e3bd7b754c4241d278f8de4bd1c2f61ca32ee209a90c438557a8468cf06b7e",
+        "lib/process_prediction.py": "ede47f0f7a7e9135a397cdc5f109cc15feb9630933b9fbb01e6035e9a38a2883",
+        "lib/reference.py": "4aa76180e4b46cafb5f29f96023f11430fabcd44d56344de610a90497de853cf",
+        "lib/simulation_scaling.py": "0c6bed44460c1df2d11f74b3372ec7c6c39d67efbcf019a065d8c5262284a6ca",
+        "lib/simulation_validation.py": "663e62ab9186251faa5b251648ebd05c51a12f426884b690cccdddea3ae81bef",
+        "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+        "lib/studies.py": "ce36c9c497e04784a8aa1ad299d9bd39f51c4a27eca11be3915941ff721f6a72",
+        "lib/theory.py": "0b76e8194d3d35cc0b557ceaf7b938d61c2e633843e046f3839e9fe842fdef53",
+        "lib/validation.py": "5477e4ecf7fb259381e89d08be6b0e4532ceb924b8cf55d73d744f1be4bc7c25",
+        "pyproject.toml": "8220133389552906c7471dcd038ab3ba8314d38b7fb16a4fbffaf51bf734dcf0",
+        "results/beamforming/data/paper/performance/selected.json": "81c9d90aeb8a7ae779367d21a4fb857082ce46dddcd3cd932fbcb6af5f947eb7",
+        "results/beamforming/data/paper/prediction/selected.json": "b10bfed63509ef355d44a2370393a887404840fa7f4d171724864e9557404185",
+        "results/beamforming/data/pilot/performance/selected.json": "5cdb94cb1337dd6f002a7cd19190444c6724cafb675028a772edc962da697be0",
+        "results/beamforming/data/pilot/prediction/selected.json": "b10bfed63509ef355d44a2370393a887404840fa7f4d171724864e9557404185",
+        "results/beamforming/data/specification.json": "ae18ab6bc1a8cbdf2bbbeaed237030d2c0c9d63dc936f7cbdd94a55c288d0c8d",
+        "results/beamforming/data/verify/performance/selected.json": "7b3e4137bf22afe825708e325f3056be87dd974ca016e163ad39580876df985e",
+        "results/beamforming/data/verify/prediction/selected.json": "b10bfed63509ef355d44a2370393a887404840fa7f4d171724864e9557404185",
+        "results/contact/data/paper/performance/selected.json": "0548b0e434a3c1cf278d8b1e29593e2533a9c9da0b96e5dfcec424e03b2a3c57",
+        "results/contact/data/paper/prediction/selected.json": "7782b0a0affe506f23ba502aec110b71ba71d5363826001d30ed44e6eb0a6f5d",
+        "results/contact/data/pilot/performance/selected.json": "ad3be5332d1154e3f1b1483c6d822c1c79d173aeaa6e2b95bc81c04318682d81",
+        "results/contact/data/pilot/prediction/selected.json": "7782b0a0affe506f23ba502aec110b71ba71d5363826001d30ed44e6eb0a6f5d",
+        "results/contact/data/verify/performance/selected.json": "294c173be4e755011c06f2d664c5b7fe94e67840b9cf1d31507497c19e7ad71e",
+        "results/contact/data/verify/prediction/selected.json": "7782b0a0affe506f23ba502aec110b71ba71d5363826001d30ed44e6eb0a6f5d",
+        "results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+        "results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+        "results/implementation_audit/paper/em/manifest.json": "ab71dc035fbca39539295acca58e56060200a0bc0d62a5df8d10c918ed370e94",
+        "results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+        "results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03",
+        "scripts/make_theory_notebook.py": "bf37d4bc6d8c5401eb8bd922e399218ffd64a9829f6a2c3ff1129fd956509d22",
+        "scripts/run_anisotropy_study.py": "580a4bbc34a7b6a9b25beb3d2d77037f820d57c2a3fd16881f6b90a099c178c8",
+        "scripts/run_array_geometry.py": "bd8a1bd896515c63c5683a85400e4170c61580c4be7f405b81e5f21827eb8193",
+        "scripts/run_block_em_study.py": "9b32a45cbc0166dc4d0059d2fdf7e2595cd343a0171fd9ad02fc8bc5f648f6fb",
+        "scripts/run_contact_geometry.py": "d2b5a37d58dfffa85e3c21f348d5eb8ac51be310ad6df2ba432ae754afcae7b5",
+        "scripts/run_final_beamforming.py": "efeb7b0c53926c88c5aa898d07c6b4a04cb8283c1b6776bad0c43e6a8dc57f68",
+        "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
+        "scripts/run_final_contact.py": "a698c1ae99f82614649a1ef89f0cdeab5c7711ddc026b175be2d2c6bb7335dd1",
+        "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
+        "scripts/run_final_theory.py": "ce29de9a0c77fc1aadab28c3b12290aa794af7fb973c8e550b9d5e8734b22349",
+        "scripts/run_guide_information.py": "a37f4e7d254ab6a4c1f85317050867311769af19c547f95e6bf89e9f5adcbe14",
+        "scripts/run_guide_information_counts.py": "0b95bb0f2c0e6882c684718cae645b7d471aa5f07fec28763f3d612d8bc5eb82",
+        "scripts/run_guide_reliability.py": "e1d15752af32217b2c18aad066f6d44f42b9f6a55920f20ed1016cbd04eb986d",
+        "scripts/run_guide_tracking.py": "61ca85f3ef6e98d047915581cbfbc74020eca7ac93baaebeadfd9f1ed5af1f8f",
+        "scripts/run_simulation_scaling.py": "ddc7914b66b063fe01c6b2ee805588e9183712fab4c0c8e2ba8cf17d3525ae4e",
+        "scripts/validate_dev.py": "7cea4d9a1ee38f4a1194e27aed41906a8cbcae548af5b24beab1453c6220d3dd",
+        "scripts/validate_final_simulations.py": "c8dac356a6ee4dbe6eea252e73c2b310b7f77dcc6d96630ddc8fc061ad65fdc3",
+        "scripts/validate_implementation_audit.py": "e41704bf72459cc47a8f77d5f0ddb8fba53e73597ca69074ccd0c77b5d44016a",
+        "scripts/validate_simulation_redesign.py": "509ad21ebce190b7b412115cc0535f48998074d8dc844292f9710dbe09b49f74",
+        "tests/test_anisotropy_study.py": "e6575f205c423a0b9a646c03e6b21c99c14bcb43f32f6ea6da2589295b1dffda",
+        "tests/test_application_ablation.py": "906ee80431bea8ab9bc971ba17bf1d5664e7bd14869294e49143bcde9ad911fd",
+        "tests/test_array_geometry.py": "6d209b467482af25f262d7457de6ee7f61417992d5838d618a5ed5411e68f775",
+        "tests/test_beamforming_decisions.py": "6417cbed38879d0be88fc6f17b07d3f5b46e8f0961f42de26438738665a7df50",
+        "tests/test_beamforming_inference.py": "adcca8eec058722be0c77ab97fd49735b2cf4e27813bb61fc4ed358b2a79c17b",
+        "tests/test_beamforming_numerics.py": "874b26294362edf39a5a4a3a4fbb9ec80374ac666ed3e34bbf12661849062cc4",
+        "tests/test_beamforming_theory.py": "f42211fce6993c70ee9ae7aa5f6c45b385029bc23078404e0f619df9c51d0988",
+        "tests/test_beamforming_tracking.py": "c9652392a85601ff0cd2f410715d39dcfe1de594f7b0472dba85417160801bb9",
+        "tests/test_benchmarks.py": "840f04f6b59b2eb8d530024760dd1b614777f0fc1ac9b0ae37d02b381f9d9204",
+        "tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc",
+        "tests/test_causal_variance.py": "1f5e2189151c4b51ee5c5606cb03018e71b5d679fbe2246d499498e8360a2744",
+        "tests/test_contact_gaussian.py": "3e3d23c620447aeaaac6a6b1a1774af0686e89af07f42cc36ad3017162a370f6",
+        "tests/test_contact_geometry.py": "2abc7c0b29e57f930d35c2ca436ed3fb843d41d7340f029c30ff14c88f52b6ec",
+        "tests/test_contact_geometry_audit.py": "8cb9ecba1963c9c4146bcccd4b3c26be70913d94b64991a52f6c3ca143fa487d",
+        "tests/test_contact_mechanics.py": "62867a797afe6f85a70011019917310570835220133423843620c144b6d1b329",
+        "tests/test_contact_posterior.py": "654c99cb0b538787e6bc6b8f9fe0374fe7b356344bc9c4c669b71e4f016f1b94",
+        "tests/test_contact_process_prediction.py": "9c35f484b222343b5dee4c5b31acffdc23d092a84b460789f04612f8f9183827",
+        "tests/test_contact_spherical_reference.py": "33d06cd889b41e7a42a289148ba6cf2c7b27cf34ce0be54714d374b1d660f32f",
+        "tests/test_contact_study.py": "279bee094eb994aec54b023cbe999821a5f5d3f944e12a1946f9a2120c897fe1",
+        "tests/test_contact_tracking.py": "8fea628ca43cbc47a1ef090bf98bb81969a864cc426098577f83d584e9a35e3a",
+        "tests/test_contact_tracking_uncertainty.py": "e29a2a2cedb155142a5e867469851ef96550dae9795d51a9586236b62065eb44",
+        "tests/test_contact_uncertainty_study.py": "eae65b42656260b0f6045794b47d36cad794d75bd73932481e01842233ad5776",
+        "tests/test_dev_validation.py": "de17becde4c48444c34498132262022eccc0df5daccfd5a34e113a1465335262",
+        "tests/test_drift_protocol.py": "5c41701837b4aae9768a13a298a738cacd3300b57b77d56759eaca8694220424",
+        "tests/test_experiments.py": "2014a7f21e2c54be87e90015ad3daa3ee98f1867e3d77475b4b1d650ac79e5a0",
+        "tests/test_filter_em.py": "d413a33da0d8bb79dd13ccd3e8b0f9e188833aff2a1afa450c40b395a673bdb1",
+        "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
+        "tests/test_final_beamforming.py": "61d072eed3117a264ce7c5ec6becb5c995be9179df100cf8dac2f6d117d606d3",
+        "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
+        "tests/test_final_contact.py": "fd09685a57a58054c4e3e3b866a14cde44baf5e19deb91ae1867e61c045ed5a7",
+        "tests/test_final_scalar_checks.py": "3c8e642f849eddfaabe34f1dd2d3886ef46e0ae8a8b58cc4829c3e6554fa87f5",
+        "tests/test_final_theory.py": "fc5a4907f9295f42f25d0bb85a9b6472ce91d102781ec037d81d6050e2af80f0",
+        "tests/test_great.py": "8588c7adfa04e1c158989d654e1e8938129ef5328b12015a1d4083ce104d2341",
+        "tests/test_guide_information.py": "6e79fe9f75e02ac3b7d8692b0444bacc735ba904ce6ded81895021e90c5eebff",
+        "tests/test_guide_information_counts.py": "48b785b2007f0b15e45a756aae2dae4f166f75f88e1b8e2d0b87f68b221c882e",
+        "tests/test_guide_reliability.py": "6f856163886214a3bf70703d68cd8117ff788d5d1994e178116f60973b848ba3",
+        "tests/test_guide_tracking.py": "9ca59601ee119557dc25f50a8bb3aae6a6951429116a2d037322d6116685c0e1",
+        "tests/test_identities.py": "9a37668798817451ddd5294271729f9e4de1d1bc2ec4204e163ff7b0afe433f6",
+        "tests/test_moments.py": "a20475788aed0e0a92afc7482f64794e45c0e0648b089bd1c14d40bd954934d3",
+        "tests/test_prediction.py": "b973158bbca166ac37b21c11b1aa077ad77b5a3ff46e46979126e3d4f7dfb390",
+        "tests/test_process_prediction.py": "338830effb59df2ba77433bc8070ef0bec5b3d7e9eff327cbb0e350a11c29ae0",
+        "tests/test_reference.py": "c9fd7df9227023c4be96c37a360c2ea3a60d9c7db515a836f57b05df933586ab",
+        "tests/test_simulation_scaling.py": "c1e5247b4b5a5c65b39e276256a7533bc37891314bef31991f7266125af29fce",
+        "tests/test_spectral_series.py": "8dd1dd54783b1c1884a38b2344bfd6c73aa228d6132f799ed4ccb4a52e0fb374",
+        "tests/test_theory.py": "d5c436c5c3cd75e2aeba0c1c0190ddde0941f75a83f4ebbd56727def52de600f"
+      }
+    },
+    "scope": "All 24 verify/pilot/paper component artifacts and manifests, the original general gate, complete scientific/core source closure, and the saved constructed geometry; exact SHA-256 equality."
+  },
+  "laws_checked": 20,
+  "shared_rotation_checks": 20,
+  "plot_protocol": {
+    "camera": {
+      "elev": 25.0,
+      "azim": -50.0
+    },
+    "projection": "orthographic",
+    "fixed_sphere_radius": 1.0,
+    "text_usetex": true,
+    "dpi": 200
+  },
+  "laws": [
+    {
+      "name": "static_n64_t16",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -13.778570162409277,
+        79.90548596030011,
+        127.47948101611759
+      ],
+      "gaps": [
+        47.57399505581748,
+        141.25805117852687
+      ],
+      "curvature_ratio": 2.969228272983844,
+      "rotation": [
+        [
+          0.5825634160695851,
+          0.7660444431189782,
+          -0.27165378227418446
+        ],
+        [
+          -0.6942720440148841,
+          0.6427876096865391,
+          0.3237443709670646
+        ],
+        [
+          0.42261826174069944,
+          1.807287630840702e-16,
+          0.9063077870366499
+        ]
+      ],
+      "determinant": 0.9999999999999999,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 6.661338147750939e-16,
+      "pointwise_log_density_error": 1.1368683772161603e-13,
+      "ambient_section_log_density_error": 9.521272659185342e-13,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 5.684341886080802e-14,
+        "2.0": 5.684341886080802e-14
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 23.55823697499191,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "static_n64_t32",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -28.13540326433169,
+        99.85666033607944,
+        165.94211528248235
+      ],
+      "gaps": [
+        66.0854549464029,
+        194.07751854681405
+      ],
+      "curvature_ratio": 2.9367660206654578,
+      "rotation": [
+        [
+          0.582563416069586,
+          0.7660444431189775,
+          -0.2716537822741844
+        ],
+        [
+          -0.6942720440148834,
+          0.6427876096865397,
+          0.3237443709670646
+        ],
+        [
+          0.42261826174069944,
+          -3.008080493264301e-16,
+          0.9063077870366498
+        ]
+      ],
+      "determinant": 0.9999999999999996,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 1.1102230246251565e-15,
+      "pointwise_log_density_error": 1.4210854715202004e-13,
+      "ambient_section_log_density_error": 1.1084466677857563e-12,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 1.1368683772161603e-13,
+        "2.0": 8.526512829121202e-14
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 45.74821087546737,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "static_n64_t64",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -55.54063234865174,
+        139.42427507030206,
+        311.5567170599171
+      ],
+      "gaps": [
+        172.13244198961505,
+        367.09734940856885
+      ],
+      "curvature_ratio": 2.1326447540360594,
+      "rotation": [
+        [
+          0.582563416069585,
+          0.7660444431189781,
+          -0.2716537822741844
+        ],
+        [
+          -0.6942720440148842,
+          0.6427876096865389,
+          0.32374437096706443
+        ],
+        [
+          0.4226182617406994,
+          2.8242889047754024e-16,
+          0.9063077870366497
+        ]
+      ],
+      "determinant": 0.9999999999999996,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 1.3322676295501878e-15,
+      "pointwise_log_density_error": 3.410605131648481e-13,
+      "ambient_section_log_density_error": 2.3305801732931286e-12,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 2.2737367544323206e-13,
+        "2.0": 1.7053025658242404e-13
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 150.76325713399171,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "static_n64_t128",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -102.82566814961025,
+        165.59716479719654,
+        576.2257309332564
+      ],
+      "gaps": [
+        410.6285661360598,
+        679.0513990828666
+      ],
+      "curvature_ratio": 1.653687675634983,
+      "rotation": [
+        [
+          0.5825634160695853,
+          0.7660444431189782,
+          -0.2716537822741844
+        ],
+        [
+          -0.6942720440148838,
+          0.6427876096865395,
+          0.32374437096706477
+        ],
+        [
+          0.42261826174069944,
+          -9.2629942000141e-17,
+          0.9063077870366502
+        ]
+      ],
+      "determinant": 1.0000000000000002,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 1.5543122344752192e-15,
+      "pointwise_log_density_error": 4.547473508864641e-13,
+      "ambient_section_log_density_error": 4.092726157978177e-12,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 3.410605131648481e-13,
+        "2.0": 4.547473508864641e-13
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 376.3007083630498,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "setup",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -55.54063234865174,
+        139.42427507030206,
+        311.5567170599171
+      ],
+      "gaps": [
+        172.13244198961505,
+        367.09734940856885
+      ],
+      "curvature_ratio": 2.1326447540360594,
+      "rotation": [
+        [
+          0.582563416069585,
+          0.7660444431189781,
+          -0.2716537822741844
+        ],
+        [
+          -0.6942720440148842,
+          0.6427876096865389,
+          0.32374437096706443
+        ],
+        [
+          0.4226182617406994,
+          2.8242889047754024e-16,
+          0.9063077870366497
+        ]
+      ],
+      "determinant": 0.9999999999999996,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 1.3322676295501878e-15,
+      "pointwise_log_density_error": 3.410605131648481e-13,
+      "ambient_section_log_density_error": 2.3305801732931286e-12,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 2.2737367544323206e-13,
+        "2.0": 1.7053025658242404e-13
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 150.76325713399171,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "static_n32_t32",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -31.14713273739521,
+        68.00147149619822,
+        161.1412958087683
+      ],
+      "gaps": [
+        93.13982431257007,
+        192.28842854616352
+      ],
+      "curvature_ratio": 2.0645135414992666,
+      "rotation": [
+        [
+          0.5825634160695854,
+          0.7660444431189778,
+          -0.2716537822741845
+        ],
+        [
+          -0.6942720440148838,
+          0.6427876096865393,
+          0.3237443709670645
+        ],
+        [
+          0.4226182617406995,
+          1.0212304681549111e-16,
+          0.9063077870366497
+        ]
+      ],
+      "determinant": 0.9999999999999996,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 1.5543122344752192e-15,
+      "pointwise_log_density_error": 1.1368683772161603e-13,
+      "ambient_section_log_density_error": 6.252776074688882e-13,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 8.526512829121202e-14,
+        "2.0": 8.526512829121202e-14
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 81.1430074529182,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "static_n32_t128",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -91.62130645703971,
+        119.4887754084028,
+        479.3448355940156
+      ],
+      "gaps": [
+        359.8560601856128,
+        570.9661420510553
+      ],
+      "curvature_ratio": 1.5866514565755887,
+      "rotation": [
+        [
+          0.5825634160695855,
+          0.7660444431189779,
+          -0.2716537822741846
+        ],
+        [
+          -0.6942720440148837,
+          0.6427876096865395,
+          0.3237443709670646
+        ],
+        [
+          0.4226182617406995,
+          6.161954761467904e-17,
+          0.9063077870366499
+        ]
+      ],
+      "determinant": 1.0,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 6.661338147750939e-16,
+      "pointwise_log_density_error": 3.410605131648481e-13,
+      "ambient_section_log_density_error": 1.8758328224066645e-12,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 2.8421709430404007e-13,
+        "2.0": 1.7053025658242404e-13
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 365.3089833931692,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "static_n32_t256",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -153.54955481466283,
+        156.0183414004469,
+        922.2771724352046
+      ],
+      "gaps": [
+        766.2588310347578,
+        1075.8267272498674
+      ],
+      "curvature_ratio": 1.4039991236343317,
+      "rotation": [
+        [
+          0.5825634160695853,
+          0.7660444431189781,
+          -0.2716537822741843
+        ],
+        [
+          -0.6942720440148841,
+          0.6427876096865393,
+          0.3237443709670646
+        ],
+        [
+          0.42261826174069933,
+          -8.06424557639381e-19,
+          0.9063077870366499
+        ]
+      ],
+      "determinant": 0.9999999999999999,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 6.661338147750939e-16,
+      "pointwise_log_density_error": 7.958078640513122e-13,
+      "ambient_section_log_density_error": 3.979039320256561e-12,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 5.684341886080801e-13,
+        "2.0": 6.821210263296962e-13
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 787.8634049157658,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "smooth_n32_t32",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -20.142770746189335,
+        48.89606304427424,
+        115.13414448411663
+      ],
+      "gaps": [
+        66.23808143984239,
+        135.27691523030597
+      ],
+      "curvature_ratio": 2.042283114029576,
+      "rotation": [
+        [
+          0.5825634160695854,
+          0.7660444431189778,
+          -0.27165378227418435
+        ],
+        [
+          -0.6942720440148838,
+          0.6427876096865391,
+          0.3237443709670645
+        ],
+        [
+          0.42261826174069944,
+          -8.916371687820484e-18,
+          0.9063077870366496
+        ]
+      ],
+      "determinant": 0.9999999999999993,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 1.7763568394002505e-15,
+      "pointwise_log_density_error": 8.526512829121202e-14,
+      "ambient_section_log_density_error": 4.547473508864641e-13,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 4.263256414560601e-14,
+        "2.0": 4.263256414560601e-14
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 45.54754301133576,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "smooth_n32_t128",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -25.62323210733335,
+        48.072412857664524,
+        114.16800705122641
+      ],
+      "gaps": [
+        66.09559419356188,
+        139.79123915855976
+      ],
+      "curvature_ratio": 2.1149857394303644,
+      "rotation": [
+        [
+          0.5825634160695853,
+          0.766044443118978,
+          -0.2716537822741843
+        ],
+        [
+          -0.694272044014884,
+          0.6427876096865391,
+          0.32374437096706454
+        ],
+        [
+          0.4226182617406994,
+          1.0004042852673695e-17,
+          0.9063077870366498
+        ]
+      ],
+      "determinant": 0.9999999999999997,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 9.992007221626409e-16,
+      "pointwise_log_density_error": 7.105427357601002e-14,
+      "ambient_section_log_density_error": 3.979039320256561e-13,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 5.684341886080802e-14,
+        "2.0": 7.105427357601002e-14
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 44.920499961661704,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "smooth_n32_t256",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -26.530673830274758,
+        44.56407258271635,
+        146.08613843726386
+      ],
+      "gaps": [
+        101.5220658545475,
+        172.61681226753862
+      ],
+      "curvature_ratio": 1.7002886103091108,
+      "rotation": [
+        [
+          0.5825634160695855,
+          0.7660444431189781,
+          -0.27165378227418413
+        ],
+        [
+          -0.6942720440148838,
+          0.6427876096865393,
+          0.3237443709670647
+        ],
+        [
+          0.4226182617406993,
+          -3.098386622984601e-16,
+          0.90630778703665
+        ]
+      ],
+      "determinant": 1.0,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 6.661338147750939e-16,
+      "pointwise_log_density_error": 8.526512829121202e-14,
+      "ambient_section_log_density_error": 5.115907697472721e-13,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 5.684341886080802e-14,
+        "2.0": 8.526512829121202e-14
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 68.9439435108886,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "abrupt_n32_t32",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -18.71864218692716,
+        42.59505827785553,
+        85.51025738985456
+      ],
+      "gaps": [
+        42.91519911199903,
+        104.22889957678171
+      ],
+      "curvature_ratio": 2.42871760433332,
+      "rotation": [
+        [
+          0.5825634160695854,
+          0.7660444431189778,
+          -0.27165378227418446
+        ],
+        [
+          -0.6942720440148838,
+          0.6427876096865393,
+          0.3237443709670645
+        ],
+        [
+          0.42261826174069944,
+          7.040744970486539e-17,
+          0.9063077870366497
+        ]
+      ],
+      "determinant": 0.9999999999999996,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 1.5543122344752192e-15,
+      "pointwise_log_density_error": 7.105427357601002e-14,
+      "ambient_section_log_density_error": 2.984279490192421e-13,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 5.684341886080802e-14,
+        "2.0": 7.105427357601002e-14
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 25.399801448687313,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "abrupt_n32_t128",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -28.01082252736786,
+        47.7130583678008,
+        159.97488713973672
+      ],
+      "gaps": [
+        112.26182877193592,
+        187.98570966710457
+      ],
+      "curvature_ratio": 1.6745291941484806,
+      "rotation": [
+        [
+          0.5825634160695856,
+          0.7660444431189777,
+          -0.2716537822741843
+        ],
+        [
+          -0.6942720440148837,
+          0.6427876096865394,
+          0.3237443709670645
+        ],
+        [
+          0.42261826174069933,
+          -1.4096815915175928e-16,
+          0.9063077870366497
+        ]
+      ],
+      "determinant": 0.9999999999999996,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 1.4432899320127035e-15,
+      "pointwise_log_density_error": 1.1368683772161603e-13,
+      "ambient_section_log_density_error": 6.252776074688882e-13,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 1.1368683772161603e-13,
+        "2.0": 1.1368683772161603e-13
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 80.01505056706004,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "abrupt_n32_t256",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -27.259027548286024,
+        41.44573297632093,
+        157.43417577849556
+      ],
+      "gaps": [
+        115.98844280217463,
+        184.69320332678157
+      ],
+      "curvature_ratio": 1.5923414338942985,
+      "rotation": [
+        [
+          0.5825634160695852,
+          0.766044443118978,
+          -0.2716537822741843
+        ],
+        [
+          -0.6942720440148842,
+          0.642787609686539,
+          0.32374437096706443
+        ],
+        [
+          0.4226182617406993,
+          1.7700477200117758e-16,
+          0.9063077870366498
+        ]
+      ],
+      "determinant": 0.9999999999999997,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 1.4432899320127035e-15,
+      "pointwise_log_density_error": 1.4210854715202004e-13,
+      "ambient_section_log_density_error": 6.252776074688882e-13,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 1.1368683772161603e-13,
+        "2.0": 1.1368683772161603e-13
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 77.9445227544083,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "noise_change_n32_t32",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -30.47151455722574,
+        64.41398681671531,
+        173.5389754856165
+      ],
+      "gaps": [
+        109.1249886689012,
+        204.01049004284224
+      ],
+      "curvature_ratio": 1.869512130368558,
+      "rotation": [
+        [
+          0.5825634160695854,
+          0.766044443118978,
+          -0.27165378227418446
+        ],
+        [
+          -0.6942720440148838,
+          0.6427876096865394,
+          0.3237443709670646
+        ],
+        [
+          0.42261826174069944,
+          1.493462181822215e-17,
+          0.9063077870366499
+        ]
+      ],
+      "determinant": 1.0,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 5.551115123125783e-16,
+      "pointwise_log_density_error": 1.1368683772161603e-13,
+      "ambient_section_log_density_error": 6.821210263296962e-13,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 8.526512829121202e-14,
+        "2.0": 8.526512829121202e-14
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 91.1529652616387,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "noise_change_n32_t128",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -91.40316930443221,
+        89.92886875362285,
+        490.04270272196527
+      ],
+      "gaps": [
+        400.1138339683424,
+        581.4458720263975
+      ],
+      "curvature_ratio": 1.453201120940003,
+      "rotation": [
+        [
+          0.5825634160695855,
+          0.7660444431189779,
+          -0.27165378227418446
+        ],
+        [
+          -0.6942720440148837,
+          0.6427876096865395,
+          0.3237443709670647
+        ],
+        [
+          0.4226182617406995,
+          -1.3825157521347053e-16,
+          0.9063077870366499
+        ]
+      ],
+      "determinant": 0.9999999999999999,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 6.661338147750939e-16,
+      "pointwise_log_density_error": 3.410605131648481e-13,
+      "ambient_section_log_density_error": 1.9326762412674725e-12,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 2.2737367544323206e-13,
+        "2.0": 2.8421709430404007e-13
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 375.2869701199069,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "noise_change_n32_t256",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -114.37933186373161,
+        107.35195294781524,
+        575.7911381902123
+      ],
+      "gaps": [
+        468.4391852423971,
+        690.170470053944
+      ],
+      "curvature_ratio": 1.4733405995845767,
+      "rotation": [
+        [
+          0.5825634160695852,
+          0.7660444431189782,
+          -0.27165378227418446
+        ],
+        [
+          -0.6942720440148838,
+          0.6427876096865391,
+          0.3237443709670649
+        ],
+        [
+          0.42261826174069966,
+          -1.2772907196396044e-16,
+          0.9063077870366498
+        ]
+      ],
+      "determinant": 0.9999999999999999,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 6.661338147750939e-16,
+      "pointwise_log_density_error": 4.547473508864641e-13,
+      "ambient_section_log_density_error": 2.1600499167107046e-12,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 3.410605131648481e-13,
+        "2.0": 3.410605131648481e-13
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 456.044864356879,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "power_change_n32_t32",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -29.044227034432073,
+        59.55013643065472,
+        157.4900503485978
+      ],
+      "gaps": [
+        97.93991391794309,
+        186.5342773830299
+      ],
+      "curvature_ratio": 1.9045787352775676,
+      "rotation": [
+        [
+          0.5825634160695854,
+          0.7660444431189779,
+          -0.2716537822741844
+        ],
+        [
+          -0.6942720440148838,
+          0.6427876096865393,
+          0.3237443709670647
+        ],
+        [
+          0.4226182617406995,
+          -1.0802291610495249e-16,
+          0.9063077870366498
+        ]
+      ],
+      "determinant": 0.9999999999999998,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 9.992007221626409e-16,
+      "pointwise_log_density_error": 1.1368683772161603e-13,
+      "ambient_section_log_density_error": 6.821210263296962e-13,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 5.684341886080802e-14,
+        "2.0": 8.526512829121202e-14
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 78.13803540267553,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "power_change_n32_t128",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -93.35036071900994,
+        89.05121697882129,
+        591.1688338971717
+      ],
+      "gaps": [
+        502.1176169183504,
+        684.5191946161816
+      ],
+      "curvature_ratio": 1.363264644680833,
+      "rotation": [
+        [
+          0.5825634160695855,
+          0.7660444431189779,
+          -0.2716537822741843
+        ],
+        [
+          -0.6942720440148837,
+          0.6427876096865394,
+          0.32374437096706465
+        ],
+        [
+          0.42261826174069944,
+          -1.804888308096334e-16,
+          0.9063077870366498
+        ]
+      ],
+      "determinant": 0.9999999999999997,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 9.992007221626409e-16,
+      "pointwise_log_density_error": 4.547473508864641e-13,
+      "ambient_section_log_density_error": 2.5011104298755527e-12,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 3.410605131648481e-13,
+        "2.0": 2.2737367544323206e-13
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 470.54171522514514,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    },
+    {
+      "name": "power_change_n32_t256",
+      "saved_file": "results/beamforming/data/paper/performance/stories.npz",
+      "interpretation": "Real-coefficient great-sphere section of the original complex posterior; not a marginal.",
+      "eigenvalues": [
+        -206.5582208840616,
+        78.96354518745935,
+        2490.8835273225686
+      ],
+      "gaps": [
+        2411.9199821351094,
+        2697.44174820663
+      ],
+      "curvature_ratio": 1.1183794521320594,
+      "rotation": [
+        [
+          0.5825634160695855,
+          0.7660444431189777,
+          -0.2716537822741846
+        ],
+        [
+          -0.6942720440148838,
+          0.6427876096865394,
+          0.3237443709670643
+        ],
+        [
+          0.42261826174069944,
+          2.1981711592165271e-16,
+          0.9063077870366496
+        ]
+      ],
+      "determinant": 0.9999999999999993,
+      "mesh_shape": [
+        161,
+        321,
+        3
+      ],
+      "unit_norm_error": 1.5543122344752192e-15,
+      "pointwise_log_density_error": 2.7284841053187847e-12,
+      "ambient_section_log_density_error": 1.0913936421275139e-11,
+      "antipodal_error": 0.0,
+      "contour_level_errors": {
+        "1.0": 1.8189894035458565e-12,
+        "2.0": 2.2737367544323206e-12
+      },
+      "full_mesh_angular_coverage": true,
+      "saved_normalizer_unchanged": 2325.5725159590347,
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+    }
+  ],
+  "scope": "Rendering-only numerical invariance, not a fresh claim of statistical calibration or algorithm performance."
+}
