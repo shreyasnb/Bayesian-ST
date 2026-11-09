@@ -1,0 +1,31 @@
+example,check,n,k,complex_data,error,scale,scaled_error,tolerance,status,mode_unique,native_mean_declared_ok,scope
+contact,mean_hermitian,3,2,False,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+contact,mean_trace,3,2,False,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+contact,mean_spectrum,3,2,False,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+contact,independent_mean,3,2,False,4.453637733172617e-12,1.0,4.453637733172617e-12,2e-08,passed,True,True,Deterministic scalar identity
+contact,uniform_mean,3,2,False,1.9229626863835638e-16,1.0,1.9229626863835638e-16,1e-10,passed,True,True,Deterministic scalar identity
+contact,line_complement_duality,3,2,False,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+contact,trace_shift_mean,3,2,False,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+contact,trace_shift_normalizer,3,2,False,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+contact,known_frame_mean_transport,3,2,False,4.745538913649639e-16,1.0,4.745538913649639e-16,1e-10,passed,True,True,Deterministic scalar identity
+contact,known_frame_normalizer,3,2,False,3.885780586188048e-16,1.0,3.885780586188048e-16,1e-10,passed,True,True,Deterministic scalar identity
+contact,mode_mean_eigenspace,3,2,False,5.4097033828993736e-15,1.0,5.4097033828993736e-15,1e-10,passed,True,True,Deterministic scalar identity
+contact,minimum_mean_squared_chordal_loss,3,2,False,3.2889246881495637e-12,1.0,3.2889246881495637e-12,1e-10,passed,True,True,Deterministic scalar identity
+contact,response_risk_decomposition,3,2,False,3.019806626980426e-13,3.6291754436462575,8.320916621066975e-14,1e-10,passed,True,True,Deterministic scalar identity
+contact,full_response_covariance,3,2,False,7.958442518092086e-09,1.0,7.958442518092086e-09,2e-07,passed,True,True,Deterministic scalar identity
+contact,response_risk_trace,3,2,False,2.2350177264485183e-13,1.0,2.2350177264485183e-13,1e-10,passed,True,True,Deterministic scalar identity
+contact,modal_response_excess,3,2,False,5.07184572118291e-13,1.0,5.07184572118291e-13,1e-10,passed,True,True,Deterministic scalar identity
+contact,marginal_normalized_gaussian_likelihood,3,2,False,4.440892098500626e-16,3.8499739896798104,1.1534862600123593e-16,1e-10,passed,True,True,Deterministic scalar identity
+contact,conditional_normalized_gaussian_likelihood,3,2,False,4.440892098500626e-16,2.84769991866711,1.559466315038989e-16,1e-10,passed,True,True,Deterministic scalar identity
+contact,conditional_predictive_covariance,3,2,False,7.958440864332486e-09,1.0,7.958440864332486e-09,2e-07,passed,True,True,Deterministic scalar identity
+contact,marginal_predictive_covariance,3,2,False,5.79219502042236e-12,1.0,5.79219502042236e-12,1e-10,passed,True,True,Deterministic scalar identity
+contact,marginal_denoising_mean,3,2,False,2.3121718942286297e-12,1.0,2.3121718942286297e-12,2e-08,passed,True,True,"Direct latent Gaussian conditioning and posterior mixture, with data-updated nonuniform belief"
+contact,marginal_denoising_covariance,3,2,False,1.10498363645093e-08,1.0,1.10498363645093e-08,2e-07,passed,True,True,Gaussian conditional covariance plus full second-projector contribution
+contact,marginal_denoising_risk,3,2,False,2.6378213502376013e-09,1.0,2.6378213502376013e-09,2e-07,passed,True,True,Deterministic scalar identity
+contact,contact_command_first_order_optimality,3,2,False,7.850462293418876e-17,1.0,7.850462293418876e-17,1e-10,passed,True,True,Deterministic scalar identity
+contact,contact_expected_command_cost,3,2,False,2.454036973631446e-12,1.0,2.454036973631446e-12,1e-10,passed,True,True,Deterministic scalar identity
+contact,contact_command_excess,3,2,False,4.440892098500626e-16,1.0,4.440892098500626e-16,1e-10,passed,True,True,Deterministic scalar identity
+contact,contact_zero_task_penalty,3,2,False,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+contact,contact_uniform_command,3,2,False,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+contact,contact_uniform_command_cost,3,2,False,5.551115123125783e-17,1.0,5.551115123125783e-17,1e-10,passed,True,True,Deterministic scalar identity
+contact,contact_isotropic_query_cost,3,2,False,5.551115123125783e-17,1.0,5.551115123125783e-17,1e-10,passed,True,True,Deterministic scalar identity

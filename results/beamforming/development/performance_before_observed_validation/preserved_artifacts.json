@@ -1,0 +1,137 @@
+{
+  "scope": "Exact provisional outputs retained under their original source/config hashes; the canonical stages now use observed-only validation.",
+  "artifacts": [
+    {
+      "stage": "verify",
+      "original": "results/beamforming/data/verify/performance/block_updates.csv",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_data/block_updates.csv",
+      "sha256": "e4b17458b83bd7751e0237780a5f9812b2c2429250b4260e0384bf3625f8b979"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/data/verify/performance/checks.json",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_data/checks.json",
+      "sha256": "25ebdb4fd9f75d6f11b75e7e0829e2fd26259acaab1c87fa1b176b21283ba373"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/data/verify/performance/legacy_evidence.json",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_data/legacy_evidence.json",
+      "sha256": "3829b4d27adce756d336dbebb50c2ba76cb055a72ba8078687a59a77b9b03edc"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/data/verify/performance/method_information.json",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_data/method_information.json",
+      "sha256": "8a3d15f859dc3c77b68cddd0bcc5182911bcba51caa11126a165f59deaa9b1f0"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/data/verify/performance/moving_checkpoints.csv.gz",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_data/moving_checkpoints.csv.gz",
+      "sha256": "8531bd7812aa6498bf13acb1679c19f3f006a1d70da0106afaf4fe1f738c1ebd"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/data/verify/performance/preregistered.json",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_data/preregistered.json",
+      "sha256": "efe233420b91ddf7bcb2ae42559e4179955ba49713ea8a22204a02d33eb06f90"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/data/verify/performance/selected.json",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_data/selected.json",
+      "sha256": "7fb5249b2f9bddeff567237f1a2c01c66bcf6485685958152dbb9705558938b0"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/data/verify/performance/stationary.csv",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_data/stationary.csv",
+      "sha256": "51940adb67e710ac1655d973ebc72f45108179d41cacbd55b344b7a05c83c928"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/data/verify/performance/stories.npz",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_data/stories.npz",
+      "sha256": "4557f8384aa1107fe36f2a5d9ac7535775f05ac4c95bac4ce4e650e08a921a17"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/tables/verify/performance/block_summary.csv",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_tables/block_summary.csv",
+      "sha256": "254f5cf3c3c4147a2719c72c059a8beea2ba4911f6e06071a5b39fff1c0c9d3a"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/tables/verify/performance/execution_times.csv",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_tables/execution_times.csv",
+      "sha256": "bed8b07a8b126938d182f98747b5426ed0aa4461bd13924af9321293440109ec"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/tables/verify/performance/moving_episodes.csv",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_tables/moving_episodes.csv",
+      "sha256": "b5c599094ad40abf4e2c0065c9b0dcc546250f18c1e3e9b9a27ac646b3aa8480"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/tables/verify/performance/moving_summary.csv",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_tables/moving_summary.csv",
+      "sha256": "ba2009edc6aa7f6cb92541bb21f796416a84ae43735d22994284f197bb2f2366"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/tables/verify/performance/moving_time_summary.csv",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_tables/moving_time_summary.csv",
+      "sha256": "2a3dc09a652195223fe31be21159cb82a61f741f15b690645079b39eb51e71b9"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/tables/verify/performance/paired_moving.csv",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_tables/paired_moving.csv",
+      "sha256": "7ca24216c6b9b06d41c9979ad35132023a5bb8f46ab1b28a228c06d0e88728e3"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/tables/verify/performance/paired_stationary.csv",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_tables/paired_stationary.csv",
+      "sha256": "5189753fa8bd28fc3fce6af5153571c9c86ecab2f04b7664f3fbd2240945afe0"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/tables/verify/performance/stationary_summary.csv",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_tables/stationary_summary.csv",
+      "sha256": "e462e4caefcd945eacc7f7098fed65566b3329a677c445ec9d79cc65dfb46c1b"
+    },
+    {
+      "stage": "verify",
+      "original": "results/beamforming/tables/verify/performance/validation_curves.csv",
+      "preserved": "results/beamforming/development/performance_before_observed_validation/verify_tables/validation_curves.csv",
+      "sha256": "e5d7bf684e289ab5acbbe4193f657e7eead461b0744bb42f7b8f062eb8e4a211"
+    },
+    {
+      "stage": "verify",
+      "original": "results/simulation_redesign/paper/beamforming/manifest.json",
+      "preserved": "results/simulation_redesign/paper/beamforming/manifest.json",
+      "sha256": "d1b5fc4a8fc4a8d4aaaf7280286c284eeeaf06f2d383cad33fe57f1632574812"
+    },
+    {
+      "stage": "verify",
+      "original": "results/simulation_redesign/paper/beamforming/metrics.csv",
+      "preserved": "results/simulation_redesign/paper/beamforming/metrics.csv",
+      "sha256": "07b1fbb781d60cc2971db0dc77c15a72268ff27af64ba892011e71d3d9aba094"
+    },
+    {
+      "stage": "verify",
+      "original": "results/simulation_redesign/paper/beamforming/paired.csv",
+      "preserved": "results/simulation_redesign/paper/beamforming/paired.csv",
+      "sha256": "67568464f60d775387e4a24b8164bb6aca8b93e610dfa389a4e0c6614f95bf90"
+    },
+    {
+      "stage": "verify",
+      "original": "results/simulation_redesign/paper/beamforming/summary.csv",
+      "preserved": "results/simulation_redesign/paper/beamforming/summary.csv",
+      "sha256": "767971a6b46810a87cf12bbacb8f902e03d069f622d7b5897004b10ce63aded6"
+    }
+  ]
+}

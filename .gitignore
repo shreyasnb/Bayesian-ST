@@ -54,3 +54,16 @@ results/simulation_redesign/**/pytest.xml
 !results/implementation_audit/**/
 results/implementation_audit/**/checkpoints/**
 results/implementation_audit/**/pytest.xml
+!results/beamforming/
+!results/beamforming/**/
+!results/beamforming/**
+!results/contact/
+!results/contact/**/
+!results/contact/**
+results/beamforming/**/checkpoints/**
+results/contact/**/checkpoints/**
+results/beamforming/**/pytest.xml
+results/contact/**/pytest.xml
+# General-validation diagnostic plots are regenerable, not final paper exports.
+results/beamforming/data/validation/*.pdf
+results/beamforming/data/validation/*.png

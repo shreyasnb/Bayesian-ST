@@ -1,0 +1,11 @@
+check,observed,expected,absolute_error,tolerance,numerical_ok,detail
+Ordered variances: pooled boundary,"[0.2333333333333333, 0.0]","[0.23333333333333334, 0.0]",2.7755575615628914e-17,1e-10,True,
+Floor above perpendicular variance,"[0.4, 0.4]","[0.4, 0.4]",0.0,1e-10,True,
+Floor above both variances,"[0.5, 0.0]","[0.5, 0.0]",0.0,1e-10,True,
+Zero sufficient statistics,"[0.01, 0.0]","[0.01, 0.0]",0.0,1e-10,True,
+Conditional mean residual,1.3333333333333333,1.3333333333333333,0.0,1e-10,True,
+Conditional uncertainty residual,0.6666666666666667,0.6666666666666666,1.1102230246251565e-16,1e-10,True,Sum v^T(M-M^2)v; retained in the EM noise update
+Conditional full noise update,0.2222222222222222,0.2222222222222222,0.0,1e-10,True,
+All-zero observations: positive floor,"[0.01, 0.0]","[0.01, 0.0]",0.0,1e-10,True,
+Uniform prior: zero signal variance remains zero,0.0,0.0,0.0,1e-10,True,
+Nonuniform prior: zero signal variance can escape,1.0,1.0,0.0,1e-10,True,This is an existence check; no general absorbing-boundary claim

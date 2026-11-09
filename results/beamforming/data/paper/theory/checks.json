@@ -1,0 +1,20 @@
+{
+  "algebra_failures": 0,
+  "scalar_identity_checks": 28,
+  "scalar_identity_failures": 0,
+  "information_reused_checks": 15,
+  "global_kl_failures": 0,
+  "information_loss_identity_error": 1.4210854715202004e-14,
+  "tracking_reports": 2560,
+  "valid_bound_reports": 384,
+  "informative_bound_reports": 384,
+  "eligible_violations": 0,
+  "maximum_scaled_decomposition": 1.1926018230297022e-14,
+  "maximum_information_gap_error": 0.0,
+  "inverse_fisher_episodes": 256,
+  "inverse_fisher_local_eligible_cells": 11,
+  "numerical_targets": 4,
+  "unresolved_numerical_targets": 1,
+  "unresolved_quantile_targets": 1,
+  "seconds": 27.006068212998798
+}

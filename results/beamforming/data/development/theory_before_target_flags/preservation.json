@@ -1,0 +1,24 @@
+{
+  "reason": "First verification retained before splitting independent mean, normalizer, second-moment, derivative and tail flags; no statistical grid or outcome tuned.",
+  "files": {
+    "tables/tracking_phase.csv": "73470875013d1512d5835b5a4dfef0e6e85869212595d4bf009a309157ec7a85",
+    "tables/block_checks.csv": "fd9f026d5e0be5a1edad5dcb26460423e7350e51976ecf5ec0d074a9184daf4c",
+    "tables/inverse_fisher_summary.csv": "18755f6d269bb35fbc5d6507027a6b3c8957b45c34fa2f0cd3a5223ab1c71897",
+    "tables/global_kl.csv": "bff22b3b8de3db8c1233489910c657c071fa4cfc556f5eaf1551c64232a5148a",
+    "tables/tracking_summary.csv": "580d6f17d7da4401b13174f3ae9c28d48efe32d94018b85671df29ce5c6f38cc",
+    "tables/information_derivatives.csv": "ce1dd87d24493cb923735adddc48ed59ea9f8f56b809af9bd3d4ae47f38a853c",
+    "tables/information_loss.csv": "0594066eb8fb6a94cb8cef56dcf60023997a921fb27af87d1de0f3bffe6eb146",
+    "tables/curvature.csv": "72747532d72dd2625b3ab5ec448af6bffa2f2e809b1aeb0bcc5a594036d237bd",
+    "tables/information.csv": "acaa342b4c6f5453fa3292b1a2999bb342b24454ea90d87b14b8c680d00c9918",
+    "tables/information_counts.csv": "1b35630b47b384e5a35748706d1e4fa17dc6d425a92a6819f7299ed713298b64",
+    "tables/inverse_fisher.csv": "18fde5bcac344740aa3132e9df5a9d8ca11d977a9a63948b875e01fca59a3569",
+    "tables/tracking.csv": "01d44cc50a6d12888f3b937fc6294c0669be8397d4451ab3e18faa89fe122aca",
+    "tables/numerical_accuracy.csv": "17e8531afcc9ea17a448aa49ca5afb3c381f659391a93ecb9d96d917a99a16d2",
+    "data/checks.json": "dc1094b92c73ec0c08b90cfe875cad27531ec58c1e402c0b46949d90d1297c9a",
+    "data/preregistered.json": "eaaa93a239dd6fb4868133c37db60f6b8568fd43df709f54be699a3c321e00bb",
+    "data/manifest.json": "ce9683d42d00a05bd20480b8a039b66a09d0ec361210bc50e91d82ee8d69e0a8",
+    "sources/lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "sources/scripts/run_final_theory.py": "f91ece6676b5ecfb68187a37789b336f07dc455ea4ebf555d795eaed6163461a",
+    "sources/tests/test_final_theory.py": "fc5a4907f9295f42f25d0bb85a9b6472ce91d102781ec037d81d6050e2af80f0"
+  }
+}

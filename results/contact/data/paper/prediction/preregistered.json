@@ -1,0 +1,148 @@
+{
+  "config": {
+    "stage": "paper",
+    "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+    "validation_episodes": 64,
+    "test_episodes": 256,
+    "calibration_validation_episodes": 32,
+    "calibration_test_episodes": 128,
+    "mismatch_episodes": 64,
+    "validation_seed": 2026111011,
+    "test_seed": 2026111012,
+    "calibration_seed": 2026111013,
+    "mismatch_seed": 2026111014,
+    "seed_offset": 0,
+    "primary_beam_n": 32,
+    "primary_beam_T": 256,
+    "primary_beam_dt": 0.01,
+    "primary_contact_T": 192,
+    "primary_contact_dt": 0.05,
+    "primary_report_every": 32,
+    "calibration_n": 3,
+    "calibration_T": 64,
+    "calibration_times": [
+      32,
+      64
+    ],
+    "calibration_sigma2": 0.2,
+    "calibration_tau2": 1.0,
+    "calibration_drift_angle": 0.8,
+    "nominal": [
+      0.5,
+      0.8,
+      0.95
+    ],
+    "posterior_draws": 4096,
+    "real_orders": [
+      [
+        48,
+        96
+      ],
+      [
+        64,
+        192
+      ]
+    ],
+    "state_mass_tolerance": 0.035,
+    "quantile_resolution_tolerance": 0.006,
+    "moment_tolerance": 1e-09,
+    "max_order": 4096,
+    "ascent_tolerance": 1e-07,
+    "real_quadrature_resolution_tolerance": 1e-07,
+    "second_moment_tolerance": 1e-06,
+    "numerical_scope": "Native mean/log-normalizer flags bound series truncation in exact arithmetic, excluding rounding. The real N3 fallback compares two quadrature resolutions at tolerance1e-7, not a rigorous error enclosure. Tail/CDF and second-moment checks are separate.",
+    "beam_floor": 1e-05,
+    "contact_floor": 1e-08,
+    "calibration_floor": 1e-05,
+    "policy_candidates": [
+      {
+        "beta": 1.0,
+        "block_length": 32,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.98,
+        "block_length": 32,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.9,
+        "block_length": 32,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.98,
+        "block_length": 32,
+        "em_iterations": 4
+      }
+    ],
+    "beam_conditions": [
+      "noise_change",
+      "smooth",
+      "power_change"
+    ],
+    "contact_conditions": [
+      "noise_change",
+      "fast_sphere"
+    ],
+    "heldout_draws": 128,
+    "task_penalty": 10.0,
+    "precision": "Primary256 independent test episodes; calibration128 independent episodes with exact binomial intervals. Reporting times and queries are averaged within episodes. All precision flags are retained.",
+    "variance_convention": "sigma2 is per-real-coordinate variance, or proper-complex covariance; complex real/imaginary noise components have variance sigma2/2.",
+    "causal_rule": "One singleton correction; completed nonoverlapping past blocks; transported preceding prior fixed during EM; fitted variances used only for future corrections; streaming state is never replaced or augmented by fitted block posterior.",
+    "timing_scope": "Elapsed component clocks are execution metadata. Comparative warmed serial cadence timing is a separate root-owned stage.",
+    "causal_warm_start": "One current-parameter warm start per completed block; if signal variance is zero, also use a declared positive interior fallback. Multiple-start stationary reference experiments are retained separately.",
+    "validation_scoring_scope": "Policy validation uses independent observed held-out disturbance power or noisy held-out KKT response MSE. Hidden subspaces, normals and true covariance losses never select settings. Optional predictive density reports are not computed during task-policy selection.",
+    "mismatch": {
+      "contamination_power": 0.5,
+      "secondary_power": 0.35,
+      "noise_correlation": 0.5,
+      "friction_coefficient": 0.35,
+      "anisotropic_damping": [
+        1.0,
+        2.0,
+        4.0
+      ],
+      "position_dt": 0.05,
+      "position_sigma": 0.01
+    },
+    "section": "all",
+    "primary_contact_generator_seeds": {
+      "validation_seed": 2026111001,
+      "test_seed": 2026111002,
+      "stage_seed_offset": 0
+    },
+    "primary_beam_generator_seeds": "SeedSequence([validation_seed or test_seed + seed_offset, 32, episode, 31]); same draws across interventions"
+  },
+  "sources": {
+    "lib/causal_variance.py": "f89348e57ee850d91f1317e1ce443e95849f15c497a4170c0caa49143ddf5af0",
+    "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
+    "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
+    "tests/test_causal_variance.py": "1f5e2189151c4b51ee5c5606cb03018e71b5d679fbe2246d499498e8360a2744",
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+    "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+    "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+    "results/implementation_audit/paper/em/manifest.json": "ab71dc035fbca39539295acca58e56060200a0bc0d62a5df8d10c918ed370e94",
+    "results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+    "results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+    "results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+    "results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03",
+    "scripts/run_block_em_study.py": "9b32a45cbc0166dc4d0059d2fdf7e2595cd343a0171fd9ad02fc8bc5f648f6fb",
+    "tests/test_block_em.py": "1504392b2147ffbbea465e7288ea3b878d65bed9cdce1ea820b90467f47040fc"
+  },
+  "registered_utc": "2026-11-09T21:48:30.358696+00:00"
+}

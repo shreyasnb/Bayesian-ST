@@ -1,0 +1,203 @@
+{
+  "status": "completed",
+  "example": "beamforming",
+  "stage": "pilot",
+  "component": "theory",
+  "config": {
+    "stage": "pilot",
+    "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+    "seed": 2026111007,
+    "algebra_seeds": [
+      2026111001,
+      2026111002,
+      2026111003
+    ],
+    "episodes": 12,
+    "local_episodes": 24,
+    "local_lengths": [
+      4,
+      64,
+      256
+    ],
+    "local_sigma2": [
+      0.2,
+      1.0
+    ],
+    "local_beta": [
+      1.0,
+      0.9
+    ],
+    "local_radius": 0.45,
+    "block_lengths": [
+      1,
+      4,
+      16,
+      32
+    ],
+    "block_beta": [
+      1.0,
+      0.87
+    ],
+    "curvature_gaps": [
+      [
+        0.0,
+        1.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0,
+        10.0
+      ],
+      [
+        0.0,
+        8.0,
+        8.0
+      ],
+      [
+        0.0,
+        8.0,
+        80.0
+      ],
+      [
+        0.0,
+        80.0,
+        80.0
+      ],
+      [
+        0.0,
+        80.0,
+        800.0
+      ]
+    ],
+    "quadrature_orders": [
+      96,
+      192
+    ],
+    "numerical_gaps": [
+      [
+        0.0,
+        1.0,
+        8.0
+      ],
+      [
+        0.0,
+        8.0,
+        80.0
+      ],
+      [
+        0.0,
+        80.0,
+        800.0
+      ],
+      [
+        0.0,
+        4000.0,
+        40000.0
+      ]
+    ],
+    "numerical_orders": [
+      32,
+      64
+    ],
+    "native_max_order": 4096,
+    "native_tolerance": 1e-11,
+    "static_times": [
+      64,
+      256,
+      1024
+    ],
+    "dynamic_T": 256,
+    "drift_rates": [
+      0.0,
+      0.0001,
+      0.001
+    ],
+    "bound_beta": [
+      1.0,
+      0.999,
+      0.99
+    ],
+    "sigma2": 0.2,
+    "tau2": 1.0,
+    "delta": 0.05,
+    "nonuniform_prior": [
+      -4.0,
+      0.0,
+      1.0
+    ],
+    "tolerances": {
+      "algebra_relative": 1e-10,
+      "reference_moment": 2e-08,
+      "second_moment_absolute": 3e-05,
+      "normalizer_derivative": 3e-05,
+      "covariance_resolution": 3e-05,
+      "local_probability": 0.99
+    },
+    "variance_convention": "Real noise covariance sigma2 I; proper-complex covariance sigma2 I and real/imag component variance sigma2/2.",
+    "specification": "Supplied v5.tex main and supplementary(14).tex, theory and appendices; final_simulation_guide.md. Global KL, information loss, invariant versus graph curvature, aggregate drift, sharp bound and information-gap identity reconciled against source text.",
+    "tex_hashes": {
+      "v5.tex": "31aad1eb4ff0f6e6b694eb63a5529decf264073c268f841681533af08346df4b",
+      "supplementary(14).tex": "e678649d45e7dfdf0039e63e02041d9cfac884f9229ef902f174f2db035f311b"
+    },
+    "repetition_unit": "Independent signal/noise episode; no posterior node or query is an independent performance episode.",
+    "inference_scope": "Numerical native rank one/codimension one; information algebra also checks other ranks. No deterministic general-rank moment scaling claim."
+  },
+  "sources": {
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "scripts/run_final_theory.py": "b2ecc29d0af291ffb36045321943fd2f868a2676e4c141665437b7c258080384",
+    "tests/test_final_theory.py": "fc5a4907f9295f42f25d0bb85a9b6472ce91d102781ec037d81d6050e2af80f0",
+    "lib/guide_tracking.py": "c63c9f9fe0691649ec88b9709a9c859bb7d421fd21c4b526099846a62a6f789b",
+    "lib/guide_information.py": "23a4c48bf43ccb3d25b550ff37c25b7920897d9cf066335c625890e8f37faa00",
+    "lib/beamforming_theory.py": "8cf21d381a44756818177130fd097b8c6458e541c0595e46fa2577348aace486",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f"
+  },
+  "artifacts": {
+    "results/beamforming/data/pilot/theory/checks.json": "60c34cd7fc18c175f342a1f7eeba0f5d972e421ccd7594fc067593b7fee06cd5",
+    "results/beamforming/data/pilot/theory/preregistered.json": "df6631c2abb30e9c12ecfb6eaaa571f5440e45e9efb9095c3f7c056cb1d73755",
+    "results/beamforming/tables/pilot/theory/tracking_phase.csv": "73470875013d1512d5835b5a4dfef0e6e85869212595d4bf009a309157ec7a85",
+    "results/beamforming/tables/pilot/theory/block_checks.csv": "fd9f026d5e0be5a1edad5dcb26460423e7350e51976ecf5ec0d074a9184daf4c",
+    "results/beamforming/tables/pilot/theory/inverse_fisher_summary.csv": "1beb47bcfb84d2740c0ed345d28b9029a63089dd90b3ba2a42668aa7d0f9d8af",
+    "results/beamforming/tables/pilot/theory/global_kl.csv": "bff22b3b8de3db8c1233489910c657c071fa4cfc556f5eaf1551c64232a5148a",
+    "results/beamforming/tables/pilot/theory/tracking_summary.csv": "98f75b8c88d1fe609120bb799ce6b47061873b5d029f83410402a1ad53091ff5",
+    "results/beamforming/tables/pilot/theory/information_derivatives.csv": "ce1dd87d24493cb923735adddc48ed59ea9f8f56b809af9bd3d4ae47f38a853c",
+    "results/beamforming/tables/pilot/theory/information_loss.csv": "0594066eb8fb6a94cb8cef56dcf60023997a921fb27af87d1de0f3bffe6eb146",
+    "results/beamforming/tables/pilot/theory/curvature.csv": "1b89f459b85ce793ed7bb8efb59efaab493c2701cfa9ceb565574a885014d3fd",
+    "results/beamforming/tables/pilot/theory/information.csv": "acaa342b4c6f5453fa3292b1a2999bb342b24454ea90d87b14b8c680d00c9918",
+    "results/beamforming/tables/pilot/theory/information_counts.csv": "1b35630b47b384e5a35748706d1e4fa17dc6d425a92a6819f7299ed713298b64",
+    "results/beamforming/tables/pilot/theory/inverse_fisher.csv": "7e1d37bb6740d441a581014ee5fa741df457bbcf3bc20fcefb119c75f7247c19",
+    "results/beamforming/tables/pilot/theory/tracking.csv": "2c6594d35f0ab4c854e4f8497ca13f2ad84785986526350931e7a94528de8f2d",
+    "results/beamforming/tables/pilot/theory/numerical_accuracy.csv": "c6635f6b91d2ee70e9ae501d478b5bcdf7aaf1e65a390d4ac040a16fe0980c5c"
+  },
+  "reused_inputs": {
+    "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+    "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+    "results/implementation_audit/paper/information_counts/summary.csv": "298d0df3436d889e3f53a7643cf604c635f740baf4687d706f26c2240039171c",
+    "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+    "results/implementation_audit/paper/information_counts/manifest.json": "ab9daeead07af4109eea012f7f9086adda82deb013d06def5b492c5b182e946f"
+  },
+  "checks": {
+    "algebra_failures": 0,
+    "information_reused_checks": 15,
+    "global_kl_failures": 0,
+    "information_loss_identity_error": 1.4210854715202004e-14,
+    "tracking_reports": 192,
+    "valid_bound_reports": 0,
+    "informative_bound_reports": 0,
+    "eligible_violations": 0,
+    "maximum_scaled_decomposition": 3.450080135654684e-15,
+    "maximum_information_gap_error": 0.0,
+    "inverse_fisher_episodes": 24,
+    "inverse_fisher_local_eligible_cells": 6,
+    "numerical_targets": 4,
+    "unresolved_numerical_targets": 2,
+    "unresolved_quantile_targets": 1,
+    "seconds": 3.5640693730092607
+  },
+  "specification": "Supplied v5.tex and supplementary(14).tex theory/appendices, hashes in config. Historical numerical section not used to define experiments."
+}

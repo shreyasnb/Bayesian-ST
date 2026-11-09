@@ -1,0 +1,29 @@
+example,check,n,k,complex_data,error,scale,scaled_error,tolerance,status,mode_unique,native_mean_declared_ok,scope
+beamforming,mean_hermitian,3,1,True,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,mean_trace,3,1,True,1.1102230246251565e-16,1.0,1.1102230246251565e-16,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,mean_spectrum,3,1,True,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,independent_mean,3,1,True,5.037297412015072e-12,1.0,5.037297412015072e-12,2e-08,passed,True,True,Deterministic scalar identity
+beamforming,uniform_mean,3,1,True,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,line_complement_duality,3,1,True,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,trace_shift_mean,3,1,True,7.926756236672954e-17,1.0,7.926756236672954e-17,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,trace_shift_normalizer,3,1,True,0.0,1.0,0.0,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,known_frame_mean_transport,3,1,True,2.705865144857051e-16,1.0,2.705865144857051e-16,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,known_frame_normalizer,3,1,True,4.440892098500626e-16,1.0,4.440892098500626e-16,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,mode_mean_eigenspace,3,1,True,5.923718729542739e-16,1.0,5.923718729542739e-16,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,minimum_mean_squared_chordal_loss,3,1,True,4.053535285208909e-12,1.0,4.053535285208909e-12,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,response_risk_decomposition,3,1,True,8.391509709326783e-12,2.5119784775327694,3.3405977735799745e-12,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,full_response_covariance,3,1,True,1.8092331634484985e-08,1.0,1.8092331634484985e-08,2e-07,passed,True,True,Deterministic scalar identity
+beamforming,response_risk_trace,3,1,True,1.013633621482768e-12,1.0,1.013633621482768e-12,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,modal_response_excess,3,1,True,6.970535260109045e-12,1.0,6.970535260109045e-12,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,marginal_normalized_gaussian_likelihood,3,1,True,4.440892098500626e-16,2.694029429415266,1.6484200395184672e-16,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,conditional_normalized_gaussian_likelihood,3,1,True,2.220446049250313e-16,1.6188780156818878,1.3715956531258712e-16,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,conditional_predictive_covariance,3,1,True,1.809233565236482e-08,1.0,1.809233565236482e-08,2e-07,passed,True,True,Deterministic scalar identity
+beamforming,marginal_predictive_covariance,3,1,True,6.549219827500545e-12,1.0,6.549219827500545e-12,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,marginal_denoising_mean,3,1,True,1.0353316838866588e-12,1.0,1.0353316838866588e-12,2e-08,passed,True,True,"Direct latent Gaussian conditioning and posterior mixture, with data-updated nonuniform belief"
+beamforming,marginal_denoising_covariance,3,1,True,8.544769211419586e-09,1.0,8.544769211419586e-09,2e-07,passed,True,True,Gaussian conditional covariance plus full second-projector contribution
+beamforming,marginal_denoising_risk,3,1,True,9.826169794502349e-09,1.0,9.826169794502349e-09,2e-07,passed,True,True,Deterministic scalar identity
+beamforming,beamforming_distortionless_gain,3,1,True,5.551115123125783e-17,1.0,5.551115123125783e-17,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,beamforming_first_order_optimality,3,1,True,3.483297094656094e-16,1.0,3.483297094656094e-16,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,beamforming_expected_power_excess,3,1,True,2.220446049250313e-16,1.0,2.220446049250313e-16,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,beamforming_uniform_endpoint,3,1,True,3.6638411145107034e-16,1.0,3.6638411145107034e-16,1e-10,passed,True,True,Deterministic scalar identity
+beamforming,isotropic_diagonal_loading_equivalence,3,1,True,1.1274368112207335e-16,1.0,1.1274368112207335e-16,1e-10,passed,True,True,Deterministic scalar identity

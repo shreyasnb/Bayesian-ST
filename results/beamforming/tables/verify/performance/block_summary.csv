@@ -1,0 +1,17 @@
+kind,condition,n,block_length,episodes,resolved_episodes,mean,lower,upper,median,numerical_ok,endpoint,interval
+delayed_exact,static,32,1,3,3,1.2458872027912957,0.5117885294146669,1.9799858761679245,1.311264414627071,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+constant_state_window,static,32,1,3,3,2.7347886365493963,1.8482141138411472,3.6213631592576454,2.61979316233552,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+delayed_exact,static,32,4,3,3,1.3208337919113318,0.5965420755449715,2.045125508277692,1.3798494844659526,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+constant_state_window,static,32,4,3,3,1.9258043843845218,-0.24839300721601187,4.1000017759850556,2.138097304987511,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+delayed_exact,static,32,16,3,3,1.642209150053582,1.0546265603143572,2.229791739792807,1.7450845720178632,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+constant_state_window,static,32,16,3,3,1.0398689694893857,-0.6436023085338192,2.7233402475125903,1.155539302749332,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+delayed_exact,static,32,32,3,3,2.1300015498208125,1.7271093781842621,2.532893721457363,2.18895658276281,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+constant_state_window,static,32,32,3,3,0.5170283494828035,-0.583974093619417,1.618030792585024,0.7113875580976012,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+delayed_exact,smooth,32,1,3,3,1.1437513848550764,0.3025724971584378,1.984930272551715,1.0970194673423292,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+constant_state_window,smooth,32,1,3,3,1.2934240483567894,0.33490616569183984,2.251941931021739,1.169069610389181,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+delayed_exact,smooth,32,4,3,3,1.2441676855899202,0.46451359272532056,2.02382177845452,1.1632598590207162,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+constant_state_window,smooth,32,4,3,3,1.1718952032146408,-0.014936256087440425,2.3587266625167223,1.1451651603389459,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+delayed_exact,smooth,32,16,3,3,1.6462317673681246,1.146262739829603,2.146200794906646,1.5750305552172357,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+constant_state_window,smooth,32,16,3,3,0.9454067823687838,-0.7033166159530989,2.5941301806906667,0.7352815388510213,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+delayed_exact,smooth,32,32,3,3,1.9763911989555598,1.4961734924594867,2.456608905451633,1.8814994451220417,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells
+constant_state_window,smooth,32,32,3,3,1.0841496383670972,-0.4999676537165283,2.6682669304507227,1.0333033964224583,True,heldout_ratio_db,Pointwise Student 95% across independent episodes; exploratory cells

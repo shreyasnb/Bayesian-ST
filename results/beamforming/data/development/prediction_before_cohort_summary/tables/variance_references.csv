@@ -1,0 +1,2 @@
+model,n,k,complex_data,order_low,order_high,native_log_evidence,reference_log_evidence,evidence_error,mean_error,resolution_error,tolerance,numerical_ok,provenance
+complex_marginal_rank_one,3,1,True,64,96,-10.719321589194031,-10.719321589194356,3.2329694477084564e-13,6.562541358574777e-13,1.7763568394002505e-15,2e-08,True,Retained stationary fixed-boundary EM reference; original 24 blocks per model

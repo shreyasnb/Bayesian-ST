@@ -1,0 +1,1 @@
+Preserved provisional runs and exact contact producer before replacing truth-based validation loss with independent held-out measured KKT responses. No paper-stage experiment existed. These outputs are development evidence only.

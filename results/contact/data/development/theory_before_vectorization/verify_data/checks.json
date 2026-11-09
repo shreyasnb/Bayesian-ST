@@ -1,0 +1,18 @@
+{
+  "algebra_failures": 0,
+  "information_reused_checks": 15,
+  "global_kl_failures": 0,
+  "information_loss_identity_error": 1.4210854715202004e-14,
+  "tracking_reports": 48,
+  "valid_bound_reports": 33,
+  "informative_bound_reports": 33,
+  "eligible_violations": 0,
+  "maximum_scaled_decomposition": 2.2340020750391212e-15,
+  "maximum_information_gap_error": 6.821210263296962e-13,
+  "inverse_fisher_episodes": 3,
+  "inverse_fisher_local_eligible_cells": 7,
+  "numerical_targets": 4,
+  "unresolved_numerical_targets": 2,
+  "unresolved_quantile_targets": 0,
+  "seconds": 4.732242639991455
+}

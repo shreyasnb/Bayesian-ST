@@ -1,0 +1,146 @@
+import numpy as np
+import pandas as pd
+
+from lib.final_beamforming import (
+    configuration, matched_overlap_angle, generate_stream, modal_weight,
+    covariance_power, weighted_statistics, decision_records, episode_average,
+    paired_summary, block_episode)
+from lib.beamforming_protocol import ula, haar_line, proper_complex
+from lib.geometry import center
+from lib.array_geometry_study import distortionless_weight
+from lib.final_beamforming import checked_moments
+from lib.beamforming_numerics import complex_moments
+
+
+def _policy(n=4):
+    return dict(n=n, condition='static', stationary=True, times=[1,4,8],
+        primary_times=[1,4,8], shared_beta=1.,
+        policies=[dict(times=[1,4,8],shared_beta=1.,scalar_beta=1.,rho=.4,
+                       covariance_beta=1.,alpha=.3)],
+        great_window=dict(window=4,beta=None,stepsize=.01,inner_steps=1),
+        great_ew=dict(window=None,beta=1.,stepsize=.01,inner_steps=1),grouse_step=.01)
+
+
+def test_dimension_sweep_controls_physical_overlap_and_power_convention():
+    for n in (8,32,64,128):
+        angle=matched_overlap_angle(n,.5)
+        a,h=ula(n,0.),ula(n,angle)
+        assert abs(abs(np.vdot(a,h))**2-.5)<2e-12
+        assert np.allclose(np.vdot(h,h),1.)
+        # The total rank-one interference power is tau2, not n*tau2.
+        assert np.allclose(np.trace(1.7*np.outer(h,h.conj())),1.7)
+
+
+def test_rank_one_actions_match_dense_solve_and_include_isotropic_endpoint():
+    rng=np.random.default_rng(103)
+    n=8;h=haar_line(rng,n);a=haar_line(rng,n)
+    P=np.outer(h,h.conj())
+    for rho in (0.,.03,.6,1.):
+        M=rho*P+(1-rho)*np.eye(n)/n
+        R=.2*np.eye(n)+1.4*M
+        w=modal_weight(h,a,.2,1.4,rho)
+        assert np.allclose(w,distortionless_weight(R,a),atol=2e-13)
+        assert abs(np.vdot(w,a)-1)<1e-13
+    assert np.allclose(modal_weight(h,a,.2,1.4,0.),a)
+
+
+def test_singleton_statistics_use_actual_varying_coefficients_without_covariance_division():
+    rng=np.random.default_rng(104)
+    U=proper_complex(rng,(7,5))
+    sigma=np.array([.2,.2,.7,.7,.4,.4,.4])
+    tau=np.array([1.,1.,1.,2.,2.,2.,.5])
+    beta=.83
+    state=weighted_statistics(U,sigma,tau,beta,[7])[7]
+    w=beta**np.arange(6,-1,-1)
+    independent=sum(wj*q/(s*(s+q))*np.outer(u,u.conj())
+                    for wj,u,s,q in zip(w,U,sigma,tau))
+    assert np.allclose(state['A'],center(independent),atol=2e-13)
+    assert np.allclose(state['S'],U.T@(w[:,None]*U.conj()))
+    assert np.allclose(state['mass'],w.sum())
+    assert not np.allclose(state['A'],center(independent/len(U)))
+
+
+def test_estimates_at_a_checkpoint_do_not_use_future_snapshots():
+    cfg=configuration('verify');policy=_policy()
+    rng=np.random.default_rng(105)
+    U=proper_complex(rng,(8,4));initial=haar_line(rng,4);a=ula(4,0.)
+    s=np.full(8,.2);q=np.ones(8)
+    other=U.copy();other[4:]=100*proper_complex(rng,(4,4))
+    first=decision_records(U,s,q,a,initial,policy,cfg)[1]
+    second=decision_records(other,s,q,a,initial,policy,cfg)[1]
+    for method in first['weights']:
+        assert np.allclose(first['weights'][method],second['weights'][method],atol=1e-12)
+
+
+def test_one_marginal_observation_has_exact_axial_mean_control():
+    cfg=configuration('verify');policy=_policy()
+    rng=np.random.default_rng(106)
+    U=proper_complex(rng,(8,4));a=ula(4,0.)
+    record=decision_records(U,np.full(8,.2),np.ones(8),a,haar_line(rng,4),policy,cfg,True)[0]
+    assert np.allclose(record['M'],record['M_iso'],atol=2e-10)
+    assert np.allclose(record['weights']['mean'],record['weights']['isotropic'],atol=2e-10)
+
+
+def test_declared_change_controls_are_separate_and_keep_training_interference_only():
+    arguments=dict(n=8,length=16,seed=107,sigma2=.2,tau2=1.,overlap=.5)
+    static=generate_stream(condition='static',**arguments)
+    noise=generate_stream(condition='noise_change',**arguments)
+    power=generate_stream(condition='power_change',**arguments)
+    assert np.array_equal(static['h'],noise['h'])
+    assert np.array_equal(static['h'],power['h'])
+    assert np.array_equal(noise['tau2'],static['tau2'])
+    assert np.array_equal(power['sigma2'],static['sigma2'])
+    assert np.all(noise['sigma2'][8:]==.8)
+    assert np.all(power['tau2'][8:]==4.)
+    assert np.array_equal(noise['U'][:8],static['U'][:8])
+    assert np.array_equal(power['U'][:8],static['U'][:8])
+
+
+def test_episode_is_averaged_before_log_power_and_confidence_interval():
+    rows=[]
+    for t,ratio in [(8,100.),(16,1.),(24,9.)]:
+        rows.append(dict(n=8,condition='smooth',trial=0,method='mean',t=t,
+            heldout_ratio=ratio,true_ratio=ratio,response_map_error=.3,numerical_ok=True,mean_ok=True))
+    result=episode_average(rows,16)[0]
+    assert result['checkpoints']==2
+    assert result['heldout_ratio']==5.
+    assert np.isclose(result['heldout_ratio_db'],10*np.log10(5.))
+
+
+def test_unresolved_pairs_remain_in_paired_diagnostic_denominator():
+    rows=[]
+    for trial in range(3):
+        rows.append(dict(condition='static',trial=trial,method='mean',
+            heldout_ratio_db=1.,true_ratio_db=1.,numerical_ok=True))
+        rows.append(dict(condition='static',trial=trial,method='mode',
+            heldout_ratio_db=np.nan if trial==2 else 2.,
+            true_ratio_db=2.,numerical_ok=trial!=2))
+    pairs=paired_summary(pd.DataFrame(rows),['condition'])
+    row=pairs[pairs.endpoint.eq('heldout_ratio_db')].iloc[0]
+    assert row.episodes==3 and row.resolved_pairs==2
+    assert not row.numerical_ok
+    assert row.gain==1.
+
+
+def test_block_cadence_assimilates_once_and_never_reports_before_endpoint():
+    cfg=configuration('verify')
+    cfg.update(block_n=4,block_T=32,block_lengths=[1,4,16,32],heldout_snapshots=8)
+    rows=block_episode(cfg,'smooth',0)
+    exact=[row for row in rows if row['kind']=='delayed_exact']
+    for row in exact:
+        L=row['block_length']
+        assert row['assimilated_observations']==32
+        assert row['outputs']==32//L
+        assert row['available_from_observation']==L
+        assert row['maximum_parameter_error']<2e-11
+        assert row['maximum_delay_observations']==L-1
+
+
+def test_regular_cap_matches_safe_logarithmic_branch_at_moderate_high_dimension():
+    A=np.diag(np.linspace(-80.,80.,128))
+    regular,extended=checked_moments(A,tol=1e-10,max_order=4096,fallback_max_order=8192)
+    logarithmic=complex_moments(A,tol=1e-10,max_order=8192)
+    assert not extended
+    assert regular.numerical_ok and logarithmic.numerical_ok
+    assert np.linalg.norm(regular.mean-logarithmic.mean,2)<2e-9
+    assert abs(regular.log_normalizer-logarithmic.log_normalizer)<2e-9

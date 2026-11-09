@@ -1,0 +1,21 @@
+{
+  "stationary_episodes": 9,
+  "moving_episodes": 15,
+  "stationary_metric_rows": 360,
+  "moving_checkpoint_rows": 1200,
+  "moving_episode_rows": 150,
+  "block_episodes": 6,
+  "native_mean_calls": 156,
+  "native_mean_unresolved": 0,
+  "unresolved_method_rows": 0,
+  "maximum_unit_gain_error": 4.441197019893352e-16,
+  "maximum_exact_block_parameter_error": 6.210719231433094e-14,
+  "maximum_native_order": 2647.0,
+  "maximum_native_mean_error_bound": 9.980276654975142e-11,
+  "native_cap_extensions": 0,
+  "n128_task_completed": true,
+  "section_iso_density_fitted": false,
+  "section_scope": "h=U3*x, x real and on S2. Column1 is the modal complex eigenvector, column2 the next-largest parameter eigenvector, column3 the smallest. This is a density section, not a full posterior or marginal.",
+  "total_seconds": 26.314786442002514,
+  "timing_scope": "Concurrent execution metadata/pilot cost only; isolated cadence runner supplies final runtime comparisons"
+}

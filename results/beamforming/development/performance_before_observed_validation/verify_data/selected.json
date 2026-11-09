@@ -1,0 +1,522 @@
+[
+  {
+    "n": 32,
+    "condition": "static",
+    "stationary": true,
+    "times": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "primary_times": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "policies": [
+      {
+        "times": [
+          8
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.6124999695645805,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          16
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5903908705327198,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          32
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5535075765691339,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          64
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.4659524279426202,
+        "shared_beta": 1.0
+      }
+    ],
+    "shared_beta": 1.0,
+    "great_window": {
+      "window": 32,
+      "beta": null,
+      "stepsize": 0.00625,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 1.0,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 64,
+    "condition": "static",
+    "stationary": true,
+    "times": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "primary_times": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "policies": [
+      {
+        "times": [
+          16
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.6211778667780853,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          32
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.6202565959451167,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          64
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5723878175083749,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          128
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.49727940825757794,
+        "shared_beta": 1.0
+      }
+    ],
+    "shared_beta": 1.0,
+    "great_window": {
+      "window": 64,
+      "beta": null,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 1.0,
+      "stepsize": 0.0015625,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 128,
+    "condition": "static",
+    "stationary": true,
+    "times": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "primary_times": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "policies": [
+      {
+        "times": [
+          32
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.634806041920195,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          64
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.618206202681975,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          128
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5565983091065829,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          256
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5087270473014438,
+        "shared_beta": 1.0
+      }
+    ],
+    "shared_beta": 1.0,
+    "great_window": {
+      "window": 128,
+      "beta": null,
+      "stepsize": 0.0015625,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 1.0,
+      "stepsize": 0.00078125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 32,
+    "condition": "static",
+    "stationary": false,
+    "times": [
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "primary_times": [
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "policies": [
+      {
+        "times": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64
+        ],
+        "scalar_beta": 0.99,
+        "rho": 1.0,
+        "covariance_beta": 0.97,
+        "alpha": 0.524137718158955,
+        "shared_beta": 0.99
+      }
+    ],
+    "shared_beta": 0.99,
+    "great_window": {
+      "window": 64,
+      "beta": null,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 0.99,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 32,
+    "condition": "smooth",
+    "stationary": false,
+    "times": [
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "primary_times": [
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "policies": [
+      {
+        "times": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64
+        ],
+        "scalar_beta": 0.9,
+        "rho": 0.5562551132796086,
+        "covariance_beta": 0.9,
+        "alpha": 0.8344000633769371,
+        "shared_beta": 0.9
+      }
+    ],
+    "shared_beta": 0.9,
+    "great_window": {
+      "window": 16,
+      "beta": null,
+      "stepsize": 0.0125,
+      "inner_steps": 1,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 0.9,
+      "stepsize": 0.019999999999999997,
+      "inner_steps": 1,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 32,
+    "condition": "abrupt",
+    "stationary": false,
+    "times": [
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "primary_times": [
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "policies": [
+      {
+        "times": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64
+        ],
+        "scalar_beta": 0.9,
+        "rho": 1.0,
+        "covariance_beta": 0.9,
+        "alpha": 0.7012509376055902,
+        "shared_beta": 0.9
+      }
+    ],
+    "shared_beta": 0.9,
+    "great_window": {
+      "window": 16,
+      "beta": null,
+      "stepsize": 0.0125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 0.9,
+      "stepsize": 0.019999999999999997,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 32,
+    "condition": "noise_change",
+    "stationary": false,
+    "times": [
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "primary_times": [
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "policies": [
+      {
+        "times": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64
+        ],
+        "scalar_beta": 0.99,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.6584344547160276,
+        "shared_beta": 0.99
+      }
+    ],
+    "shared_beta": 0.99,
+    "great_window": {
+      "window": 64,
+      "beta": null,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 0.99,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 32,
+    "condition": "power_change",
+    "stationary": false,
+    "times": [
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "primary_times": [
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "policies": [
+      {
+        "times": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 0.97,
+        "alpha": 0.4300849229011279,
+        "shared_beta": 1.0
+      }
+    ],
+    "shared_beta": 1.0,
+    "great_window": {
+      "window": 64,
+      "beta": null,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 1.0,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  }
+]

@@ -1,0 +1,17 @@
+{
+  "requested_jobs": 42,
+  "failed_jobs": 0,
+  "scalar_variance_boundary_checks": 10,
+  "adaptation_rows": 648,
+  "calibration_rows": 2160,
+  "score_rows": 264,
+  "unresolved_adaptation_rows": 0,
+  "unresolved_calibration_rows": 1,
+  "unresolved_score_rows": 0,
+  "unresolved_fitting_events": 0,
+  "maximum_state_change_from_fit": 0.0,
+  "fits": 138,
+  "elapsed_seconds": 55.13959425201756,
+  "causal_model": "Saved preceding prior; completed disjoint blocks; fitfuture-only; streamingAunchanged",
+  "probability_scope": "Exact prior-predictive identity tested only beta1 knownscales; actual forgetting/learning inclusion is empirical"
+}

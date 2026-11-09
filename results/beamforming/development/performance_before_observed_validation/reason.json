@@ -1,0 +1,8 @@
+{
+  "reason": "Replace oracle-risk validation tuning with independent measured heldout disturbance power. Hidden truth and true covariance remain evaluation-only.",
+  "sources": {
+    "lib/final_beamforming.py": "e987beeb1e3906d0756a1ef9125481469717891c5b6616f4f3a90ecc84e3e270",
+    "scripts/run_final_beamforming.py": "16aff494a7cad93dcf9961091a1d7eedbc425a28b8583d68f2f53f5aae9b8872",
+    "tests/test_final_beamforming.py": "99fda82c54ee48fece268f3d01e58d2127b91c8a4e5d627c5b52e8113acb0f41"
+  }
+}

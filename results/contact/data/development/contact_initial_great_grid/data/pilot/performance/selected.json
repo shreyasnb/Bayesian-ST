@@ -1,0 +1,90 @@
+[
+  {
+    "condition": "static_balanced",
+    "beta": 1.0,
+    "regularization_rho": 0.7051454405129802,
+    "validation_loss": 3.9971100085901054e-05,
+    "great_window": {
+      "kind": "window",
+      "window": 64,
+      "beta": null,
+      "stepsize": 50.0,
+      "inner_steps": 3,
+      "validation_loss": 9.501757772771747e-05
+    },
+    "great_ew": {
+      "kind": "ew",
+      "window": null,
+      "beta": 0.98,
+      "stepsize": 50.0,
+      "inner_steps": 3,
+      "validation_loss": 9.463545333193567e-05
+    }
+  },
+  {
+    "condition": "static_concentrated",
+    "beta": 1.0,
+    "regularization_rho": 0.6244661873150212,
+    "validation_loss": 4.5818147575472236e-05,
+    "great_window": {
+      "kind": "window",
+      "window": 16,
+      "beta": null,
+      "stepsize": 50.0,
+      "inner_steps": 3,
+      "validation_loss": 9.761064305094334e-05
+    },
+    "great_ew": {
+      "kind": "ew",
+      "window": null,
+      "beta": 0.9,
+      "stepsize": 10.0,
+      "inner_steps": 3,
+      "validation_loss": 9.76810727917278e-05
+    }
+  },
+  {
+    "condition": "plane",
+    "beta": 1.0,
+    "regularization_rho": 0.9953167525394894,
+    "validation_loss": 8.168043272612153e-07,
+    "great_window": {
+      "kind": "window",
+      "window": 64,
+      "beta": null,
+      "stepsize": 50.0,
+      "inner_steps": 3,
+      "validation_loss": 6.861626748222505e-06
+    },
+    "great_ew": {
+      "kind": "ew",
+      "window": null,
+      "beta": 0.98,
+      "stepsize": 50.0,
+      "inner_steps": 3,
+      "validation_loss": 6.892297424273198e-06
+    }
+  },
+  {
+    "condition": "sphere",
+    "beta": 0.9,
+    "regularization_rho": 0.9121224600408249,
+    "validation_loss": 1.3083414278732592e-05,
+    "great_window": {
+      "kind": "window",
+      "window": 16,
+      "beta": null,
+      "stepsize": 10.0,
+      "inner_steps": 3,
+      "validation_loss": 6.795254957378806e-05
+    },
+    "great_ew": {
+      "kind": "ew",
+      "window": null,
+      "beta": 0.9,
+      "stepsize": 10.0,
+      "inner_steps": 3,
+      "validation_loss": 8.251134754990927e-05
+    }
+  }
+]

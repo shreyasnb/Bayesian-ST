@@ -1,0 +1,9 @@
+{
+  "reason": "Preserved pre-freeze causal implementation before replacing hidden true-state CV losses by independent observed held-out losses. No paper studies were run. Earlier verified provisional raw outputs are preserved separately in prediction_initial_verified.",
+  "files": {
+    "sources/lib/causal_variance.py": "f89348e57ee850d91f1317e1ce443e95849f15c497a4170c0caa49143ddf5af0",
+    "sources/lib/final_prediction.py": "61b0c7b941a4fbe6ef9f618603d53f741787b335982e088a49e6d3e589d44cfc",
+    "sources/scripts/run_final_prediction.py": "ec279f2d3e2d2967f8f390aefcfb59a081179592c2912d39e3562cea178533af",
+    "sources/tests/test_causal_variance.py": "fc2a08713c10faff8985c2e664cf1f27cbe92445f3c6363e063e511f6b8b5115"
+  }
+}

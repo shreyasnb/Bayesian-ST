@@ -1,0 +1,57 @@
+{
+  "status": "passed",
+  "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+  "producer": "scripts/run_array_geometry.py",
+  "profile": "quick",
+  "comparisons": [
+    {
+      "table": "metrics.csv",
+      "rows": 6144,
+      "maximum_absolute_difference": 0.0,
+      "numeric_columns": [
+        "n",
+        "s",
+        "tau2",
+        "t",
+        "trial",
+        "true_power",
+        "heldout_power",
+        "posterior_power",
+        "posterior_excess",
+        "optimality_residual",
+        "unit_gain_error",
+        "response_loss",
+        "posterior_risk",
+        "posterior_response_loss",
+        "mean_ok",
+        "mean_error_bound",
+        "mean_order",
+        "alpha",
+        "rho",
+        "grouse_step"
+      ],
+      "original_sha256": "4c47d433bcd4b2528ebeb9153ef5f97377c7bd7a99371ee9b051467baecf26d2",
+      "reproduced_sha256": "fb98394c9c6731734d24fa443aa143dcf7e8655ce89d4168c959fa7ae832e599"
+    },
+    {
+      "table": "shape.csv",
+      "rows": 768,
+      "maximum_absolute_difference": 0.0,
+      "numeric_columns": [
+        "n",
+        "s",
+        "t",
+        "trial",
+        "rho",
+        "anisotropy",
+        "mode_overlap",
+        "isotropic_mode_overlap",
+        "pca_mode_error",
+        "parameter_scatter_error"
+      ],
+      "original_sha256": "02cc9555e40cfe6639e6b8482277802ccb57bc1d85d1a7f3087e806e067ebe3b",
+      "reproduced_sha256": "02cc9555e40cfe6639e6b8482277802ccb57bc1d85d1a7f3087e806e067ebe3b"
+    }
+  ],
+  "scope": "Fresh regeneration of unchanged preceding scientific implementation; timing fields are excluded from numerical reproducibility checks. No historical numerical records overwritten."
+}

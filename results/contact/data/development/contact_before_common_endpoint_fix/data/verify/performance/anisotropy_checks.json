@@ -1,0 +1,13 @@
+{
+  "data_generated": true,
+  "selected_episode": 0,
+  "selected_time": 16,
+  "normal_mode_overlap": 0.8057116272405753,
+  "kappa": 5.946093701910831,
+  "isotropic_overlap_error": 3.4416913763379853e-15,
+  "isotropic_mean_match_error": 1.2150158660902034e-14,
+  "isotropic_resolution_error": 3.0236651992185685e-14,
+  "mode_unique": true,
+  "curvature_ratio": 11.040392591087155,
+  "numerical_ok": true
+}

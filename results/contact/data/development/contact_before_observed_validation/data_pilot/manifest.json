@@ -1,0 +1,198 @@
+{
+  "status": "completed",
+  "example": "contact",
+  "stage": "pilot",
+  "component": "performance",
+  "config": {
+    "schema": 1,
+    "stage": "pilot",
+    "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+    "n": 3,
+    "k": 2,
+    "T": 192,
+    "static_T": 32,
+    "dt": 0.05,
+    "v0": 0.02,
+    "resistance": 10.0,
+    "radius": 0.05,
+    "sigma2": 1.6e-05,
+    "static_sigma2": 0.0001,
+    "conditions": [
+      "static_balanced",
+      "static_concentrated",
+      "plane",
+      "sphere"
+    ],
+    "validation_episodes": 4,
+    "test_episodes": 8,
+    "block_episodes": 3,
+    "beta_grid": [
+      1.0,
+      0.98,
+      0.95,
+      0.9
+    ],
+    "great_step_grid": [
+      1.0,
+      10.0,
+      50.0,
+      200.0
+    ],
+    "great_inner_grid": [
+      1,
+      3,
+      8
+    ],
+    "great_window_grid": [
+      16,
+      64
+    ],
+    "great_beta_grid": [
+      1.0,
+      0.98,
+      0.9
+    ],
+    "static_times": [
+      1,
+      4,
+      16,
+      32
+    ],
+    "checkpoint_times": [
+      4,
+      16,
+      32,
+      64,
+      128,
+      192
+    ],
+    "action_every": 4,
+    "block_lengths": [
+      1,
+      4,
+      16,
+      32
+    ],
+    "task_lambda": 10.0,
+    "validation_seed": 2026111001,
+    "test_seed": 2026111002,
+    "story_seed": 2026111003,
+    "stage_seed_offset": 200000,
+    "story_episode": 0,
+    "anisotropy_time": 16,
+    "anisotropy_normal": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "anisotropy_input": "static_concentrated",
+    "anisotropy_sigma2": 0.0001,
+    "moment_tolerance": 5e-08,
+    "algebra_tolerance": 1e-10,
+    "physical_sampling": "Independent instantaneous velocity errors; no differenced positions.",
+    "variance_convention": "sigma2 is variance per real velocity coordinate in (m/s)^2.",
+    "information": "Bingham and regularized point use (u,v,G). GREAT uses response u and measured G only.",
+    "controls": "Mean, mode and isotropic control share exactly the same A, sigma2, beta and G.",
+    "selection": "Independent validation episode-average clean response MSE; no test outcomes select settings.",
+    "primary": "Episode-average held-out clean-response MSE at the declared action cadence.",
+    "query_unit": "Fixed common orthonormal query directions, each requested speed v0; queries averaged within episode.",
+    "statistical_unit": "Independent plant/noise episode; query components and reporting times are not repetitions.",
+    "scope": "Ideal maintained real Gr(2,3) bilateral contact with known isotropic resistance; no hard feasibility guarantee.",
+    "great_reference": "GREAT sliding window and exponentially weighted GREAT; original real response-only objective."
+  },
+  "sources": {
+    "lib/final_contact.py": "8554debe4cfef776b46177ddbe8628a6fa9c1b5f8fe933a12a424022274a7f98",
+    "scripts/run_final_contact.py": "6eda57bf5212dd5fb751576b87708aef77be6e582acf34c36db727d5e7d5c798",
+    "tests/test_final_contact.py": "18cbef4ccd161841a547130309e4cd331f6206c0df66dcc0f87333cc783e6438",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "benchmarks/common/__init__.py": "1b45903cc938c76c7b9f44eae5fcf1115e0b3b805237acedb399ee3e4f9815d6"
+  },
+  "artifacts": {
+    "results/contact/data/pilot/performance/anisotropy.npz": "d3e7afc0ff19d80534c7385a4ee71956b883bb5a371f8c7f8602ee6685eec311",
+    "results/contact/data/pilot/performance/anisotropy_checks.json": "ee6676edcbf624e83dcebd7a8904ab53a9acedc99cd734545dbe78bd27523217",
+    "results/contact/data/pilot/performance/checks.json": "513be412c80373656086279e86cf9d7406fc636c32c5eb90f1518843f8d03e14",
+    "results/contact/data/pilot/performance/preregistered.json": "9f293b68c7d7235beafb6bec7ac55967a88dab2d953976934e4d706192742ebd",
+    "results/contact/data/pilot/performance/selected.json": "6e8ce523c12c33834ba70faebefaf765c3c5471d4870ff94b59551244611baaf",
+    "results/contact/data/pilot/performance/story.npz": "86333706eb9dbdabed851ce6be43a5f95a4a21bcfdbf92c7334c350cc831f294",
+    "results/contact/tables/pilot/performance/blocks.csv": "b475764ec1f6d9992ec4a8511316da5e54430d054faac927096c70b6f3353f8b",
+    "results/contact/tables/pilot/performance/mechanics.csv": "ae424cc3cb51acc9ff846d640b03d0b7c810ab01eae9054a74db39c2b51cd693",
+    "results/contact/tables/pilot/performance/metrics.csv": "8ce7099b97f3521f6701dcbd23162872b8ae80221f3a750f9470c60b8da8eec7",
+    "results/contact/tables/pilot/performance/paired.csv": "9dcdc830046a396bb89ac39d515a2723575d473a3ef1c5b91ad293ce435034e8",
+    "results/contact/tables/pilot/performance/validation.csv": "6ed347cdb9f923673d51ae8879e931cc48eddf14c9afd57ec3937d332f0a0f18"
+  },
+  "checks": {
+    "episodes": 32,
+    "metric_rows": 1376,
+    "validation_episodes": 16,
+    "numerical_failures": 0,
+    "maximum_mean_resolution_error": 4.519710494754747e-09,
+    "maximum_command_excess_identity_error": 4.336808689942018e-19,
+    "maximum_kkt_residual": 4.224327714674015e-17,
+    "maximum_sphere_drift_identity_error": 3.3306690738754696e-16,
+    "maximum_block_parameter_error": 1.538046766254932e-12,
+    "anisotropy": {
+      "data_generated": true,
+      "selected_episode": 0,
+      "selected_time": 16,
+      "normal_mode_overlap": 0.8057116272405753,
+      "kappa": 5.946093701910831,
+      "isotropic_overlap_error": 3.4416913763379853e-15,
+      "isotropic_mean_match_error": 1.2150158660902034e-14,
+      "isotropic_resolution_error": 3.0236651992185685e-14,
+      "mode_unique": true,
+      "curvature_ratio": 11.040392591087155,
+      "numerical_ok": true
+    },
+    "seconds": 51.851920621003956,
+    "pilot_projected_paper_seconds": 1659.2614598721266,
+    "elapsed_scope": "Concurrent execution metadata only; isolated actual-cadence timings are separate."
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "validation_hash": null,
+  "assumptions": "Maintained ideal bilateral contact; known scalar resistance; direct isotropic velocity noise.",
+  "primary_endpoint": "Episode-average held-out clean-response MSE; common queries averaged within episode.",
+  "intervals": "Paired pointwise95% Student across independent episodes; no multiplicity adjustment.",
+  "information_by_method": {
+    "mean": [
+      "u",
+      "v",
+      "measured G"
+    ],
+    "mode": [
+      "u",
+      "v",
+      "measured G"
+    ],
+    "isotropic": [
+      "same A as mean"
+    ],
+    "regularized": [
+      "u",
+      "v",
+      "measured G",
+      "validation rho"
+    ],
+    "great_window": [
+      "u",
+      "measured G",
+      "validation window/step/inner count"
+    ],
+    "great_ew": [
+      "u",
+      "measured G",
+      "validation memory/step/inner count"
+    ]
+  },
+  "ties": "mode_unique describes the common Bingham mode; fixed coordinate eigensolver tie convention is flagged."
+}

@@ -1,0 +1,530 @@
+{
+  "reason": "Observed-data-only validation correction required by final guide section6.4 before frozen paper experiments.",
+  "files": [
+    {
+      "original_path": "results/contact/data/verify/performance/anisotropy.npz",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/anisotropy.npz",
+      "sha256": "d3e7afc0ff19d80534c7385a4ee71956b883bb5a371f8c7f8602ee6685eec311"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/anisotropy_checks.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/anisotropy_checks.json",
+      "sha256": "ee6676edcbf624e83dcebd7a8904ab53a9acedc99cd734545dbe78bd27523217"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/blocks/00000.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/blocks/00000.json",
+      "sha256": "546bd1526c8df870bda8f897ab7cc981297c333f939ad1032b000efa2d4b0e42"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/blocks/00001.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/blocks/00001.json",
+      "sha256": "94e1dd85af18d4a8b7ddcc7e4693c6a0d0397d029f42572948cd724fab938cc0"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/blocks/00002.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/blocks/00002.json",
+      "sha256": "5650462d4d774eeebdc6b1b6f2fc56a9251c349a5f6b6353cae10291867ec166"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/blocks/00003.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/blocks/00003.json",
+      "sha256": "f7987fa5702e5ec474760f3fa3199abd08d5a32076fefc95962341c600ac46e5"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/test/00000.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/test/00000.json",
+      "sha256": "514891ef755bcdbd9d2d0273a06b4d4f27a7eafe3347198ea97ae54bdf272db8"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/test/00001.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/test/00001.json",
+      "sha256": "6a87a58fe6e046ccbc1522ea49f9c32d8048266ec10d71af35cb481ed85b1299"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/test/00002.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/test/00002.json",
+      "sha256": "15f26727b4eca87832961b5c9ed921aa5c6f9476569e3eb6b0c2881eb1b12c7c"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/test/00003.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/test/00003.json",
+      "sha256": "4025f080503bca4eb0a56e9eebcf2dc6c067e6ff266f865b1cc8d0952fbfd395"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/test/00004.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/test/00004.json",
+      "sha256": "5a8b74b38ae7c69f38ed7258edf41a858401dfaa4da22f0b91c02172d3933fe7"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/test/00005.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/test/00005.json",
+      "sha256": "d55f850005194c909cdcc3e9ab1d85b05fbb4a8273e2d83c25b929025699321e"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/test/00006.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/test/00006.json",
+      "sha256": "b11bd65ce4b563056d5e23e315f77b7edbbd9369fa504b986c8e5b351b5036ee"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/test/00007.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/test/00007.json",
+      "sha256": "2d6d22415a96846d09d5119ba2ad2bddfeefe60e7ff944fc18d7f2dcbae5b9c8"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/test/00008.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/test/00008.json",
+      "sha256": "b2783056091e46573b89237a9ae6734b1c0af18b1e70adaee52fcb7bc5d2a555"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/test/00009.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/test/00009.json",
+      "sha256": "5b422f38438d1c4f22d3698db28afc592d5a4470ba042286817d8fd0c9fc41e5"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/test/00010.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/test/00010.json",
+      "sha256": "cd99a89f511ca9d461ab5b64ab76c004f95185970728e83760a824973120191c"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/test/00011.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/test/00011.json",
+      "sha256": "32e7daa45a27bbf6366b044f3b4d5d10814e14502e564dbfa6aa6b3cd88ce36c"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/validation/00000.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/validation/00000.json",
+      "sha256": "ad18e67ec2ac65c9a44f661a3bad44a895ad5a442f421fbf7f35247cb2b3d1b4"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/validation/00001.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/validation/00001.json",
+      "sha256": "41b034fb71c836bf66e85535cfbd626e45737c5a41c8c173c194198f5c80453e"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/validation/00002.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/validation/00002.json",
+      "sha256": "0839494c39471c150595969d4ebd9655e59bc1de0d2e2ef927247ac7cf83c41c"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/validation/00003.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/validation/00003.json",
+      "sha256": "27c37459a6eadd6e69040abf69f2d78d34c32873ac982da377dcd7dedf186c78"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/validation/00004.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/validation/00004.json",
+      "sha256": "8714522a9c646c0d25ca1dcad8c66687410f6fc672569d3161782789ab09c823"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/validation/00005.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/validation/00005.json",
+      "sha256": "f2ce4088dd6433b4ed79b5020a4021dd633b079daff09bfcbb2defcd8f3672fa"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/validation/00006.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/validation/00006.json",
+      "sha256": "c2cf330d7a153fc69f4af057e82461d9cf4a32e820a79bdc7a06128b839c8712"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checkpoints/validation/00007.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checkpoints/validation/00007.json",
+      "sha256": "b9ecdd6ad51b8f6d30deb367fa76b8b7a51bb692fa29cfa102b3a156fb1f744c"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/checks.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/checks.json",
+      "sha256": "e2baf4694728e04d25c502c979c87e8f715856bb30d14ec49656f81004a00a31"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/manifest.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/manifest.json",
+      "sha256": "6b2c7d975db5ebcc6e3eafec73eab14b613aff750c5b0350f7ae620c8354f4e5"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/preregistered.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/preregistered.json",
+      "sha256": "62787877d2483ab10d2731f55a7ad0a7276788b92af250694e5c44283ff5c2ae"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/selected.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/selected.json",
+      "sha256": "e5314b87586f37aeef41cfcdfdf6deb98cff8e733e8403bb605ec1aeb9a35b9e"
+    },
+    {
+      "original_path": "results/contact/data/verify/performance/story.npz",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_verify/story.npz",
+      "sha256": "e7e40dab39f63eb09ffe4926965f114b444e8fa487ff33eafe961ca4fdd2f608"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/anisotropy.npz",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/anisotropy.npz",
+      "sha256": "d3e7afc0ff19d80534c7385a4ee71956b883bb5a371f8c7f8602ee6685eec311"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/anisotropy_checks.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/anisotropy_checks.json",
+      "sha256": "ee6676edcbf624e83dcebd7a8904ab53a9acedc99cd734545dbe78bd27523217"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/blocks/00000.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/blocks/00000.json",
+      "sha256": "9b85d914c5e61d44cc1e03638af46e556d8e5f765495912a2568337562892145"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/blocks/00001.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/blocks/00001.json",
+      "sha256": "a58e476799032d411e39f6b4b087791bf339aa546c329c5b8e86591c263b492a"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/blocks/00002.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/blocks/00002.json",
+      "sha256": "b0ab86b1b0b11e86a9dc64683e12e961d8a6d687c6bdb31ca971d5952e02a50b"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/blocks/00003.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/blocks/00003.json",
+      "sha256": "a1267734a2b5c390afdf171b9d55fb727ebf0be3df73c0d9338e445de245f6b8"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/blocks/00004.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/blocks/00004.json",
+      "sha256": "26a1fe77e746b2b793fbb0bb107eeca5cc6bb235ca6a41478ce00f7e40d5a4a1"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/blocks/00005.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/blocks/00005.json",
+      "sha256": "2bfe87f36b21c5967989097a370ad564b23f2190c5a00640de9b89078cd77ccf"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00000.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00000.json",
+      "sha256": "1221e2d56ad9ba1a84b405ea6b168cff3374eedcd3a397bd1266841d5f0085c2"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00001.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00001.json",
+      "sha256": "61ec5e3281cb29fbef3ad32553e89c4a566698a54e20ecd3badca80e18f490bb"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00002.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00002.json",
+      "sha256": "b28e10794d0b1eb85de239dc12eac0abfbadbfff428dcf3e75addfb32e5e4f81"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00003.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00003.json",
+      "sha256": "d35475559caf29fb9e1b19e035452199bbe7916de07ab5cef3780320e0181d12"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00004.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00004.json",
+      "sha256": "7cad3d168769cbb4d31e647c39b6ceca1790a2b3db835f9f8f99d546dbc028fc"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00005.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00005.json",
+      "sha256": "e3952189bf88f5b672509c624ddc368834255062d7e319af22bd4760d23fdb6d"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00006.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00006.json",
+      "sha256": "ae35292b6ffa86173d5196704fdff2db31b05fb9ac4295796d3d4d50bf6bf370"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00007.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00007.json",
+      "sha256": "382b23875b810a247bc137a0dd75952a864a337bd23209843bc4c0813ab0b7e5"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00008.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00008.json",
+      "sha256": "d82857e4c6e2b9fe9c39d5a2ea82c2fa19fce7b31a2a8fcee139cdfc96f4de65"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00009.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00009.json",
+      "sha256": "68ac51b6af41c38bf777c2806d81d211f9d8120ac24e4aa6c89db31242be1d98"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00010.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00010.json",
+      "sha256": "7e3e04c2faf4d4bcf317d0104209c5120532422eaaf8bf62b7db6d6ad072c6d3"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00011.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00011.json",
+      "sha256": "0bd70987b9eb932a948dca0c7c3d5618b7100563f6456c05d74612e65664c063"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00012.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00012.json",
+      "sha256": "63c5582771b4149d444bd9256ca7751deecc7f1cec88bc34d8bdfcbceeceadfd"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00013.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00013.json",
+      "sha256": "61fd610a73cd98701546aa9c457666e5747636da2647150a513e2bc1cc9be98d"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00014.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00014.json",
+      "sha256": "4918df02a42a46b1b7eed0c87671060682e48c8e8b591fc1dade3d3b6438fbd2"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00015.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00015.json",
+      "sha256": "20b315dca61e82721e0fdf9b63241ef4b78af7f5838009d7b0b9d7edf5a29be1"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00016.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00016.json",
+      "sha256": "f01b62f98219981e5dd04cee67d843eb2b1ffd10ab1b822a3f2a60a7c9868ae5"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00017.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00017.json",
+      "sha256": "dd87efbb718773ec324c2e4d17c30da59986d0df9fd2b29a03e7697c4bebc656"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00018.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00018.json",
+      "sha256": "1fe95a00485cfe1a133f98f17dbd201bcf55298684b999ba4d54edc6c9572b34"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00019.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00019.json",
+      "sha256": "d7045339e39276e4ebdb0607b4270c192a2097c6facdcceb256fc10ad037c720"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00020.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00020.json",
+      "sha256": "7cbe39a8cb8cd01e9eba0dcf62fcb9e151cef5e43e87d874ae4621df31a41929"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00021.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00021.json",
+      "sha256": "cc5d89d6f391008f3229fe8d292c6e4eaf35faf620c6dccc7f418d50dda09c86"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00022.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00022.json",
+      "sha256": "a4229d921b66ac2615d5ca6af57be60c44fe488fd1b9f8391ce1f31458b2106c"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00023.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00023.json",
+      "sha256": "36f1ce4eaddfefa1d84a35d6f930d33110f8554f9a43f3970e1710a4eadc31de"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00024.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00024.json",
+      "sha256": "ea1d52d1459ad9259a5f99e5888e189e161b519a5c71c5b33a91d30eda7c4c39"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00025.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00025.json",
+      "sha256": "65b682f0d5c0496479d24a173cd5d945aa7582167783bc061c46b43dd4b70c42"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00026.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00026.json",
+      "sha256": "57c63608de6ebf4d2e1d27b93f14348cb7524d4d36c014badc636b046a773d19"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00027.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00027.json",
+      "sha256": "de4d9472029c323151817e8aa5a364838b188a29e22ff6259f8c48bd6cc556dc"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00028.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00028.json",
+      "sha256": "2c434b699ecb07bfff0cf695cd2581a196f8a2599c4621507f45b45c4c48af01"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00029.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00029.json",
+      "sha256": "f516df07c04befc5adc5fcf8574dff55e43177a8d3160c0ccc76d090d097bd39"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00030.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00030.json",
+      "sha256": "a61a224bdf32bf8728e1119b4335ea3b06ee60eba4fe94aa12982e8ddd8aab54"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/test/00031.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/test/00031.json",
+      "sha256": "2c793cc00c4527d3c3afaed1852b61dfa502fe30a4861643a704a28ff37b4e36"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00000.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00000.json",
+      "sha256": "501e30918fc25009bb423554b2553f2ace3503422671852880a637fdac231cb9"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00001.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00001.json",
+      "sha256": "16b224400810a339554e41360c19934ac0de6aeeeef46646e83e0fc1776f8e36"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00002.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00002.json",
+      "sha256": "be08353bfd6f96f126add0c8db174e43ff7ae78865fa353c7573213d1a2e076f"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00003.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00003.json",
+      "sha256": "e5aa8814fcc6dd58dd4f7c06d1e6b7903622e30a051f8b45ffedbf7ed51c3f8f"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00004.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00004.json",
+      "sha256": "2f6106935e19d2154687147df3016ade4dd80ba76b2b875cab80be5afe39c205"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00005.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00005.json",
+      "sha256": "a9f041d97c6ffc991df4a66d4a4324b6a69beadacf1fb8ff53ddf0b261a3cfb9"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00006.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00006.json",
+      "sha256": "bb408557005831161ff4f7f6c99bc77a5849df5afa0a02db35271e1854e2b81f"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00007.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00007.json",
+      "sha256": "32a52b9813509780dfae4960b376b886f22b37415681f5aa9f51a52422023daf"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00008.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00008.json",
+      "sha256": "d40414b99106eb9df9c96d946778ee5635a1db8f8addac1d64a1da3a62ea272d"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00009.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00009.json",
+      "sha256": "6332af290187e01b4f43ce950b76aae0b094697385f637374488835211dd8df1"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00010.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00010.json",
+      "sha256": "0b24ad2704af77baf088412e32e47606899e77296d08edd6872621b432ffe727"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00011.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00011.json",
+      "sha256": "579ce59f4a5d9126dee8f0d70ba7def407f1a67db9bcf73ecb9c829936e088d0"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00012.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00012.json",
+      "sha256": "bb6c79237129ce05117c49b8c5fa06819c680c87ab144781e54e80c34fd377c3"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00013.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00013.json",
+      "sha256": "9e8637532d29484cac34975a93660d7e645216bc6ada319451faae7489e6ae0b"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00014.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00014.json",
+      "sha256": "52cfc2f85ddbc01efe7e577451ca234f3fe3a35e8c9960bf7d7f042c11b2ba40"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checkpoints/validation/00015.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checkpoints/validation/00015.json",
+      "sha256": "ca593d0b8ffa77b99b20c3e4f28aa1778ef070040442b4c2ae76834a63bdaa9e"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/checks.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/checks.json",
+      "sha256": "513be412c80373656086279e86cf9d7406fc636c32c5eb90f1518843f8d03e14"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/manifest.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/manifest.json",
+      "sha256": "28ffa4293b7547f8f3756fd64583345f519ae496f3415d22051a6354ecdfe574"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/preregistered.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/preregistered.json",
+      "sha256": "9f293b68c7d7235beafb6bec7ac55967a88dab2d953976934e4d706192742ebd"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/selected.json",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/selected.json",
+      "sha256": "6e8ce523c12c33834ba70faebefaf765c3c5471d4870ff94b59551244611baaf"
+    },
+    {
+      "original_path": "results/contact/data/pilot/performance/story.npz",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/data_pilot/story.npz",
+      "sha256": "86333706eb9dbdabed851ce6be43a5f95a4a21bcfdbf92c7334c350cc831f294"
+    },
+    {
+      "original_path": "results/contact/tables/verify/performance/blocks.csv",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/tables_verify/blocks.csv",
+      "sha256": "e0a041578f4767bdef490d075b555f434331598c9e9b3902e8e0ae63321933f8"
+    },
+    {
+      "original_path": "results/contact/tables/verify/performance/mechanics.csv",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/tables_verify/mechanics.csv",
+      "sha256": "c909a5f0d0239a3f3fce9c1ae6b7eb9db99647ddc5e43161c7db70e2e39e213e"
+    },
+    {
+      "original_path": "results/contact/tables/verify/performance/metrics.csv",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/tables_verify/metrics.csv",
+      "sha256": "67af9dcfcd1a4d4303965fe93c565e3ffc2953dc85c77c88ff56fed870d8bb94"
+    },
+    {
+      "original_path": "results/contact/tables/verify/performance/paired.csv",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/tables_verify/paired.csv",
+      "sha256": "3f77d473ff914ebfa90d96ecaa72f729efd3e25e9dfe9795be2c9c02f7cb64fb"
+    },
+    {
+      "original_path": "results/contact/tables/verify/performance/validation.csv",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/tables_verify/validation.csv",
+      "sha256": "0c3f8ea62ef6b46bc9ccccc74917ba39dbfc07e22033adc43ec68e24f1351e53"
+    },
+    {
+      "original_path": "results/contact/tables/pilot/performance/blocks.csv",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/tables_pilot/blocks.csv",
+      "sha256": "b475764ec1f6d9992ec4a8511316da5e54430d054faac927096c70b6f3353f8b"
+    },
+    {
+      "original_path": "results/contact/tables/pilot/performance/mechanics.csv",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/tables_pilot/mechanics.csv",
+      "sha256": "ae424cc3cb51acc9ff846d640b03d0b7c810ab01eae9054a74db39c2b51cd693"
+    },
+    {
+      "original_path": "results/contact/tables/pilot/performance/metrics.csv",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/tables_pilot/metrics.csv",
+      "sha256": "8ce7099b97f3521f6701dcbd23162872b8ae80221f3a750f9470c60b8da8eec7"
+    },
+    {
+      "original_path": "results/contact/tables/pilot/performance/paired.csv",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/tables_pilot/paired.csv",
+      "sha256": "9dcdc830046a396bb89ac39d515a2723575d473a3ef1c5b91ad293ce435034e8"
+    },
+    {
+      "original_path": "results/contact/tables/pilot/performance/validation.csv",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/tables_pilot/validation.csv",
+      "sha256": "6ed347cdb9f923673d51ae8879e931cc48eddf14c9afd57ec3937d332f0a0f18"
+    },
+    {
+      "original_path": "lib/final_contact.py",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/producer/lib/final_contact.py",
+      "sha256": "8554debe4cfef776b46177ddbe8628a6fa9c1b5f8fe933a12a424022274a7f98"
+    },
+    {
+      "original_path": "scripts/run_final_contact.py",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/producer/scripts/run_final_contact.py",
+      "sha256": "6eda57bf5212dd5fb751576b87708aef77be6e582acf34c36db727d5e7d5c798"
+    },
+    {
+      "original_path": "tests/test_final_contact.py",
+      "preserved_path": "results/contact/data/development/contact_before_observed_validation/producer/tests/test_final_contact.py",
+      "sha256": "18cbef4ccd161841a547130309e4cd331f6206c0df66dcc0f87333cc783e6438"
+    }
+  ]
+}

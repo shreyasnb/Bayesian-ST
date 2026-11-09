@@ -1,0 +1,24 @@
+{
+  "reason": "Completed verification and interrupted pilot preserved before algebraically identical vectorization of quadrature coordinate calculation; added binomial locality intervals. No seed, grid or numerical tolerance changed.",
+  "files": {
+    "verify_data/checks.json": "9d9bce8c484e0b1bbeade6619b84ff7b7f0f299954b85bbe71672a2cc360bc01",
+    "verify_data/preregistered.json": "1b40092bc2b355e20157c3745f4843cc76452de5f2e224341de3d9fa480c5924",
+    "verify_data/manifest.json": "5bc3fd9aac0794b83c9ce320989265deca911d73ecc504ce6992ab00e6c64e35",
+    "verify_tables/tracking_phase.csv": "b44114963ee888e0d42fd9af93437a429c2bf9c6ad3866351ca675d4219f42d1",
+    "verify_tables/block_checks.csv": "f2c6924af04f8fdfa639480b9b65ed9eccc310270d57521faa02b9d0382f753e",
+    "verify_tables/inverse_fisher_summary.csv": "47f016ce37a1c532d150d71c0ec6d80b2a978965b0d2851b78fdd5ae3e245a6f",
+    "verify_tables/global_kl.csv": "bff22b3b8de3db8c1233489910c657c071fa4cfc556f5eaf1551c64232a5148a",
+    "verify_tables/tracking_summary.csv": "d3420591815157bfe7b9c3eeda481f00f02c37fbbcbc3aedb3f58566d06867e1",
+    "verify_tables/information_derivatives.csv": "e6676d96b7d3e8bbb38a0011c842545cc5cfc3d30ee72d9884e60348bffd284b",
+    "verify_tables/information_loss.csv": "0594066eb8fb6a94cb8cef56dcf60023997a921fb27af87d1de0f3bffe6eb146",
+    "verify_tables/curvature.csv": "6abbfbb9d60c5104522697f968a5d00ef40a1d97f742736d11b02f1f775c4aff",
+    "verify_tables/information.csv": "185d8819ab64cd45e56f82607fc1b76094ef6e2233184cfc2eed6f235e5f974e",
+    "verify_tables/information_counts.csv": "1b35630b47b384e5a35748706d1e4fa17dc6d425a92a6819f7299ed713298b64",
+    "verify_tables/inverse_fisher.csv": "3d75205bb3821b963115e88479b16bbcb1bb788da153336ca726451b9da3ad26",
+    "verify_tables/tracking.csv": "b67da89a04132324550c73f68acc2ad09216975c70c217178c6532ea0170846c",
+    "verify_tables/numerical_accuracy.csv": "0286677ae23e3e332d245fece987fb5f497a644f324e58dee2cb5eddee4c7cea",
+    "sources/lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "sources/scripts/run_final_theory.py": "a37e47e3fdf3f86ca519a85f2f077467b8544210c1c4292d05b878fde3a5aff3",
+    "sources/tests/test_final_theory.py": "fc5a4907f9295f42f25d0bb85a9b6472ce91d102781ec037d81d6050e2af80f0"
+  }
+}

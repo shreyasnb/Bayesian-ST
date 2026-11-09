@@ -1,0 +1,530 @@
+[
+  {
+    "n": 32,
+    "condition": "static",
+    "stationary": true,
+    "times": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "selection_objective": "Mean independent held-out measured output power; no oracle normalization",
+    "primary_times": [
+      8,
+      16,
+      32,
+      64
+    ],
+    "policies": [
+      {
+        "times": [
+          8
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5247869849153926,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          16
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5427331784130361,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          32
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5513145878988267,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          64
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.46452928396085474,
+        "shared_beta": 1.0
+      }
+    ],
+    "shared_beta": 1.0,
+    "great_window": {
+      "window": 32,
+      "beta": null,
+      "stepsize": 0.00625,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 1.0,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 64,
+    "condition": "static",
+    "stationary": true,
+    "times": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "selection_objective": "Mean independent held-out measured output power; no oracle normalization",
+    "primary_times": [
+      16,
+      32,
+      64,
+      128
+    ],
+    "policies": [
+      {
+        "times": [
+          16
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.6606084048114912,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          32
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.6181183186386423,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          64
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5967303550617865,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          128
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5057282339590957,
+        "shared_beta": 1.0
+      }
+    ],
+    "shared_beta": 1.0,
+    "great_window": {
+      "window": 64,
+      "beta": null,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 1.0,
+      "stepsize": 0.0015625,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 128,
+    "condition": "static",
+    "stationary": true,
+    "times": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "selection_objective": "Mean independent held-out measured output power; no oracle normalization",
+    "primary_times": [
+      32,
+      64,
+      128,
+      256
+    ],
+    "policies": [
+      {
+        "times": [
+          32
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.6238336629231002,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          64
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5688169326364163,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          128
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5826347015728156,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          256
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.4431643270469976,
+        "shared_beta": 1.0
+      }
+    ],
+    "shared_beta": 1.0,
+    "great_window": {
+      "window": 128,
+      "beta": null,
+      "stepsize": 0.0015625,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 1.0,
+      "stepsize": 0.00078125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 32,
+    "condition": "static",
+    "stationary": false,
+    "times": [
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "selection_objective": "Mean independent held-out measured output power; no oracle normalization",
+    "primary_times": [
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "policies": [
+      {
+        "times": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64
+        ],
+        "scalar_beta": 0.99,
+        "rho": 1.0,
+        "covariance_beta": 0.99,
+        "alpha": 0.5147719126269451,
+        "shared_beta": 0.99
+      }
+    ],
+    "shared_beta": 0.99,
+    "great_window": {
+      "window": 64,
+      "beta": null,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 0.99,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 32,
+    "condition": "smooth",
+    "stationary": false,
+    "times": [
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "selection_objective": "Mean independent held-out measured output power; no oracle normalization",
+    "primary_times": [
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "policies": [
+      {
+        "times": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64
+        ],
+        "scalar_beta": 0.9,
+        "rho": 0.5665321671483143,
+        "covariance_beta": 0.9,
+        "alpha": 0.8373573277470482,
+        "shared_beta": 0.9
+      }
+    ],
+    "shared_beta": 0.9,
+    "great_window": {
+      "window": 16,
+      "beta": null,
+      "stepsize": 0.004166666666666667,
+      "inner_steps": 3,
+      "step_multiplier": 0.08
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 0.9,
+      "stepsize": 0.006666666666666666,
+      "inner_steps": 3,
+      "step_multiplier": 0.08
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 32,
+    "condition": "abrupt",
+    "stationary": false,
+    "times": [
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "selection_objective": "Mean independent held-out measured output power; no oracle normalization",
+    "primary_times": [
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "policies": [
+      {
+        "times": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64
+        ],
+        "scalar_beta": 0.9,
+        "rho": 1.0,
+        "covariance_beta": 0.9,
+        "alpha": 0.6104273865592261,
+        "shared_beta": 0.9
+      }
+    ],
+    "shared_beta": 0.9,
+    "great_window": {
+      "window": 16,
+      "beta": null,
+      "stepsize": 0.0125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 0.9,
+      "stepsize": 0.019999999999999997,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 32,
+    "condition": "noise_change",
+    "stationary": false,
+    "times": [
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "selection_objective": "Mean independent held-out measured output power; no oracle normalization",
+    "primary_times": [
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "policies": [
+      {
+        "times": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64
+        ],
+        "scalar_beta": 0.99,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.6750155259508589,
+        "shared_beta": 0.99
+      }
+    ],
+    "shared_beta": 0.99,
+    "great_window": {
+      "window": 64,
+      "beta": null,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 0.99,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  },
+  {
+    "n": 32,
+    "condition": "power_change",
+    "stationary": false,
+    "times": [
+      8,
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "selection_objective": "Mean independent held-out measured output power; no oracle normalization",
+    "primary_times": [
+      16,
+      24,
+      32,
+      40,
+      48,
+      56,
+      64
+    ],
+    "policies": [
+      {
+        "times": [
+          8,
+          16,
+          24,
+          32,
+          40,
+          48,
+          56,
+          64
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 0.97,
+        "alpha": 0.41875651954617277,
+        "shared_beta": 1.0
+      }
+    ],
+    "shared_beta": 1.0,
+    "great_window": {
+      "window": 64,
+      "beta": null,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 1.0,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1
+  }
+]

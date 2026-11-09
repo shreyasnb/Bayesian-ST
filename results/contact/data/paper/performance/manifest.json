@@ -1,0 +1,204 @@
+{
+  "status": "completed",
+  "example": "contact",
+  "stage": "paper",
+  "component": "performance",
+  "config": {
+    "schema": 1,
+    "stage": "paper",
+    "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+    "n": 3,
+    "k": 2,
+    "T": 192,
+    "static_T": 32,
+    "dt": 0.05,
+    "v0": 0.02,
+    "resistance": 10.0,
+    "radius": 0.05,
+    "sigma2": 1.6e-05,
+    "static_sigma2": 0.0001,
+    "conditions": [
+      "static_balanced",
+      "static_concentrated",
+      "plane",
+      "sphere"
+    ],
+    "validation_episodes": 64,
+    "test_episodes": 256,
+    "block_episodes": 32,
+    "beta_grid": [
+      1.0,
+      0.98,
+      0.95,
+      0.9
+    ],
+    "great_step_grid": [
+      1.0,
+      10.0,
+      50.0,
+      200.0
+    ],
+    "great_inner_grid": [
+      1,
+      3,
+      8
+    ],
+    "great_window_grid": [
+      16,
+      64
+    ],
+    "great_beta_grid": [
+      1.0,
+      0.98,
+      0.9
+    ],
+    "static_times": [
+      1,
+      4,
+      16,
+      32
+    ],
+    "checkpoint_times": [
+      4,
+      16,
+      32,
+      64,
+      128,
+      192
+    ],
+    "action_every": 4,
+    "block_lengths": [
+      1,
+      4,
+      16,
+      32
+    ],
+    "task_lambda": 10.0,
+    "validation_seed": 2026111001,
+    "test_seed": 2026111002,
+    "story_seed": 2026111003,
+    "stage_seed_offset": 0,
+    "story_episode": 0,
+    "anisotropy_time": 16,
+    "anisotropy_normal": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "anisotropy_input": "static_concentrated",
+    "anisotropy_sigma2": 0.0001,
+    "moment_tolerance": 5e-08,
+    "algebra_tolerance": 1e-10,
+    "physical_sampling": "Independent instantaneous velocity errors; no differenced positions.",
+    "variance_convention": "sigma2 is variance per real velocity coordinate in (m/s)^2.",
+    "information": "Bingham and regularized point use (u,v,G). GREAT uses response u and measured G only.",
+    "controls": "Mean, mode and isotropic control share exactly the same A, sigma2, beta and G.",
+    "selection": "Independent validation episode-average noisy held-out response MSE from recorded KKT query observations; no hidden normals or test outcomes select settings.",
+    "validation_measurements": "Three common orthonormal world-frame query requests per reporting time, independent direct velocity noise; recorded queries and responses are transformed into the measured wrist frame.",
+    "primary": "Episode-average held-out clean-response MSE at the declared action cadence.",
+    "query_unit": "Fixed common orthonormal query directions, each requested speed v0; queries averaged within episode.",
+    "statistical_unit": "Independent plant/noise episode; query components and reporting times are not repetitions.",
+    "scope": "Ideal maintained real Gr(2,3) bilateral contact with known isotropic resistance; no hard feasibility guarantee.",
+    "great_reference": "GREAT sliding window and exponentially weighted GREAT; original real response-only objective."
+  },
+  "sources": {
+    "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+    "scripts/run_final_contact.py": "a698c1ae99f82614649a1ef89f0cdeab5c7711ddc026b175be2d2c6bb7335dd1",
+    "tests/test_final_contact.py": "fd09685a57a58054c4e3e3b866a14cde44baf5e19deb91ae1867e61c045ed5a7",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "benchmarks/common/__init__.py": "1b45903cc938c76c7b9f44eae5fcf1115e0b3b805237acedb399ee3e4f9815d6"
+  },
+  "artifacts": {
+    "results/contact/data/paper/performance/anisotropy.npz": "d3e7afc0ff19d80534c7385a4ee71956b883bb5a371f8c7f8602ee6685eec311",
+    "results/contact/data/paper/performance/anisotropy_checks.json": "ee6676edcbf624e83dcebd7a8904ab53a9acedc99cd734545dbe78bd27523217",
+    "results/contact/data/paper/performance/checks.json": "d9827f6144546154610365bda77cd361098b44f3a1e6a6bd1321590b6af93307",
+    "results/contact/data/paper/performance/preregistered.json": "91eeb749d9192eb47ce82beb33104e30366f590e40e1f46f2b414f2b038c9ccb",
+    "results/contact/data/paper/performance/selected.json": "0548b0e434a3c1cf278d8b1e29593e2533a9c9da0b96e5dfcec424e03b2a3c57",
+    "results/contact/data/paper/performance/story.npz": "d86191c85660423022e0c9bb0e49269e2a59ac531c666a3afe77aa40a228eebc",
+    "results/contact/data/paper/performance/validation_observations_plane.npz": "ef64090c6178f7dfb397a6d290fcacb550ba5911ad0ceefa76e8c9234c2f4498",
+    "results/contact/data/paper/performance/validation_observations_sphere.npz": "55624546c6f05b7e9d084b52929e68db4cf6b6bd0bfe151c5ca5abd71f885142",
+    "results/contact/data/paper/performance/validation_observations_static_balanced.npz": "feb4f136b7b2bb566a4aeaac16baf8b98d21503c725d1150b71f483128be9396",
+    "results/contact/data/paper/performance/validation_observations_static_concentrated.npz": "e5de4aef6b1f431e2a74c7c4807fe7e8190b8fbfe52d4129adbb86bec8516e84",
+    "results/contact/tables/paper/performance/blocks.csv": "3117af1610981bac9d6f8d09a73cae89c3f7f7b3279379b519dcde019d6424eb",
+    "results/contact/tables/paper/performance/mechanics.csv": "18f88128367c397264ef99b7b311caca23836cacb492e8f62c8debe08adf094e",
+    "results/contact/tables/paper/performance/metrics.csv": "6fbf39129be8b26863f972f57dd2448cb67827881e129951fa87cacd0a4a5367",
+    "results/contact/tables/paper/performance/paired.csv": "2a9e0d9023e3ae9cf97b337556da4af605535e841289470788d7de87c485ba45",
+    "results/contact/tables/paper/performance/validation.csv": "d8887f78810e98a8cea13c156eed4995c4668354b33bf7508a29291d3acb98d2"
+  },
+  "checks": {
+    "episodes": 1024,
+    "metric_rows": 44032,
+    "validation_episodes": 256,
+    "numerical_failures": 0,
+    "maximum_mean_resolution_error": 1.6882995113043364e-08,
+    "maximum_command_excess_identity_error": 6.505213034913027e-19,
+    "maximum_kkt_residual": 4.706186817419514e-17,
+    "maximum_sphere_drift_identity_error": 3.3306690738754696e-16,
+    "maximum_block_parameter_error": 2.194179850300764e-12,
+    "anisotropy": {
+      "data_generated": true,
+      "selected_episode": 0,
+      "selected_time": 16,
+      "normal_mode_overlap": 0.8057116272405753,
+      "kappa": 5.946093701910831,
+      "isotropic_overlap_error": 3.4416913763379853e-15,
+      "isotropic_mean_match_error": 1.2150158660902034e-14,
+      "isotropic_resolution_error": 3.0236651992185685e-14,
+      "mode_unique": true,
+      "curvature_ratio": 11.040392591087155,
+      "numerical_ok": true
+    },
+    "seconds": 2137.6319806709944,
+    "pilot_projected_paper_seconds": null,
+    "elapsed_scope": "Concurrent execution metadata only; isolated actual-cadence timings are separate."
+  },
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "validation_hash": null,
+  "assumptions": "Maintained ideal bilateral contact; known scalar resistance; direct isotropic velocity noise.",
+  "primary_endpoint": "Episode-average held-out clean-response MSE; common queries averaged within episode.",
+  "policy_selection": "Independent measured held-out KKT response MSE; hidden normals/projectors never enter the validation objective. Identical query observations for every candidate.",
+  "intervals": "Paired pointwise95% Student across independent episodes; no multiplicity adjustment.",
+  "information_by_method": {
+    "mean": [
+      "u",
+      "v",
+      "measured G"
+    ],
+    "mode": [
+      "u",
+      "v",
+      "measured G"
+    ],
+    "isotropic": [
+      "same A as mean"
+    ],
+    "regularized": [
+      "u",
+      "v",
+      "measured G",
+      "validation rho"
+    ],
+    "great_window": [
+      "u",
+      "measured G",
+      "validation window/step/inner count"
+    ],
+    "great_ew": [
+      "u",
+      "measured G",
+      "validation memory/step/inner count"
+    ]
+  },
+  "ties": "mode_unique describes the common Bingham mode; fixed coordinate eigensolver tie convention is flagged."
+}

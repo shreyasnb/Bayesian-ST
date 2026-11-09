@@ -1,0 +1,13 @@
+{
+  "status": "evaluated",
+  "dependencies": {
+    "results/beamforming/data/pilot/performance/selected.json": "5cdb94cb1337dd6f002a7cd19190444c6724cafb675028a772edc962da697be0",
+    "results/beamforming/data/pilot/prediction/selected.json": "b10bfed63509ef355d44a2370393a887404840fa7f4d171724864e9557404185"
+  },
+  "episode": 0,
+  "adaptive_status": "evaluated: exact causal trial0 smooth; pre-correction action/normalized score every32; saved selected policy and initial variances",
+  "stationary": "First n observations of the exact original 2n episode; endpoint output at T=n.",
+  "moving": "Exact smooth n=32 episode; output every8 observations.",
+  "contact": "Exact physical sphere n3 trial0; observed wrist G supplied to every tracker; response and soft-command action every4 observations.",
+  "generalized_scope": "Other real dimensions are synthetic codimension-one fixtures, not physical contact performance."
+}

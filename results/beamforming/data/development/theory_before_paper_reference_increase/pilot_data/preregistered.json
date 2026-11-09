@@ -1,0 +1,160 @@
+{
+  "example": "beamforming",
+  "stage": "pilot",
+  "component": "theory",
+  "config": {
+    "stage": "pilot",
+    "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+    "seed": 2026111007,
+    "algebra_seeds": [
+      2026111001,
+      2026111002,
+      2026111003
+    ],
+    "episodes": 12,
+    "local_episodes": 24,
+    "local_lengths": [
+      4,
+      64,
+      256
+    ],
+    "local_sigma2": [
+      0.2,
+      1.0
+    ],
+    "local_beta": [
+      1.0,
+      0.9
+    ],
+    "local_radius": 0.45,
+    "block_lengths": [
+      1,
+      4,
+      16,
+      32
+    ],
+    "block_beta": [
+      1.0,
+      0.87
+    ],
+    "curvature_gaps": [
+      [
+        0.0,
+        1.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0,
+        10.0
+      ],
+      [
+        0.0,
+        8.0,
+        8.0
+      ],
+      [
+        0.0,
+        8.0,
+        80.0
+      ],
+      [
+        0.0,
+        80.0,
+        80.0
+      ],
+      [
+        0.0,
+        80.0,
+        800.0
+      ]
+    ],
+    "quadrature_orders": [
+      96,
+      192
+    ],
+    "numerical_gaps": [
+      [
+        0.0,
+        1.0,
+        8.0
+      ],
+      [
+        0.0,
+        8.0,
+        80.0
+      ],
+      [
+        0.0,
+        80.0,
+        800.0
+      ],
+      [
+        0.0,
+        4000.0,
+        40000.0
+      ]
+    ],
+    "numerical_orders": [
+      32,
+      64
+    ],
+    "native_max_order": 4096,
+    "native_tolerance": 1e-11,
+    "static_times": [
+      64,
+      256,
+      1024
+    ],
+    "dynamic_T": 256,
+    "drift_rates": [
+      0.0,
+      0.0001,
+      0.001
+    ],
+    "bound_beta": [
+      1.0,
+      0.999,
+      0.99
+    ],
+    "sigma2": 0.2,
+    "tau2": 1.0,
+    "delta": 0.05,
+    "nonuniform_prior": [
+      -4.0,
+      0.0,
+      1.0
+    ],
+    "tolerances": {
+      "algebra_relative": 1e-10,
+      "reference_moment": 2e-08,
+      "second_moment_absolute": 3e-05,
+      "normalizer_derivative": 3e-05,
+      "covariance_resolution": 3e-05,
+      "local_probability": 0.99
+    },
+    "variance_convention": "Real noise covariance sigma2 I; proper-complex covariance sigma2 I and real/imag component variance sigma2/2.",
+    "specification": "Supplied v5.tex main and supplementary(14).tex, theory and appendices; final_simulation_guide.md. Global KL, information loss, invariant versus graph curvature, aggregate drift, sharp bound and information-gap identity reconciled against source text.",
+    "tex_hashes": {
+      "v5.tex": "31aad1eb4ff0f6e6b694eb63a5529decf264073c268f841681533af08346df4b",
+      "supplementary(14).tex": "e678649d45e7dfdf0039e63e02041d9cfac884f9229ef902f174f2db035f311b"
+    },
+    "repetition_unit": "Independent signal/noise episode; no posterior node or query is an independent performance episode.",
+    "inference_scope": "Numerical native rank one/codimension one; information algebra also checks other ranks. No deterministic general-rank moment scaling claim."
+  },
+  "sources": {
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "scripts/run_final_theory.py": "72571731742d010dcbe0226fe7ffc9d831c81c788d93719a3a101afd6d478746",
+    "tests/test_final_theory.py": "fc5a4907f9295f42f25d0bb85a9b6472ce91d102781ec037d81d6050e2af80f0",
+    "lib/guide_tracking.py": "c63c9f9fe0691649ec88b9709a9c859bb7d421fd21c4b526099846a62a6f789b",
+    "lib/guide_information.py": "23a4c48bf43ccb3d25b550ff37c25b7920897d9cf066335c625890e8f37faa00",
+    "lib/beamforming_theory.py": "8cf21d381a44756818177130fd097b8c6458e541c0595e46fa2577348aace486",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f"
+  },
+  "registered_utc": "2026-11-09T20:19:35.192406+00:00"
+}

@@ -1,0 +1,102 @@
+{
+  "config": {
+    "schema": 1,
+    "stage": "verify",
+    "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+    "n": 3,
+    "k": 2,
+    "T": 64,
+    "static_T": 32,
+    "dt": 0.05,
+    "v0": 0.02,
+    "resistance": 10.0,
+    "radius": 0.05,
+    "sigma2": 1.6e-05,
+    "static_sigma2": 0.0001,
+    "conditions": [
+      "static_balanced",
+      "static_concentrated",
+      "plane",
+      "sphere"
+    ],
+    "validation_episodes": 2,
+    "test_episodes": 3,
+    "block_episodes": 2,
+    "beta_grid": [
+      1.0,
+      0.95
+    ],
+    "great_step_grid": [
+      10.0
+    ],
+    "great_inner_grid": [
+      1
+    ],
+    "great_window_grid": [
+      16
+    ],
+    "great_beta_grid": [
+      0.95
+    ],
+    "static_times": [
+      1,
+      4,
+      16,
+      32
+    ],
+    "checkpoint_times": [
+      4,
+      16,
+      32,
+      64
+    ],
+    "action_every": 4,
+    "block_lengths": [
+      1,
+      4,
+      16,
+      32
+    ],
+    "task_lambda": 10.0,
+    "validation_seed": 2026111001,
+    "test_seed": 2026111002,
+    "story_seed": 2026111003,
+    "stage_seed_offset": 100000,
+    "story_episode": 0,
+    "anisotropy_time": 16,
+    "anisotropy_normal": [
+      0.0,
+      0.0,
+      1.0
+    ],
+    "anisotropy_input": "static_concentrated",
+    "anisotropy_sigma2": 0.0001,
+    "moment_tolerance": 5e-08,
+    "algebra_tolerance": 1e-10,
+    "physical_sampling": "Independent instantaneous velocity errors; no differenced positions.",
+    "variance_convention": "sigma2 is variance per real velocity coordinate in (m/s)^2.",
+    "information": "Bingham and regularized point use (u,v,G). GREAT uses response u and measured G only.",
+    "controls": "Mean, mode and isotropic control share exactly the same A, sigma2, beta and G.",
+    "selection": "Independent validation episode-average clean response MSE; no test outcomes select settings.",
+    "primary": "Episode-average held-out clean-response MSE at the declared action cadence.",
+    "query_unit": "Fixed common orthonormal query directions, each requested speed v0; queries averaged within episode.",
+    "statistical_unit": "Independent plant/noise episode; query components and reporting times are not repetitions.",
+    "scope": "Ideal maintained real Gr(2,3) bilateral contact with known isotropic resistance; no hard feasibility guarantee.",
+    "great_reference": "GREAT sliding window and exponentially weighted GREAT; original real response-only objective."
+  },
+  "sources": {
+    "lib/final_contact.py": "35966c21741a9620f946c160d28173cc006be7b52f6717db4a71b37ad5bac0da",
+    "scripts/run_final_contact.py": "6eda57bf5212dd5fb751576b87708aef77be6e582acf34c36db727d5e7d5c798",
+    "tests/test_final_contact.py": "914fe7dc94d36331c4603429578b1725975d7012b6131c6752d807cb4b63ff24",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "benchmarks/common/__init__.py": "1b45903cc938c76c7b9f44eae5fcf1115e0b3b805237acedb399ee3e4f9815d6"
+  },
+  "registered_utc": "2026-11-09T20:12:44.841762+00:00"
+}

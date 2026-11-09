@@ -1,0 +1,203 @@
+{
+  "status": "completed",
+  "example": "contact",
+  "stage": "verify",
+  "component": "theory",
+  "config": {
+    "stage": "verify",
+    "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+    "seed": 2026111007,
+    "algebra_seeds": [
+      2026111001,
+      2026111002,
+      2026111003
+    ],
+    "episodes": 3,
+    "local_episodes": 3,
+    "local_lengths": [
+      4,
+      64,
+      256
+    ],
+    "local_sigma2": [
+      0.2,
+      1.0
+    ],
+    "local_beta": [
+      1.0,
+      0.9
+    ],
+    "local_radius": 0.45,
+    "block_lengths": [
+      1,
+      4,
+      16,
+      32
+    ],
+    "block_beta": [
+      1.0,
+      0.87
+    ],
+    "curvature_gaps": [
+      [
+        0.0,
+        1.0,
+        1.0
+      ],
+      [
+        0.0,
+        1.0,
+        10.0
+      ],
+      [
+        0.0,
+        8.0,
+        8.0
+      ],
+      [
+        0.0,
+        8.0,
+        80.0
+      ],
+      [
+        0.0,
+        80.0,
+        80.0
+      ],
+      [
+        0.0,
+        80.0,
+        800.0
+      ]
+    ],
+    "quadrature_orders": [
+      48,
+      96
+    ],
+    "numerical_gaps": [
+      [
+        0.0,
+        1.0,
+        8.0
+      ],
+      [
+        0.0,
+        8.0,
+        80.0
+      ],
+      [
+        0.0,
+        80.0,
+        800.0
+      ],
+      [
+        0.0,
+        4000.0,
+        40000.0
+      ]
+    ],
+    "numerical_orders": [
+      32,
+      64
+    ],
+    "native_max_order": 4096,
+    "native_tolerance": 1e-11,
+    "static_times": [
+      64,
+      256,
+      1024
+    ],
+    "dynamic_T": 256,
+    "drift_rates": [
+      0.0,
+      0.0001,
+      0.001
+    ],
+    "bound_beta": [
+      1.0,
+      0.999,
+      0.99
+    ],
+    "sigma2": 0.2,
+    "tau2": 1.0,
+    "delta": 0.05,
+    "nonuniform_prior": [
+      -4.0,
+      0.0,
+      1.0
+    ],
+    "tolerances": {
+      "algebra_relative": 1e-10,
+      "reference_moment": 2e-08,
+      "second_moment_absolute": 3e-05,
+      "normalizer_derivative": 3e-05,
+      "covariance_resolution": 3e-05,
+      "local_probability": 0.99
+    },
+    "variance_convention": "Real noise covariance sigma2 I; proper-complex covariance sigma2 I and real/imag component variance sigma2/2.",
+    "specification": "Supplied v5.tex main and supplementary(14).tex, theory and appendices; final_simulation_guide.md. Global KL, information loss, invariant versus graph curvature, aggregate drift, sharp bound and information-gap identity reconciled against source text.",
+    "tex_hashes": {
+      "v5.tex": "31aad1eb4ff0f6e6b694eb63a5529decf264073c268f841681533af08346df4b",
+      "supplementary(14).tex": "e678649d45e7dfdf0039e63e02041d9cfac884f9229ef902f174f2db035f311b"
+    },
+    "repetition_unit": "Independent signal/noise episode; no posterior node or query is an independent performance episode.",
+    "inference_scope": "Numerical native rank one/codimension one; information algebra also checks other ranks. No deterministic general-rank moment scaling claim."
+  },
+  "sources": {
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "scripts/run_final_theory.py": "38cd262b041e9cf7537872b39a715f750e5cc796f984137cc0d68d7bf711f068",
+    "tests/test_final_theory.py": "fc5a4907f9295f42f25d0bb85a9b6472ce91d102781ec037d81d6050e2af80f0",
+    "lib/guide_tracking.py": "c63c9f9fe0691649ec88b9709a9c859bb7d421fd21c4b526099846a62a6f789b",
+    "lib/guide_information.py": "23a4c48bf43ccb3d25b550ff37c25b7920897d9cf066335c625890e8f37faa00",
+    "lib/beamforming_theory.py": "8cf21d381a44756818177130fd097b8c6458e541c0595e46fa2577348aace486",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f"
+  },
+  "artifacts": {
+    "results/contact/data/verify/theory/checks.json": "9d9bce8c484e0b1bbeade6619b84ff7b7f0f299954b85bbe71672a2cc360bc01",
+    "results/contact/data/verify/theory/preregistered.json": "1b40092bc2b355e20157c3745f4843cc76452de5f2e224341de3d9fa480c5924",
+    "results/contact/tables/verify/theory/tracking_phase.csv": "b44114963ee888e0d42fd9af93437a429c2bf9c6ad3866351ca675d4219f42d1",
+    "results/contact/tables/verify/theory/block_checks.csv": "f2c6924af04f8fdfa639480b9b65ed9eccc310270d57521faa02b9d0382f753e",
+    "results/contact/tables/verify/theory/inverse_fisher_summary.csv": "47f016ce37a1c532d150d71c0ec6d80b2a978965b0d2851b78fdd5ae3e245a6f",
+    "results/contact/tables/verify/theory/global_kl.csv": "bff22b3b8de3db8c1233489910c657c071fa4cfc556f5eaf1551c64232a5148a",
+    "results/contact/tables/verify/theory/tracking_summary.csv": "d3420591815157bfe7b9c3eeda481f00f02c37fbbcbc3aedb3f58566d06867e1",
+    "results/contact/tables/verify/theory/information_derivatives.csv": "e6676d96b7d3e8bbb38a0011c842545cc5cfc3d30ee72d9884e60348bffd284b",
+    "results/contact/tables/verify/theory/information_loss.csv": "0594066eb8fb6a94cb8cef56dcf60023997a921fb27af87d1de0f3bffe6eb146",
+    "results/contact/tables/verify/theory/curvature.csv": "6abbfbb9d60c5104522697f968a5d00ef40a1d97f742736d11b02f1f775c4aff",
+    "results/contact/tables/verify/theory/information.csv": "185d8819ab64cd45e56f82607fc1b76094ef6e2233184cfc2eed6f235e5f974e",
+    "results/contact/tables/verify/theory/information_counts.csv": "1b35630b47b384e5a35748706d1e4fa17dc6d425a92a6819f7299ed713298b64",
+    "results/contact/tables/verify/theory/inverse_fisher.csv": "3d75205bb3821b963115e88479b16bbcb1bb788da153336ca726451b9da3ad26",
+    "results/contact/tables/verify/theory/tracking.csv": "b67da89a04132324550c73f68acc2ad09216975c70c217178c6532ea0170846c",
+    "results/contact/tables/verify/theory/numerical_accuracy.csv": "0286677ae23e3e332d245fece987fb5f497a644f324e58dee2cb5eddee4c7cea"
+  },
+  "reused_inputs": {
+    "results/implementation_audit/paper/information/case_checks.csv": "24b520f2da4935be0e1664b3d61cdbf666d3fdeaeca1d6841383f03c6ae6989b",
+    "results/implementation_audit/paper/information/finite_differences.csv": "4fa38d76c051c13002110a84ce8295d1a41a1b803ecaf35fdf9e7d02d714e730",
+    "results/implementation_audit/paper/information_counts/summary.csv": "298d0df3436d889e3f53a7643cf604c635f740baf4687d706f26c2240039171c",
+    "results/implementation_audit/paper/information/manifest.json": "559956a8be3385f0b0702266bbe6cc862f83c0aac43e5a6b0ecfe90ef8a50f27",
+    "results/implementation_audit/paper/information_counts/manifest.json": "ab9daeead07af4109eea012f7f9086adda82deb013d06def5b492c5b182e946f"
+  },
+  "checks": {
+    "algebra_failures": 0,
+    "information_reused_checks": 15,
+    "global_kl_failures": 0,
+    "information_loss_identity_error": 1.4210854715202004e-14,
+    "tracking_reports": 48,
+    "valid_bound_reports": 33,
+    "informative_bound_reports": 33,
+    "eligible_violations": 0,
+    "maximum_scaled_decomposition": 2.2340020750391212e-15,
+    "maximum_information_gap_error": 6.821210263296962e-13,
+    "inverse_fisher_episodes": 3,
+    "inverse_fisher_local_eligible_cells": 7,
+    "numerical_targets": 4,
+    "unresolved_numerical_targets": 2,
+    "unresolved_quantile_targets": 0,
+    "seconds": 4.732242639991455
+  },
+  "specification": "Supplied v5.tex and supplementary(14).tex theory/appendices, hashes in config. Historical numerical section not used to define experiments."
+}

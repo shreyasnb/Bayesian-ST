@@ -1,0 +1,181 @@
+{
+  "status": "completed",
+  "example": "contact",
+  "stage": "verify",
+  "component": "prediction",
+  "config": {
+    "stage": "verify",
+    "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+    "validation_episodes": 3,
+    "test_episodes": 3,
+    "calibration_validation_episodes": 3,
+    "calibration_test_episodes": 3,
+    "mismatch_episodes": 3,
+    "validation_seed": 2026111011,
+    "test_seed": 2026111012,
+    "calibration_seed": 2026111013,
+    "mismatch_seed": 2026111014,
+    "seed_offset": 100000,
+    "primary_beam_n": 32,
+    "primary_beam_T": 256,
+    "primary_beam_dt": 0.01,
+    "primary_contact_T": 192,
+    "primary_contact_dt": 0.05,
+    "primary_report_every": 32,
+    "calibration_n": 3,
+    "calibration_T": 64,
+    "calibration_times": [
+      32,
+      64
+    ],
+    "calibration_sigma2": 0.2,
+    "calibration_tau2": 1.0,
+    "calibration_drift_angle": 0.8,
+    "nominal": [
+      0.5,
+      0.8,
+      0.95
+    ],
+    "posterior_draws": 1024,
+    "real_orders": [
+      [
+        48,
+        96
+      ],
+      [
+        64,
+        192
+      ]
+    ],
+    "state_mass_tolerance": 0.035,
+    "quantile_resolution_tolerance": 0.006,
+    "moment_tolerance": 1e-09,
+    "max_order": 4096,
+    "ascent_tolerance": 1e-07,
+    "beam_floor": 1e-05,
+    "contact_floor": 1e-08,
+    "calibration_floor": 1e-05,
+    "policy_candidates": [
+      {
+        "beta": 1.0,
+        "block_length": 16,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.98,
+        "block_length": 16,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.9,
+        "block_length": 16,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.98,
+        "block_length": 32,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.98,
+        "block_length": 16,
+        "em_iterations": 4
+      }
+    ],
+    "beam_conditions": [
+      "noise_change",
+      "smooth",
+      "power_change"
+    ],
+    "contact_conditions": [
+      "noise_change",
+      "fast_sphere"
+    ],
+    "heldout_draws": 128,
+    "task_penalty": 10.0,
+    "precision": "Primary256 independent test episodes; calibration128 independent episodes with exact binomial intervals. Reporting times and queries are averaged within episodes. All precision flags are retained.",
+    "variance_convention": "sigma2 is per-real-coordinate variance, or proper-complex covariance; complex real/imaginary noise components have variance sigma2/2.",
+    "causal_rule": "One singleton correction; completed nonoverlapping past blocks; transported preceding prior fixed during EM; fitted variances used only for future corrections; streaming state is never replaced or augmented by fitted block posterior.",
+    "timing_scope": "Elapsed component clocks are execution metadata. Comparative warmed serial cadence timing is a separate root-owned stage.",
+    "causal_warm_start": "One current-parameter warm start per completed block; if signal variance is zero, also use a declared positive interior fallback. Multiple-start stationary reference experiments are retained separately.",
+    "validation_scoring_scope": "Policy validation uses future true-state task loss; it does not charge or compute optional predictive density reports. Test prediction scores are computed before assimilation.",
+    "mismatch": {
+      "contamination_power": 0.5,
+      "secondary_power": 0.35,
+      "noise_correlation": 0.5,
+      "friction_coefficient": 0.35,
+      "anisotropic_damping": [
+        1.0,
+        2.0,
+        4.0
+      ],
+      "position_dt": 0.05,
+      "position_sigma": 0.01
+    },
+    "section": "all"
+  },
+  "sources": {
+    "lib/causal_variance.py": "a726149689a76c060c63b36636082e188bf9ef59dd63847e1daa5604903effbf",
+    "lib/final_prediction.py": "74dba43ffea19fe993792ce8bee85cc8914118b5b2110c0323c1601b2d1d7430",
+    "scripts/run_final_prediction.py": "a80372b6fdbdd912f8a475aa1dc75e454918008bc2ad4b5d913adc3c0ee930b7",
+    "tests/test_causal_variance.py": "b3e0af4aca2f2d7757a6c4d68b7730b703bf4ab0372e81b3b14533fb933e0502",
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/final_beamforming.py": "99068117cc4e9bcdfe7d814bb818c6b2c3f8711d6b0015c71a801afc4db9c0d3",
+    "lib/final_contact.py": "51257d5b82f84b61bdd83a567af4284441a0978f5d479ada90f67519a35bbb2c"
+  },
+  "artifacts": {
+    "results/contact/data/verify/prediction/checks.json": "98875a49bc62ceb15171fb9b244f670aff168be12a0cecfb0e9f31543c411172",
+    "results/contact/data/verify/prediction/failures.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "results/contact/data/verify/prediction/fit_events.json.gz": "e741cd3b7d1766df20bd9831b55b55af5d179a51f9bb65ca5d3f62082b9963b8",
+    "results/contact/data/verify/prediction/preregistered.json": "93a5dc73630b1e92812d701202cd9f9a04b2ba2b81202440198ff1a18fe44204",
+    "results/contact/data/verify/prediction/producers/lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "results/contact/data/verify/prediction/producers/lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "results/contact/data/verify/prediction/producers/lib/causal_variance.py": "a726149689a76c060c63b36636082e188bf9ef59dd63847e1daa5604903effbf",
+    "results/contact/data/verify/prediction/producers/lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "results/contact/data/verify/prediction/producers/lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "results/contact/data/verify/prediction/producers/lib/final_beamforming.py": "99068117cc4e9bcdfe7d814bb818c6b2c3f8711d6b0015c71a801afc4db9c0d3",
+    "results/contact/data/verify/prediction/producers/lib/final_contact.py": "51257d5b82f84b61bdd83a567af4284441a0978f5d479ada90f67519a35bbb2c",
+    "results/contact/data/verify/prediction/producers/lib/final_prediction.py": "74dba43ffea19fe993792ce8bee85cc8914118b5b2110c0323c1601b2d1d7430",
+    "results/contact/data/verify/prediction/producers/lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "results/contact/data/verify/prediction/producers/lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+    "results/contact/data/verify/prediction/producers/lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "results/contact/data/verify/prediction/producers/lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "results/contact/data/verify/prediction/producers/scripts/run_final_prediction.py": "a80372b6fdbdd912f8a475aa1dc75e454918008bc2ad4b5d913adc3c0ee930b7",
+    "results/contact/data/verify/prediction/producers/tests/test_causal_variance.py": "b3e0af4aca2f2d7757a6c4d68b7730b703bf4ab0372e81b3b14533fb933e0502",
+    "results/contact/data/verify/prediction/selected.json": "2e7d5a9af4c63929b07bb8d4f9efca683d25fd22013b3debe521f5eaab8f100d",
+    "results/contact/data/verify/prediction/stories/test_00000.npz": "408aaee83687e9da37f7263564856ef234a33b98b7590c29113e92fd826c046e",
+    "results/contact/data/verify/prediction/stories/test_00003.npz": "f1d2b20c5ca9eb0622bd7bca978fa70a84df24cd444df4978a31f8d4120670de",
+    "results/contact/data/verify/prediction/stories.npz": "01d8cfc55dd53dba52b5569d4d2a97fbb92b42f3b630b2805face4f84f8a569b",
+    "results/contact/tables/verify/prediction/adaptation.csv": "7d3ee4ce8db4f64d5e5b418475e8042607a406a599e5b07c4fefe557a9e74d98",
+    "results/contact/tables/verify/prediction/adaptation_summary.csv": "a5df8ec1187c37c2c815ca604439cdd45a0be21387b407e5e3717bdf732bede1",
+    "results/contact/tables/verify/prediction/calibration.csv": "01a2210217ba3fa119501f140d56b35bb9969b2fc3b881e63390ead213a02f05",
+    "results/contact/tables/verify/prediction/calibration_summary.csv": "ff765b64ef2a76714eb5a3f293cb4892afee3ac9cc43d2346fae115e7d2ce09f",
+    "results/contact/tables/verify/prediction/mismatch.csv": "e5562a3a3bedd59bad1a4466affe8859685eb99b88ba1f4af6cad42ceb4916a1",
+    "results/contact/tables/verify/prediction/paired.csv": "353fad9203079dc9d513ce9a3615429590c3c6546d709a95344c156f6dbb11dc",
+    "results/contact/tables/verify/prediction/score_summary.csv": "c1ef08496a524b5f8a6383f05a6e1ec4406c42544b4e7220842fa20badc570e9",
+    "results/contact/tables/verify/prediction/scores.csv": "06dbff3f515f263560da8e8e6058b64e6002b86d99b6e87222c729207bdff923",
+    "results/contact/tables/verify/prediction/validation.csv": "93bd7dfb64dab7cd75895bc457f91fd5771f04ad679975bf619072c1376228a6"
+  },
+  "checks": {
+    "requested_jobs": 45,
+    "failed_jobs": 0,
+    "adaptation_rows": 324,
+    "calibration_rows": 2160,
+    "score_rows": 312,
+    "unresolved_adaptation_rows": 0,
+    "unresolved_calibration_rows": 0,
+    "unresolved_score_rows": 0,
+    "maximum_state_change_from_fit": 0.0,
+    "fits": 228,
+    "elapsed_seconds": 55.32505995800602,
+    "causal_model": "Saved preceding prior; completed disjoint blocks; fitfuture-only; streamingAunchanged",
+    "probability_scope": "Exact prior-predictive identity tested only beta1 knownscales; actual forgetting/learning inclusion is empirical"
+  }
+}

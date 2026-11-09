@@ -1,0 +1,12 @@
+{
+  "pipeline_targets": 132,
+  "timed_cycles": 924,
+  "numerical_failures": 0,
+  "fit_failures": 0,
+  "report_failures": 0,
+  "predictive_score_failures": 0,
+  "unresolved_predictive_score_cycles": 0,
+  "maximum_phase_excess_seconds": 0.0,
+  "independent_accuracy_unresolved": 6,
+  "elapsed_seconds": 149.5804333310225
+}

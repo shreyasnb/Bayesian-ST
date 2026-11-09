@@ -1,70 +1,63 @@
 # Bayesian subspace tracking
 
-Implementation and simulations for **Bayesian Subspace Tracking with Grassmann Bingham Distributions**. The current `test` branch redesigns the beamforming and contact-normal notebooks around the supplied fifth draft's models, theory and appendices. Its empirical simulation section does not define these experiments.
+Implementation and simulations for **Bayesian Subspace Tracking with Grassmann Bingham Distributions**. The current `test` study follows the author's [final simulation guide](docs/final_simulation_guide.md), **v5.tex** as the main manuscript, and **supplementary(14).tex** as its supplement. The old numerical prose does not define the new experiments.
 
-The [implementation-guide audit](docs/implementation_guide_audit.md) adds fixed-boundary block EM, revised marginal certificates, Fisher checks over signal-to-noise ratio and observation count, and calibration/noise/mismatch studies. The [computational walkthrough](notebooks/04_implementation_audit.ipynb) and [claim manifest](results/implementation_audit/claim_manifest.json) separate completed checks, negative results, and unavailable-source comparisons. Sphere densities now use a continuous blue–violet–pink palette.
+Start with the executed [beamforming notebook](notebooks/01_array.ipynb) or [contact notebook](notebooks/03_contact.ipynb). Each develops the observation model, information, posterior geometry, decisions, comparisons, variance learning and computational cost in order. Figures use LaTeX, 200 dpi previews, vector PDFs, a nominal 7-inch paper width and 9-point text. Captions and detailed claims are outside the title-free PDFs.
 
-Start with the executed [beamforming notebook](notebooks/01_array.ipynb) or [contact-normal notebook](notebooks/03_contact.ipynb). Each develops the observation model, posterior geometry, decision, independent comparisons and computational cost in order. Genuine spherical Bingham densities, explicitly labeled complex density sections, physical contact trajectories and uncertainty displays replace the earlier dense collections of parameter scans. Figures use LaTeX, 200 dpi and PDF/PNG exports.
+The [completion report](completion_report.md) records completed cohorts, mixed comparisons, numerical failures and unsupported claims. The [mathematical checks](docs/final_manuscript_checks.md) explain identity transport, the sharp modal bound, fixed-boundary EM and the limits of dynamic uncertainty claims.
 
-The [findings](results/simulation_redesign/findings.md), [scientific protocol](docs/simulation_redesign.md), [notation map](docs/simulation_redesign_notation.md) and [independent checks](docs/simulation_redesign_checks.md) state what each comparison establishes. All benchmark outcomes and numerical/local-approximation limitations remain available, including inconclusive comparisons and losses.
+## Results
 
-## Run
+| Evidence | Beamforming | Contact |
+| --- | --- | --- |
+| Paper summary | [PDF](results/beamforming/paper_summary.pdf) | [PDF](results/contact/paper_summary.pdf) |
+| Figures and numerical records | [Directory](results/beamforming/) | [Directory](results/contact/) |
+| Figure claims, sources and hashes | [Manifest](results/beamforming/figure_manifest.json) | [Manifest](results/contact/figure_manifest.json) |
+| Proposed captions | [Notes](results/beamforming/caption_notes.md) | [Notes](results/contact/caption_notes.md) |
 
-Use Python 3.12 and working TeX tools (`latex`, `dvipng`, `type1cm`, `type1ec`). Every Matplotlib figure requires `text.usetex=True`. Set up with `bash scripts/setup.sh`; activate `.venv` if that script created it.
+Beamforming task cohorts use proper-complex rank-one interference at 32, 64 and 128 sensors, with observation counts scaled to dimension. Moving studies use 32 sensors. Contact retains a physical three-dimensional maintained plane/sphere constraint with known isotropic resistance and measured wrist motion. Higher-dimensional real fixtures concern generalized-coordinate numerical cost, rather than a complete robot controller.
 
-To verify the committed scientific artifacts and executed notebooks without changing them:
+Both applications compare the posterior mean, the same-parameter mode and a matched isotropic control. GREAT uses finite Grassmann exponential steps and a recursively maintained raw covariance. Its native complex extension is explicitly labeled. Beamforming also retains independently validated modal/covariance loading, GROUSE and Ledoit--Wolf references. Contact GREAT receives measured responses only; conditional estimators also know applied inputs.
+
+## Reproduce and verify
+
+Use Python 3.12 and working TeX tools (`latex`, `dvipng`, `type1cm`, `type1ec`). Set up with `bash scripts/setup.sh`; activate `.venv` if that script created it. Every Matplotlib figure requires `text.usetex=True`.
 
 ```bash
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 MKL_NUM_THREADS=1
-python scripts/check_implementation_audit.py
+python scripts/check_final_simulations.py
 ```
 
-See the [complete guide reproduction commands](results/implementation_audit/README.md) for validation, smoke/paper studies, figures, reports and clean-kernel execution. The [earlier redesign protocol](results/simulation_redesign/README.md) describes its original cohorts. The current validation executes the complete general notebook and all regressions into an isolated directory; original certificates remain byte-exact. Scientific source changes invalidate the gate. Component tables, figures, findings and notebooks have separately verified provenance. Preserve old evidence and use fresh output directories when changing a scientific configuration.
+This read-only check verifies the general gate, all stage/component producer and data hashes, historical preservation, the final PDFs/previews and executed notebooks. See the [reproduction protocol](docs/final_simulations.md) for the verify, pilot, frozen paper, isolated timing, rendering and notebook commands. Scientific calculations and rendering are separate; changing a camera does not repeat Monte Carlo experiments.
 
-## Notebooks
+## Code
 
-| File | Purpose |
-| --- | --- |
-| [00_theory](notebooks/00_theory.ipynb) | General validation: likelihoods, excitation, drift bounds, posterior risks, regions, EM, sampling and scaling; original preserved |
-| [01_array](notebooks/01_array.ipynb) | Proper-complex passive beamforming: directional uncertainty, posterior decisions, independent 8-/16-sensor comparisons and scaling to 128 |
-| [02_field](notebooks/02_field.ipynb) | Historical field reconstruction and drift study; preserved |
-| [03_contact](notebooks/03_contact.ipynb) | Known-input contact projection: force balance, spherical normal uncertainty, soft decisions, physical tracking and generalized-coordinate examples |
-| [04_implementation_audit](notebooks/04_implementation_audit.ipynb) | Computational checks: information, fixed-time bounds, block EM, prediction, calibration and model mismatch |
+Reusable inference is in `lib/`. The final study adds:
 
-Each application has six main figures and links to detailed supplementary evidence. The contact examples use an ideal maintained bilateral constraint with known isotropic resistance. Higher-dimensional examples test one linear constraint in generalized coordinates; they do not assert validation of a complete robot controller.
+- `final_theory.py`: exact discounted/transported blocks, sharp tracking certificates, local curvature and accuracy diagnostics.
+- `final_beamforming.py` and `final_contact.py`: fixed paired cohorts and observed-data validation policies.
+- `causal_variance.py` and `final_prediction.py`: future-only block variance learning and actual-recursion predictions.
+- `final_computation.py` and `final_accuracy.py`: actual cadence costs and independent high-precision integration.
+- `final_paper_visuals.py`: render-only figures from saved verified arrays.
 
-## Library and benchmarks
+Shared GREAT is in `benchmarks/common/great.py`; application references remain in `benchmarks/case1/` and `benchmarks/case2/`. [GREAT provenance](docs/great_reference.md) distinguishes independent mathematical verification from unavailable direct author-code/PDF parity.
 
-Reusable code is in `lib/`, with original benchmark files in `benchmarks/case1/` and `benchmarks/case2/`. The new studies use `array_geometry_study.py`, `contact_geometry_study.py`, `anisotropy_study.py` and `simulation_scaling.py`. Presentation is separate from simulation and inference.
-
-```python
-import numpy as np
-from lib.filter import BinghamFilter
-from lib.moments import sample_bingham
-
-rng = np.random.default_rng(7)
-tracker = BinghamFilter(n=8, k=3, s=0.2, tau2=1.5, beta=0.98)
-for u in rng.normal(size=(20, 8)):
-    basis = tracker.update(u)
-posterior = sample_bingham(tracker.A, 3, rng, draws=12000, burnin=4000)
-# Inspect diagnostics and independent chains before using sampled moments.
-```
-
-For known projected inputs, omit `tau2` and call `update(u, v=v)`. For proper-complex data use `complex_data=True`; its likelihood omits the real Gaussian factor of one half. The adaptive spectral backend supplies real/complex rank-one means and normalizers, with codimension-one duality. Unsupported general-rank calculations are not replaced by unchecked truncations. See the [computational audit](docs/latent_paper_audit.md).
-
-The beamforming comparisons include independently validated continuous covariance loading, data-adaptive Ledoit--Wolf shrinkage, regularized modal covariance and GROUSE. Contact comparisons include conditional projector least squares, residual PCA, rank-informed ridge regression, the same-parameter local Gaussian and a recursive extended Kalman filter. All use their stated observations and independently selected parameters; covariance-only methods do not acquire an invented projector prediction.
+The original `BinghamFilter` supports arbitrary subspace rank for corrections. Deterministic native means/normalizers scale for rank one or codimension one. General-rank moment sampling requires its own convergence diagnostics; general-rank Fisher checks do not establish scalable normalized inference.
 
 ## Interpretation
 
-- With uniform initialization, fixed noise and matching memory, the marginal Bingham mode equals weighted covariance PCA; the conditional mode equals spectral projector least squares. The posterior contributes directional means, uncertainty and task decisions.
-- The draft's same-mode/same-distance-distribution pair shows why a radius alone cannot determine directional risk or a task-optimal action. Selected-data identities and random-training performance are reported separately.
-- Credible posterior mass, repeated-data coverage, mean accuracy and tail precision are different checks. A local Gaussian can fail its chart-validity check even with finite numerical output.
-- Discounting is approximate prediction. A supplied coordinate rotation is different from unknown state drift. The printed modal certificate has explicit excitation and drift conditions; invalid cases remain visible and do not certify credible coverage.
-- Scaling separates parameter corrections, dense eigenanalysis, moments, solves and optional uncertainty reports. A point estimate can be substantially cheaper; the results identify when the added distribution changes a decision.
-- The main decision cohorts hold noise fixed. The new `lib.block_em` implements one fixed-boundary stationary-block objective, with evidence safeguards. It differs from the recorded-per-observation-prior objective in `lib.em`. Scale adaptation and its uncertainty limits are evaluated separately in the guide supplement.
+A distribution adds directional moments, uncertainty, predictive scores, variance fitting and task-dependent decisions. It does not make a point estimate uniformly better or cheaper. With uniform initialization and matching fixed scales/memory, the marginal mode equals covariance PCA. Mean-versus-mode gains alone do not establish an anisotropy advantage; matched isotropic and validated loading controls address that question.
 
-## Historical studies
+Identity transport is permitted when motion is unknown. Forgetting is then an approximate prediction, and posterior coverage need not hold under unmodeled drift. The fixed-variance modal bound has explicit excitation/drift conditions; its ineligible cases and adaptive-variance exclusions remain visible. See the completion report for the actual supported comparisons.
 
-Earlier executed notebooks, numerical-certificate source trees and 1,020 historical result artifacts are preserved by the [archive manifest](results/simulation_redesign/archive/preservation.json). The original `main` and `dev` branches are unchanged. Historical generators reconstruct their own notebook versions and should not overwrite the current walkthroughs.
+## Historical notebooks and evidence
 
-The previous [unified beamforming study](results/beamforming_unified/README.md), [contact tracking study](docs/contact_tracking.md), [contact pilot](results/contact_pilot/findings.md), [development checkpoints](docs/development.md) and [field results](docs/results.md) remain available under their original assumptions and producer versions. Stochastic process approximation and joint-parameter experiments there are additional historical studies, rather than claims about the fifth draft's Algorithm 1. See also [modeling and drift](docs/modeling_and_drift.md), [draft notes](docs/draft_notes.md), and the earlier [reproducibility guide](docs/reproducibility.md).
+| Notebook | Status |
+| --- | --- |
+| [00_theory](notebooks/00_theory.ipynb) | Original preserved general validation; a complete fresh execution is saved under the final validation directory |
+| [01_array](notebooks/01_array.ipynb) | Current beamforming walkthrough |
+| [02_field](notebooks/02_field.ipynb) | Preserved field reconstruction study |
+| [03_contact](notebooks/03_contact.ipynb) | Current contact walkthrough |
+| [04_implementation_audit](notebooks/04_implementation_audit.ipynb) | Historical implementation audit at `a91faab`, with its original evidence |
+
+The [starting-revision archive](archive/a91faab/preservation.json) preserves 229 original source/notebook files and binds 2,358 historical result files left in place. Original certificates have not been refreshed to claim new producers. Historical scripts and notebooks should be reproduced with their matching commit/source tree. Earlier redesign, implementation-audit, contact and field evidence remains in its original directories. The `main` and `dev` branches are unchanged.

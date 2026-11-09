@@ -1,0 +1,130 @@
+{
+  "config": {
+    "stage": "verify",
+    "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+    "validation_episodes": 3,
+    "test_episodes": 3,
+    "calibration_validation_episodes": 3,
+    "calibration_test_episodes": 3,
+    "mismatch_episodes": 3,
+    "validation_seed": 2026111011,
+    "test_seed": 2026111012,
+    "calibration_seed": 2026111013,
+    "mismatch_seed": 2026111014,
+    "seed_offset": 100000,
+    "primary_beam_n": 32,
+    "primary_beam_T": 256,
+    "primary_beam_dt": 0.01,
+    "primary_contact_T": 192,
+    "primary_contact_dt": 0.05,
+    "primary_report_every": 32,
+    "calibration_n": 3,
+    "calibration_T": 64,
+    "calibration_times": [
+      32,
+      64
+    ],
+    "calibration_sigma2": 0.2,
+    "calibration_tau2": 1.0,
+    "calibration_drift_angle": 0.8,
+    "nominal": [
+      0.5,
+      0.8,
+      0.95
+    ],
+    "posterior_draws": 1024,
+    "real_orders": [
+      [
+        48,
+        96
+      ],
+      [
+        64,
+        192
+      ]
+    ],
+    "state_mass_tolerance": 0.035,
+    "quantile_resolution_tolerance": 0.006,
+    "moment_tolerance": 1e-09,
+    "max_order": 4096,
+    "ascent_tolerance": 1e-07,
+    "beam_floor": 1e-05,
+    "contact_floor": 1e-08,
+    "calibration_floor": 1e-05,
+    "policy_candidates": [
+      {
+        "beta": 1.0,
+        "block_length": 16,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.98,
+        "block_length": 16,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.9,
+        "block_length": 16,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.98,
+        "block_length": 32,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.98,
+        "block_length": 16,
+        "em_iterations": 4
+      }
+    ],
+    "beam_conditions": [
+      "noise_change",
+      "smooth",
+      "power_change"
+    ],
+    "contact_conditions": [
+      "noise_change",
+      "fast_sphere"
+    ],
+    "heldout_draws": 128,
+    "task_penalty": 10.0,
+    "precision": "Primary256 independent test episodes; calibration128 independent episodes with exact binomial intervals. Reporting times and queries are averaged within episodes. All precision flags are retained.",
+    "variance_convention": "sigma2 is per-real-coordinate variance, or proper-complex covariance; complex real/imaginary noise components have variance sigma2/2.",
+    "causal_rule": "One singleton correction; completed nonoverlapping past blocks; transported preceding prior fixed during EM; fitted variances used only for future corrections; streaming state is never replaced or augmented by fitted block posterior.",
+    "timing_scope": "Elapsed component clocks are execution metadata. Comparative warmed serial cadence timing is a separate root-owned stage.",
+    "causal_warm_start": "One current-parameter warm start per completed block; if signal variance is zero, also use a declared positive interior fallback. Multiple-start stationary reference experiments are retained separately.",
+    "validation_scoring_scope": "Policy validation uses future true-state task loss; it does not charge or compute optional predictive density reports. Test prediction scores are computed before assimilation.",
+    "mismatch": {
+      "contamination_power": 0.5,
+      "secondary_power": 0.35,
+      "noise_correlation": 0.5,
+      "friction_coefficient": 0.35,
+      "anisotropic_damping": [
+        1.0,
+        2.0,
+        4.0
+      ],
+      "position_dt": 0.05,
+      "position_sigma": 0.01
+    },
+    "section": "all"
+  },
+  "sources": {
+    "lib/causal_variance.py": "a726149689a76c060c63b36636082e188bf9ef59dd63847e1daa5604903effbf",
+    "lib/final_prediction.py": "74dba43ffea19fe993792ce8bee85cc8914118b5b2110c0323c1601b2d1d7430",
+    "scripts/run_final_prediction.py": "a80372b6fdbdd912f8a475aa1dc75e454918008bc2ad4b5d913adc3c0ee930b7",
+    "tests/test_causal_variance.py": "b3e0af4aca2f2d7757a6c4d68b7730b703bf4ab0372e81b3b14533fb933e0502",
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/final_beamforming.py": "99068117cc4e9bcdfe7d814bb818c6b2c3f8711d6b0015c71a801afc4db9c0d3",
+    "lib/final_contact.py": "51257d5b82f84b61bdd83a567af4284441a0978f5d479ada90f67519a35bbb2c"
+  },
+  "registered_utc": "2026-11-09T20:21:29.728977+00:00"
+}

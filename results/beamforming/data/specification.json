@@ -1,0 +1,47 @@
+{
+  "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+  "guide": {
+    "filename": "final_simulation_guide.md",
+    "repository_path": "docs/final_simulation_guide.md",
+    "sha256": "abad5b2777ce828ca79981ba0f60340b09105d76b5712b4d91c6da9c92bfede1"
+  },
+  "main": {
+    "filename": "v5.tex",
+    "sha256": "31aad1eb4ff0f6e6b694eb63a5529decf264073c268f841681533af08346df4b"
+  },
+  "supplementary": {
+    "filename": "supplementary(14).tex",
+    "sha256": "e678649d45e7dfdf0039e63e02041d9cfac884f9229ef902f174f2db035f311b"
+  },
+  "mathematical_conventions": {
+    "ambient_dimension": "n",
+    "noise_variance": "sigma2",
+    "signal_variance": "tau2",
+    "complex_noise": "E[ee^H]=sigma2 I and E[ee^T]=0; per-real/imag variance sigma2/2",
+    "distance": "||P-Q||F/sqrt(2)",
+    "tracking_bound": "sqrt(min(k,n-k))*epsilon/(gamma-epsilon), eligible only epsilon<gamma/2",
+    "conditional_drift": "norm of the aggregate transported conditional drift matrix",
+    "information_gap": "2 gamma = lambda_min(sum w_j F_j) in the same tangent frame"
+  },
+  "verified_equation_labels": [
+    "eq:increment-marginal",
+    "eq:increment-conditional",
+    "eq:transport",
+    "eq:fisher-marginal",
+    "eq:fisher",
+    "eq:precision",
+    "eq:tracking-error",
+    "eq:information-gap",
+    "eq:response-covariance",
+    "eq:evidence",
+    "eq:em-marginal",
+    "sup:complex-tracking-bound"
+  ],
+  "prose_policy": "The uploaded TeX sources are mathematical references and are not edited or copied into the repository. Old numerical prose is historical context, not evidence for new cohorts.",
+  "differences_from_a91": [
+    "Old guide bound used 2 sqrt(k) epsilon/gamma; current theorem uses sqrt(min(k,n-k))*epsilon/(gamma-epsilon).",
+    "Old conditional certificate used the sum of drift norms; current theorem uses the operator norm after aggregation.",
+    "Old performance dimensions are8/16 and moving6; final performance adds32/64 and128 subject to measured feasibility.",
+    "Old reliability on drifting stationary blocks is not a causal adaptive-recursion calibration test."
+  ]
+}

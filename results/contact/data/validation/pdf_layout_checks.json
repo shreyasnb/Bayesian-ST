@@ -1,0 +1,128 @@
+{
+  "status": "passed",
+  "example": "contact",
+  "tool": "PyMuPDF 1.26.6",
+  "pdf_files": 19,
+  "pdf_pages": 70,
+  "font_types": [
+    "Type1"
+  ],
+  "out_of_page_text": [],
+  "files": {
+    "setup.pdf": {
+      "sha256": "427f5c13af53518bab888c983b405ad8136f8a76b430dc980246f2b7e930bb06",
+      "pages": 1,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "task_performance.pdf": {
+      "sha256": "fe3a82c30833a41c6f602319eff291e47d7aa7953158dfdb256148ef388855e8",
+      "pages": 1,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "posterior_anisotropy.pdf": {
+      "sha256": "72dfef1c4655a47f7ea9d8ed65da7bfa9465c16215c1f1043f37481978138551",
+      "pages": 2,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "noise_adaptation.pdf": {
+      "sha256": "4fc7fe0e67e02f6eea1bbe31aacbc144243ccda6a03f419dcee6f7bb1d7d7750",
+      "pages": 4,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "information.pdf": {
+      "sha256": "d3b2a1b2f5d28f16cf3e3744a4f633e4055d92699d202cd76cf380e1cebb84c0",
+      "pages": 1,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "posterior_curvature.pdf": {
+      "sha256": "0f3b78c0e39e173a263182d4ca788af4afd05b12ee41693f6ce4c3740e187738",
+      "pages": 1,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "tracking_bound.pdf": {
+      "sha256": "b4a3ca74823e6fddeef0949d5ba0933b8cfc5e71513c26fc9a638f5f092ed4bc",
+      "pages": 4,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "block_updates.pdf": {
+      "sha256": "6c57c8bde11ebec5459d025f2cb61121ba8c226fe8ada4af8d031a8d6fbe317a",
+      "pages": 1,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "additional_comparisons.pdf": {
+      "sha256": "53ecd7020afae8d8ca39a8c0abeadaa905e3f837051803961609e14c8b5afc68",
+      "pages": 4,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "variance_estimation.pdf": {
+      "sha256": "91618d413a4b04245d707c83f9c28886848c9d6b8b67cd1b58dd3d14640ab0ec",
+      "pages": 1,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "predictive_calibration.pdf": {
+      "sha256": "f1430f7ed6357b371432bdaaa9e1af4fbab8e9d932a902bb5aa7b597d1947da5",
+      "pages": 9,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "predictive_scores.pdf": {
+      "sha256": "5a54d989c04a757d8a3d233f67184e2fb980031e4c2d578daa8042ccf872b6d7",
+      "pages": 1,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "model_mismatch.pdf": {
+      "sha256": "623c438d69252799327c907ebe9ac3c154f66fa754b39ebb80bbf260c72397d8",
+      "pages": 1,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "computation_time.pdf": {
+      "sha256": "de3bf2776f3d3a86764960b184894f6f6998c699678da97219cce2d3b9029a56",
+      "pages": 1,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "numerical_accuracy.pdf": {
+      "sha256": "ef04ce1d76305623095576135962c8490c5d08d04b160b3e3afb64af7ad62631",
+      "pages": 3,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "paper_summary.pdf": {
+      "sha256": "7c24e295bf49d4487186d482c3e20cee1eda6481b1d490d80c2f54dff3d2dbd9",
+      "pages": 1,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "supp_information_tracking.pdf": {
+      "sha256": "db2bca318b58b041d0d25730c5c09c909cbf9ae1da28f1537d23f955a692d621",
+      "pages": 6,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "supp_comparisons.pdf": {
+      "sha256": "cdbd7c684a91449d7e3fc497d518da9476095cde9263b6a91660c9af06c70a55",
+      "pages": 8,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    },
+    "supp_variance_prediction_cost.pdf": {
+      "sha256": "da1deb362bbda1c8c685f66bd4e05dce0e986a6481bbdf51f3e7ce2af072d7ee",
+      "pages": 20,
+      "width_in": 7.0,
+      "pdf_title_empty": true
+    }
+  },
+  "scope": "Independent actual-PDF MediaBox/title/font/text-bound audit. Fonts include smaller mathematical indices; base-font/title/200dpi checks are separately source-asserted in figure_manifest.json. Manual visual review covers main and representative supplementary pages."
+}

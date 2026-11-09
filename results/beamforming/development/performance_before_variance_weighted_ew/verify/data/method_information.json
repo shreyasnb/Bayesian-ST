@@ -1,0 +1,12 @@
+{
+  "mean": "Snapshots, stated variances, desired steering only for the action",
+  "mode": "Same parameter, variance, memory and data as the posterior mean; coefficient-weighted PCA, equal to ordinary EW PCA at fixed scales",
+  "isotropic": "Same mode and mean squared chordal distance as the posterior mean; no invented tails",
+  "modal_loading": "Snapshot modal estimate with loading independently selected on validation",
+  "covariance_loading": "Loaded sample covariance with independent validation and the isotropic endpoint",
+  "great_window": "GREAT complex extension; response snapshots only, sliding optimization window",
+  "great_ew": "GREAT complex extension; matched exponential covariance weights, gamma=sqrt(beta)",
+  "grouse": "GROUSE complex complete-observation update, separately named",
+  "ledoit_wolf": "Known-zero-mean Hermitian covariance shrinkage",
+  "oracle": "True interference covariance; evaluation-only oracle"
+}

@@ -1,0 +1,27 @@
+{
+  "episodes": 1024,
+  "metric_rows": 44032,
+  "validation_episodes": 256,
+  "numerical_failures": 0,
+  "maximum_mean_resolution_error": 1.6882995113043364e-08,
+  "maximum_command_excess_identity_error": 6.505213034913027e-19,
+  "maximum_kkt_residual": 4.706186817419514e-17,
+  "maximum_sphere_drift_identity_error": 3.3306690738754696e-16,
+  "maximum_block_parameter_error": 2.194179850300764e-12,
+  "anisotropy": {
+    "data_generated": true,
+    "selected_episode": 0,
+    "selected_time": 16,
+    "normal_mode_overlap": 0.8057116272405753,
+    "kappa": 5.946093701910831,
+    "isotropic_overlap_error": 3.4416913763379853e-15,
+    "isotropic_mean_match_error": 1.2150158660902034e-14,
+    "isotropic_resolution_error": 3.0236651992185685e-14,
+    "mode_unique": true,
+    "curvature_ratio": 11.040392591087155,
+    "numerical_ok": true
+  },
+  "seconds": 2137.6319806709944,
+  "pilot_projected_paper_seconds": null,
+  "elapsed_scope": "Concurrent execution metadata only; isolated actual-cadence timings are separate."
+}

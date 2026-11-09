@@ -1,0 +1,38 @@
+{
+  "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+  "original_cohorts": [
+    {
+      "n": 8,
+      "validation_trials": 128,
+      "test_trials": 256
+    },
+    {
+      "n": 16,
+      "validation_trials": 64,
+      "test_trials": 128
+    }
+  ],
+  "original_laws": [
+    "haar",
+    "ula3",
+    "ula10",
+    "ula30"
+  ],
+  "original_horizons": [
+    1,
+    4,
+    16,
+    64
+  ],
+  "original_sensor_variances": [
+    1.0,
+    0.2
+  ],
+  "files": {
+    "results/simulation_redesign/paper/beamforming/manifest.json": "d1b5fc4a8fc4a8d4aaaf7280286c284eeeaf06f2d383cad33fe57f1632574812",
+    "results/simulation_redesign/paper/beamforming/metrics.csv": "07b1fbb781d60cc2971db0dc77c15a72268ff27af64ba892011e71d3d9aba094",
+    "results/simulation_redesign/paper/beamforming/paired.csv": "67568464f60d775387e4a24b8164bb6aca8b93e610dfa389a4e0c6614f95bf90",
+    "results/simulation_redesign/paper/beamforming/summary.csv": "767971a6b46810a87cf12bbacb8f902e03d069f622d7b5897004b10ce63aded6"
+  },
+  "scope": "Historical n=8,16 fixed-angle/Haar evidence retained separately. Its geometry and repetition counts are not relabeled as the new overlap-controlled dimensional cohorts."
+}

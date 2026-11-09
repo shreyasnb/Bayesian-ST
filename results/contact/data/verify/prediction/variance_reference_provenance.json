@@ -1,0 +1,113 @@
+{
+  "sources": {
+    "results/implementation_audit/paper/em/manifest.json": "ab71dc035fbca39539295acca58e56060200a0bc0d62a5df8d10c918ed370e94",
+    "results/implementation_audit/paper/em/fits.csv": "57a9d4fffad099039ad539e4237b40abd5134a1dc60b7ac82fbc0df8f5626f0e",
+    "results/implementation_audit/paper/em/iterations.csv": "38b0a3796a7a8a4e6b517ed1c3698d2fee6204168fc21c44e8e88400816ac728",
+    "results/implementation_audit/paper/em/references.csv": "a057676e0cbe9e8998a6fd37692a5d4c8924a91cb003c1ac852eda23c6c065c3",
+    "results/implementation_audit/paper/em/residuals.csv": "32bdc9935015a03aa1c4194871f241a73bd911b472a053c0f531f8fa72adda03"
+  },
+  "original_config": {
+    "profile": "paper",
+    "source_commit": "6e78cc9911e7e78452633f13dd947afa669c3470",
+    "model": "One constant subspace and one fixed boundary prior per disjoint block",
+    "variance_convention": "Real per-coordinate variance; proper-complex covariance, not real/imaginary variance",
+    "seeds": [
+      925130,
+      925131,
+      925132,
+      925133,
+      925134,
+      925135,
+      925136,
+      925137,
+      925138,
+      925139,
+      925140,
+      925141,
+      925142,
+      925143,
+      925144,
+      925145,
+      925146,
+      925147,
+      925148,
+      925149,
+      925150,
+      925151,
+      925152,
+      925153
+    ],
+    "block_length": 32,
+    "n": 3,
+    "iterations": 48,
+    "floor": 1e-06,
+    "moment_tolerance": 1e-10,
+    "max_order": 4096,
+    "ascent_tolerance": 1e-08,
+    "reference_orders": [
+      64,
+      96
+    ],
+    "real_signal_variance": 0.9,
+    "real_sensor_variance": 0.3,
+    "conditional_sensor_variance": 0.04,
+    "input_scale": 0.6,
+    "models": [
+      "real_marginal_rank_one",
+      "real_marginal_rank_two",
+      "complex_marginal_rank_one",
+      "conditional_contact_plane"
+    ],
+    "marginal_starts": [
+      {
+        "name": "1",
+        "s": 0.12,
+        "tau2": 0.15
+      },
+      {
+        "name": "2",
+        "s": 0.6,
+        "tau2": 0.7
+      },
+      {
+        "name": "3",
+        "s": 1.2,
+        "tau2": 0.25
+      },
+      {
+        "name": "0",
+        "s": 0.6,
+        "tau2": 0.0
+      }
+    ],
+    "conditional_starts": [
+      {
+        "name": "1",
+        "s": 0.02
+      },
+      {
+        "name": "2",
+        "s": 0.2
+      },
+      {
+        "name": "3",
+        "s": 0.6
+      }
+    ],
+    "selection": "Largest normalized block evidence among positive-signal starts; zero boundary is a declared initialization diagnostic",
+    "performance_scope": "Finite disjoint-block noise estimates, not online adaptation, theorem-scale estimation or global EM convergence",
+    "guide_source": "Uploaded implementation_prompt.md; named main.tex/supplementary.tex unavailable in checkout"
+  },
+  "model": "conditional_contact_plane",
+  "retained_rows": {
+    "fits": 72,
+    "iterations": 555,
+    "references": 1,
+    "residuals": 72
+  },
+  "total_original_blocks": 96,
+  "total_original_multistart_fits": 360,
+  "scope": "Stationary low-dimensional reference fits, not new primary streaming episodes; no new tuning",
+  "column_changes": "s renamed sigma2, true_s renamed sigma2_true, true_tau2 renamed tau2_true; numeric values unchanged",
+  "boundary_checks": 10
+}

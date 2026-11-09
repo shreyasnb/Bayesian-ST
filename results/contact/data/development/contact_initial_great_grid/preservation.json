@@ -1,0 +1,67 @@
+{
+  "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+  "files": {
+    "sources/lib/final_contact.py": "35966c21741a9620f946c160d28173cc006be7b52f6717db4a71b37ad5bac0da",
+    "sources/scripts/run_final_contact.py": "6eda57bf5212dd5fb751576b87708aef77be6e582acf34c36db727d5e7d5c798",
+    "sources/tests/test_final_contact.py": "914fe7dc94d36331c4603429578b1725975d7012b6131c6752d807cb4b63ff24",
+    "sources/lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "sources/lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "sources/lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "sources/lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "sources/lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "sources/lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "sources/lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "sources/benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "sources/benchmarks/common/__init__.py": "1b45903cc938c76c7b9f44eae5fcf1115e0b3b805237acedb399ee3e4f9815d6",
+    "data/verify/performance/anisotropy_checks.json": "ee6676edcbf624e83dcebd7a8904ab53a9acedc99cd734545dbe78bd27523217",
+    "data/verify/performance/checks.json": "19d300efc44cda96f2ecd230f64c77588b9e813cc664d1f518b0f312420661a4",
+    "data/verify/performance/preregistered.json": "84fd33e06730367028e051eccdc1a27fdad721c89964405021d5e46a1444bec9",
+    "data/verify/performance/manifest.json": "a8eddb32b9acb9abfa7a14faa17bd06d355537d780d1338f322cd377ddf884a5",
+    "data/verify/performance/anisotropy.npz": "8b162abbd1c1f2c89cf686668611dac73b7859d17f136dbd38b812fe7d1d8078",
+    "data/verify/performance/story.npz": "e7e40dab39f63eb09ffe4926965f114b444e8fa487ff33eafe961ca4fdd2f608",
+    "data/verify/performance/selected.json": "e5314b87586f37aeef41cfcdfdf6deb98cff8e733e8403bb605ec1aeb9a35b9e",
+    "tables/verify/performance/paired.csv": "3f77d473ff914ebfa90d96ecaa72f729efd3e25e9dfe9795be2c9c02f7cb64fb",
+    "tables/verify/performance/validation.csv": "0c3f8ea62ef6b46bc9ccccc74917ba39dbfc07e22033adc43ec68e24f1351e53",
+    "tables/verify/performance/mechanics.csv": "c909a5f0d0239a3f3fce9c1ae6b7eb9db99647ddc5e43161c7db70e2e39e213e",
+    "tables/verify/performance/metrics.csv": "67af9dcfcd1a4d4303965fe93c565e3ffc2953dc85c77c88ff56fed870d8bb94",
+    "tables/verify/performance/blocks.csv": "e989bf6260702575d88c3edb1b5834e8bbc07ea09a84c1645ad112c41e260193",
+    "data/pilot/performance/anisotropy_checks.json": "ee6676edcbf624e83dcebd7a8904ab53a9acedc99cd734545dbe78bd27523217",
+    "data/pilot/performance/checks.json": "b165fa18336da711b834078d510eb158ae7e88bf1df0b4744d2e098191d6a52e",
+    "data/pilot/performance/preregistered.json": "552e6a019440a5e31b8a1ada0d3913b07e3e4aa2b71947ee69b3ba78b9cf3ced",
+    "data/pilot/performance/manifest.json": "974743cfabb342e0901f0a0d8276537b6cd668418f501bd0cfac56956c185112",
+    "data/pilot/performance/anisotropy.npz": "8b162abbd1c1f2c89cf686668611dac73b7859d17f136dbd38b812fe7d1d8078",
+    "data/pilot/performance/story.npz": "86333706eb9dbdabed851ce6be43a5f95a4a21bcfdbf92c7334c350cc831f294",
+    "data/pilot/performance/selected.json": "a0f5a0842d1a6c4729a76d91f41ffecd9da2116166ab04ca5ccb3ff76eb7393e",
+    "tables/pilot/performance/paired.csv": "2b9620d7e941cc76f7ef9419ddc3505b09999069ed13a54fc5159da529f49ab8",
+    "tables/pilot/performance/validation.csv": "be3bdf060936a441f5539c3edaed296b493263bcf2522d1a0680a55694ed1027",
+    "tables/pilot/performance/mechanics.csv": "ae424cc3cb51acc9ff846d640b03d0b7c810ab01eae9054a74db39c2b51cd693",
+    "tables/pilot/performance/metrics.csv": "08b1b87d8384e7860d69ff5c4202282b7248e4189051d29e31c8c85f10a094a0",
+    "tables/pilot/performance/blocks.csv": "ec12131176b08639ca0b4664955ca77800f04023ff1d3a7728600c9113ebf410"
+  },
+  "reason": "The pilot validation selected the upper GREAT step/inner-step grid at multiple conditions. Before any paper test run, expand the finite comparator budget once to steps [1,10,50,200] and inner counts [1,3,8]. All original pilot outcomes and exact producers are preserved. This is validation-boundary comparator fairness, not test-outcome tuning. No further grid chasing is planned.",
+  "old_grid": {
+    "step": [
+      1.0,
+      10.0,
+      50.0
+    ],
+    "inner": [
+      1,
+      3
+    ]
+  },
+  "new_grid": {
+    "step": [
+      1.0,
+      10.0,
+      50.0,
+      200.0
+    ],
+    "inner": [
+      1,
+      3,
+      8
+    ]
+  },
+  "omitted": "Regenerable worker checkpoints; all compact raw tables, arrays, configurations and source hashes retained."
+}

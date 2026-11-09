@@ -1,0 +1,146 @@
+{
+  "status": "completed",
+  "example": "beamforming",
+  "stage": "paper",
+  "component": "computation",
+  "config": {
+    "schema": 1,
+    "stage": "paper",
+    "seed": 2026111017,
+    "dimensions": [
+      3,
+      8,
+      16,
+      32,
+      64,
+      128
+    ],
+    "observations": 64,
+    "action_cadences": [
+      1,
+      4,
+      8,
+      16,
+      32,
+      64
+    ],
+    "repetitions": 7,
+    "warmup_repetitions": 1,
+    "beta": 0.97,
+    "sigma2": 0.2,
+    "tau2": 1.0,
+    "moment_tolerance": 1e-10,
+    "moment_max_order": 4096,
+    "fallback_max_order": 8192,
+    "real_n3_resolution_tolerance": 5e-08,
+    "spans": [
+      0.0,
+      80.0,
+      400.0,
+      40000.0
+    ],
+    "stress_max_order": 4096,
+    "em_iterations": [
+      2,
+      4
+    ],
+    "learning_block": 32,
+    "report_every": 32,
+    "report_dimensions": [
+      3
+    ],
+    "report_draws": 16384,
+    "report_relative_mcse": 0.025,
+    "report_proposal_cap": 1000000,
+    "numerical_reference_digits": [
+      100,
+      200
+    ],
+    "statistical_scope": "Randomized repeated clocks use the same seeded data. Clock repetitions are not independent statistical episodes.",
+    "timing_scope": "Serial warmed single-thread elapsed/cpu costs, not worst-case deadlines. Stream timers exclude data generation and estimator construction and include all corrections, buffer handling, actions, reports and variance fits. Pilot clocks may share the host and are engineering checks only.",
+    "memory_scope": "Exact live persistent NumPy array bytes and separate tracemalloc peak; native BLAS/LAPACK workspaces and process RSS excluded.",
+    "rank_scope": "Native complex rank one and real codimension one only. Physical contact remains n=3; other real dimensions are integration/cost fixtures.",
+    "precision_scope": "Native first-moment/normalizer truncation, independent precision agreement, second moments, and tails have separate flags."
+  },
+  "sources": {
+    "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
+    "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
+    "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
+    "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
+    "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
+    "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+    "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+    "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
+    "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
+    "lib/causal_variance.py": "f89348e57ee850d91f1317e1ce443e95849f15c497a4170c0caa49143ddf5af0",
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+    "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "pyproject.toml": "8220133389552906c7471dcd038ab3ba8314d38b7fb16a4fbffaf51bf734dcf0",
+    "results/beamforming/data/paper/performance/selected.json": "81c9d90aeb8a7ae779367d21a4fb857082ce46dddcd3cd932fbcb6af5f947eb7",
+    "results/beamforming/data/paper/prediction/selected.json": "b10bfed63509ef355d44a2370393a887404840fa7f4d171724864e9557404185"
+  },
+  "artifacts": {
+    "results/beamforming/data/paper/computation/checks.json": "39a1bd0d49bef6378fae3a1564f96a928303396e3cf16f4f5531f1286b972653",
+    "results/beamforming/data/paper/computation/hardware.json": "54276ae85216c7b4a9d0a0e0c0477031e0461d0dc6e7db56fdf675b76f80130f",
+    "results/beamforming/data/paper/computation/parameters.npz": "2321088ed41202a5b3ad27d26db7b1213ea95c0910980db32473742fc4579006",
+    "results/beamforming/data/paper/computation/preregistered.json": "9668363e2dfae0d8417785b42fd16a39f217f581ddb1acbabd82c22347b4d769",
+    "results/beamforming/data/paper/computation/task_inputs.npz": "1cc8f7a701c856140052e7f8c80a6479a0c11a2ef126e2aafedcdd05a45c8e17",
+    "results/beamforming/data/paper/computation/task_matching.json": "429e1331700c9d77ed7556c05be544c2a3589a59280e6e1136f65d3b9ad16eb7",
+    "results/beamforming/tables/paper/computation/accuracy.csv": "2c4c8f759c7c1b2aacf4bdbf3e0f748820c5a7c270b446f02a60b1f2eecf5c32",
+    "results/beamforming/tables/paper/computation/memory.csv": "6cba6a1d421829954d340f0ab6a3fa0695a4cf9cc160532611fbe9f7cc76fe99",
+    "results/beamforming/tables/paper/computation/pipeline_timings.csv": "33b97b5e031ee30cceabfcfa4740d7dca14d12602d621a68bf1a803a8228e9b2",
+    "results/beamforming/tables/paper/computation/primitives.csv": "806e8e6157f6611398c7bb849e299d0434ed1781694ebcbf87523770db3f5a63",
+    "results/beamforming/tables/paper/computation/summary.csv": "b935da03b267b806ce6fd7add289add3899200dbdb1a02c6b417f360cb93db02"
+  },
+  "checks": {
+    "pipeline_targets": 250,
+    "timed_cycles": 1750,
+    "numerical_failures": 0,
+    "fit_failures": 0,
+    "report_failures": 0,
+    "predictive_score_failures": 0,
+    "unresolved_predictive_score_cycles": 0,
+    "maximum_phase_excess_seconds": 0.0,
+    "independent_accuracy_unresolved": 6,
+    "elapsed_seconds": 162.98010914798942
+  },
+  "timing_setting": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "machine": "x86_64",
+    "processor": "",
+    "blas_environment": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1"
+    },
+    "numpy_configuration": "Build Dependencies:\n  blas:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\n  lapack:\n    detection method: pkgconfig\n    found: true\n    include directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/include\n    lib directory: /opt/_internal/cpython-3.12.12/lib/python3.12/site-packages/scipy_openblas64/lib\n    name: scipy-openblas\n    openblas configuration: OpenBLAS 0.3.30  USE64BITINT DYNAMIC_ARCH NO_AFFINITY\n      Haswell MAX_THREADS=64\n    pc file directory: /project/.openblas\n    version: 0.3.30\nCompilers:\n  c:\n    commands: cc\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  c++:\n    commands: c++\n    linker: ld.bfd\n    name: gcc\n    version: 14.2.1\n  cython:\n    commands: cython\n    linker: cython\n    name: cython\n    version: 3.2.1\nMachine Information:\n  build:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\n  host:\n    cpu: x86_64\n    endian: little\n    family: x86_64\n    system: linux\nPython Information:\n  path: /tmp/build-env-aw1mwcap/bin/python\n  version: '3.12'\nSIMD Extensions:\n  baseline:\n  - SSE\n  - SSE2\n  - SSE3\n  found:\n  - SSSE3\n  - SSE41\n  - POPCNT\n  - SSE42\n  - AVX\n  - F16C\n  - FMA3\n  - AVX2\n  - AVX512F\n  - AVX512CD\n  - AVX512_SKX\n  - AVX512_CLX\n  - AVX512_CNL\n  - AVX512_ICL\n  not found:\n  - AVX512_KNL\n  - AVX512_KNM\n  - AVX512_SPR\n\n",
+    "isolated_asserted": true,
+    "scope": "Container CPU environment; not a hardware worst-case timing guarantee."
+  },
+  "task_matching": {
+    "status": "evaluated",
+    "dependencies": {
+      "results/beamforming/data/paper/performance/selected.json": "81c9d90aeb8a7ae779367d21a4fb857082ce46dddcd3cd932fbcb6af5f947eb7",
+      "results/beamforming/data/paper/prediction/selected.json": "b10bfed63509ef355d44a2370393a887404840fa7f4d171724864e9557404185"
+    },
+    "episode": 0,
+    "adaptive_status": "evaluated: exact causal trial0 smooth; pre-correction action/normalized score every32; saved selected policy and initial variances",
+    "stationary": "First n observations of the exact original 2n episode; endpoint output at T=n.",
+    "moving": "Exact smooth n=32 episode; output every8 observations.",
+    "contact": "Exact physical sphere n3 trial0; observed wrist G supplied to every tracker; response and soft-command action every4 observations.",
+    "generalized_scope": "Other real dimensions are synthetic codimension-one fixtures, not physical contact performance."
+  },
+  "final_science_hash": "d3e5f91e4bc9ca18bf34d595fe6d2ed0137361dff835dccc72b552ad7bb5ec47"
+}

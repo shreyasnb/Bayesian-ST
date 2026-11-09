@@ -1,0 +1,182 @@
+{
+  "status": "completed",
+  "example": "beamforming",
+  "stage": "verify",
+  "component": "prediction",
+  "config": {
+    "stage": "verify",
+    "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+    "validation_episodes": 3,
+    "test_episodes": 3,
+    "calibration_validation_episodes": 3,
+    "calibration_test_episodes": 3,
+    "mismatch_episodes": 3,
+    "validation_seed": 2026111011,
+    "test_seed": 2026111012,
+    "calibration_seed": 2026111013,
+    "mismatch_seed": 2026111014,
+    "seed_offset": 100000,
+    "primary_beam_n": 32,
+    "primary_beam_T": 256,
+    "primary_beam_dt": 0.01,
+    "primary_contact_T": 192,
+    "primary_contact_dt": 0.05,
+    "primary_report_every": 32,
+    "calibration_n": 3,
+    "calibration_T": 64,
+    "calibration_times": [
+      32,
+      64
+    ],
+    "calibration_sigma2": 0.2,
+    "calibration_tau2": 1.0,
+    "calibration_drift_angle": 0.8,
+    "nominal": [
+      0.5,
+      0.8,
+      0.95
+    ],
+    "posterior_draws": 1024,
+    "real_orders": [
+      [
+        48,
+        96
+      ],
+      [
+        64,
+        192
+      ]
+    ],
+    "state_mass_tolerance": 0.035,
+    "quantile_resolution_tolerance": 0.006,
+    "moment_tolerance": 1e-09,
+    "max_order": 4096,
+    "ascent_tolerance": 1e-07,
+    "beam_floor": 1e-05,
+    "contact_floor": 1e-08,
+    "calibration_floor": 1e-05,
+    "policy_candidates": [
+      {
+        "beta": 1.0,
+        "block_length": 16,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.98,
+        "block_length": 16,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.9,
+        "block_length": 16,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.98,
+        "block_length": 32,
+        "em_iterations": 2
+      },
+      {
+        "beta": 0.98,
+        "block_length": 16,
+        "em_iterations": 4
+      }
+    ],
+    "beam_conditions": [
+      "noise_change",
+      "smooth",
+      "power_change"
+    ],
+    "contact_conditions": [
+      "noise_change",
+      "fast_sphere"
+    ],
+    "heldout_draws": 128,
+    "task_penalty": 10.0,
+    "precision": "Primary256 independent test episodes; calibration128 independent episodes with exact binomial intervals. Reporting times and queries are averaged within episodes. All precision flags are retained.",
+    "variance_convention": "sigma2 is per-real-coordinate variance, or proper-complex covariance; complex real/imaginary noise components have variance sigma2/2.",
+    "causal_rule": "One singleton correction; completed nonoverlapping past blocks; transported preceding prior fixed during EM; fitted variances used only for future corrections; streaming state is never replaced or augmented by fitted block posterior.",
+    "timing_scope": "Elapsed component clocks are execution metadata. Comparative warmed serial cadence timing is a separate root-owned stage.",
+    "causal_warm_start": "One current-parameter warm start per completed block; if signal variance is zero, also use a declared positive interior fallback. Multiple-start stationary reference experiments are retained separately.",
+    "validation_scoring_scope": "Policy validation uses future true-state task loss; it does not charge or compute optional predictive density reports. Test prediction scores are computed before assimilation.",
+    "mismatch": {
+      "contamination_power": 0.5,
+      "secondary_power": 0.35,
+      "noise_correlation": 0.5,
+      "friction_coefficient": 0.35,
+      "anisotropic_damping": [
+        1.0,
+        2.0,
+        4.0
+      ],
+      "position_dt": 0.05,
+      "position_sigma": 0.01
+    },
+    "section": "all"
+  },
+  "sources": {
+    "lib/causal_variance.py": "a726149689a76c060c63b36636082e188bf9ef59dd63847e1daa5604903effbf",
+    "lib/final_prediction.py": "74dba43ffea19fe993792ce8bee85cc8914118b5b2110c0323c1601b2d1d7430",
+    "scripts/run_final_prediction.py": "a80372b6fdbdd912f8a475aa1dc75e454918008bc2ad4b5d913adc3c0ee930b7",
+    "tests/test_causal_variance.py": "b3e0af4aca2f2d7757a6c4d68b7730b703bf4ab0372e81b3b14533fb933e0502",
+    "lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/final_beamforming.py": "99068117cc4e9bcdfe7d814bb818c6b2c3f8711d6b0015c71a801afc4db9c0d3",
+    "lib/final_contact.py": "51257d5b82f84b61bdd83a567af4284441a0978f5d479ada90f67519a35bbb2c"
+  },
+  "artifacts": {
+    "results/beamforming/data/verify/prediction/checks.json": "5f2ecd5f715d9c23ee64171a358285c574593bf8d4c7993ad8d1a6eb92d57c97",
+    "results/beamforming/data/verify/prediction/failures.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "results/beamforming/data/verify/prediction/fit_events.json.gz": "05fdcad5e18beb0f5c6a7190c42114f16885838987aa7fa0c161852684ce8e3e",
+    "results/beamforming/data/verify/prediction/preregistered.json": "b0c32ff75473d79bb249d307881d90af3065e1e54538a4fe26028cdcfe5e8197",
+    "results/beamforming/data/verify/prediction/producers/lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "results/beamforming/data/verify/prediction/producers/lib/block_em.py": "0ead326daf18cb7d088f0c02f6057437d4b4059f79f9e3ce151f57e1d3dc4026",
+    "results/beamforming/data/verify/prediction/producers/lib/causal_variance.py": "a726149689a76c060c63b36636082e188bf9ef59dd63847e1daa5604903effbf",
+    "results/beamforming/data/verify/prediction/producers/lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "results/beamforming/data/verify/prediction/producers/lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "results/beamforming/data/verify/prediction/producers/lib/final_beamforming.py": "99068117cc4e9bcdfe7d814bb818c6b2c3f8711d6b0015c71a801afc4db9c0d3",
+    "results/beamforming/data/verify/prediction/producers/lib/final_contact.py": "51257d5b82f84b61bdd83a567af4284441a0978f5d479ada90f67519a35bbb2c",
+    "results/beamforming/data/verify/prediction/producers/lib/final_prediction.py": "74dba43ffea19fe993792ce8bee85cc8914118b5b2110c0323c1601b2d1d7430",
+    "results/beamforming/data/verify/prediction/producers/lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "results/beamforming/data/verify/prediction/producers/lib/guide_reliability.py": "feb6c84c3c00925b1ac140bda71abc60339c0f0008a9d8d40c8d685736d2f029",
+    "results/beamforming/data/verify/prediction/producers/lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "results/beamforming/data/verify/prediction/producers/lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "results/beamforming/data/verify/prediction/producers/scripts/run_final_prediction.py": "a80372b6fdbdd912f8a475aa1dc75e454918008bc2ad4b5d913adc3c0ee930b7",
+    "results/beamforming/data/verify/prediction/producers/tests/test_causal_variance.py": "b3e0af4aca2f2d7757a6c4d68b7730b703bf4ab0372e81b3b14533fb933e0502",
+    "results/beamforming/data/verify/prediction/selected.json": "58bf09ad4055d86efc6fd301f1ea3fc705f8cbcf343c8344ccec638eb5c0466c",
+    "results/beamforming/data/verify/prediction/stories/test_00000.npz": "333451d82dcefe54788f1e1935056fd9e4d521f488844163b7b8af8b5b5cbe03",
+    "results/beamforming/data/verify/prediction/stories/test_00003.npz": "12c2860280abcc6c4232f08372cfad083d88d7f5b5fb870c4bbfaffa2b27c03c",
+    "results/beamforming/data/verify/prediction/stories/test_00006.npz": "7a9538becb7347560661eb765ac327b57dc5d33144cd9df69cb62fef46093930",
+    "results/beamforming/data/verify/prediction/stories.npz": "7352b9ce43b181b60e9b8a99e195b7d170f846fd9f91b57a19ab696e07ab399e",
+    "results/beamforming/tables/verify/prediction/adaptation.csv": "d8b9a4d142ec0a7f924ec393bd0a497ac3e7d4d7023f92552b0bd712b33949d5",
+    "results/beamforming/tables/verify/prediction/adaptation_summary.csv": "be05955a155ff277529e497829354f15c4faf3f84bcc4de615d0054f57589b88",
+    "results/beamforming/tables/verify/prediction/calibration.csv": "f747c59267373c5c471b6c68b206fb1a38b4146ede5f2bf370b5f4dac3d79636",
+    "results/beamforming/tables/verify/prediction/calibration_summary.csv": "946af2e1d347a111eb9b18767e64548fadfb1fdc7f6cd0ce69902bd462ba6093",
+    "results/beamforming/tables/verify/prediction/mismatch.csv": "8d3e0ec664979ea48f1d5d59744888716daebe6dc9b486db79fde57e1b9a751d",
+    "results/beamforming/tables/verify/prediction/paired.csv": "a073f586d81109affcdfdad75af79ef0b969c5feadcc184fb9474fac60957ee0",
+    "results/beamforming/tables/verify/prediction/score_summary.csv": "f59318e815faa332a5f6d8fc053bb774c8f576fa5e38651beccae26e4cb131a7",
+    "results/beamforming/tables/verify/prediction/scores.csv": "af544e5c39201c0f484117dc8214667c1f13061e94d25b53cad266fcd2172d10",
+    "results/beamforming/tables/verify/prediction/validation.csv": "1184672047e5f8949839dc19ef3a5e7a6aed112c9cad6417e80afa5d4dc78ed8"
+  },
+  "checks": {
+    "requested_jobs": 42,
+    "failed_jobs": 0,
+    "adaptation_rows": 648,
+    "calibration_rows": 2160,
+    "score_rows": 264,
+    "unresolved_adaptation_rows": 0,
+    "unresolved_calibration_rows": 0,
+    "unresolved_score_rows": 0,
+    "maximum_state_change_from_fit": 0.0,
+    "fits": 276,
+    "elapsed_seconds": 77.55377493600827,
+    "causal_model": "Saved preceding prior; completed disjoint blocks; fitfuture-only; streamingAunchanged",
+    "probability_scope": "Exact prior-predictive identity tested only beta1 knownscales; actual forgetting/learning inclusion is empirical"
+  }
+}
