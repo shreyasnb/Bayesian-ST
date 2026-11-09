@@ -8,8 +8,9 @@ venv_path="${BAYESIAN_ST_VENV:-${repo_root}/.venv}"
 "${python_bin}" -m venv "${venv_path}"
 "${venv_path}/bin/python" -m pip install -r "${repo_root}/requirements-lock.txt"
 "${venv_path}/bin/python" -m pip install --no-deps -e "${repo_root}"
+"${venv_path}/bin/python" -m pip check
 "${venv_path}/bin/python" -m ipykernel install --sys-prefix --name python3 --display-name 'Bayesian ST (Python 3.12)'
-"${venv_path}/bin/python" -c 'from importlib.metadata import version; print("Numerical stack:", {p: version(p) for p in ["numpy", "scipy", "matplotlib", "nbformat", "nbclient"]})'
+"${venv_path}/bin/python" -c 'from importlib.metadata import version; print("Numerical stack:", {p: version(p) for p in ["numpy", "scipy", "matplotlib", "mpmath", "nbformat", "nbclient"]})'
 # TeX is intentionally not installed here: system package changes require the
 # user's normal package-management permissions. See docs/reproducibility.md.
 printf '%s\n' "Setup complete. Activate ${venv_path}/bin/activate and validate TeX before notebook execution."

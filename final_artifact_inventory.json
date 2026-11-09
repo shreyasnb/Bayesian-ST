@@ -1009,6 +1009,10 @@
       "sha256": "8220133389552906c7471dcd038ab3ba8314d38b7fb16a4fbffaf51bf734dcf0",
       "bytes": 541
     },
+    "requirements-lock.txt": {
+      "sha256": "58216a7fed11c7ceb90e74b8795df63f5a0c158c4bc0235c9d5c223a1b22ad9d",
+      "bytes": 286
+    },
     "results/beamforming/additional_comparisons.pdf": {
       "sha256": "476a8d03257908fcba913164f9be773717afdb31253aaee94f79bcc8c1dc93a3",
       "bytes": 277094
@@ -6565,6 +6569,10 @@
       "sha256": "ce29de9a0c77fc1aadab28c3b12290aa794af7fb973c8e550b9d5e8734b22349",
       "bytes": 40578
     },
+    "scripts/setup.sh": {
+      "sha256": "2b216bd76ddb7b6dbb0ecb0fb45a3a2bc27a86eb4fa7692002b5538adab952ae",
+      "bytes": 1209
+    },
     "scripts/validate_final_simulations.py": {
       "sha256": "c8dac356a6ee4dbe6eea252e73c2b310b7f77dcc6d96630ddc8fc061ad65fdc3",
       "bytes": 2716
@@ -6602,8 +6610,8 @@
       "bytes": 6263
     }
   },
-  "retained_files": 1649,
-  "retained_bytes": 382418342,
+  "retained_files": 1651,
+  "retained_bytes": 382419837,
   "excluded_regenerable_files": 11194,
   "excluded_regenerable_bytes": 1257382437,
   "excluded_scope": "Git-ignored checkpoint caches, pytest XML and original general-notebook diagnostic PDF/PNG exports. Component manifests exclude these caches; required raw arrays/tables and executed general notebook are retained.",
