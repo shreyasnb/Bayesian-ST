@@ -15,10 +15,10 @@ STYLE = {
     "mode": (r"$P_{\widehat{\mathcal X}_t}$", "#D55E00", "s"),
     "iso": (r"$\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^"),
     "isotropic": (r"$\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^"),
-    "scm_loaded": ("Loaded EW covariance", "#484848", "X"),
-    "great_window": ("GREAT", "#009E73", "D"),
-    "great": ("GREAT", "#009E73", "D"),
-    "great_ew": ("GREAT EW", "#56B4E9", "v"),
+    "scm_loaded": ("MVDR with covariance shrinkage", "#484848", "X"),
+    "great_window": ("GREAT (sliding window)", "#009E73", "D"),
+    "great": ("GREAT (sliding window)", "#009E73", "D"),
+    "great_ew": ("GREAT (exponential weighting)", "#56B4E9", "v"),
     "known": ("True variances", "#111111", "s"),
     "exact_known": (r"True variances, $\beta=1$", "#111111", "s"),
     "known_forgetting": ("True variances, forgetting", "#8172B2", "D"),
@@ -54,7 +54,7 @@ plt.show()
 
 
 PLOT_CELLS = {}
-PLOT_CELLS['setup', 1] = _cell('setup', 1, (7.,3.42), r'''
+PLOT_CELLS['setup', 1] = _cell('setup', 1, (15,5), r'''
 fig = plt.figure(figsize=FIGSIZE, dpi=DPI, layout="constrained")
 grid = fig.add_gridspec(1, 3, width_ratios=(1., 1.3, 1.))
 axes = [fig.add_subplot(grid[0, j]) for j in range(3)]
@@ -88,7 +88,7 @@ for ax,tag in zip(axes,["(a)","(b)","(c)"]):
     ax.text(.015,.985,tag,transform=ax.transAxes,ha="left",va="top")
 ''')
 
-PLOT_CELLS['information', 1] = _cell('information', 1, (7.,3.35), r'''
+PLOT_CELLS['information', 1] = _cell('information', 1, (15,5), r'''
 fig, axes = plt.subplots(1,2,figsize=FIGSIZE,dpi=DPI,layout="constrained")
 for expected, estimated in data["eigenvalues"]:
     axes[0].scatter(expected,estimated,color="#0072B2",s=12,alpha=.6)
@@ -108,7 +108,7 @@ for ax,tag in zip(axes,["(a)","(b)"]):
     ax.text(.015,.985,tag,transform=ax.transAxes,ha="left",va="top")
 ''',style=False)
 
-PLOT_CELLS['task_performance', 1] = _cell('task_performance', 1, (7.,4.674), r'''
+PLOT_CELLS['task_performance', 1] = _cell('task_performance', 1, (15,5), r'''
 fig, axes = plt.subplots(1,2,figsize=FIGSIZE,dpi=DPI,layout="constrained",
                         gridspec_kw={"width_ratios":(1.,1.1)})
 for curve in data["curves"]:
@@ -117,7 +117,7 @@ for curve in data["curves"]:
     axes[0].plot(points[:,0],points[:,1],marker=symbol,color=color_,label=label)
     if curve["method"]=="mean":
         axes[0].fill_between(points[:,0],points[:,2],points[:,3],color=color_,alpha=.10)
-axes[0].set(xlabel="Number of sensors",ylabel="Output power / oracle power (dB)")
+axes[0].set(xlabel="Number of sensors",ylabel="Output power relative to ideal MVDR (dB)")
 labels = [STYLE[item["method"]][0] for item in data["paired"]]
 samples = [item["values"] for item in data["paired"]]
 boxes = axes[1].boxplot(samples,vert=False,patch_artist=True,
@@ -128,7 +128,7 @@ axes[1].set_yticks(np.arange(1,len(labels)+1),labels=labels)
 for patch,item in zip(boxes["boxes"],data["paired"]):
     patch.set(facecolor=STYLE[item["method"]][1],alpha=.85)
 axes[1].axvline(0.,linestyle="--",color="#222222",linewidth=1.)
-axes[1].set_xlabel("Paired loss difference (dB)")
+axes[1].set_xlabel("Output power difference: method $-$ posterior mean (dB)")
 fig.legend(*axes[0].get_legend_handles_labels(),loc="outside lower center",ncol=2,frameon=False,fontsize=10.)
 for ax,tag in zip(axes,["(a)","(b)"]):
     ax.spines[["top","right"]].set_visible(False)
@@ -136,7 +136,7 @@ for ax,tag in zip(axes,["(a)","(b)"]):
     ax.text(.015,.985,tag,transform=ax.transAxes,ha="left",va="top")
 ''')
 
-PLOT_CELLS['posterior_anisotropy', 1] = _cell('posterior_anisotropy', 1, (7.,6.042), r'''
+PLOT_CELLS['posterior_anisotropy', 1] = _cell('posterior_anisotropy', 1, (15,10), r'''
 fig = plt.figure(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 grid = fig.add_gridspec(2,2,height_ratios=(1.25,1.))
 sphere = fig.add_subplot(grid[0,0],projection="3d")
@@ -186,11 +186,11 @@ fig.colorbar(plt.cm.ScalarMappable(norm=norm,cmap=cmap),ax=sphere,
 p,pi = data["mean_eigenvalues"],data["iso_eigenvalues"]
 ax_spectrum.plot(np.arange(2,len(p)+1),p[1:],"o-",color=STYLE["mean"][1],label=STYLE["mean"][0])
 ax_spectrum.plot(np.arange(2,len(pi)+1),pi[1:],"^--",color=STYLE["iso"][1],label=STYLE["iso"][0])
-ax_spectrum.set(yscale="log",xlabel="Complementary direction",ylabel="Mean eigenvalue")
+ax_spectrum.set(yscale="log",xlabel=r"Eigenvalue index $j$",ylabel="Eigenvalue")
 ax_spectrum.legend(frameon=False,fontsize=10.)
 ax_difference.step(data["differences"],data["cdf"],where="post",color=STYLE["mean"][1])
 ax_difference.axvline(0.,color="#70777D",linestyle="--",linewidth=1.)
-ax_difference.set(xlabel="Isotropic minus full (dB)",ylabel="Fraction of episodes")
+ax_difference.set(xlabel="Output power reduction (dB)",ylabel="Empirical CDF")
 for ax in (ax_spectrum,ax_difference):
     ax.spines[["top","right"]].set_visible(False)
     ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
@@ -199,7 +199,7 @@ for ax,tag in [(ax_spectrum,"(b)"),(ax_difference,"(c)")]:
     ax.text(.015,.985,tag,transform=ax.transAxes,ha="left",va="top")
 ''')
 
-PLOT_CELLS['noise_adaptation', 1] = _cell('noise_adaptation', 1, (7.,6.156), r'''
+PLOT_CELLS['noise_adaptation', 1] = _cell('noise_adaptation', 1, (15,5), r'''
 fig,axes = plt.subplots(2,2,figsize=FIGSIZE,dpi=DPI,layout="constrained")
 for ax,key in [(axes[0,0],"sigma2"),(axes[0,1],"tau2")]:
     panel = data["variance"][key]
@@ -221,7 +221,7 @@ for ax,key in [(axes[1,0],"task"),(axes[1,1],"score")]:
         ax.plot(p[:,0],p[:,1],marker=symbol,color=color_,
                 linestyle="--" if trace["method"]=="misspecified" else "-",label=label)
         ax.fill_between(p[:,0],p[:,2],p[:,3],color=color_,alpha=.09)
-    ax.set(xlabel=data["time_label"],ylabel="Output power / oracle power (dB)" if key=="task" else "Predictive log score")
+    ax.set(xlabel=data["time_label"],ylabel="Output power relative to ideal MVDR (dB)" if key=="task" else "Mean log predictive density")
 handles = {}
 for ax,tag in zip(axes.flat,["(a)","(b)","(c)","(d)"]):
     for handle,label in zip(*ax.get_legend_handles_labels()):handles.setdefault(label,handle)
@@ -243,7 +243,7 @@ for ax,panel,tag in zip(axes,data["panels"],["(a)","(b)","(c)"]):
             ecolor=color_,alpha=.65,elinewidth=.7,capsize=2.)
     ax.plot([0.,1.],[0.,1.],"--",color="#70777D",linewidth=1.)
     ax.set(xlim=(.43,1.02),ylim=(-.01,1.03),xticks=[.5,.8,.95],
-        xlabel="Nominal probability",ylabel="Observed inclusion")
+        xlabel="Credible level",ylabel="Empirical coverage")
     ax.spines[["top","right"]].set_visible(False)
     ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
     ax.text(.015,.985,tag,transform=ax.transAxes,ha="left",va="top")
@@ -251,9 +251,9 @@ fig.legend(*axes[0].get_legend_handles_labels(),loc="outside lower center",ncol=
 '''
 for _page in (2,6):
     PLOT_CELLS['predictive_calibration',_page] = _cell(
-        'predictive_calibration',_page,(7.,3.762),_CALIBRATION_BODY)
+        'predictive_calibration',_page,(15,5),_CALIBRATION_BODY)
 
-PLOT_CELLS['computation_time',1] = _cell('computation_time',1,(7.,7.068),r'''
+PLOT_CELLS['computation_time',1] = _cell('computation_time',1,(15,10),r'''
 fig = plt.figure(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 grid = fig.add_gridspec(2,1)
 axes = [fig.add_subplot(grid[0]),fig.add_subplot(grid[1])]

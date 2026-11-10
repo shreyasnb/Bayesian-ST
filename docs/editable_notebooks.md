@@ -18,6 +18,11 @@ LaTeX enabled, use 300 dpi, and follow the implementation notebook's serif
 typography. These are editable defaults: there is no hidden function resizing
 the figure or enforcing a particular dpi after the cell creates it.
 
+The beamforming and contact notebooks use the author's current 15-by-5-inch
+canvases, with 15-by-10-inch canvases for the anisotropy and computation figures.
+Contact uses the same sizes, typography and labels as beamforming. Plot labels
+name the quantity; the nearby notebook prose defines the comparison and intervals.
+
 The data readers in `lib/notebook_*_data.py` load and check saved numerical
 arrays. They do not run a simulator, fit a posterior, or draw a figure. The
 contact reader completes its existing numerical-module imports before the
@@ -54,6 +59,15 @@ omit it when inspecting a fresh checkout before running the notebooks.
 Validation checks saved inputs and successful execution, rather than requiring
 notebook images to match the published PNG bytes. Editing dpi, figsize or labels
 does not require changing a figure manifest.
+
+To independently check the uncertainty bands and boxplots against the raw
+independent-trial records, run `python scripts/check_notebook_bands.py`.
+Variance bands show the empirical interquartile range across 256 trials;
+performance and log-density bands show pointwise 95% confidence intervals for
+their means. Coverage error bars use exact binomial intervals across 128 trials.
+Variance values are recorded before updates at reporting checkpoints. The step
+connections do not reconstruct values between reports; the dotted marker is the
+first report with changed generating variance, rather than its exact change time.
 
 ## Regenerate default cells
 

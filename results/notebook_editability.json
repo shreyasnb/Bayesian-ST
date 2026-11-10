@@ -30,7 +30,7 @@
       "pdf_headers_checked": 8,
       "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
       "editable_metadata_sha256": "5d07421edf4ce72e7edd485de43c59e004670e725ab74875b8d3b03c1a0f8fa2",
-      "sha256": "f4a101fb3f5219c0e9c3009cea3280cc3896cf1233260007079039c08e1abaf6"
+      "sha256": "d2b229cc19c0660e3273e6136d21b7c6fca17a8ecbbae6d95fd65f6f514213a6"
     },
     "02_field.ipynb": {
       "status": "verified",
@@ -58,7 +58,7 @@
       "pdf_headers_checked": 8,
       "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
       "editable_metadata_sha256": "bb8750a5467f04b1fc9186c8bad8de88da40fb770602f2fe2cf9dd9be2c13aeb",
-      "sha256": "3c9095145ebdd93a90f8ce9caf1ce5244e9f2576e2821b38d332afb9c5c78b5e"
+      "sha256": "c4b2fa6c249efd8d356c2910ac30a24e9767d8636d3fa578a5d41afbae0317dc"
     },
     "04_implementation_audit.ipynb": {
       "status": "verified",
@@ -266,7 +266,8 @@
   "verification_source_hashes": {
     "scripts/check_editable_notebooks.py": "87fe1c967bcd2212f96dc3cbecd760805b3e2bbc7d33c8c0daab1f8c84f96cb2",
     "scripts/probe_editable_plots.py": "ed622613b67fbe73c3ecd1dd6fd3bf671de55eb112c4932c61a56a3bc804fab3",
-    "scripts/execute_editable_notebooks.py": "8e932e2609be5d3a23ff7af5ade6de7384eb8a97fef53f128760b1da8b812122"
+    "scripts/execute_editable_notebooks.py": "8e932e2609be5d3a23ff7af5ade6de7384eb8a97fef53f128760b1da8b812122",
+    "scripts/check_notebook_bands.py": "7703181bc60baa98030d266cc8506de5ac1ec60b9916607ec00fc24ba5a00ca8"
   },
   "editing_policy": "DPI, figure size, labels, colors, layout and export paths are user controls. Their values and rendered PNG hashes are not restricted by the notebook verifier. Saved numerical inputs and data readers remain independently verified.",
   "matplotlib_boxplot_compatibility": {
@@ -279,5 +280,699 @@
     "rendered_png_byte_identical": true,
     "technical_functions_changed": false,
     "change": "Set y tick labels explicitly after boxplot creation; no dependency installation or numerical changes required."
+  },
+  "uncertainty_band_audit": {
+    "status": "passed",
+    "scope": "Independent recalculation of every interval used by displayed task/adaptation/calibration plots in the two notebooks; plotting/numerical arrays unchanged.",
+    "summaries": {
+      "beamforming": {
+        "recomputed_points": 180,
+        "maximum_absolute_difference": 2.220446049250313e-16,
+        "trial_counts": [
+          128,
+          256
+        ],
+        "adaptation_widths": {
+          "sigma2:known": {
+            "minimum": 0.0,
+            "maximum": 0.0,
+            "centers": [
+              0.2,
+              0.2,
+              0.2,
+              0.2,
+              0.8,
+              0.8,
+              0.8,
+              0.8
+            ],
+            "widths": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "sigma2:learned": {
+            "minimum": 0.0,
+            "maximum": 0.035132436091647956,
+            "centers": [
+              0.05,
+              0.19990751519485495,
+              0.2023657552731219,
+              0.2005378053121457,
+              0.1997717199878852,
+              0.7956199653372573,
+              0.8060539066906751,
+              0.8056415883820692
+            ],
+            "widths": [
+              0.0,
+              0.009562521330118062,
+              0.009226063833297049,
+              0.009018283120913906,
+              0.008023136257253621,
+              0.035132436091647956,
+              0.03275887755975926,
+              0.033388171586431925
+            ]
+          },
+          "sigma2:misspecified": {
+            "minimum": 0.0,
+            "maximum": 0.0,
+            "centers": [
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05,
+              0.05
+            ],
+            "widths": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "tau2:known": {
+            "minimum": 0.0,
+            "maximum": 0.0,
+            "centers": [
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "widths": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "tau2:learned": {
+            "minimum": 0.0,
+            "maximum": 0.4576429136391791,
+            "centers": [
+              0.2,
+              0.9527071943207865,
+              0.8727435564789923,
+              0.945771494550507,
+              1.0237223592122335,
+              1.0901005812287559,
+              0.7200206035824821,
+              0.9011037691169546
+            ],
+            "widths": [
+              0.0,
+              0.2903400993261087,
+              0.2816086380130842,
+              0.2623474031224625,
+              0.23239892227670156,
+              0.4576429136391791,
+              0.44423383038061726,
+              0.4467587758543903
+            ]
+          },
+          "tau2:misspecified": {
+            "minimum": 0.0,
+            "maximum": 0.0,
+            "centers": [
+              0.2,
+              0.2,
+              0.2,
+              0.2,
+              0.2,
+              0.2,
+              0.2,
+              0.2
+            ],
+            "widths": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "task:known": {
+            "minimum": 0.09103532582712728,
+            "maximum": 0.11269323354261407,
+            "centers": [
+              0.9131190736620816,
+              0.5126862627577873,
+              0.3420507676123812,
+              0.3583205218859103,
+              0.09445997079361662,
+              0.08647954626681789,
+              0.23144753540899982,
+              0.27550827813353695
+            ],
+            "widths": [
+              0.10639127326798237,
+              0.11269323354261407,
+              0.10184113482629176,
+              0.09793671131063608,
+              0.09196107776335216,
+              0.09167228363554851,
+              0.09103532582712728,
+              0.09707124820726468
+            ]
+          },
+          "task:learned": {
+            "minimum": 0.0921774811850925,
+            "maximum": 0.11393642734461534,
+            "centers": [
+              0.881036659985296,
+              0.5172403051774894,
+              0.34517758201272297,
+              0.3308127507174422,
+              0.44109113415048834,
+              0.2055280188191335,
+              0.29496846272477895,
+              0.2556103978285392
+            ],
+            "widths": [
+              0.10397532016740918,
+              0.11393642734461534,
+              0.10721995791846839,
+              0.10160767775544643,
+              0.09822229485313705,
+              0.09598810971628874,
+              0.0921774811850925,
+              0.09825244139759604
+            ]
+          },
+          "task:misspecified": {
+            "minimum": 0.09360154279962574,
+            "maximum": 0.15188666138647866,
+            "centers": [
+              1.493853000178739,
+              1.4561089130766085,
+              1.3854431520818737,
+              1.410401512181252,
+              0.6598464478688726,
+              0.6030088391044939,
+              0.6377366549875363,
+              0.6094900676668259
+            ],
+            "widths": [
+              0.1298718199432507,
+              0.15188666138647866,
+              0.13747373576583888,
+              0.12611075191672283,
+              0.09360154279962574,
+              0.09389915047269959,
+              0.09497183846795765,
+              0.10162791992840137
+            ]
+          },
+          "score:known": {
+            "minimum": 1.3541089055517261,
+            "maximum": 1.5638835259529813,
+            "centers": [
+              -19.85739668251531,
+              -19.64859256350107,
+              -19.502494191050467,
+              -18.644883562427722,
+              -61.92090777639744,
+              -62.2092545587214,
+              -62.813489622162166,
+              -62.30976606229682
+            ],
+            "widths": [
+              1.4258422614137132,
+              1.5638835259529813,
+              1.3839771909966458,
+              1.4291502214698468,
+              1.5121080140010292,
+              1.3901765244629303,
+              1.3541089055517261,
+              1.426840387073966
+            ]
+          },
+          "score:learned": {
+            "minimum": 1.3653972117096913,
+            "maximum": 5.754440308189061,
+            "centers": [
+              -71.20161621269023,
+              -19.762948414407198,
+              -19.57710452160017,
+              -18.609912458982297,
+              -109.36479858451617,
+              -62.35062921974,
+              -62.85820855038162,
+              -62.31930148944879
+            ],
+            "widths": [
+              5.483816501563581,
+              1.585339581597104,
+              1.3890875223277277,
+              1.4287894911041832,
+              5.754440308189061,
+              1.413429715985842,
+              1.3653972117096913,
+              1.4288461656016693
+            ]
+          },
+          "score:misspecified": {
+            "minimum": 4.899414175910664,
+            "maximum": 18.91052501031868,
+            "centers": [
+              -67.10014676648447,
+              -67.92564909813242,
+              -67.93397221884133,
+              -65.57844298137685,
+              -404.66733182998485,
+              -404.4979545469398,
+              -414.11357113582403,
+              -407.74449928605685
+            ],
+            "widths": [
+              4.949764440151597,
+              5.587697368152874,
+              4.899414175910664,
+              5.294943143031389,
+              18.91052501031868,
+              17.7265357276882,
+              17.685567575112714,
+              17.79127738860018
+            ]
+          }
+        }
+      },
+      "contact": {
+        "recomputed_points": 146,
+        "maximum_absolute_difference": 1.4210854715202004e-14,
+        "trial_counts": [
+          128,
+          256
+        ],
+        "adaptation_widths": {
+          "sigma2:known": {
+            "minimum": 0.0,
+            "maximum": 0.0,
+            "centers": [
+              16.0,
+              16.0,
+              16.0,
+              64.0,
+              64.0,
+              64.0
+            ],
+            "widths": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "sigma2:learned": {
+            "minimum": 0.0,
+            "maximum": 13.256923476655508,
+            "centers": [
+              4.0,
+              15.584427459656816,
+              15.691383515327571,
+              15.680484184803372,
+              64.36359256169338,
+              64.3416913834165
+            ],
+            "widths": [
+              0.0,
+              2.775068735973214,
+              2.929186897912201,
+              3.254955702659206,
+              13.256923476655508,
+              11.918741070449528
+            ]
+          },
+          "sigma2:misspecified": {
+            "minimum": 0.0,
+            "maximum": 0.0,
+            "centers": [
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0,
+              4.0
+            ],
+            "widths": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ]
+          },
+          "task:known": {
+            "minimum": 5.437789691765744,
+            "maximum": 23.686486425664725,
+            "centers": [
+              49.049096881654236,
+              48.90486168458518,
+              49.8633563058407,
+              195.64631043442898,
+              199.16076090940845,
+              193.090246737348
+            ],
+            "widths": [
+              5.437789691765744,
+              5.914250763345905,
+              5.953809985677637,
+              22.454799369313548,
+              23.686486425664725,
+              22.388130619934202
+            ]
+          },
+          "task:learned": {
+            "minimum": 5.43823087981778,
+            "maximum": 23.523936831926676,
+            "centers": [
+              49.00214202750128,
+              48.70174526913682,
+              49.85569025611265,
+              196.7264037520457,
+              197.6333963673586,
+              193.10090190394817
+            ],
+            "widths": [
+              5.43823087981778,
+              5.889002813589812,
+              5.954189317835258,
+              22.636823169146965,
+              23.523936831926676,
+              22.39392271185085
+            ]
+          },
+          "task:misspecified": {
+            "minimum": 5.43823087981778,
+            "maximum": 23.611070186830602,
+            "centers": [
+              49.00214202750128,
+              48.9433703810162,
+              49.873367854254425,
+              196.80869342837713,
+              199.15735271546316,
+              193.27268970201797
+            ],
+            "widths": [
+              5.43823087981778,
+              5.90950524887775,
+              5.953961957048108,
+              22.656990708839714,
+              23.611070186830602,
+              22.532030282050755
+            ]
+          },
+          "score:known": {
+            "minimum": 0.2817316975564452,
+            "maximum": 0.32546392631955,
+            "centers": [
+              12.290365395930738,
+              12.30865815856617,
+              12.271380567356712,
+              10.000216215712161,
+              10.040196611920784,
+              10.098180999223933
+            ],
+            "widths": [
+              0.2825608549895051,
+              0.2817316975564452,
+              0.3001471751324374,
+              0.3055506483692838,
+              0.28828726906241187,
+              0.32546392631955
+            ]
+          },
+          "score:learned": {
+            "minimum": 0.2899837926975941,
+            "maximum": 1.2735217600086788,
+            "centers": [
+              10.155609205907806,
+              12.293313464442583,
+              12.255916249284027,
+              6.957502717516138,
+              10.040924977976731,
+              10.109736559197453
+            ],
+            "widths": [
+              1.126702478888319,
+              0.29565335014560645,
+              0.31013903946064403,
+              1.2735217600086788,
+              0.2899837926975941,
+              0.32070719648904955
+            ]
+          },
+          "score:misspecified": {
+            "minimum": 1.126702478888319,
+            "maximum": 5.234753405310929,
+            "centers": [
+              10.155609205907806,
+              10.144883920362785,
+              10.129139829722249,
+              -10.181089744344122,
+              -9.867454461229974,
+              -8.255889114856545
+            ],
+            "widths": [
+              1.126702478888319,
+              1.1275308464410045,
+              1.2008173536918356,
+              4.82601481474281,
+              4.629422322659057,
+              5.234753405310929
+            ]
+          }
+        }
+      }
+    },
+    "raw_input_sha256": {
+      "results/beamforming/tables/paper/prediction/adaptation.csv": "d2b5e403e0b4ac7a3bc7c02b881b04fee07426a707ad694c39a9b7ae6d8c0a20",
+      "results/beamforming/data/paper/prediction/manifest.json": "362662cf020e0950e2c9c5e072c3b846b73f419f0efba80cc30f587730c55062",
+      "results/beamforming/tables/paper/prediction/calibration.csv": "17feb4a493ecb26b5252d90c769eb78c9ec01153a8a13ca29f292e63caf5cfbb",
+      "results/beamforming/data/paper/performance/stationary.csv": "337ed1e5267631474093c3de35b649d18381339d4c228da6a16eb78d20865016",
+      "results/contact/tables/paper/prediction/adaptation.csv": "acc54b61abba21a93e002114af396dc5437a5ffec040896ac296daff23b89648",
+      "results/contact/data/paper/prediction/manifest.json": "b139116146c43aa0017b38242c45ad678c6bdcdaaade4ad4f5faee23597d2dcc",
+      "results/contact/tables/paper/prediction/calibration.csv": "c376c903e73b046b7c011437d21901cc0640e1f4b491a3b680ad638cba6f071d",
+      "results/contact/tables/paper/performance/metrics.csv": "6fbf39129be8b26863f972f57dd2448cb67827881e129951fa87cacd0a4a5367",
+      "results/beamforming/tables/paper/performance/moving_episodes.csv": "ecc419a8433dea32c01eec824b9b06778843353d3970f97d4a7589f88a786419"
+    },
+    "artificial_widths": false,
+    "postprocessing": "Only the declared sample quantiles, Student-t intervals, or exact binomial intervals; no smoothing, rescaling, minimum display width, or added jitter in shaded bands.",
+    "important_distinction": "Repeated simulation trials produce empirical spread and uncertainty in aggregate means/coverage; these bands are not posterior credible tubes or Monte Carlo integration error. Finite integration error is checked separately.",
+    "boxplots": {
+      "example": "beamforming",
+      "figure": "task_performance",
+      "raw_input": "results/beamforming/tables/paper/performance/moving_episodes.csv",
+      "raw_input_sha256": "ecc419a8433dea32c01eec824b9b06778843353d3970f97d4a7589f88a786419",
+      "rows": [
+        {
+          "method": "mode",
+          "independent_trials": 256,
+          "saved_values_exact": true,
+          "median": 0.019237229614680912,
+          "interquartile_range": [
+            0.009982918471158377,
+            0.027699196452165467
+          ],
+          "description": "Matplotlib computes boxes, whiskers and outliers directly from these paired trial differences."
+        },
+        {
+          "method": "iso",
+          "independent_trials": 256,
+          "saved_values_exact": true,
+          "median": 0.000328493460650503,
+          "interquartile_range": [
+            -0.00013888131854267183,
+            0.0008313349756882832
+          ],
+          "description": "Matplotlib computes boxes, whiskers and outliers directly from these paired trial differences."
+        },
+        {
+          "method": "great_window",
+          "independent_trials": 256,
+          "saved_values_exact": true,
+          "median": -0.03676099894526355,
+          "interquartile_range": [
+            -0.05767239805470795,
+            -0.017908633843396075
+          ],
+          "description": "Matplotlib computes boxes, whiskers and outliers directly from these paired trial differences."
+        },
+        {
+          "method": "great_ew",
+          "independent_trials": 256,
+          "saved_values_exact": true,
+          "median": 0.021405673646575543,
+          "interquartile_range": [
+            0.010882786851179563,
+            0.03030970574759989
+          ],
+          "description": "Matplotlib computes boxes, whiskers and outliers directly from these paired trial differences."
+        }
+      ]
+    },
+    "producer": "scripts/check_notebook_bands.py",
+    "producer_sha256": "7703181bc60baa98030d266cc8506de5ac1ec60b9916607ec00fc24ba5a00ca8",
+    "counts": {
+      "interval_summaries": 326,
+      "boxplot_sample_sets": 4
+    },
+    "reporting_scope": "Adaptation values are pre-update estimates at sparse reporting times, not a dense trajectory between reports.",
+    "reporting_timing": {
+      "beamforming": {
+        "clock": "The adaptation table uses time_s=(t-1)*dt, with the first observation at zero.",
+        "independently_selected_episode": 0,
+        "reporting_interval_observations": 32,
+        "first_reporting_observation": 32,
+        "first_reporting_time_s": 0.31,
+        "first_pre_update_sigma2": 0.05,
+        "first_post_fit_sigma2_next": 0.1978633071261135,
+        "first_fit_effective_from_next_observation_time_s": 0.32,
+        "physical_noise_change_observation": 129,
+        "physical_noise_change_time_s": 1.28,
+        "first_report_with_changed_truth_observation": 160,
+        "first_report_with_changed_truth_time_s": 1.59,
+        "displayed_event_marker": "First reporting checkpoint with changed generating variance; not the exact physical change time.",
+        "source": "Noise variance is multiplied by four at zero-based index T//2 in the saved-study generator; no stream is regenerated here.",
+        "interpretation": "Displayed estimates are pre-update checkpoint values. Step segments only connect those reports and must not be read as measurements or the exact variance-update trajectory between checkpoints."
+      },
+      "contact": {
+        "clock": "The adaptation table uses time_s=(t-1)*dt, with the first observation at zero.",
+        "independently_selected_episode": 0,
+        "reporting_interval_observations": 32,
+        "first_reporting_observation": 32,
+        "first_reporting_time_s": 1.55,
+        "first_pre_update_sigma2": 4e-06,
+        "first_post_fit_sigma2_next": 1.5347688309766497e-05,
+        "first_fit_effective_from_next_observation_time_s": 1.6,
+        "physical_noise_change_observation": 97,
+        "physical_noise_change_time_s": 4.800000000000001,
+        "first_report_with_changed_truth_observation": 128,
+        "first_report_with_changed_truth_time_s": 6.3500000000000005,
+        "displayed_event_marker": "First reporting checkpoint with changed generating variance; not the exact physical change time.",
+        "source": "Noise variance is multiplied by four at zero-based index T//2 in the saved-study generator; no stream is regenerated here.",
+        "interpretation": "Displayed estimates are pre-update checkpoint values. Step segments only connect those reports and must not be read as measurements or the exact variance-update trajectory between checkpoints."
+      }
+    },
+    "point_records": "Run scripts/check_notebook_bands.py --output <path> to retain every independently recomputed endpoint."
+  },
+  "label_and_layout_revision": {
+    "baseline_commit": "57c9cf7",
+    "preserved_author_changes": "Beamforming figure sizes, plotting geometry, math formatting, removed comments and all technical calculations are preserved.",
+    "code_changes": "Label strings only in beamforming. Contact additionally follows the same figure sizes and uses a horizontal row for its three noise panels.",
+    "visual_verification": {
+      "01_array.ipynb": {
+        "preserved_code_cells_except_labels_and_contact_layout": 10,
+        "pdf_sizes_in": {
+          "setup_page1.pdf": [
+            15,
+            5
+          ],
+          "information_page1.pdf": [
+            15,
+            5
+          ],
+          "task_performance_page1.pdf": [
+            15,
+            5
+          ],
+          "posterior_anisotropy_page1.pdf": [
+            15,
+            10
+          ],
+          "noise_adaptation_page1.pdf": [
+            15,
+            5
+          ],
+          "predictive_calibration_page2.pdf": [
+            15,
+            5
+          ],
+          "predictive_calibration_page6.pdf": [
+            15,
+            5
+          ],
+          "computation_time_page1.pdf": [
+            15,
+            10
+          ]
+        },
+        "out_of_page_text": []
+      },
+      "03_contact.ipynb": {
+        "preserved_code_cells_except_labels_and_contact_layout": 10,
+        "pdf_sizes_in": {
+          "setup_page1.pdf": [
+            15,
+            5
+          ],
+          "information_page1.pdf": [
+            15,
+            5
+          ],
+          "task_performance_page1.pdf": [
+            15,
+            5
+          ],
+          "posterior_anisotropy_page1.pdf": [
+            15,
+            10
+          ],
+          "noise_adaptation_page1.pdf": [
+            15,
+            5
+          ],
+          "predictive_calibration_page2.pdf": [
+            15,
+            5
+          ],
+          "predictive_calibration_page6.pdf": [
+            15,
+            5
+          ],
+          "computation_time_page1.pdf": [
+            15,
+            10
+          ]
+        },
+        "out_of_page_text": []
+      }
+    },
+    "numerical_sources_unchanged": true,
+    "frozen_result_files_unchanged": 3781,
+    "metadata_reports_refreshed": [
+      "results/notebook_editability.json"
+    ],
+    "rendering": "Both application notebooks executed in fresh kernels and saved sixteen PDFs using visible per-cell save commands.",
+    "scope": "Concise axis/legend labels; comparator, coverage and interval definitions are stated in notebook prose."
   }
 }

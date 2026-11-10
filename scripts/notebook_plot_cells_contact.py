@@ -12,7 +12,7 @@ _STYLE = r'''
 LABELS = {
     "mean": r"$\overline P_t^+$", "mode": r"$P_{\widehat{\mathcal X}_t}$",
     "iso": r"$\overline P_t^{\mathrm{iso}}$", "isotropic": r"$\overline P_t^{\mathrm{iso}}$",
-    "regularized": "Regularized\nprojector", "great_window": "GREAT",
+    "regularized": "Regularized\nprojector", "great_window": "GREAT (sliding window)",
     "known": "True variances", "exact_known": r"True variances, $\beta=1$",
     "known_forgetting": "True variances, forgetting",
     "misspecified": "Fixed variances", "learned": "Learned variances",
@@ -52,7 +52,7 @@ plt.show()
 
 
 PLOT_CELLS = {}
-PLOT_CELLS[('setup', 1)] = _cell('setup', 1, (7.0, 3.42), r'''
+PLOT_CELLS[('setup', 1)] = _cell('setup', 1, (15,5), r'''
 fig = plt.figure(figsize=FIGSIZE, dpi=DPI, layout="constrained")
 grid = fig.add_gridspec(1, 2, width_ratios=(1.15, 1.))
 ax = fig.add_subplot(grid[0, 0], projection="3d")
@@ -102,7 +102,7 @@ ax.grid(color="#BFC4C8", alpha=.30, linewidth=.45)
 ax.text(.015, .985, "(b)", transform=ax.transAxes, ha="left", va="top")
 ''', style=False)
 
-PLOT_CELLS[('information', 1)] = _cell('information', 1, (7.0, 4.332), r'''
+PLOT_CELLS[('information', 1)] = _cell('information', 1, (15,5), r'''
 fig, axes = plt.subplots(1, 2, figsize=FIGSIZE, dpi=DPI, layout="constrained")
 levels = [.01, .05, .15, .3]
 contour_styles = [":", "--", "-.", "-"]
@@ -137,7 +137,7 @@ for ax, label in zip(axes, ["(a)", "(b)"]):
     ax.text(.015, .985, label, transform=ax.transAxes, ha="left", va="top")
 ''', style=False)
 
-PLOT_CELLS[('task_performance', 1)] = _cell('task_performance', 1, (7.0, 4.332), r'''
+PLOT_CELLS[('task_performance', 1)] = _cell('task_performance', 1, (15,5), r'''
 fig, axes = plt.subplots(1, 2, figsize=FIGSIZE, dpi=DPI, layout="constrained")
 for curve in data["curves"]:
     method, points = curve["method"], curve["points"]
@@ -163,7 +163,7 @@ for ax, label in zip(axes, ["(a)", "(b)"]):
 fig.legend(*axes[0].get_legend_handles_labels(), loc="outside lower center", ncol=2, frameon=False, fontsize=10.)
 ''')
 
-PLOT_CELLS[('posterior_anisotropy', 1)] = _cell('posterior_anisotropy', 1, (7.0, 6.042), r'''
+PLOT_CELLS[('posterior_anisotropy', 1)] = _cell('posterior_anisotropy', 1, (15,10), r'''
 # All display choices are local to this cell. The saved density values stay fixed.
 ELEVATION, AZIMUTH = 25., -50.
 COLOR_DECADES = 4.
@@ -218,10 +218,10 @@ ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
 ax.text(.015,.985,"(c)",transform=ax.transAxes,ha="left",va="top")
 ''')
 
-PLOT_CELLS[('noise_adaptation', 1)] = _cell('noise_adaptation', 1, (7.0, 5.814), r'''
+PLOT_CELLS[('noise_adaptation', 1)] = _cell('noise_adaptation', 1, (15,5), r'''
 fig = plt.figure(figsize=FIGSIZE,dpi=DPI,layout="constrained")
-grid = fig.add_gridspec(2,2)
-axes = [fig.add_subplot(grid[0,:]),fig.add_subplot(grid[1,0]),fig.add_subplot(grid[1,1])]
+grid = fig.add_gridspec(1,3)
+axes = [fig.add_subplot(grid[0,index]) for index in range(3)]
 for curve in data["variance"]:
     method = curve["method"]
     axes[0].step(curve["t"],curve["median"],where="post",color=COLORS[method],
@@ -231,7 +231,7 @@ for curve in data["variance"]:
 axes[0].step(data["truth_t"],data["truth"],where="post",color="#222222",linestyle=":",linewidth=1.35,label=r"$\sigma_t^2$")
 for event in data["events"]:axes[0].axvline(event,color="#70777D",linestyle=":",linewidth=.7)
 axes[0].set_xlabel(data["time_label"])
-axes[0].set_ylabel(r"Noise variance $((\mathrm{mm}/\mathrm{s})^2)$")
+axes[0].set_ylabel(r"Noise variance $\sigma^2$ $((\mathrm{mm}/\mathrm{s})^2)$")
 for ax, name in zip(axes[1:], ["future","scores"]):
     for curve in data[name]:
         method, points = curve["method"], curve["points"]
@@ -239,8 +239,8 @@ for ax, name in zip(axes[1:], ["future","scores"]):
             linestyle="--" if method=="misspecified" else "-",label=LABELS[method])
         ax.fill_between(points[:,0],points[:,2],points[:,3],color=COLORS[method],alpha=.09)
     ax.set_xlabel(data["time_label"])
-axes[1].set_ylabel(r"Observed future response MSE $((\mathrm{mm}/\mathrm{s})^2)$")
-axes[2].set_ylabel("Predictive log score")
+axes[1].set_ylabel(r"Response MSE $((\mathrm{mm}/\mathrm{s})^2)$")
+axes[2].set_ylabel("Mean log predictive density")
 for ax, label in zip(axes,["(a)","(b)","(c)"]):
     ax.spines[["top","right"]].set_visible(False)
     ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
@@ -262,16 +262,16 @@ for ax,panel,label in zip(axes,data["panels"],["(a)","(b)","(c)"]):
             fmt="none",ecolor=COLORS[method],alpha=.65,elinewidth=.7,capsize=2.)
     ax.plot([0.,1.],[0.,1.],"--",color="#70777D",linewidth=1.)
     ax.set(xlim=(.43,1.02),ylim=(-.01,1.03),xticks=[.5,.8,.95])
-    ax.set_xlabel("Nominal probability");ax.set_ylabel("Observed inclusion")
+    ax.set_xlabel("Credible level");ax.set_ylabel("Empirical coverage")
     ax.spines[["top","right"]].set_visible(False)
     ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
     ax.text(.015,.985,label,transform=ax.transAxes,ha="left",va="top")
 fig.legend(*axes[0].get_legend_handles_labels(),loc="outside lower center",ncol=2,frameon=False,fontsize=10.)
 '''
 for _page in (2,6):
-    PLOT_CELLS[('predictive_calibration',_page)] = _cell('predictive_calibration',_page,(7.0,3.762),_CALIBRATION_CODE)
+    PLOT_CELLS[('predictive_calibration',_page)] = _cell('predictive_calibration',_page,(15,5),_CALIBRATION_CODE)
 
-PLOT_CELLS[('computation_time', 1)] = _cell('computation_time', 1, (7.0, 7.068), r'''
+PLOT_CELLS[('computation_time', 1)] = _cell('computation_time', 1, (15,10), r'''
 fig = plt.figure(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 grid = fig.add_gridspec(2,1)
 axes = [fig.add_subplot(grid[0]),fig.add_subplot(grid[1])]
