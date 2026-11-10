@@ -57,6 +57,34 @@ checks are unchanged; the separate output directory protects the frozen study.
 The field and implementation notebooks read their historical saved data
 without invoking stale simulation producers.
 
+## Complete application figures
+
+Both application notebooks include an appended supplementary section covering
+every page of the individual saved figure catalogue. The section also starts
+with application tracking errors, followed by the distinct theorem fixtures
+and tracking bounds. Existing cells, outputs, metadata and order are preserved.
+Beamforming adds 32 figures; contact adds 31. Every added figure uses a visible
+`FIGSIZE = (15, 5)`, `DPI = 300`, LaTeX, full Matplotlib statements and its own
+supplementary PDF save block.
+
+To execute only those added cells while retaining all original cells exactly:
+
+```bash
+python scripts/execute_supplementary_notebooks.py
+python scripts/check_supplementary_notebooks.py --check-defaults
+```
+
+The added cells read the existing experiments, references and numerical checks.
+Application tracking plots distinguish point-subspace chordal distance from
+matrix estimation error when an estimate is a posterior mean. The separate
+tracking-bound plots retain eligibility conditions and the original theory
+fixtures. Concatenated PDF bundles reuse the individual catalogue pages.
+
+`append_supplementary_notebooks.py` appends missing cells without replacing
+the original prefix. It leaves an existing appendix alone by default;
+`--refresh-added` explicitly resets only its appended cells. The ordinary
+default-cell generator includes the appendix when regenerating an application.
+
 ## Run and check
 
 These commands execute the committed notebooks without rebuilding their cells:

@@ -176,6 +176,9 @@ def main():
         result['draft_figures'] = verify_export(ROOT)
         from lib.notebook_pdf_exports import verify_notebook_pdf_exports
         result['notebook_pdf_exports'] = verify_notebook_pdf_exports(ROOT, require_all=True)
+        from scripts.check_supplementary_notebooks import check as check_supplementary
+        result['supplementary_notebooks'] = {
+            example: check_supplementary(example, ROOT) for example in EXAMPLES}
         report = (ROOT / 'completion_report.md').read_text()
         assert 'runs are in progress' not in report and 'will be replaced' not in report
         inventory = json.loads((ROOT / 'final_artifact_inventory.json').read_text())

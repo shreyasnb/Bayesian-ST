@@ -179,3 +179,13 @@ records remain frozen. See [the editing workflow](editable_notebooks.md).
 The theory notebook's original numerical checks write their fresh diagnostic
 outputs to `results/notebook_runs/00_theory/`; field and audit notebooks read
 historical data without rerunning the old simulation producers.
+
+The application notebooks append every remaining individual catalogue page,
+including tracking bounds, curvature, complete benchmarks, variance estimation,
+calibration widths, mismatch, memory and numerical diagnostics. Separate
+application tracking plots show point-subspace and matrix estimation errors.
+All added figures use 15-by-5-inch canvases at 300 dpi and save supplementary
+copies through their visible controls. Run
+`scripts/execute_supplementary_notebooks.py` to execute only the additions while
+preserving the original cells, outputs and metadata; catalogue coverage is
+checked by `scripts/check_supplementary_notebooks.py`.

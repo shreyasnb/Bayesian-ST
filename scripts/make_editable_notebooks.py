@@ -55,6 +55,9 @@ def generate(names=NAMES, root=ROOT):
             notebook = build_legacy(root, name)
         nbformat.write(notebook, path)
         print('Wrote', path.name, 'with complete editable plotting cells')
+        if name in ('01_array', '03_contact'):
+            from scripts.append_supplementary_notebooks import append
+            append('beamforming' if name == '01_array' else 'contact', root=root)
 
 
 def main():

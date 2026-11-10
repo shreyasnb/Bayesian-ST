@@ -276,3 +276,20 @@ use separate local directories. All 3,781 previously tracked result files,
 including published PDFs, remain byte-identical. The scientific gate and all
 24 stage/component records remain valid. See the [notebook editability report](results/notebook_editability.json)
 and [the editing workflow](docs/editable_notebooks.md).
+
+## Complete notebook figure catalogue
+
+The beamforming notebook appends 32 figures and contact appends 31. Together
+they cover the 61 individual saved catalogue pages previously absent from the
+notebooks and add two application tracking-error figures. The existing 25
+beamforming cells and 26 contact cells are preserved exactly, including source,
+outputs, execution counts and metadata. Only the added cells were executed.
+
+Every addition exposes full Matplotlib code with a 15-by-5-inch canvas,
+300 dpi, LaTeX and its own supplementary PDF save block. Application tracking
+distinguishes point-subspace chordal distance from posterior-mean matrix error;
+the separate theoretical plots retain their eligibility conditions. Numerical
+artist arrays match the original catalogue plots, and the application tracking
+intervals were independently checked against the same saved 256 trials per
+checkpoint. No simulation, inference, benchmark selection or numerical record
+was changed.

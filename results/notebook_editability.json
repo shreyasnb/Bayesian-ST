@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "status": "passed",
-  "baseline_commit": "540112cacd68af1196f2aee8ae287396589de6b3",
-  "scope": "Editable notebook plotting and automatic manuscript PDF copies. Technical calculations, existing numerical records and canonical PDF files are unchanged; export documentation and audit reports are refreshed.",
+  "baseline_commit": "2ca403cd285d707251005c2a5f8b8f10742eb7b0",
+  "scope": "Append all missing saved application figure pages plus explicit tracking errors without changing any original notebook cell, technical implementation, numerical record or canonical PDF. New figures expose full Matplotlib code and retain separate supplementary manuscript copies.",
   "notebooks": {
     "00_theory.ipynb": {
       "status": "verified",
@@ -22,17 +22,17 @@
     "01_array.ipynb": {
       "status": "verified",
       "notebook": "01_array.ipynb",
-      "code_cells": 10,
-      "plotting_cells": 8,
-      "rendered_figures": 12,
-      "embedded_images": 12,
+      "code_cells": 43,
+      "plotting_cells": 40,
+      "rendered_figures": 44,
+      "embedded_images": 44,
       "verified_input_files": 109,
-      "verified_loader_sources": 2,
+      "verified_loader_sources": 3,
       "preserved_numerical_cells": 0,
-      "pdf_headers_checked": 12,
+      "pdf_headers_checked": 44,
       "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
-      "editable_metadata_sha256": "e42886a3ee5d65685632bac685304e6d59d08b05ba31a98545dd0f4fd6d9da5f",
-      "sha256": "ac8fa561ce132326a6804011fb6da158f688e9e1fc1d9066e4df29b3cf91b63a"
+      "editable_metadata_sha256": "a06a154066ccd0cda95cac0b0f1156d14c49d0030865374ba6fe3265c4347f23",
+      "sha256": "f492c854a096306f9c8a74fcc0dec0b93d90413e33bf9613a18660d1d92f71ef"
     },
     "02_field.ipynb": {
       "status": "verified",
@@ -52,17 +52,17 @@
     "03_contact.ipynb": {
       "status": "verified",
       "notebook": "03_contact.ipynb",
-      "code_cells": 10,
-      "plotting_cells": 8,
-      "rendered_figures": 11,
-      "embedded_images": 11,
+      "code_cells": 42,
+      "plotting_cells": 39,
+      "rendered_figures": 42,
+      "embedded_images": 42,
       "verified_input_files": 104,
-      "verified_loader_sources": 2,
+      "verified_loader_sources": 3,
       "preserved_numerical_cells": 0,
-      "pdf_headers_checked": 11,
+      "pdf_headers_checked": 42,
       "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
-      "editable_metadata_sha256": "b1e59e5db2eeddac6e088f55366b764553598d4b5c159b19fbd34da49a3c9a5e",
-      "sha256": "ac92a8b4658b5b472d866e036d73ecf62194430b0c2567194cd7ada290e91c93"
+      "editable_metadata_sha256": "26c7cea03655b4bdb0b4473ca2f9a1b52caf2f9822ee9a2b09779d670d332632",
+      "sha256": "eabc942dd80da52cf0254d7d2d00e201e053f7f849893fb1e34294fb83817da0"
     },
     "04_implementation_audit.ipynb": {
       "status": "verified",
@@ -82,10 +82,10 @@
   },
   "totals": {
     "notebooks": 5,
-    "plotting_cells": 49,
-    "rendered_figures": 56,
-    "embedded_images": 56,
-    "local_pdf_exports_checked": 56
+    "plotting_cells": 112,
+    "rendered_figures": 119,
+    "embedded_images": 119,
+    "local_pdf_exports_checked": 119
   },
   "defaults": {
     "text.usetex": true,
@@ -235,9 +235,9 @@
     "scope": "Actual rendering customization in fresh kernels; root notebook sources and canonical numerical/PDF results remain untouched."
   },
   "numerical_preservation": {
-    "tracked_result_files_checked": 3782,
-    "changed_result_files": 6,
-    "result_hash_map_sha256": "8a48ee98cbc96fc3fcb6b7614587bc3e40f51919538566c33cc7060fbe48b684",
+    "tracked_result_files_checked": 3805,
+    "changed_result_files": 5,
+    "result_hash_map_sha256": "44b3cfef061daf58619ad8baf7f0bb726d29256e705095a2122c855cb2d78441",
     "scientific_closure": {
       "status": "passed",
       "baseline_commit": "ded5499e6974a0078022434235c4d2a5c9b25424",
@@ -256,29 +256,31 @@
       "core_hash": "2e40ff85e8582880406878e840b6f67ddfec10bc8c8cda89d4304839d2bc74c4",
       "private_output": "results/notebook_runs/00_theory/"
     },
-    "unchanged_result_files": 3776,
+    "unchanged_result_files": 3800,
     "changed_metadata_reports": [
       "results/beamforming/data/validation/pdf_layout_checks.json",
       "results/contact/data/validation/pdf_layout_checks.json",
       "results/draft_figure_manifest.json",
-      "results/main/README.md",
       "results/notebook_editability.json",
       "results/supplementary/README.md"
     ],
     "changed_existing_pdfs": 0,
-    "changed_numerical_records": 0
+    "changed_numerical_records": 0,
+    "baseline_commit": "2ca403cd285d707251005c2a5f8b8f10742eb7b0"
   },
   "outputs": {
     "editable_pdfs": "results/notebook_exports/<notebook_stem>/",
     "fresh_theory_diagnostics": "results/notebook_runs/00_theory/",
-    "canonical_results": "Existing tracked files unchanged",
+    "canonical_results": "Existing numerical records and canonical PDFs unchanged; manuscript indexes and validation metadata refreshed",
     "customization_probe_files": "Temporary and regenerable; not required for a fresh checkout"
   },
   "checks": {
     "structural_verifier": "scripts/check_editable_notebooks.py",
     "execution_runner": "scripts/execute_editable_notebooks.py",
     "fresh_kernel_customization_probes": "scripts/probe_editable_plots.py",
-    "scientific_and_publication_verifier": "scripts/check_final_simulations.py"
+    "scientific_and_publication_verifier": "scripts/check_final_simulations.py",
+    "supplementary_coverage": "scripts/check_supplementary_notebooks.py",
+    "supplementary_execution": "scripts/execute_supplementary_notebooks.py"
   },
   "verification_source_hashes": {
     "scripts/check_editable_notebooks.py": "7d51761f579011b971768ea896801dcfe40d868e2e87676de7a8da1cf0bead44",
@@ -286,7 +288,20 @@
     "scripts/execute_editable_notebooks.py": "8e932e2609be5d3a23ff7af5ade6de7384eb8a97fef53f128760b1da8b812122",
     "scripts/check_notebook_bands.py": "7703181bc60baa98030d266cc8506de5ac1ec60b9916607ec00fc24ba5a00ca8",
     "lib/notebook_pdf_exports.py": "3b1ab68672a07f3796c0e5e585d7a3759116e09fa6718dad3a9dbc9c1c93a482",
-    "scripts/export_draft_figures.py": "2cc3f6b99623765af42e21e468616b24109b600eaaa989ea43e6a756d6e4aa17"
+    "scripts/export_draft_figures.py": "2cc3f6b99623765af42e21e468616b24109b600eaaa989ea43e6a756d6e4aa17",
+    "lib/notebook_supplementary_data.py": "96cfdaa52eab027f06e6d730398796ec43af8e8a323d0e39246a2e4255240431",
+    "scripts/append_supplementary_notebooks.py": "5bcdd825e7410b003edd36064f7e458043285439f74ac03e92f4fd9b6f2d5351",
+    "scripts/execute_supplementary_notebooks.py": "a86f2de3be3f37710ccc4948912831c88c8195bf3956095beb01c25db44e6517",
+    "scripts/check_supplementary_notebooks.py": "c7468621ac9cc7852fba46de05b421b9468e698e1260611f614ba8fa5b767799",
+    "scripts/notebook_supplementary_common.py": "b40d0305e3c4777e6ca657884f816d1060012f912af20a7b21674e8d5354a27a",
+    "scripts/check_final_simulations.py": "842abcf225cbd67891ce276ec382b4dcda97a1e0227e342448417264c54968d7",
+    "scripts/make_editable_notebooks.py": "69caf9e2e8507a9d0379838c941973c0896dc7280876158c85964a87227f23eb",
+    "scripts/notebook_supp_tracking.py": "b057ba785a6d38fd4cf9eed5204716af99225824a2d29a3ee44e3fbf04f88237",
+    "scripts/notebook_supp_theory.py": "cf1f81b867e73ffe752acf2cd79ea99f2febe47d08a5d2d3993a58d2a3205445",
+    "scripts/notebook_supp_comparisons.py": "9a5932f69dccb7470c30790c005587c6d8de854b85121b96178ab010503054e5",
+    "scripts/notebook_supp_adaptation.py": "691728a2f2ccd55cedc020b4779c1286e89a47a16d151776ea2405a2dea7c104",
+    "scripts/notebook_supp_calibration.py": "039f730f7d643902a99c39b35bdf70e82539cd36be6dc8b258875e7d64e85a36",
+    "scripts/notebook_supp_accuracy.py": "394ff5b2b963216f6fd1eb241c0ea371e8815c8f41142fd766ea869aaf358ef1"
   },
   "editing_policy": "DPI, figure size, labels, colors, layout and export paths are user controls. Their values and rendered PNG hashes are not restricted by the notebook verifier. Saved numerical inputs and data readers remain independently verified.",
   "matplotlib_boxplot_compatibility": {
@@ -1920,5 +1935,2818 @@
       "verified_byte_identical_manuscript_copies": 23
     },
     "scope": "Both application notebooks; current figure filenames are retained in their assigned main or supplementary folders. Original canonical catalogue PDFs remain unchanged."
+  },
+  "supplementary_appendix_revision": {
+    "status": "passed",
+    "baseline_commit": "2ca403cd285d707251005c2a5f8b8f10742eb7b0",
+    "original_cells": {
+      "01_array.ipynb": {
+        "status": "passed",
+        "preserved_original_cells": 25,
+        "source_outputs_execution_counts_metadata_and_ids_unchanged": true,
+        "comparison": "Full original cell objects against the starting committed notebook"
+      },
+      "03_contact.ipynb": {
+        "status": "passed",
+        "preserved_original_cells": 26,
+        "source_outputs_execution_counts_metadata_and_ids_unchanged": true,
+        "comparison": "Full original cell objects against the starting committed notebook"
+      }
+    },
+    "completeness": {
+      "beamforming": {
+        "status": "passed",
+        "notebook": "01_array.ipynb",
+        "original_cells": 25,
+        "original_cells_checked_against_baseline": true,
+        "canonical_pages_covered": 39,
+        "added_figure_cells": 32,
+        "added_figsize_in": [
+          15,
+          5
+        ],
+        "added_dpi": 300,
+        "requested_defaults_match": true,
+        "defaults_enforced": true,
+        "actual_application_tracking_error": true,
+        "rendered_figures": 44,
+        "pdf_exports": 44
+      },
+      "contact": {
+        "status": "passed",
+        "notebook": "03_contact.ipynb",
+        "original_cells": 26,
+        "original_cells_checked_against_baseline": true,
+        "canonical_pages_covered": 38,
+        "added_figure_cells": 31,
+        "added_figsize_in": [
+          15,
+          5
+        ],
+        "added_dpi": 300,
+        "requested_defaults_match": true,
+        "defaults_enforced": true,
+        "actual_application_tracking_error": true,
+        "rendered_figures": 42,
+        "pdf_exports": 42
+      }
+    },
+    "canonical_pages_added": 61,
+    "application_tracking_figures_added": 2,
+    "total_figures_added": 63,
+    "actual_application_tracking_checks": {
+      "beamforming": {
+        "status": "passed",
+        "condition": "smooth",
+        "checkpoint_times": 32,
+        "trials": 256,
+        "point_methods": 4,
+        "matrix_methods": 3,
+        "independent_interval_checks": 224,
+        "raw_input": "results/beamforming/data/paper/performance/moving_checkpoints.csv.gz",
+        "raw_sha256": "6f07236c41f8ca8696bc9b6cbf5e576411127c65f3f58385068bbb402bea5b29"
+      },
+      "contact": {
+        "status": "passed",
+        "condition": "sphere",
+        "checkpoint_times": 6,
+        "trials": 256,
+        "point_methods": 3,
+        "matrix_methods": 3,
+        "independent_interval_checks": 36,
+        "raw_input": "results/contact/tables/paper/performance/metrics.csv",
+        "raw_sha256": "6fbf39129be8b26863f972f57dd2448cb67827881e129951fa87cacd0a4a5367"
+      }
+    },
+    "numerical_artist_parity": {
+      "status": "passed",
+      "canonical_pages": 61,
+      "families": {
+        "theory": [
+          {
+            "example": "beamforming",
+            "stem": "tracking_bound",
+            "page": 1,
+            "numeric_elements": 432,
+            "arrays_equal": true
+          },
+          {
+            "example": "beamforming",
+            "stem": "tracking_bound",
+            "page": 2,
+            "numeric_elements": 130,
+            "arrays_equal": true
+          },
+          {
+            "example": "beamforming",
+            "stem": "tracking_bound",
+            "page": 3,
+            "numeric_elements": 18,
+            "arrays_equal": true
+          },
+          {
+            "example": "beamforming",
+            "stem": "tracking_bound",
+            "page": 4,
+            "numeric_elements": 28,
+            "arrays_equal": true
+          },
+          {
+            "example": "beamforming",
+            "stem": "posterior_curvature",
+            "page": 1,
+            "numeric_elements": 180,
+            "arrays_equal": true
+          },
+          {
+            "example": "beamforming",
+            "stem": "block_updates",
+            "page": 1,
+            "numeric_elements": 52,
+            "arrays_equal": true
+          },
+          {
+            "example": "contact",
+            "stem": "tracking_bound",
+            "page": 1,
+            "numeric_elements": 428,
+            "arrays_equal": true
+          },
+          {
+            "example": "contact",
+            "stem": "tracking_bound",
+            "page": 2,
+            "numeric_elements": 130,
+            "arrays_equal": true
+          },
+          {
+            "example": "contact",
+            "stem": "tracking_bound",
+            "page": 3,
+            "numeric_elements": 18,
+            "arrays_equal": true
+          },
+          {
+            "example": "contact",
+            "stem": "tracking_bound",
+            "page": 4,
+            "numeric_elements": 28,
+            "arrays_equal": true
+          },
+          {
+            "example": "contact",
+            "stem": "posterior_curvature",
+            "page": 1,
+            "numeric_elements": 156,
+            "arrays_equal": true
+          },
+          {
+            "example": "contact",
+            "stem": "block_updates",
+            "page": 1,
+            "numeric_elements": 60,
+            "arrays_equal": true
+          }
+        ],
+        "calibration": {
+          "beamforming": [
+            {
+              "stem": "predictive_calibration",
+              "page": 1,
+              "artist_arrays_equal": true,
+              "elements_compared": 396
+            },
+            {
+              "stem": "predictive_calibration",
+              "page": 3,
+              "artist_arrays_equal": true,
+              "elements_compared": 396
+            },
+            {
+              "stem": "predictive_calibration",
+              "page": 4,
+              "artist_arrays_equal": true,
+              "elements_compared": 396
+            },
+            {
+              "stem": "predictive_calibration",
+              "page": 5,
+              "artist_arrays_equal": true,
+              "elements_compared": 396
+            },
+            {
+              "stem": "predictive_calibration",
+              "page": 7,
+              "artist_arrays_equal": true,
+              "elements_compared": 406
+            },
+            {
+              "stem": "predictive_calibration",
+              "page": 8,
+              "artist_arrays_equal": true,
+              "elements_compared": 416
+            },
+            {
+              "stem": "predictive_calibration",
+              "page": 9,
+              "artist_arrays_equal": true,
+              "elements_compared": 412
+            },
+            {
+              "stem": "predictive_scores",
+              "page": 1,
+              "artist_arrays_equal": true,
+              "elements_compared": 1544
+            }
+          ],
+          "contact": [
+            {
+              "stem": "predictive_calibration",
+              "page": 1,
+              "artist_arrays_equal": true,
+              "elements_compared": 396
+            },
+            {
+              "stem": "predictive_calibration",
+              "page": 3,
+              "artist_arrays_equal": true,
+              "elements_compared": 396
+            },
+            {
+              "stem": "predictive_calibration",
+              "page": 4,
+              "artist_arrays_equal": true,
+              "elements_compared": 396
+            },
+            {
+              "stem": "predictive_calibration",
+              "page": 5,
+              "artist_arrays_equal": true,
+              "elements_compared": 396
+            },
+            {
+              "stem": "predictive_calibration",
+              "page": 7,
+              "artist_arrays_equal": true,
+              "elements_compared": 426
+            },
+            {
+              "stem": "predictive_calibration",
+              "page": 8,
+              "artist_arrays_equal": true,
+              "elements_compared": 424
+            },
+            {
+              "stem": "predictive_calibration",
+              "page": 9,
+              "artist_arrays_equal": true,
+              "elements_compared": 434
+            },
+            {
+              "stem": "predictive_scores",
+              "page": 1,
+              "artist_arrays_equal": true,
+              "elements_compared": 1544
+            }
+          ]
+        },
+        "adaptation": {
+          "status": "passed",
+          "figures": [
+            {
+              "example": "beamforming",
+              "stem": "noise_adaptation",
+              "page": 2,
+              "exact_arrays": 44,
+              "numeric_elements": 600
+            },
+            {
+              "example": "beamforming",
+              "stem": "noise_adaptation",
+              "page": 3,
+              "exact_arrays": 46,
+              "numeric_elements": 604
+            },
+            {
+              "example": "beamforming",
+              "stem": "variance_estimation",
+              "page": 1,
+              "exact_arrays": 114,
+              "numeric_elements": 332
+            },
+            {
+              "example": "contact",
+              "stem": "noise_adaptation",
+              "page": 2,
+              "exact_arrays": 34,
+              "numeric_elements": 364
+            },
+            {
+              "example": "contact",
+              "stem": "variance_estimation",
+              "page": 1,
+              "exact_arrays": 51,
+              "numeric_elements": 346
+            },
+            {
+              "example": "contact",
+              "stem": "noise_adaptation",
+              "page": 3,
+              "exact_arrays": 281,
+              "numeric_elements": 2055158
+            },
+            {
+              "example": "contact",
+              "stem": "noise_adaptation",
+              "page": 4,
+              "exact_arrays": 272,
+              "numeric_elements": 1028995
+            },
+            {
+              "example": "contact",
+              "stem": "posterior_anisotropy",
+              "page": 2,
+              "exact_arrays": 293,
+              "numeric_elements": 2056394
+            },
+            {
+              "example": "contact",
+              "stem": "task_performance",
+              "page": 2,
+              "exact_arrays": 26,
+              "numeric_elements": 40
+            }
+          ]
+        },
+        "comparisons": {
+          "beamforming": [
+            {
+              "stem": "additional_comparisons",
+              "page": 1,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 3
+            },
+            {
+              "stem": "additional_comparisons",
+              "page": 2,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 3
+            },
+            {
+              "stem": "additional_comparisons",
+              "page": 3,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 3
+            },
+            {
+              "stem": "additional_comparisons",
+              "page": 4,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 80
+            },
+            {
+              "stem": "additional_comparisons",
+              "page": 5,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 80
+            },
+            {
+              "stem": "additional_comparisons",
+              "page": 6,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 80
+            },
+            {
+              "stem": "additional_comparisons",
+              "page": 7,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 80
+            },
+            {
+              "stem": "additional_comparisons",
+              "page": 8,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 80
+            },
+            {
+              "stem": "model_mismatch",
+              "page": 1,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 130
+            }
+          ],
+          "contact": [
+            {
+              "stem": "additional_comparisons",
+              "page": 1,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 4
+            },
+            {
+              "stem": "additional_comparisons",
+              "page": 2,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 2
+            },
+            {
+              "stem": "additional_comparisons",
+              "page": 3,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 8
+            },
+            {
+              "stem": "additional_comparisons",
+              "page": 4,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 10
+            },
+            {
+              "stem": "model_mismatch",
+              "page": 1,
+              "numeric_artist_arrays_equal": true,
+              "arrays": 182
+            }
+          ]
+        },
+        "accuracy": [
+          {
+            "example": "beamforming",
+            "stem": "computation_time",
+            "page": 2,
+            "arrays": 4,
+            "elements": 24,
+            "exact_equal": true
+          },
+          {
+            "example": "beamforming",
+            "stem": "numerical_accuracy",
+            "page": 1,
+            "arrays": 12,
+            "elements": 282,
+            "exact_equal": true
+          },
+          {
+            "example": "beamforming",
+            "stem": "numerical_accuracy",
+            "page": 2,
+            "arrays": 12,
+            "elements": 48,
+            "exact_equal": true
+          },
+          {
+            "example": "beamforming",
+            "stem": "numerical_accuracy",
+            "page": 3,
+            "arrays": 18,
+            "elements": 72,
+            "exact_equal": true
+          },
+          {
+            "example": "beamforming",
+            "stem": "paper_summary",
+            "page": 1,
+            "arrays": 84,
+            "elements": 390,
+            "exact_equal": true
+          },
+          {
+            "example": "contact",
+            "stem": "computation_time",
+            "page": 2,
+            "arrays": 4,
+            "elements": 24,
+            "exact_equal": true
+          },
+          {
+            "example": "contact",
+            "stem": "numerical_accuracy",
+            "page": 1,
+            "arrays": 12,
+            "elements": 198,
+            "exact_equal": true
+          },
+          {
+            "example": "contact",
+            "stem": "numerical_accuracy",
+            "page": 2,
+            "arrays": 12,
+            "elements": 48,
+            "exact_equal": true
+          },
+          {
+            "example": "contact",
+            "stem": "numerical_accuracy",
+            "page": 3,
+            "arrays": 18,
+            "elements": 72,
+            "exact_equal": true
+          },
+          {
+            "example": "contact",
+            "stem": "paper_summary",
+            "page": 1,
+            "arrays": 343,
+            "elements": 2056406,
+            "exact_equal": true
+          }
+        ]
+      },
+      "scope": "Exact artist numerical arrays against the existing saved-page renderer; no simulation, fitting, sampling or numerical evidence modification."
+    },
+    "execution": {
+      "full_added_cells": {
+        "beamforming": {
+          "status": "verified",
+          "notebook": "01_array.ipynb",
+          "code_cells": 43,
+          "plotting_cells": 40,
+          "rendered_figures": 44,
+          "embedded_images": 44,
+          "verified_input_files": 109,
+          "verified_loader_sources": 3,
+          "preserved_numerical_cells": 0,
+          "pdf_headers_checked": 44,
+          "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
+          "editable_metadata_sha256": "a06a154066ccd0cda95cac0b0f1156d14c49d0030865374ba6fe3265c4347f23",
+          "sha256": "25eb4451496e2fb5dfa3eb3c96fccbc4d6b531beec7b95efe696f3946016863f",
+          "preserved_original_cells": 25,
+          "executed_added_code_cells": 33
+        },
+        "contact": {
+          "status": "verified",
+          "notebook": "03_contact.ipynb",
+          "code_cells": 42,
+          "plotting_cells": 39,
+          "rendered_figures": 42,
+          "embedded_images": 42,
+          "verified_input_files": 104,
+          "verified_loader_sources": 3,
+          "preserved_numerical_cells": 0,
+          "pdf_headers_checked": 42,
+          "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
+          "editable_metadata_sha256": "26c7cea03655b4bdb0b4473ca2f9a1b52caf2f9822ee9a2b09779d670d332632",
+          "sha256": "3bfba942e7f2b715a9e192de68da40b98dd51f93415ede0286342d2338a49fdf",
+          "preserved_original_cells": 26,
+          "executed_added_code_cells": 32
+        }
+      },
+      "final_label_layout_rerenders": {
+        "beamforming": {
+          "status": "verified",
+          "notebook": "01_array.ipynb",
+          "code_cells": 43,
+          "plotting_cells": 40,
+          "rendered_figures": 44,
+          "embedded_images": 44,
+          "verified_input_files": 109,
+          "verified_loader_sources": 3,
+          "preserved_numerical_cells": 0,
+          "pdf_headers_checked": 44,
+          "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
+          "editable_metadata_sha256": "a06a154066ccd0cda95cac0b0f1156d14c49d0030865374ba6fe3265c4347f23",
+          "sha256": "f492c854a096306f9c8a74fcc0dec0b93d90413e33bf9613a18660d1d92f71ef",
+          "preserved_original_cells": 25,
+          "executed_added_code_cells": 3
+        },
+        "contact": {
+          "status": "verified",
+          "notebook": "03_contact.ipynb",
+          "code_cells": 42,
+          "plotting_cells": 39,
+          "rendered_figures": 42,
+          "embedded_images": 42,
+          "verified_input_files": 104,
+          "verified_loader_sources": 3,
+          "preserved_numerical_cells": 0,
+          "pdf_headers_checked": 42,
+          "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
+          "editable_metadata_sha256": "26c7cea03655b4bdb0b4473ca2f9a1b52caf2f9822ee9a2b09779d670d332632",
+          "sha256": "eabc942dd80da52cf0254d7d2d00e201e053f7f849893fb1e34294fb83817da0",
+          "preserved_original_cells": 26,
+          "executed_added_code_cells": 2
+        }
+      },
+      "scope": "Only appended cells executed in fresh kernels; original cells retained without execution or normalization."
+    },
+    "actual_pdf_audit": {
+      "status": "passed",
+      "new_pdfs_checked": 63,
+      "all_live_copies": 86,
+      "local_matches": 86,
+      "files": {
+        "results/supplementary/beamforming/tracking_error_supp_page1.pdf": {
+          "sha256": "5f97103cb79450e7ce2f86b9a59332317bfcbc7b7162cc8e85b8084e3aa056c0",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/tracking_bound_supp_page1.pdf": {
+          "sha256": "1a637ae1b6d20f7506bde96aedf64206cf0930deca41bdcb6469ae6c5d2a0230",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            299.99999667745476,
+            299.999990716445
+          ],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/tracking_bound_supp_page2.pdf": {
+          "sha256": "acc60a965089439345f19541387bb86bd29d8373b896c595d0cd1da275415952",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/tracking_bound_supp_page3.pdf": {
+          "sha256": "6051cbef54bf8398bcf00e8ae47430f96443a8bfb08cee7d6738db28250647b7",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/tracking_bound_supp_page4.pdf": {
+          "sha256": "c4541a3cf3b47755683fb9756a4af84e7d7c7904cb3c72c41915a17c923f5f48",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/posterior_curvature_supp_page1.pdf": {
+          "sha256": "6c1d29cb5a000fc9fe8923683dded19cbd3042bacca5aa3fc6979c4c7e508eb0",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/block_updates_supp_page1.pdf": {
+          "sha256": "5564efb51c613fbc4b3be50119d9d0eb5af252f673f1653645089ca1080999ea",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page1.pdf": {
+          "sha256": "e3693cd96f30c50953ccca94ad79d6ece11cb16f80d7db934abd9cf4c9aa9727",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            300.00000356305645,
+            299.99998759448096,
+            300.00001100393484,
+            300.00000802326406
+          ],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page2.pdf": {
+          "sha256": "adf7e949abb028ed74a96fc2c5010e0297e66849b05d0d4c6171421574258f49",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            300.00000356305645,
+            299.99998759448096,
+            300.00001100393484,
+            300.00000802326406
+          ],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page3.pdf": {
+          "sha256": "c3f3d97d9cb23a922ea9c001f3437e978896655fc7237a7480a273f21db00011",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            300.00000356305645,
+            299.99998759448096,
+            300.00001100393484,
+            300.00000802326406
+          ],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page4.pdf": {
+          "sha256": "efa1279b528f8ea08b81eed66ace100cb13e241fe59ae9dc804003ca545af877",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page5.pdf": {
+          "sha256": "705a2c2f6a2e1ca686a08c219b1675a1b3e35f28f5256b439797ed4336ac29cc",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page6.pdf": {
+          "sha256": "dfa1d1f205b81191a8c7e166f4d2b35a2876579663834e10c23086aac70c0704",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page7.pdf": {
+          "sha256": "e68f151d9b4ed3740a3e4d69c741fbaafba38dd28b2c6e9ddbeaeeada0e34f7f",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page8.pdf": {
+          "sha256": "c232bd47b50ff454410f1a2bd395376418e5f5f631945d0b6320be3c003fdc64",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/variance_estimation_supp_page1.pdf": {
+          "sha256": "76455f0bc04b50e7bbc199cfa94332881e5046e671f560eee7808dbcc0ddc24b",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/noise_adaptation_supp_page2.pdf": {
+          "sha256": "9e50c00e1699837a830d3d548eeaa82affad88bdfaf77d7e92127d1d4d4def8a",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/noise_adaptation_supp_page3.pdf": {
+          "sha256": "178b60012c9bbd22becdf0bd219bfa2a0c14273d40182fda6770f4ed4b6a52a1",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page1.pdf": {
+          "sha256": "fdc6de06d1104d60064fdd313c8a721c777d827d136f6cd605c5ddf03259a784",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page3.pdf": {
+          "sha256": "4bdcdcc80b50fd842020f39819918bf0ccec5073c800feeff0420f4541b22101",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page4.pdf": {
+          "sha256": "3c8ccfba296adf5ef3df6954771d578f9d5f9ab11c213fe71d0d9988b2f5dbb8",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page5.pdf": {
+          "sha256": "4da5d6b64373d3e01df09aadc68b4a1939628baf307bd1381ec978c4ee8218be",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page7.pdf": {
+          "sha256": "dcca8447aab6397578e42cffeb97ada70a9c13cab402a6ef301564b2f6879b7c",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page8.pdf": {
+          "sha256": "542ff25ea49c88480dc15ef9bae13e3923bd7e888b93364520d536706df63071",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page9.pdf": {
+          "sha256": "87ba568da9d8baa7f47c4c74c2b43eff05443dfe863a359cfce3e6e13277b676",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/predictive_scores_supp_page1.pdf": {
+          "sha256": "ec564bd044f61ff3321c1e75796f9d4c9dbb161b661030ac20007fe256fcc3e0",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/model_mismatch_supp_page1.pdf": {
+          "sha256": "b3f29b608ccca2e9fc70406970c895085ad7706c874b803e533782dd3a1e807d",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/computation_time_supp_page2.pdf": {
+          "sha256": "9c09b6220ce9f5f32f33602c22d0d4d8ceab972f2d9feb2983b41e474c52b308",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/numerical_accuracy_supp_page1.pdf": {
+          "sha256": "4327ae895e2a11a78d96d06fe7e3200ad2709c7146b555b9b1a86405417ec718",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/numerical_accuracy_supp_page2.pdf": {
+          "sha256": "5c5af5c1cf5f7c5bd417b4b656628defba44d5b81cdd362a9237dfaf74312ca0",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/numerical_accuracy_supp_page3.pdf": {
+          "sha256": "b22d1fd1d59ee004334ac970a15cf3809f5a924aa10eea9954c8db80a5acdb39",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/beamforming/paper_summary_supp_page1.pdf": {
+          "sha256": "818b6f9fec986e78ef4daf893dfb091096da66f70e535d0f1bd286734457bd4c",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/tracking_error_supp_page1.pdf": {
+          "sha256": "9718864615ccb07ce8a8f9cabbe61a52d8ffad212b28d150399911c7c93b4996",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/tracking_bound_supp_page1.pdf": {
+          "sha256": "8f03d6caae1ea488c488c21bb4834ffd4bcb35f5b071ecb27f849d8afd006860",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            300.0000099567958,
+            299.999990716445
+          ],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/tracking_bound_supp_page2.pdf": {
+          "sha256": "cbdd7f7175e2cd69cfc608cfc10b05e436bd1937d00b8b1cbf0d0ce24138e308",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/tracking_bound_supp_page3.pdf": {
+          "sha256": "13e798544014d0718522d9cad8cc675b8e3b782f6f5de518aab77c08205c3124",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/tracking_bound_supp_page4.pdf": {
+          "sha256": "6d7b36ea8c4e5c190fe4ea3b9d1dc6b5cb2f887a9d57e2a2abcf02e3bf345617",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/posterior_curvature_supp_page1.pdf": {
+          "sha256": "fa8a3510724b4ca689571e6c937b5eef0f9244a34dbdb0ba057fdb5581c716e3",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/block_updates_supp_page1.pdf": {
+          "sha256": "a69811918a0742194beb86d33d7b770af030ca8e0fdea6fdfd1b5cd5fc0568a2",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/additional_comparisons_supp_page1.pdf": {
+          "sha256": "4ce08bcb8d39c0eb77c34e767bd3a474a08254200d92c715464682676e91127f",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            300.00000622263474,
+            300.00000617764755,
+            300.00001100393484,
+            299.9999934667413
+          ],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/additional_comparisons_supp_page2.pdf": {
+          "sha256": "ab43639fbfce8bfe4e4ed4a238542b4459348b44918d246d0cad1e1eefcb2c67",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            300.00000622263474,
+            300.00000617764755,
+            300.00001100393484,
+            299.9999934667413
+          ],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/additional_comparisons_supp_page3.pdf": {
+          "sha256": "da50d62e33483ad3dbe292ccd9228874f7cf7f17b6739dcc2f3aad70ecb948bd",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            300.00000622263474,
+            300.00000617764755,
+            300.00001100393484,
+            299.9999934667413
+          ],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/additional_comparisons_supp_page4.pdf": {
+          "sha256": "7e9e46084273414c25ed79d4956f8f98c55352e1f7a7fd79219d3a1c63446b81",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            300.00000622263474,
+            300.00000617764755,
+            300.00001100393484,
+            299.9999934667413
+          ],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/task_performance_supp_page2.pdf": {
+          "sha256": "5266ab6bf26e3e0297e25ecdad35500285c276ba304832d2322fa6cd14a39c07",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/posterior_anisotropy_supp_page2.pdf": {
+          "sha256": "ec30a4fb65ccf4f33972d60b745ecbf1e1ae775e0f08427c5af4bbe7d4494a90",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            299.99999606732246,
+            299.99999606732246,
+            299.99999606732246,
+            299.99999606732246,
+            300.0000071018302,
+            299.99999029133284
+          ],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/variance_estimation_supp_page1.pdf": {
+          "sha256": "a08836d90d040690ff928012f547e1247df4146041e013174e40f56f8f14cebf",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/noise_adaptation_supp_page2.pdf": {
+          "sha256": "cef9d35214326bbe7e39d002d131d72a304d6a598c90bc061a9967ee7bd09cac",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/noise_adaptation_supp_page3.pdf": {
+          "sha256": "1d3440f2011d7be630053b2089ebbfebe79ca3ac53d00091af11c0876c76e8a0",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            299.99999416117777,
+            299.99999416117777,
+            299.99999416117777,
+            299.99999416117777,
+            300.00000560984904,
+            300.00000887138924
+          ],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/noise_adaptation_supp_page4.pdf": {
+          "sha256": "126fd3ec108dcf1edd83482ebe384726d72573b58b9a447fb1b634cc93fb29b7",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            300.0000013599634,
+            300.0000136239194,
+            300.00001448619287,
+            300.00000227065317
+          ],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page1.pdf": {
+          "sha256": "810f4f0e2ae91352c0c5b027950b0b4566664e1476fb5b6a9d9d82323321135c",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page3.pdf": {
+          "sha256": "dda1cbcabb66a1e6591796301e26806220cfffd219d752e862dd225ab4808df5",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page4.pdf": {
+          "sha256": "bb21c4bc398a29bfc38c3b8603a90162304d4e78c5bc7be92bad2b4faafa005d",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page5.pdf": {
+          "sha256": "8387c7e081817389f1bcb7428daa9510464cbfa0f21296ae0f8d5375a92f422b",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page7.pdf": {
+          "sha256": "f839228abb6fd96fe45e06215981c6bfe790faa1db922c58f5612b34f2964496",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page8.pdf": {
+          "sha256": "e6a852965c49aac41afc0cd6c71190a0ce9500fda071cec9407662aa2f9937d4",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page9.pdf": {
+          "sha256": "bfeff8cd08735dc6731dbffa44cf0f16ddd2198681a932ac74202352d934f2d1",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/predictive_scores_supp_page1.pdf": {
+          "sha256": "ead77bc12284dc9ce6ddbcfb2202bc409281b8a06eb63e627f3894d23e53185e",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/model_mismatch_supp_page1.pdf": {
+          "sha256": "42f5993b6f13c5318684b8e9e88883f91256315478084c49f693751e5d6606dc",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/computation_time_supp_page2.pdf": {
+          "sha256": "646df185eb1c8cf70f9ae3166e3b879f041f2ff2d06530388b4085e0ae98916d",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/numerical_accuracy_supp_page1.pdf": {
+          "sha256": "cba97305a76f60526b3238313a1e91a9da94a5ef83c53d40767ee51b76463375",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/numerical_accuracy_supp_page2.pdf": {
+          "sha256": "d6ed185ed31849bc5ea16a28c65e0b8d1398ebef02e816d2d117ead6632ea541",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/numerical_accuracy_supp_page3.pdf": {
+          "sha256": "06b64142ff435ee912e15a889960219a03ce34f8e87e688a5609cd31d4014948",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [],
+          "out_of_page_text": []
+        },
+        "results/supplementary/contact/paper_summary_supp_page1.pdf": {
+          "sha256": "a6adb456096f8b982aefff9818fd0acd1da42563e1b6c51cda000188a7980458",
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "font_types": [
+            "Type1"
+          ],
+          "raster_dpi": [
+            300.0000076076586,
+            300.0,
+            300.0000076076586,
+            300.0,
+            299.9999880790715,
+            300.0000093664445
+          ],
+          "out_of_page_text": []
+        }
+      },
+      "errors": []
+    },
+    "current_manuscript_copies": {
+      "status": "verified",
+      "declared_count": 86,
+      "verified_copies": 86,
+      "local_matches_checked": 86,
+      "missing": [],
+      "routes": {
+        "results/main/beamforming/setup_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 3,
+          "example": "beamforming",
+          "section": "main",
+          "filename": "setup_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/setup_page1.pdf"
+        },
+        "results/supplementary/beamforming/information_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 5,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "information_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/information_page1.pdf"
+        },
+        "results/main/beamforming/task_performance_output_power.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 10,
+          "example": "beamforming",
+          "section": "main",
+          "filename": "task_performance_output_power.pdf",
+          "local_pdf": "results/notebook_exports/01_array/task_performance_output_power.pdf"
+        },
+        "results/main/beamforming/task_performance_paired_difference.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 10,
+          "example": "beamforming",
+          "section": "main",
+          "filename": "task_performance_paired_difference.pdf",
+          "local_pdf": "results/notebook_exports/01_array/task_performance_paired_difference.pdf"
+        },
+        "results/supplementary/beamforming/posterior_anisotropy_sphere.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 13,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "posterior_anisotropy_sphere.pdf",
+          "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_sphere.pdf"
+        },
+        "results/supplementary/beamforming/posterior_anisotropy_eigenvalues.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 13,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "posterior_anisotropy_eigenvalues.pdf",
+          "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_eigenvalues.pdf"
+        },
+        "results/supplementary/beamforming/posterior_anisotropy_empirical_cdf.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 13,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "posterior_anisotropy_empirical_cdf.pdf",
+          "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_empirical_cdf.pdf"
+        },
+        "results/main/beamforming/noise_adaptation_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 15,
+          "example": "beamforming",
+          "section": "main",
+          "filename": "noise_adaptation_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/noise_adaptation_page1.pdf"
+        },
+        "results/supplementary/beamforming/predictive_calibration_page2.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 18,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "predictive_calibration_page2.pdf",
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_page2.pdf"
+        },
+        "results/supplementary/beamforming/predictive_calibration_page6.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 19,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "predictive_calibration_page6.pdf",
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_page6.pdf"
+        },
+        "results/main/beamforming/computation_time_scaling.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 22,
+          "example": "beamforming",
+          "section": "main",
+          "filename": "computation_time_scaling.pdf",
+          "local_pdf": "results/notebook_exports/01_array/computation_time_scaling.pdf"
+        },
+        "results/main/beamforming/computation_time_phases.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 22,
+          "example": "beamforming",
+          "section": "main",
+          "filename": "computation_time_phases.pdf",
+          "local_pdf": "results/notebook_exports/01_array/computation_time_phases.pdf"
+        },
+        "results/supplementary/beamforming/tracking_error_supp_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 28,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "tracking_error_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/tracking_error_supp_page1.pdf"
+        },
+        "results/supplementary/beamforming/tracking_bound_supp_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 30,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "tracking_bound_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/tracking_bound_supp_page1.pdf"
+        },
+        "results/supplementary/beamforming/tracking_bound_supp_page2.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 32,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "tracking_bound_supp_page2.pdf",
+          "local_pdf": "results/notebook_exports/01_array/tracking_bound_supp_page2.pdf"
+        },
+        "results/supplementary/beamforming/tracking_bound_supp_page3.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 34,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "tracking_bound_supp_page3.pdf",
+          "local_pdf": "results/notebook_exports/01_array/tracking_bound_supp_page3.pdf"
+        },
+        "results/supplementary/beamforming/tracking_bound_supp_page4.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 36,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "tracking_bound_supp_page4.pdf",
+          "local_pdf": "results/notebook_exports/01_array/tracking_bound_supp_page4.pdf"
+        },
+        "results/supplementary/beamforming/posterior_curvature_supp_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 38,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "posterior_curvature_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/posterior_curvature_supp_page1.pdf"
+        },
+        "results/supplementary/beamforming/block_updates_supp_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 40,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "block_updates_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/block_updates_supp_page1.pdf"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 42,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "additional_comparisons_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page1.pdf"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page2.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 44,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "additional_comparisons_supp_page2.pdf",
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page2.pdf"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page3.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 46,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "additional_comparisons_supp_page3.pdf",
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page3.pdf"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page4.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 48,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "additional_comparisons_supp_page4.pdf",
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page4.pdf"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page5.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 50,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "additional_comparisons_supp_page5.pdf",
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page5.pdf"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page6.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 52,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "additional_comparisons_supp_page6.pdf",
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page6.pdf"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page7.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 54,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "additional_comparisons_supp_page7.pdf",
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page7.pdf"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page8.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 56,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "additional_comparisons_supp_page8.pdf",
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page8.pdf"
+        },
+        "results/supplementary/beamforming/variance_estimation_supp_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 58,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "variance_estimation_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/variance_estimation_supp_page1.pdf"
+        },
+        "results/supplementary/beamforming/noise_adaptation_supp_page2.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 60,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "noise_adaptation_supp_page2.pdf",
+          "local_pdf": "results/notebook_exports/01_array/noise_adaptation_supp_page2.pdf"
+        },
+        "results/supplementary/beamforming/noise_adaptation_supp_page3.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 62,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "noise_adaptation_supp_page3.pdf",
+          "local_pdf": "results/notebook_exports/01_array/noise_adaptation_supp_page3.pdf"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 64,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page1.pdf"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page3.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 66,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page3.pdf",
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page3.pdf"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page4.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 68,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page4.pdf",
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page4.pdf"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page5.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 70,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page5.pdf",
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page5.pdf"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page7.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 72,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page7.pdf",
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page7.pdf"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page8.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 74,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page8.pdf",
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page8.pdf"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page9.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 76,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page9.pdf",
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page9.pdf"
+        },
+        "results/supplementary/beamforming/predictive_scores_supp_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 78,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "predictive_scores_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/predictive_scores_supp_page1.pdf"
+        },
+        "results/supplementary/beamforming/model_mismatch_supp_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 80,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "model_mismatch_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/model_mismatch_supp_page1.pdf"
+        },
+        "results/supplementary/beamforming/computation_time_supp_page2.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 82,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "computation_time_supp_page2.pdf",
+          "local_pdf": "results/notebook_exports/01_array/computation_time_supp_page2.pdf"
+        },
+        "results/supplementary/beamforming/numerical_accuracy_supp_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 84,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "numerical_accuracy_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/numerical_accuracy_supp_page1.pdf"
+        },
+        "results/supplementary/beamforming/numerical_accuracy_supp_page2.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 86,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "numerical_accuracy_supp_page2.pdf",
+          "local_pdf": "results/notebook_exports/01_array/numerical_accuracy_supp_page2.pdf"
+        },
+        "results/supplementary/beamforming/numerical_accuracy_supp_page3.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 88,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "numerical_accuracy_supp_page3.pdf",
+          "local_pdf": "results/notebook_exports/01_array/numerical_accuracy_supp_page3.pdf"
+        },
+        "results/supplementary/beamforming/paper_summary_supp_page1.pdf": {
+          "notebook": "notebooks/01_array.ipynb",
+          "cell": 90,
+          "example": "beamforming",
+          "section": "supplementary",
+          "filename": "paper_summary_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/01_array/paper_summary_supp_page1.pdf"
+        },
+        "results/main/contact/setup_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 3,
+          "example": "contact",
+          "section": "main",
+          "filename": "setup_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/setup_page1.pdf"
+        },
+        "results/main/contact/information_contours.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 5,
+          "example": "contact",
+          "section": "main",
+          "filename": "information_contours.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/information_contours.pdf"
+        },
+        "results/main/contact/information_rotation.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 5,
+          "example": "contact",
+          "section": "main",
+          "filename": "information_rotation.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/information_rotation.pdf"
+        },
+        "results/main/contact/task_performance_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 10,
+          "example": "contact",
+          "section": "main",
+          "filename": "task_performance_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/task_performance_page1.pdf"
+        },
+        "results/main/contact/posterior_anisotropy_spheres.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 14,
+          "example": "contact",
+          "section": "main",
+          "filename": "posterior_anisotropy_spheres.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/posterior_anisotropy_spheres.pdf"
+        },
+        "results/main/contact/posterior_anisotropy_risk.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 14,
+          "example": "contact",
+          "section": "main",
+          "filename": "posterior_anisotropy_risk.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/posterior_anisotropy_risk.pdf"
+        },
+        "results/supplementary/contact/noise_adaptation_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 16,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "noise_adaptation_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/noise_adaptation_page1.pdf"
+        },
+        "results/supplementary/contact/predictive_calibration_page2.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 19,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "predictive_calibration_page2.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_page2.pdf"
+        },
+        "results/supplementary/contact/predictive_calibration_page6.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 20,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "predictive_calibration_page6.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_page6.pdf"
+        },
+        "results/supplementary/contact/computation_time_scaling.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 23,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "computation_time_scaling.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/computation_time_scaling.pdf"
+        },
+        "results/supplementary/contact/computation_time_phases.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 23,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "computation_time_phases.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/computation_time_phases.pdf"
+        },
+        "results/supplementary/contact/tracking_error_supp_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 29,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "tracking_error_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/tracking_error_supp_page1.pdf"
+        },
+        "results/supplementary/contact/tracking_bound_supp_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 31,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "tracking_bound_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/tracking_bound_supp_page1.pdf"
+        },
+        "results/supplementary/contact/tracking_bound_supp_page2.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 33,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "tracking_bound_supp_page2.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/tracking_bound_supp_page2.pdf"
+        },
+        "results/supplementary/contact/tracking_bound_supp_page3.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 35,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "tracking_bound_supp_page3.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/tracking_bound_supp_page3.pdf"
+        },
+        "results/supplementary/contact/tracking_bound_supp_page4.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 37,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "tracking_bound_supp_page4.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/tracking_bound_supp_page4.pdf"
+        },
+        "results/supplementary/contact/posterior_curvature_supp_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 39,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "posterior_curvature_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/posterior_curvature_supp_page1.pdf"
+        },
+        "results/supplementary/contact/block_updates_supp_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 41,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "block_updates_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/block_updates_supp_page1.pdf"
+        },
+        "results/supplementary/contact/additional_comparisons_supp_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 43,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "additional_comparisons_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/additional_comparisons_supp_page1.pdf"
+        },
+        "results/supplementary/contact/additional_comparisons_supp_page2.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 45,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "additional_comparisons_supp_page2.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/additional_comparisons_supp_page2.pdf"
+        },
+        "results/supplementary/contact/additional_comparisons_supp_page3.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 47,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "additional_comparisons_supp_page3.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/additional_comparisons_supp_page3.pdf"
+        },
+        "results/supplementary/contact/additional_comparisons_supp_page4.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 49,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "additional_comparisons_supp_page4.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/additional_comparisons_supp_page4.pdf"
+        },
+        "results/supplementary/contact/task_performance_supp_page2.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 51,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "task_performance_supp_page2.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/task_performance_supp_page2.pdf"
+        },
+        "results/supplementary/contact/posterior_anisotropy_supp_page2.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 53,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "posterior_anisotropy_supp_page2.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/posterior_anisotropy_supp_page2.pdf"
+        },
+        "results/supplementary/contact/variance_estimation_supp_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 55,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "variance_estimation_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/variance_estimation_supp_page1.pdf"
+        },
+        "results/supplementary/contact/noise_adaptation_supp_page2.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 57,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "noise_adaptation_supp_page2.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/noise_adaptation_supp_page2.pdf"
+        },
+        "results/supplementary/contact/noise_adaptation_supp_page3.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 59,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "noise_adaptation_supp_page3.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/noise_adaptation_supp_page3.pdf"
+        },
+        "results/supplementary/contact/noise_adaptation_supp_page4.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 61,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "noise_adaptation_supp_page4.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/noise_adaptation_supp_page4.pdf"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 63,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page1.pdf"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page3.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 65,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page3.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page3.pdf"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page4.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 67,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page4.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page4.pdf"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page5.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 69,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page5.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page5.pdf"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page7.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 71,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page7.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page7.pdf"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page8.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 73,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page8.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page8.pdf"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page9.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 75,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "predictive_calibration_supp_page9.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page9.pdf"
+        },
+        "results/supplementary/contact/predictive_scores_supp_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 77,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "predictive_scores_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/predictive_scores_supp_page1.pdf"
+        },
+        "results/supplementary/contact/model_mismatch_supp_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 79,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "model_mismatch_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/model_mismatch_supp_page1.pdf"
+        },
+        "results/supplementary/contact/computation_time_supp_page2.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 81,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "computation_time_supp_page2.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/computation_time_supp_page2.pdf"
+        },
+        "results/supplementary/contact/numerical_accuracy_supp_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 83,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "numerical_accuracy_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/numerical_accuracy_supp_page1.pdf"
+        },
+        "results/supplementary/contact/numerical_accuracy_supp_page2.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 85,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "numerical_accuracy_supp_page2.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/numerical_accuracy_supp_page2.pdf"
+        },
+        "results/supplementary/contact/numerical_accuracy_supp_page3.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 87,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "numerical_accuracy_supp_page3.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/numerical_accuracy_supp_page3.pdf"
+        },
+        "results/supplementary/contact/paper_summary_supp_page1.pdf": {
+          "notebook": "notebooks/03_contact.ipynb",
+          "cell": 89,
+          "example": "contact",
+          "section": "supplementary",
+          "filename": "paper_summary_supp_page1.pdf",
+          "local_pdf": "results/notebook_exports/03_contact/paper_summary_supp_page1.pdf"
+        }
+      },
+      "files": {
+        "results/main/beamforming/setup_page1.pdf": {
+          "sha256": "ec1b2c4794e719a096f64c922e1160a151dff7cccbfea0d3927eed6bf0cd2212",
+          "bytes": 286424,
+          "local_pdf": "results/notebook_exports/01_array/setup_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "main"
+        },
+        "results/supplementary/beamforming/information_page1.pdf": {
+          "sha256": "086920bfd44adf1159c8206d4e51180cf2312c1345244f06418a4277ef0c5f48",
+          "bytes": 106766,
+          "local_pdf": "results/notebook_exports/01_array/information_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/main/beamforming/task_performance_output_power.pdf": {
+          "sha256": "0e5a8837ef7316893f5df790df7e0ea59a0e8a5db3b23730fc55cd60e7f11300",
+          "bytes": 232958,
+          "local_pdf": "results/notebook_exports/01_array/task_performance_output_power.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "main"
+        },
+        "results/main/beamforming/task_performance_paired_difference.pdf": {
+          "sha256": "97a83624a099877509f413c9cd791e81c2a78005f18421b20735ebbcf149f7fc",
+          "bytes": 263813,
+          "local_pdf": "results/notebook_exports/01_array/task_performance_paired_difference.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "main"
+        },
+        "results/supplementary/beamforming/posterior_anisotropy_sphere.pdf": {
+          "sha256": "de7b2b1c90f5c34b0f712432f8c196b06ff54e13717e34cad96d8cc02b877fdb",
+          "bytes": 238114,
+          "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_sphere.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/posterior_anisotropy_eigenvalues.pdf": {
+          "sha256": "7a5b99167c48dfbed2d4413272e7a125f723920322f4e87cf8bb29fdc6f77259",
+          "bytes": 200371,
+          "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_eigenvalues.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/posterior_anisotropy_empirical_cdf.pdf": {
+          "sha256": "d5b1305f01ba2c12fc9016952e1b29897c93f29840672b1d486c2482af3d9163",
+          "bytes": 104676,
+          "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_empirical_cdf.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/main/beamforming/noise_adaptation_page1.pdf": {
+          "sha256": "08cb0abdf216a5aeed04cba94afa74b298ceb000931e5d2a888fed6081f4414c",
+          "bytes": 174624,
+          "local_pdf": "results/notebook_exports/01_array/noise_adaptation_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "main"
+        },
+        "results/supplementary/beamforming/predictive_calibration_page2.pdf": {
+          "sha256": "dcaed7d641838076f647e1bc6cb08a62b3c626c558b9a9cc6f8dd1abf0cd15c4",
+          "bytes": 77025,
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_page2.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/predictive_calibration_page6.pdf": {
+          "sha256": "541f4fa8be62c98765ec61da2179943307c123f7d322d797ad68d371b96aa5ed",
+          "bytes": 76548,
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_page6.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/main/beamforming/computation_time_scaling.pdf": {
+          "sha256": "0358994a81a62b7224997eaed9a2cdef197df3fd154b35fc2e33ddd88e693bf7",
+          "bytes": 233354,
+          "local_pdf": "results/notebook_exports/01_array/computation_time_scaling.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "main"
+        },
+        "results/main/beamforming/computation_time_phases.pdf": {
+          "sha256": "b63993e39015fced665753839bbbbb051a417fec8490ff0d7a41b6776603e6ca",
+          "bytes": 137929,
+          "local_pdf": "results/notebook_exports/01_array/computation_time_phases.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "main"
+        },
+        "results/supplementary/beamforming/tracking_error_supp_page1.pdf": {
+          "sha256": "5f97103cb79450e7ce2f86b9a59332317bfcbc7b7162cc8e85b8084e3aa056c0",
+          "bytes": 300329,
+          "local_pdf": "results/notebook_exports/01_array/tracking_error_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/tracking_bound_supp_page1.pdf": {
+          "sha256": "1a637ae1b6d20f7506bde96aedf64206cf0930deca41bdcb6469ae6c5d2a0230",
+          "bytes": 230782,
+          "local_pdf": "results/notebook_exports/01_array/tracking_bound_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/tracking_bound_supp_page2.pdf": {
+          "sha256": "acc60a965089439345f19541387bb86bd29d8373b896c595d0cd1da275415952",
+          "bytes": 169208,
+          "local_pdf": "results/notebook_exports/01_array/tracking_bound_supp_page2.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/tracking_bound_supp_page3.pdf": {
+          "sha256": "6051cbef54bf8398bcf00e8ae47430f96443a8bfb08cee7d6738db28250647b7",
+          "bytes": 225737,
+          "local_pdf": "results/notebook_exports/01_array/tracking_bound_supp_page3.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/tracking_bound_supp_page4.pdf": {
+          "sha256": "c4541a3cf3b47755683fb9756a4af84e7d7c7904cb3c72c41915a17c923f5f48",
+          "bytes": 195125,
+          "local_pdf": "results/notebook_exports/01_array/tracking_bound_supp_page4.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/posterior_curvature_supp_page1.pdf": {
+          "sha256": "6c1d29cb5a000fc9fe8923683dded19cbd3042bacca5aa3fc6979c4c7e508eb0",
+          "bytes": 230521,
+          "local_pdf": "results/notebook_exports/01_array/posterior_curvature_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/block_updates_supp_page1.pdf": {
+          "sha256": "5564efb51c613fbc4b3be50119d9d0eb5af252f673f1653645089ca1080999ea",
+          "bytes": 137868,
+          "local_pdf": "results/notebook_exports/01_array/block_updates_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page1.pdf": {
+          "sha256": "e3693cd96f30c50953ccca94ad79d6ece11cb16f80d7db934abd9cf4c9aa9727",
+          "bytes": 283131,
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page2.pdf": {
+          "sha256": "adf7e949abb028ed74a96fc2c5010e0297e66849b05d0d4c6171421574258f49",
+          "bytes": 282903,
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page2.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page3.pdf": {
+          "sha256": "c3f3d97d9cb23a922ea9c001f3437e978896655fc7237a7480a273f21db00011",
+          "bytes": 282394,
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page3.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page4.pdf": {
+          "sha256": "efa1279b528f8ea08b81eed66ace100cb13e241fe59ae9dc804003ca545af877",
+          "bytes": 264290,
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page4.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page5.pdf": {
+          "sha256": "705a2c2f6a2e1ca686a08c219b1675a1b3e35f28f5256b439797ed4336ac29cc",
+          "bytes": 264809,
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page5.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page6.pdf": {
+          "sha256": "dfa1d1f205b81191a8c7e166f4d2b35a2876579663834e10c23086aac70c0704",
+          "bytes": 264643,
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page6.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page7.pdf": {
+          "sha256": "e68f151d9b4ed3740a3e4d69c741fbaafba38dd28b2c6e9ddbeaeeada0e34f7f",
+          "bytes": 263855,
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page7.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/additional_comparisons_supp_page8.pdf": {
+          "sha256": "c232bd47b50ff454410f1a2bd395376418e5f5f631945d0b6320be3c003fdc64",
+          "bytes": 264910,
+          "local_pdf": "results/notebook_exports/01_array/additional_comparisons_supp_page8.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/variance_estimation_supp_page1.pdf": {
+          "sha256": "76455f0bc04b50e7bbc199cfa94332881e5046e671f560eee7808dbcc0ddc24b",
+          "bytes": 133847,
+          "local_pdf": "results/notebook_exports/01_array/variance_estimation_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/noise_adaptation_supp_page2.pdf": {
+          "sha256": "9e50c00e1699837a830d3d548eeaa82affad88bdfaf77d7e92127d1d4d4def8a",
+          "bytes": 174497,
+          "local_pdf": "results/notebook_exports/01_array/noise_adaptation_supp_page2.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/noise_adaptation_supp_page3.pdf": {
+          "sha256": "178b60012c9bbd22becdf0bd219bfa2a0c14273d40182fda6770f4ed4b6a52a1",
+          "bytes": 174620,
+          "local_pdf": "results/notebook_exports/01_array/noise_adaptation_supp_page3.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page1.pdf": {
+          "sha256": "fdc6de06d1104d60064fdd313c8a721c777d827d136f6cd605c5ddf03259a784",
+          "bytes": 76727,
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page3.pdf": {
+          "sha256": "4bdcdcc80b50fd842020f39819918bf0ccec5073c800feeff0420f4541b22101",
+          "bytes": 76796,
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page3.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page4.pdf": {
+          "sha256": "3c8ccfba296adf5ef3df6954771d578f9d5f9ab11c213fe71d0d9988b2f5dbb8",
+          "bytes": 76977,
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page4.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page5.pdf": {
+          "sha256": "4da5d6b64373d3e01df09aadc68b4a1939628baf307bd1381ec978c4ee8218be",
+          "bytes": 76781,
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page5.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page7.pdf": {
+          "sha256": "dcca8447aab6397578e42cffeb97ada70a9c13cab402a6ef301564b2f6879b7c",
+          "bytes": 140582,
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page7.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page8.pdf": {
+          "sha256": "542ff25ea49c88480dc15ef9bae13e3923bd7e888b93364520d536706df63071",
+          "bytes": 141162,
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page8.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/predictive_calibration_supp_page9.pdf": {
+          "sha256": "87ba568da9d8baa7f47c4c74c2b43eff05443dfe863a359cfce3e6e13277b676",
+          "bytes": 140748,
+          "local_pdf": "results/notebook_exports/01_array/predictive_calibration_supp_page9.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/predictive_scores_supp_page1.pdf": {
+          "sha256": "ec564bd044f61ff3321c1e75796f9d4c9dbb161b661030ac20007fe256fcc3e0",
+          "bytes": 115572,
+          "local_pdf": "results/notebook_exports/01_array/predictive_scores_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/model_mismatch_supp_page1.pdf": {
+          "sha256": "b3f29b608ccca2e9fc70406970c895085ad7706c874b803e533782dd3a1e807d",
+          "bytes": 70978,
+          "local_pdf": "results/notebook_exports/01_array/model_mismatch_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/computation_time_supp_page2.pdf": {
+          "sha256": "9c09b6220ce9f5f32f33602c22d0d4d8ceab972f2d9feb2983b41e474c52b308",
+          "bytes": 99740,
+          "local_pdf": "results/notebook_exports/01_array/computation_time_supp_page2.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/numerical_accuracy_supp_page1.pdf": {
+          "sha256": "4327ae895e2a11a78d96d06fe7e3200ad2709c7146b555b9b1a86405417ec718",
+          "bytes": 102304,
+          "local_pdf": "results/notebook_exports/01_array/numerical_accuracy_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/numerical_accuracy_supp_page2.pdf": {
+          "sha256": "5c5af5c1cf5f7c5bd417b4b656628defba44d5b81cdd362a9237dfaf74312ca0",
+          "bytes": 71446,
+          "local_pdf": "results/notebook_exports/01_array/numerical_accuracy_supp_page2.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/numerical_accuracy_supp_page3.pdf": {
+          "sha256": "b22d1fd1d59ee004334ac970a15cf3809f5a924aa10eea9954c8db80a5acdb39",
+          "bytes": 36985,
+          "local_pdf": "results/notebook_exports/01_array/numerical_accuracy_supp_page3.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/supplementary/beamforming/paper_summary_supp_page1.pdf": {
+          "sha256": "818b6f9fec986e78ef4daf893dfb091096da66f70e535d0f1bd286734457bd4c",
+          "bytes": 270631,
+          "local_pdf": "results/notebook_exports/01_array/paper_summary_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "beamforming",
+          "section": "supplementary"
+        },
+        "results/main/contact/setup_page1.pdf": {
+          "sha256": "bf988a15332377ef9957cb7a0932f5164e99dac559cab991bf84776e605cd172",
+          "bytes": 318273,
+          "local_pdf": "results/notebook_exports/03_contact/setup_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "main"
+        },
+        "results/main/contact/information_contours.pdf": {
+          "sha256": "365392a0654051c691a6f71e6c1512585c21bf15624de9f4c810472a62c56dfa",
+          "bytes": 155738,
+          "local_pdf": "results/notebook_exports/03_contact/information_contours.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "main"
+        },
+        "results/main/contact/information_rotation.pdf": {
+          "sha256": "aa3dbfcea3a5fa09ad9e8c58601740c48754e937fadd8cbed6dd3c3e78eefcc2",
+          "bytes": 199594,
+          "local_pdf": "results/notebook_exports/03_contact/information_rotation.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "main"
+        },
+        "results/main/contact/task_performance_page1.pdf": {
+          "sha256": "e05d478bac401f1960dd6822f7d941b00f1e83630f425ce0f4dfff26ab211725",
+          "bytes": 261616,
+          "local_pdf": "results/notebook_exports/03_contact/task_performance_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "main"
+        },
+        "results/main/contact/posterior_anisotropy_spheres.pdf": {
+          "sha256": "92e8e8a508e8e6893fea7a468b52ad231e2ad201baf974d016f8354379ba4f62",
+          "bytes": 275642,
+          "local_pdf": "results/notebook_exports/03_contact/posterior_anisotropy_spheres.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "main"
+        },
+        "results/main/contact/posterior_anisotropy_risk.pdf": {
+          "sha256": "bb0d005ddfa898d921c00c852575bf31304382cd93d5620087f9b4fa22aff975",
+          "bytes": 200634,
+          "local_pdf": "results/notebook_exports/03_contact/posterior_anisotropy_risk.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "main"
+        },
+        "results/supplementary/contact/noise_adaptation_page1.pdf": {
+          "sha256": "b12efc45212029c7b898c4bc64cfbdce3a01bcb37e5838c220317f78cb87fbc2",
+          "bytes": 173062,
+          "local_pdf": "results/notebook_exports/03_contact/noise_adaptation_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/predictive_calibration_page2.pdf": {
+          "sha256": "f8704e1bb2abc332c107a04a5791469cc863c5511f18fae2cd23c4217e2a8b1b",
+          "bytes": 76962,
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_page2.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/predictive_calibration_page6.pdf": {
+          "sha256": "eb378315d99a314579365198d01cb0abd5f29f9ea6d1fecbb2bea17ac2fcdd5a",
+          "bytes": 76892,
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_page6.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/computation_time_scaling.pdf": {
+          "sha256": "5e18dc89d0cba3490dafc4237f8d2f745825be6f63487c13b42040308424179e",
+          "bytes": 232934,
+          "local_pdf": "results/notebook_exports/03_contact/computation_time_scaling.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/computation_time_phases.pdf": {
+          "sha256": "d5ce210a89940f7a4f5e73060688d0bd7bd95d75fec4d3739d34c39759d36674",
+          "bytes": 138240,
+          "local_pdf": "results/notebook_exports/03_contact/computation_time_phases.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/tracking_error_supp_page1.pdf": {
+          "sha256": "9718864615ccb07ce8a8f9cabbe61a52d8ffad212b28d150399911c7c93b4996",
+          "bytes": 293210,
+          "local_pdf": "results/notebook_exports/03_contact/tracking_error_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/tracking_bound_supp_page1.pdf": {
+          "sha256": "8f03d6caae1ea488c488c21bb4834ffd4bcb35f5b071ecb27f849d8afd006860",
+          "bytes": 230989,
+          "local_pdf": "results/notebook_exports/03_contact/tracking_bound_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/tracking_bound_supp_page2.pdf": {
+          "sha256": "cbdd7f7175e2cd69cfc608cfc10b05e436bd1937d00b8b1cbf0d0ce24138e308",
+          "bytes": 169238,
+          "local_pdf": "results/notebook_exports/03_contact/tracking_bound_supp_page2.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/tracking_bound_supp_page3.pdf": {
+          "sha256": "13e798544014d0718522d9cad8cc675b8e3b782f6f5de518aab77c08205c3124",
+          "bytes": 225727,
+          "local_pdf": "results/notebook_exports/03_contact/tracking_bound_supp_page3.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/tracking_bound_supp_page4.pdf": {
+          "sha256": "6d7b36ea8c4e5c190fe4ea3b9d1dc6b5cb2f887a9d57e2a2abcf02e3bf345617",
+          "bytes": 225747,
+          "local_pdf": "results/notebook_exports/03_contact/tracking_bound_supp_page4.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/posterior_curvature_supp_page1.pdf": {
+          "sha256": "fa8a3510724b4ca689571e6c937b5eef0f9244a34dbdb0ba057fdb5581c716e3",
+          "bytes": 230588,
+          "local_pdf": "results/notebook_exports/03_contact/posterior_curvature_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/block_updates_supp_page1.pdf": {
+          "sha256": "a69811918a0742194beb86d33d7b770af030ca8e0fdea6fdfd1b5cd5fc0568a2",
+          "bytes": 138282,
+          "local_pdf": "results/notebook_exports/03_contact/block_updates_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/additional_comparisons_supp_page1.pdf": {
+          "sha256": "4ce08bcb8d39c0eb77c34e767bd3a474a08254200d92c715464682676e91127f",
+          "bytes": 269537,
+          "local_pdf": "results/notebook_exports/03_contact/additional_comparisons_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/additional_comparisons_supp_page2.pdf": {
+          "sha256": "ab43639fbfce8bfe4e4ed4a238542b4459348b44918d246d0cad1e1eefcb2c67",
+          "bytes": 269443,
+          "local_pdf": "results/notebook_exports/03_contact/additional_comparisons_supp_page2.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/additional_comparisons_supp_page3.pdf": {
+          "sha256": "da50d62e33483ad3dbe292ccd9228874f7cf7f17b6739dcc2f3aad70ecb948bd",
+          "bytes": 269895,
+          "local_pdf": "results/notebook_exports/03_contact/additional_comparisons_supp_page3.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/additional_comparisons_supp_page4.pdf": {
+          "sha256": "7e9e46084273414c25ed79d4956f8f98c55352e1f7a7fd79219d3a1c63446b81",
+          "bytes": 287306,
+          "local_pdf": "results/notebook_exports/03_contact/additional_comparisons_supp_page4.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/task_performance_supp_page2.pdf": {
+          "sha256": "5266ab6bf26e3e0297e25ecdad35500285c276ba304832d2322fa6cd14a39c07",
+          "bytes": 262126,
+          "local_pdf": "results/notebook_exports/03_contact/task_performance_supp_page2.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/posterior_anisotropy_supp_page2.pdf": {
+          "sha256": "ec30a4fb65ccf4f33972d60b745ecbf1e1ae775e0f08427c5af4bbe7d4494a90",
+          "bytes": 307869,
+          "local_pdf": "results/notebook_exports/03_contact/posterior_anisotropy_supp_page2.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/variance_estimation_supp_page1.pdf": {
+          "sha256": "a08836d90d040690ff928012f547e1247df4146041e013174e40f56f8f14cebf",
+          "bytes": 133776,
+          "local_pdf": "results/notebook_exports/03_contact/variance_estimation_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/noise_adaptation_supp_page2.pdf": {
+          "sha256": "cef9d35214326bbe7e39d002d131d72a304d6a598c90bc061a9967ee7bd09cac",
+          "bytes": 173259,
+          "local_pdf": "results/notebook_exports/03_contact/noise_adaptation_supp_page2.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/noise_adaptation_supp_page3.pdf": {
+          "sha256": "1d3440f2011d7be630053b2089ebbfebe79ca3ac53d00091af11c0876c76e8a0",
+          "bytes": 233459,
+          "local_pdf": "results/notebook_exports/03_contact/noise_adaptation_supp_page3.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/noise_adaptation_supp_page4.pdf": {
+          "sha256": "126fd3ec108dcf1edd83482ebe384726d72573b58b9a447fb1b634cc93fb29b7",
+          "bytes": 224242,
+          "local_pdf": "results/notebook_exports/03_contact/noise_adaptation_supp_page4.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page1.pdf": {
+          "sha256": "810f4f0e2ae91352c0c5b027950b0b4566664e1476fb5b6a9d9d82323321135c",
+          "bytes": 76688,
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page3.pdf": {
+          "sha256": "dda1cbcabb66a1e6591796301e26806220cfffd219d752e862dd225ab4808df5",
+          "bytes": 76710,
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page3.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page4.pdf": {
+          "sha256": "bb21c4bc398a29bfc38c3b8603a90162304d4e78c5bc7be92bad2b4faafa005d",
+          "bytes": 76983,
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page4.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page5.pdf": {
+          "sha256": "8387c7e081817389f1bcb7428daa9510464cbfa0f21296ae0f8d5375a92f422b",
+          "bytes": 76710,
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page5.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page7.pdf": {
+          "sha256": "f839228abb6fd96fe45e06215981c6bfe790faa1db922c58f5612b34f2964496",
+          "bytes": 141070,
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page7.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page8.pdf": {
+          "sha256": "e6a852965c49aac41afc0cd6c71190a0ce9500fda071cec9407662aa2f9937d4",
+          "bytes": 141196,
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page8.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/predictive_calibration_supp_page9.pdf": {
+          "sha256": "bfeff8cd08735dc6731dbffa44cf0f16ddd2198681a932ac74202352d934f2d1",
+          "bytes": 141461,
+          "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_supp_page9.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/predictive_scores_supp_page1.pdf": {
+          "sha256": "ead77bc12284dc9ce6ddbcfb2202bc409281b8a06eb63e627f3894d23e53185e",
+          "bytes": 115820,
+          "local_pdf": "results/notebook_exports/03_contact/predictive_scores_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/model_mismatch_supp_page1.pdf": {
+          "sha256": "42f5993b6f13c5318684b8e9e88883f91256315478084c49f693751e5d6606dc",
+          "bytes": 139092,
+          "local_pdf": "results/notebook_exports/03_contact/model_mismatch_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/computation_time_supp_page2.pdf": {
+          "sha256": "646df185eb1c8cf70f9ae3166e3b879f041f2ff2d06530388b4085e0ae98916d",
+          "bytes": 99745,
+          "local_pdf": "results/notebook_exports/03_contact/computation_time_supp_page2.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/numerical_accuracy_supp_page1.pdf": {
+          "sha256": "cba97305a76f60526b3238313a1e91a9da94a5ef83c53d40767ee51b76463375",
+          "bytes": 101929,
+          "local_pdf": "results/notebook_exports/03_contact/numerical_accuracy_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/numerical_accuracy_supp_page2.pdf": {
+          "sha256": "d6ed185ed31849bc5ea16a28c65e0b8d1398ebef02e816d2d117ead6632ea541",
+          "bytes": 71448,
+          "local_pdf": "results/notebook_exports/03_contact/numerical_accuracy_supp_page2.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/numerical_accuracy_supp_page3.pdf": {
+          "sha256": "06b64142ff435ee912e15a889960219a03ce34f8e87e688a5609cd31d4014948",
+          "bytes": 36953,
+          "local_pdf": "results/notebook_exports/03_contact/numerical_accuracy_supp_page3.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        },
+        "results/supplementary/contact/paper_summary_supp_page1.pdf": {
+          "sha256": "a6adb456096f8b982aefff9818fd0acd1da42563e1b6c51cda000188a7980458",
+          "bytes": 315033,
+          "local_pdf": "results/notebook_exports/03_contact/paper_summary_supp_page1.pdf",
+          "local_copy_checked": true,
+          "example": "contact",
+          "section": "supplementary"
+        }
+      }
+    },
+    "historical_report_scope": "Earlier revision sections retain their original baselines and counts. Top-level notebook checks and this appendix describe the current files."
   }
 }
