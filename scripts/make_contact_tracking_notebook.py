@@ -34,7 +34,7 @@ import pandas as pd
 from IPython.display import display, Markdown
 ROOT = Path.cwd() if (Path.cwd() / 'lib').exists() else Path.cwd().parent
 sys.path.insert(0, str(ROOT))
-from lib.plotting import plt
+from lib.plotting import plt, DPI
 from lib.contact_tracking_evidence import check_evidence
 from lib.contact_story import (contact_scene, tracking_scene, posterior_scene,
     response_comparison, paired_prediction_errors)
@@ -42,7 +42,7 @@ OUT = ROOT / 'results/contact_tracking'
 gate = check_evidence(ROOT)
 frozen = json.loads((OUT / 'mean/selected.json').read_text())
 cfg = frozen['config']
-assert plt.rcParams['text.usetex'] and plt.rcParams['figure.dpi'] == 200
+assert plt.rcParams['text.usetex'] and plt.rcParams['figure.dpi'] == DPI
 def show(fig):
     display(fig)
     plt.close(fig)
@@ -205,7 +205,7 @@ For a seven-joint arm, one regular contact constraint gives $\mathrm{Gr}(6,7)$; 
 - [All per-trajectory metrics](../results/contact_tracking/uncertainty/metrics.csv), [paired contrasts](../results/contact_tracking/uncertainty/paired.csv), [shape checks](../results/contact_tracking/uncertainty/shape_comparison.csv), [directional checks](../results/contact_tracking/uncertainty/directional.csv).
 - [Archived original notebook](../results/contact_tracking/archive/03_contact_f09d3fe.ipynb). Other notebooks, old simulation outputs and manuscript files are unchanged.
 
-The cells above replay one trajectory. The Monte Carlo runs are reproducible scripts with frozen validation and held-out seeds; opening this notebook does not silently launch a full benchmark. Every displayed/exported figure uses TeX, 200 dpi and the same physical units.''')
+The cells above replay one trajectory. The Monte Carlo runs are reproducible scripts with frozen validation and held-out seeds; opening this notebook does not silently launch a full benchmark. Every displayed/exported figure uses TeX, 300 dpi and the same physical units.''')
     notebook = nbf.v4.new_notebook(cells=cells, metadata={
         'kernelspec': {'display_name':'Python 3','language':'python','name':'python3'},
         'language_info': {'name':'python','version':'3.12'},

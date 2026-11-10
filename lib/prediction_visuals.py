@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy.stats import t as student_t
-from .plotting import plt, save
+from .plotting import plt, save, DPI
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 
@@ -29,7 +29,7 @@ LAW_LABELS={'slow':'Slow drift','fast':'Fast drift','acceleration':'Acceleration
 
 
 def _finish(fig,path):
-    assert plt.rcParams['text.usetex'] and fig.dpi==200
+    assert plt.rcParams['text.usetex'] and fig.dpi==DPI
     if path is not None:save(fig,Path(path))
     return fig
 
@@ -48,7 +48,7 @@ def motion_overview(frames,path=None,law='fast',input_frame='sensor'):
     if len(posterior):posterior=posterior[(posterior.law==law)&(posterior.input_frame==input_frame)]
     selected=['tuned_forgetting','causal_velocity','exact_motion']
     methods=['identity_1','tuned_forgetting','rolling_window','causal_velocity','exact_motion']
-    fig,axs=plt.subplots(2,2,figsize=(14,9),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(2,2,figsize=(14,9),dpi=DPI,layout='constrained')
     ax=axs[0,0]
     for method in selected:
         part=metrics[metrics.method==method]
@@ -108,14 +108,14 @@ def application_gains(paired,path=None,all_scenarios=False,tuning=None):
     """Paired application loss differences, retaining uncertainty and failures."""
     if all_scenarios:
         applications=['array','field'];nrows=max(paired.groupby('application').scenario.nunique())
-        fig,axs=plt.subplots(nrows,2,figsize=(14,3.3*nrows),dpi=200,layout='constrained',squeeze=False)
+        fig,axs=plt.subplots(nrows,2,figsize=(14,3.3*nrows),dpi=DPI,layout='constrained',squeeze=False)
         groups=[]
         for col,application in enumerate(applications):
             for row,scenario in enumerate(paired[paired.application==application].scenario.drop_duplicates()):
                 groups.append((axs[row,col],application,scenario))
             for row in range(paired[paired.application==application].scenario.nunique(),nrows):axs[row,col].remove()
     else:
-        fig,axs=plt.subplots(1,2,figsize=(13,5),dpi=200,layout='constrained')
+        fig,axs=plt.subplots(1,2,figsize=(13,5),dpi=DPI,layout='constrained')
         groups=[(axs[0],'array','Drift'),(axs[1],'field','Matched')]
     for ax,application,scenario in groups:
         part=paired[(paired.application==application)&(paired.scenario==scenario)]
@@ -150,7 +150,7 @@ def process_coverage_width(summary,path=None,law='Matched transition',include_co
            ('hpd','State HPD region','Mean HPD arc length (radians)'),
            ('clean','Clean response','Mean response-interval width'),
            ('noisy','Noisy observation','Mean observation-interval width')]
-    fig,axs=plt.subplots(2,2,figsize=(12,6.8),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(2,2,figsize=(12,6.8),dpi=DPI,layout='constrained')
     methods=['Projected transition','Full-density reference']
     if include_controls:methods+=['Identity','Power forgetting']
     data=data[data.method.isin(methods)]
@@ -184,7 +184,7 @@ def motion_coverage_width(coverage,path=None):
            ('clean_response_covered','Clean response','Mean response-interval width'),
            ('predictive_covered','Noisy observation','Mean observation-interval width')]
     methods=['identity_1','tuned_forgetting','rolling_window','causal_velocity','exact_motion']
-    fig,axs=plt.subplots(2,2,figsize=(12,8),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(2,2,figsize=(12,8),dpi=DPI,layout='constrained')
     for ax,(kind,title,label) in zip(axs.flat,kinds):
         ax.axhline(.95,ls='--',color='#555555',lw=1)
         for r in coverage[coverage.region==kind].itertuples():
@@ -206,7 +206,7 @@ def motion_coverage_width(coverage,path=None):
 
 def memory_tuning(tuning,selected,path=None):
     """Average each validation trajectory over its law/frame mixture first."""
-    fig,axs=plt.subplots(1,3,figsize=(15,4.6),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,3,figsize=(15,4.6),dpi=DPI,layout='constrained')
     definitions=[('forgetting','beta','Exponential memory'),('window','window','Likelihood window')]
     for ax,(family,column,title) in zip(axs[:2],definitions):
         part=tuning[tuning.family==family]
@@ -235,7 +235,7 @@ def memory_tuning(tuning,selected,path=None):
 def motion_stress(summary,path=None):
     methods=['identity_1','forgetting_097','tuned_forgetting','rolling_window','causal_velocity','exact_motion']
     laws=[x for x in LAW_LABELS if x in summary.law.unique()]
-    fig,axs=plt.subplots(1,2,figsize=(14,7),dpi=200,layout='constrained',sharey=True)
+    fig,axs=plt.subplots(1,2,figsize=(14,7),dpi=DPI,layout='constrained',sharey=True)
     offsets=np.linspace(-.28,.28,len(methods))
     for ax,frame,title in zip(axs,['sensor','co_rotating'],['Sensor-fixed inputs','Co-rotating inputs']):
         part=summary[summary.input_frame==frame]
@@ -257,7 +257,7 @@ def application_tuning(tuning,application,path=None):
     part=tuning[tuning.application==application]
     methods=[m for m in ['Posterior mean','EW PCA','Shrunk PCA','Loaded covariance','Rolling PCA','GROUSE'] if m in part.method.unique()]
     cols=2 if len(methods)==4 else 3;rows=int(np.ceil(len(methods)/cols))
-    fig,axs=plt.subplots(rows,cols,figsize=(15,4.2*rows),dpi=200,layout='constrained',squeeze=False)
+    fig,axs=plt.subplots(rows,cols,figsize=(15,4.2*rows),dpi=DPI,layout='constrained',squeeze=False)
     for ax,method in zip(axs.flat,methods):
         g=part[part.method==method]
         if method in ('Loaded covariance','Shrunk PCA'):
@@ -290,7 +290,7 @@ def application_tuning(tuning,application,path=None):
 
 def application_cost(metrics,path=None):
     """Separate per-step filtering cost and per-report posterior/decision cost."""
-    fig,axs=plt.subplots(2,2,figsize=(14,9),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(2,2,figsize=(14,9),dpi=DPI,layout='constrained')
     order=['Posterior mean','Mode','Shrunk PCA','Loaded covariance','EW PCA','Rolling PCA','GROUSE']
     for row,(application,scenario) in enumerate([('array','Drift'),('field','Matched')]):
         part=metrics[(metrics.application==application)&(metrics.scenario==scenario)]
@@ -319,7 +319,7 @@ def process_prediction_fans(paths,trials,path=None,law='Matched transition',kapp
     p=paths[(paths.law==law)&(paths.kappa==kappa)]
     q=trials[(trials.law==law)&(trials.kappa==kappa)&(trials.trial==0)]
     methods=['Projected transition','Identity','Power forgetting']
-    fig,axs=plt.subplots(1,3,figsize=(15,4.8),dpi=200,layout='constrained',sharex=True,sharey=True)
+    fig,axs=plt.subplots(1,3,figsize=(15,4.8),dpi=DPI,layout='constrained',sharex=True,sharey=True)
     for ax,method in zip(axs,methods):
         g=p[p.method==method].sort_values('t');r=q[q.method==method].sort_values('t')
         ref=q[q.method=='Full-density reference'].sort_values('t')

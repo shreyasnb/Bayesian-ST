@@ -6,6 +6,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from PIL import Image
+from lib.plotting import DPI
 from lib.implementation_validation import (
     COMPONENTS, require_gate, verify_component, verify_mapping, verify_preservation, sha)
 from scripts.summarize_implementation_audit import verify_report, verify_figures
@@ -32,7 +33,7 @@ def main():
             path = BASE / profile / 'figures' / name
             if path.suffix == '.png':
                 with Image.open(path) as im:
-                    if any(abs(value - 200) > .1 for value in im.info.get('dpi', (0, 0))):
+                    if any(abs(value - DPI) > .1 for value in im.info.get('dpi', (0, 0))):
                         raise RuntimeError('Incorrect PNG resolution: ' + name)
                     if im.width < 1500 or im.height < 700:
                         raise RuntimeError('Figure is too small: ' + name)

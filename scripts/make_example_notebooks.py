@@ -21,7 +21,7 @@ def write(name,cells):
             md(r"""# Array predictions and decisions
 The framework maintains a distribution over a subspace, so it can predict a response **with uncertainty** and choose weights using that distribution. The main figures show these ideas in a native-complex 16-channel, rank-three array. They do not reduce inference to a three-dimensional toy problem.
 
-Static and drifting cases use preassigned repeat zero of the original application with identical observations and validation settings. The maintained distribution is exact only under its state model; the drifting case uses approximate prediction. Detailed method comparisons, parameter maps, cost, and numerical checks follow in the supplementary section. All figures use TeX and 200 dpi."""),setup,
+Static and drifting cases use preassigned repeat zero of the original application with identical observations and validation settings. The maintained distribution is exact only under its state model; the drifting case uses approximate prediction. Detailed method comparisons, parameter maps, cost, and numerical checks follow in the supplementary section. All figures use TeX and 300 dpi."""),setup,
             code("""from lib.story_visuals import load_story,array_prediction_fans,array_power_distributions
 subprocess.run([sys.executable,str(ROOT/'scripts/run_array_story.py')],cwd=ROOT,check=True)
 array_story=load_story(ROOT,'array_story')
@@ -51,7 +51,7 @@ The following panels retain all original methods and regimes, the controlled low
             md(r"""# Predicting fields while tracking a subspace
 A modal basis gives one prediction. A subspace distribution also describes its direction-dependent uncertainty. The main figures study real **n=8, k=3** calibration with known inputs, time-varying states, and repeated noise realizations. The 64-sensor passive reconstruction experiment remains in the supplementary comparisons.
 
-The central distinction is between an error bound for the modal estimate and a credible region under a maintained distribution. They are different objects. Taking G=I can give a useful modal bound under slow residual motion while its nominal credible region is miscalibrated. Figures use larger canvases, TeX, and 200 dpi."""),setup,
+The central distinction is between an error bound for the modal estimate and a credible region under a maintained distribution. They are different objects. Taking G=I can give a useful modal bound under slow residual motion while its nominal credible region is miscalibrated. Figures use larger canvases, TeX, and 300 dpi."""),setup,
             code("""from lib.story_visuals import (load_story,prediction_fans,projected_clouds,drift_certificate,monte_carlo_uncertainty)
 subprocess.run([sys.executable,str(ROOT/'scripts/run_drift_study.py'),'--workers','4'],cwd=ROOT,check=True)
 drift=load_story(ROOT,'drift_study')
@@ -95,7 +95,7 @@ ROOT=Path.cwd() if (Path.cwd()/'lib').exists() else Path.cwd().parent
 sys.path.insert(0,str(ROOT))
 from lib.validation import require_gate
 print('Numerical core:',require_gate(ROOT)['status'])
-from lib.plotting import plt
+from lib.plotting import plt, DPI
 from lib.reporting import run_or_load
 from lib.visuals import (array_overview,field_overview,paired_field,coverage_regions,
     cost_tradeoff,field_maps,calibration_overview,noise_overview,sampler_overview,predictive_scores)
@@ -104,11 +104,11 @@ import numpy as np
 import pandas as pd
 from IPython.display import display
 OUT=ROOT/'results'
-assert plt.rcParams['text.usetex'] and plt.rcParams['figure.dpi']==200
-assert plt.rcParams['savefig.dpi']==200
+assert plt.rcParams['text.usetex'] and plt.rcParams['figure.dpi']==DPI
+assert plt.rcParams['savefig.dpi']==DPI
 
 def show(fig):
-    assert fig.dpi==200
+    assert fig.dpi==DPI
     plt.show()
     plt.close(fig)
 
@@ -127,7 +127,7 @@ The main question is whether posterior decisions improve beamforming enough to j
 
 The original complex study has 16 channels, rank three, interference-only training, independent evaluation snapshots, and supplied motion equal to half the physical motion. Desired orientation, snapshot count, drift, unequal powers, source correlation, and desired-signal contamination are varied separately. Mean and modal beamformers share parameters and variances. The marginal Bingham mode equals matching EW PCA.
 
-Every figure uses TeX, 200 dpi, and a larger canvas. Blue in a signed-gain map favors the posterior mean; red favors the reference. A confidence interval crossing zero does not establish an improvement. The eight-trajectory application experiment is a pilot; intervals are paired Student intervals, not simultaneous bands.'''),
+Every figure uses TeX, 300 dpi, and a larger canvas. Blue in a signed-gain map favors the posterior mean; red favors the reference. A confidence interval crossing zero does not establish an improvement. The eight-trajectory application experiment is a pilot; intervals are paired Student intervals, not simultaneous bands.'''),
 code(common+"\nresult=run_or_load(ROOT,'case1',dict(seed=1729,workers=4,checkpoint_dir='results/checkpoints/array',**config))\nm=result['metrics'];regions=result['regions']\ndisplay(result['config'])"),
 md(r'''## Separate the two comparisons
 The left map isolates posterior averaging by comparing the mean and mode from the **same posterior**. The right compares against validation-tuned loaded covariance. Gains versus loaded covariance can include structural assumptions and different estimators; they are not all attributable to posterior uncertainty.
@@ -177,7 +177,7 @@ This notebook separates three questions: which tracker reconstructs the field be
 
 The application uses eight orthonormal DCT spatial modes on an 8-by-8 grid, rank-three changing subspaces, and supplied motion equal to half the physical motion. Passive data and known calibration patterns are separate protocols. Validation trajectories choose benchmark settings independently of evaluation data. Mean and mode share the same Bingham parameters; the mode equals matching EW PCA.
 
-Figures use larger canvases, TeX, and 200 dpi. Signed gain maps, paired trials, spatial errors, coverage forests, and cost–accuracy plots replace repeated trajectory curves. The application has only eight independent repetitions per scenario; intervals should be read as exploratory pilot evidence.'''),
+Figures use larger canvases, TeX, and 300 dpi. Signed gain maps, paired trials, spatial errors, coverage forests, and cost–accuracy plots replace repeated trajectory curves. The application has only eight independent repetitions per scenario; intervals should be read as exploratory pilot evidence.'''),
 code(common+"\nresult=run_or_load(ROOT,'case2',dict(seed=2718,**config))\nm=result['metrics'];c=result['calibration'];noise=result['noise']\ndisplay(result['config'])"),
 md(r'''## Attribute the gains correctly
 The three maps compare the posterior mean against GROUSE, its **own mode**, and rolling PCA. Blue means lower field MSE; red means higher MSE. Cells show paired absolute-loss differences scaled by the observed mean reference loss, with paired 95% intervals on that scale—not a confidence interval for a random loss ratio.
@@ -212,4 +212,4 @@ The original implementation spends far more time sampling moments than updating 
 
 If the requirement is only a cheap subspace basis or matched passive reconstruction, these results do not justify the full sampling overhead. Posterior computation is motivated by uncertainty-aware response decisions, directional risk and bounds, or noise diagnostics. It can be requested only when those quantities are needed; faster accurate moment backends remain an implementation opportunity.'''),
 code("show(cost_tradeoff(result,field=True,path=OUT/'field_tradeoff'))\nshow(sampler_overview(result,path=OUT/'field_accuracy'))\np=m[m.method=='Posterior mean']\nassert p.sampling_ok.astype(bool).all() and c.sampling_ok.astype(bool).all()\ndisplay(m[m.t==m.t.max()].groupby('method')[['decision_seconds','update_seconds']].median())")])
-print('Created the requested example notebooks with 200 dpi, question-oriented figures.')
+print('Created the requested example notebooks with 300 dpi, question-oriented figures.')

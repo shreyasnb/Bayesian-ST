@@ -13,7 +13,7 @@ sys.path.insert(0,str(ROOT))
 
 from lib.beamforming_visuals import (load_unified,setup,information,tracking,
     decisions,uncertainty,prediction_and_risk,parameter_inference,process_and_cost,FIGURE_CAPTIONS)
-from lib.plotting import plt
+from lib.plotting import plt, DPI
 
 
 def main():
@@ -58,7 +58,7 @@ def main():
         if hashlib.sha256((ROOT/name).read_bytes()).hexdigest()!=digest:
             raise RuntimeError(f'Plot producer or input changed during rendering: {name}')
     (out/'manifest.json').write_text(json.dumps(dict(profile=args.profile,
-        figure_dpi=200,savefig_dpi=200,text_usetex=True,
+        figure_dpi=DPI,savefig_dpi=DPI,text_usetex=True,
         display_choices=dict(n=8,s=.2,q=1.,trial=0,posterior_N=8,parameter_N=32),
         captions=FIGURE_CAPTIONS,
         sources=sources,input_manifests=input_manifests,

@@ -3,7 +3,7 @@
   "status": "completed",
   "example": "beamforming",
   "stage": "paper",
-  "created_utc": "2026-11-09T23:45:51.487881+00:00",
+  "created_utc": "2026-11-10T00:26:25.806730+00:00",
   "component_stages": {
     "computation": "paper",
     "performance": "paper",
@@ -11,10 +11,10 @@
     "theory": "paper"
   },
   "sources": {
-    "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-    "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-    "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-    "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+    "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+    "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+    "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+    "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
     "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
     "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
     "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -916,10 +916,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -1608,7 +1608,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -1635,8 +1635,8 @@
         }
       ],
       "output_hashes": {
-        "setup.pdf": "c10db98e5e83329334e66e392957adc8d079dcd6615f1d0fe71fdc9f000fc3cb",
-        "preview/setup.png": "12a273ea7120f970f88b5df1d9b4e29992349931223cb2e66fa80c1578e50418"
+        "setup.pdf": "0378769d1f7fb9456267d7da8554b8a07b9903deb9cb504dd149e0c333ad302d",
+        "preview/setup.png": "8ce5a7085f361423aef7948315f23615e7fb536e1b91ec13dda222f0d35db1af"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -2481,10 +2481,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -3158,7 +3158,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -3196,8 +3196,8 @@
         }
       ],
       "output_hashes": {
-        "task_performance.pdf": "9a1f07b5f8ca987c86b292c650b622b587a6b9945741bd36eb34a1606ca23a17",
-        "preview/task_performance.png": "16371029f2d88ea36ad3373f5240fcb4dfb0aff2f387026f0ff7eb781cec16d6"
+        "task_performance.pdf": "eb599e680291f87cb46a3a8a4a7e2343cdf308c4c3a4a3ec785d33b13ccdae5b",
+        "preview/task_performance.png": "cebf01a74bf50aaeb14f94bc7ba509a1302e26bd325af9f139640530d7705d0b"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -3206,7 +3206,7 @@
     "posterior_anisotropy.pdf": {
       "status": "completed",
       "experiment": "beamforming",
-      "formula_or_claim": "a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Panels (a,b) show the already-saved n=64 stationary episode 0 at t=16,64 with common relative-density colors. Panel (c) retains the t=64 complementary mean eigenvalues; panel (d) retains the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
+      "formula_or_claim": "a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.posterior_anisotropy",
       "configurations": {
@@ -4039,10 +4039,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -4210,11 +4210,6 @@
             "cohort": "stationary",
             "n": 64,
             "t": 64,
-            "density_checkpoints": [
-              16,
-              64
-            ],
-            "episode": 0,
             "section": "Real coefficient great sphere in the saved complex three-frame; not a normalized marginal"
           }
         ],
@@ -4712,21 +4707,21 @@
           "results/beamforming/data/paper/theory/manifest.json"
         ]
       },
-      "proposed_latex_caption": "a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Panels (a,b) show the already-saved n=64 stationary episode 0 at t=16,64 with common relative-density colors. Panel (c) retains the t=64 complementary mean eigenvalues; panel (d) retains the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
+      "proposed_latex_caption": "a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
       "placement": "contact main; beamforming supplementary",
       "pages": [
         {
           "page": 1,
           "figure_size_in": [
             7.0,
-            6.1
+            5.3
           ],
-          "axes": 5,
+          "axes": 4,
           "titles": false,
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -4736,144 +4731,42 @@
             "cohort": "stationary",
             "n": 64,
             "t": 64,
-            "density_checkpoints": [
-              16,
-              64
-            ],
-            "episode": 0,
             "section": "Real coefficient great sphere in the saved complex three-frame; not a normalized marginal"
           },
-          "panel_selections": [
-            {
-              "cohort": "stationary",
-              "n": 64,
-              "t": 16,
-              "episode": 0,
-              "section_frame_key": "static_n64_t16_section_frame",
-              "display_frame": "Native saved complex frame multiplied by R.T"
-            },
-            {
-              "cohort": "stationary",
-              "n": 64,
-              "t": 64,
-              "episode": 0,
-              "section_frame_key": "setup_section_frame",
-              "display_frame": "Native saved complex frame multiplied by R.T"
-            }
-          ],
+          "panel_selections": [],
           "sphere_displays": [
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.5825634160695851,
-                  0.7660444431189782,
-                  -0.27165378227418446
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  -0.6942720440148841,
-                  0.6427876096865391,
-                  0.3237443709670646
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  0.42261826174069944,
-                  1.807287630840702e-16,
-                  0.9063077870366499
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  127.4794810161176,
-                  2.1277910361844476e-14,
-                  3.2795266809044366e-15
-                ],
-                [
-                  1.5757574851765887e-14,
-                  79.90548596030013,
-                  -1.0005008139996625e-15
-                ],
-                [
-                  2.1158703250331323e-15,
-                  -4.257959252229006e-17,
-                  -13.77857016240928
-                ]
-              ],
-              "native_mode": [
-                1.0,
-                3.8924085700767303e-16,
-                1.909766190643066e-17
-              ],
-              "curvature_gaps": [
-                47.57399505581746,
-                141.2580511785269
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
-            },
-            {
-              "rotation_native_to_display": [
-                [
-                  0.5825634160695851,
-                  0.7660444431189782,
-                  -0.27165378227418446
-                ],
-                [
-                  -0.6942720440148841,
-                  0.6427876096865391,
-                  0.3237443709670646
-                ],
-                [
-                  0.42261826174069944,
-                  1.807287630840702e-16,
-                  0.9063077870366499
-                ]
-              ],
-              "native_parameter": [
-                [
-                  311.5567170599171,
-                  8.983619162867829e-14,
-                  1.3388386538822752e-14
-                ],
-                [
-                  9.09631141576769e-14,
-                  139.4242750703021,
-                  1.8736717010870855e-15
-                ],
-                [
-                  2.2001082380991395e-14,
-                  -6.292838115724327e-16,
-                  -55.54063234865174
-                ]
-              ],
-              "native_mode": [
-                1.0,
-                5.251749864713562e-16,
-                4.82017494498805e-17
-              ],
-              "curvature_gaps": [
-                172.13244198961507,
-                367.09734940856885
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             }
           ]
         }
       ],
       "output_hashes": {
-        "posterior_anisotropy.pdf": "6107e6a52ef08dff87198108e5e451e2c5be2ec5d6d8d2bc54c05288c33f7d65",
-        "preview/posterior_anisotropy.png": "e40250dcfb2ee8c79fbf114755d38419f621f3b60aebb3e6bba76995165041aa"
+        "posterior_anisotropy.pdf": "7d8820e971d6e9471b5243cacd0173f63468f8b3a6f2441bd33d0dbf890c41b6",
+        "preview/posterior_anisotropy.png": "ad6971632a76f8e30c73d59d7453c926c2850b143da2e5738ebf7f0b3b51706d"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -5718,10 +5611,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -6397,7 +6290,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -6418,7 +6311,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -6439,7 +6332,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -6451,10 +6344,10 @@
         }
       ],
       "output_hashes": {
-        "noise_adaptation.pdf": "827a66b4747d1a4b47ef9a5c864e3710b8994e5ca1fc0b6b2363e2e395eb802a",
-        "preview/noise_adaptation.png": "9b399b9259284feccbf0c646ff6fc5c9ed6b2e5f4abcc8cb6073ab7ae5c65407",
-        "preview/noise_adaptation_page2.png": "3079d8664ca7cced191fb34bd15efc304a5e2a4bfcbeba83d503726b88ebe1c6",
-        "preview/noise_adaptation_page3.png": "2591546fb7dbfb43e4e6d41d7abbac68bd21cc89aa2849a127b37c38ddb69084"
+        "noise_adaptation.pdf": "8d2241dc81bef295e8c33041339fd9524b07fce0cbce208c4bb237af9f1dda02",
+        "preview/noise_adaptation.png": "11a54c9e0782a6d41684008e5df2eaec022c34e56c26118283df6cf6947518e7",
+        "preview/noise_adaptation_page2.png": "20969b2732d4017b0c861a6b9ed8460d0c500f926753b16a32dcace08866e9bb",
+        "preview/noise_adaptation_page3.png": "0c066e6df1890cfe4b0bb34e90abefa11649082d82d054883ac0439390ed3a9a"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -7411,10 +7304,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -8092,7 +7985,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -8103,8 +7996,8 @@
         }
       ],
       "output_hashes": {
-        "information.pdf": "01b62bc74fa327ec5ee510b12b4511eb9883df4623aa461b8fd0af55885efce4",
-        "preview/information.png": "a9ab552d036ba10e832cb89e1fbfa74df8648c7598e8d3daf76e2ecee350b9a2"
+        "information.pdf": "7fe75852e3ce02277c6a5d65d7ccc4e3a7efe3c1099b245cb27979e3cd5691ae",
+        "preview/information.png": "d8326a5e69d1d0550078dc8089ae43b02207face4a897deebc65578bfbff25e1"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -9058,10 +8951,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -9739,7 +9632,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -9750,8 +9643,8 @@
         }
       ],
       "output_hashes": {
-        "posterior_curvature.pdf": "dea7b05568581b7aa8337fffcc64e328921cf32b0d0737cc3423af16b81b12b2",
-        "preview/posterior_curvature.png": "2408db831a72308b39af424d0f87a10fbb8d87beadd30b15150bd54665daf422"
+        "posterior_curvature.pdf": "2b80658d8b7e56444e4d5be5fc5e64ee44bbe4e9f81177daf29ba3893651d24f",
+        "preview/posterior_curvature.png": "649415e7d5f11739e3b096df18d2b5d400f588b1f718764450b11fc0df57ffb5"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -10705,10 +10598,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -11474,7 +11367,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -11501,7 +11394,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -11589,7 +11482,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -11616,7 +11509,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -11634,11 +11527,11 @@
         }
       ],
       "output_hashes": {
-        "tracking_bound.pdf": "6193b8111f36faf2e01900df2f408d9d07383e8d1a2eeac6e0191c1d01bcd7a6",
-        "preview/tracking_bound.png": "1040f2d053b29078c435ddd8605ce5d13f6e91d9b081795b0041a5d5b93d5e07",
-        "preview/tracking_bound_page2.png": "529180a3bfe5a1ddbb5eed9768e82a5b740cce20bb5635cf855e7734eb0fcd73",
-        "preview/tracking_bound_page3.png": "d6d6915ee5bcf431e90a281ed458f947eab39742f579a7be7763f85019870729",
-        "preview/tracking_bound_page4.png": "569828c8cd93bbab2687d37eefdb3c16319e8f20205dd510de908ec6984de277"
+        "tracking_bound.pdf": "938b296bdac6fa1f7a065277aa476e6673efeaf401239d4e0feb2bd92b570935",
+        "preview/tracking_bound.png": "66be61e582047ece0d4d14be697b522d2336aa570fcbf15524af309367ff5302",
+        "preview/tracking_bound_page2.png": "1bb7d1efe94ad07888b019614dda7e9d1212a801e1de7344fc41d761189d59e9",
+        "preview/tracking_bound_page3.png": "6e569d2e5fc57c247ebdb35dcc305c4ad9729743b97b82171d9308b38427c534",
+        "preview/tracking_bound_page4.png": "7192c720be3d0d46c9f795725bb0fd35a51f39a04235cd2bff53e7c96c8e80ed"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -12592,10 +12485,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -13273,7 +13166,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -13284,8 +13177,8 @@
         }
       ],
       "output_hashes": {
-        "block_updates.pdf": "ebc0d926805dd749fa5bef3f8fab03aeeff0222851ed33dea57f1f535e5f163f",
-        "preview/block_updates.png": "02271a6c2c2ab8aa4ee3d01264c743ad0699d368a4cbb380b2a41a77fa77704b"
+        "block_updates.pdf": "c0ef0bb1469978ccb9281b78451338db8179fa8b9941033e461bc1299d83d375",
+        "preview/block_updates.png": "a8c59aace318bcf681d8a7f4ec07cbf8fe411996bfd8779b376295cea1135ada"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -14239,10 +14132,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -14987,7 +14880,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -15028,7 +14921,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -15069,7 +14962,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -15110,7 +15003,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -15151,7 +15044,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -15192,7 +15085,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -15233,7 +15126,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -15274,7 +15167,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -15306,15 +15199,15 @@
         }
       ],
       "output_hashes": {
-        "additional_comparisons.pdf": "7154bb869bd9220ad88917af1474ff3a5da562796e9aa4c05e3af45fd4a16b22",
-        "preview/additional_comparisons.png": "858e8ad0c2f93956e45e5aca920d33c31b67078e48f85dad1a044c80affc3653",
-        "preview/additional_comparisons_page2.png": "52ec2bb92ad5b2dfffb3e77ece45a6a7b27bf5dd23a0c3255e4455717a16a372",
-        "preview/additional_comparisons_page3.png": "7be2235647b0e83f9d5974a96382c0240b418ee6914f81ba5fa3e6f476226374",
-        "preview/additional_comparisons_page4.png": "4ff70d42f2a22868e85a25fd1bed5be511bd79a628c7afdbb1abaae8712b0b3a",
-        "preview/additional_comparisons_page5.png": "1449ef8b5209b96a6fde0a3d8bda86d31c624976f8ccabf7897c0993c2f34359",
-        "preview/additional_comparisons_page6.png": "feac8bd75fbd31ee9397d6e706d6f54ff0d33798796e756f440257a021f7a480",
-        "preview/additional_comparisons_page7.png": "e1ff08f5273dafd59c804794a70e2bea999a0df8e9ea11b3c3270f57224daf04",
-        "preview/additional_comparisons_page8.png": "0acd0f95088144a355453283cbb2ccf24cc0820d240238a9c165644ea81019f1"
+        "additional_comparisons.pdf": "12e9129b9ea3c82db85598694b3609a1ae1082409a72609723a524346151e524",
+        "preview/additional_comparisons.png": "dfb3472fa62af85ae6a3782ca7e2fed53ff8b0e47a732756a4d4fa8836723055",
+        "preview/additional_comparisons_page2.png": "35da63a1721c267047846c654b1d923392d2a9967f7acfa98526f08538fa085c",
+        "preview/additional_comparisons_page3.png": "a3632c6f262cb4424cf9706b1a6bdbed7d90342ed31d300b4e5fda95a5464bb5",
+        "preview/additional_comparisons_page4.png": "99441cd2105c86c5035481accd02a05c480d89443c9dce160791a1fec505bd71",
+        "preview/additional_comparisons_page5.png": "bb33da7e37a9eed210fd8dfa78911f82e504bcbe3c96fff8bcfb8ec04c46e0ea",
+        "preview/additional_comparisons_page6.png": "5d593c3d466b290e3ba2a5a5e70a7019f0984f043bfe380a8a0e86f675cf2537",
+        "preview/additional_comparisons_page7.png": "3cb4f8a26e16d9fd8f6b8d5e7e0370882b4dafe832f51f9616474945a2dfdf57",
+        "preview/additional_comparisons_page8.png": "432c9a29e753419c4842854b4bbcc42851e1a61b6f9129b118fc4a0179fa8598"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -16423,10 +16316,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -17110,7 +17003,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -17121,8 +17014,8 @@
         }
       ],
       "output_hashes": {
-        "variance_estimation.pdf": "6f080609b088b57f2732d2a217877386657e0bad5ad911d97da54fb0d5346420",
-        "preview/variance_estimation.png": "3f34596d210e9d595e118bb52331969cd90a85a3217853e798ad954ddb4a81e4"
+        "variance_estimation.pdf": "b934b651307207baf8d4c082f007c45061273655e7b8fa802481412a6d295067",
+        "preview/variance_estimation.png": "25a6f7298f84982346e6d3d95312e795bfe5b1fb062ca2467f4e80782aff5fd2"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -18231,10 +18124,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -19019,7 +18912,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -19045,7 +18938,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -19071,7 +18964,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -19097,7 +18990,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -19123,7 +19016,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -19149,7 +19042,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -19175,7 +19068,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -19221,7 +19114,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -19267,7 +19160,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -19304,16 +19197,16 @@
         }
       ],
       "output_hashes": {
-        "predictive_calibration.pdf": "3a541bc16eed0d92b3335d83e507a4c9b9eaba5cfdf0ac5a7fd82db760010660",
-        "preview/predictive_calibration.png": "de7274837e86d66a52b3b44f219b047e1da8efdb6e52f05b46920f2a522df2f3",
-        "preview/predictive_calibration_page2.png": "ecaf4b8b2cd62226b2ea3ce590a62e9cf72b88c7f0fa722ac59537c9bb397a56",
-        "preview/predictive_calibration_page3.png": "e0965fb2da86ada4fd7dbdb7094f9023c1d8e0756ea2e126fafba197b0a2feb5",
-        "preview/predictive_calibration_page4.png": "0b68fd0239c8ac6fd67865c470ccf52355fd227bd447f4262fa66c77082d9307",
-        "preview/predictive_calibration_page5.png": "6c0f13e9a91ef7dae26a01a3b599d29c48b82181fb7e6ae71e6c9c88dfe10bc3",
-        "preview/predictive_calibration_page6.png": "80755ce95ba6e789d0da2248a4876ebd11ff35e4556ff9b56bbc41ada40376f5",
-        "preview/predictive_calibration_page7.png": "24a0e1f065ad844cc0accfe39741035fc28072db5c3e1bc1befee5d8c9f4e9b9",
-        "preview/predictive_calibration_page8.png": "5bd738c881225bb835e2f1e36d8e2a9fa9a9af79b426d4e3047393629f83c68f",
-        "preview/predictive_calibration_page9.png": "c8a367fd049ef5223b4ebb8889f2a0eb4654e48355cf169b17f887a9d90c656a"
+        "predictive_calibration.pdf": "604239f75bf63bba65045174db5f14a77f98935c03c82f1a1b8df1187053aa96",
+        "preview/predictive_calibration.png": "e230734c7b40f69cc495470c470ec64ed9b6b7a775eb510b6128133d2cdf550e",
+        "preview/predictive_calibration_page2.png": "aecda51cfb99b95af3d192be2250bf1f5585875422b9ae04ba10a91925606365",
+        "preview/predictive_calibration_page3.png": "69958c3b15b62b338efa5883a72987c55277f532d9b7407381f0e18ff51160cb",
+        "preview/predictive_calibration_page4.png": "0721b2aa6007ff6a6c4c1fdaba2800805fb9f97e8782f337de0a10c3f1227ab3",
+        "preview/predictive_calibration_page5.png": "d5e4cf50d7183adab8157a1104c33a2b3982f001084e3a86f9929cdfa5e49e90",
+        "preview/predictive_calibration_page6.png": "b74e251cc71ec2f5f86f60ede9d625f0b95f92033b9c5b6ed81ea6cbe78633fc",
+        "preview/predictive_calibration_page7.png": "3c043438266c90b3ab078e6c5a008ff7050e2e39da3e792d8eed14f2fa25727e",
+        "preview/predictive_calibration_page8.png": "592e111f17fd3877b712255fa902819ca38db05e1aec62ee4a7bdd6216f34bfd",
+        "preview/predictive_calibration_page9.png": "50f167cac2271c7d171414acbf6aa56f4a7f8684ef4a7c1bd04b16fe08d94a9d"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -20422,10 +20315,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -21114,7 +21007,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -21131,8 +21024,8 @@
         }
       ],
       "output_hashes": {
-        "predictive_scores.pdf": "09346f47bfbc5d8f926cda2d9c6ad097bfad93bb2673ed411dad2908cbc2a836",
-        "preview/predictive_scores.png": "d1658e35e369822162a10f3435778a66fb6b812d980ed9cd28207e65472cb291"
+        "predictive_scores.pdf": "b7761b920fde840dc2b04ef8fa93c0cf262abd6650c324b0003551c41e93b278",
+        "preview/predictive_scores.png": "2eea474490c49a4b138de60877661f8c0a985351f32b7cc4f76b217d23e7200b"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -22241,10 +22134,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -22940,7 +22833,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -22964,8 +22857,8 @@
         }
       ],
       "output_hashes": {
-        "model_mismatch.pdf": "76fb62ad948caffaac430d68e1b73bcd6932e5b1e90103c0e55e6c9876ab3669",
-        "preview/model_mismatch.png": "aac7ebb1246cca81b49b408389b0f48fb64948ac1991fdfefc290ed225324ea2"
+        "model_mismatch.pdf": "c4adef5709299ef3b2ba9798dbcf027deb178f6145cde6e567d6253670edf798",
+        "preview/model_mismatch.png": "ad056ae005af0ce25a06e468079cc54e4b256160c20ab9e388049808ddb9dadb"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -24074,10 +23967,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -24761,7 +24654,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -24778,8 +24671,8 @@
         }
       ],
       "output_hashes": {
-        "computation_time.pdf": "ae031da7860074ddcb5f1031be3853c781caf459c4b5c7c891b8dcf194ac90ab",
-        "preview/computation_time.png": "0476d9c92e7eacc927d35c6495d971965152605eb32917fa54450cc03aafb4d7"
+        "computation_time.pdf": "83332f364772f52281aa56912dc2214ed3c2545e907ec7f31177c22d50c8fa2d",
+        "preview/computation_time.png": "1ff5dd99370933596a1e9f59b6e44f50e21119808154962dedef623095390320"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -25888,10 +25781,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -26579,7 +26472,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -26599,7 +26492,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -26619,7 +26512,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -26633,10 +26526,10 @@
         }
       ],
       "output_hashes": {
-        "numerical_accuracy.pdf": "b429fea7fc742d404ea82919afc19ce148d1f4e0fb9b6dd059902cdd61901c90",
-        "preview/numerical_accuracy.png": "11f73ee59977ca27d8682423e95fcbdc1b9a9ee763b74d260d31e0fb884a9339",
-        "preview/numerical_accuracy_page2.png": "45fdfd56b0e874b0c7f80b007800e9d5cea6a204b121654f2306c8fbfa0e1008",
-        "preview/numerical_accuracy_page3.png": "b1302ce18eaebd1e8dda559fc5df35ec06df2a183a854b53d239daf413884011"
+        "numerical_accuracy.pdf": "219b2a0954c3d93fae3053a65a34ce6b55a93a535adef39571ad3f2469dde196",
+        "preview/numerical_accuracy.png": "12a4897915ec9d505bf345feb5843ec28287b01bb78d8b022f586cc660feb76a",
+        "preview/numerical_accuracy_page2.png": "c0650f3e109a81e48f39a84805fd0e81aebb081482844bec9bcc96774f671ff8",
+        "preview/numerical_accuracy_page3.png": "3d54b465e7f6c22bf54d3fe667088e19aa8d4b73391ace54633947fedfa56769"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -27745,10 +27638,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -28432,7 +28325,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -28476,8 +28369,8 @@
         }
       ],
       "output_hashes": {
-        "paper_summary.pdf": "5acc8c5e87641b81ee2d83b16f443e2bc0c3a6bbfe186b3c95064c70c198d26f",
-        "preview/paper_summary.png": "4fa175a781b90de2c539c65526e19818304aee7c82b83e425884a0af317701d2"
+        "paper_summary.pdf": "fcb45119a493b0cbeae9b658cd04d7760a374ee55ac1d3f0f9a87618c3102cf1",
+        "preview/paper_summary.png": "f1cea54aeeb8526adf4fa1a2af731d2bfead43ec651b3872927325c0560dd763"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -28510,7 +28403,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -28530,7 +28423,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -28550,7 +28443,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -28577,7 +28470,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -28665,7 +28558,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -28692,7 +28585,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30400,10 +30293,10 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -30569,7 +30462,7 @@
         "results/beamforming/tables/paper/theory/numerical_accuracy.csv": "4dc95fd795299aa7924d25b31865ead35d814bec571f86367a561aa5c40e712d"
       },
       "output_hashes": {
-        "supp_information_tracking.pdf": "7f8fb54afcac7ca99316e9f1d7bcfa6fc622b9579388eb35bc3f0bb8f3108a41"
+        "supp_information_tracking.pdf": "61e7fd16fb610b2706ac8cdc31f4b56c3825a3b4ee55ac00b317e69f4da56191"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     },
@@ -30584,7 +30477,7 @@
         "additional_comparisons.pdf",
         "posterior_anisotropy.pdf"
       ],
-      "proposed_latex_caption": "Task losses on common independent test episodes. Held-out disturbance or query losses are averaged within each episode before computing pointwise Student 95\\% intervals. Only the posterior-mean curve carries a confidence band in the main absolute-loss panels. The contact paired panel isolates the same-data modal, matched-isotropic and regularized spectral controls; response-only GREAT remains in its absolute-loss panel and the full supplementary grid. Contact paired points show mean loss differences and pointwise Student 95\\% confidence intervals across independent episodes, including every episode outlier; they are not posterior intervals. Beamforming paired boxes show the distribution of episode differences, not confidence intervals. The same-$A_t$ modal and matched-isotropic controls isolate posterior moments; GREAT and application-specific controls have separately validated settings and their stated information. Beamforming power ratios are $10\\log_{10}(P/P_{\\mathrm{oracle}})$, where the denominator is true-covariance oracle output power. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode. Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing/action cadence cost is reported in the computation output. Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms. a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Panels (a,b) show the already-saved n=64 stationary episode 0 at t=16,64 with common relative-density colors. Panel (c) retains the t=64 complementary mean eigenvalues; panel (d) retains the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
+      "proposed_latex_caption": "Task losses on common independent test episodes. Held-out disturbance or query losses are averaged within each episode before computing pointwise Student 95\\% intervals. Only the posterior-mean curve carries a confidence band in the main absolute-loss panels. The contact paired panel isolates the same-data modal, matched-isotropic and regularized spectral controls; response-only GREAT remains in its absolute-loss panel and the full supplementary grid. Contact paired points show mean loss differences and pointwise Student 95\\% confidence intervals across independent episodes, including every episode outlier; they are not posterior intervals. Beamforming paired boxes show the distribution of episode differences, not confidence intervals. The same-$A_t$ modal and matched-isotropic controls isolate posterior moments; GREAT and application-specific controls have separately validated settings and their stated information. Beamforming power ratios are $10\\log_{10}(P/P_{\\mathrm{oracle}})$, where the denominator is true-covariance oracle output power. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode. Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing/action cadence cost is reported in the computation output. Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms. a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
       "placement": "supplementary",
       "pages": [
         {
@@ -30598,7 +30491,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30645,7 +30538,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30665,7 +30558,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30706,7 +30599,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30747,7 +30640,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30788,7 +30681,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30829,7 +30722,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30870,7 +30763,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30911,7 +30804,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30952,7 +30845,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30986,14 +30879,14 @@
           "page": 11,
           "figure_size_in": [
             7.0,
-            6.1
+            5.3
           ],
-          "axes": 5,
+          "axes": 4,
           "titles": false,
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -31003,137 +30896,35 @@
             "cohort": "stationary",
             "n": 64,
             "t": 64,
-            "density_checkpoints": [
-              16,
-              64
-            ],
-            "episode": 0,
             "section": "Real coefficient great sphere in the saved complex three-frame; not a normalized marginal"
           },
-          "panel_selections": [
-            {
-              "cohort": "stationary",
-              "n": 64,
-              "t": 16,
-              "episode": 0,
-              "section_frame_key": "static_n64_t16_section_frame",
-              "display_frame": "Native saved complex frame multiplied by R.T"
-            },
-            {
-              "cohort": "stationary",
-              "n": 64,
-              "t": 64,
-              "episode": 0,
-              "section_frame_key": "setup_section_frame",
-              "display_frame": "Native saved complex frame multiplied by R.T"
-            }
-          ],
+          "panel_selections": [],
           "sphere_displays": [
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.5825634160695851,
-                  0.7660444431189782,
-                  -0.27165378227418446
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  -0.6942720440148841,
-                  0.6427876096865391,
-                  0.3237443709670646
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  0.42261826174069944,
-                  1.807287630840702e-16,
-                  0.9063077870366499
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  127.4794810161176,
-                  2.1277910361844476e-14,
-                  3.2795266809044366e-15
-                ],
-                [
-                  1.5757574851765887e-14,
-                  79.90548596030013,
-                  -1.0005008139996625e-15
-                ],
-                [
-                  2.1158703250331323e-15,
-                  -4.257959252229006e-17,
-                  -13.77857016240928
-                ]
-              ],
-              "native_mode": [
-                1.0,
-                3.8924085700767303e-16,
-                1.909766190643066e-17
-              ],
-              "curvature_gaps": [
-                47.57399505581746,
-                141.2580511785269
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
-            },
-            {
-              "rotation_native_to_display": [
-                [
-                  0.5825634160695851,
-                  0.7660444431189782,
-                  -0.27165378227418446
-                ],
-                [
-                  -0.6942720440148841,
-                  0.6427876096865391,
-                  0.3237443709670646
-                ],
-                [
-                  0.42261826174069944,
-                  1.807287630840702e-16,
-                  0.9063077870366499
-                ]
-              ],
-              "native_parameter": [
-                [
-                  311.5567170599171,
-                  8.983619162867829e-14,
-                  1.3388386538822752e-14
-                ],
-                [
-                  9.09631141576769e-14,
-                  139.4242750703021,
-                  1.8736717010870855e-15
-                ],
-                [
-                  2.2001082380991395e-14,
-                  -6.292838115724327e-16,
-                  -55.54063234865174
-                ]
-              ],
-              "native_mode": [
-                1.0,
-                5.251749864713562e-16,
-                4.82017494498805e-17
-              ],
-              "curvature_gaps": [
-                172.13244198961507,
-                367.09734940856885
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             }
           ]
         }
@@ -32311,11 +32102,6 @@
             "cohort": "stationary",
             "n": 64,
             "t": 64,
-            "density_checkpoints": [
-              16,
-              64
-            ],
-            "episode": 0,
             "section": "Real coefficient great sphere in the saved complex three-frame; not a normalized marginal"
           }
         ],
@@ -32819,10 +32605,10 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -32988,7 +32774,7 @@
         "results/beamforming/tables/paper/theory/numerical_accuracy.csv": "4dc95fd795299aa7924d25b31865ead35d814bec571f86367a561aa5c40e712d"
       },
       "output_hashes": {
-        "supp_comparisons.pdf": "68ae8f18a57f00b53169a98bdf519147eeff806c3f69602cb1bbe23200e0c537"
+        "supp_comparisons.pdf": "5c214f1095ce26a749c7598bf3773d6ee3f4df9459ac45c0c0c1d0d1c895aab9"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     },
@@ -33020,7 +32806,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33040,7 +32826,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33061,7 +32847,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33082,7 +32868,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33103,7 +32889,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33129,7 +32915,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33155,7 +32941,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33181,7 +32967,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33207,7 +32993,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33233,7 +33019,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33259,7 +33045,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33305,7 +33091,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33351,7 +33137,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33397,7 +33183,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33423,7 +33209,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33456,7 +33242,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33482,7 +33268,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33502,7 +33288,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -33522,7 +33308,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -35266,10 +35052,10 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -35435,74 +35221,74 @@
         "results/beamforming/tables/paper/theory/numerical_accuracy.csv": "4dc95fd795299aa7924d25b31865ead35d814bec571f86367a561aa5c40e712d"
       },
       "output_hashes": {
-        "supp_variance_prediction_cost.pdf": "ca370511cf44eabf69f43a5abbc9893ec0986b5f4b03792fec02a769da525f36"
+        "supp_variance_prediction_cost.pdf": "7898380e56a1f7f7848d5ded7bd08013f5e4c487d9a63fb6f29fd6b1412c9668"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     }
   },
   "files": {
-    "setup.pdf": "c10db98e5e83329334e66e392957adc8d079dcd6615f1d0fe71fdc9f000fc3cb",
-    "preview/setup.png": "12a273ea7120f970f88b5df1d9b4e29992349931223cb2e66fa80c1578e50418",
-    "task_performance.pdf": "9a1f07b5f8ca987c86b292c650b622b587a6b9945741bd36eb34a1606ca23a17",
-    "preview/task_performance.png": "16371029f2d88ea36ad3373f5240fcb4dfb0aff2f387026f0ff7eb781cec16d6",
-    "posterior_anisotropy.pdf": "6107e6a52ef08dff87198108e5e451e2c5be2ec5d6d8d2bc54c05288c33f7d65",
-    "preview/posterior_anisotropy.png": "e40250dcfb2ee8c79fbf114755d38419f621f3b60aebb3e6bba76995165041aa",
-    "noise_adaptation.pdf": "827a66b4747d1a4b47ef9a5c864e3710b8994e5ca1fc0b6b2363e2e395eb802a",
-    "preview/noise_adaptation.png": "9b399b9259284feccbf0c646ff6fc5c9ed6b2e5f4abcc8cb6073ab7ae5c65407",
-    "preview/noise_adaptation_page2.png": "3079d8664ca7cced191fb34bd15efc304a5e2a4bfcbeba83d503726b88ebe1c6",
-    "preview/noise_adaptation_page3.png": "2591546fb7dbfb43e4e6d41d7abbac68bd21cc89aa2849a127b37c38ddb69084",
-    "information.pdf": "01b62bc74fa327ec5ee510b12b4511eb9883df4623aa461b8fd0af55885efce4",
-    "preview/information.png": "a9ab552d036ba10e832cb89e1fbfa74df8648c7598e8d3daf76e2ecee350b9a2",
-    "posterior_curvature.pdf": "dea7b05568581b7aa8337fffcc64e328921cf32b0d0737cc3423af16b81b12b2",
-    "preview/posterior_curvature.png": "2408db831a72308b39af424d0f87a10fbb8d87beadd30b15150bd54665daf422",
-    "tracking_bound.pdf": "6193b8111f36faf2e01900df2f408d9d07383e8d1a2eeac6e0191c1d01bcd7a6",
-    "preview/tracking_bound.png": "1040f2d053b29078c435ddd8605ce5d13f6e91d9b081795b0041a5d5b93d5e07",
-    "preview/tracking_bound_page2.png": "529180a3bfe5a1ddbb5eed9768e82a5b740cce20bb5635cf855e7734eb0fcd73",
-    "preview/tracking_bound_page3.png": "d6d6915ee5bcf431e90a281ed458f947eab39742f579a7be7763f85019870729",
-    "preview/tracking_bound_page4.png": "569828c8cd93bbab2687d37eefdb3c16319e8f20205dd510de908ec6984de277",
-    "block_updates.pdf": "ebc0d926805dd749fa5bef3f8fab03aeeff0222851ed33dea57f1f535e5f163f",
-    "preview/block_updates.png": "02271a6c2c2ab8aa4ee3d01264c743ad0699d368a4cbb380b2a41a77fa77704b",
-    "additional_comparisons.pdf": "7154bb869bd9220ad88917af1474ff3a5da562796e9aa4c05e3af45fd4a16b22",
-    "preview/additional_comparisons.png": "858e8ad0c2f93956e45e5aca920d33c31b67078e48f85dad1a044c80affc3653",
-    "preview/additional_comparisons_page2.png": "52ec2bb92ad5b2dfffb3e77ece45a6a7b27bf5dd23a0c3255e4455717a16a372",
-    "preview/additional_comparisons_page3.png": "7be2235647b0e83f9d5974a96382c0240b418ee6914f81ba5fa3e6f476226374",
-    "preview/additional_comparisons_page4.png": "4ff70d42f2a22868e85a25fd1bed5be511bd79a628c7afdbb1abaae8712b0b3a",
-    "preview/additional_comparisons_page5.png": "1449ef8b5209b96a6fde0a3d8bda86d31c624976f8ccabf7897c0993c2f34359",
-    "preview/additional_comparisons_page6.png": "feac8bd75fbd31ee9397d6e706d6f54ff0d33798796e756f440257a021f7a480",
-    "preview/additional_comparisons_page7.png": "e1ff08f5273dafd59c804794a70e2bea999a0df8e9ea11b3c3270f57224daf04",
-    "preview/additional_comparisons_page8.png": "0acd0f95088144a355453283cbb2ccf24cc0820d240238a9c165644ea81019f1",
-    "variance_estimation.pdf": "6f080609b088b57f2732d2a217877386657e0bad5ad911d97da54fb0d5346420",
-    "preview/variance_estimation.png": "3f34596d210e9d595e118bb52331969cd90a85a3217853e798ad954ddb4a81e4",
-    "predictive_calibration.pdf": "3a541bc16eed0d92b3335d83e507a4c9b9eaba5cfdf0ac5a7fd82db760010660",
-    "preview/predictive_calibration.png": "de7274837e86d66a52b3b44f219b047e1da8efdb6e52f05b46920f2a522df2f3",
-    "preview/predictive_calibration_page2.png": "ecaf4b8b2cd62226b2ea3ce590a62e9cf72b88c7f0fa722ac59537c9bb397a56",
-    "preview/predictive_calibration_page3.png": "e0965fb2da86ada4fd7dbdb7094f9023c1d8e0756ea2e126fafba197b0a2feb5",
-    "preview/predictive_calibration_page4.png": "0b68fd0239c8ac6fd67865c470ccf52355fd227bd447f4262fa66c77082d9307",
-    "preview/predictive_calibration_page5.png": "6c0f13e9a91ef7dae26a01a3b599d29c48b82181fb7e6ae71e6c9c88dfe10bc3",
-    "preview/predictive_calibration_page6.png": "80755ce95ba6e789d0da2248a4876ebd11ff35e4556ff9b56bbc41ada40376f5",
-    "preview/predictive_calibration_page7.png": "24a0e1f065ad844cc0accfe39741035fc28072db5c3e1bc1befee5d8c9f4e9b9",
-    "preview/predictive_calibration_page8.png": "5bd738c881225bb835e2f1e36d8e2a9fa9a9af79b426d4e3047393629f83c68f",
-    "preview/predictive_calibration_page9.png": "c8a367fd049ef5223b4ebb8889f2a0eb4654e48355cf169b17f887a9d90c656a",
-    "predictive_scores.pdf": "09346f47bfbc5d8f926cda2d9c6ad097bfad93bb2673ed411dad2908cbc2a836",
-    "preview/predictive_scores.png": "d1658e35e369822162a10f3435778a66fb6b812d980ed9cd28207e65472cb291",
-    "model_mismatch.pdf": "76fb62ad948caffaac430d68e1b73bcd6932e5b1e90103c0e55e6c9876ab3669",
-    "preview/model_mismatch.png": "aac7ebb1246cca81b49b408389b0f48fb64948ac1991fdfefc290ed225324ea2",
-    "computation_time.pdf": "ae031da7860074ddcb5f1031be3853c781caf459c4b5c7c891b8dcf194ac90ab",
-    "preview/computation_time.png": "0476d9c92e7eacc927d35c6495d971965152605eb32917fa54450cc03aafb4d7",
-    "numerical_accuracy.pdf": "b429fea7fc742d404ea82919afc19ce148d1f4e0fb9b6dd059902cdd61901c90",
-    "preview/numerical_accuracy.png": "11f73ee59977ca27d8682423e95fcbdc1b9a9ee763b74d260d31e0fb884a9339",
-    "preview/numerical_accuracy_page2.png": "45fdfd56b0e874b0c7f80b007800e9d5cea6a204b121654f2306c8fbfa0e1008",
-    "preview/numerical_accuracy_page3.png": "b1302ce18eaebd1e8dda559fc5df35ec06df2a183a854b53d239daf413884011",
-    "paper_summary.pdf": "5acc8c5e87641b81ee2d83b16f443e2bc0c3a6bbfe186b3c95064c70c198d26f",
-    "preview/paper_summary.png": "4fa175a781b90de2c539c65526e19818304aee7c82b83e425884a0af317701d2",
-    "supp_information_tracking.pdf": "7f8fb54afcac7ca99316e9f1d7bcfa6fc622b9579388eb35bc3f0bb8f3108a41",
-    "supp_comparisons.pdf": "68ae8f18a57f00b53169a98bdf519147eeff806c3f69602cb1bbe23200e0c537",
-    "supp_variance_prediction_cost.pdf": "ca370511cf44eabf69f43a5abbc9893ec0986b5f4b03792fec02a769da525f36"
+    "setup.pdf": "0378769d1f7fb9456267d7da8554b8a07b9903deb9cb504dd149e0c333ad302d",
+    "preview/setup.png": "8ce5a7085f361423aef7948315f23615e7fb536e1b91ec13dda222f0d35db1af",
+    "task_performance.pdf": "eb599e680291f87cb46a3a8a4a7e2343cdf308c4c3a4a3ec785d33b13ccdae5b",
+    "preview/task_performance.png": "cebf01a74bf50aaeb14f94bc7ba509a1302e26bd325af9f139640530d7705d0b",
+    "posterior_anisotropy.pdf": "7d8820e971d6e9471b5243cacd0173f63468f8b3a6f2441bd33d0dbf890c41b6",
+    "preview/posterior_anisotropy.png": "ad6971632a76f8e30c73d59d7453c926c2850b143da2e5738ebf7f0b3b51706d",
+    "noise_adaptation.pdf": "8d2241dc81bef295e8c33041339fd9524b07fce0cbce208c4bb237af9f1dda02",
+    "preview/noise_adaptation.png": "11a54c9e0782a6d41684008e5df2eaec022c34e56c26118283df6cf6947518e7",
+    "preview/noise_adaptation_page2.png": "20969b2732d4017b0c861a6b9ed8460d0c500f926753b16a32dcace08866e9bb",
+    "preview/noise_adaptation_page3.png": "0c066e6df1890cfe4b0bb34e90abefa11649082d82d054883ac0439390ed3a9a",
+    "information.pdf": "7fe75852e3ce02277c6a5d65d7ccc4e3a7efe3c1099b245cb27979e3cd5691ae",
+    "preview/information.png": "d8326a5e69d1d0550078dc8089ae43b02207face4a897deebc65578bfbff25e1",
+    "posterior_curvature.pdf": "2b80658d8b7e56444e4d5be5fc5e64ee44bbe4e9f81177daf29ba3893651d24f",
+    "preview/posterior_curvature.png": "649415e7d5f11739e3b096df18d2b5d400f588b1f718764450b11fc0df57ffb5",
+    "tracking_bound.pdf": "938b296bdac6fa1f7a065277aa476e6673efeaf401239d4e0feb2bd92b570935",
+    "preview/tracking_bound.png": "66be61e582047ece0d4d14be697b522d2336aa570fcbf15524af309367ff5302",
+    "preview/tracking_bound_page2.png": "1bb7d1efe94ad07888b019614dda7e9d1212a801e1de7344fc41d761189d59e9",
+    "preview/tracking_bound_page3.png": "6e569d2e5fc57c247ebdb35dcc305c4ad9729743b97b82171d9308b38427c534",
+    "preview/tracking_bound_page4.png": "7192c720be3d0d46c9f795725bb0fd35a51f39a04235cd2bff53e7c96c8e80ed",
+    "block_updates.pdf": "c0ef0bb1469978ccb9281b78451338db8179fa8b9941033e461bc1299d83d375",
+    "preview/block_updates.png": "a8c59aace318bcf681d8a7f4ec07cbf8fe411996bfd8779b376295cea1135ada",
+    "additional_comparisons.pdf": "12e9129b9ea3c82db85598694b3609a1ae1082409a72609723a524346151e524",
+    "preview/additional_comparisons.png": "dfb3472fa62af85ae6a3782ca7e2fed53ff8b0e47a732756a4d4fa8836723055",
+    "preview/additional_comparisons_page2.png": "35da63a1721c267047846c654b1d923392d2a9967f7acfa98526f08538fa085c",
+    "preview/additional_comparisons_page3.png": "a3632c6f262cb4424cf9706b1a6bdbed7d90342ed31d300b4e5fda95a5464bb5",
+    "preview/additional_comparisons_page4.png": "99441cd2105c86c5035481accd02a05c480d89443c9dce160791a1fec505bd71",
+    "preview/additional_comparisons_page5.png": "bb33da7e37a9eed210fd8dfa78911f82e504bcbe3c96fff8bcfb8ec04c46e0ea",
+    "preview/additional_comparisons_page6.png": "5d593c3d466b290e3ba2a5a5e70a7019f0984f043bfe380a8a0e86f675cf2537",
+    "preview/additional_comparisons_page7.png": "3cb4f8a26e16d9fd8f6b8d5e7e0370882b4dafe832f51f9616474945a2dfdf57",
+    "preview/additional_comparisons_page8.png": "432c9a29e753419c4842854b4bbcc42851e1a61b6f9129b118fc4a0179fa8598",
+    "variance_estimation.pdf": "b934b651307207baf8d4c082f007c45061273655e7b8fa802481412a6d295067",
+    "preview/variance_estimation.png": "25a6f7298f84982346e6d3d95312e795bfe5b1fb062ca2467f4e80782aff5fd2",
+    "predictive_calibration.pdf": "604239f75bf63bba65045174db5f14a77f98935c03c82f1a1b8df1187053aa96",
+    "preview/predictive_calibration.png": "e230734c7b40f69cc495470c470ec64ed9b6b7a775eb510b6128133d2cdf550e",
+    "preview/predictive_calibration_page2.png": "aecda51cfb99b95af3d192be2250bf1f5585875422b9ae04ba10a91925606365",
+    "preview/predictive_calibration_page3.png": "69958c3b15b62b338efa5883a72987c55277f532d9b7407381f0e18ff51160cb",
+    "preview/predictive_calibration_page4.png": "0721b2aa6007ff6a6c4c1fdaba2800805fb9f97e8782f337de0a10c3f1227ab3",
+    "preview/predictive_calibration_page5.png": "d5e4cf50d7183adab8157a1104c33a2b3982f001084e3a86f9929cdfa5e49e90",
+    "preview/predictive_calibration_page6.png": "b74e251cc71ec2f5f86f60ede9d625f0b95f92033b9c5b6ed81ea6cbe78633fc",
+    "preview/predictive_calibration_page7.png": "3c043438266c90b3ab078e6c5a008ff7050e2e39da3e792d8eed14f2fa25727e",
+    "preview/predictive_calibration_page8.png": "592e111f17fd3877b712255fa902819ca38db05e1aec62ee4a7bdd6216f34bfd",
+    "preview/predictive_calibration_page9.png": "50f167cac2271c7d171414acbf6aa56f4a7f8684ef4a7c1bd04b16fe08d94a9d",
+    "predictive_scores.pdf": "b7761b920fde840dc2b04ef8fa93c0cf262abd6650c324b0003551c41e93b278",
+    "preview/predictive_scores.png": "2eea474490c49a4b138de60877661f8c0a985351f32b7cc4f76b217d23e7200b",
+    "model_mismatch.pdf": "c4adef5709299ef3b2ba9798dbcf027deb178f6145cde6e567d6253670edf798",
+    "preview/model_mismatch.png": "ad056ae005af0ce25a06e468079cc54e4b256160c20ab9e388049808ddb9dadb",
+    "computation_time.pdf": "83332f364772f52281aa56912dc2214ed3c2545e907ec7f31177c22d50c8fa2d",
+    "preview/computation_time.png": "1ff5dd99370933596a1e9f59b6e44f50e21119808154962dedef623095390320",
+    "numerical_accuracy.pdf": "219b2a0954c3d93fae3053a65a34ce6b55a93a535adef39571ad3f2469dde196",
+    "preview/numerical_accuracy.png": "12a4897915ec9d505bf345feb5843ec28287b01bb78d8b022f586cc660feb76a",
+    "preview/numerical_accuracy_page2.png": "c0650f3e109a81e48f39a84805fd0e81aebb081482844bec9bcc96774f671ff8",
+    "preview/numerical_accuracy_page3.png": "3d54b465e7f6c22bf54d3fe667088e19aa8d4b73391ace54633947fedfa56769",
+    "paper_summary.pdf": "fcb45119a493b0cbeae9b658cd04d7760a374ee55ac1d3f0f9a87618c3102cf1",
+    "preview/paper_summary.png": "f1cea54aeeb8526adf4fa1a2af731d2bfead43ec651b3872927325c0560dd763",
+    "supp_information_tracking.pdf": "61e7fd16fb610b2706ac8cdc31f4b56c3825a3b4ee55ac00b317e69f4da56191",
+    "supp_comparisons.pdf": "5c214f1095ce26a749c7598bf3773d6ee3f4df9459ac45c0c0c1d0d1c895aab9",
+    "supp_variance_prediction_cost.pdf": "7898380e56a1f7f7848d5ded7bd08013f5e4c487d9a63fb6f29fd6b1412c9668"
   },
   "unresolved": {},
   "text_usetex": true,
-  "preview_dpi": 200,
-  "rasterized_layer_dpi": 200,
+  "preview_dpi": 300,
+  "rasterized_layer_dpi": 300,
   "pdf_scope": "Vector text, axes and lines; density surfaces and heatmap layers may be rasterized. PDF has no global dpi.",
   "titles": false,
   "shared_camera": {

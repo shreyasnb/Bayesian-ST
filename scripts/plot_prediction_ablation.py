@@ -13,7 +13,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 import pandas as pd
 from lib.validation import require_gate
-from lib.plotting import plt
+from lib.plotting import plt, DPI
 from lib.prediction_visuals import (motion_overview,application_gains,
     process_coverage_width,motion_coverage_width,memory_tuning,motion_stress,
     application_tuning,application_cost,process_prediction_fans)
@@ -89,7 +89,7 @@ def main():
         sources={p:sha(ROOT/p) for p in ['lib/prediction_visuals.py','scripts/plot_prediction_ablation.py','lib/plotting.py']},
         input_metadata={str((directory/study/name).relative_to(ROOT)):sha(directory/study/name) for study,name in
                         [('motion','config.json'),('applications','config.json'),('process','status.json')]},
-        figures={p.name:sha(p) for p in products},dpi=200,text_usetex=True,
+        figures={p.name:sha(p) for p in products},dpi=DPI,text_usetex=True,
         motion_query_tables='posterior_paired_noise.csv and coverage_paired_noise.csv; raw inherited query evaluations preserved',
         main_figures=['motion','application_gains','process_coverage_width'],
         interpretation='Replicated-data intervals, maintained-posterior uncertainty, and numerical reference errors have separate labels.')

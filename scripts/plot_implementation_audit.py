@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import numpy as np
 import pandas as pd
-from lib.plotting import plt, save
+from lib.plotting import plt, save, DPI
 from matplotlib.lines import Line2D
 from matplotlib.colors import ListedColormap, BoundaryNorm
 
@@ -89,9 +89,9 @@ def clean(ax, axis='both'):
 
 
 def finish(fig):
-    if (plt.rcParams['text.usetex'] is not True or fig.dpi != 200
-            or plt.rcParams['savefig.dpi'] != 200):
-        raise RuntimeError('The guide plots require actual LaTeX and 200 dpi')
+    if (plt.rcParams['text.usetex'] is not True or fig.dpi != DPI
+            or plt.rcParams['savefig.dpi'] != DPI):
+        raise RuntimeError('The guide plots require actual LaTeX and 300 dpi')
     return fig
 
 
@@ -464,7 +464,7 @@ def main():
     ]
     ids, aliases, captions = {}, {}, dict(CAPTIONS)
     for name, figure_ids, function in figures:
-        fig = function(); save(fig, out/name); fig.savefig(out/(name+'.svg'), dpi=200); plt.close(fig)
+        fig = function(); save(fig, out/name); fig.savefig(out/(name+'.svg'), dpi=DPI); plt.close(fig)
         for identifier in figure_ids: ids.setdefault(identifier, []).append(name)
         print('Rendered', name, flush=True)
     mapping = {
@@ -495,7 +495,7 @@ def main():
     manifest = dict(profile=args.profile, status='completed', sources=sources, input_manifests=inputs,
         files=files, figure_ids=ids, aliases=aliases, captions=captions,
         validation_sha256=sha(ROOT/'results/implementation_audit/validation/validation.json'),
-        text_usetex=True, figure_dpi=200, savefig_dpi=200,
+        text_usetex=True, figure_dpi=DPI, savefig_dpi=DPI,
         density_colormap='continuous blue-purple-pink, blue floor and pink maximum',
         svg_scope='New Matplotlib panels export SVG. Exact main-panel aliases retain their verified PDF and PNG forms.',
         scope='Plotting reads verified scientific artifacts only; main aliases do not add independent evidence.')

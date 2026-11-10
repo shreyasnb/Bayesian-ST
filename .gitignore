@@ -60,6 +60,13 @@ results/implementation_audit/**/pytest.xml
 !results/contact/
 !results/contact/**/
 !results/contact/**
+!results/main/
+!results/main/**/
+!results/main/**
+!results/supplementary/
+!results/supplementary/**/
+!results/supplementary/**
+!results/draft_figure_manifest.json
 results/beamforming/**/checkpoints/**
 results/contact/**/checkpoints/**
 results/beamforming/**/pytest.xml

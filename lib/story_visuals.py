@@ -7,7 +7,7 @@ from pathlib import Path
 import hashlib,json,inspect
 import numpy as np
 import pandas as pd
-from .plotting import plt,save
+from .plotting import plt,save, DPI
 from matplotlib.lines import Line2D
 from .visuals import COLORS
 from .validation import require_gate
@@ -36,14 +36,14 @@ def load_story(root,name):
 
 
 def _finish(fig,path):
-    assert fig.dpi==200
+    assert fig.dpi==DPI
     if path is not None:save(fig,path)
     return fig
 
 
 def array_prediction_fans(story,envelope=None,path=None):
     f=story['spectra'];times=sorted(f.t.unique());scenarios=['Static','Drift']
-    fig,axs=plt.subplots(2,len(times),figsize=(15,8),dpi=200,layout='constrained',sharex=True,sharey=True)
+    fig,axs=plt.subplots(2,len(times),figsize=(15,8),dpi=DPI,layout='constrained',sharex=True,sharey=True)
     for row,scenario in enumerate(scenarios):
         for col,time in enumerate(times):
             ax=axs[row,col];g=f[(f.scenario==scenario)&(f.t==time)].sort_values('angle')
@@ -68,7 +68,7 @@ def array_prediction_fans(story,envelope=None,path=None):
 
 def array_power_distributions(story,path=None):
     f=story['power'];times=[int(f.t.min()),int(f.t.max())];methods=['Posterior mean','Mode','Loaded covariance']
-    fig,axs=plt.subplots(2,2,figsize=(13,7.5),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(2,2,figsize=(13,7.5),dpi=DPI,layout='constrained')
     for row,scenario in enumerate(['Static','Drift']):
         for col,time in enumerate(times):
             ax=axs[row,col];g=f[(f.scenario==scenario)&(f.t==time)]
@@ -89,7 +89,7 @@ def array_power_distributions(story,path=None):
 def prediction_fans(story,fast=False,path=None):
     keys=['known_fast','identity_fast','forget_fast'] if fast else ['known_slow','identity_slow','forget_slow']
     posterior=story['posterior'];modal=story['modal'];bounds=story['bounds']
-    fig,axs=plt.subplots(2,3,figsize=(14,8),dpi=200,layout='constrained',sharex=True)
+    fig,axs=plt.subplots(2,3,figsize=(14,8),dpi=DPI,layout='constrained',sharex=True)
     for col,key in enumerate(keys):
         g=posterior[(posterior.trial==0)&(posterior.protocol==key)].sort_values('t')
         truth=modal[(modal.trial==0)&(modal.protocol==key)&(modal.t>=g.t.min())].sort_values('t')
@@ -124,7 +124,7 @@ def projected_clouds(story,fast=False,path=None):
     selected=data[data.protocol.isin(keys)]
     xmin=min(selected.x.min(),selected.true_x.min())-.015;xmax=max(selected.x.max(),selected.true_x.max())+.015
     ymin=min(selected.y.min(),selected.true_y.min())-.015;ymax=max(selected.y.max(),selected.true_y.max())+.015
-    fig,axs=plt.subplots(3,3,figsize=(12,10),dpi=200,layout='constrained',sharex=True,sharey=True)
+    fig,axs=plt.subplots(3,3,figsize=(12,10),dpi=DPI,layout='constrained',sharex=True,sharey=True)
     for row,key in enumerate(keys):
         for col,time in enumerate(times):
             g=data[(data.protocol==key)&(data.t==time)];ax=axs[row,col];r=g.iloc[0]
@@ -145,7 +145,7 @@ def drift_certificate(story,path=None):
     b=story['bounds'];g=b[b.t==b.t.max()]
     keys=['static','identity_slow','forget_slow','identity_fast','forget_fast']
     g=g[g.protocol.isin(keys)]
-    fig,axs=plt.subplots(1,2,figsize=(13,5.5),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,2,figsize=(13,5.5),dpi=DPI,layout='constrained')
     ax=axs[0]
     ax.fill([0,.5,0],[0,0,.5],color='#009E73',alpha=.12)
     ax.plot([0,.5],[.5,0],ls='--',color='#555555',lw=1.2)
@@ -176,7 +176,7 @@ def monte_carlo_uncertainty(story,path=None):
     b=story['bounds'];g=b[b.t==b.t.max()];p=story['posterior'];p=p[p.t==p.t.max()]
     keys=['static','identity_slow','forget_slow','identity_fast','forget_fast']
     labels=['Exact frame','Slow drift','Slow + forgetting','Fast drift','Fast + forgetting']
-    fig,axs=plt.subplots(1,2,figsize=(13,5.5),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,2,figsize=(13,5.5),dpi=DPI,layout='constrained')
     values=[g[g.protocol==key].chordal_error.to_numpy() for key in keys]
     violin=axs[0].violinplot(values,positions=range(5),showmeans=False,showmedians=True,showextrema=False)
     for body,key in zip(violin['bodies'],keys):body.set_facecolor(PALETTE[key]);body.set_alpha(.5)

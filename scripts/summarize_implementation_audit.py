@@ -9,6 +9,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 import numpy as np
 import pandas as pd
+from lib.plotting import DPI
 from lib.implementation_validation import (
     COMPONENTS, require_gate, verify_component, verify_mapping, verify_preservation, sha)
 from lib.simulation_validation import verify_component as verify_main_component
@@ -70,7 +71,7 @@ def verify_figures(root, profile):
     meta = read(folder / 'manifest.json')
     if (meta.get('status') != 'completed' or meta.get('profile') != profile
             or meta.get('text_usetex') is not True
-            or meta.get('figure_dpi') != 200 or meta.get('savefig_dpi') != 200
+            or meta.get('figure_dpi') != DPI or meta.get('savefig_dpi') != DPI
             or not FIGURE_IDS.issubset(meta.get('figure_ids', {}))):
         raise RuntimeError('Guide figure set is incomplete or uses a different protocol')
     verify_mapping(root, meta['sources'])

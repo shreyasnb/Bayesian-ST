@@ -6,7 +6,7 @@ from lib.simulation_story_visuals import (load_studies,beam_story,beam_setup,
     complex_posterior_section,beam_directional,beam_benchmarks,beam_responses,
     contact_dynamic_story,contact_mechanics,contact_posterior,paper_geometry,
     contact_benchmarks,contact_tracking,higher_contact,scaling_figure)
-from lib.plotting import plt
+from lib.plotting import plt, DPI
 SOURCES=['lib/plotting.py','lib/distribution_geometry_visuals.py',
     'lib/simulation_story_visuals.py','scripts/plot_geometry_studies.py']
 
@@ -53,7 +53,7 @@ def main():
     files={q.name:sha(q) for q in sorted(out.glob('*')) if q.suffix in ['.png','.pdf']}
     manifest=dict(profile=args.profile,sources=sources,input_manifests=inputs,files=files,
         groups={name:[key for key,_ in figures if key.startswith(name+'_')] for name in ['beamforming','contact']},
-        text_usetex=True,figure_dpi=200,savefig_dpi=200,captions=CAPTIONS,
+        text_usetex=True,figure_dpi=DPI,savefig_dpi=DPI,captions=CAPTIONS,
         selections='Predeclared trajectory zero and fixed reporting times; all comparator outcomes retained')
     (out/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print('Verified figure manifest:',len(files),'PDF/PNG exports',flush=True)

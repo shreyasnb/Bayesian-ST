@@ -36,13 +36,13 @@ from lib.contact_reporting import load_contact
 from lib.contact_visuals import (physical_setup,paired_losses,coverage_width,
     response_intervals,risk_calibration,benchmark_losses,runtime,mechanical_diagnostics,
     validation_curves)
-from lib.plotting import plt
+from lib.plotting import plt, DPI
 from IPython.display import display,Markdown
 import pandas as pd
 OUT=ROOT/'results/contact_pilot'
 gate=require_contact_gate(ROOT)
 assert plt.rcParams['text.usetex'] is True
-assert plt.rcParams['figure.dpi']==200 and plt.rcParams['savefig.dpi']==200
+assert plt.rcParams['figure.dpi']==DPI and plt.rcParams['savefig.dpi']==DPI
 subprocess.run([sys.executable,str(ROOT/'scripts/run_contact_pilot.py'),'--workers','2'],cwd=ROOT,check=True)
 frames=load_contact(ROOT)
 print('Validation:',gate['status'],'checks:',gate['tests'])

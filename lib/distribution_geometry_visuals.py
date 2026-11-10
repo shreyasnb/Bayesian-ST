@@ -18,7 +18,7 @@ from pathlib import Path
 from collections.abc import Sequence
 
 import numpy as np
-from .plotting import plt, save
+from .plotting import plt, save, DPI
 from matplotlib import colors
 from matplotlib.lines import Line2D
 
@@ -469,8 +469,8 @@ def draw_bloch_bingham(ax, A, log_normalizer, *, mesh=None, hpd_loss=None,
 
 
 def _finish(fig, path):
-    if not plt.rcParams['text.usetex'] or fig.dpi != 200 or plt.rcParams['savefig.dpi'] != 200:
-        raise AssertionError('Geometry figures require LaTeX and 200 dpi')
+    if not plt.rcParams['text.usetex'] or fig.dpi != DPI or plt.rcParams['savefig.dpi'] != DPI:
+        raise AssertionError('Geometry figures require LaTeX and 300 dpi')
     if path is not None:
         save(fig, Path(path))
     return fig
@@ -485,7 +485,7 @@ def real_bingham_comparison(parameters, log_normalizers, *, titles=None,
     Scientific normalizers and thresholds must be computed and verified by the
     caller.  Titles default to the draft's mathematical distribution notation.
     Surface rasterization keeps PDF size bounded; outlines, axes and TeX text
-    remain vectors.  PNG exports use 200 dpi.
+    remain vectors.  PNG exports use 300 dpi.
     """
     parameters = list(parameters)
     if len(parameters) != 2 or len(log_normalizers) != 2:
@@ -529,5 +529,5 @@ def real_bingham_comparison(parameters, log_normalizers, *, titles=None,
         view='Front hemisphere visible; the antipodal rear lobe represents the same real line',
         normalization='Supplied verified log normalizer; no normalization from the display mesh',
         region_scope='Supplied HPD and chordal-ball thresholds; plotting does not calculate their mass',
-        sphere_radius=1., figure_dpi=200, text_usetex=True)
+        sphere_radius=1., figure_dpi=DPI, text_usetex=True)
     return _finish(fig, path)

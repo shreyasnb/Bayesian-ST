@@ -13,6 +13,7 @@ sys.path.insert(0,str(ROOT))
 import numpy as np
 import pandas as pd
 from scipy.stats import t as student_t
+from lib.plotting import DPI
 from lib.simulation_validation import require_gate,verify_component,science_hash,gate_path
 
 COMPONENTS=("geometry","beamforming","contact","scaling")
@@ -82,8 +83,8 @@ def load(profile,allow_incomplete=False):
     if figures.exists():
         fig=json.loads(figures.read_text())
         if fig.get("profile")!=profile:raise RuntimeError("Figure profile does not match summary")
-        if (fig.get("text_usetex") is not True or fig.get("figure_dpi")!=200
-                or fig.get("savefig_dpi")!=200):raise RuntimeError("Figure protocol is not LaTeX/200 dpi")
+        if (fig.get("text_usetex") is not True or fig.get("figure_dpi")!=DPI
+                or fig.get("savefig_dpi")!=DPI):raise RuntimeError("Figure protocol is not LaTeX/300 dpi")
         if not fig.get("sources") or not fig.get("input_manifests") or not fig.get("files"):
             raise RuntimeError("Figure manifest omits producers, inputs or artifacts")
         verify_mapping(fig["sources"]);verify_mapping(fig["input_manifests"])
@@ -330,7 +331,7 @@ def main():
         table(["Item","Status","Scope"],
             [[name,"Completed, source/artifact verified" if name in data else "Pending",pending.get(name,"Numerical and modeling qualifications remain separate")] for name in COMPONENTS]+[
                 ["General gate","Passed" if gate else "Quick engineering only","Core/source fingerprints are checked before formal paper execution"],
-                ["Figures","Verified" if figures_ok else "Pending","LaTeX, 200 dpi, producers, inputs and exports"],
+                ["Figures","Verified" if figures_ok else "Pending","LaTeX, 300 dpi, producers, inputs and exports"],
                 ["Notebooks","Separate execution handoff","Execution must be verified after this summary; no notebook is inspected to derive simulation claims"]]),""]
     if "geometry" in data:text+=geometry_text(data["geometry"])
     if "beamforming" in data:text+=beamforming_text(data["beamforming"])

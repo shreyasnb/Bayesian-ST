@@ -11,7 +11,7 @@ from __future__ import annotations
 import numpy as np
 import pandas as pd
 from scipy.stats import t as student_t
-from .plotting import plt, save
+from .plotting import plt, save, DPI
 from matplotlib.colors import TwoSlopeNorm, LogNorm
 from .reporting import coverage_table
 
@@ -27,7 +27,7 @@ FIELD_SCENARIOS = ['Matched','Unequal powers','Sparse corruption']
 
 
 def _finish(fig, path=None):
-    fig.set_dpi(200)
+    fig.set_dpi(DPI)
     if path is not None:
         save(fig, path)
     return fig
@@ -100,7 +100,7 @@ def _effect_map(ax, means, low, high, rows, columns, title, unit, extent=None):
 def array_overview(result, path=None):
     """Where does the mean decision help? Paired SINR effects versus two controls."""
     frame=result['metrics']; scenarios=[s for s in ARRAY_SCENARIOS if s in frame.scenario.unique()]
-    fig,axs=plt.subplots(1,2,figsize=(14,8),dpi=200,layout='constrained',sharey=True)
+    fig,axs=plt.subplots(1,2,figsize=(14,8),dpi=DPI,layout='constrained',sharey=True)
     cells=[_gain_cells(frame,'sinr_db',ref,scenarios) for ref in ['Mode','Loaded covariance']]
     # Separate color scales retain visibility of small mean/mode effects.
     for ax,ref,(times,means,low,high) in zip(axs,['Mode','Loaded covariance'],cells):
@@ -115,7 +115,7 @@ def field_overview(result, path=None):
     """Separate tracker differences, posterior averaging, and a competitive reference."""
     frame=result['metrics'];scenarios=[s for s in FIELD_SCENARIOS if s in frame.scenario.unique()]
     references=['GROUSE','Mode','Rolling PCA']
-    fig,axs=plt.subplots(1,3,figsize=(17,5.3),dpi=200,layout='constrained',sharey=True)
+    fig,axs=plt.subplots(1,3,figsize=(17,5.3),dpi=DPI,layout='constrained',sharey=True)
     for ax,ref in zip(axs,references):
         times,mean,low,high=_gain_cells(frame,'field_squared_error',ref,scenarios,percent=True)
         im=_effect_map(ax,mean,low,high,scenarios,times,f'Versus {ref}',r'\%')
@@ -129,7 +129,7 @@ def paired_field(result, baseline='GROUSE', path=None):
     """Each point is one paired trajectory; the diagonal marks equal loss."""
     frame=_terminal(result['metrics']); pairs=_pairs(frame,'field_squared_error',baseline)
     scenarios=[s for s in FIELD_SCENARIOS if s in frame.scenario.unique()]
-    fig,axs=plt.subplots(1,len(scenarios),figsize=(14,4.8),dpi=200,layout='constrained',squeeze=False)
+    fig,axs=plt.subplots(1,len(scenarios),figsize=(14,4.8),dpi=DPI,layout='constrained',squeeze=False)
     for ax,scenario in zip(axs.flat,scenarios):
         block=pairs.xs(scenario,level='scenario')
         x=block[baseline].to_numpy();y=block['Posterior mean'].to_numpy()
@@ -150,7 +150,7 @@ def coverage_regions(result, array=False, path=None):
     frame=_terminal(result['metrics']);p=frame[frame.method=='Posterior mean']
     scenarios=[s for s in (ARRAY_SCENARIOS if array else FIELD_SCENARIOS) if s in p.scenario.unique()]
     table=coverage_table(p)
-    fig,axs=plt.subplots(1,2 if array else 1,figsize=(14,7) if array else (11,5.5),dpi=200,layout='constrained',squeeze=False)
+    fig,axs=plt.subplots(1,2 if array else 1,figsize=(14,7) if array else (11,5.5),dpi=DPI,layout='constrained',squeeze=False)
     ax=axs[0,0]; positions=np.arange(len(scenarios))
     for region,offset in [('Ball',-.13),('HPD',.13)]:
         g=table[table.region==region].set_index('scenario').reindex(scenarios)
@@ -179,7 +179,7 @@ def cost_tradeoff(result, field=False, path=None):
     frame=_terminal(result['metrics'])
     scenarios=FIELD_SCENARIOS if field else ['Static','Drift','Contamination']
     value='field_squared_error' if field else 'sinr_db'
-    fig,axs=plt.subplots(1,3,figsize=(16,5.3),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,3,figsize=(16,5.3),dpi=DPI,layout='constrained')
     methods=['Posterior mean','Mode','GROUSE','Rolling PCA'] if field else ['Posterior mean','Mode','Loaded covariance']
     for ax,scenario in zip(axs,scenarios):
         block=frame[frame.scenario==scenario]
@@ -207,7 +207,7 @@ def field_maps(result, path=None):
     residuals={name:fields[name]-fields['clean'] for name in ['posterior_mean','mode']}
     amplitude=max(float(np.max(abs(v))) for v in fields.values())
     error=max(float(np.max(abs(v))) for v in residuals.values())
-    fig=plt.figure(figsize=(14,8.5),dpi=200,layout='constrained')
+    fig=plt.figure(figsize=(14,8.5),dpi=DPI,layout='constrained')
     grid=fig.add_gridspec(2,4,width_ratios=[1,1,1,.055])
     axs=np.array([[fig.add_subplot(grid[i,j]) for j in range(3)] for i in range(2)])
     amplitude_bar=fig.add_subplot(grid[0,3]);error_bar=fig.add_subplot(grid[1,3])
@@ -239,7 +239,7 @@ def calibration_overview(result, path=None):
             d=100*(g.modal_squared_error-g.mean_squared_error)/g.modal_squared_error.mean()
             gains[i,j],low[i,j],high[i,j]=_ci(d)
             excess[i,j]=g.modal_excess_risk.mean()
-    fig,axs=plt.subplots(1,2,figsize=(13,5),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,2,figsize=(13,5),dpi=DPI,layout='constrained')
     im=_effect_map(axs[0],gains,low,high,[f'Rank {r}' for r in ranks],times,'Realized response error reduction',r'\%')
     fig.colorbar(im,ax=axs[0],shrink=.8,label=r'MSE reduction versus mode (\%)')
     im=axs[1].imshow(excess,cmap='Blues',aspect='auto')
@@ -255,7 +255,7 @@ def calibration_overview(result, path=None):
 def noise_overview(result, path=None):
     """Separate noise-estimation outcomes from the algebraic uncertainty correction."""
     frame=result['noise'];times=sorted(frame.t.unique());x=np.arange(len(times))
-    fig,axs=plt.subplots(1,2,figsize=(13,5),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,2,figsize=(13,5),dpi=DPI,layout='constrained')
     for protocol,offset,color in [('Passive',-.18,COLORS['Posterior mean']),('Calibration',.18,COLORS['Mode'])]:
         g=frame[frame.protocol==protocol].set_index('t').reindex(times)
         axs[0].bar(x+offset,g.s,width=.32,color=color,label=protocol,alpha=.9)
@@ -277,7 +277,7 @@ def sampler_overview(result, array=False, path=None):
     p=result['metrics'];p=p[p.method=='Posterior mean']
     scenarios=[s for s in (ARRAY_SCENARIOS if array else FIELD_SCENARIOS) if s in p.scenario.unique()]
     times=sorted(p.t.unique());values=p.groupby(['scenario','t']).min_ess.min().unstack('t').reindex(index=scenarios,columns=times)
-    fig,axs=plt.subplots(1,2,figsize=(13,6 if array else 4.8),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,2,figsize=(13,6 if array else 4.8),dpi=DPI,layout='constrained')
     v=np.asarray(values);im=axs[0].imshow(v,cmap='viridis',norm=LogNorm(vmin=max(1,v.min()),vmax=max(51,v.max())),aspect='auto')
     for i in range(len(scenarios)):
         for j in range(len(times)):
@@ -305,7 +305,7 @@ def predictive_scores(result, path=None):
     account for autocorrelation in the prior sampler.
     """
     frame=result['noise']; protocols=['Passive','Calibration'];times=sorted(frame.t.unique())
-    fig,axs=plt.subplots(1,3,figsize=(14,4.8),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,3,figsize=(14,4.8),dpi=DPI,layout='constrained')
     specification=[('predictive_log_score','Pre-fit log score','Predictive log density',False),
                    ('score_sampler_ess','Sampler ESS','Minimum chain ESS',True),
                    ('score_importance_ess','Importance ESS','Importance-weight ESS',True)]

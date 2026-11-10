@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 import pandas as pd
 from lib.contact_validation import require_contact_gate
-from lib.plotting import plt
+from lib.plotting import plt, DPI
 from lib.contact_visuals import (physical_setup,paired_losses,coverage_width,
     response_intervals,risk_calibration,benchmark_losses,runtime,mechanical_diagnostics,validation_curves)
 
@@ -60,7 +60,7 @@ def main():
     record=dict(core_hash=gate['core_hash'],contact_hash=gate['contact_hash'],
         sources={p:sha(ROOT/p) for p in ['lib/contact_visuals.py','scripts/plot_contact_pilot.py','lib/plotting.py']},
         metadata_sha256=sha(directory/'config.json'),
-        figures={p.name:sha(p) for p in products},dpi=200,text_usetex=True,
+        figures={p.name:sha(p) for p in products},dpi=DPI,text_usetex=True,
         main_figures=['physical_setup','paired_losses','coverage_width'],
         interpretation='Geometry is plant/scoring only. Independent trajectories, maintained-posterior uncertainty and numerical resolution have distinct labels.')
     (out/'manifest.json').write_text(json.dumps(record,indent=2))

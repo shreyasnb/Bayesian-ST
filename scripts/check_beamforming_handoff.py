@@ -4,6 +4,7 @@ import hashlib,json,subprocess,sys
 import nbformat
 from PIL import Image
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+from lib.plotting import DPI
 from lib.beamforming_validation import require_beamforming_gate,verify_component
 from lib.beamforming_history import verify_historical
 BASE=ROOT/'results/beamforming_unified'
@@ -32,14 +33,14 @@ def main():
             verify_component(ROOT,profile,component)
             components[profile+'/'+component]='source and saved tables verified'
         folder=BASE/profile/'figures';m=json.loads((folder/'manifest.json').read_text())
-        if m['figure_dpi']!=200 or m['savefig_dpi']!=200 or m['text_usetex'] is not True:
+        if m['figure_dpi']!=DPI or m['savefig_dpi']!=DPI or m['text_usetex'] is not True:
             raise RuntimeError('Wrong figure protocol')
         verify_map(m['sources']);verify_map(m['input_manifests']);verify_map(m['files'],folder)
         pngs=0
         for name in m['files']:
             if name.endswith('.png'):
                 with Image.open(folder/name) as img:
-                    if tuple(round(d) for d in img.info['dpi'])!=(200,200):raise RuntimeError('Wrong PNG dpi')
+                    if tuple(round(d) for d in img.info['dpi'])!=(DPI,DPI):raise RuntimeError('Wrong PNG dpi')
                 pngs+=1
             elif name.endswith('.pdf'):
                 if not (folder/name).read_bytes().startswith(b'%PDF'):raise RuntimeError('Invalid PDF')

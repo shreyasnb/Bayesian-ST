@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy.stats import t as student_t
-from .plotting import plt, save
+from .plotting import plt, save, DPI
 from .visuals import _effect_map, COLORS
 from .reporting import wilson
 from .validation import require_gate
@@ -28,7 +28,7 @@ def gain_maps(study,task='Projection',path=None):
     table=study['paired'];table=table[table.task==task]
     references=['Mode','GROUSE','Shrunk PCA','Loaded covariance' if task=='Beamforming' else 'Prior mean']
     noises=study['config']['noise_levels'];times=study['config']['checkpoints']
-    fig,axs=plt.subplots(2,2,figsize=(14,9),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(2,2,figsize=(14,9),dpi=DPI,layout='constrained')
     for ax,reference in zip(axs.flat,references):
         mean=np.full((len(noises),len(times)),np.nan);low=mean.copy();high=mean.copy()
         for i,_ in enumerate(noises):
@@ -49,7 +49,7 @@ def gain_maps(study,task='Projection',path=None):
 def decision_calibration(study,path=None):
     coverage=study['coverage'];metrics=study['metrics']
     noises=study['config']['noise_levels']
-    fig,axs=plt.subplots(1,2,figsize=(13,5.5),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,2,figsize=(13,5.5),dpi=DPI,layout='constrained')
     positions=[];labels=[];position=0
     for regime,s in enumerate(noises):
         g=coverage[coverage.regime==regime]

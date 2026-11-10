@@ -16,7 +16,7 @@ import pandas as pd
 from lib.contact_mechanics import condition_spec
 from lib.contact_story import (contact_scene, tracking_scene, posterior_scene,
     response_comparison, paired_prediction_errors)
-from lib.plotting import plt
+from lib.plotting import plt, DPI
 
 
 def main():
@@ -83,7 +83,7 @@ def main():
         band_centered_on_truth_for_scoring=True,
         posterior_cloud_count=256, cloud_for_illustration_only=True,
         scalar_intervals='Checked continuous-CDF equal-tailed intervals',
-        trajectory_chosen_before_test=True, dpi=200, text_usetex=True), indent=2))
+        trajectory_chosen_before_test=True, dpi=DPI, text_usetex=True), indent=2))
 
 
 if __name__ == '__main__':

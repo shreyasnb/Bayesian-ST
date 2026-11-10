@@ -1,7 +1,10 @@
 """Audit sphere displays without rerunning or changing scientific experiments.
 
-The audit checks exact changes of orthonormal display coordinates, rather than
-approximating a posterior or treating a display mesh as an integration rule.
+The active figures retain native coordinates, with no mode-centering rotation.
+The audit checks their unit-sphere geometry and, separately, exact invariance
+under an auxiliary fixed orthogonal rotation. Neither that stress rotation nor
+the auxiliary equal-density contours are used in the published sphere views.
+No posterior approximation or display-mesh integration is performed.
 The default reference is the committed study preceding the display revision.
 An optional snapshot can instead be taken before editing and compared later.
 """
@@ -190,6 +193,8 @@ def check_law(law, rotation=None):
     assert A.shape == (3, 3) and np.allclose(A, A.T, atol=1e-10)
     display = display_sphere_geometry(A, rotation=rotation)
     R, B = display['rotation'], display['parameter']
+    if rotation is None:
+        assert np.array_equal(R, np.eye(3)), 'Published spheres must retain native coordinates'
     native, shown = display['native_nodes'], display['nodes']
     eigenvalues = np.linalg.eigvalsh(A)
     scale = max(1., float(np.linalg.norm(A)))
@@ -262,6 +267,7 @@ def check_law(law, rotation=None):
                 pointwise_log_density_error=density_error,
                 ambient_section_log_density_error=ambient_error,
                 antipodal_error=antipodal_error, contour_level_errors=contour_errors,
+                contour_scope='Auxiliary exact-level stress check; not drawn in the published figures.',
                 full_mesh_angular_coverage=True,
                 saved_normalizer_unchanged=law.get('logz'),
                 density_scope='Quadratic log-density equality with the same saved '
@@ -270,25 +276,41 @@ def check_law(law, rotation=None):
 
 def audit(example, preservation, baseline_sha):
     from lib.final_paper_visuals import CAMERA, PAPER_STYLE
+    from lib.plotting import DPI
     assert CAMERA == dict(elev=25., azim=-50.)
     assert PAPER_STYLE['text.usetex'] is True
-    assert PAPER_STYLE['figure.dpi'] == PAPER_STYLE['savefig.dpi'] == 200
-    records, shared = [], {}
+    assert DPI == 300
+    assert PAPER_STYLE['figure.dpi'] == PAPER_STYLE['savefig.dpi'] == DPI
+    # This fixed, proper rotation is deliberately unrelated to the camera or
+    # posterior mode. It is a mathematical stress test, not a plotting choice.
+    axis = np.array([1., 2., 3.])/np.sqrt(14.)
+    x, y, z = axis
+    skew = np.array([[0., -z, y], [z, 0., -x], [-y, x, 0.]])
+    theta = .7
+    stress_rotation = (np.cos(theta)*np.eye(3)
+                       + (1-np.cos(theta))*np.outer(axis, axis)
+                       + np.sin(theta)*skew)
+    assert not np.allclose(stress_rotation, np.eye(3))
+    records = []
     for law in sphere_laws(example):
-        record, rotation = check_law(law)
+        record, _ = check_law(law)
+        stress, _ = check_law(law, rotation=stress_rotation)
+        record['rotation_stress_errors'] = {name: stress[name] for name in (
+            'unit_norm_error', 'pointwise_log_density_error',
+            'ambient_section_log_density_error', 'antipodal_error', 'contour_level_errors')}
         records.append(record)
-        # Exercise the same-reference rotation interface independently of each
-        # law's default orientation, as used by matched pairs and time panels.
-        if law['group'] not in shared:
-            shared[law['group']] = rotation
-        check_law(law, rotation=shared[law['group']])
     return dict(schema=1, status='passed', example=example,
                 audit_source_sha256=sha(Path(__file__)),
                 display_source_sha256=sha(ROOT/'lib/final_paper_visuals.py'),
                 baseline_snapshot_sha256=baseline_sha, preservation=preservation,
                 laws_checked=len(records), shared_rotation_checks=len(records),
+                native_coordinate_checks=len(records),
+                auxiliary_rotation_stress=dict(rotation=stress_rotation.tolist(),
+                    checks=len(records), used_for_rendering=False),
                 plot_protocol=dict(camera=CAMERA, projection='orthographic',
-                                   fixed_sphere_radius=1., text_usetex=True, dpi=200),
+                                   fixed_sphere_radius=1., text_usetex=True, dpi=DPI,
+                                   coordinates='Native saved coordinates',
+                                   mode_centering=False, density_contours_drawn=False),
                 laws=records,
                 scope='Rendering-only numerical invariance, not a fresh claim of '
                       'statistical calibration or algorithm performance.')

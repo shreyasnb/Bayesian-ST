@@ -40,7 +40,7 @@ regenerable and excluded from Git.
 Use Python 3.12, working LaTeX, and the dependencies in `pyproject.toml`.
 Every figure uses `text.usetex=True`. Paper figures have a nominal width of
 7 inches and 9-point text. Preview images and rasterized density layers use
-200 dpi; PDF axes, lines and text remain vector objects.
+300 dpi; PDF axes, lines and text remain vector objects.
 
 From the repository root:
 
@@ -72,51 +72,61 @@ timings. The computation runner warms operations, randomizes their order and
 records repeated single-thread cycle times, phase breakdowns and memory with
 an explicit measurement scope. Task-state timings use saved policy settings.
 
-Render and check the saved results:
+Render and package the saved results. PDF page extraction and the independent
+actual-export audit use the separate presentation dependency:
 
 ```bash
+python -m pip install -r requirements-presentation.txt
 python scripts/plot_final_simulations.py --stage paper --example both
+python scripts/export_draft_figures.py
+python scripts/check_sphere_visuals.py
+python scripts/check_final_pdf_layout.py --include-exports --write
 python scripts/make_final_notebooks.py --stage paper --example both
 python scripts/execute_final_notebooks.py --example both
-python scripts/build_final_inventory.py
-python scripts/check_final_simulations.py
-```
-
-For the sphere-display revision, also run the independent numerical and
-actual-PDF audits (the optional PDF audit uses PyMuPDF and Pillow):
-
-```bash
-python scripts/check_sphere_visuals.py
-python scripts/check_final_pdf_layout.py --write
 python scripts/build_final_inventory.py --content-commit eee4c1e30882c5530eda8d25fe6afcc349f0ddf7
 python scripts/check_final_simulations.py
 ```
 
-Sphere colors now use a continuous multicolor logarithmic scale, with the
-same four-decade floor and shared normalization within comparisons. Rigid
-display coordinates bring the modal cap towards the unchanged orthographic
-camera. Tildes identify these coordinates; they are not wrist components or
-the original array-section coefficients. Matched laws share one reference
-rotation. The exact white contours mark density ratios exp(-1) and exp(-2),
-where closed; they are not posterior credible regions. Density values,
-angular widths and unit-sphere radii are preserved, without tempering.
+The current display revision restores the original native sphere coordinates,
+oblique camera and continuous blue-to-pink logarithmic scale. Thin gray curves
+are front-visible coordinate great circles, rather than probability contours.
+The mode-facing rotation and white density contours were removed because they
+made the density read as a flat target. Density values and physical angular
+widths were never changed. The original n=64, t=64 array checkpoint is restored.
+The array sphere is a real-coefficient section of a complex posterior, not a
+physical radiation field or a normalized sphere marginal; the setup figure
+shows the physical beam response. Contact normals retain their measured wrist
+coordinates and antipodal interpretation.
 
-The beamforming anisotropy figure keeps the original n=64, t=64 endpoint and
-its numerical comparisons, and adds the already-saved t=16 prefix of that
-same preassigned episode. Their gap ratios are 2.97 and 2.13 at t=16 and
-t=64, respectively. These are real-coefficient sections of a complex
-posterior, not normalized sphere marginals. Contact's original concentrated
-input checkpoint already has a gap ratio of 11.04: the new view exposes its
-elongation without changing its fitted-isotropic comparison or task study.
+For manuscript insertion, the current vector PDFs are also organized in
+`results/main/{beamforming,contact}/` and
+`results/supplementary/{beamforming,contact}/`. The main selection contains
+four single-page figures per application. Every remaining individual study
+page is retained in the supplement; the three existing bundles are excluded
+from this extra export to avoid repeating main figures. Source captions,
+page selectors and hashes are in `results/draft_figure_manifest.json` and the
+folder READMEs. Both original application catalogues remain complete.
+
+All active plotting defaults and explicit exporters use the shared `DPI=300`
+from `lib/plotting.py`. Seven-inch paper pages yield 2100-pixel-wide previews.
+PDF text and curves remain vector objects: dpi applies to their raster layers
+and PNG previews. Notebook images are scaled to fit the screen; full-resolution
+PNG and PDF links are supplied beside every image. Preserved historical output
+files retain their original metadata and are not relabeled as 300-dpi exports.
+
+PyMuPDF and Pillow are used only for presentation export/auditing, separate
+from the scientific environment. Run the complete sequence above after a
+rendering change, since both the draft selections and export audits bind the
+current source PDFs and figure manifests.
 
 The sphere audit compares against commit `ded5499`: all 574 frozen numerical
-artifacts (including constructed geometry), 25 scientific manifests and 132
-scientific/core source files must remain byte-identical. It also checks
-rotation congruence, exact contour levels and full unit-sphere coverage for
-20 beamforming and 464 contact laws. Reports are saved under each
-application's `data/validation/`. These checks validate the presentation
-change; they do not add independent experimental repetitions or improve a
-statistical performance claim.
+artifacts, 25 scientific manifests and 132 scientific/core source files must
+remain byte-identical. It checks native-coordinate density evaluation and
+unit-sphere coverage for 20 beamforming and 464 contact laws. A separately
+identified fixed-rotation stress test checks mathematical invariance; those
+rotations and auxiliary contour tests are not used in the final figures.
+Reports live under each application's `data/validation/`. No tuning, simulation
+or benchmark timing is repeated by a plotting or export command.
 
 The notebook maker requires completed figure evidence. The execution command
 uses clean kernels and saves both notebooks before the last check. They verify
@@ -129,8 +139,11 @@ study. See `completion_report.md` for the tested commands and revision.
 and 2,358 historical result files from the starting revision. The original
 result files remain in place. Old certificates are not refreshed to pretend
 that a new source tree produced old data. In particular,
-`04_implementation_audit.ipynb` remains a historical walkthrough whose matching
-source is available at commit `a91faab` and in that archive.
+`02_field.ipynb` and `04_implementation_audit.ipynb` remain historical
+walkthroughs, including their original 200-dpi assertions and outputs. Run
+those with their matching historical source/environment, available at commit
+`a91faab` and in the archive. The current application notebooks are
+`01_array.ipynb` and `03_contact.ipynb`; their regenerated figures use 300 dpi.
 
 Original 8-/16-sensor and moving 6-sensor beamforming cohorts retain their
 recorded counts. The new 32-/64-/128-sensor task cohorts are distinct from

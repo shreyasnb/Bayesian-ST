@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from pathlib import Path
 import numpy as np
-from .plotting import plt, save
+from .plotting import plt, save, DPI
 from matplotlib.lines import Line2D
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
 
@@ -23,8 +23,8 @@ PALE = '#DEE4E8'
 
 
 def _finish(fig, path):
-    if not plt.rcParams['text.usetex'] or fig.dpi != 200:
-        raise AssertionError('Contact figures require TeX and 200 dpi')
+    if not plt.rcParams['text.usetex'] or fig.dpi != DPI:
+        raise AssertionError('Contact figures require TeX and 300 dpi')
     if path is not None:
         save(fig, Path(path))
     return fig
@@ -103,7 +103,7 @@ def contact_scene(data, index=179, path=None):
     index = int(index)
     if data.get('condition', {}).get('anisotropic', False):
         raise ValueError('The projection illustration assumes isotropic resistance')
-    fig = plt.figure(figsize=(13, 5.7), dpi=200, layout='constrained')
+    fig = plt.figure(figsize=(13, 5.7), dpi=DPI, layout='constrained')
     physical = fig.add_subplot(121, projection='3d')
     response = fig.add_subplot(122, projection='3d')
     _surface(physical, data, index)
@@ -154,7 +154,7 @@ def tracking_scene(data, corrected_projectors, forecast_projectors, index=179,
     history_indices = np.asarray(history_indices, int)
     if np.any(history_indices >= index) or np.any(history_indices < 0):
         raise ValueError('History must precede the prediction time')
-    fig = plt.figure(figsize=(13, 5.7), dpi=200, layout='constrained')
+    fig = plt.figure(figsize=(13, 5.7), dpi=DPI, layout='constrained')
     physical = fig.add_subplot(121, projection='3d')
     angular = fig.add_subplot(122)
     true_normal = np.asarray(data['normals'][index])
@@ -231,7 +231,7 @@ def posterior_scene(data, index, A, query, mean, lower=None, upper=None,
     figure; no multivariate coverage region is implied by this cloud.
     """
     del lower, upper
-    fig = plt.figure(figsize=(13.2, 5.8), dpi=200, layout='constrained')
+    fig = plt.figure(figsize=(13.2, 5.8), dpi=DPI, layout='constrained')
     state = fig.add_subplot(121, projection='3d')
     response = fig.add_subplot(122)
     normals, values = illustrative_samples(A, query, seed=seed)
@@ -298,7 +298,7 @@ def response_band(times, truth, mean, lower, upper, path=None,
         raise ValueError('Time, truth, prediction and interval arrays must match')
     if np.any(lower > upper):
         raise ValueError('Reversed prediction interval')
-    fig, ax = plt.subplots(figsize=(12, 4.7), dpi=200, layout='constrained')
+    fig, ax = plt.subplots(figsize=(12, 4.7), dpi=DPI, layout='constrained')
     ax.fill_between(times, 1000*lower, 1000*upper, color=BLUE, alpha=.2,
         linewidth=0, label=r'Pointwise $95\%$ interval')
     ax.plot(times, 1000*mean, color=BLUE, lw=2.2, label='Expected response')
@@ -319,7 +319,7 @@ def response_comparison(series, path=None, component='x', center_on_truth=False)
     """
     if len(series) != 2:
         raise ValueError('Show exactly two interval policies')
-    fig, axes = plt.subplots(2, 1, figsize=(12, 7.2), dpi=200,
+    fig, axes = plt.subplots(2, 1, figsize=(12, 7.2), dpi=DPI,
         layout='constrained', sharex=True, sharey=True)
     for ax, (label, values) in zip(axes, series.items()):
         arrays = [np.asarray(values[key], float) for key in
@@ -368,7 +368,7 @@ def paired_prediction_errors(frame, reference, comparisons, condition='sphere_sm
     if not len(reference_rows):
         raise ValueError('The reference method is absent')
     fig, axes = plt.subplots(1, len(comparisons), figsize=(6.7*len(comparisons), 5.7),
-        dpi=200, layout='constrained', squeeze=False)
+        dpi=DPI, layout='constrained', squeeze=False)
     shown = np.concatenate([reference_rows.to_numpy(),
         paired.reindex(columns=comparisons).to_numpy().ravel()])*1e6
     shown = shown[np.isfinite(shown)]

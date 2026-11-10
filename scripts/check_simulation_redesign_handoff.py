@@ -10,6 +10,7 @@ BASE = ROOT / 'results/simulation_redesign'
 sys.path.insert(0, str(ROOT))
 import nbformat
 from PIL import Image
+from lib.plotting import DPI
 from lib.simulation_validation import require_gate, verify_component, verify_legacy, gate_path
 
 
@@ -53,7 +54,7 @@ def main():
         folder = BASE / profile / 'figures'
         figures = read(folder / 'manifest.json')
         if (figures['profile'] != profile or figures['text_usetex'] is not True
-                or figures['figure_dpi'] != 200 or figures['savefig_dpi'] != 200):
+                or figures['figure_dpi'] != DPI or figures['savefig_dpi'] != DPI):
             raise RuntimeError('Unexpected figure protocol: ' + profile)
         verify(figures['sources'])
         verify(figures['input_manifests'])
@@ -67,8 +68,8 @@ def main():
                 with Image.open(path) as im:
                     if im.width < 1500 or im.height < 700:
                         raise RuntimeError('Figure is too small: ' + name)
-                    if any(abs(value - 200) > .1 for value in im.info.get('dpi', (0, 0))):
-                        raise RuntimeError('PNG is not 200 dpi: ' + name)
+                    if any(abs(value - DPI) > .1 for value in im.info.get('dpi', (0, 0))):
+                        raise RuntimeError('PNG is not 300 dpi: ' + name)
                     im.verify()
             elif path.suffix == '.pdf' and not path.read_bytes().startswith(b'%PDF-'):
                 raise RuntimeError('Invalid PDF: ' + name)

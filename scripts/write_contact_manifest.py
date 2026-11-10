@@ -7,6 +7,7 @@ import subprocess
 import sys
 import nbformat
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+from lib.plotting import DPI
 from lib.contact_validation import require_contact_gate
 from lib.contact_reporting import load_contact
 BASE='bef07fe301d03ecf4bd714e0e15999514c24a2a2'
@@ -37,7 +38,7 @@ def main():
     figures=json.loads((OUT/'figures/manifest.json').read_text())
     for name,digest in figures['sources'].items():assert sha(ROOT/name)==digest,name
     for name,digest in figures['figures'].items():assert sha(OUT/'figures'/name)==digest,name
-    assert figures['dpi']==200 and figures['text_usetex']
+    assert figures['dpi']==DPI and figures['text_usetex']
     assert figures['metadata_sha256']==sha(OUT/'config.json')
     assert figures['core_hash']==gate['core_hash'] and figures['contact_hash']==gate['contact_hash']
     notebooks={}

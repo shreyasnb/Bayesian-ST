@@ -39,14 +39,14 @@ from IPython.display import Image, display, Markdown
 ROOT = Path.cwd()
 if not (ROOT / 'lib').is_dir():
     ROOT = ROOT.parent
-from lib.plotting import plt
+from lib.plotting import plt, DPI
 from lib.beamforming_visuals import load_unified
 from lib.beamforming_history import verify_historical
 D = load_unified(ROOT, 'paper', verify=True)
 F = D['base'] / 'figures'
 FIGURES = json.loads((F / 'manifest.json').read_text())
 assert plt.rcParams['text.usetex'] is True
-assert plt.rcParams['figure.dpi'] == plt.rcParams['savefig.dpi'] == 200
+assert plt.rcParams['figure.dpi'] == plt.rcParams['savefig.dpi'] == DPI
 for name, expected in FIGURES['sources'].items():
     assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected
 for name, expected in FIGURES['input_manifests'].items():

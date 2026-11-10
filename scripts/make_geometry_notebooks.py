@@ -7,6 +7,7 @@ from pathlib import Path
 import hashlib,json,sys
 import nbformat as nbf
 ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+from lib.plotting import DPI
 from lib.simulation_validation import require_gate,verify_component,verify_legacy,gate_path
 
 
@@ -39,7 +40,7 @@ def verified():
     gate=require_gate(ROOT);verify_legacy(ROOT)
     for component in ['geometry','beamforming','contact','scaling']:verify_component(ROOT,'paper',component)
     base=ROOT/'results/simulation_redesign/paper';manifest=json.loads((base/'figures/manifest.json').read_text())
-    if manifest['profile']!='paper' or manifest['text_usetex'] is not True or manifest['figure_dpi']!=200 or manifest['savefig_dpi']!=200:
+    if manifest['profile']!='paper' or manifest['text_usetex'] is not True or manifest['figure_dpi']!=DPI or manifest['savefig_dpi']!=DPI:
         raise RuntimeError('Generate current paper figures with the required protocol first')
     for mapping,folder in [('sources',ROOT),('input_manifests',ROOT),('files',base/'figures')]:
         for name,expected in manifest[mapping].items():
@@ -65,7 +66,7 @@ import pandas as pd
 from IPython.display import Image, display, Markdown
 ROOT = Path.cwd() if (Path.cwd() / 'lib').exists() else Path.cwd().parent
 sys.path.insert(0, str(ROOT))
-from lib.plotting import plt
+from lib.plotting import plt, DPI
 from lib.simulation_story_visuals import load_studies
 from lib.simulation_validation import verify_legacy
 from scripts.make_geometry_notebooks import verify_summary
@@ -77,7 +78,7 @@ F = BASE / 'figures'
 FIG = json.loads((F / 'manifest.json').read_text())
 assert FIG['profile'] == 'paper'
 assert plt.rcParams['text.usetex'] is True
-assert plt.rcParams['figure.dpi'] == plt.rcParams['savefig.dpi'] == 200
+assert plt.rcParams['figure.dpi'] == plt.rcParams['savefig.dpi'] == DPI
 for mapping in ('sources', 'input_manifests'):
     for name, expected in FIG[mapping].items():
         assert hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == expected

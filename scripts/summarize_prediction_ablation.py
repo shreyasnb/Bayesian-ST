@@ -137,7 +137,7 @@ def main():
         'Process inversion is nested within prediction time; embedded moment costs are missing rather than falsely zero.',
         'Reporting frequencies, worker counts and software versions are in the corresponding configurations.',
         'manifest.json records hardware and notes that cloud wall-clock timings can overlap other studies.',
-        'Figures use TeX and 200 dpi. Main figures show motion error and uncertainty, paired application losses,',
+        'Figures use TeX and 300 dpi. Main figures show motion error and uncertainty, paired application losses,',
         'and coverage versus width. Extra tuning curves, conditions and runtime detail are supplementary.',
         '[Motion and uncertainty](figures/motion.pdf), [paired application losses](figures/application_gains.pdf),',
         'and [matched-process coverage and width](figures/process_coverage_width.pdf) are the three main figures.',

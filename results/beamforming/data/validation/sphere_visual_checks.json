@@ -2,8 +2,8 @@
   "schema": 1,
   "status": "passed",
   "example": "beamforming",
-  "audit_source_sha256": "9aef04053a14f5374293dfc226a3a2f988b52f9b98981ef26ad21af622dcb043",
-  "display_source_sha256": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
+  "audit_source_sha256": "5e8203935651c7321aa4b3bfee50e39bcb25d7236333468b0b998bf8461bc34d",
+  "display_source_sha256": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
   "baseline_snapshot_sha256": "9dd279c57949f578aa9b76578198b076779933a17120c8936915234fcaed6e2e",
   "preservation": {
     "status": "passed",
@@ -758,6 +758,28 @@
   },
   "laws_checked": 20,
   "shared_rotation_checks": 20,
+  "native_coordinate_checks": 20,
+  "auxiliary_rotation_stress": {
+    "rotation": [
+      [
+        0.7816391739070251,
+        -0.4829292842142122,
+        0.3947397981737998
+      ],
+      [
+        0.5501172307043584,
+        0.8320301337746346,
+        -0.07139249941787586
+      ],
+      [
+        -0.29395787843858057,
+        0.27295633888831433,
+        0.9160150668873173
+      ]
+    ],
+    "checks": 20,
+    "used_for_rendering": false
+  },
   "plot_protocol": {
     "camera": {
       "elev": 25.0,
@@ -766,7 +788,10 @@
     "projection": "orthographic",
     "fixed_sphere_radius": 1.0,
     "text_usetex": true,
-    "dpi": 200
+    "dpi": 300,
+    "coordinates": "Native saved coordinates",
+    "mode_centering": false,
+    "density_contours_drawn": false
   },
   "laws": [
     {
@@ -785,38 +810,49 @@
       "curvature_ratio": 2.969228272983844,
       "rotation": [
         [
-          0.5825634160695851,
-          0.7660444431189782,
-          -0.27165378227418446
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148841,
-          0.6427876096865391,
-          0.3237443709670646
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.42261826174069944,
-          1.807287630840702e-16,
-          0.9063077870366499
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999999,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 6.661338147750939e-16,
-      "pointwise_log_density_error": 1.1368683772161603e-13,
+      "unit_norm_error": 4.440892098500626e-16,
+      "pointwise_log_density_error": 2.842170943040401e-14,
       "ambient_section_log_density_error": 9.521272659185342e-13,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 5.684341886080802e-14,
+        "1.0": 4.263256414560601e-14,
         "2.0": 5.684341886080802e-14
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 23.55823697499191,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 6.661338147750939e-16,
+        "pointwise_log_density_error": 1.1368683772161603e-13,
+        "ambient_section_log_density_error": 9.237055564881302e-13,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 1.1368683772161603e-13,
+          "2.0": 1.1368683772161603e-13
+        }
+      }
     },
     {
       "name": "static_n64_t32",
@@ -834,38 +870,49 @@
       "curvature_ratio": 2.9367660206654578,
       "rotation": [
         [
-          0.582563416069586,
-          0.7660444431189775,
-          -0.2716537822741844
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148834,
-          0.6427876096865397,
-          0.3237443709670646
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.42261826174069944,
-          -3.008080493264301e-16,
-          0.9063077870366498
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999996,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 1.1102230246251565e-15,
-      "pointwise_log_density_error": 1.4210854715202004e-13,
-      "ambient_section_log_density_error": 1.1084466677857563e-12,
+      "unit_norm_error": 5.551115123125783e-16,
+      "pointwise_log_density_error": 5.684341886080802e-14,
+      "ambient_section_log_density_error": 1.1937117960769683e-12,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 1.1368683772161603e-13,
-        "2.0": 8.526512829121202e-14
+        "1.0": 8.526512829121202e-14,
+        "2.0": 5.684341886080802e-14
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 45.74821087546737,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 6.661338147750939e-16,
+        "pointwise_log_density_error": 1.9895196601282805e-13,
+        "ambient_section_log_density_error": 1.1652900866465643e-12,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 1.4210854715202004e-13,
+          "2.0": 1.7053025658242404e-13
+        }
+      }
     },
     {
       "name": "static_n64_t64",
@@ -883,38 +930,49 @@
       "curvature_ratio": 2.1326447540360594,
       "rotation": [
         [
-          0.582563416069585,
-          0.7660444431189781,
-          -0.2716537822741844
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148842,
-          0.6427876096865389,
-          0.32374437096706443
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.4226182617406994,
-          2.8242889047754024e-16,
-          0.9063077870366497
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999996,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 1.3322676295501878e-15,
-      "pointwise_log_density_error": 3.410605131648481e-13,
-      "ambient_section_log_density_error": 2.3305801732931286e-12,
+      "unit_norm_error": 8.881784197001252e-16,
+      "pointwise_log_density_error": 5.684341886080802e-14,
+      "ambient_section_log_density_error": 2.2737367544323206e-12,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 2.2737367544323206e-13,
-        "2.0": 1.7053025658242404e-13
+        "1.0": 1.1368683772161603e-13,
+        "2.0": 1.1368683772161603e-13
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 150.76325713399171,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 8.881784197001252e-16,
+        "pointwise_log_density_error": 3.410605131648481e-13,
+        "ambient_section_log_density_error": 2.3874235921539366e-12,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 2.2737367544323206e-13,
+          "2.0": 2.2737367544323206e-13
+        }
+      }
     },
     {
       "name": "static_n64_t128",
@@ -932,38 +990,49 @@
       "curvature_ratio": 1.653687675634983,
       "rotation": [
         [
-          0.5825634160695853,
-          0.7660444431189782,
-          -0.2716537822741844
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148838,
-          0.6427876096865395,
-          0.32374437096706477
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.42261826174069944,
-          -9.2629942000141e-17,
-          0.9063077870366502
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 1.0000000000000002,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 1.5543122344752192e-15,
-      "pointwise_log_density_error": 4.547473508864641e-13,
-      "ambient_section_log_density_error": 4.092726157978177e-12,
+      "unit_norm_error": 8.881784197001252e-16,
+      "pointwise_log_density_error": 1.1368683772161603e-13,
+      "ambient_section_log_density_error": 3.979039320256561e-12,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 3.410605131648481e-13,
-        "2.0": 4.547473508864641e-13
+        "1.0": 1.1368683772161603e-13,
+        "2.0": 2.2737367544323206e-13
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 376.3007083630498,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 1.1102230246251565e-15,
+        "pointwise_log_density_error": 6.821210263296962e-13,
+        "ambient_section_log_density_error": 3.979039320256561e-12,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 4.547473508864641e-13,
+          "2.0": 5.684341886080801e-13
+        }
+      }
     },
     {
       "name": "setup",
@@ -981,38 +1050,49 @@
       "curvature_ratio": 2.1326447540360594,
       "rotation": [
         [
-          0.582563416069585,
-          0.7660444431189781,
-          -0.2716537822741844
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148842,
-          0.6427876096865389,
-          0.32374437096706443
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.4226182617406994,
-          2.8242889047754024e-16,
-          0.9063077870366497
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999996,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 1.3322676295501878e-15,
-      "pointwise_log_density_error": 3.410605131648481e-13,
-      "ambient_section_log_density_error": 2.3305801732931286e-12,
+      "unit_norm_error": 8.881784197001252e-16,
+      "pointwise_log_density_error": 5.684341886080802e-14,
+      "ambient_section_log_density_error": 2.2737367544323206e-12,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 2.2737367544323206e-13,
-        "2.0": 1.7053025658242404e-13
+        "1.0": 1.1368683772161603e-13,
+        "2.0": 1.1368683772161603e-13
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 150.76325713399171,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 8.881784197001252e-16,
+        "pointwise_log_density_error": 3.410605131648481e-13,
+        "ambient_section_log_density_error": 2.3874235921539366e-12,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 2.2737367544323206e-13,
+          "2.0": 2.2737367544323206e-13
+        }
+      }
     },
     {
       "name": "static_n32_t32",
@@ -1030,38 +1110,49 @@
       "curvature_ratio": 2.0645135414992666,
       "rotation": [
         [
-          0.5825634160695854,
-          0.7660444431189778,
-          -0.2716537822741845
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148838,
-          0.6427876096865393,
-          0.3237443709670645
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.4226182617406995,
-          1.0212304681549111e-16,
-          0.9063077870366497
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999996,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 1.5543122344752192e-15,
-      "pointwise_log_density_error": 1.1368683772161603e-13,
+      "unit_norm_error": 8.881784197001252e-16,
+      "pointwise_log_density_error": 1.4210854715202004e-14,
       "ambient_section_log_density_error": 6.252776074688882e-13,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 8.526512829121202e-14,
-        "2.0": 8.526512829121202e-14
+        "1.0": 5.684341886080802e-14,
+        "2.0": 5.684341886080802e-14
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 81.1430074529182,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 1.1102230246251565e-15,
+        "pointwise_log_density_error": 1.4210854715202004e-13,
+        "ambient_section_log_density_error": 6.536993168992922e-13,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 1.1368683772161603e-13,
+          "2.0": 1.1368683772161603e-13
+        }
+      }
     },
     {
       "name": "static_n32_t128",
@@ -1079,19 +1170,19 @@
       "curvature_ratio": 1.5866514565755887,
       "rotation": [
         [
-          0.5825634160695855,
-          0.7660444431189779,
-          -0.2716537822741846
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148837,
-          0.6427876096865395,
-          0.3237443709670646
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.4226182617406995,
-          6.161954761467904e-17,
-          0.9063077870366499
+          0.0,
+          0.0,
+          1.0
         ]
       ],
       "determinant": 1.0,
@@ -1100,17 +1191,28 @@
         321,
         3
       ],
-      "unit_norm_error": 6.661338147750939e-16,
-      "pointwise_log_density_error": 3.410605131648481e-13,
+      "unit_norm_error": 4.440892098500626e-16,
+      "pointwise_log_density_error": 1.1368683772161603e-13,
       "ambient_section_log_density_error": 1.8758328224066645e-12,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 2.8421709430404007e-13,
+        "1.0": 2.2737367544323206e-13,
         "2.0": 1.7053025658242404e-13
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 365.3089833931692,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 6.661338147750939e-16,
+        "pointwise_log_density_error": 4.547473508864641e-13,
+        "ambient_section_log_density_error": 1.7053025658242404e-12,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 3.410605131648481e-13,
+          "2.0": 3.410605131648481e-13
+        }
+      }
     },
     {
       "name": "static_n32_t256",
@@ -1128,38 +1230,49 @@
       "curvature_ratio": 1.4039991236343317,
       "rotation": [
         [
-          0.5825634160695853,
-          0.7660444431189781,
-          -0.2716537822741843
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148841,
-          0.6427876096865393,
-          0.3237443709670646
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.42261826174069933,
-          -8.06424557639381e-19,
-          0.9063077870366499
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999999,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 6.661338147750939e-16,
-      "pointwise_log_density_error": 7.958078640513122e-13,
-      "ambient_section_log_density_error": 3.979039320256561e-12,
+      "unit_norm_error": 5.551115123125783e-16,
+      "pointwise_log_density_error": 2.2737367544323206e-13,
+      "ambient_section_log_density_error": 3.751665644813329e-12,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 5.684341886080801e-13,
-        "2.0": 6.821210263296962e-13
+        "1.0": 2.2737367544323206e-13,
+        "2.0": 3.410605131648481e-13
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 787.8634049157658,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 6.661338147750939e-16,
+        "pointwise_log_density_error": 9.094947017729282e-13,
+        "ambient_section_log_density_error": 3.979039320256561e-12,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 5.684341886080801e-13,
+          "2.0": 5.684341886080801e-13
+        }
+      }
     },
     {
       "name": "smooth_n32_t32",
@@ -1177,38 +1290,49 @@
       "curvature_ratio": 2.042283114029576,
       "rotation": [
         [
-          0.5825634160695854,
-          0.7660444431189778,
-          -0.27165378227418435
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148838,
-          0.6427876096865391,
-          0.3237443709670645
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.42261826174069944,
-          -8.916371687820484e-18,
-          0.9063077870366496
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999993,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 1.7763568394002505e-15,
-      "pointwise_log_density_error": 8.526512829121202e-14,
+      "unit_norm_error": 9.992007221626409e-16,
+      "pointwise_log_density_error": 1.4210854715202004e-14,
       "ambient_section_log_density_error": 4.547473508864641e-13,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 4.263256414560601e-14,
-        "2.0": 4.263256414560601e-14
+        "1.0": 2.842170943040401e-14,
+        "2.0": 2.842170943040401e-14
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 45.54754301133576,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 9.992007221626409e-16,
+        "pointwise_log_density_error": 9.947598300641403e-14,
+        "ambient_section_log_density_error": 4.973799150320701e-13,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 9.947598300641403e-14,
+          "2.0": 8.526512829121202e-14
+        }
+      }
     },
     {
       "name": "smooth_n32_t128",
@@ -1226,38 +1350,49 @@
       "curvature_ratio": 2.1149857394303644,
       "rotation": [
         [
-          0.5825634160695853,
-          0.766044443118978,
-          -0.2716537822741843
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.694272044014884,
-          0.6427876096865391,
-          0.32374437096706454
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.4226182617406994,
-          1.0004042852673695e-17,
-          0.9063077870366498
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999997,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 9.992007221626409e-16,
-      "pointwise_log_density_error": 7.105427357601002e-14,
+      "unit_norm_error": 6.661338147750939e-16,
+      "pointwise_log_density_error": 2.842170943040401e-14,
       "ambient_section_log_density_error": 3.979039320256561e-13,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 5.684341886080802e-14,
-        "2.0": 7.105427357601002e-14
+        "1.0": 2.842170943040401e-14,
+        "2.0": 2.842170943040401e-14
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 44.920499961661704,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 6.661338147750939e-16,
+        "pointwise_log_density_error": 9.947598300641403e-14,
+        "ambient_section_log_density_error": 4.263256414560601e-13,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 8.526512829121202e-14,
+          "2.0": 8.526512829121202e-14
+        }
+      }
     },
     {
       "name": "smooth_n32_t256",
@@ -1275,19 +1410,19 @@
       "curvature_ratio": 1.7002886103091108,
       "rotation": [
         [
-          0.5825634160695855,
-          0.7660444431189781,
-          -0.27165378227418413
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148838,
-          0.6427876096865393,
-          0.3237443709670647
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.4226182617406993,
-          -3.098386622984601e-16,
-          0.90630778703665
+          0.0,
+          0.0,
+          1.0
         ]
       ],
       "determinant": 1.0,
@@ -1296,17 +1431,28 @@
         321,
         3
       ],
-      "unit_norm_error": 6.661338147750939e-16,
-      "pointwise_log_density_error": 8.526512829121202e-14,
-      "ambient_section_log_density_error": 5.115907697472721e-13,
+      "unit_norm_error": 4.440892098500626e-16,
+      "pointwise_log_density_error": 2.842170943040401e-14,
+      "ambient_section_log_density_error": 5.400124791776761e-13,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 5.684341886080802e-14,
-        "2.0": 8.526512829121202e-14
+        "1.0": 2.842170943040401e-14,
+        "2.0": 5.684341886080802e-14
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 68.9439435108886,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 6.661338147750939e-16,
+        "pointwise_log_density_error": 1.7053025658242404e-13,
+        "ambient_section_log_density_error": 5.968558980384842e-13,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 1.4210854715202004e-13,
+          "2.0": 1.4210854715202004e-13
+        }
+      }
     },
     {
       "name": "abrupt_n32_t32",
@@ -1324,38 +1470,49 @@
       "curvature_ratio": 2.42871760433332,
       "rotation": [
         [
-          0.5825634160695854,
-          0.7660444431189778,
-          -0.27165378227418446
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148838,
-          0.6427876096865393,
-          0.3237443709670645
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.42261826174069944,
-          7.040744970486539e-17,
-          0.9063077870366497
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999996,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 1.5543122344752192e-15,
-      "pointwise_log_density_error": 7.105427357601002e-14,
-      "ambient_section_log_density_error": 2.984279490192421e-13,
+      "unit_norm_error": 8.881784197001252e-16,
+      "pointwise_log_density_error": 1.4210854715202004e-14,
+      "ambient_section_log_density_error": 2.8421709430404007e-13,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 5.684341886080802e-14,
-        "2.0": 7.105427357601002e-14
+        "1.0": 4.263256414560601e-14,
+        "2.0": 4.263256414560601e-14
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 25.399801448687313,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 1.1102230246251565e-15,
+        "pointwise_log_density_error": 8.526512829121202e-14,
+        "ambient_section_log_density_error": 3.126388037344441e-13,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 8.526512829121202e-14,
+          "2.0": 9.947598300641403e-14
+        }
+      }
     },
     {
       "name": "abrupt_n32_t128",
@@ -1373,38 +1530,49 @@
       "curvature_ratio": 1.6745291941484806,
       "rotation": [
         [
-          0.5825634160695856,
-          0.7660444431189777,
-          -0.2716537822741843
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148837,
-          0.6427876096865394,
-          0.3237443709670645
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.42261826174069933,
-          -1.4096815915175928e-16,
-          0.9063077870366497
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999996,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 1.4432899320127035e-15,
-      "pointwise_log_density_error": 1.1368683772161603e-13,
-      "ambient_section_log_density_error": 6.252776074688882e-13,
+      "unit_norm_error": 8.881784197001252e-16,
+      "pointwise_log_density_error": 2.842170943040401e-14,
+      "ambient_section_log_density_error": 6.536993168992922e-13,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 1.1368683772161603e-13,
-        "2.0": 1.1368683772161603e-13
+        "1.0": 8.526512829121202e-14,
+        "2.0": 5.684341886080802e-14
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 80.01505056706004,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 8.881784197001252e-16,
+        "pointwise_log_density_error": 1.9895196601282805e-13,
+        "ambient_section_log_density_error": 6.252776074688882e-13,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 1.7053025658242404e-13,
+          "2.0": 1.7053025658242404e-13
+        }
+      }
     },
     {
       "name": "abrupt_n32_t256",
@@ -1422,38 +1590,49 @@
       "curvature_ratio": 1.5923414338942985,
       "rotation": [
         [
-          0.5825634160695852,
-          0.766044443118978,
-          -0.2716537822741843
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148842,
-          0.642787609686539,
-          0.32374437096706443
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.4226182617406993,
-          1.7700477200117758e-16,
-          0.9063077870366498
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999997,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 1.4432899320127035e-15,
-      "pointwise_log_density_error": 1.4210854715202004e-13,
-      "ambient_section_log_density_error": 6.252776074688882e-13,
+      "unit_norm_error": 8.881784197001252e-16,
+      "pointwise_log_density_error": 5.684341886080802e-14,
+      "ambient_section_log_density_error": 6.821210263296962e-13,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 1.1368683772161603e-13,
-        "2.0": 1.1368683772161603e-13
+        "1.0": 5.684341886080802e-14,
+        "2.0": 2.842170943040401e-14
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 77.9445227544083,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 9.992007221626409e-16,
+        "pointwise_log_density_error": 1.7053025658242404e-13,
+        "ambient_section_log_density_error": 5.684341886080801e-13,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 1.4210854715202004e-13,
+          "2.0": 1.4210854715202004e-13
+        }
+      }
     },
     {
       "name": "noise_change_n32_t32",
@@ -1471,19 +1650,19 @@
       "curvature_ratio": 1.869512130368558,
       "rotation": [
         [
-          0.5825634160695854,
-          0.766044443118978,
-          -0.27165378227418446
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148838,
-          0.6427876096865394,
-          0.3237443709670646
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.42261826174069944,
-          1.493462181822215e-17,
-          0.9063077870366499
+          0.0,
+          0.0,
+          1.0
         ]
       ],
       "determinant": 1.0,
@@ -1492,17 +1671,28 @@
         321,
         3
       ],
-      "unit_norm_error": 5.551115123125783e-16,
-      "pointwise_log_density_error": 1.1368683772161603e-13,
-      "ambient_section_log_density_error": 6.821210263296962e-13,
+      "unit_norm_error": 4.440892098500626e-16,
+      "pointwise_log_density_error": 2.842170943040401e-14,
+      "ambient_section_log_density_error": 6.536993168992922e-13,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 8.526512829121202e-14,
-        "2.0": 8.526512829121202e-14
+        "1.0": 5.684341886080802e-14,
+        "2.0": 5.684341886080802e-14
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 91.1529652616387,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 6.661338147750939e-16,
+        "pointwise_log_density_error": 1.7053025658242404e-13,
+        "ambient_section_log_density_error": 7.105427357601002e-13,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 1.4210854715202004e-13,
+          "2.0": 1.4210854715202004e-13
+        }
+      }
     },
     {
       "name": "noise_change_n32_t128",
@@ -1520,38 +1710,49 @@
       "curvature_ratio": 1.453201120940003,
       "rotation": [
         [
-          0.5825634160695855,
-          0.7660444431189779,
-          -0.27165378227418446
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148837,
-          0.6427876096865395,
-          0.3237443709670647
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.4226182617406995,
-          -1.3825157521347053e-16,
-          0.9063077870366499
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999999,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 6.661338147750939e-16,
-      "pointwise_log_density_error": 3.410605131648481e-13,
+      "unit_norm_error": 4.440892098500626e-16,
+      "pointwise_log_density_error": 1.1368683772161603e-13,
       "ambient_section_log_density_error": 1.9326762412674725e-12,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 2.2737367544323206e-13,
-        "2.0": 2.8421709430404007e-13
+        "1.0": 1.1368683772161603e-13,
+        "2.0": 1.7053025658242404e-13
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 375.2869701199069,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 6.661338147750939e-16,
+        "pointwise_log_density_error": 5.115907697472721e-13,
+        "ambient_section_log_density_error": 2.0463630789890885e-12,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 3.410605131648481e-13,
+          "2.0": 2.8421709430404007e-13
+        }
+      }
     },
     {
       "name": "noise_change_n32_t256",
@@ -1569,38 +1770,49 @@
       "curvature_ratio": 1.4733405995845767,
       "rotation": [
         [
-          0.5825634160695852,
-          0.7660444431189782,
-          -0.27165378227418446
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148838,
-          0.6427876096865391,
-          0.3237443709670649
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.42261826174069966,
-          -1.2772907196396044e-16,
-          0.9063077870366498
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999999,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 6.661338147750939e-16,
-      "pointwise_log_density_error": 4.547473508864641e-13,
-      "ambient_section_log_density_error": 2.1600499167107046e-12,
+      "unit_norm_error": 4.440892098500626e-16,
+      "pointwise_log_density_error": 1.1368683772161603e-13,
+      "ambient_section_log_density_error": 2.2737367544323206e-12,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 3.410605131648481e-13,
-        "2.0": 3.410605131648481e-13
+        "1.0": 2.2737367544323206e-13,
+        "2.0": 1.1368683772161603e-13
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 456.044864356879,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 6.661338147750939e-16,
+        "pointwise_log_density_error": 5.684341886080801e-13,
+        "ambient_section_log_density_error": 2.2737367544323206e-12,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 4.547473508864641e-13,
+          "2.0": 4.547473508864641e-13
+        }
+      }
     },
     {
       "name": "power_change_n32_t32",
@@ -1618,38 +1830,49 @@
       "curvature_ratio": 1.9045787352775676,
       "rotation": [
         [
-          0.5825634160695854,
-          0.7660444431189779,
-          -0.2716537822741844
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148838,
-          0.6427876096865393,
-          0.3237443709670647
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.4226182617406995,
-          -1.0802291610495249e-16,
-          0.9063077870366498
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999998,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 9.992007221626409e-16,
-      "pointwise_log_density_error": 1.1368683772161603e-13,
-      "ambient_section_log_density_error": 6.821210263296962e-13,
+      "unit_norm_error": 6.661338147750939e-16,
+      "pointwise_log_density_error": 2.842170943040401e-14,
+      "ambient_section_log_density_error": 6.536993168992922e-13,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 5.684341886080802e-14,
-        "2.0": 8.526512829121202e-14
+        "1.0": 2.842170943040401e-14,
+        "2.0": 5.684341886080802e-14
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 78.13803540267553,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 6.661338147750939e-16,
+        "pointwise_log_density_error": 1.7053025658242404e-13,
+        "ambient_section_log_density_error": 7.389644451905042e-13,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 1.1368683772161603e-13,
+          "2.0": 1.1368683772161603e-13
+        }
+      }
     },
     {
       "name": "power_change_n32_t128",
@@ -1667,38 +1890,49 @@
       "curvature_ratio": 1.363264644680833,
       "rotation": [
         [
-          0.5825634160695855,
-          0.7660444431189779,
-          -0.2716537822741843
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148837,
-          0.6427876096865394,
-          0.32374437096706465
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.42261826174069944,
-          -1.804888308096334e-16,
-          0.9063077870366498
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999997,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 9.992007221626409e-16,
-      "pointwise_log_density_error": 4.547473508864641e-13,
-      "ambient_section_log_density_error": 2.5011104298755527e-12,
+      "unit_norm_error": 6.661338147750939e-16,
+      "pointwise_log_density_error": 1.1368683772161603e-13,
+      "ambient_section_log_density_error": 2.3874235921539366e-12,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 3.410605131648481e-13,
+        "1.0": 1.1368683772161603e-13,
         "2.0": 2.2737367544323206e-13
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 470.54171522514514,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 7.771561172376096e-16,
+        "pointwise_log_density_error": 5.684341886080801e-13,
+        "ambient_section_log_density_error": 2.2737367544323206e-12,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 4.547473508864641e-13,
+          "2.0": 4.547473508864641e-13
+        }
+      }
     },
     {
       "name": "power_change_n32_t256",
@@ -1716,38 +1950,49 @@
       "curvature_ratio": 1.1183794521320594,
       "rotation": [
         [
-          0.5825634160695855,
-          0.7660444431189777,
-          -0.2716537822741846
+          1.0,
+          0.0,
+          0.0
         ],
         [
-          -0.6942720440148838,
-          0.6427876096865394,
-          0.3237443709670643
+          0.0,
+          1.0,
+          0.0
         ],
         [
-          0.42261826174069944,
-          2.1981711592165271e-16,
-          0.9063077870366496
+          0.0,
+          0.0,
+          1.0
         ]
       ],
-      "determinant": 0.9999999999999993,
+      "determinant": 1.0,
       "mesh_shape": [
         161,
         321,
         3
       ],
-      "unit_norm_error": 1.5543122344752192e-15,
-      "pointwise_log_density_error": 2.7284841053187847e-12,
-      "ambient_section_log_density_error": 1.0913936421275139e-11,
+      "unit_norm_error": 9.992007221626409e-16,
+      "pointwise_log_density_error": 4.547473508864641e-13,
+      "ambient_section_log_density_error": 1.0459189070388675e-11,
       "antipodal_error": 0.0,
       "contour_level_errors": {
-        "1.0": 1.8189894035458565e-12,
-        "2.0": 2.2737367544323206e-12
+        "1.0": 9.094947017729282e-13,
+        "2.0": 9.094947017729282e-13
       },
+      "contour_scope": "Auxiliary exact-level stress check; not drawn in the published figures.",
       "full_mesh_angular_coverage": true,
       "saved_normalizer_unchanged": 2325.5725159590347,
-      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls."
+      "density_scope": "Quadratic log-density equality with the same saved normalizer; no integration, sampling or estimator calls.",
+      "rotation_stress_errors": {
+        "unit_norm_error": 9.992007221626409e-16,
+        "pointwise_log_density_error": 2.7284841053187847e-12,
+        "ambient_section_log_density_error": 1.0913936421275139e-11,
+        "antipodal_error": 0.0,
+        "contour_level_errors": {
+          "1.0": 1.8189894035458565e-12,
+          "2.0": 1.8189894035458565e-12
+        }
+      }
     }
   ],
   "scope": "Rendering-only numerical invariance, not a fresh claim of statistical calibration or algorithm performance."

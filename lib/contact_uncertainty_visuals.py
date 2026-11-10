@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy.stats import t as student_t
-from .plotting import plt,save
+from .plotting import plt,save, DPI
 from matplotlib.lines import Line2D
 from matplotlib.patches import Patch
 
@@ -27,7 +27,7 @@ MAIN=['Process Bingham','Scaled Bingham','Recursive Gaussian','Process Laplace']
 
 
 def _finish(fig,path):
-    assert plt.rcParams['text.usetex'] and fig.dpi==200
+    assert plt.rcParams['text.usetex'] and fig.dpi==DPI
     if path is not None:save(fig,Path(path))
     return fig
 
@@ -94,7 +94,7 @@ def coverage_score(physical,matched=None,path=None,condition='sphere_small'):
     """Primary mechanical endpoint and a separately labeled matched-process control."""
     data=_terminal(physical['metrics']);data=data[data.condition==condition]
     scale=float(physical['config'].get('v0',.02));rows=2 if matched is not None else 1
-    fig,axs=plt.subplots(rows,2,figsize=(15,6.2*rows),dpi=200,layout='constrained',squeeze=False)
+    fig,axs=plt.subplots(rows,2,figsize=(15,6.2*rows),dpi=DPI,layout='constrained',squeeze=False)
     _coverage_panel(axs[0,0],data,scale);_score_panel(axs[0,1],data,scale)
     axs[0,0].set_title('Mechanical contact: coverage and width')
     axs[0,1].set_title('Mechanical contact: interval score')
@@ -116,7 +116,7 @@ def paired_effects_cost(physical,path=None,condition='sphere_small'):
     pairs=physical['paired'];pairs=pairs[pairs.condition==condition]
     costs=physical['costs'];costs=costs[costs.condition==condition]
     v0=float(physical['config'].get('v0',.02))
-    fig,axs=plt.subplots(1,3,figsize=(17,5.8),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,3,figsize=(17,5.8),dpi=DPI,layout='constrained')
     ax=axs[0];references=['Scaled Bingham','Recursive Gaussian','Process Laplace','Scaled Laplace']
     pairs=pairs.set_index('reference').reindex([m for m in references if m in pairs.reference.to_numpy()]).reset_index()
     ax.axvline(0,color='#777777',ls='--',lw=1)
@@ -163,7 +163,7 @@ def directional_calibration(physical,path=None,condition='sphere_small'):
     """Show signed lag bias and dispersion separately, in a scoring-only frame."""
     data=_terminal(physical['directional']);data=data[data.condition==condition]
     methods=[m for m in ['Process Bingham','Scaled Bingham','Recursive Gaussian'] if (data.method==m).any()]
-    fig,axs=plt.subplots(1,2,figsize=(14,6),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,2,figsize=(14,6),dpi=DPI,layout='constrained')
     ax=axs[0];positions=[];labels=[];all_groups=[]
     for method in methods:
         for direction,g in data[data.method==method].groupby('direction',sort=False):
@@ -197,7 +197,7 @@ def directional_calibration(physical,path=None,condition='sphere_small'):
 
 def validation_scores(physical,path=None):
     tuning=physical['tuning'];curved=tuning[tuning.scope=='curved']
-    fig,axs=plt.subplots(1,3,figsize=(16,5.2),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,3,figsize=(16,5.2),dpi=DPI,layout='constrained')
     for method in ['Scaled Bingham','Process Bingham','Recursive Gaussian']:
         g=curved[curved.method==method]
         if not len(g):continue
@@ -228,7 +228,7 @@ def shape_concentration(physical,path=None):
     shapes=physical['shape_comparison'];directional=physical['directional']
     gaps=directional.groupby(['condition','trial','t','method'],sort=False).minimum_gap.first().reset_index()
     data=shapes.merge(gaps,on=['condition','trial','t','method'],how='left')
-    fig,axs=plt.subplots(1,2,figsize=(13,5.4),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,2,figsize=(13,5.4),dpi=DPI,layout='constrained')
     for method,g in data.groupby('method',sort=False):
         ok=g.full_mean_ok.astype(bool)&g.local_mean_ok.astype(bool)&g.full_interval_ok.astype(bool)&g.local_interval_ok.astype(bool)
         for mask,face in [(ok,None),(~ok,'none')]:
@@ -246,7 +246,7 @@ def shape_concentration(physical,path=None):
 def physical_stress(physical,path=None):
     metrics=_terminal(physical['metrics']);methods=['Process Bingham','Scaled Bingham','Recursive Gaussian','Process Laplace']
     conditions=[c for c in ['plane','sphere_large','sphere_small','weak','anisotropic'] if (metrics.condition==c).any()]
-    fig,axs=plt.subplots(1,2,figsize=(14,6),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,2,figsize=(14,6),dpi=DPI,layout='constrained')
     for method in methods:
         part=metrics[metrics.method==method];means=[];errors=[]
         for condition in conditions:

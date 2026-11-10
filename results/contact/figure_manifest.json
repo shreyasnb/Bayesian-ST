@@ -3,7 +3,7 @@
   "status": "completed",
   "example": "contact",
   "stage": "paper",
-  "created_utc": "2026-11-09T23:49:54.519627+00:00",
+  "created_utc": "2026-11-10T00:32:45.065882+00:00",
   "component_stages": {
     "computation": "paper",
     "performance": "paper",
@@ -11,10 +11,10 @@
     "theory": "paper"
   },
   "sources": {
-    "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-    "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-    "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-    "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+    "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+    "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+    "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+    "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
     "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
     "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
     "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -880,10 +880,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -1450,7 +1450,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -1466,8 +1466,8 @@
         }
       ],
       "output_hashes": {
-        "setup.pdf": "4fd2006b8e9ce62215ecb1b4ccaeb33ca99122bc5d4dd122c40cea7480aa9bd3",
-        "preview/setup.png": "2c3dfbd67de2a3a6a82cb25284be33babdbee93e1fdd05c6f804a1bc7f7e4060"
+        "setup.pdf": "7232c4f2f633404a5cee74c37cf4a9cbc40b184b19f0be6702d2bfcec2b33233",
+        "preview/setup.png": "05246499c6309f5fec1734bda5ef91d6d1ce513d4020bbba6d5e0034388527b0"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -2266,10 +2266,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -2832,7 +2832,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -2868,8 +2868,8 @@
         }
       ],
       "output_hashes": {
-        "task_performance.pdf": "123d2ef4d62003f1998d387990e111203afa41be26fd2b570439d67322258232",
-        "preview/task_performance.png": "3f9e9b1ab6e00f21c7bc9b11e1d3a438f2a128e3776d6dd96d2b3694db2910f7"
+        "task_performance.pdf": "7bfa172cddc54932ed3f36a5bacc4cb39177b69afd972d10cb03cb58c1ce803e",
+        "preview/task_performance.png": "0f2eaf8d183ae248d9ae697583a3824b1bd29e7d63db804e1c31a26d2cb1e6e3"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -2878,7 +2878,7 @@
     "posterior_anisotropy.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
+      "formula_or_claim": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.posterior_anisotropy",
       "configurations": {
@@ -4077,10 +4077,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -4683,21 +4683,21 @@
           "results/simulation_redesign/paper/geometry/distance_cdf.csv"
         ]
       },
-      "proposed_latex_caption": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
+      "proposed_latex_caption": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
       "placement": "contact main; beamforming supplementary",
       "pages": [
         {
           "page": 1,
           "figure_size_in": [
             7.0,
-            6.1
+            5.3
           ],
           "axes": 4,
           "titles": false,
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -4717,110 +4717,56 @@
           ],
           "sphere_displays": [
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.4649969926793218,
-                  0.8580458739091583,
-                  0.2180254000492941
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  -0.26984850214379436,
-                  0.37191929768630394,
-                  -0.8881766839426019
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  -0.843184192623377,
-                  0.35416565936859884,
-                  0.40448374878858656
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  -22.165244155780933,
-                  7.0266499648359675,
-                  0.9697839878259369
-                ],
-                [
-                  7.0266499648359675,
-                  9.203720662391287,
-                  1.066517166774871
-                ],
-                [
-                  0.9697839878259369,
-                  1.066517166774871,
-                  12.961523493389647
-                ]
-              ],
-              "native_mode": [
-                0.10189346986134991,
-                0.39132983976628755,
-                0.9145920824652406
-              ],
-              "curvature_gaps": [
-                3.3701310720442006,
-                37.20757011878946
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             },
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.4649969926793218,
-                  0.8580458739091583,
-                  0.2180254000492941
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  -0.26984850214379436,
-                  0.37191929768630394,
-                  -0.8881766839426019
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  -0.843184192623377,
-                  0.35416565936859884,
-                  0.40448374878858656
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  -1.9202972290053821,
-                  0.23709427408759653,
-                  0.5541221850290402
-                ],
-                [
-                  0.23709427408759653,
-                  -1.07145213194877,
-                  2.1281495877353827
-                ],
-                [
-                  0.5541221850290402,
-                  2.1281495877353827,
-                  2.9917493609541523
-                ]
-              ],
-              "native_mode": [
-                0.10189346986134992,
-                0.39132983976628777,
-                0.9145920824652407
-              ],
-              "curvature_gaps": [
-                5.946093701910828,
-                5.946093701910829
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             }
           ]
         },
@@ -4835,7 +4781,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -4886,118 +4832,64 @@
           "panel_selections": [],
           "sphere_displays": [
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.5825634160695854,
-                  0.766044443118978,
-                  -0.27165378227418446
-                ],
-                [
-                  -0.6942720440148838,
-                  0.6427876096865394,
-                  0.3237443709670646
-                ],
-                [
-                  0.42261826174069944,
-                  0.0,
-                  0.9063077870366499
-                ]
-              ],
-              "native_parameter": [
-                [
-                  0.0,
+                  1.0,
                   0.0,
                   0.0
                 ],
                 [
                   0.0,
-                  -8.0,
+                  1.0,
                   0.0
                 ],
                 [
                   0.0,
                   0.0,
-                  -80.0
+                  1.0
                 ]
               ],
-              "native_mode": [
-                1.0,
-                0.0,
-                0.0
-              ],
-              "curvature_gaps": [
-                8.0,
-                80.0
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             },
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.5825634160695854,
-                  0.766044443118978,
-                  -0.27165378227418446
-                ],
-                [
-                  -0.6942720440148838,
-                  0.6427876096865394,
-                  0.3237443709670646
-                ],
-                [
-                  0.42261826174069944,
-                  0.0,
-                  0.9063077870366499
-                ]
-              ],
-              "native_parameter": [
-                [
-                  0.0,
+                  1.0,
                   0.0,
                   0.0
                 ],
                 [
                   0.0,
-                  -80.0,
+                  1.0,
                   0.0
                 ],
                 [
                   0.0,
                   0.0,
-                  -8.0
+                  1.0
                 ]
               ],
-              "native_mode": [
-                1.0,
-                0.0,
-                0.0
-              ],
-              "curvature_gaps": [
-                8.0,
-                80.0
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             }
           ]
         }
       ],
       "output_hashes": {
-        "posterior_anisotropy.pdf": "6ea18a30da790913581fbc54837b8df4a5d7c6a68892895311528dfbd0b8e44a",
-        "preview/posterior_anisotropy.png": "61ecd79d14880dbb94e72d55ceef49502429177ed259ad2202234af983027ac0",
-        "preview/posterior_anisotropy_page2.png": "9251c7473061a08c94619c5350ccff842934fca8bfeb6d4c8c5d1f6b5299b427"
+        "posterior_anisotropy.pdf": "32c47b02b8d8758bec9bc9dbdddd7ab197a93afa14df53b14ac1e6f777b2662a",
+        "preview/posterior_anisotropy.png": "2eedf4ece7c75c173b5c9b8fc9bd9caf59916d313c078a8947d433421802dd8e",
+        "preview/posterior_anisotropy_page2.png": "bb55d97dee55efed015dd18c300a7503d165271e3d760f52b318635aa870c720"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -5009,7 +4901,7 @@
     "noise_adaptation.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
+      "formula_or_claim": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.noise_adaptation",
       "configurations": {
@@ -6208,10 +6100,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -6391,7 +6283,7 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
+            "coordinates": "Measured wrist frame at each checkpoint",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
@@ -6407,7 +6299,7 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
+            "coordinates": "Measured wrist frame at each checkpoint",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           }
@@ -6802,7 +6694,7 @@
           "results/simulation_redesign/paper/geometry/distance_cdf.csv"
         ]
       },
-      "proposed_latex_caption": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
+      "proposed_latex_caption": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
       "placement": "beamforming main candidate; contact supplementary",
       "pages": [
         {
@@ -6816,7 +6708,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -6837,7 +6729,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -6858,7 +6750,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -6878,7 +6770,7 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
+            "coordinates": "Measured wrist frame at each checkpoint",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
@@ -6886,110 +6778,56 @@
           "panel_selections": [],
           "sphere_displays": [
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.6182344210390287,
-                  0.7736003536741558,
-                  0.1390276714821873
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  0.2868216948094555,
-                  -0.0573626175660209,
-                  -0.956265049812345
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  -0.7317919895907371,
-                  0.6310721217905261,
-                  -0.2573489092062278
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  -81.19006610949799,
-                  -12.697873575313288,
-                  -42.90896330948159
-                ],
-                [
-                  -12.697873575313288,
-                  65.21425624495241,
-                  119.15387611207173
-                ],
-                [
-                  -42.90896330948159,
-                  119.15387611207173,
-                  15.975809864545571
-                ]
-              ],
-              "native_mode": [
-                -0.14824018666748037,
-                0.7571991296007882,
-                0.6361401773104735
-              ],
-              "curvature_gaps": [
-                226.57864006801856,
-                276.833511869391
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             },
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.6182344210390287,
-                  0.7736003536741558,
-                  0.1390276714821873
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  0.2868216948094555,
-                  -0.0573626175660209,
-                  -0.956265049812345
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  -0.7317919895907371,
-                  0.6310721217905261,
-                  -0.2573489092062278
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  -23.01999193979427,
-                  15.002099801330612,
-                  17.773419070539724
-                ],
-                [
-                  15.002099801330612,
-                  -2.4507735920830034,
-                  46.664436504085884
-                ],
-                [
-                  17.773419070539724,
-                  46.664436504085884,
-                  25.470765531877273
-                ]
-              ],
-              "native_mode": [
-                0.25171848891803156,
-                0.5807671964608228,
-                0.7741752165058366
-              ],
-              "curvature_gaps": [
-                95.08811604726742,
-                103.68048238177697
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             }
           ]
         },
@@ -7004,7 +6842,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -7023,7 +6861,7 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
+            "coordinates": "Measured wrist frame at each checkpoint",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
@@ -7031,67 +6869,40 @@
           "panel_selections": [],
           "sphere_displays": [
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.6182344210390287,
-                  0.7736003536741558,
-                  0.1390276714821873
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  0.2868216948094555,
-                  -0.0573626175660209,
-                  -0.956265049812345
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  -0.7317919895907371,
-                  0.6310721217905261,
-                  -0.2573489092062278
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  -1.1762633265569815,
-                  3.476465835385847,
-                  3.0949790680813334
-                ],
-                [
-                  3.476465835385847,
-                  -2.571553350966951,
-                  7.451876198070963
-                ],
-                [
-                  3.0949790680813334,
-                  7.451876198070963,
-                  3.747816677523932
-                ]
-              ],
-              "native_mode": [
-                0.3633260698052187,
-                0.5342869117591111,
-                0.7632376189122263
-              ],
-              "curvature_gaps": [
-                13.10534707973713,
-                18.207579515943475
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             }
           ]
         }
       ],
       "output_hashes": {
-        "noise_adaptation.pdf": "95c27362a8133f89e4138c3a937fedb0de35f9847c0a4d426f8c0827abf8f0ae",
-        "preview/noise_adaptation.png": "dc1021db19af540397297090ac91e88e6f69373b1a22a35a50c37728add68524",
-        "preview/noise_adaptation_page2.png": "0ea3c477eaa05e8b00118d33ddf67944c68e5be670f2bd3497109c4741141803",
-        "preview/noise_adaptation_page3.png": "2d5b46306b44bd6ceb5d4465cefe5ca71d75c7d26e3812ca7894faf6cb5c900a",
-        "preview/noise_adaptation_page4.png": "6b92f53c1c71fc4582f1335e96d8867128865fafdf07d70e024a165da73a145b"
+        "noise_adaptation.pdf": "582bee085b42a5f7740700c39a4b49beb98912a47edb08cf2a1765d829340527",
+        "preview/noise_adaptation.png": "1e49c328249ffb27b7912adc8ec93fba0a7b09f4ea8dcc9fcb4cfb4ccc7c6c91",
+        "preview/noise_adaptation_page2.png": "d2114960160729aea59a586d18636eb13580972b9cf1868ea08928940f86df2c",
+        "preview/noise_adaptation_page3.png": "db40a5b74d0748724773984367879913cbeeef07d4625d692005f00f662e665f",
+        "preview/noise_adaptation_page4.png": "39e4b14a98f798aa34228245d0d61af958f52c27a2b2621c7e37aabed458319b"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -8414,10 +8225,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -8992,7 +8803,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -9003,8 +8814,8 @@
         }
       ],
       "output_hashes": {
-        "information.pdf": "8f361d03339138c32ce866f2676173a394e3ebc305ddbca2c26e86231eb1048c",
-        "preview/information.png": "9d23e76b8660fd036530a1706d9c149a952c35280e20228a5af3ad7288369c49"
+        "information.pdf": "50a2f406dd264c01e4c448035ccfd2d9068733b69f8dfa26278252ec9ce4ddde",
+        "preview/information.png": "50842653976d048541ca9e14c9e96b139d7215b28e66c7ccecf4b8e0c28b01eb"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -10324,10 +10135,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -10902,7 +10713,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -10913,8 +10724,8 @@
         }
       ],
       "output_hashes": {
-        "posterior_curvature.pdf": "ccaed92ac1362d79a0edb1719dd1c5a0ebd7bfb43a02970f9b4500efacdce6b0",
-        "preview/posterior_curvature.png": "82bd17385015399a9ff8aacea7fe70886eca9c748afe3597371a791b5b047beb"
+        "posterior_curvature.pdf": "9d721f884254a4f8a926a7b567e7228e5cb4ccfc743f3310f41de6169899b590",
+        "preview/posterior_curvature.png": "8093c6f89152ff9fd6c7050634c11ebf20dece4aed12e265519453f1bb952338"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -12234,10 +12045,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -12900,7 +12711,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -12927,7 +12738,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -13015,7 +12826,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -13042,7 +12853,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -13060,11 +12871,11 @@
         }
       ],
       "output_hashes": {
-        "tracking_bound.pdf": "c641185a2018293582cf72d43289d9bf75b8788c2adb65619bbd55d589500a92",
-        "preview/tracking_bound.png": "1da012caa19aa5921eca6ef0f4ad94a9b36380ab3c09bb9f028331903ac969d3",
-        "preview/tracking_bound_page2.png": "1bcfd552c0a43458f9d317fff192dd48d2c4672955ac1652097a87c6c57fe86d",
-        "preview/tracking_bound_page3.png": "9e4d70218318dc1faea7f4a8ca87f8008612fa17d274694dd587ac3042461513",
-        "preview/tracking_bound_page4.png": "f121e96f3e546680430aba700e203be5a69e3d6b9e86a03e565695b453dc1091"
+        "tracking_bound.pdf": "ecc64b9a9b0c180f1b5286aefa9ba0d576e6ec02d3afa6069c470c459dd9640b",
+        "preview/tracking_bound.png": "1e380e00913875a0b8832bea92685133cd255291fe27b678a06306989fa1e595",
+        "preview/tracking_bound_page2.png": "7fe7ab30c6972c8e0b838e71cf656cb78a49ed9afc79fc76d0c357a671b688a3",
+        "preview/tracking_bound_page3.png": "84babeceacc7ac7e4561851c4b21d39fd3226d05d4da30caba79bbf2ddb7dfc4",
+        "preview/tracking_bound_page4.png": "1be94bf4427f85f041ea9f67fd8385ea2b42df008090fe9eb77418dc1be2dadc"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -14384,10 +14195,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -14962,7 +14773,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -14973,8 +14784,8 @@
         }
       ],
       "output_hashes": {
-        "block_updates.pdf": "85a6b5c611d7ffc1fa49dc5c2d1c0d328899fb6e21626ae0840560eaf7e484de",
-        "preview/block_updates.png": "fd629242527eadc8ea874ce4774fde03096602e6bc61db1975759f45a99a84d0"
+        "block_updates.pdf": "b2d83de1ba15d58eafc024c35f5b3c24ec5eecdea3075c638f975873d1d15ff1",
+        "preview/block_updates.png": "9facf8fab28d3f0e8c9cccf20bf7703c3541f7054f537f98cdb3706b083873e9"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -16294,10 +16105,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -16947,7 +16758,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -16984,7 +16795,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -17021,7 +16832,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -17062,7 +16873,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -17094,11 +16905,11 @@
         }
       ],
       "output_hashes": {
-        "additional_comparisons.pdf": "623228617d794330ff031502e62f8ef4386e303c2d2331b68f4f2026a64fb990",
-        "preview/additional_comparisons.png": "ef7e1b3ac5af4e23bf8c4b0c7bd428e52d78ed43a50b481059cc58df79217397",
-        "preview/additional_comparisons_page2.png": "6710720369e3ce7d68c9c435abd785b29d61b16e569ccf42313e29fcf05297c4",
-        "preview/additional_comparisons_page3.png": "ec39cf21080637e572903fc161c5d3f93b589dd10c09a59b9608816046b9d1ff",
-        "preview/additional_comparisons_page4.png": "a438201a528c17f6cbbd76952cb17efbe1dfb7d31bff28a0307fbfc9fbe99bca"
+        "additional_comparisons.pdf": "b8328b9759afe6083b10b8defa8385db0cbf1a6e81034ee23a0c8f0c237ed74b",
+        "preview/additional_comparisons.png": "0bdbfee6c31d5e94757b3b7f2b7a53541963b9cbb0d7da04229715187702313a",
+        "preview/additional_comparisons_page2.png": "efe98b7690cb7ef1f6d40100fa8f0b7cf9472e690727aa009993682e64a5ec34",
+        "preview/additional_comparisons_page3.png": "0f902c8b6ff35a47e6e68660589faa6f72292d7c668cd208304d75b4faf9a77c",
+        "preview/additional_comparisons_page4.png": "5fa7c8d691cca3ca2018b25c350693929e01ea8f0f74f803e1bc406e5a917bfb"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -18577,10 +18388,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -19163,7 +18974,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -19174,8 +18985,8 @@
         }
       ],
       "output_hashes": {
-        "variance_estimation.pdf": "28c272022a4575cf1e8637bf21847bb966f66600d077ce2e6b02bc07d27bd687",
-        "preview/variance_estimation.png": "c07091d62db61433d34d7eb35e6f73c20765672169ae126b65d87f2212646e78"
+        "variance_estimation.pdf": "398ff1f2fc7db6c5c0e162033ca7ea29b36c58748bd7971d47f30459493ca5de",
+        "preview/variance_estimation.png": "9fae013d3f1f81b89d13119f8a04fdcf5e52ed66b2f2651619166154648e04f4"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -20654,10 +20465,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -21341,7 +21152,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -21367,7 +21178,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -21393,7 +21204,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -21419,7 +21230,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -21445,7 +21256,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -21471,7 +21282,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -21497,7 +21308,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -21543,7 +21354,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -21589,7 +21400,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -21626,16 +21437,16 @@
         }
       ],
       "output_hashes": {
-        "predictive_calibration.pdf": "dd5e1580d7d822550fa1a87d268372fc8b012a0361a1603ee8786e515bb23466",
-        "preview/predictive_calibration.png": "4f5778b7bca28b3736abe16ed4edb62470d2e11aea9eea5e71648b0cbdd23542",
-        "preview/predictive_calibration_page2.png": "97139f4424cb822a3d03182d37580a7f3d72496387a02a45aaa00407b1962e54",
-        "preview/predictive_calibration_page3.png": "303772e75f668943edff4012280c1d0b9cfb040d91c1753eca90422c4c260ed0",
-        "preview/predictive_calibration_page4.png": "efa23eae309ece96e97329076717df544b4610dddcec46c2e991bcc1bca20979",
-        "preview/predictive_calibration_page5.png": "86397731aea3f89b8fe594faf5ca68fa74c39623095a8e7e050da21bca8ae199",
-        "preview/predictive_calibration_page6.png": "dec49ea9d12a775f3f300dfac59014035c6cf706d94062b383469bf829dc6e10",
-        "preview/predictive_calibration_page7.png": "626400d13107fed12f0722234d084a0a5b62cb5b3a92091db150c35bf9924cf3",
-        "preview/predictive_calibration_page8.png": "1614f98960b074f9b0379e75ed565070e2e3fa62d905073b67c53b225e533dac",
-        "preview/predictive_calibration_page9.png": "904224a8b03c7b7111fdd882150112efc67271f287339b3aea53376134865134"
+        "predictive_calibration.pdf": "a66d749512da983f85864cd42e678945bbba3afa299188c56ad84016c09f103a",
+        "preview/predictive_calibration.png": "cbd559fe95dc453b79a9330f4d1474ca29d03f9b69ac9e4767ad667b20654a21",
+        "preview/predictive_calibration_page2.png": "211a6451c4548de7ff234334cdad7af64683c90765a5e6aa8ca7697dd6a7b7fd",
+        "preview/predictive_calibration_page3.png": "15331dadb2bfedda10553edea9e3b915866859e4022405271bc144b13da51acc",
+        "preview/predictive_calibration_page4.png": "07b200eae1a29187a6b4fd07e3cd29c0ec9b9781e89b1398df6e49883754995e",
+        "preview/predictive_calibration_page5.png": "a4e7fcfd41a258f3c029002a9d117af2af9666a3101b5b3b37cda79f6b4ba524",
+        "preview/predictive_calibration_page6.png": "2189c25c93cc10f12c2d1153d9f77b1f6c67be2a6481480609fccb73196483ed",
+        "preview/predictive_calibration_page7.png": "21e870e43aa0a197f8906b808a791853ae75cc203127f97d6f37b989eaf122ef",
+        "preview/predictive_calibration_page8.png": "d310415e6863641ab0efecb9c371e16e797471197a9940de924bfb8a447c7311",
+        "preview/predictive_calibration_page9.png": "f00eda1681edae39a98c10c544adb5224a7a80118f488b2ff70d97d514a96f58"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -23114,10 +22925,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -23705,7 +23516,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -23722,8 +23533,8 @@
         }
       ],
       "output_hashes": {
-        "predictive_scores.pdf": "d054a6d7a9f934bd1ae9ef5b76a53532e5b0b5b6e6420cffc42efffc6af19cbe",
-        "preview/predictive_scores.png": "01301525859511ef95ff815727c343b59f3aee399bfe99b5f782006ac1132ed4"
+        "predictive_scores.pdf": "0b315a398c6c69a1aa2f9c2c4d11056fd95c66412725c73cd13cecdb6fcd7738",
+        "preview/predictive_scores.png": "c8964ce20128085a6119d5accf983ea793b61820612102cc9851150f29b8c798"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -25202,10 +25013,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -25802,7 +25613,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -25828,8 +25639,8 @@
         }
       ],
       "output_hashes": {
-        "model_mismatch.pdf": "aac519f787e2eb0b8ecf5f2a7fc428f85c24167f059ba12a8c52326e18e3c6e2",
-        "preview/model_mismatch.png": "ad1dc30e0dcbe81cf1409d5d078d1eb90d697c382559c16defe469a1b9107408"
+        "model_mismatch.pdf": "5acc24cee7cf7024065841d08e43cab2ec56f6348493d5a5c5b1da581b0a8e7f",
+        "preview/model_mismatch.png": "3e1da397a4a718f2377e2420a19c21484444b54420ba427ae347792c6a1f6940"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -27308,10 +27119,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -27894,7 +27705,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -27911,8 +27722,8 @@
         }
       ],
       "output_hashes": {
-        "computation_time.pdf": "e94d7be29a3d03c1c1aad99447e9e06b1269621f3d7f8bb1e11cee8e6d4cb059",
-        "preview/computation_time.png": "38129dd2910868c8c43908bed863c44cc25997f19849244cb9b35833df3782be"
+        "computation_time.pdf": "8e831129bdd1f9be70651bb8cde43922eb7d202639330ed01c069b8b1135c527",
+        "preview/computation_time.png": "eb29e8612248fdf5a38e3d9712fbdb7c2efceeca96e85960e62dcf8544ae5815"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -29391,10 +29202,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -29981,7 +29792,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30001,7 +29812,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30021,7 +29832,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -30035,10 +29846,10 @@
         }
       ],
       "output_hashes": {
-        "numerical_accuracy.pdf": "16e869c0ab46aa7ea73a9f5e7ca39dda20240168836e24d4dc9ee9bdb3b0211c",
-        "preview/numerical_accuracy.png": "8cf9207c9e28a2f083a689afdcc32a560babb6f1fcd296a7b34d0bc61c4fc327",
-        "preview/numerical_accuracy_page2.png": "3d6ca6e5052964de0f384ce4c15b69919b9911cbb3f04fe6774200cb9c3d4c34",
-        "preview/numerical_accuracy_page3.png": "90c09595c99b42e039e83c23fb6004f97f9ea7f0690fdf62a6b430d3b96ed650"
+        "numerical_accuracy.pdf": "018218ff3a1a6e46b13840156f3b8c134c1646dd2abdb3eabfa62395e06aa0e5",
+        "preview/numerical_accuracy.png": "442014309b0660dbcb0a89c1aab4fce92595c9bacffa415e1cd41b7e5a7d98a7",
+        "preview/numerical_accuracy_page2.png": "22afabdac025667d12627a3e60af42c9e733f4dab99fd8345683631baecd1606",
+        "preview/numerical_accuracy_page3.png": "3cc6722e2fa75c9c8d894cfa4c5e3767b5bfe6488804cd4216e6876a85b6adec"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -30047,7 +29858,7 @@
     "paper_summary.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and matched-cadence computational cost. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
+      "formula_or_claim": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and matched-cadence computational cost. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.paper_summary",
       "configurations": {
@@ -31517,10 +31328,10 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -32089,7 +31900,7 @@
           "results/implementation_audit/paper/em/residuals.csv"
         ]
       },
-      "proposed_latex_caption": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and matched-cadence computational cost. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
+      "proposed_latex_caption": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and matched-cadence computational cost. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
       "placement": "main",
       "pages": [
         {
@@ -32103,7 +31914,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -32133,117 +31944,63 @@
           ],
           "sphere_displays": [
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.4649969926793218,
-                  0.8580458739091583,
-                  0.2180254000492941
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  -0.26984850214379436,
-                  0.37191929768630394,
-                  -0.8881766839426019
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  -0.843184192623377,
-                  0.35416565936859884,
-                  0.40448374878858656
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  -22.165244155780933,
-                  7.0266499648359675,
-                  0.9697839878259369
-                ],
-                [
-                  7.0266499648359675,
-                  9.203720662391287,
-                  1.066517166774871
-                ],
-                [
-                  0.9697839878259369,
-                  1.066517166774871,
-                  12.961523493389647
-                ]
-              ],
-              "native_mode": [
-                0.10189346986134991,
-                0.39132983976628755,
-                0.9145920824652406
-              ],
-              "curvature_gaps": [
-                3.3701310720442006,
-                37.20757011878946
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             },
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.4649969926793218,
-                  0.8580458739091583,
-                  0.2180254000492941
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  -0.26984850214379436,
-                  0.37191929768630394,
-                  -0.8881766839426019
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  -0.843184192623377,
-                  0.35416565936859884,
-                  0.40448374878858656
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  -1.9202972290053821,
-                  0.23709427408759653,
-                  0.5541221850290402
-                ],
-                [
-                  0.23709427408759653,
-                  -1.07145213194877,
-                  2.1281495877353827
-                ],
-                [
-                  0.5541221850290402,
-                  2.1281495877353827,
-                  2.9917493609541523
-                ]
-              ],
-              "native_mode": [
-                0.10189346986134992,
-                0.39132983976628777,
-                0.9145920824652407
-              ],
-              "curvature_gaps": [
-                5.946093701910828,
-                5.946093701910829
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             }
           ]
         }
       ],
       "output_hashes": {
-        "paper_summary.pdf": "62abd92390cc60b4b5c344bd6e917ed969d479f9148fd5a23eb6ea49a62156b6",
-        "preview/paper_summary.png": "362c5af0f2b11a39a5cf12290e8f3df15def99131ee7f65f052a7d3008961c73"
+        "paper_summary.pdf": "0e8abcdc9e0728e05a119a333e33747af956a85e4decb4f0214e42b70d6f827b",
+        "preview/paper_summary.png": "5bfa919e8b3400b8974797530519b5b72224ed71034e89e54374c239870d9a31"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -32276,7 +32033,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -32296,7 +32053,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -32316,7 +32073,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -32343,7 +32100,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -32431,7 +32188,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -32458,7 +32215,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -34433,10 +34190,10 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -34604,7 +34361,7 @@
         "results/contact/tables/paper/theory/numerical_accuracy.csv": "70149bed8eff2c2a0b6d251a86ac289a582cd4c2e5e60724b9851b3ed25f3f4a"
       },
       "output_hashes": {
-        "supp_information_tracking.pdf": "0327a0b36b00ee1903837f6aa7fe7ed039d54dee59b41ac99000d01948ba83e3"
+        "supp_information_tracking.pdf": "95cf854cac3ffe5db58ccbc05a16f072fa95392a763aba54c9ffb80eb0fbe3e6"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     },
@@ -34619,7 +34376,7 @@
         "additional_comparisons.pdf",
         "posterior_anisotropy.pdf"
       ],
-      "proposed_latex_caption": "Task losses on common independent test episodes. Held-out disturbance or query losses are averaged within each episode before computing pointwise Student 95\\% intervals. Only the posterior-mean curve carries a confidence band in the main absolute-loss panels. The contact paired panel isolates the same-data modal, matched-isotropic and regularized spectral controls; response-only GREAT remains in its absolute-loss panel and the full supplementary grid. Contact paired points show mean loss differences and pointwise Student 95\\% confidence intervals across independent episodes, including every episode outlier; they are not posterior intervals. Beamforming paired boxes show the distribution of episode differences, not confidence intervals. The same-$A_t$ modal and matched-isotropic controls isolate posterior moments; GREAT and application-specific controls have separately validated settings and their stated information. Beamforming power ratios are $10\\log_{10}(P/P_{\\mathrm{oracle}})$, where the denominator is true-covariance oracle output power. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode. Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing/action cadence cost is reported in the computation output. Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms. actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened.",
+      "proposed_latex_caption": "Task losses on common independent test episodes. Held-out disturbance or query losses are averaged within each episode before computing pointwise Student 95\\% intervals. Only the posterior-mean curve carries a confidence band in the main absolute-loss panels. The contact paired panel isolates the same-data modal, matched-isotropic and regularized spectral controls; response-only GREAT remains in its absolute-loss panel and the full supplementary grid. Contact paired points show mean loss differences and pointwise Student 95\\% confidence intervals across independent episodes, including every episode outlier; they are not posterior intervals. Beamforming paired boxes show the distribution of episode differences, not confidence intervals. The same-$A_t$ modal and matched-isotropic controls isolate posterior moments; GREAT and application-specific controls have separately validated settings and their stated information. Beamforming power ratios are $10\\log_{10}(P/P_{\\mathrm{oracle}})$, where the denominator is true-covariance oracle output power. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode. Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing/action cadence cost is reported in the computation output. Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms. actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
       "placement": "supplementary",
       "pages": [
         {
@@ -34633,7 +34390,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -34678,7 +34435,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -34698,7 +34455,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -34735,7 +34492,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -34772,7 +34529,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -34813,7 +34570,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -34847,14 +34604,14 @@
           "page": 7,
           "figure_size_in": [
             7.0,
-            6.1
+            5.3
           ],
           "axes": 4,
           "titles": false,
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -34874,110 +34631,56 @@
           ],
           "sphere_displays": [
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.4649969926793218,
-                  0.8580458739091583,
-                  0.2180254000492941
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  -0.26984850214379436,
-                  0.37191929768630394,
-                  -0.8881766839426019
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  -0.843184192623377,
-                  0.35416565936859884,
-                  0.40448374878858656
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  -22.165244155780933,
-                  7.0266499648359675,
-                  0.9697839878259369
-                ],
-                [
-                  7.0266499648359675,
-                  9.203720662391287,
-                  1.066517166774871
-                ],
-                [
-                  0.9697839878259369,
-                  1.066517166774871,
-                  12.961523493389647
-                ]
-              ],
-              "native_mode": [
-                0.10189346986134991,
-                0.39132983976628755,
-                0.9145920824652406
-              ],
-              "curvature_gaps": [
-                3.3701310720442006,
-                37.20757011878946
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             },
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.4649969926793218,
-                  0.8580458739091583,
-                  0.2180254000492941
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  -0.26984850214379436,
-                  0.37191929768630394,
-                  -0.8881766839426019
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  -0.843184192623377,
-                  0.35416565936859884,
-                  0.40448374878858656
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  -1.9202972290053821,
-                  0.23709427408759653,
-                  0.5541221850290402
-                ],
-                [
-                  0.23709427408759653,
-                  -1.07145213194877,
-                  2.1281495877353827
-                ],
-                [
-                  0.5541221850290402,
-                  2.1281495877353827,
-                  2.9917493609541523
-                ]
-              ],
-              "native_mode": [
-                0.10189346986134992,
-                0.39132983976628777,
-                0.9145920824652407
-              ],
-              "curvature_gaps": [
-                5.946093701910828,
-                5.946093701910829
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             }
           ]
         },
@@ -34992,7 +34695,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -35043,110 +34746,56 @@
           "panel_selections": [],
           "sphere_displays": [
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.5825634160695854,
-                  0.766044443118978,
-                  -0.27165378227418446
-                ],
-                [
-                  -0.6942720440148838,
-                  0.6427876096865394,
-                  0.3237443709670646
-                ],
-                [
-                  0.42261826174069944,
-                  0.0,
-                  0.9063077870366499
-                ]
-              ],
-              "native_parameter": [
-                [
-                  0.0,
+                  1.0,
                   0.0,
                   0.0
                 ],
                 [
                   0.0,
-                  -8.0,
+                  1.0,
                   0.0
                 ],
                 [
                   0.0,
                   0.0,
-                  -80.0
+                  1.0
                 ]
               ],
-              "native_mode": [
-                1.0,
-                0.0,
-                0.0
-              ],
-              "curvature_gaps": [
-                8.0,
-                80.0
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             },
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.5825634160695854,
-                  0.766044443118978,
-                  -0.27165378227418446
-                ],
-                [
-                  -0.6942720440148838,
-                  0.6427876096865394,
-                  0.3237443709670646
-                ],
-                [
-                  0.42261826174069944,
-                  0.0,
-                  0.9063077870366499
-                ]
-              ],
-              "native_parameter": [
-                [
-                  0.0,
+                  1.0,
                   0.0,
                   0.0
                 ],
                 [
                   0.0,
-                  -80.0,
+                  1.0,
                   0.0
                 ],
                 [
                   0.0,
                   0.0,
-                  -8.0
+                  1.0
                 ]
               ],
-              "native_mode": [
-                1.0,
-                0.0,
-                0.0
-              ],
-              "curvature_gaps": [
-                8.0,
-                80.0
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             }
           ]
         }
@@ -37143,10 +36792,10 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -37314,7 +36963,7 @@
         "results/contact/tables/paper/theory/numerical_accuracy.csv": "70149bed8eff2c2a0b6d251a86ac289a582cd4c2e5e60724b9851b3ed25f3f4a"
       },
       "output_hashes": {
-        "supp_comparisons.pdf": "03588f12e8dc7667a9b2450c4e7d0e6d767bdee4636f43421c017cfba52c856f"
+        "supp_comparisons.pdf": "7c3a70ef7bc8e1a3125e4d3a97dbf92326efe534ce6d76028919644e508918e4"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     },
@@ -37332,7 +36981,7 @@
         "computation_time.pdf",
         "numerical_accuracy.pdf"
       ],
-      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes. Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\\widetilde n=Rn$ or $\\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened. Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime. Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee. Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood. Warmed single-thread pipeline cost at actual action, reporting and learning schedules. Action cadence is labelled in observations and is distinct from the fixed $L=32$ observations per EM fit. EM bars use two or four iterations, and optional uncertainty reports occur every 32 observations. Correction, modal/mean action, uncertainty report and variance fitting are nonoverlapping phases; a native moment routine already includes its eigensystem. Medians and upper quantiles use the declared randomized repetitions. Phase stacks sum per-phase medians and need not equal the median full-cycle wall time. Stored state and tracked allocation have separate scopes; native workspaces and RSS are not silently included. Timings are host measurements, not worst-case deadlines. Synthetic spectra and statistical-state task fixtures remain distinct. Task/cost trade-off points use the same predeclared episode 0, not the population task-loss mean; clock repetitions quantify execution variability only. Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration.",
+      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes. Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime. Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee. Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood. Warmed single-thread pipeline cost at actual action, reporting and learning schedules. Action cadence is labelled in observations and is distinct from the fixed $L=32$ observations per EM fit. EM bars use two or four iterations, and optional uncertainty reports occur every 32 observations. Correction, modal/mean action, uncertainty report and variance fitting are nonoverlapping phases; a native moment routine already includes its eigensystem. Medians and upper quantiles use the declared randomized repetitions. Phase stacks sum per-phase medians and need not equal the median full-cycle wall time. Stored state and tracked allocation have separate scopes; native workspaces and RSS are not silently included. Timings are host measurements, not worst-case deadlines. Synthetic spectra and statistical-state task fixtures remain distinct. Task/cost trade-off points use the same predeclared episode 0, not the population task-loss mean; clock repetitions quantify execution variability only. Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration.",
       "placement": "supplementary",
       "pages": [
         {
@@ -37346,7 +36995,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37366,7 +37015,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37387,7 +37036,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37408,7 +37057,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37428,7 +37077,7 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
+            "coordinates": "Measured wrist frame at each checkpoint",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
@@ -37436,110 +37085,56 @@
           "panel_selections": [],
           "sphere_displays": [
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.6182344210390287,
-                  0.7736003536741558,
-                  0.1390276714821873
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  0.2868216948094555,
-                  -0.0573626175660209,
-                  -0.956265049812345
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  -0.7317919895907371,
-                  0.6310721217905261,
-                  -0.2573489092062278
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  -81.19006610949799,
-                  -12.697873575313288,
-                  -42.90896330948159
-                ],
-                [
-                  -12.697873575313288,
-                  65.21425624495241,
-                  119.15387611207173
-                ],
-                [
-                  -42.90896330948159,
-                  119.15387611207173,
-                  15.975809864545571
-                ]
-              ],
-              "native_mode": [
-                -0.14824018666748037,
-                0.7571991296007882,
-                0.6361401773104735
-              ],
-              "curvature_gaps": [
-                226.57864006801856,
-                276.833511869391
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             },
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.6182344210390287,
-                  0.7736003536741558,
-                  0.1390276714821873
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  0.2868216948094555,
-                  -0.0573626175660209,
-                  -0.956265049812345
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  -0.7317919895907371,
-                  0.6310721217905261,
-                  -0.2573489092062278
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  -23.01999193979427,
-                  15.002099801330612,
-                  17.773419070539724
-                ],
-                [
-                  15.002099801330612,
-                  -2.4507735920830034,
-                  46.664436504085884
-                ],
-                [
-                  17.773419070539724,
-                  46.664436504085884,
-                  25.470765531877273
-                ]
-              ],
-              "native_mode": [
-                0.25171848891803156,
-                0.5807671964608228,
-                0.7741752165058366
-              ],
-              "curvature_gaps": [
-                95.08811604726742,
-                103.68048238177697
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             }
           ]
         },
@@ -37554,7 +37149,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37573,7 +37168,7 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
+            "coordinates": "Measured wrist frame at each checkpoint",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
@@ -37581,57 +37176,30 @@
           "panel_selections": [],
           "sphere_displays": [
             {
+              "coordinates": "Saved native physical or real-coefficient frame",
               "rotation_native_to_display": [
                 [
-                  0.6182344210390287,
-                  0.7736003536741558,
-                  0.1390276714821873
+                  1.0,
+                  0.0,
+                  0.0
                 ],
                 [
-                  0.2868216948094555,
-                  -0.0573626175660209,
-                  -0.956265049812345
+                  0.0,
+                  1.0,
+                  0.0
                 ],
                 [
-                  -0.7317919895907371,
-                  0.6310721217905261,
-                  -0.2573489092062278
+                  0.0,
+                  0.0,
+                  1.0
                 ]
               ],
-              "native_parameter": [
-                [
-                  -1.1762633265569815,
-                  3.476465835385847,
-                  3.0949790680813334
-                ],
-                [
-                  3.476465835385847,
-                  -2.571553350966951,
-                  7.451876198070963
-                ],
-                [
-                  3.0949790680813334,
-                  7.451876198070963,
-                  3.747816677523932
-                ]
-              ],
-              "native_mode": [
-                0.3633260698052187,
-                0.5342869117591111,
-                0.7632376189122263
-              ],
-              "curvature_gaps": [
-                13.10534707973713,
-                18.207579515943475
-              ],
-              "density_drop_contours": [
-                1.0,
-                2.0
-              ],
-              "normalization": "Unchanged supplied log density and common logarithmic color normalization",
-              "coordinates": "Rigid display coordinates; not physical component coordinates",
-              "display_mesh_only": true,
-              "cmap": "density_turbo"
+              "fixed_radius": 1.0,
+              "mode_centered": false,
+              "density_contours": false,
+              "depth_cues": "Front-visible native coordinate great circles; no density shading",
+              "cmap": "bingham_density_blue_pink",
+              "display_mesh_only": true
             }
           ]
         },
@@ -37646,7 +37214,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37672,7 +37240,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37698,7 +37266,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37724,7 +37292,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37750,7 +37318,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37776,7 +37344,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37802,7 +37370,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37848,7 +37416,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37894,7 +37462,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37940,7 +37508,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -37966,7 +37534,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -38001,7 +37569,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -38027,7 +37595,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -38047,7 +37615,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -38067,7 +37635,7 @@
           "title_audit": {
             "figure_title": false,
             "axes_with_title": 0,
-            "preview_dpi": 200.0,
+            "preview_dpi": 300.0,
             "latex": true
           },
           "font_sizes_pt": [
@@ -39565,7 +39133,7 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
+            "coordinates": "Measured wrist frame at each checkpoint",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
@@ -39581,7 +39149,7 @@
               192
             ],
             "timing": "Pre-correction A_t^- and M_t^-; before assimilating observation t",
-            "coordinates": "One shared rigid display rotation applied to measured wrist components at each checkpoint; tildes denote display coordinates",
+            "coordinates": "Measured wrist frame at each checkpoint",
             "parameter_conversion": "A_normal=-A_plane; psi_normal=psi_plane-trace(A_plane)",
             "response_risk": "v_t^T(M_t^--(M_t^-)^2)v_t for the recorded physical input at t"
           },
@@ -40112,10 +39680,10 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "12ee960f7cdcbfb9d2c942fe6bc66e6fcf994ee44dd4ed13ade63433d1305d9a",
-        "scripts/plot_final_simulations.py": "fc06b78fee196f870b8803aeb0163d83190a2a5af403d71e62fdbf7e068c341a",
-        "lib/plotting.py": "83a426aea0c7796b10c209b4e3e035a6898718f8bd4f5a5f772d87eb5e933392",
-        "lib/distribution_geometry_visuals.py": "5aa6a027c780bbf6644853b43a2d7a31c11d5f4c9f93a14ab2c3303af096628e",
+        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
+        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
+        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -40283,72 +39851,72 @@
         "results/contact/tables/paper/theory/numerical_accuracy.csv": "70149bed8eff2c2a0b6d251a86ac289a582cd4c2e5e60724b9851b3ed25f3f4a"
       },
       "output_hashes": {
-        "supp_variance_prediction_cost.pdf": "1bd6a182cab5ec76822f34c1a5f10c41b11b87674fb038a37df46f529e0b933a"
+        "supp_variance_prediction_cost.pdf": "3fff397e66bc4d1daae29204af5b3a2ca1cc4dbdde2212e6375c4868f226186f"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     }
   },
   "files": {
-    "setup.pdf": "4fd2006b8e9ce62215ecb1b4ccaeb33ca99122bc5d4dd122c40cea7480aa9bd3",
-    "preview/setup.png": "2c3dfbd67de2a3a6a82cb25284be33babdbee93e1fdd05c6f804a1bc7f7e4060",
-    "task_performance.pdf": "123d2ef4d62003f1998d387990e111203afa41be26fd2b570439d67322258232",
-    "preview/task_performance.png": "3f9e9b1ab6e00f21c7bc9b11e1d3a438f2a128e3776d6dd96d2b3694db2910f7",
-    "posterior_anisotropy.pdf": "6ea18a30da790913581fbc54837b8df4a5d7c6a68892895311528dfbd0b8e44a",
-    "preview/posterior_anisotropy.png": "61ecd79d14880dbb94e72d55ceef49502429177ed259ad2202234af983027ac0",
-    "preview/posterior_anisotropy_page2.png": "9251c7473061a08c94619c5350ccff842934fca8bfeb6d4c8c5d1f6b5299b427",
-    "noise_adaptation.pdf": "95c27362a8133f89e4138c3a937fedb0de35f9847c0a4d426f8c0827abf8f0ae",
-    "preview/noise_adaptation.png": "dc1021db19af540397297090ac91e88e6f69373b1a22a35a50c37728add68524",
-    "preview/noise_adaptation_page2.png": "0ea3c477eaa05e8b00118d33ddf67944c68e5be670f2bd3497109c4741141803",
-    "preview/noise_adaptation_page3.png": "2d5b46306b44bd6ceb5d4465cefe5ca71d75c7d26e3812ca7894faf6cb5c900a",
-    "preview/noise_adaptation_page4.png": "6b92f53c1c71fc4582f1335e96d8867128865fafdf07d70e024a165da73a145b",
-    "information.pdf": "8f361d03339138c32ce866f2676173a394e3ebc305ddbca2c26e86231eb1048c",
-    "preview/information.png": "9d23e76b8660fd036530a1706d9c149a952c35280e20228a5af3ad7288369c49",
-    "posterior_curvature.pdf": "ccaed92ac1362d79a0edb1719dd1c5a0ebd7bfb43a02970f9b4500efacdce6b0",
-    "preview/posterior_curvature.png": "82bd17385015399a9ff8aacea7fe70886eca9c748afe3597371a791b5b047beb",
-    "tracking_bound.pdf": "c641185a2018293582cf72d43289d9bf75b8788c2adb65619bbd55d589500a92",
-    "preview/tracking_bound.png": "1da012caa19aa5921eca6ef0f4ad94a9b36380ab3c09bb9f028331903ac969d3",
-    "preview/tracking_bound_page2.png": "1bcfd552c0a43458f9d317fff192dd48d2c4672955ac1652097a87c6c57fe86d",
-    "preview/tracking_bound_page3.png": "9e4d70218318dc1faea7f4a8ca87f8008612fa17d274694dd587ac3042461513",
-    "preview/tracking_bound_page4.png": "f121e96f3e546680430aba700e203be5a69e3d6b9e86a03e565695b453dc1091",
-    "block_updates.pdf": "85a6b5c611d7ffc1fa49dc5c2d1c0d328899fb6e21626ae0840560eaf7e484de",
-    "preview/block_updates.png": "fd629242527eadc8ea874ce4774fde03096602e6bc61db1975759f45a99a84d0",
-    "additional_comparisons.pdf": "623228617d794330ff031502e62f8ef4386e303c2d2331b68f4f2026a64fb990",
-    "preview/additional_comparisons.png": "ef7e1b3ac5af4e23bf8c4b0c7bd428e52d78ed43a50b481059cc58df79217397",
-    "preview/additional_comparisons_page2.png": "6710720369e3ce7d68c9c435abd785b29d61b16e569ccf42313e29fcf05297c4",
-    "preview/additional_comparisons_page3.png": "ec39cf21080637e572903fc161c5d3f93b589dd10c09a59b9608816046b9d1ff",
-    "preview/additional_comparisons_page4.png": "a438201a528c17f6cbbd76952cb17efbe1dfb7d31bff28a0307fbfc9fbe99bca",
-    "variance_estimation.pdf": "28c272022a4575cf1e8637bf21847bb966f66600d077ce2e6b02bc07d27bd687",
-    "preview/variance_estimation.png": "c07091d62db61433d34d7eb35e6f73c20765672169ae126b65d87f2212646e78",
-    "predictive_calibration.pdf": "dd5e1580d7d822550fa1a87d268372fc8b012a0361a1603ee8786e515bb23466",
-    "preview/predictive_calibration.png": "4f5778b7bca28b3736abe16ed4edb62470d2e11aea9eea5e71648b0cbdd23542",
-    "preview/predictive_calibration_page2.png": "97139f4424cb822a3d03182d37580a7f3d72496387a02a45aaa00407b1962e54",
-    "preview/predictive_calibration_page3.png": "303772e75f668943edff4012280c1d0b9cfb040d91c1753eca90422c4c260ed0",
-    "preview/predictive_calibration_page4.png": "efa23eae309ece96e97329076717df544b4610dddcec46c2e991bcc1bca20979",
-    "preview/predictive_calibration_page5.png": "86397731aea3f89b8fe594faf5ca68fa74c39623095a8e7e050da21bca8ae199",
-    "preview/predictive_calibration_page6.png": "dec49ea9d12a775f3f300dfac59014035c6cf706d94062b383469bf829dc6e10",
-    "preview/predictive_calibration_page7.png": "626400d13107fed12f0722234d084a0a5b62cb5b3a92091db150c35bf9924cf3",
-    "preview/predictive_calibration_page8.png": "1614f98960b074f9b0379e75ed565070e2e3fa62d905073b67c53b225e533dac",
-    "preview/predictive_calibration_page9.png": "904224a8b03c7b7111fdd882150112efc67271f287339b3aea53376134865134",
-    "predictive_scores.pdf": "d054a6d7a9f934bd1ae9ef5b76a53532e5b0b5b6e6420cffc42efffc6af19cbe",
-    "preview/predictive_scores.png": "01301525859511ef95ff815727c343b59f3aee399bfe99b5f782006ac1132ed4",
-    "model_mismatch.pdf": "aac519f787e2eb0b8ecf5f2a7fc428f85c24167f059ba12a8c52326e18e3c6e2",
-    "preview/model_mismatch.png": "ad1dc30e0dcbe81cf1409d5d078d1eb90d697c382559c16defe469a1b9107408",
-    "computation_time.pdf": "e94d7be29a3d03c1c1aad99447e9e06b1269621f3d7f8bb1e11cee8e6d4cb059",
-    "preview/computation_time.png": "38129dd2910868c8c43908bed863c44cc25997f19849244cb9b35833df3782be",
-    "numerical_accuracy.pdf": "16e869c0ab46aa7ea73a9f5e7ca39dda20240168836e24d4dc9ee9bdb3b0211c",
-    "preview/numerical_accuracy.png": "8cf9207c9e28a2f083a689afdcc32a560babb6f1fcd296a7b34d0bc61c4fc327",
-    "preview/numerical_accuracy_page2.png": "3d6ca6e5052964de0f384ce4c15b69919b9911cbb3f04fe6774200cb9c3d4c34",
-    "preview/numerical_accuracy_page3.png": "90c09595c99b42e039e83c23fb6004f97f9ea7f0690fdf62a6b430d3b96ed650",
-    "paper_summary.pdf": "62abd92390cc60b4b5c344bd6e917ed969d479f9148fd5a23eb6ea49a62156b6",
-    "preview/paper_summary.png": "362c5af0f2b11a39a5cf12290e8f3df15def99131ee7f65f052a7d3008961c73",
-    "supp_information_tracking.pdf": "0327a0b36b00ee1903837f6aa7fe7ed039d54dee59b41ac99000d01948ba83e3",
-    "supp_comparisons.pdf": "03588f12e8dc7667a9b2450c4e7d0e6d767bdee4636f43421c017cfba52c856f",
-    "supp_variance_prediction_cost.pdf": "1bd6a182cab5ec76822f34c1a5f10c41b11b87674fb038a37df46f529e0b933a"
+    "setup.pdf": "7232c4f2f633404a5cee74c37cf4a9cbc40b184b19f0be6702d2bfcec2b33233",
+    "preview/setup.png": "05246499c6309f5fec1734bda5ef91d6d1ce513d4020bbba6d5e0034388527b0",
+    "task_performance.pdf": "7bfa172cddc54932ed3f36a5bacc4cb39177b69afd972d10cb03cb58c1ce803e",
+    "preview/task_performance.png": "0f2eaf8d183ae248d9ae697583a3824b1bd29e7d63db804e1c31a26d2cb1e6e3",
+    "posterior_anisotropy.pdf": "32c47b02b8d8758bec9bc9dbdddd7ab197a93afa14df53b14ac1e6f777b2662a",
+    "preview/posterior_anisotropy.png": "2eedf4ece7c75c173b5c9b8fc9bd9caf59916d313c078a8947d433421802dd8e",
+    "preview/posterior_anisotropy_page2.png": "bb55d97dee55efed015dd18c300a7503d165271e3d760f52b318635aa870c720",
+    "noise_adaptation.pdf": "582bee085b42a5f7740700c39a4b49beb98912a47edb08cf2a1765d829340527",
+    "preview/noise_adaptation.png": "1e49c328249ffb27b7912adc8ec93fba0a7b09f4ea8dcc9fcb4cfb4ccc7c6c91",
+    "preview/noise_adaptation_page2.png": "d2114960160729aea59a586d18636eb13580972b9cf1868ea08928940f86df2c",
+    "preview/noise_adaptation_page3.png": "db40a5b74d0748724773984367879913cbeeef07d4625d692005f00f662e665f",
+    "preview/noise_adaptation_page4.png": "39e4b14a98f798aa34228245d0d61af958f52c27a2b2621c7e37aabed458319b",
+    "information.pdf": "50a2f406dd264c01e4c448035ccfd2d9068733b69f8dfa26278252ec9ce4ddde",
+    "preview/information.png": "50842653976d048541ca9e14c9e96b139d7215b28e66c7ccecf4b8e0c28b01eb",
+    "posterior_curvature.pdf": "9d721f884254a4f8a926a7b567e7228e5cb4ccfc743f3310f41de6169899b590",
+    "preview/posterior_curvature.png": "8093c6f89152ff9fd6c7050634c11ebf20dece4aed12e265519453f1bb952338",
+    "tracking_bound.pdf": "ecc64b9a9b0c180f1b5286aefa9ba0d576e6ec02d3afa6069c470c459dd9640b",
+    "preview/tracking_bound.png": "1e380e00913875a0b8832bea92685133cd255291fe27b678a06306989fa1e595",
+    "preview/tracking_bound_page2.png": "7fe7ab30c6972c8e0b838e71cf656cb78a49ed9afc79fc76d0c357a671b688a3",
+    "preview/tracking_bound_page3.png": "84babeceacc7ac7e4561851c4b21d39fd3226d05d4da30caba79bbf2ddb7dfc4",
+    "preview/tracking_bound_page4.png": "1be94bf4427f85f041ea9f67fd8385ea2b42df008090fe9eb77418dc1be2dadc",
+    "block_updates.pdf": "b2d83de1ba15d58eafc024c35f5b3c24ec5eecdea3075c638f975873d1d15ff1",
+    "preview/block_updates.png": "9facf8fab28d3f0e8c9cccf20bf7703c3541f7054f537f98cdb3706b083873e9",
+    "additional_comparisons.pdf": "b8328b9759afe6083b10b8defa8385db0cbf1a6e81034ee23a0c8f0c237ed74b",
+    "preview/additional_comparisons.png": "0bdbfee6c31d5e94757b3b7f2b7a53541963b9cbb0d7da04229715187702313a",
+    "preview/additional_comparisons_page2.png": "efe98b7690cb7ef1f6d40100fa8f0b7cf9472e690727aa009993682e64a5ec34",
+    "preview/additional_comparisons_page3.png": "0f902c8b6ff35a47e6e68660589faa6f72292d7c668cd208304d75b4faf9a77c",
+    "preview/additional_comparisons_page4.png": "5fa7c8d691cca3ca2018b25c350693929e01ea8f0f74f803e1bc406e5a917bfb",
+    "variance_estimation.pdf": "398ff1f2fc7db6c5c0e162033ca7ea29b36c58748bd7971d47f30459493ca5de",
+    "preview/variance_estimation.png": "9fae013d3f1f81b89d13119f8a04fdcf5e52ed66b2f2651619166154648e04f4",
+    "predictive_calibration.pdf": "a66d749512da983f85864cd42e678945bbba3afa299188c56ad84016c09f103a",
+    "preview/predictive_calibration.png": "cbd559fe95dc453b79a9330f4d1474ca29d03f9b69ac9e4767ad667b20654a21",
+    "preview/predictive_calibration_page2.png": "211a6451c4548de7ff234334cdad7af64683c90765a5e6aa8ca7697dd6a7b7fd",
+    "preview/predictive_calibration_page3.png": "15331dadb2bfedda10553edea9e3b915866859e4022405271bc144b13da51acc",
+    "preview/predictive_calibration_page4.png": "07b200eae1a29187a6b4fd07e3cd29c0ec9b9781e89b1398df6e49883754995e",
+    "preview/predictive_calibration_page5.png": "a4e7fcfd41a258f3c029002a9d117af2af9666a3101b5b3b37cda79f6b4ba524",
+    "preview/predictive_calibration_page6.png": "2189c25c93cc10f12c2d1153d9f77b1f6c67be2a6481480609fccb73196483ed",
+    "preview/predictive_calibration_page7.png": "21e870e43aa0a197f8906b808a791853ae75cc203127f97d6f37b989eaf122ef",
+    "preview/predictive_calibration_page8.png": "d310415e6863641ab0efecb9c371e16e797471197a9940de924bfb8a447c7311",
+    "preview/predictive_calibration_page9.png": "f00eda1681edae39a98c10c544adb5224a7a80118f488b2ff70d97d514a96f58",
+    "predictive_scores.pdf": "0b315a398c6c69a1aa2f9c2c4d11056fd95c66412725c73cd13cecdb6fcd7738",
+    "preview/predictive_scores.png": "c8964ce20128085a6119d5accf983ea793b61820612102cc9851150f29b8c798",
+    "model_mismatch.pdf": "5acc24cee7cf7024065841d08e43cab2ec56f6348493d5a5c5b1da581b0a8e7f",
+    "preview/model_mismatch.png": "3e1da397a4a718f2377e2420a19c21484444b54420ba427ae347792c6a1f6940",
+    "computation_time.pdf": "8e831129bdd1f9be70651bb8cde43922eb7d202639330ed01c069b8b1135c527",
+    "preview/computation_time.png": "eb29e8612248fdf5a38e3d9712fbdb7c2efceeca96e85960e62dcf8544ae5815",
+    "numerical_accuracy.pdf": "018218ff3a1a6e46b13840156f3b8c134c1646dd2abdb3eabfa62395e06aa0e5",
+    "preview/numerical_accuracy.png": "442014309b0660dbcb0a89c1aab4fce92595c9bacffa415e1cd41b7e5a7d98a7",
+    "preview/numerical_accuracy_page2.png": "22afabdac025667d12627a3e60af42c9e733f4dab99fd8345683631baecd1606",
+    "preview/numerical_accuracy_page3.png": "3cc6722e2fa75c9c8d894cfa4c5e3767b5bfe6488804cd4216e6876a85b6adec",
+    "paper_summary.pdf": "0e8abcdc9e0728e05a119a333e33747af956a85e4decb4f0214e42b70d6f827b",
+    "preview/paper_summary.png": "5bfa919e8b3400b8974797530519b5b72224ed71034e89e54374c239870d9a31",
+    "supp_information_tracking.pdf": "95cf854cac3ffe5db58ccbc05a16f072fa95392a763aba54c9ffb80eb0fbe3e6",
+    "supp_comparisons.pdf": "7c3a70ef7bc8e1a3125e4d3a97dbf92326efe534ce6d76028919644e508918e4",
+    "supp_variance_prediction_cost.pdf": "3fff397e66bc4d1daae29204af5b3a2ca1cc4dbdde2212e6375c4868f226186f"
   },
   "unresolved": {},
   "text_usetex": true,
-  "preview_dpi": 200,
-  "rasterized_layer_dpi": 200,
+  "preview_dpi": 300,
+  "rasterized_layer_dpi": 300,
   "pdf_scope": "Vector text, axes and lines; density surfaces and heatmap layers may be rasterized. PDF has no global dpi.",
   "titles": false,
   "shared_camera": {

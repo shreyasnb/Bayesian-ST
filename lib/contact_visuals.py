@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 from scipy.stats import t as student_t
-from .plotting import plt, save
+from .plotting import plt, save, DPI
 from matplotlib.lines import Line2D
 from matplotlib.cm import ScalarMappable
 from matplotlib.colors import Normalize
@@ -27,7 +27,7 @@ METHOD_COLORS={'Posterior mean':'#0072B2','Mode':'#D55E00','Tuned mode':'#777777
 
 
 def _finish(fig,path):
-    assert plt.rcParams['text.usetex'] and fig.dpi==200
+    assert plt.rcParams['text.usetex'] and fig.dpi==DPI
     if path is not None:save(fig,Path(path))
     return fig
 
@@ -74,7 +74,7 @@ def _parameter(value):
 def physical_setup(frames,path=None):
     """Three physical surfaces with one preassigned path and tangent planes."""
     data=frames['paths'];conditions=[c for c in ['plane','sphere_large','sphere_small'] if c in set(data.condition)]
-    fig=plt.figure(figsize=(15,5.7),dpi=200,layout='constrained')
+    fig=plt.figure(figsize=(15,5.7),dpi=DPI,layout='constrained')
     axes=[fig.add_subplot(1,len(conditions),i+1,projection='3d') for i in range(len(conditions))]
     time_name=_column(data,['time','physical_time','tau'])
     color_norm=Normalize(float(data[time_name].min()),float(data[time_name].max()))
@@ -139,7 +139,7 @@ def physical_setup(frames,path=None):
 def paired_losses(frames,path=None,include_stress=False):
     """Separate nearby projector decisions from the much larger ridge gains."""
     data=frames['paired'];conditions=_order(data.condition,stress=include_stress)
-    fig=plt.figure(figsize=(max(15.,3.5*len(conditions)),7.7),dpi=200,layout='constrained')
+    fig=plt.figure(figsize=(max(15.,3.5*len(conditions)),7.7),dpi=DPI,layout='constrained')
     grid=fig.add_gridspec(2,len(conditions),height_ratios=[1.,1.15])
     axes=[fig.add_subplot(grid[0,index]) for index in range(len(conditions))]
     ridge=fig.add_subplot(grid[1,:])
@@ -194,7 +194,7 @@ def coverage_width(frames,path=None,time=None,include_stress=False):
     if len(selected)<3:raise ValueError('Expected state ball, HPD and component-response coverage summaries')
     if len(selected)==3:shape=(1,3);size=(15,5)
     else:shape=(2,2);size=(12,8)
-    fig,axs=plt.subplots(*shape,figsize=size,dpi=200,layout='constrained',squeeze=False)
+    fig,axs=plt.subplots(*shape,figsize=size,dpi=DPI,layout='constrained',squeeze=False)
     for ax,(region,title,label) in zip(axs.flat,selected):
         ax.axhline(.95,color='#555555',ls='--',lw=1)
         subset=data[data.region==region]
@@ -218,7 +218,7 @@ def response_intervals(frames,path=None,condition='weak',trial=0):
     """Pointwise response intervals for three preassigned hypothetical forces."""
     data=frames['query_predictions'];g=data[(data.condition==condition)&(data.trial==trial)]
     components=sorted(g.component.unique());queries=sorted(g['query'].unique())[:3]
-    fig,axs=plt.subplots(len(components),len(queries),figsize=(13,8),dpi=200,layout='constrained',sharex=True,squeeze=False)
+    fig,axs=plt.subplots(len(components),len(queries),figsize=(13,8),dpi=DPI,layout='constrained',sharex=True,squeeze=False)
     for row,component in enumerate(components):
         for col,query in enumerate(queries):
             ax=axs[row,col];part=g[(g.component==component)&(g['query']==query)].sort_values('t')
@@ -247,7 +247,7 @@ def risk_calibration(frames,path=None):
     data=frames['posterior'];data=data[data.t==data.t.max()]
     risk_name=_column(data,['risk_mean','posterior_risk','mean_risk'])
     error_name=_column(data,['empirical_response_error','response_loss','loss'])
-    fig,axs=plt.subplots(1,2,figsize=(13,5.4),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,2,figsize=(13,5.4),dpi=DPI,layout='constrained')
     upper=0.
     for index,condition in enumerate(_order(data.condition)):
         g=data[data.condition==condition];risk=g[risk_name]/_v0(frames)**2;error=g[error_name]/_v0(frames)**2
@@ -270,7 +270,7 @@ def benchmark_losses(frames,path=None):
     """All endpoint methods on a log scale, including force-blind velocity PCA."""
     data=frames['metrics'];data=data[data.t==data.t.max()]
     conditions=_order(data.condition)
-    fig,axs=plt.subplots(1,len(conditions),figsize=(3.5*len(conditions),5.4),dpi=200,layout='constrained',squeeze=False)
+    fig,axs=plt.subplots(1,len(conditions),figsize=(3.5*len(conditions),5.4),dpi=DPI,layout='constrained',squeeze=False)
     for ax,condition in zip(axs.flat,conditions):
         g=data[data.condition==condition]
         methods=[m for m in METHODS if m in set(g.method)]
@@ -293,7 +293,7 @@ def runtime(frames,path=None):
             if column in g:row[column]=g[column].sum()
         rows.append(row)
     data=pd.DataFrame(rows)
-    fig,axs=plt.subplots(1,2,figsize=(13,5),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,2,figsize=(13,5),dpi=DPI,layout='constrained')
     methods=[m for m in METHODS if m in set(data.method)]
     cost_columns=[c for c in ['update_seconds','integration_seconds','decision_seconds'] if c in data]
     labels={'update_seconds':'Correction','integration_seconds':'Posterior integration','decision_seconds':'Decision'}
@@ -319,7 +319,7 @@ def mechanical_diagnostics(frames,path=None):
     data=frames['trajectories'];posterior=frames['posterior'];paths=frames['paths']
     posterior=posterior[posterior.t==posterior.t.max()]
     conditions=_order(data.condition)
-    fig,axs=plt.subplots(2,2,figsize=(13,8),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(2,2,figsize=(13,8),dpi=DPI,layout='constrained')
     for index,condition in enumerate(conditions):
         g=data[data.condition==condition]
         for ax,column,label in [(axs[0,0],'surface_travel','Surface travel (m)'),
@@ -355,7 +355,7 @@ def mechanical_diagnostics(frames,path=None):
 def validation_curves(frames,path=None):
     """Show the frozen curved-mixture tuning without treating conditions as trials."""
     data=frames['tuning'];data=data[data.scope=='curved']
-    fig,axs=plt.subplots(1,3,figsize=(15,4.7),dpi=200,layout='constrained')
+    fig,axs=plt.subplots(1,3,figsize=(15,4.7),dpi=DPI,layout='constrained')
     ax=axs[0]
     for method in ['Posterior mean','Tuned mode','Velocity PCA']:
         g=data[data.method==method].sort_values('beta')

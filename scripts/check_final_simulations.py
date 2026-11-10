@@ -58,7 +58,7 @@ def verify_figures(example):
     assert meta['status'] == 'completed' and meta['stage'] == 'paper'
     assert meta['example'] == example and not meta['unresolved']
     assert meta['text_usetex'] is True and meta['titles'] is False
-    assert meta['preview_dpi'] == meta['rasterized_layer_dpi'] == 200
+    assert meta['preview_dpi'] == meta['rasterized_layer_dpi'] == 300
     assert meta['paper_width_in'] == 7
     assert meta['shared_camera'] == dict(elev=25., azim=-50.)
     assert meta['validation_sha256'] == sha(gate_path(ROOT))
@@ -84,12 +84,16 @@ def verify_figures(example):
         for page in record['pages']:
             assert page['titles'] is False
             assert abs(page['figure_size_in'][0] - 7.) < 1e-10
+            for sphere in page.get('sphere_displays', []):
+                assert sphere['rotation_native_to_display'] == [[1.,0.,0.],[0.,1.,0.],[0.,0.,1.]]
+                assert not sphere['mode_centered'] and not sphere['density_contours']
             page_count += 1
     from PIL import Image
     previews = [folder / name for name in meta['files'] if name.endswith('.png')]
     for path in previews:
         with Image.open(path) as im:
-            assert all(abs(d - 200.) < .1 for d in im.info['dpi']), path
+            assert all(abs(d - 300.) < .1 for d in im.info['dpi']), path
+            assert im.width == 2100, path
     return dict(pdf_files=len(expected), pdf_pages_including_bundles=page_count,
                 previews=len(previews), status='verified')
 
@@ -128,6 +132,11 @@ def verify_display_audits(example):
     assert geometry['display_source_sha256'] == sha(ROOT / 'lib/final_paper_visuals.py')
     assert geometry['laws_checked'] == geometry['shared_rotation_checks'] == len(geometry['laws'])
     assert geometry['laws_checked'] == (20 if example == 'beamforming' else 464)
+    assert geometry['native_coordinate_checks'] == geometry['laws_checked']
+    assert geometry['plot_protocol']['dpi'] == 300
+    assert geometry['plot_protocol']['coordinates'] == 'Native saved coordinates'
+    assert geometry['plot_protocol']['mode_centering'] is False
+    assert geometry['plot_protocol']['density_contours_drawn'] is False
     preservation = geometry['preservation']
     assert preservation['status'] == 'passed'
     for category, mapping in preservation['unchanged_files'].items():
@@ -140,6 +149,10 @@ def verify_display_audits(example):
     assert exported['pdf_files'] == 19 and not exported['out_of_page_text']
     verify_mapping(folder, {name: record['sha256'] for name, record in exported['files'].items()})
     verify_mapping(folder, {name: record['sha256'] for name, record in exported['previews'].items()})
+    curated = exported['curated_exports']
+    assert curated['status'] == 'passed' and not curated['errors']
+    assert curated['manifest_sha256'] == sha(ROOT / 'results/draft_figure_manifest.json')
+    verify_mapping(ROOT, {name: record['sha256'] for name, record in curated['files'].items()})
     return dict(status='verified', laws_checked=geometry['laws_checked'],
                 unchanged_file_counts=preservation['unchanged_file_counts'],
                 actual_pdf_pages=exported['pdf_pages'])
@@ -173,10 +186,15 @@ def main():
         result['notebooks'] = {name: verify_notebook(name)
                                for name in ('01_array.ipynb', '03_contact.ipynb')}
         result['display_audits'] = {example: verify_display_audits(example) for example in EXAMPLES}
+        from scripts.export_draft_figures import verify_export
+        result['draft_figures'] = verify_export(ROOT)
         report = (ROOT / 'completion_report.md').read_text()
         assert 'runs are in progress' not in report and 'will be replaced' not in report
         inventory = json.loads((ROOT / 'final_artifact_inventory.json').read_text())
         verify_mapping(ROOT, inventory['files'])
+        draft = json.loads((ROOT / 'results/draft_figure_manifest.json').read_text())
+        required_exports = {'results/draft_figure_manifest.json', *draft['files'], *draft['documentation']}
+        assert required_exports <= set(inventory['files']), 'Draft PDF exports must be retained in Git, not ignored'
         assert inventory['final_science_hash'] == gate['final_science_hash']
         changed = set(subprocess.check_output(
             ['git', 'diff', '--name-only', BASE_COMMIT, '--'], cwd=ROOT,

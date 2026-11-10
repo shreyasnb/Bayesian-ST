@@ -8,7 +8,7 @@ import sys
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT))
 import pandas as pd
-from lib.plotting import plt
+from lib.plotting import plt, DPI
 from lib.contact_uncertainty_validation import require_uncertainty_gate
 from lib.contact_uncertainty_visuals import (coverage_score,paired_effects_cost,
     directional_calibration,validation_scores,shape_concentration,physical_stress)
@@ -72,7 +72,7 @@ def main():
         sources={name:sha(ROOT/name) for name in ['lib/contact_uncertainty_visuals.py','scripts/plot_contact_uncertainty.py','lib/plotting.py']},
         input_metadata={str((directory/name).relative_to(ROOT)):sha(directory/name) for name in
                         ['physical/config.json','matched/config.json','reference/checks.json']},
-        figures={path.name:sha(path) for path in products},dpi=200,text_usetex=True,
+        figures={path.name:sha(path) for path in products},dpi=DPI,text_usetex=True,
         main_figures=['coverage_score','effects_cost','directional_calibration'],
         reference_status=reference.get('status'),
         physical_numerical_checks=physical['metadata'].get('checks',{}),

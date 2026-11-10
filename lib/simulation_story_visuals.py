@@ -11,7 +11,7 @@ from pathlib import Path
 import json
 import numpy as np
 import pandas as pd
-from .plotting import plt, save
+from .plotting import plt, save, DPI
 from matplotlib.lines import Line2D
 from matplotlib.patches import FancyArrowPatch, Circle
 from matplotlib.colors import LogNorm
@@ -56,8 +56,8 @@ METHOD_COLORS = dict(mean=BLUE, mode=ORANGE, isotropic=PURPLE,iso=PURPLE,axial=P
 
 
 def _finish(fig, path=None):
-    if not plt.rcParams['text.usetex'] or fig.dpi != 200 or plt.rcParams['savefig.dpi'] != 200:
-        raise AssertionError('The simulation figures require LaTeX and 200 dpi')
+    if not plt.rcParams['text.usetex'] or fig.dpi != DPI or plt.rcParams['savefig.dpi'] != DPI:
+        raise AssertionError('The simulation figures require LaTeX and 300 dpi')
     if path is not None:
         save(fig, Path(path))
     return fig

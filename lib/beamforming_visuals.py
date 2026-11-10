@@ -10,7 +10,7 @@ from pathlib import Path
 import json
 import numpy as np
 import pandas as pd
-from .plotting import plt, save
+from .plotting import plt, save, DPI
 from matplotlib.colors import LinearSegmentedColormap, TwoSlopeNorm
 from matplotlib.lines import Line2D
 from matplotlib.patches import Arc, FancyArrowPatch, FancyBboxPatch, Rectangle
@@ -46,8 +46,8 @@ FIGURE_CAPTIONS = {
 
 
 def _finish(fig, path=None):
-    if not plt.rcParams['text.usetex'] or fig.dpi != 200 or plt.rcParams['savefig.dpi'] != 200:
-        raise AssertionError('Beamforming figures require LaTeX and 200 dpi')
+    if not plt.rcParams['text.usetex'] or fig.dpi != DPI or plt.rcParams['savefig.dpi'] != DPI:
+        raise AssertionError('Beamforming figures require LaTeX and 300 dpi')
     if path is not None:
         save(fig, Path(path))
     return fig
@@ -166,7 +166,7 @@ def setup(story, path=None, *, n=8, s=.2, q=1., desired_deg=-20., interferer_deg
     snapshots = np.asarray(story['U'])
     if snapshots.ndim != 2 or snapshots.shape[1] != n:
         raise ValueError('Setup needs snapshots as time-by-sensor complex rows')
-    fig, axes = plt.subplots(1, 3, figsize=(14.2, 4.7), dpi=200,
+    fig, axes = plt.subplots(1, 3, figsize=(14.2, 4.7), dpi=DPI,
                              layout='constrained', gridspec_kw={'width_ratios':[1.65, 1., .85]})
     ax = axes[0]
     sensor_x = np.linspace(-2.65, 2.65, n)
@@ -228,7 +228,7 @@ def information(data, path=None, *, n=8, s=.2, state='ULA 30 deg'):
     measured = g.pivot(index='i',columns='j',values='empirical').reindex(index=range(dim),columns=range(dim)).to_numpy()
     scale = float(np.trace(expected)/dim)
     residual = (measured-expected)/scale
-    fig, axes = plt.subplots(1,3,figsize=(14,4.7),dpi=200,layout='constrained')
+    fig, axes = plt.subplots(1,3,figsize=(14,4.7),dpi=DPI,layout='constrained')
     limit=max(.01,float(np.nanmax(abs(residual))))
     im=axes[0].imshow(residual,cmap='RdBu',vmin=-limit,vmax=limit,interpolation='nearest',origin='lower')
     axes[0].set(xlabel='Tangent coordinate',ylabel='Tangent coordinate',
@@ -267,7 +267,7 @@ def tracking(bounds, trajectory, path=None, *, s=.2, beta=.95):
     steering=np.exp(1j*np.pi*np.outer(np.arange(n),np.sin(np.deg2rad(angles))))/np.sqrt(n)
     q=float(np.asarray(trajectory.get('q',1.)).item())
     response=s+q*np.einsum('ia,tij,ja->ta',steering.conj(),U,steering,optimize=True).real
-    fig,axes=plt.subplots(1,3,figsize=(15,4.8),dpi=200,layout='constrained',gridspec_kw={'width_ratios':[1.2,1,1]})
+    fig,axes=plt.subplots(1,3,figsize=(15,4.8),dpi=DPI,layout='constrained',gridspec_kw={'width_ratios':[1.2,1,1]})
     im=axes[0].pcolormesh(times,angles,response.T,cmap='Blues',shading='nearest',vmin=s,vmax=s+q)
     theta=np.rad2deg(trajectory['theta_rad'])
     axes[0].plot(times,theta,color='white',lw=3)
@@ -343,7 +343,7 @@ def decisions(data, path=None, *, condition='ula_static', s=.2, t=8):
     expected=selected.pivot(index='trial',columns='method',values='posterior_power')
     x=(expected.isotropic-expected['mean']).to_numpy();y=(actual.isotropic-actual['mean']).to_numpy()
     valid=np.isfinite(x)&np.isfinite(y)
-    fig,axes=plt.subplots(1,3,figsize=(15.5,5.2),dpi=200,layout='constrained',gridspec_kw={'width_ratios':[1,1.35,1]})
+    fig,axes=plt.subplots(1,3,figsize=(15.5,5.2),dpi=DPI,layout='constrained',gridspec_kw={'width_ratios':[1,1.35,1]})
     axes[0].axhline(0,color=GREY,ls='--',lw=1)
     axes[0].scatter(x[valid],y[valid],color=BLUE,s=24,alpha=.52,edgecolors='white',linewidths=.3)
     axes[0].set(xlabel='Posterior expected power saved',ylabel='Power saved at true covariance',
@@ -397,7 +397,7 @@ def complete_decision_comparison(data,path=None):
     maps=[_gain_matrix(metrics,c,references) for c in conditions]
     vmax=max(1.,max(float(np.nanmax(abs(a[0]))) for a in maps))
     cmap=LinearSegmentedColormap.from_list('complete_gain',[ORANGE,'#FAFAFA',BLUE]);cmap.set_bad('#E5E7E9')
-    fig,axes=plt.subplots(1,3,figsize=(18,8.8),dpi=200,layout='constrained',sharey=True)
+    fig,axes=plt.subplots(1,3,figsize=(18,8.8),dpi=DPI,layout='constrained',sharey=True)
     for ax,condition,(matrix,uncertain,names,times) in zip(axes,conditions,maps):
         im=ax.imshow(np.ma.masked_invalid(matrix),cmap=cmap,norm=TwoSlopeNorm(0,-vmax,vmax),aspect='auto')
         for i in range(len(names)):
@@ -419,7 +419,7 @@ def uncertainty(data, path=None, *, condition='ula_static', s=.2, t=8):
     """Pointwise functional intervals, a state-region image, and coverage/width."""
     scans=_angles(_frame(data,'scans',('condition','s','t','mean','truth','q25','q75','hpd_lower','hpd_upper')))
     g=_slice(scans,condition=condition,s=s,t=t).sort_values('angle_deg')
-    fig,axes=plt.subplots(1,3,figsize=(15,4.8),dpi=200,layout='constrained')
+    fig,axes=plt.subplots(1,3,figsize=(15,4.8),dpi=DPI,layout='constrained')
     axes[0].fill_between(g.angle_deg,g.q025,g.q975,color=BLUE,alpha=.15,label=r'Central $95\%$')
     axes[0].fill_between(g.angle_deg,g.q25,g.q75,color=BLUE,alpha=.3,label=r'Central $50\%$')
     for ax in axes[:2]:
@@ -473,7 +473,7 @@ def state_coverage(data,path=None,*,n=8,s=.2):
     """Supplement: all eight fixed-state/horizon/region coverage cells."""
     f=_slice(_frame(data,'coverage',('state','t','trial','n','s','ball_covered','hpd_covered')),n=n,s=s)
     groups=list(f.groupby(['state','t'],sort=True))
-    fig,ax=plt.subplots(figsize=(10.2,5.5),dpi=200,layout='constrained')
+    fig,ax=plt.subplots(figsize=(10.2,5.5),dpi=DPI,layout='constrained')
     z=1.959963984540054
     for row,((state,time),g) in enumerate(groups):
         if g.trial.duplicated().any():raise ValueError('Coverage cells must contain one row per independent stream')
@@ -505,7 +505,7 @@ def prediction_and_risk(data, path=None, *, s=.2, t=8, condition='ula_static'):
     cloud=_frame(data,'projection_cloud',('x','y','mean_x','mean_y','mode_x','mode_y','true_x','true_y'))
     cloud=_slice(cloud,condition=condition,s=s,t=t)
     g=cloud.iloc[0]
-    fig,axes=plt.subplots(1,3,figsize=(14.6,4.8),dpi=200,layout='constrained')
+    fig,axes=plt.subplots(1,3,figsize=(14.6,4.8),dpi=DPI,layout='constrained')
     step=max(1,len(cloud)//1024);draws=cloud.iloc[::step]
     axes[0].scatter(draws.x,draws.y,s=9,color=BLUE,alpha=.18,edgecolors='none')
     for x,y,color,marker,label in [(g.mean_x,g.mean_y,BLUE,'D','Mean'),(g.mode_x,g.mode_y,ORANGE,'o','Mode'),(g.true_x,g.true_y,BLACK,'+','Truth')]:
@@ -550,7 +550,7 @@ def parameter_inference(data, path=None, *, s=.2, N=32):
     draws=_frame(data,'posterior_draws',('law','prior','N','trial','a','b'))
     prior=_category(draws,'prior','Default','default')
     d=_slice(draws,law='stationary',prior=prior,N=N,trial=0,s_true=s)
-    fig,axes=plt.subplots(1,3,figsize=(14.8,4.8),dpi=200,layout='constrained')
+    fig,axes=plt.subplots(1,3,figsize=(14.8,4.8),dpi=DPI,layout='constrained')
     axes[0].hist2d(d.b,d.a-d.b,bins=35,cmap='Blues')
     axes[0].scatter(s,1.,color=BLACK,marker='+',s=100,linewidths=1.8,label='True powers')
     sx=min(float(d.b.min()),s);ex=max(float(d.b.max()),s)
@@ -618,7 +618,7 @@ def moving_parameter_inference(data,path=None,*,s=.2):
     draws=_frame(data,'posterior_draws',('law','prior','trial','kappa','s_true'))
     prior=_category(draws,'prior','Default','default')
     chosen=_slice(draws,prior=prior,trial=0,s_true=s)
-    fig,axes=plt.subplots(1,2,figsize=(10.5,4.3),dpi=200,layout='constrained')
+    fig,axes=plt.subplots(1,2,figsize=(10.5,4.3),dpi=DPI,layout='constrained')
     for ax,law,title in zip(axes,['matched_motion','ula_motion'],
             ['Matched stochastic motion','Physical ULA path']):
         h=chosen[chosen.law.eq(law)]
@@ -642,7 +642,7 @@ def moving_parameter_inference(data,path=None,*,s=.2):
 
 def process_and_cost(data, path=None):
     """Moment accuracy, density approximation and separately measured costs."""
-    fig,axes=plt.subplots(1,3,figsize=(14,4.8),dpi=200,layout='constrained')
+    fig,axes=plt.subplots(1,3,figsize=(14,4.8),dpi=DPI,layout='constrained')
     transition=_frame(data,'transition_checks')
     if {'analytic_real','empirical_real','analytic_imag','empirical_imag'}.issubset(transition):
         g=_slice(transition,n=8,kappa=20.,case='predictive mixture')

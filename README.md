@@ -2,7 +2,7 @@
 
 Implementation and simulations for **Bayesian Subspace Tracking with Grassmann Bingham Distributions**. The current `test` study follows the author's [final simulation guide](docs/final_simulation_guide.md), **v5.tex** as the main manuscript, and **supplementary(14).tex** as its supplement. The old numerical prose does not define the new experiments.
 
-Start with the executed [beamforming notebook](notebooks/01_array.ipynb) or [contact notebook](notebooks/03_contact.ipynb). Each develops the observation model, information, posterior geometry, decisions, comparisons, variance learning and computational cost in order. Figures use LaTeX, 200 dpi previews, vector PDFs, a nominal 7-inch paper width and 9-point text. Captions and detailed claims are outside the title-free PDFs.
+Start with the executed [beamforming notebook](notebooks/01_array.ipynb) or [contact notebook](notebooks/03_contact.ipynb). Each develops the observation model, information, posterior geometry, decisions, comparisons, variance learning and computational cost in order. Figures use LaTeX, 300 dpi previews and raster layers, vector PDFs, a nominal 7-inch paper width and 9-point text. Captions and detailed claims are outside the title-free PDFs. Manuscript selections are organized under [results/main/](results/main/) and [results/supplementary/](results/supplementary/), with page-level captions and provenance.
 
 The [completion report](completion_report.md) records completed cohorts, mixed comparisons, numerical failures and unsupported claims. The [mathematical checks](docs/final_manuscript_checks.md) explain identity transport, the sharp modal bound, fixed-boundary EM and the limits of dynamic uncertainty claims.
 
@@ -56,7 +56,7 @@ Identity transport is permitted when motion is unknown. Forgetting is then an ap
 | --- | --- |
 | [00_theory](notebooks/00_theory.ipynb) | Original preserved general validation; a complete fresh execution is saved under the final validation directory |
 | [01_array](notebooks/01_array.ipynb) | Current beamforming walkthrough |
-| [02_field](notebooks/02_field.ipynb) | Preserved field reconstruction study |
+| [02_field](notebooks/02_field.ipynb) | Historical field reconstruction study with its original environment and outputs |
 | [03_contact](notebooks/03_contact.ipynb) | Current contact walkthrough |
 | [04_implementation_audit](notebooks/04_implementation_audit.ipynb) | Historical implementation audit at `a91faab`, with its original evidence |
 

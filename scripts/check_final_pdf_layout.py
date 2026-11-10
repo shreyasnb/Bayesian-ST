@@ -27,7 +27,7 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 EXAMPLES = ('beamforming', 'contact')
 WIDTH_IN = 7.
-DPI = 200.
+DPI = 300.
 POINT_TOLERANCE = .01
 TEXT_BOUND_TOLERANCE_PT = .5
 DPI_TOLERANCE = .1
@@ -99,7 +99,7 @@ def audit_pdf(path, expected):
                 resolution = (72 * image['width'] / width, 72 * image['height'] / height)
                 resolutions.extend(resolution)
                 if any(not _close(value, DPI, DPI_TOLERANCE) for value in resolution):
-                    errors.append(f'Page {index}: raster layer resolution is {resolution}, not 200 dpi')
+                    errors.append(f'Page {index}: raster layer resolution is {resolution}, not {DPI:g} dpi')
             image_count += len(images)
             page_records.append(dict(page=index, media_box_pt=list(media),
                 text_spans=len(text_spans), raster_layers=len(images)))
@@ -124,8 +124,8 @@ def audit_example(root, example):
     manifest = json.loads(manifest_path.read_text())
     errors = []
     required = dict(status='completed', stage='paper', example=example,
-        text_usetex=True, titles=False, preview_dpi=200,
-        rasterized_layer_dpi=200, paper_width_in=WIDTH_IN)
+        text_usetex=True, titles=False, preview_dpi=int(DPI),
+        rasterized_layer_dpi=int(DPI), paper_width_in=WIDTH_IN)
     for name, expected in required.items():
         if manifest.get(name) != expected:
             errors.append(f'Figure manifest {name} differs from {expected!r}')
@@ -168,9 +168,9 @@ def audit_example(root, example):
             resolution = image.info.get('dpi', ())
             if len(resolution) != 2 or any(not _close(value, DPI, DPI_TOLERANCE)
                                           for value in resolution):
-                errors.append('Preview does not have 200-dpi metadata: ' + name)
+                errors.append(f'Preview does not have {DPI:g}-dpi metadata: ' + name)
             if abs(image.width - WIDTH_IN * DPI) > 1:
-                errors.append('Preview width is not seven inches at 200 dpi: ' + name)
+                errors.append(f'Preview width is not seven inches at {DPI:g} dpi: ' + name)
             preview_records[name] = dict(sha256=expected_hash,
                 size_px=list(image.size), dpi=list(resolution))
     if sha(manifest_path) != manifest_hash:
@@ -192,13 +192,62 @@ def audit_example(root, example):
             'font size, overlapping labels and graphical clarity still require visual review.')
 
 
+def audit_exports(root, example):
+    """Inspect the curated main/supplementary pages without rasterizing them."""
+    root = Path(root)
+    manifest_path = root / 'results/draft_figure_manifest.json'
+    manifest_hash = sha(manifest_path)
+    manifest = json.loads(manifest_path.read_text())
+    selected = {name: entry for name, entry in manifest['files'].items()
+                if entry['application'] == example}
+    errors, files = [], {}
+    if not selected:
+        errors.append('No curated PDFs are declared for ' + example)
+    if {entry['section'] for entry in selected.values()} != {'main', 'supplementary'}:
+        errors.append('Both main and supplementary exports are required')
+    for name, entry in selected.items():
+        path = root / name
+        if not path.is_file():
+            errors.append('Missing curated PDF: ' + name)
+            continue
+        record = audit_pdf(path, entry)
+        record['source_pdf'] = entry['source_pdf']
+        record['source_pdf_sha256'] = entry['source_pdf_sha256']
+        record['source_pages'] = entry['source_pages']
+        files[name] = record
+        if record['sha256'] != entry['sha256']:
+            errors.append('Curated PDF differs from its manifest: ' + name)
+        source = root / entry['source_pdf']
+        if not source.is_file() or sha(source) != entry['source_pdf_sha256']:
+            errors.append('Curated PDF source differs from its manifest: ' + name)
+        errors.extend(name + ': ' + error for error in record['errors'])
+    if sha(manifest_path) != manifest_hash:
+        errors.append('Curated figure manifest changed during the audit')
+    return dict(status='failed' if errors else 'passed',
+        manifest='results/draft_figure_manifest.json', manifest_sha256=manifest_hash,
+        pdf_files=len(files), pdf_pages=sum(record['pages'] for record in files.values()),
+        files=files, errors=errors,
+        scope='Actual page, font, text-bound and raster-resolution checks of the '
+            'curated main/supplementary PDF copies and vector-preserving page extracts; '
+            'source and exported PDF hashes are bound to the curated manifest.')
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--example', choices=[*EXAMPLES, 'both'], default='both')
     parser.add_argument('--write', action='store_true', help='Refresh reports only if every selected application passes')
+    parser.add_argument('--include-exports', action='store_true',
+        help='Also audit curated PDFs declared in results/draft_figure_manifest.json')
     args = parser.parse_args()
     examples = EXAMPLES if args.example == 'both' else (args.example,)
     reports = {example: audit_example(ROOT, example) for example in examples}
+    if args.include_exports:
+        for example, report in reports.items():
+            exports = audit_exports(ROOT, example)
+            report['curated_exports'] = exports
+            report['errors'].extend(exports['errors'])
+            if exports['status'] != 'passed':
+                report['status'] = 'failed'
     passed = all(report['status'] == 'passed' for report in reports.values())
     if args.write and passed:
         for example, report in reports.items():
@@ -206,9 +255,14 @@ def main():
             temporary = path.with_suffix('.json.tmp')
             temporary.write_text(json.dumps(report, indent=2, allow_nan=False) + '\n')
             temporary.replace(path)
-    print(json.dumps({example: {name: report[name] for name in
+    summary = {example: {name: report[name] for name in
         ('status', 'pdf_files', 'pdf_pages', 'font_types', 'raster_layers', 'preview_files', 'errors')}
-        for example, report in reports.items()}, indent=2))
+        for example, report in reports.items()}
+    if args.include_exports:
+        for example in examples:
+            summary[example]['curated_exports'] = {name: reports[example]['curated_exports'][name]
+                for name in ('status', 'pdf_files', 'pdf_pages')}
+    print(json.dumps(summary, indent=2))
     if not passed:
         sys.exit(1)
 

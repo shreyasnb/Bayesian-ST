@@ -13,7 +13,7 @@ sys.path.insert(0, str(ROOT))
 
 from matplotlib.backends.backend_pdf import PdfPages
 from lib.final_paper_visuals import (
-    CATALOGUE, BUNDLES, CAPTIONS, PLACEMENT, CAMERA, FIGURE_WIDTH,
+    CATALOGUE, BUNDLES, CAPTIONS, PLACEMENT, CAMERA, FIGURE_WIDTH, DPI,
     load_evidence, paper_style, prepare_paper_axes, verify_title_free, sha, plt)
 from lib.final_validation import require_gate, gate_path, verify_mapping
 
@@ -151,9 +151,9 @@ def caption_for(name,evidence):
             caption+=' The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons.'
         else:
             caption=beam.strip()
-            caption+=' Panels (a,b) show the already-saved n=64 stationary episode 0 at t=16,64 with common relative-density colors. Panel (c) retains the t=64 complementary mean eigenvalues; panel (d) retains the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval.'
+            caption+=' Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval.'
     if name=='posterior_anisotropy' or (evidence.example=='contact' and name in ('paper_summary','noise_adaptation')):
-        caption+=r" Density colors use a continuous multicolor logarithmic scale spanning four decades below the common peak; low clipped colors do not represent zero density. Tildes denote rigid display coordinates, $\widetilde n=Rn$ or $\widetilde x=Rx$: the shared camera and unit radius are unchanged. Comparative laws and checkpoints share a reference rotation. Where closed, solid/dashed white curves mark the exact density ratios $e^{-1},e^{-2}$ to each law's own mode, not credible-region boundaries. No density is tempered or broadened."
+        caption+=' Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.'
     if name=='predictive_calibration':
         target=(r'$q^H Pq$ for a known unit complex query $q$' if evidence.example=='beamforming'
             else r'$e_1^T Pq$ for a known unit real query $q$')
@@ -197,12 +197,12 @@ def render(root, example, stage, selected, out, engineering=False):
                 with PdfPages(path, metadata={'Title': '', 'Author': '',
                                              'Subject': '', 'Keywords': ''}) as pdf:
                     for fig in figures:
-                        pdf.savefig(fig, dpi=200, bbox_inches=None)
+                        pdf.savefig(fig, dpi=DPI, bbox_inches=None)
                 outputs = {path.name: sha(path)}
                 for index, fig in enumerate(figures):
                     suffix = '' if index == 0 else f'_page{index+1}'
                     png = preview/(name+suffix+'.png')
-                    fig.savefig(png, dpi=200, bbox_inches=None)
+                    fig.savefig(png, dpi=DPI, bbox_inches=None)
                     outputs[str(png.relative_to(out))] = sha(png)
                 files.update(outputs)
                 figures_by_name[name] = figures
@@ -236,7 +236,7 @@ def render(root, example, stage, selected, out, engineering=False):
                 with PdfPages(path, metadata={'Title': '', 'Subject': ''}) as pdf:
                     for fig in pages:
                         verify_title_free(fig)
-                        pdf.savefig(fig, dpi=200, bbox_inches=None)
+                        pdf.savefig(fig, dpi=DPI, bbox_inches=None)
                 outputs = {path.name: sha(path)}
                 files.update(outputs)
                 entries[name+'.pdf'] = dict(status='completed', experiment=example,
@@ -266,7 +266,7 @@ def render(root, example, stage, selected, out, engineering=False):
         validation_sha256=sha(validation) if validation is not None else None,
         validation_path=str(validation.relative_to(root)) if validation is not None else None,
         figures=entries, files=files, unresolved=failures,
-        text_usetex=True, preview_dpi=200, rasterized_layer_dpi=200,
+        text_usetex=True, preview_dpi=DPI, rasterized_layer_dpi=DPI,
         pdf_scope='Vector text, axes and lines; density surfaces and heatmap layers may be rasterized. PDF has no global dpi.',
         titles=False, shared_camera=CAMERA, paper_width_in=FIGURE_WIDTH,
         display_rules=dict(setup='Predeclared trial0 and saved setup arrays',

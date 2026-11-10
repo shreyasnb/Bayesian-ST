@@ -6,6 +6,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
+from lib.plotting import DPI
 import nbformat as nbf
 
 REQUIRED_IDS = {'B1', 'B2a', 'B2b', 'B3', 'B4', 'B5', 'B6', 'B7a', 'B7b',
@@ -26,8 +27,8 @@ def verify_audit():
     figures = json.loads(path.read_text())
     if (figures.get('status') != 'completed' or figures.get('profile') != 'paper'
             or not REQUIRED_IDS.issubset(figures['figure_ids'])
-            or figures.get('text_usetex') is not True or figures.get('figure_dpi') != 200
-            or figures.get('savefig_dpi') != 200):
+            or figures.get('text_usetex') is not True or figures.get('figure_dpi') != DPI
+            or figures.get('savefig_dpi') != DPI):
         raise RuntimeError('Complete the current paper guide figures before building this notebook')
     for mapping, folder in [('sources', ROOT), ('input_manifests', ROOT), ('files', path.parent)]:
         for name, expected in figures[mapping].items():
@@ -51,12 +52,12 @@ from IPython.display import Image, Markdown, display
 ROOT = Path.cwd() if (Path.cwd() / 'lib').exists() else Path.cwd().parent
 sys.path.insert(0, str(ROOT))
 from scripts.make_implementation_audit_notebook import verify_audit
-from lib.plotting import plt
+from lib.plotting import plt, DPI
 FIG = verify_audit()
 BASE = ROOT / 'results/implementation_audit'
 F = BASE / 'paper/figures'
 assert plt.rcParams['text.usetex'] is True
-assert plt.rcParams['figure.dpi'] == plt.rcParams['savefig.dpi'] == 200
+assert plt.rcParams['figure.dpi'] == plt.rcParams['savefig.dpi'] == DPI
 
 def show(name):
     path = F / (name + '.png')

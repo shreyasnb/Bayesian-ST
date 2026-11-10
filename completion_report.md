@@ -204,25 +204,40 @@ hash-matched embedded figures each). The final read-only check verified all 24
 stage/component manifests and the complete retained-file inventory. An
 independent actual-PDF audit passed for all 38 files / 144 pages: seven-inch
 widths, Type 1 fonts, empty PDF titles and no out-of-page text. Preview images
-are 200 dpi. Regenerable checkpoint caches are excluded from Git.
+are 300 dpi. Regenerable checkpoint caches are excluded from Git.
 
-## Sphere display revision
+## Native sphere restoration and manuscript exports
 
-Continuous multicolor density views now expose the anisotropy already in the
-saved posteriors. A rigid, disclosed display rotation brings the cap into view;
-matched laws retain a shared rotation and logarithmic color scale. Exact
-exp(-1)/exp(-2) density contours show shape without changing the posterior or
-claiming a credible-region interpretation. The original beamforming t=64
-view and comparisons remain, alongside its existing t=16 prefix. Both
-notebooks explain these coordinates and the chronological/controlled pair.
-All final pages remain seven inches wide, with LaTeX/vector text and curves
-and 200-dpi raster layers/previews.
+The mode-facing multicolor display was reverted: its rotation and white
+contours made a correct density look like a flat target. The original native
+coordinates, oblique camera and blue-to-pink palette are restored. Front-visible
+coordinate great circles now provide a geometric depth cue. No density shading,
+mode centering or change of posterior angular width is applied. The original
+n=64, t=64 beamforming checkpoint is retained, and its section is correctly
+identified as a restriction of the complex posterior rather than a physical
+radiation pattern. Both notebooks explain these distinctions.
 
-The rendering audit passed 20 beamforming and 464 contact laws, plus shared
-rotation checks. Maximum pointwise log-density discrepancy was 2.84e-12;
-the independent ambient complex-section discrepancy was 1.09e-11. All 574
-frozen numerical artifacts, 25 scientific manifests and 132 scientific/core
-sources match the preceding `ded5499` revision exactly. Estimators, tuning,
-seeds, benchmarks, numerical tolerances, timing records and conclusions were
-retained. The unchanged regression suite passed 313 tests and two subtests.
-See [the display audit and reproduction commands](docs/final_simulations.md).
+All active plotting defaults and exporters now use centralized 300 dpi. Final
+paper pages are seven inches wide, with vector LaTeX text and curves and
+2100-pixel-wide PNG previews. Full-resolution PNG/PDF links accompany notebook
+images, since an inline preview is scaled to the reader's screen.
+
+The PDF manuscript selection is under `results/main/` and
+`results/supplementary/`, with separate application folders, captions, exact
+page selectors and hash provenance. Main figures are single-page selections;
+all remaining study pages are retained in the supplement. Complete original
+application catalogues are preserved for the notebooks and audit trail.
+
+Scientific outputs remain byte-identical to `ded5499`: 574 numerical
+artifacts, 25 scientific manifests and 132 scientific/core source files.
+The unchanged regression suite passed 313 tests and two subtests. Geometry
+checks cover 20 beamforming and 464 contact laws, with native coordinates for
+rendering and separately labeled auxiliary rotation stress checks. See
+[reproduction and validation commands](docs/final_simulations.md).
+
+Both current notebooks executed successfully in clean kernels. The independent
+actual-export audit passed 38 canonical PDFs / 144 pages and 34 manuscript
+selection PDFs / 74 pages, including all placed raster layers at 300 dpi,
+embedded Type1 fonts, seven-inch pages and text within page bounds. All 74
+canonical preview PNGs are 2100 pixels wide at 300 dpi. The extra draft PDFs
+are page copies of the same evidence, not additional experimental results.

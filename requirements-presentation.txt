@@ -1,0 +1,2 @@
+# Optional PDF page extraction and actual-export audits.
+PyMuPDF==1.26.6
