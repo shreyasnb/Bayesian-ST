@@ -18,16 +18,14 @@ LaTeX enabled, use 300 dpi, and follow the implementation notebook's serif
 typography. These are editable defaults: there is no hidden function resizing
 the figure or enforcing a particular dpi after the cell creates it.
 
-Unchanged compositions retain the author's 15-by-5-inch or 15-by-10-inch
-canvases. Selected panels now use separate figures: 7.5-by-5 inches for individual
-half-width panels and 15-by-5 inches for full-width curves, timing panels and the
-contact sphere pair. Each figure has its own visible size and PDF filename.
+Each figure retains the author's current canvas settings and has its own
+visible `FIGSIZE`, `DPI` and PDF filename.
 Plot labels name the quantity; the nearby prose defines the comparison and intervals.
 
 Only these selected compositions display sequential figures within their original
 code cells; the notebook cell order and all other tiling are preserved:
 
-- Beamforming task performance and posterior anisotropy.
+- Beamforming task performance, posterior anisotropy and computation time.
 - Contact information, posterior anisotropy and computation time. The contact
   density spheres remain side by side with a shared colorbar; their risk curve
   follows as a separate figure.
@@ -40,11 +38,18 @@ reset those settings.
 
 ## PDF output
 
-New PDFs are written under `results/notebook_exports/<notebook_name>/`. The
-path and save call are visible in each figure cell; edit them or disable the
-save if desired. These local exports are ignored by Git. The published PDFs
-under `results/main/`, `results/supplementary/` and the application directories
-retain their original files and provenance.
+With `SAVE_PDF=True`, each figure writes its PDF under
+`results/notebook_exports/<notebook_name>/` and immediately copies those exact
+bytes to `results/<DRAFT_SECTION>/<application>/<PDF_PATH.name>`. The default
+`DRAFT_SECTION` is `main` or `supplementary`, following the existing figure
+selection. Edit `DRAFT_SECTION` or `DRAFT_PATH` beside `PDF_PATH` to change a
+figure's destination. With `SAVE_PDF=False`, neither destination is updated or
+created. The plotting and save statements remain visible in the cell.
+
+Local notebook exports are ignored by Git; manuscript copies are tracked. The
+current copies keep the notebook PDF filenames, including split-panel names,
+and are listed first in each manuscript folder's README. The original canonical
+catalogue PDFs retain their distinct filenames and provenance.
 
 An ordinary Run All in `00_theory.ipynb` writes its new diagnostic CSVs and
 validation certificate under `results/notebook_runs/00_theory/`. Its numerical

@@ -1,5 +1,23 @@
 # Supplementary figures
 
+## Current notebook PDFs
+
+Running a beamforming or contact figure cell with `SAVE_PDF=True` updates its local PDF and the copy listed here. The filename matches the visible `PDF_PATH`; `DRAFT_SECTION` and `DRAFT_PATH` in that figure block control its manuscript destination. These copies retain the notebook figure size, labels and styling. `SAVE_PDF=False` leaves both destinations unchanged.
+
+- [beamforming/information_page1.pdf](beamforming/information_page1.pdf).
+- [beamforming/posterior_anisotropy_eigenvalues.pdf](beamforming/posterior_anisotropy_eigenvalues.pdf).
+- [beamforming/posterior_anisotropy_empirical_cdf.pdf](beamforming/posterior_anisotropy_empirical_cdf.pdf).
+- [beamforming/posterior_anisotropy_sphere.pdf](beamforming/posterior_anisotropy_sphere.pdf).
+- [beamforming/predictive_calibration_page2.pdf](beamforming/predictive_calibration_page2.pdf).
+- [beamforming/predictive_calibration_page6.pdf](beamforming/predictive_calibration_page6.pdf).
+- [contact/computation_time_phases.pdf](contact/computation_time_phases.pdf).
+- [contact/computation_time_scaling.pdf](contact/computation_time_scaling.pdf).
+- [contact/noise_adaptation_page1.pdf](contact/noise_adaptation_page1.pdf).
+- [contact/predictive_calibration_page2.pdf](contact/predictive_calibration_page2.pdf).
+- [contact/predictive_calibration_page6.pdf](contact/predictive_calibration_page6.pdf).
+
+## Canonical catalogue exports
+
 Every remaining page of the sixteen individual source studies per application. This includes calibration, negative results, model mismatch, numerical accuracy, other conditions, constructed examples and optional overview compositions.
 
 These are PDF copies or lossless PDF page extractions from the verified canonical catalogues. Pages retain seven-inch width, LaTeX/vector text and lines, and 300-dpi raster layers. Increasing dpi affects raster layers and previews; PDF vector text has no pixel resolution.

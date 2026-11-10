@@ -28,6 +28,7 @@ MARKERS = {"mean":"o", "mode":"s", "iso":"^", "isotropic":"^", "regularized":"P"
 
 
 def _cell(name, page, figsize, code, style=True):
+    section = 'main' if name in {'setup', 'information', 'task_performance', 'posterior_anisotropy'} else 'supplementary'
     source = f'''# Edit these controls, the labels below, or any Matplotlib call in this cell.
 import numpy as np
 import matplotlib.pyplot as plt
@@ -39,6 +40,8 @@ DPI = 300
 FIGSIZE = {figsize!r}
 SAVE_PDF = True
 PDF_PATH = EDITABLE_OUTPUT / {f'{name}_page{page}.pdf'!r}
+DRAFT_SECTION = {section!r}
+DRAFT_PATH = ROOT / 'results' / DRAFT_SECTION / 'contact' / PDF_PATH.name
 '''
     if style:source += _STYLE
     source += '\n'+dedent(code).strip()+'\n'
@@ -46,6 +49,8 @@ PDF_PATH = EDITABLE_OUTPUT / {f'{name}_page{page}.pdf'!r}
 if SAVE_PDF:
     PDF_PATH.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(PDF_PATH, dpi=DPI, bbox_inches=None)
+    DRAFT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    DRAFT_PATH.write_bytes(PDF_PATH.read_bytes())
 plt.show()
 '''
     return source
@@ -110,7 +115,7 @@ ax.text(.015, .985, "(b)", transform=ax.transAxes, ha="left", va="top")
 ''', style=False)
 
 PLOT_CELLS[('information', 1)] = (
-_split_panel('information', (7.5, 5), 'information_contours.pdf', r'''
+_split_panel('information', (15, 5), 'information_contours.pdf', r'''
 fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout="constrained")
 levels = [.01, .05, .15, .3]
 contour_styles = [":", "--", "-.", "-"]
@@ -132,7 +137,7 @@ ax.spines[["top", "right"]].set_visible(False)
 ax.grid(color="#BFC4C8", alpha=.30, linewidth=.45)
 ax.text(.015, .985, "(a)", transform=ax.transAxes, ha="left", va="top")
 ''', style=False) +
-_split_panel('information', (7.5, 5), 'information_rotation.pdf', r'''
+_split_panel('information', (15, 5), 'information_rotation.pdf', r'''
 fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout="constrained")
 for values, label, color, style, point, angle, marked_kl in zip(
         [data["kl_first"], data["kl_second"]],
@@ -233,7 +238,7 @@ ax.set(xticks=np.linspace(0.,2*np.pi,5),xticklabels=[r"$0$",r"$\pi/2$",r"$\pi$",
 ax.legend(frameon=False,fontsize=10.)
 ax.spines[["top","right"]].set_visible(False)
 ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
-ax.text(.015,.985,"(c)",transform=ax.transAxes,ha="left",va="top")
+# ax.text(.015,.985,"(c)",transform=ax.transAxes,ha="left",va="top")
 ''', style=True)
 )
 
@@ -307,7 +312,7 @@ ax.set_ylabel("Time for 64 observations (ms)")
 ax.legend(frameon=False,fontsize=10.,ncol=2,loc="lower center",bbox_to_anchor=(.5,1.02))
 ax.spines[["top","right"]].set_visible(False)
 ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
-ax.text(.015,.985,"(a)",transform=ax.transAxes,ha="left",va="top")
+# ax.text(.015,.985,"(a)",transform=ax.transAxes,ha="left",va="top")
 ''', style=True) +
 _split_panel('computation_time', (15, 5), 'computation_time_phases.pdf', r'''
 fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
@@ -332,7 +337,7 @@ ax.set_xlabel("Time for 64 observations (ms)")
 ax.set_ylabel("")
 ax.spines[["top","right"]].set_visible(False)
 ax.grid(axis="x",color="#BFC4C8",alpha=.30,linewidth=.45)
-ax.text(.015,.985,"(b)",transform=ax.transAxes,ha="left",va="top")
+# ax.text(.015,.985,"(b)",transform=ax.transAxes,ha="left",va="top")
 fig.legend(*ax.get_legend_handles_labels(),loc="outside lower center",ncol=3,frameon=False,fontsize=10.)
 ''', style=True)
 )

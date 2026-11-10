@@ -1,8 +1,8 @@
 {
   "schema": 1,
   "status": "passed",
-  "baseline_commit": "6f43c62e39b2a7eb68766fa05d56d6f3f5062d76",
-  "scope": "Presentation-only refactor of all five root notebooks. Full Matplotlib source is local to each figure cell; existing technical functions, numerical arrays, benchmarks and publication PDFs are unchanged.",
+  "baseline_commit": "540112cacd68af1196f2aee8ae287396589de6b3",
+  "scope": "Editable notebook plotting and automatic manuscript PDF copies. Technical calculations, existing numerical records and canonical PDF files are unchanged; export documentation and audit reports are refreshed.",
   "notebooks": {
     "00_theory.ipynb": {
       "status": "verified",
@@ -24,15 +24,15 @@
       "notebook": "01_array.ipynb",
       "code_cells": 10,
       "plotting_cells": 8,
-      "rendered_figures": 11,
-      "embedded_images": 11,
+      "rendered_figures": 12,
+      "embedded_images": 12,
       "verified_input_files": 109,
       "verified_loader_sources": 2,
       "preserved_numerical_cells": 0,
-      "pdf_headers_checked": 11,
+      "pdf_headers_checked": 12,
       "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
-      "editable_metadata_sha256": "b8338daf6279c83a8507ab06bc09ddec9d599d4f430a258fde8d376d3a9ea273",
-      "sha256": "d742ece049f3920f58bd4087dc160ba9827c4409d7839524d69eb719f0d9e56a"
+      "editable_metadata_sha256": "e42886a3ee5d65685632bac685304e6d59d08b05ba31a98545dd0f4fd6d9da5f",
+      "sha256": "ac8fa561ce132326a6804011fb6da158f688e9e1fc1d9066e4df29b3cf91b63a"
     },
     "02_field.ipynb": {
       "status": "verified",
@@ -62,7 +62,7 @@
       "pdf_headers_checked": 11,
       "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
       "editable_metadata_sha256": "b1e59e5db2eeddac6e088f55366b764553598d4b5c159b19fbd34da49a3c9a5e",
-      "sha256": "c0c8f511b4a63d97ae27ede97353de19604f589e8bbac3d2021965b61941f5a3"
+      "sha256": "ac92a8b4658b5b472d866e036d73ecf62194430b0c2567194cd7ada290e91c93"
     },
     "04_implementation_audit.ipynb": {
       "status": "verified",
@@ -83,9 +83,9 @@
   "totals": {
     "notebooks": 5,
     "plotting_cells": 49,
-    "rendered_figures": 55,
-    "embedded_images": 55,
-    "local_pdf_exports_checked": 55
+    "rendered_figures": 56,
+    "embedded_images": 56,
+    "local_pdf_exports_checked": 56
   },
   "defaults": {
     "text.usetex": true,
@@ -235,9 +235,9 @@
     "scope": "Actual rendering customization in fresh kernels; root notebook sources and canonical numerical/PDF results remain untouched."
   },
   "numerical_preservation": {
-    "tracked_result_files_checked": 3781,
-    "changed_result_files": 0,
-    "result_hash_map_sha256": "8df9ec80152b5ebf87a14e46a0a7a04b282a360ebff190abbe9a670cdacf2c07",
+    "tracked_result_files_checked": 3782,
+    "changed_result_files": 6,
+    "result_hash_map_sha256": "8a48ee98cbc96fc3fcb6b7614587bc3e40f51919538566c33cc7060fbe48b684",
     "scientific_closure": {
       "status": "passed",
       "baseline_commit": "ded5499e6974a0078022434235c4d2a5c9b25424",
@@ -255,7 +255,18 @@
       "regression_checks": 315,
       "core_hash": "2e40ff85e8582880406878e840b6f67ddfec10bc8c8cda89d4304839d2bc74c4",
       "private_output": "results/notebook_runs/00_theory/"
-    }
+    },
+    "unchanged_result_files": 3776,
+    "changed_metadata_reports": [
+      "results/beamforming/data/validation/pdf_layout_checks.json",
+      "results/contact/data/validation/pdf_layout_checks.json",
+      "results/draft_figure_manifest.json",
+      "results/main/README.md",
+      "results/notebook_editability.json",
+      "results/supplementary/README.md"
+    ],
+    "changed_existing_pdfs": 0,
+    "changed_numerical_records": 0
   },
   "outputs": {
     "editable_pdfs": "results/notebook_exports/<notebook_stem>/",
@@ -273,7 +284,9 @@
     "scripts/check_editable_notebooks.py": "7d51761f579011b971768ea896801dcfe40d868e2e87676de7a8da1cf0bead44",
     "scripts/probe_editable_plots.py": "ed622613b67fbe73c3ecd1dd6fd3bf671de55eb112c4932c61a56a3bc804fab3",
     "scripts/execute_editable_notebooks.py": "8e932e2609be5d3a23ff7af5ade6de7384eb8a97fef53f128760b1da8b812122",
-    "scripts/check_notebook_bands.py": "7703181bc60baa98030d266cc8506de5ac1ec60b9916607ec00fc24ba5a00ca8"
+    "scripts/check_notebook_bands.py": "7703181bc60baa98030d266cc8506de5ac1ec60b9916607ec00fc24ba5a00ca8",
+    "lib/notebook_pdf_exports.py": "3b1ab68672a07f3796c0e5e585d7a3759116e09fa6718dad3a9dbc9c1c93a482",
+    "scripts/export_draft_figures.py": "2cc3f6b99623765af42e21e468616b24109b600eaaa989ea43e6a756d6e4aa17"
   },
   "editing_policy": "DPI, figure size, labels, colors, layout and export paths are user controls. Their values and rendered PNG hashes are not restricted by the notebook verifier. Saved numerical inputs and data readers remain independently verified.",
   "matplotlib_boxplot_compatibility": {
@@ -1316,5 +1329,596 @@
     },
     "unchanged_numerical_and_published_result_files": 3781,
     "rendering": "Both notebooks executed in fresh kernels; 22 figures and separate PDF exports. All 11 unselected embedded images are byte-identical to the baseline."
+  },
+  "automatic_manuscript_copies": {
+    "baseline_commit": "540112c",
+    "status": "passed",
+    "behavior": "Each figure saves its local PDF once, then copies those exact bytes to the visible DRAFT_PATH inside the same SAVE_PDF guard. No plotting calculations change.",
+    "source_and_guard_checks": {
+      "status": "passed",
+      "source_preservation": {
+        "01_array.ipynb": {
+          "preserved_all_original_cell_sources_except_routing": true,
+          "figures": 12
+        },
+        "03_contact.ipynb": {
+          "preserved_all_original_cell_sources_except_routing": true,
+          "figures": 11
+        }
+      },
+      "save_guard_cases": 69,
+      "save_false_creates_nothing_and_preserves_existing_files": true,
+      "save_true_copies_exact_saved_bytes": true,
+      "manuscript_copies": {
+        "status": "verified",
+        "declared_count": 23,
+        "verified_copies": 23,
+        "local_matches_checked": 23,
+        "missing": [],
+        "routes": {
+          "results/main/beamforming/setup_page1.pdf": {
+            "notebook": "notebooks/01_array.ipynb",
+            "cell": 3,
+            "example": "beamforming",
+            "section": "main",
+            "filename": "setup_page1.pdf",
+            "local_pdf": "results/notebook_exports/01_array/setup_page1.pdf"
+          },
+          "results/supplementary/beamforming/information_page1.pdf": {
+            "notebook": "notebooks/01_array.ipynb",
+            "cell": 5,
+            "example": "beamforming",
+            "section": "supplementary",
+            "filename": "information_page1.pdf",
+            "local_pdf": "results/notebook_exports/01_array/information_page1.pdf"
+          },
+          "results/main/beamforming/task_performance_output_power.pdf": {
+            "notebook": "notebooks/01_array.ipynb",
+            "cell": 10,
+            "example": "beamforming",
+            "section": "main",
+            "filename": "task_performance_output_power.pdf",
+            "local_pdf": "results/notebook_exports/01_array/task_performance_output_power.pdf"
+          },
+          "results/main/beamforming/task_performance_paired_difference.pdf": {
+            "notebook": "notebooks/01_array.ipynb",
+            "cell": 10,
+            "example": "beamforming",
+            "section": "main",
+            "filename": "task_performance_paired_difference.pdf",
+            "local_pdf": "results/notebook_exports/01_array/task_performance_paired_difference.pdf"
+          },
+          "results/supplementary/beamforming/posterior_anisotropy_sphere.pdf": {
+            "notebook": "notebooks/01_array.ipynb",
+            "cell": 13,
+            "example": "beamforming",
+            "section": "supplementary",
+            "filename": "posterior_anisotropy_sphere.pdf",
+            "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_sphere.pdf"
+          },
+          "results/supplementary/beamforming/posterior_anisotropy_eigenvalues.pdf": {
+            "notebook": "notebooks/01_array.ipynb",
+            "cell": 13,
+            "example": "beamforming",
+            "section": "supplementary",
+            "filename": "posterior_anisotropy_eigenvalues.pdf",
+            "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_eigenvalues.pdf"
+          },
+          "results/supplementary/beamforming/posterior_anisotropy_empirical_cdf.pdf": {
+            "notebook": "notebooks/01_array.ipynb",
+            "cell": 13,
+            "example": "beamforming",
+            "section": "supplementary",
+            "filename": "posterior_anisotropy_empirical_cdf.pdf",
+            "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_empirical_cdf.pdf"
+          },
+          "results/main/beamforming/noise_adaptation_page1.pdf": {
+            "notebook": "notebooks/01_array.ipynb",
+            "cell": 15,
+            "example": "beamforming",
+            "section": "main",
+            "filename": "noise_adaptation_page1.pdf",
+            "local_pdf": "results/notebook_exports/01_array/noise_adaptation_page1.pdf"
+          },
+          "results/supplementary/beamforming/predictive_calibration_page2.pdf": {
+            "notebook": "notebooks/01_array.ipynb",
+            "cell": 18,
+            "example": "beamforming",
+            "section": "supplementary",
+            "filename": "predictive_calibration_page2.pdf",
+            "local_pdf": "results/notebook_exports/01_array/predictive_calibration_page2.pdf"
+          },
+          "results/supplementary/beamforming/predictive_calibration_page6.pdf": {
+            "notebook": "notebooks/01_array.ipynb",
+            "cell": 19,
+            "example": "beamforming",
+            "section": "supplementary",
+            "filename": "predictive_calibration_page6.pdf",
+            "local_pdf": "results/notebook_exports/01_array/predictive_calibration_page6.pdf"
+          },
+          "results/main/beamforming/computation_time_scaling.pdf": {
+            "notebook": "notebooks/01_array.ipynb",
+            "cell": 22,
+            "example": "beamforming",
+            "section": "main",
+            "filename": "computation_time_scaling.pdf",
+            "local_pdf": "results/notebook_exports/01_array/computation_time_scaling.pdf"
+          },
+          "results/main/beamforming/computation_time_phases.pdf": {
+            "notebook": "notebooks/01_array.ipynb",
+            "cell": 22,
+            "example": "beamforming",
+            "section": "main",
+            "filename": "computation_time_phases.pdf",
+            "local_pdf": "results/notebook_exports/01_array/computation_time_phases.pdf"
+          },
+          "results/main/contact/setup_page1.pdf": {
+            "notebook": "notebooks/03_contact.ipynb",
+            "cell": 3,
+            "example": "contact",
+            "section": "main",
+            "filename": "setup_page1.pdf",
+            "local_pdf": "results/notebook_exports/03_contact/setup_page1.pdf"
+          },
+          "results/main/contact/information_contours.pdf": {
+            "notebook": "notebooks/03_contact.ipynb",
+            "cell": 5,
+            "example": "contact",
+            "section": "main",
+            "filename": "information_contours.pdf",
+            "local_pdf": "results/notebook_exports/03_contact/information_contours.pdf"
+          },
+          "results/main/contact/information_rotation.pdf": {
+            "notebook": "notebooks/03_contact.ipynb",
+            "cell": 5,
+            "example": "contact",
+            "section": "main",
+            "filename": "information_rotation.pdf",
+            "local_pdf": "results/notebook_exports/03_contact/information_rotation.pdf"
+          },
+          "results/main/contact/task_performance_page1.pdf": {
+            "notebook": "notebooks/03_contact.ipynb",
+            "cell": 10,
+            "example": "contact",
+            "section": "main",
+            "filename": "task_performance_page1.pdf",
+            "local_pdf": "results/notebook_exports/03_contact/task_performance_page1.pdf"
+          },
+          "results/main/contact/posterior_anisotropy_spheres.pdf": {
+            "notebook": "notebooks/03_contact.ipynb",
+            "cell": 14,
+            "example": "contact",
+            "section": "main",
+            "filename": "posterior_anisotropy_spheres.pdf",
+            "local_pdf": "results/notebook_exports/03_contact/posterior_anisotropy_spheres.pdf"
+          },
+          "results/main/contact/posterior_anisotropy_risk.pdf": {
+            "notebook": "notebooks/03_contact.ipynb",
+            "cell": 14,
+            "example": "contact",
+            "section": "main",
+            "filename": "posterior_anisotropy_risk.pdf",
+            "local_pdf": "results/notebook_exports/03_contact/posterior_anisotropy_risk.pdf"
+          },
+          "results/supplementary/contact/noise_adaptation_page1.pdf": {
+            "notebook": "notebooks/03_contact.ipynb",
+            "cell": 16,
+            "example": "contact",
+            "section": "supplementary",
+            "filename": "noise_adaptation_page1.pdf",
+            "local_pdf": "results/notebook_exports/03_contact/noise_adaptation_page1.pdf"
+          },
+          "results/supplementary/contact/predictive_calibration_page2.pdf": {
+            "notebook": "notebooks/03_contact.ipynb",
+            "cell": 19,
+            "example": "contact",
+            "section": "supplementary",
+            "filename": "predictive_calibration_page2.pdf",
+            "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_page2.pdf"
+          },
+          "results/supplementary/contact/predictive_calibration_page6.pdf": {
+            "notebook": "notebooks/03_contact.ipynb",
+            "cell": 20,
+            "example": "contact",
+            "section": "supplementary",
+            "filename": "predictive_calibration_page6.pdf",
+            "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_page6.pdf"
+          },
+          "results/supplementary/contact/computation_time_scaling.pdf": {
+            "notebook": "notebooks/03_contact.ipynb",
+            "cell": 23,
+            "example": "contact",
+            "section": "supplementary",
+            "filename": "computation_time_scaling.pdf",
+            "local_pdf": "results/notebook_exports/03_contact/computation_time_scaling.pdf"
+          },
+          "results/supplementary/contact/computation_time_phases.pdf": {
+            "notebook": "notebooks/03_contact.ipynb",
+            "cell": 23,
+            "example": "contact",
+            "section": "supplementary",
+            "filename": "computation_time_phases.pdf",
+            "local_pdf": "results/notebook_exports/03_contact/computation_time_phases.pdf"
+          }
+        },
+        "files": {
+          "results/main/beamforming/setup_page1.pdf": {
+            "sha256": "ec1b2c4794e719a096f64c922e1160a151dff7cccbfea0d3927eed6bf0cd2212",
+            "bytes": 286424,
+            "local_pdf": "results/notebook_exports/01_array/setup_page1.pdf",
+            "local_copy_checked": true,
+            "example": "beamforming",
+            "section": "main"
+          },
+          "results/supplementary/beamforming/information_page1.pdf": {
+            "sha256": "086920bfd44adf1159c8206d4e51180cf2312c1345244f06418a4277ef0c5f48",
+            "bytes": 106766,
+            "local_pdf": "results/notebook_exports/01_array/information_page1.pdf",
+            "local_copy_checked": true,
+            "example": "beamforming",
+            "section": "supplementary"
+          },
+          "results/main/beamforming/task_performance_output_power.pdf": {
+            "sha256": "0e5a8837ef7316893f5df790df7e0ea59a0e8a5db3b23730fc55cd60e7f11300",
+            "bytes": 232958,
+            "local_pdf": "results/notebook_exports/01_array/task_performance_output_power.pdf",
+            "local_copy_checked": true,
+            "example": "beamforming",
+            "section": "main"
+          },
+          "results/main/beamforming/task_performance_paired_difference.pdf": {
+            "sha256": "97a83624a099877509f413c9cd791e81c2a78005f18421b20735ebbcf149f7fc",
+            "bytes": 263813,
+            "local_pdf": "results/notebook_exports/01_array/task_performance_paired_difference.pdf",
+            "local_copy_checked": true,
+            "example": "beamforming",
+            "section": "main"
+          },
+          "results/supplementary/beamforming/posterior_anisotropy_sphere.pdf": {
+            "sha256": "de7b2b1c90f5c34b0f712432f8c196b06ff54e13717e34cad96d8cc02b877fdb",
+            "bytes": 238114,
+            "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_sphere.pdf",
+            "local_copy_checked": true,
+            "example": "beamforming",
+            "section": "supplementary"
+          },
+          "results/supplementary/beamforming/posterior_anisotropy_eigenvalues.pdf": {
+            "sha256": "7a5b99167c48dfbed2d4413272e7a125f723920322f4e87cf8bb29fdc6f77259",
+            "bytes": 200371,
+            "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_eigenvalues.pdf",
+            "local_copy_checked": true,
+            "example": "beamforming",
+            "section": "supplementary"
+          },
+          "results/supplementary/beamforming/posterior_anisotropy_empirical_cdf.pdf": {
+            "sha256": "d5b1305f01ba2c12fc9016952e1b29897c93f29840672b1d486c2482af3d9163",
+            "bytes": 104676,
+            "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_empirical_cdf.pdf",
+            "local_copy_checked": true,
+            "example": "beamforming",
+            "section": "supplementary"
+          },
+          "results/main/beamforming/noise_adaptation_page1.pdf": {
+            "sha256": "08cb0abdf216a5aeed04cba94afa74b298ceb000931e5d2a888fed6081f4414c",
+            "bytes": 174624,
+            "local_pdf": "results/notebook_exports/01_array/noise_adaptation_page1.pdf",
+            "local_copy_checked": true,
+            "example": "beamforming",
+            "section": "main"
+          },
+          "results/supplementary/beamforming/predictive_calibration_page2.pdf": {
+            "sha256": "dcaed7d641838076f647e1bc6cb08a62b3c626c558b9a9cc6f8dd1abf0cd15c4",
+            "bytes": 77025,
+            "local_pdf": "results/notebook_exports/01_array/predictive_calibration_page2.pdf",
+            "local_copy_checked": true,
+            "example": "beamforming",
+            "section": "supplementary"
+          },
+          "results/supplementary/beamforming/predictive_calibration_page6.pdf": {
+            "sha256": "541f4fa8be62c98765ec61da2179943307c123f7d322d797ad68d371b96aa5ed",
+            "bytes": 76548,
+            "local_pdf": "results/notebook_exports/01_array/predictive_calibration_page6.pdf",
+            "local_copy_checked": true,
+            "example": "beamforming",
+            "section": "supplementary"
+          },
+          "results/main/beamforming/computation_time_scaling.pdf": {
+            "sha256": "0358994a81a62b7224997eaed9a2cdef197df3fd154b35fc2e33ddd88e693bf7",
+            "bytes": 233354,
+            "local_pdf": "results/notebook_exports/01_array/computation_time_scaling.pdf",
+            "local_copy_checked": true,
+            "example": "beamforming",
+            "section": "main"
+          },
+          "results/main/beamforming/computation_time_phases.pdf": {
+            "sha256": "b63993e39015fced665753839bbbbb051a417fec8490ff0d7a41b6776603e6ca",
+            "bytes": 137929,
+            "local_pdf": "results/notebook_exports/01_array/computation_time_phases.pdf",
+            "local_copy_checked": true,
+            "example": "beamforming",
+            "section": "main"
+          },
+          "results/main/contact/setup_page1.pdf": {
+            "sha256": "bf988a15332377ef9957cb7a0932f5164e99dac559cab991bf84776e605cd172",
+            "bytes": 318273,
+            "local_pdf": "results/notebook_exports/03_contact/setup_page1.pdf",
+            "local_copy_checked": true,
+            "example": "contact",
+            "section": "main"
+          },
+          "results/main/contact/information_contours.pdf": {
+            "sha256": "365392a0654051c691a6f71e6c1512585c21bf15624de9f4c810472a62c56dfa",
+            "bytes": 155738,
+            "local_pdf": "results/notebook_exports/03_contact/information_contours.pdf",
+            "local_copy_checked": true,
+            "example": "contact",
+            "section": "main"
+          },
+          "results/main/contact/information_rotation.pdf": {
+            "sha256": "aa3dbfcea3a5fa09ad9e8c58601740c48754e937fadd8cbed6dd3c3e78eefcc2",
+            "bytes": 199594,
+            "local_pdf": "results/notebook_exports/03_contact/information_rotation.pdf",
+            "local_copy_checked": true,
+            "example": "contact",
+            "section": "main"
+          },
+          "results/main/contact/task_performance_page1.pdf": {
+            "sha256": "e05d478bac401f1960dd6822f7d941b00f1e83630f425ce0f4dfff26ab211725",
+            "bytes": 261616,
+            "local_pdf": "results/notebook_exports/03_contact/task_performance_page1.pdf",
+            "local_copy_checked": true,
+            "example": "contact",
+            "section": "main"
+          },
+          "results/main/contact/posterior_anisotropy_spheres.pdf": {
+            "sha256": "92e8e8a508e8e6893fea7a468b52ad231e2ad201baf974d016f8354379ba4f62",
+            "bytes": 275642,
+            "local_pdf": "results/notebook_exports/03_contact/posterior_anisotropy_spheres.pdf",
+            "local_copy_checked": true,
+            "example": "contact",
+            "section": "main"
+          },
+          "results/main/contact/posterior_anisotropy_risk.pdf": {
+            "sha256": "bb0d005ddfa898d921c00c852575bf31304382cd93d5620087f9b4fa22aff975",
+            "bytes": 200634,
+            "local_pdf": "results/notebook_exports/03_contact/posterior_anisotropy_risk.pdf",
+            "local_copy_checked": true,
+            "example": "contact",
+            "section": "main"
+          },
+          "results/supplementary/contact/noise_adaptation_page1.pdf": {
+            "sha256": "b12efc45212029c7b898c4bc64cfbdce3a01bcb37e5838c220317f78cb87fbc2",
+            "bytes": 173062,
+            "local_pdf": "results/notebook_exports/03_contact/noise_adaptation_page1.pdf",
+            "local_copy_checked": true,
+            "example": "contact",
+            "section": "supplementary"
+          },
+          "results/supplementary/contact/predictive_calibration_page2.pdf": {
+            "sha256": "f8704e1bb2abc332c107a04a5791469cc863c5511f18fae2cd23c4217e2a8b1b",
+            "bytes": 76962,
+            "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_page2.pdf",
+            "local_copy_checked": true,
+            "example": "contact",
+            "section": "supplementary"
+          },
+          "results/supplementary/contact/predictive_calibration_page6.pdf": {
+            "sha256": "eb378315d99a314579365198d01cb0abd5f29f9ea6d1fecbb2bea17ac2fcdd5a",
+            "bytes": 76892,
+            "local_pdf": "results/notebook_exports/03_contact/predictive_calibration_page6.pdf",
+            "local_copy_checked": true,
+            "example": "contact",
+            "section": "supplementary"
+          },
+          "results/supplementary/contact/computation_time_scaling.pdf": {
+            "sha256": "5e18dc89d0cba3490dafc4237f8d2f745825be6f63487c13b42040308424179e",
+            "bytes": 232934,
+            "local_pdf": "results/notebook_exports/03_contact/computation_time_scaling.pdf",
+            "local_copy_checked": true,
+            "example": "contact",
+            "section": "supplementary"
+          },
+          "results/supplementary/contact/computation_time_phases.pdf": {
+            "sha256": "d5ce210a89940f7a4f5e73060688d0bd7bd95d75fec4d3739d34c39759d36674",
+            "bytes": 138240,
+            "local_pdf": "results/notebook_exports/03_contact/computation_time_phases.pdf",
+            "local_copy_checked": true,
+            "example": "contact",
+            "section": "supplementary"
+          }
+        }
+      }
+    },
+    "actual_pdf_checks": {
+      "status": "passed",
+      "pdfs": {
+        "results/notebook_exports/01_array/setup_page1.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/01_array/information_page1.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/01_array/task_performance_output_power.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/01_array/task_performance_paired_difference.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/01_array/posterior_anisotropy_sphere.pdf": {
+          "figsize_in": [
+            10,
+            10
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/01_array/posterior_anisotropy_eigenvalues.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/01_array/posterior_anisotropy_empirical_cdf.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/01_array/noise_adaptation_page1.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/01_array/predictive_calibration_page2.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/01_array/predictive_calibration_page6.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/01_array/computation_time_scaling.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/01_array/computation_time_phases.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/03_contact/setup_page1.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/03_contact/information_contours.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/03_contact/information_rotation.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/03_contact/task_performance_page1.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/03_contact/posterior_anisotropy_spheres.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/03_contact/posterior_anisotropy_risk.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/03_contact/noise_adaptation_page1.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/03_contact/predictive_calibration_page2.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/03_contact/predictive_calibration_page6.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/03_contact/computation_time_scaling.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        },
+        "results/notebook_exports/03_contact/computation_time_phases.pdf": {
+          "figsize_in": [
+            15,
+            5
+          ],
+          "dpi": 300,
+          "out_of_page_text": 0
+        }
+      },
+      "verified_byte_identical_manuscript_copies": 23
+    },
+    "scope": "Both application notebooks; current figure filenames are retained in their assigned main or supplementary folders. Original canonical catalogue PDFs remain unchanged."
   }
 }

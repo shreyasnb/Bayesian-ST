@@ -29,6 +29,7 @@ STYLE = {
 
 
 def _cell(name, page, size, body, *, style=True):
+    section = 'main' if name in {'setup','task_performance','noise_adaptation','computation_time'} else 'supplementary'
     source = f'''# Edit these controls independently for this figure.
 import numpy as np
 import matplotlib.pyplot as plt
@@ -39,6 +40,8 @@ DPI = 300
 FIGSIZE = {size!r}
 SAVE_PDF = True
 PDF_PATH = EDITABLE_OUTPUT / {f'{name}_page{page}.pdf'!r}
+DRAFT_SECTION = {section!r}
+DRAFT_PATH = ROOT / 'results' / DRAFT_SECTION / 'beamforming' / PDF_PATH.name
 '''
     if style:
         source += dedent(STYLE_CODE)
@@ -48,6 +51,8 @@ PDF_PATH = EDITABLE_OUTPUT / {f'{name}_page{page}.pdf'!r}
 if SAVE_PDF:
     PDF_PATH.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(PDF_PATH, dpi=DPI, bbox_inches=None)
+    DRAFT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    DRAFT_PATH.write_bytes(PDF_PATH.read_bytes())
 plt.show()
 '''
     return source
@@ -109,7 +114,7 @@ for ax,tag in zip(axes,["(a)","(b)"]):
 ''',style=False)
 
 PLOT_CELLS['task_performance', 1] = (
-    _cell('task_performance', 1, (7.5, 5), r'''
+    _cell('task_performance', 1, (15, 5), r'''
 fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 for curve in data["curves"]:
     label,color_,symbol = STYLE[curve["method"]]
@@ -123,7 +128,7 @@ ax.spines[["top","right"]].set_visible(False)
 ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
 ax.text(.015,.985,"(a)",transform=ax.transAxes,ha="left",va="top")
 ''').replace("'task_performance_page1.pdf'", "'task_performance_output_power.pdf'")
-    + '\n\n' + _cell('task_performance', 1, (7.5, 5), r'''
+    + '\n\n' + _cell('task_performance', 1, (15, 5), r'''
 fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 labels = [STYLE[item["method"]][0] for item in data["paired"]]
 samples = [item["values"] for item in data["paired"]]
@@ -143,7 +148,7 @@ ax.text(.015,.985,"(b)",transform=ax.transAxes,ha="left",va="top")
 )
 
 PLOT_CELLS['posterior_anisotropy', 1] = (
-    _cell('posterior_anisotropy', 1, (7.5, 5), r'''
+    _cell('posterior_anisotropy', 1, (10, 10), r'''
 fig = plt.figure(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 sphere = fig.add_subplot(111,projection="3d")
 nodes,log_density = data["nodes"],data["log_density"]
@@ -189,7 +194,7 @@ fig.colorbar(plt.cm.ScalarMappable(norm=norm,cmap=cmap),ax=sphere,
     label=r"$q(U_3x)/q(\widehat{\mathcal X})$",shrink=.64,pad=.015)
 sphere.text2D(.02,.97,"(a)",transform=sphere.transAxes,ha="left",va="top")
 ''').replace("'posterior_anisotropy_page1.pdf'", "'posterior_anisotropy_sphere.pdf'")
-    + '\n\n' + _cell('posterior_anisotropy', 1, (7.5, 5), r'''
+    + '\n\n' + _cell('posterior_anisotropy', 1, (15, 5), r'''
 fig, ax_spectrum = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 p,pi = data["mean_eigenvalues"],data["iso_eigenvalues"]
 ax_spectrum.plot(np.arange(2,len(p)+1),p[1:],"o-",color=STYLE["mean"][1],label=STYLE["mean"][0])
@@ -265,44 +270,141 @@ for _page in (2,6):
     PLOT_CELLS['predictive_calibration',_page] = _cell(
         'predictive_calibration',_page,(15,5),_CALIBRATION_BODY)
 
-PLOT_CELLS['computation_time',1] = _cell('computation_time',1,(15,10),r'''
-fig = plt.figure(figsize=FIGSIZE,dpi=DPI,layout="constrained")
-grid = fig.add_gridspec(2,1)
-axes = [fig.add_subplot(grid[0]),fig.add_subplot(grid[1])]
-for curve in data["curves"]:
-    label,color_,symbol = STYLE[curve["method"]]
-    label += ", every observation" if curve["interval"]==1 else ", every "+str(curve["interval"])+" observations"
-    axes[0].plot(curve["n"],curve["elapsed"],marker=symbol,linestyle=curve["line"],color=color_,label=label)
-axes[0].set_xscale("log",base=2)
-axes[0].set_yscale("log")
-axes[0].set(xlabel="Number of sensors",ylabel="Time for 64 observations (ms)")
-axes[0].legend(frameon=False,fontsize=10.,ncol=2,loc="lower center",bbox_to_anchor=(.5,1.02))
-phase_styles = {
-    "correction":("Parameter update","#0072B2"),
-    "action":("Task decision","#D55E00"),
-    "report":("Uncertainty report","#CC79A7"),
-    "fitting":("EM","#009E73"),
-    "overhead":("Other","#B8BEC4"),
+PLOT_CELLS['computation_time',1] = r'''import numpy as np
+import matplotlib.pyplot as plt
+
+plt.rcParams["text.usetex"] = True
+
+data = load_beamforming_plot_data(ROOT, "computation_time", page=1)
+
+STYLE = {
+    "mean": (r"$\overline P_t^+$", "#0072B2", "o"),
+    "mode": (r"$P_{\widehat{\mathcal X}_t}$", "#D55E00", "s"),
+    "iso": (r"$\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^"),
+    "isotropic": (r"$\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^"),
+    "scm_loaded": ("MVDR with covariance shrinkage", "#484848", "X"),
+    "great_window": ("GREAT (sliding window)", "#009E73", "D"),
+    "great": ("GREAT (sliding window)", "#009E73", "D"),
+    "great_ew": ("GREAT (exponential weighting)", "#56B4E9", "v"),
+    "known": ("True variances", "#111111", "s"),
+    "exact_known": (r"True variances, $\beta=1$", "#111111", "s"),
+    "known_forgetting": ("True variances, forgetting", "#8172B2", "D"),
+    "misspecified": ("Fixed variances", "#999999", "^"),
+    "learned": ("Learned variances", "#0072B2", "o"),
 }
+
+# Figure 1: computation time versus number of sensors.
+DPI = 300
+FIGSIZE = (15, 5)
+SAVE_PDF = True
+PDF_PATH = EDITABLE_OUTPUT / "computation_time_scaling.pdf"
+DRAFT_SECTION = 'main'
+DRAFT_PATH = ROOT / 'results' / DRAFT_SECTION / 'beamforming' / PDF_PATH.name
+
+fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout="constrained")
+
+for curve in data["curves"]:
+    label, color_, symbol = STYLE[curve["method"]]
+    label += (
+        ", every observation"
+        if curve["interval"] == 1
+        else f", every {curve['interval']} observations"
+    )
+    ax.plot(
+        curve["n"],
+        curve["elapsed"],
+        marker=symbol,
+        linestyle=curve["line"],
+        color=color_,
+        label=label,
+    )
+
+ax.set_xscale("log", base=2)
+ax.set_yscale("log")
+ax.set(
+    xlabel="Number of sensors",
+    ylabel="Time for 64 observations (ms)",
+)
+ax.legend(
+    frameon=False,
+    fontsize=10,
+    ncol=2,
+    loc="lower center",
+    bbox_to_anchor=(0.5, 1.02),
+)
+ax.spines[["top", "right"]].set_visible(False)
+ax.grid(color="#BFC4C8", alpha=0.30, linewidth=0.45)
+# ax.text(
+#     0.015, 0.985, "(a)",
+#     transform=ax.transAxes, ha="left", va="top",
+# )
+
+if SAVE_PDF:
+    PDF_PATH.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(PDF_PATH, dpi=DPI, bbox_inches=None)
+    DRAFT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    DRAFT_PATH.write_bytes(PDF_PATH.read_bytes())
+
+plt.show()
+
+DPI = 300
+FIGSIZE = (15, 5)
+SAVE_PDF = True
+PDF_PATH = EDITABLE_OUTPUT / "computation_time_phases.pdf"
+DRAFT_SECTION = 'main'
+DRAFT_PATH = ROOT / 'results' / DRAFT_SECTION / 'beamforming' / PDF_PATH.name
+
+fig, ax = plt.subplots(
+    figsize=FIGSIZE, dpi=DPI, layout="constrained"
+)
+
+phase_styles = {
+    "correction": ("Parameter update", "#0072B2"),
+    "action": ("Task decision", "#D55E00"),
+    "report": ("Uncertainty report", "#CC79A7"),
+    "fitting": ("EM", "#009E73"),
+    "overhead": ("Other", "#B8BEC4"),
+}
+
 positions = np.arange(len(data["phase_rows"]))
 bottom = np.zeros(len(positions))
+
 for phase in data["phases"]:
-    label,color_ = phase_styles[phase["key"]]
-    axes[1].barh(positions,phase["values"],left=bottom,color=color_,height=.7,label=label)
+    label, color_ = phase_styles[phase["key"]]
+    ax.barh(
+        positions,
+        phase["values"],
+        left=bottom,
+        color=color_,
+        height=0.7,
+        label=label,
+    )
     bottom += phase["values"]
+
 row_labels = []
 for row in data["phase_rows"]:
     label = STYLE["mean"][0]
-    if row["method"]=="mean_report":label += " + uncertainty"
-    if row["method"]=="adaptive_mean":label += " + EM ("+str(int(row["em_iterations"]))+" iterations)"
-    row_labels.append(label+"\ndecisions every "+str(int(row["action_cadence"]))+" obs.")
-axes[1].set(yticks=positions,yticklabels=row_labels,xlabel="Time for 64 observations (ms)")
-fig.legend(*axes[1].get_legend_handles_labels(),loc="outside lower center",ncol=3,frameon=False,fontsize=10.)
-for ax,tag in zip(axes,["(a)","(b)"]):
-    ax.spines[["top","right"]].set_visible(False)
-    ax.grid(axis="x" if ax is axes[1] else "both",color="#BFC4C8",alpha=.30,linewidth=.45)
-    ax.text(.015,.985,tag,transform=ax.transAxes,ha="left",va="top")
-''')
+    if row["method"] == "mean_report":
+        label += " + uncertainty"
+    if row["method"] == "adaptive_mean":
+        label += f" + EM ({int(row['em_iterations'])} iterations)"
+    row_labels.append(
+        label + f"\ndecisions every {int(row['action_cadence'])} obs."
+    )
+
+ax.set(yticks=positions, yticklabels=row_labels, xlabel="Time for 64 observations (ms)")
+fig.legend(*ax.get_legend_handles_labels(), loc="outside lower center", ncol=3, frameon=False, fontsize=10)
+ax.spines[["top", "right"]].set_visible(False)
+ax.grid(axis="x", color="#BFC4C8", alpha=0.30, linewidth=0.45)
+# ax.text(0.015, 0.985, "(b)",transform=ax.transAxes, ha="left", va="top")
+
+if SAVE_PDF:
+    PDF_PATH.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(PDF_PATH, dpi=DPI, bbox_inches=None)
+    DRAFT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    DRAFT_PATH.write_bytes(PDF_PATH.read_bytes())
+
+plt.show()'''
 
 
 def get_plot_cell(name, page=1):

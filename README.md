@@ -6,8 +6,9 @@ Start with the executed [beamforming notebook](notebooks/01_array.ipynb) or [con
 
 All five root notebooks now contain full editable Matplotlib code in their
 figure cells. Edit `DPI`, `FIGSIZE`, labels, colors and PDF saves directly;
-data-only helpers load the saved arrays. New exports go to
-`results/notebook_exports/` so the published figures stay intact. See
+data-only helpers load the saved arrays. With `SAVE_PDF=True`, exports go to
+`results/notebook_exports/` and the matching filename in the main or supplementary
+application folder. Each figure exposes its `DRAFT_SECTION` and `DRAFT_PATH`. See
 [editing and running notebook figures](docs/editable_notebooks.md).
 
 The [completion report](completion_report.md) records completed cohorts, mixed comparisons, numerical failures and unsupported claims. The [mathematical checks](docs/final_manuscript_checks.md) explain identity transport, the sharp modal bound, fixed-boundary EM and the limits of dynamic uncertainty claims.

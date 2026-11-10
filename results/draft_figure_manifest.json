@@ -2,7 +2,7 @@
   "schema": 1,
   "status": "completed",
   "producer": "scripts/export_draft_figures.py",
-  "producer_sha256": "e7db51231ee51e8ba042e4627e477a8f6413947f5df97c5e557c21c8f076688e",
+  "producer_sha256": "2cc3f6b99623765af42e21e468616b24109b600eaaa989ea43e6a756d6e4aa17",
   "source_figure_manifests": {
     "results/beamforming/figure_manifest.json": "bccef591aa0dd013b2c23405f72ed1840e3258d1f7d70337d0e130365d1724b5",
     "results/contact/figure_manifest.json": "f5eac5829ceb4873857d2aabf0831bba366bf4cf3e72b2321c40fad76ef7f7ea"
@@ -37,8 +37,8 @@
     }
   },
   "documentation": {
-    "results/main/README.md": "fe86909930d2c3266ea7a433bb2aa9b8619e193144a7b2ecbbda12badb58b87e",
-    "results/supplementary/README.md": "b9ad523beafe78d23bb7e77382293b5a98bb0a0a584feb2957033b8040ff096f"
+    "results/main/README.md": "fe440b7891bd0e47fa60f2b08a23b0aef61a664b4dfdb372d55badefc952dc53",
+    "results/supplementary/README.md": "914313d213a7cee34f4c7325d2c14b64172519cf1dfa82fb84e6906def0fd0e6"
   },
   "files": {
     "results/main/beamforming/setup.pdf": {

@@ -170,8 +170,11 @@ means, exact KL formula and numerical Hessian. It introduces no new trials.
 
 All five root notebooks expose their figure code directly. Per-cell DPI,
 FIGSIZE, artists, labels, colors and PDF saves can be changed independently.
-Data-only helpers read the saved arrays, while editable exports are kept under
-`results/notebook_exports/`. The published figure catalogue and raw numerical
+Data-only helpers read the saved arrays. A cell with `SAVE_PDF=True` writes its
+editable export under `results/notebook_exports/` and refreshes the matching
+PDF filename in `results/main/<application>/` or
+`results/supplementary/<application>/`, as set by its visible `DRAFT_SECTION`.
+The original figure catalogue and raw numerical
 records remain frozen. See [the editing workflow](editable_notebooks.md).
 The theory notebook's original numerical checks write their fresh diagnostic
 outputs to `results/notebook_runs/00_theory/`; field and audit notebooks read

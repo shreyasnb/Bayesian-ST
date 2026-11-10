@@ -14,9 +14,13 @@ import hashlib
 import json
 from pathlib import Path
 import shutil
+import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+from lib.notebook_pdf_exports import (
+    declared_notebook_pdf_routes, verify_notebook_pdf_exports)
 EXAMPLES = ('beamforming', 'contact')
 EXPECTED_DPI = 300
 WIDTH_IN = 7.
@@ -209,7 +213,7 @@ def copy_pdf(root, output, record):
                 metadata_title_empty=True, **record)
 
 
-def readme(section, files):
+def readme(section, files, notebook_routes=None):
     description = ('Eight single-page candidates for the main draft: four per application. '
         'They define the applications, compare task decisions, and connect uncertainty '
         'to information or noise learning and computational cost.' if section=='main' else
@@ -217,7 +221,17 @@ def readme(section, files):
         'This includes calibration, negative results, model mismatch, numerical accuracy, '
         'other conditions, constructed examples and optional overview compositions.')
     lines = ['# '+('Main draft figures' if section=='main' else 'Supplementary figures'), '',
-        description, '',
+        '## Current notebook PDFs', '',
+        'Running a beamforming or contact figure cell with `SAVE_PDF=True` updates '
+        'its local PDF and the copy listed here. The filename matches the visible '
+        '`PDF_PATH`; `DRAFT_SECTION` and `DRAFT_PATH` in that figure block control '
+        'its manuscript destination. These copies retain the notebook figure size, '
+        'labels and styling. `SAVE_PDF=False` leaves both destinations unchanged.', '']
+    for output, route in sorted((notebook_routes or {}).items()):
+        if route['section'] == section:
+            relative = Path(output).relative_to(Path('results')/section)
+            lines.append('- ['+route['example']+'/'+Path(output).name+']('+relative.as_posix()+').')
+    lines += ['', '## Canonical catalogue exports', '', description, '',
         'These are PDF copies or lossless PDF page extractions from the verified '
         'canonical catalogues. Pages retain seven-inch width, LaTeX/vector text '
         'and lines, and 300-dpi raster layers. Increasing dpi affects raster '
@@ -264,7 +278,8 @@ def verify_export(root=ROOT):
     verify_mapping(root, exported['documentation'])
     actual = {path.relative_to(root).as_posix() for section in SECTIONS
               for path in (root/'results'/section).rglob('*.pdf')}
-    if actual!=set(expected):
+    notebook_copies = verify_notebook_pdf_exports(root)
+    if actual!=set(expected)|set(notebook_copies['files']):
         raise RuntimeError('Unexpected or missing categorized PDF files')
     coverage = Counter()
     for output, planned in expected.items():
@@ -286,7 +301,8 @@ def verify_export(root=ROOT):
     return dict(status='verified', pdf_files=len(expected), source_pages=len(all_pages),
         main_pdf_files=sum(entry['section']=='main' for entry in expected.values()),
         supplementary_pdf_files=sum(entry['section']=='supplementary' for entry in expected.values()),
-        dpi=EXPECTED_DPI, paper_width_in=WIDTH_IN)
+        dpi=EXPECTED_DPI, paper_width_in=WIDTH_IN,
+        notebook_pdf_copies=len(notebook_copies['files']))
 
 
 def export(root=ROOT):
@@ -295,16 +311,31 @@ def export(root=ROOT):
     selected = plan(meta)
     existing = {path.relative_to(root).as_posix() for section in SECTIONS
                 for path in (root/'results'/section).rglob('*.pdf')}
-    if existing-set(selected):
+    notebook_copies = verify_notebook_pdf_exports(root)
+    if existing-set(selected)-set(notebook_copies['files']):
         raise RuntimeError('Unrecognized existing export PDFs; preserve them before changing the selection')
     sources = {f'results/{example}/figure_manifest.json':sha(root/'results'/example/'figure_manifest.json')
                for example in EXAMPLES}
-    files = {output:copy_pdf(root, output, record) for output, record in selected.items()}
+    # Keep byte-identical catalogue copies when only notebook destinations or
+    # editorial documentation changed. Every retained file is checked again.
+    previous = (json.loads((root/MANIFEST).read_text()).get('files', {})
+                if (root/MANIFEST).is_file() else {})
+    files = {}
+    for output, record in selected.items():
+        old = previous.get(output)
+        destination = root/output
+        if (old and destination.is_file()
+                and all(old.get(key)==value for key,value in record.items())
+                and sha(destination)==old.get('sha256')
+                and destination.stat().st_size==old.get('bytes')):
+            files[output] = old
+        else:
+            files[output] = copy_pdf(root, output, record)
     documentation = {}
     for section in SECTIONS:
         path = root/'results'/section/'README.md'
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_text(readme(section, files))
+        path.write_text(readme(section, files, declared_notebook_pdf_routes(root)))
         documentation[path.relative_to(root).as_posix()] = sha(path)
     manifest = dict(schema=1, status='completed', producer='scripts/export_draft_figures.py',
         producer_sha256=sha(root/'scripts/export_draft_figures.py'),

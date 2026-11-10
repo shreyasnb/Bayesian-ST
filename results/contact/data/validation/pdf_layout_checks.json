@@ -1590,7 +1590,7 @@
   "curated_exports": {
     "status": "passed",
     "manifest": "results/draft_figure_manifest.json",
-    "manifest_sha256": "4f8a6a8a87244c83e6075567146ebcfbf402a8a2887be8c3541db0641dfc019d",
+    "manifest_sha256": "60541df4c088aedf2c4127d19cbdc971a306afd4de7b280c578aefadf1a119b0",
     "pdf_files": 18,
     "pdf_pages": 38,
     "files": {

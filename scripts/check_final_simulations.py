@@ -174,12 +174,15 @@ def main():
         result['display_audits'] = {example: verify_display_audits(example) for example in EXAMPLES}
         from scripts.export_draft_figures import verify_export
         result['draft_figures'] = verify_export(ROOT)
+        from lib.notebook_pdf_exports import verify_notebook_pdf_exports
+        result['notebook_pdf_exports'] = verify_notebook_pdf_exports(ROOT, require_all=True)
         report = (ROOT / 'completion_report.md').read_text()
         assert 'runs are in progress' not in report and 'will be replaced' not in report
         inventory = json.loads((ROOT / 'final_artifact_inventory.json').read_text())
         verify_mapping(ROOT, inventory['files'])
         draft = json.loads((ROOT / 'results/draft_figure_manifest.json').read_text())
         required_exports = {'results/draft_figure_manifest.json', *draft['files'], *draft['documentation']}
+        required_exports.update(result['notebook_pdf_exports']['files'])
         assert required_exports <= set(inventory['files']), 'Draft PDF exports must be retained in Git, not ignored'
         assert inventory['final_science_hash'] == gate['final_science_hash']
         changed = set(subprocess.check_output(
