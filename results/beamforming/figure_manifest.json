@@ -3,7 +3,7 @@
   "status": "completed",
   "example": "beamforming",
   "stage": "paper",
-  "created_utc": "2026-11-10T00:26:25.806730+00:00",
+  "created_utc": "2026-11-10T01:28:30.802055+00:00",
   "component_stages": {
     "computation": "paper",
     "performance": "paper",
@@ -11,10 +11,11 @@
     "theory": "paper"
   },
   "sources": {
-    "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-    "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-    "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+    "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+    "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+    "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
     "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+    "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
     "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
     "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
     "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -916,10 +917,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -1601,7 +1603,7 @@
           "page": 1,
           "figure_size_in": [
             7.0,
-            3.0
+            3.42
           ],
           "axes": 4,
           "titles": false,
@@ -1612,7 +1614,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "episode": 0,
@@ -1635,8 +1637,8 @@
         }
       ],
       "output_hashes": {
-        "setup.pdf": "0378769d1f7fb9456267d7da8554b8a07b9903deb9cb504dd149e0c333ad302d",
-        "preview/setup.png": "8ce5a7085f361423aef7948315f23615e7fb536e1b91ec13dda222f0d35db1af"
+        "setup.pdf": "6143ab4064b05581ec729c8fe59b7ede876f0cdf76525f3611bc94a00178125a",
+        "preview/setup.png": "f342a0a83f9e0a612f369d5abb15272dd21de71c4232b06f5beb4bdfae6eb85e"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -1648,7 +1650,7 @@
     "task_performance.pdf": {
       "status": "completed",
       "experiment": "beamforming",
-      "formula_or_claim": "Task losses on common independent test episodes. Held-out disturbance or query losses are averaged within each episode before computing pointwise Student 95\\% intervals. Only the posterior-mean curve carries a confidence band in the main absolute-loss panels. The contact paired panel isolates the same-data modal, matched-isotropic and regularized spectral controls; response-only GREAT remains in its absolute-loss panel and the full supplementary grid. Contact paired points show mean loss differences and pointwise Student 95\\% confidence intervals across independent episodes, including every episode outlier; they are not posterior intervals. Beamforming paired boxes show the distribution of episode differences, not confidence intervals. The same-$A_t$ modal and matched-isotropic controls isolate posterior moments; GREAT and application-specific controls have separately validated settings and their stated information. Beamforming power ratios are $10\\log_{10}(P/P_{\\mathrm{oracle}})$, where the denominator is true-covariance oracle output power. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
+      "formula_or_claim": "Task losses on common independent test episodes. Losses are averaged within each episode before pointwise Student 95\\% intervals. For contact, main panel (a) shows stationary concentrated-input checkpoint MSE versus observation count, with the posterior-mean confidence band; panel (b) shows absolute episode-average MSE for the moving sphere condition, with a confidence interval for every method including the posterior mean. All methods in panel (b) use the same independent episodes. The separate second page retains paired MSE differences; these are absolute differences in squared velocity units, not relative MSE. A posterior mean compared with itself has identically zero paired difference. Beamforming paired boxes show the distribution of same-episode differences, not confidence intervals. GREAT and application-specific controls retain their stated information and independently validated settings. Complex beamforming GREAT is an extension of the real algorithm, as described in the notebook text. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.task_performance",
       "configurations": {
@@ -2481,10 +2483,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -3144,14 +3147,14 @@
           "results/beamforming/data/paper/theory/manifest.json"
         ]
       },
-      "proposed_latex_caption": "Task losses on common independent test episodes. Held-out disturbance or query losses are averaged within each episode before computing pointwise Student 95\\% intervals. Only the posterior-mean curve carries a confidence band in the main absolute-loss panels. The contact paired panel isolates the same-data modal, matched-isotropic and regularized spectral controls; response-only GREAT remains in its absolute-loss panel and the full supplementary grid. Contact paired points show mean loss differences and pointwise Student 95\\% confidence intervals across independent episodes, including every episode outlier; they are not posterior intervals. Beamforming paired boxes show the distribution of episode differences, not confidence intervals. The same-$A_t$ modal and matched-isotropic controls isolate posterior moments; GREAT and application-specific controls have separately validated settings and their stated information. Beamforming power ratios are $10\\log_{10}(P/P_{\\mathrm{oracle}})$, where the denominator is true-covariance oracle output power. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
+      "proposed_latex_caption": "Task losses on common independent test episodes. Losses are averaged within each episode before pointwise Student 95\\% intervals. For contact, main panel (a) shows stationary concentrated-input checkpoint MSE versus observation count, with the posterior-mean confidence band; panel (b) shows absolute episode-average MSE for the moving sphere condition, with a confidence interval for every method including the posterior mean. All methods in panel (b) use the same independent episodes. The separate second page retains paired MSE differences; these are absolute differences in squared velocity units, not relative MSE. A posterior mean compared with itself has identically zero paired difference. Beamforming paired boxes show the distribution of same-episode differences, not confidence intervals. GREAT and application-specific controls retain their stated information and independently validated settings. Complex beamforming GREAT is an extension of the real algorithm, as described in the notebook text. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
       "placement": "main",
       "pages": [
         {
           "page": 1,
           "figure_size_in": [
             7.0,
-            4.1
+            4.6739999999999995
           ],
           "axes": 2,
           "titles": false,
@@ -3162,7 +3165,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [
             {
@@ -3196,8 +3199,8 @@
         }
       ],
       "output_hashes": {
-        "task_performance.pdf": "eb599e680291f87cb46a3a8a4a7e2343cdf308c4c3a4a3ec785d33b13ccdae5b",
-        "preview/task_performance.png": "cebf01a74bf50aaeb14f94bc7ba509a1302e26bd325af9f139640530d7705d0b"
+        "task_performance.pdf": "b7a69919389706ea35e28539819061fcfa6b87555d6072d5e1a14f5762719eeb",
+        "preview/task_performance.png": "71fd0c8d291c6bb54a6ecf3b409fc5e4715a57f55ec69c13b39efce298c46543"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -3206,7 +3209,7 @@
     "posterior_anisotropy.pdf": {
       "status": "completed",
       "experiment": "beamforming",
-      "formula_or_claim": "a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
+      "formula_or_claim": "a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.posterior_anisotropy",
       "configurations": {
@@ -4039,10 +4042,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -4707,14 +4711,14 @@
           "results/beamforming/data/paper/theory/manifest.json"
         ]
       },
-      "proposed_latex_caption": "a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
+      "proposed_latex_caption": "a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
       "placement": "contact main; beamforming supplementary",
       "pages": [
         {
           "page": 1,
           "figure_size_in": [
             7.0,
-            5.3
+            6.041999999999999
           ],
           "axes": 4,
           "titles": false,
@@ -4725,7 +4729,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "cohort": "stationary",
@@ -4758,15 +4762,15 @@
               "mode_centered": false,
               "density_contours": false,
               "depth_cues": "Front-visible native coordinate great circles; no density shading",
-              "cmap": "bingham_density_blue_pink",
+              "cmap": "density_blue_pink_yellow",
               "display_mesh_only": true
             }
           ]
         }
       ],
       "output_hashes": {
-        "posterior_anisotropy.pdf": "7d8820e971d6e9471b5243cacd0173f63468f8b3a6f2441bd33d0dbf890c41b6",
-        "preview/posterior_anisotropy.png": "ad6971632a76f8e30c73d59d7453c926c2850b143da2e5738ebf7f0b3b51706d"
+        "posterior_anisotropy.pdf": "eae2a8d2a2bc6ae2c4975c4a86094355ffb21e9c393ae90392de66394a3c7f9d",
+        "preview/posterior_anisotropy.png": "7b983b13b0c357bafb13f7f2ce2d843ce3cc0fbf0430ba52d576e47395360c48"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -5611,10 +5615,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -6283,7 +6288,7 @@
           "page": 1,
           "figure_size_in": [
             7.0,
-            5.4
+            6.156
           ],
           "axes": 4,
           "titles": false,
@@ -6294,7 +6299,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "noise_change",
           "panel_selections": [],
@@ -6304,7 +6309,7 @@
           "page": 2,
           "figure_size_in": [
             7.0,
-            5.4
+            6.156
           ],
           "axes": 4,
           "titles": false,
@@ -6315,7 +6320,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "smooth",
           "panel_selections": [],
@@ -6325,7 +6330,7 @@
           "page": 3,
           "figure_size_in": [
             7.0,
-            5.4
+            6.156
           ],
           "axes": 4,
           "titles": false,
@@ -6336,7 +6341,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "power_change",
           "panel_selections": [],
@@ -6344,10 +6349,10 @@
         }
       ],
       "output_hashes": {
-        "noise_adaptation.pdf": "8d2241dc81bef295e8c33041339fd9524b07fce0cbce208c4bb237af9f1dda02",
-        "preview/noise_adaptation.png": "11a54c9e0782a6d41684008e5df2eaec022c34e56c26118283df6cf6947518e7",
-        "preview/noise_adaptation_page2.png": "20969b2732d4017b0c861a6b9ed8460d0c500f926753b16a32dcace08866e9bb",
-        "preview/noise_adaptation_page3.png": "0c066e6df1890cfe4b0bb34e90abefa11649082d82d054883ac0439390ed3a9a"
+        "noise_adaptation.pdf": "b350a2633fcee891233163ce31d59a8f48eb67f4682a543c61b3d64d5f74e4be",
+        "preview/noise_adaptation.png": "b7dde8073d2b5c3ed9aba9bf363853b8c0e35e1ed9a9ed3cfbe310787494d171",
+        "preview/noise_adaptation_page2.png": "2fcd3e34a70ebb8a3baa4a8c57f2523e921049c52d9b24bf5159bd5762cde385",
+        "preview/noise_adaptation_page3.png": "c730dc1d59b48d54f140751dbf424e7c2bccad53555ec202fc80585ff8b62ae7"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -7304,10 +7309,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -7978,7 +7984,7 @@
           "page": 1,
           "figure_size_in": [
             7.0,
-            2.7
+            3.35
           ],
           "axes": 2,
           "titles": false,
@@ -7989,15 +7995,15 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "information.pdf": "7fe75852e3ce02277c6a5d65d7ccc4e3a7efe3c1099b245cb27979e3cd5691ae",
-        "preview/information.png": "d8326a5e69d1d0550078dc8089ae43b02207face4a897deebc65578bfbff25e1"
+        "information.pdf": "55389d8b37f86199546625e81f88d6a2c140e4ffdf116396f0de81848a2c7900",
+        "preview/information.png": "4698e4a0c95bcaf448e8a778500323675c66f2f0eb1e9f42f54764bd1a2c3d20"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -8951,10 +8957,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -9625,7 +9632,7 @@
           "page": 1,
           "figure_size_in": [
             7.0,
-            5.3
+            6.041999999999999
           ],
           "axes": 3,
           "titles": false,
@@ -9636,15 +9643,15 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "posterior_curvature.pdf": "2b80658d8b7e56444e4d5be5fc5e64ee44bbe4e9f81177daf29ba3893651d24f",
-        "preview/posterior_curvature.png": "649415e7d5f11739e3b096df18d2b5d400f588b1f718764450b11fc0df57ffb5"
+        "posterior_curvature.pdf": "112345a06f21ad6e97a0b63a2ba4322252ae0adff0ecc74b06556c6a9044b67d",
+        "preview/posterior_curvature.png": "58cee51df58b550ffb8194d12894d49c38b5025be25eb80e71d11953660f5363"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -10598,10 +10605,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -11360,7 +11368,7 @@
           "page": 1,
           "figure_size_in": [
             7.0,
-            5.5
+            6.27
           ],
           "axes": 4,
           "titles": false,
@@ -11371,7 +11379,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "condition": "static",
@@ -11387,7 +11395,7 @@
           "page": 2,
           "figure_size_in": [
             7.0,
-            3.7
+            4.218
           ],
           "axes": 1,
           "titles": false,
@@ -11398,7 +11406,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "terminal_cohorts": [
@@ -11475,7 +11483,7 @@
           "page": 3,
           "figure_size_in": [
             7.0,
-            3.0
+            3.42
           ],
           "axes": 1,
           "titles": false,
@@ -11486,7 +11494,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "condition": "static",
@@ -11502,7 +11510,7 @@
           "page": 4,
           "figure_size_in": [
             7.0,
-            3.0
+            3.42
           ],
           "axes": 1,
           "titles": false,
@@ -11513,7 +11521,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "condition": "static",
@@ -11527,11 +11535,11 @@
         }
       ],
       "output_hashes": {
-        "tracking_bound.pdf": "938b296bdac6fa1f7a065277aa476e6673efeaf401239d4e0feb2bd92b570935",
-        "preview/tracking_bound.png": "66be61e582047ece0d4d14be697b522d2336aa570fcbf15524af309367ff5302",
-        "preview/tracking_bound_page2.png": "1bb7d1efe94ad07888b019614dda7e9d1212a801e1de7344fc41d761189d59e9",
-        "preview/tracking_bound_page3.png": "6e569d2e5fc57c247ebdb35dcc305c4ad9729743b97b82171d9308b38427c534",
-        "preview/tracking_bound_page4.png": "7192c720be3d0d46c9f795725bb0fd35a51f39a04235cd2bff53e7c96c8e80ed"
+        "tracking_bound.pdf": "5cede1f3cab80f450629f39cceb89ffb41d887d074ff6c53dc1e324b5e4a1c00",
+        "preview/tracking_bound.png": "b1f81833c2320c93330160084addbe480003481e3808a267ba60c5e09485be7c",
+        "preview/tracking_bound_page2.png": "f6eca72b4b9ac98b466d47865ec8f7c958a4466cf5ab967b46df3c3beb10ecfe",
+        "preview/tracking_bound_page3.png": "52719ff149e7a29f1fe932eb25b8d6f26690f9bc9898e0277ad1c8f294790d52",
+        "preview/tracking_bound_page4.png": "f5083c7f088b08e13a335dd1ff16b084d35d3d7a20720ebeb659e25fad240c77"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -11540,7 +11548,7 @@
     "block_updates.pdf": {
       "status": "completed",
       "experiment": "beamforming",
-      "formula_or_claim": "Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing/action cadence cost is reported in the computation output.",
+      "formula_or_claim": "Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing and task-decision cost is reported in the computation output.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.block_updates",
       "configurations": {
@@ -12485,10 +12493,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -13152,14 +13161,14 @@
           "results/implementation_audit/paper/information/fisher_matrices.csv"
         ]
       },
-      "proposed_latex_caption": "Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing/action cadence cost is reported in the computation output.",
+      "proposed_latex_caption": "Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing and task-decision cost is reported in the computation output.",
       "placement": "supplementary",
       "pages": [
         {
           "page": 1,
           "figure_size_in": [
             7.0,
-            2.8
+            3.35
           ],
           "axes": 3,
           "titles": false,
@@ -13170,15 +13179,15 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "block_updates.pdf": "c0ef0bb1469978ccb9281b78451338db8179fa8b9941033e461bc1299d83d375",
-        "preview/block_updates.png": "a8c59aace318bcf681d8a7f4ec07cbf8fe411996bfd8779b376295cea1135ada"
+        "block_updates.pdf": "b55ef3f414105c61e19619f88ac5be8d13d73ca3e782a602fb4a388c92a9a09f",
+        "preview/block_updates.png": "5a97bc9b198cb89ad62fa8916f63e114745319e0fa4fa682eb65ed4bc2f1bcf2"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -14132,10 +14141,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -14873,7 +14883,7 @@
           "page": 1,
           "figure_size_in": [
             7.0,
-            4.4
+            5.016
           ],
           "axes": 2,
           "titles": false,
@@ -14884,7 +14894,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "n": 32,
@@ -14914,7 +14924,7 @@
           "page": 2,
           "figure_size_in": [
             7.0,
-            4.4
+            5.016
           ],
           "axes": 2,
           "titles": false,
@@ -14925,7 +14935,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "n": 64,
@@ -14955,7 +14965,7 @@
           "page": 3,
           "figure_size_in": [
             7.0,
-            4.4
+            5.016
           ],
           "axes": 2,
           "titles": false,
@@ -14966,7 +14976,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "n": 128,
@@ -14996,7 +15006,7 @@
           "page": 4,
           "figure_size_in": [
             7.0,
-            3.5
+            3.9899999999999998
           ],
           "axes": 1,
           "titles": false,
@@ -15007,7 +15017,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "static",
           "panel_selections": [
@@ -15037,7 +15047,7 @@
           "page": 5,
           "figure_size_in": [
             7.0,
-            3.5
+            3.9899999999999998
           ],
           "axes": 1,
           "titles": false,
@@ -15048,7 +15058,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "smooth",
           "panel_selections": [
@@ -15078,7 +15088,7 @@
           "page": 6,
           "figure_size_in": [
             7.0,
-            3.5
+            3.9899999999999998
           ],
           "axes": 1,
           "titles": false,
@@ -15089,7 +15099,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "abrupt",
           "panel_selections": [
@@ -15119,7 +15129,7 @@
           "page": 7,
           "figure_size_in": [
             7.0,
-            3.5
+            3.9899999999999998
           ],
           "axes": 1,
           "titles": false,
@@ -15130,7 +15140,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "noise_change",
           "panel_selections": [
@@ -15160,7 +15170,7 @@
           "page": 8,
           "figure_size_in": [
             7.0,
-            3.5
+            3.9899999999999998
           ],
           "axes": 1,
           "titles": false,
@@ -15171,7 +15181,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "power_change",
           "panel_selections": [
@@ -15199,15 +15209,15 @@
         }
       ],
       "output_hashes": {
-        "additional_comparisons.pdf": "12e9129b9ea3c82db85598694b3609a1ae1082409a72609723a524346151e524",
-        "preview/additional_comparisons.png": "dfb3472fa62af85ae6a3782ca7e2fed53ff8b0e47a732756a4d4fa8836723055",
-        "preview/additional_comparisons_page2.png": "35da63a1721c267047846c654b1d923392d2a9967f7acfa98526f08538fa085c",
-        "preview/additional_comparisons_page3.png": "a3632c6f262cb4424cf9706b1a6bdbed7d90342ed31d300b4e5fda95a5464bb5",
-        "preview/additional_comparisons_page4.png": "99441cd2105c86c5035481accd02a05c480d89443c9dce160791a1fec505bd71",
-        "preview/additional_comparisons_page5.png": "bb33da7e37a9eed210fd8dfa78911f82e504bcbe3c96fff8bcfb8ec04c46e0ea",
-        "preview/additional_comparisons_page6.png": "5d593c3d466b290e3ba2a5a5e70a7019f0984f043bfe380a8a0e86f675cf2537",
-        "preview/additional_comparisons_page7.png": "3cb4f8a26e16d9fd8f6b8d5e7e0370882b4dafe832f51f9616474945a2dfdf57",
-        "preview/additional_comparisons_page8.png": "432c9a29e753419c4842854b4bbcc42851e1a61b6f9129b118fc4a0179fa8598"
+        "additional_comparisons.pdf": "aa25eb5d1fea623827ba7829145f5dd70b525353ebc21ebb015aca6d0fb91b89",
+        "preview/additional_comparisons.png": "3745a3eeb633f003f454a2514c4c005a800a2ecfd430c547b1c2c95757e0db5d",
+        "preview/additional_comparisons_page2.png": "17f291bedd995c3cceb9e5fb1e8322b1ac1c92b446ae2184f92abfa0e6a249e1",
+        "preview/additional_comparisons_page3.png": "09efc960c7fb7116c3be2c60c0ae1cb8328ebd5559b1a400779c48a572120bd0",
+        "preview/additional_comparisons_page4.png": "21eb624ddcc19290bd95502bb4a56f55fad906865cdae3d71fe1ab393328065a",
+        "preview/additional_comparisons_page5.png": "d204504e833f1795f45a318d0b3b4c1b538846978acaeba016dec6666554a4ab",
+        "preview/additional_comparisons_page6.png": "d5b61e89edacd781bce748113b1a453a0b2a031bfb3d4d83c9655be83b94a3e5",
+        "preview/additional_comparisons_page7.png": "4a9e3f6b25d22b83ee34122a4740d4f3ea40c4da2fb9ee9f7e09094b7b5a4e4d",
+        "preview/additional_comparisons_page8.png": "3e8b9aaefb2a1c58f8e28297769d688ce8788ea5276203fcf0897ed71c5978ea"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -16316,10 +16326,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -16996,7 +17007,7 @@
           "page": 1,
           "figure_size_in": [
             7.0,
-            2.8
+            3.35
           ],
           "axes": 2,
           "titles": false,
@@ -17007,15 +17018,15 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "variance_estimation.pdf": "b934b651307207baf8d4c082f007c45061273655e7b8fa802481412a6d295067",
-        "preview/variance_estimation.png": "25a6f7298f84982346e6d3d95312e795bfe5b1fb062ca2467f4e80782aff5fd2"
+        "variance_estimation.pdf": "d1a06b6fb1200a1b0cf4f30f3b1b8ebbdc304340f5677aaacff1113c5b7a1d87",
+        "preview/variance_estimation.png": "ca03f405e5409742b92ae87bdb02b93f439b18cdfa561ded1f74ce2d3f5529ca"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -18124,10 +18135,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -18905,7 +18917,7 @@
           "page": 1,
           "figure_size_in": [
             7.0,
-            3.3
+            3.7619999999999996
           ],
           "axes": 3,
           "titles": false,
@@ -18916,7 +18928,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -18931,7 +18943,7 @@
           "page": 2,
           "figure_size_in": [
             7.0,
-            3.3
+            3.7619999999999996
           ],
           "axes": 3,
           "titles": false,
@@ -18942,7 +18954,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -18957,7 +18969,7 @@
           "page": 3,
           "figure_size_in": [
             7.0,
-            3.3
+            3.7619999999999996
           ],
           "axes": 3,
           "titles": false,
@@ -18968,7 +18980,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -18983,7 +18995,7 @@
           "page": 4,
           "figure_size_in": [
             7.0,
-            3.3
+            3.7619999999999996
           ],
           "axes": 3,
           "titles": false,
@@ -18994,7 +19006,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -19009,7 +19021,7 @@
           "page": 5,
           "figure_size_in": [
             7.0,
-            3.3
+            3.7619999999999996
           ],
           "axes": 3,
           "titles": false,
@@ -19020,7 +19032,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "drifting",
           "selection": {
@@ -19035,7 +19047,7 @@
           "page": 6,
           "figure_size_in": [
             7.0,
-            3.3
+            3.7619999999999996
           ],
           "axes": 3,
           "titles": false,
@@ -19046,7 +19058,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "drifting",
           "selection": {
@@ -19061,7 +19073,7 @@
           "page": 7,
           "figure_size_in": [
             7.0,
-            6.8
+            7.751999999999999
           ],
           "axes": 3,
           "titles": false,
@@ -19072,7 +19084,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -19107,7 +19119,7 @@
           "page": 8,
           "figure_size_in": [
             7.0,
-            6.8
+            7.751999999999999
           ],
           "axes": 3,
           "titles": false,
@@ -19118,7 +19130,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -19153,7 +19165,7 @@
           "page": 9,
           "figure_size_in": [
             7.0,
-            6.8
+            7.751999999999999
           ],
           "axes": 3,
           "titles": false,
@@ -19164,7 +19176,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "drifting",
           "selection": {
@@ -19197,16 +19209,16 @@
         }
       ],
       "output_hashes": {
-        "predictive_calibration.pdf": "604239f75bf63bba65045174db5f14a77f98935c03c82f1a1b8df1187053aa96",
-        "preview/predictive_calibration.png": "e230734c7b40f69cc495470c470ec64ed9b6b7a775eb510b6128133d2cdf550e",
-        "preview/predictive_calibration_page2.png": "aecda51cfb99b95af3d192be2250bf1f5585875422b9ae04ba10a91925606365",
-        "preview/predictive_calibration_page3.png": "69958c3b15b62b338efa5883a72987c55277f532d9b7407381f0e18ff51160cb",
-        "preview/predictive_calibration_page4.png": "0721b2aa6007ff6a6c4c1fdaba2800805fb9f97e8782f337de0a10c3f1227ab3",
-        "preview/predictive_calibration_page5.png": "d5e4cf50d7183adab8157a1104c33a2b3982f001084e3a86f9929cdfa5e49e90",
-        "preview/predictive_calibration_page6.png": "b74e251cc71ec2f5f86f60ede9d625f0b95f92033b9c5b6ed81ea6cbe78633fc",
-        "preview/predictive_calibration_page7.png": "3c043438266c90b3ab078e6c5a008ff7050e2e39da3e792d8eed14f2fa25727e",
-        "preview/predictive_calibration_page8.png": "592e111f17fd3877b712255fa902819ca38db05e1aec62ee4a7bdd6216f34bfd",
-        "preview/predictive_calibration_page9.png": "50f167cac2271c7d171414acbf6aa56f4a7f8684ef4a7c1bd04b16fe08d94a9d"
+        "predictive_calibration.pdf": "a633e73f93affe5eb2c93ba16a15af8ccd96c895fe653c2dbea0443ae8526a95",
+        "preview/predictive_calibration.png": "d3fd8532ddf43c8fbc3bd50ec9a5e5de4d07bd180f4e9541e7f4a5d6d507def0",
+        "preview/predictive_calibration_page2.png": "1b7c05a60e441516240311f8576e3c4b6dbd2d5e459b4aaef638af6d9eddb193",
+        "preview/predictive_calibration_page3.png": "64484b3999d616f62c338383e3e28e842012cc769c7b99e3b718a15ffdf184fc",
+        "preview/predictive_calibration_page4.png": "33579c3b87d1c8b1715ffc4c09438d8e9a7bc5bb89dc46221c3e36ceebc24228",
+        "preview/predictive_calibration_page5.png": "fe12eb620e35a4912390a1dd3ea7937a7075a0980eb050e0073a80de1767406a",
+        "preview/predictive_calibration_page6.png": "9d9677bfbc4b99aa83cf73a1494c9c589e056cecddda4303289d0c86f4182364",
+        "preview/predictive_calibration_page7.png": "8ce2c489e5dd85c6c72ed23cb2f87287cd11b5acc1e718140140567e3d6bfa31",
+        "preview/predictive_calibration_page8.png": "375833d5321b9e56f355f64fb8c6a545bd00b6cc37e5218a0dcf12b8b644ab52",
+        "preview/predictive_calibration_page9.png": "d5e435037bf4f79325cd588f37c219725418d2de35203fb9f9de131ab865da7d"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -20315,10 +20327,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -21000,7 +21013,7 @@
           "page": 1,
           "figure_size_in": [
             7.0,
-            2.8
+            3.35
           ],
           "axes": 2,
           "titles": false,
@@ -21011,7 +21024,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "cohort": "calibration",
@@ -21024,8 +21037,8 @@
         }
       ],
       "output_hashes": {
-        "predictive_scores.pdf": "b7761b920fde840dc2b04ef8fa93c0cf262abd6650c324b0003551c41e93b278",
-        "preview/predictive_scores.png": "2eea474490c49a4b138de60877661f8c0a985351f32b7cc4f76b217d23e7200b"
+        "predictive_scores.pdf": "568ca919e15886bfc105e5385e7fe752596d9cb211d015bf8f62c60651366249",
+        "preview/predictive_scores.png": "848f55f419c22e696d6b14e09f230a3bbeb18f7c22a3912963cfd57ad2b22534"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -22134,10 +22147,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -22826,7 +22840,7 @@
           "page": 1,
           "figure_size_in": [
             7.0,
-            3.0
+            3.42
           ],
           "axes": 2,
           "titles": false,
@@ -22837,7 +22851,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "cohort": "mismatch",
@@ -22857,8 +22871,8 @@
         }
       ],
       "output_hashes": {
-        "model_mismatch.pdf": "c4adef5709299ef3b2ba9798dbcf027deb178f6145cde6e567d6253670edf798",
-        "preview/model_mismatch.png": "ad056ae005af0ce25a06e468079cc54e4b256160c20ab9e388049808ddb9dadb"
+        "model_mismatch.pdf": "a34a23ae71b59e67ecfa1921ab330a3f1a1678f4623f30f3bc22edc01eaf0d6f",
+        "preview/model_mismatch.png": "8e13642bbb7d3b839d0729260fec3b235765d0101a4cd2ebb514db95294dfb01"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -22867,7 +22881,7 @@
     "computation_time.pdf": {
       "status": "completed",
       "experiment": "beamforming",
-      "formula_or_claim": "Warmed single-thread pipeline cost at actual action, reporting and learning schedules. Action cadence is labelled in observations and is distinct from the fixed $L=32$ observations per EM fit. EM bars use two or four iterations, and optional uncertainty reports occur every 32 observations. Correction, modal/mean action, uncertainty report and variance fitting are nonoverlapping phases; a native moment routine already includes its eigensystem. Medians and upper quantiles use the declared randomized repetitions. Phase stacks sum per-phase medians and need not equal the median full-cycle wall time. Stored state and tracked allocation have separate scopes; native workspaces and RSS are not silently included. Timings are host measurements, not worst-case deadlines. Synthetic spectra and statistical-state task fixtures remain distinct. Task/cost trade-off points use the same predeclared episode 0, not the population task-loss mean; clock repetitions quantify execution variability only.",
+      "formula_or_claim": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance episodes or worst-case deadlines.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.computation_time",
       "configurations": {
@@ -23967,10 +23981,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -24139,7 +24154,15 @@
       "display_selection": {
         "figure": "computation_time",
         "pages": [
-          {}
+          {
+            "observations": 64,
+            "diagnostic": "processing_time_and_operations",
+            "included": "All 64 parameter updates and the stated task decisions, uncertainty reports and EM fits"
+          },
+          {
+            "observations": 64,
+            "diagnostic": "memory"
+          }
         ],
         "rule": "Predeclared representative selectors and full-page condition order are documented in pages and display_rules; no selection uses observed method advantage."
       },
@@ -24640,16 +24663,16 @@
           "results/implementation_audit/paper/em/fits.csv"
         ]
       },
-      "proposed_latex_caption": "Warmed single-thread pipeline cost at actual action, reporting and learning schedules. Action cadence is labelled in observations and is distinct from the fixed $L=32$ observations per EM fit. EM bars use two or four iterations, and optional uncertainty reports occur every 32 observations. Correction, modal/mean action, uncertainty report and variance fitting are nonoverlapping phases; a native moment routine already includes its eigensystem. Medians and upper quantiles use the declared randomized repetitions. Phase stacks sum per-phase medians and need not equal the median full-cycle wall time. Stored state and tracked allocation have separate scopes; native workspaces and RSS are not silently included. Timings are host measurements, not worst-case deadlines. Synthetic spectra and statistical-state task fixtures remain distinct. Task/cost trade-off points use the same predeclared episode 0, not the population task-loss mean; clock repetitions quantify execution variability only.",
+      "proposed_latex_caption": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance episodes or worst-case deadlines.",
       "placement": "compact beamforming main; complete versions supplementary",
       "pages": [
         {
           "page": 1,
           "figure_size_in": [
             7.0,
-            6.3
+            7.068
           ],
-          "axes": 3,
+          "axes": 2,
           "titles": false,
           "title_audit": {
             "figure_title": false,
@@ -24658,8 +24681,37 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
+          "selection": {
+            "observations": 64,
+            "diagnostic": "processing_time_and_operations",
+            "included": "All 64 parameter updates and the stated task decisions, uncertainty reports and EM fits"
+          },
+          "panel_selections": [],
+          "sphere_displays": []
+        },
+        {
+          "page": 2,
+          "figure_size_in": [
+            7.0,
+            3.7619999999999996
+          ],
+          "axes": 1,
+          "titles": false,
+          "title_audit": {
+            "figure_title": false,
+            "axes_with_title": 0,
+            "preview_dpi": 300.0,
+            "latex": true
+          },
+          "font_sizes_pt": [
+            11.0
+          ],
+          "selection": {
+            "observations": 64,
+            "diagnostic": "memory"
+          },
           "panel_selections": [
             {
               "memory_action_cadence": 64,
@@ -24671,8 +24723,9 @@
         }
       ],
       "output_hashes": {
-        "computation_time.pdf": "83332f364772f52281aa56912dc2214ed3c2545e907ec7f31177c22d50c8fa2d",
-        "preview/computation_time.png": "1ff5dd99370933596a1e9f59b6e44f50e21119808154962dedef623095390320"
+        "computation_time.pdf": "1db47d9144b664e8dbf81282a56039895e8a3495c0afe1ed2681aaf5d01e7ff2",
+        "preview/computation_time.png": "6d783f64c74de454f2d36f4353318abac9862b7bb238da4e1dc6f4c39c50ccac",
+        "preview/computation_time_page2.png": "59c65cee05fe1dd603a01820008c5c471fe1952762907450be036c2388ddf1b8"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -25781,10 +25834,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -26465,7 +26519,7 @@
           "page": 1,
           "figure_size_in": [
             7.0,
-            2.8
+            3.35
           ],
           "axes": 2,
           "titles": false,
@@ -26476,7 +26530,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -26485,7 +26539,7 @@
           "page": 2,
           "figure_size_in": [
             7.0,
-            2.8
+            3.35
           ],
           "axes": 1,
           "titles": false,
@@ -26496,7 +26550,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -26505,7 +26559,7 @@
           "page": 3,
           "figure_size_in": [
             7.0,
-            3.5
+            3.9899999999999998
           ],
           "axes": 1,
           "titles": false,
@@ -26516,7 +26570,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "scope": "Large-dimension numerical rows, separate mean/normalizer/reference/second-moment/tail/state flags; unevaluated targets never counted as resolved"
@@ -26526,10 +26580,10 @@
         }
       ],
       "output_hashes": {
-        "numerical_accuracy.pdf": "219b2a0954c3d93fae3053a65a34ce6b55a93a535adef39571ad3f2469dde196",
-        "preview/numerical_accuracy.png": "12a4897915ec9d505bf345feb5843ec28287b01bb78d8b022f586cc660feb76a",
-        "preview/numerical_accuracy_page2.png": "c0650f3e109a81e48f39a84805fd0e81aebb081482844bec9bcc96774f671ff8",
-        "preview/numerical_accuracy_page3.png": "3d54b465e7f6c22bf54d3fe667088e19aa8d4b73391ace54633947fedfa56769"
+        "numerical_accuracy.pdf": "757ef007b08d3336f6cdeb1f0ec4289536d5744af0b4de4a525dc7adbe1685e5",
+        "preview/numerical_accuracy.png": "4816c81a2ac0fea031104d0d022689985a40f3e4e9c2c2628500b2b62ab513fa",
+        "preview/numerical_accuracy_page2.png": "76b4344d29307cd562a0f04d55f876ace4847786f610118fd4f9b7ff6efa5d40",
+        "preview/numerical_accuracy_page3.png": "2493648c3a18ca36328be1e8af22462d8468b6568541dc57572900622e23b194"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -26538,7 +26592,7 @@
     "paper_summary.pdf": {
       "status": "completed",
       "experiment": "beamforming",
-      "formula_or_claim": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and matched-cadence computational cost. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries.",
+      "formula_or_claim": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and computational cost with matched task-decision intervals. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.paper_summary",
       "configurations": {
@@ -27638,10 +27692,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -28311,14 +28366,14 @@
           "results/implementation_audit/paper/em/fits.csv"
         ]
       },
-      "proposed_latex_caption": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and matched-cadence computational cost. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries.",
+      "proposed_latex_caption": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and computational cost with matched task-decision intervals. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries.",
       "placement": "main",
       "pages": [
         {
           "page": 1,
           "figure_size_in": [
             7.0,
-            6.6
+            7.523999999999999
           ],
           "axes": 4,
           "titles": false,
@@ -28329,7 +28384,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [
             {
@@ -28369,8 +28424,8 @@
         }
       ],
       "output_hashes": {
-        "paper_summary.pdf": "fcb45119a493b0cbeae9b658cd04d7760a374ee55ac1d3f0f9a87618c3102cf1",
-        "preview/paper_summary.png": "f1cea54aeeb8526adf4fa1a2af731d2bfead43ec651b3872927325c0560dd763"
+        "paper_summary.pdf": "6d6c08a54de5ebdc479c27abdfa89e1dc8ced414920dc9b80f8da5891621450a",
+        "preview/paper_summary.png": "3b81b67fbad9c0f70fe815af9b3d1e7dcad0b65db002b0d0305c37ae40557c34"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Complex density sections are explicitly restrictions, never full or normalized sphere marginals",
@@ -28396,7 +28451,7 @@
           "page": 1,
           "figure_size_in": [
             7.0,
-            2.7
+            3.35
           ],
           "axes": 2,
           "titles": false,
@@ -28407,7 +28462,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -28416,7 +28471,7 @@
           "page": 2,
           "figure_size_in": [
             7.0,
-            5.3
+            6.041999999999999
           ],
           "axes": 3,
           "titles": false,
@@ -28427,7 +28482,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -28436,7 +28491,7 @@
           "page": 3,
           "figure_size_in": [
             7.0,
-            5.5
+            6.27
           ],
           "axes": 4,
           "titles": false,
@@ -28447,7 +28502,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "condition": "static",
@@ -28463,7 +28518,7 @@
           "page": 4,
           "figure_size_in": [
             7.0,
-            3.7
+            4.218
           ],
           "axes": 1,
           "titles": false,
@@ -28474,7 +28529,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "terminal_cohorts": [
@@ -28551,7 +28606,7 @@
           "page": 5,
           "figure_size_in": [
             7.0,
-            3.0
+            3.42
           ],
           "axes": 1,
           "titles": false,
@@ -28562,7 +28617,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "condition": "static",
@@ -28578,7 +28633,7 @@
           "page": 6,
           "figure_size_in": [
             7.0,
-            3.0
+            3.42
           ],
           "axes": 1,
           "titles": false,
@@ -28589,7 +28644,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "condition": "static",
@@ -30293,10 +30348,11 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -30462,7 +30518,7 @@
         "results/beamforming/tables/paper/theory/numerical_accuracy.csv": "4dc95fd795299aa7924d25b31865ead35d814bec571f86367a561aa5c40e712d"
       },
       "output_hashes": {
-        "supp_information_tracking.pdf": "61e7fd16fb610b2706ac8cdc31f4b56c3825a3b4ee55ac00b317e69f4da56191"
+        "supp_information_tracking.pdf": "0e8e867de53eb9efea3f886f346f5b4e6cf0e830775c775bccbdd7790f4eab40"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     },
@@ -30477,14 +30533,14 @@
         "additional_comparisons.pdf",
         "posterior_anisotropy.pdf"
       ],
-      "proposed_latex_caption": "Task losses on common independent test episodes. Held-out disturbance or query losses are averaged within each episode before computing pointwise Student 95\\% intervals. Only the posterior-mean curve carries a confidence band in the main absolute-loss panels. The contact paired panel isolates the same-data modal, matched-isotropic and regularized spectral controls; response-only GREAT remains in its absolute-loss panel and the full supplementary grid. Contact paired points show mean loss differences and pointwise Student 95\\% confidence intervals across independent episodes, including every episode outlier; they are not posterior intervals. Beamforming paired boxes show the distribution of episode differences, not confidence intervals. The same-$A_t$ modal and matched-isotropic controls isolate posterior moments; GREAT and application-specific controls have separately validated settings and their stated information. Beamforming power ratios are $10\\log_{10}(P/P_{\\mathrm{oracle}})$, where the denominator is true-covariance oracle output power. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode. Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing/action cadence cost is reported in the computation output. Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms. a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.",
+      "proposed_latex_caption": "Task losses on common independent test episodes. Losses are averaged within each episode before pointwise Student 95\\% intervals. For contact, main panel (a) shows stationary concentrated-input checkpoint MSE versus observation count, with the posterior-mean confidence band; panel (b) shows absolute episode-average MSE for the moving sphere condition, with a confidence interval for every method including the posterior mean. All methods in panel (b) use the same independent episodes. The separate second page retains paired MSE differences; these are absolute differences in squared velocity units, not relative MSE. A posterior mean compared with itself has identically zero paired difference. Beamforming paired boxes show the distribution of same-episode differences, not confidence intervals. GREAT and application-specific controls retain their stated information and independently validated settings. Complex beamforming GREAT is an extension of the real algorithm, as described in the notebook text. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode. Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing and task-decision cost is reported in the computation output. Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms. a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
       "placement": "supplementary",
       "pages": [
         {
           "page": 1,
           "figure_size_in": [
             7.0,
-            4.1
+            4.6739999999999995
           ],
           "axes": 2,
           "titles": false,
@@ -30495,7 +30551,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [
             {
@@ -30531,7 +30587,7 @@
           "page": 2,
           "figure_size_in": [
             7.0,
-            2.8
+            3.35
           ],
           "axes": 3,
           "titles": false,
@@ -30542,7 +30598,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -30551,7 +30607,7 @@
           "page": 3,
           "figure_size_in": [
             7.0,
-            4.4
+            5.016
           ],
           "axes": 2,
           "titles": false,
@@ -30562,7 +30618,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "n": 32,
@@ -30592,7 +30648,7 @@
           "page": 4,
           "figure_size_in": [
             7.0,
-            4.4
+            5.016
           ],
           "axes": 2,
           "titles": false,
@@ -30603,7 +30659,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "n": 64,
@@ -30633,7 +30689,7 @@
           "page": 5,
           "figure_size_in": [
             7.0,
-            4.4
+            5.016
           ],
           "axes": 2,
           "titles": false,
@@ -30644,7 +30700,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "n": 128,
@@ -30674,7 +30730,7 @@
           "page": 6,
           "figure_size_in": [
             7.0,
-            3.5
+            3.9899999999999998
           ],
           "axes": 1,
           "titles": false,
@@ -30685,7 +30741,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "static",
           "panel_selections": [
@@ -30715,7 +30771,7 @@
           "page": 7,
           "figure_size_in": [
             7.0,
-            3.5
+            3.9899999999999998
           ],
           "axes": 1,
           "titles": false,
@@ -30726,7 +30782,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "smooth",
           "panel_selections": [
@@ -30756,7 +30812,7 @@
           "page": 8,
           "figure_size_in": [
             7.0,
-            3.5
+            3.9899999999999998
           ],
           "axes": 1,
           "titles": false,
@@ -30767,7 +30823,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "abrupt",
           "panel_selections": [
@@ -30797,7 +30853,7 @@
           "page": 9,
           "figure_size_in": [
             7.0,
-            3.5
+            3.9899999999999998
           ],
           "axes": 1,
           "titles": false,
@@ -30808,7 +30864,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "noise_change",
           "panel_selections": [
@@ -30838,7 +30894,7 @@
           "page": 10,
           "figure_size_in": [
             7.0,
-            3.5
+            3.9899999999999998
           ],
           "axes": 1,
           "titles": false,
@@ -30849,7 +30905,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "power_change",
           "panel_selections": [
@@ -30879,7 +30935,7 @@
           "page": 11,
           "figure_size_in": [
             7.0,
-            5.3
+            6.041999999999999
           ],
           "axes": 4,
           "titles": false,
@@ -30890,7 +30946,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "cohort": "stationary",
@@ -30923,7 +30979,7 @@
               "mode_centered": false,
               "density_contours": false,
               "depth_cues": "Front-visible native coordinate great circles; no density shading",
-              "cmap": "bingham_density_blue_pink",
+              "cmap": "density_blue_pink_yellow",
               "display_mesh_only": true
             }
           ]
@@ -32605,10 +32661,11 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -32774,7 +32831,7 @@
         "results/beamforming/tables/paper/theory/numerical_accuracy.csv": "4dc95fd795299aa7924d25b31865ead35d814bec571f86367a561aa5c40e712d"
       },
       "output_hashes": {
-        "supp_comparisons.pdf": "5c214f1095ce26a749c7598bf3773d6ee3f4df9459ac45c0c0c1d0d1c895aab9"
+        "supp_comparisons.pdf": "55b940ed3ca0c57ad13026d72ff671cecee554361722132da79d3dd0235d817f"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     },
@@ -32792,14 +32849,14 @@
         "computation_time.pdf",
         "numerical_accuracy.pdf"
       ],
-      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes. Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $q^H Pq$ for a known unit complex query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime. Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee. Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood. Warmed single-thread pipeline cost at actual action, reporting and learning schedules. Action cadence is labelled in observations and is distinct from the fixed $L=32$ observations per EM fit. EM bars use two or four iterations, and optional uncertainty reports occur every 32 observations. Correction, modal/mean action, uncertainty report and variance fitting are nonoverlapping phases; a native moment routine already includes its eigensystem. Medians and upper quantiles use the declared randomized repetitions. Phase stacks sum per-phase medians and need not equal the median full-cycle wall time. Stored state and tracked allocation have separate scopes; native workspaces and RSS are not silently included. Timings are host measurements, not worst-case deadlines. Synthetic spectra and statistical-state task fixtures remain distinct. Task/cost trade-off points use the same predeclared episode 0, not the population task-loss mean; clock repetitions quantify execution variability only. Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration.",
+      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes. Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $q^H Pq$ for a known unit complex query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime. Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee. Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood. Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance episodes or worst-case deadlines. Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration.",
       "placement": "supplementary",
       "pages": [
         {
           "page": 1,
           "figure_size_in": [
             7.0,
-            2.8
+            3.35
           ],
           "axes": 2,
           "titles": false,
@@ -32810,7 +32867,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -32819,7 +32876,7 @@
           "page": 2,
           "figure_size_in": [
             7.0,
-            5.4
+            6.156
           ],
           "axes": 4,
           "titles": false,
@@ -32830,7 +32887,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "noise_change",
           "panel_selections": [],
@@ -32840,7 +32897,7 @@
           "page": 3,
           "figure_size_in": [
             7.0,
-            5.4
+            6.156
           ],
           "axes": 4,
           "titles": false,
@@ -32851,7 +32908,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "smooth",
           "panel_selections": [],
@@ -32861,7 +32918,7 @@
           "page": 4,
           "figure_size_in": [
             7.0,
-            5.4
+            6.156
           ],
           "axes": 4,
           "titles": false,
@@ -32872,7 +32929,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "power_change",
           "panel_selections": [],
@@ -32882,7 +32939,7 @@
           "page": 5,
           "figure_size_in": [
             7.0,
-            3.3
+            3.7619999999999996
           ],
           "axes": 3,
           "titles": false,
@@ -32893,7 +32950,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -32908,7 +32965,7 @@
           "page": 6,
           "figure_size_in": [
             7.0,
-            3.3
+            3.7619999999999996
           ],
           "axes": 3,
           "titles": false,
@@ -32919,7 +32976,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -32934,7 +32991,7 @@
           "page": 7,
           "figure_size_in": [
             7.0,
-            3.3
+            3.7619999999999996
           ],
           "axes": 3,
           "titles": false,
@@ -32945,7 +33002,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -32960,7 +33017,7 @@
           "page": 8,
           "figure_size_in": [
             7.0,
-            3.3
+            3.7619999999999996
           ],
           "axes": 3,
           "titles": false,
@@ -32971,7 +33028,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -32986,7 +33043,7 @@
           "page": 9,
           "figure_size_in": [
             7.0,
-            3.3
+            3.7619999999999996
           ],
           "axes": 3,
           "titles": false,
@@ -32997,7 +33054,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "drifting",
           "selection": {
@@ -33012,7 +33069,7 @@
           "page": 10,
           "figure_size_in": [
             7.0,
-            3.3
+            3.7619999999999996
           ],
           "axes": 3,
           "titles": false,
@@ -33023,7 +33080,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "drifting",
           "selection": {
@@ -33038,7 +33095,7 @@
           "page": 11,
           "figure_size_in": [
             7.0,
-            6.8
+            7.751999999999999
           ],
           "axes": 3,
           "titles": false,
@@ -33049,7 +33106,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -33084,7 +33141,7 @@
           "page": 12,
           "figure_size_in": [
             7.0,
-            6.8
+            7.751999999999999
           ],
           "axes": 3,
           "titles": false,
@@ -33095,7 +33152,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -33130,7 +33187,7 @@
           "page": 13,
           "figure_size_in": [
             7.0,
-            6.8
+            7.751999999999999
           ],
           "axes": 3,
           "titles": false,
@@ -33141,7 +33198,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "condition": "drifting",
           "selection": {
@@ -33176,7 +33233,7 @@
           "page": 14,
           "figure_size_in": [
             7.0,
-            2.8
+            3.35
           ],
           "axes": 2,
           "titles": false,
@@ -33187,7 +33244,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "cohort": "calibration",
@@ -33202,7 +33259,7 @@
           "page": 15,
           "figure_size_in": [
             7.0,
-            3.0
+            3.42
           ],
           "axes": 2,
           "titles": false,
@@ -33213,7 +33270,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
           "selection": {
             "cohort": "mismatch",
@@ -33235,33 +33292,7 @@
           "page": 16,
           "figure_size_in": [
             7.0,
-            6.3
-          ],
-          "axes": 3,
-          "titles": false,
-          "title_audit": {
-            "figure_title": false,
-            "axes_with_title": 0,
-            "preview_dpi": 300.0,
-            "latex": true
-          },
-          "font_sizes_pt": [
-            9.0
-          ],
-          "panel_selections": [
-            {
-              "memory_action_cadence": 64,
-              "method": "mean",
-              "case": "data_T64"
-            }
-          ],
-          "sphere_displays": []
-        },
-        {
-          "page": 17,
-          "figure_size_in": [
-            7.0,
-            2.8
+            7.068
           ],
           "axes": 2,
           "titles": false,
@@ -33272,16 +33303,21 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
           ],
+          "selection": {
+            "observations": 64,
+            "diagnostic": "processing_time_and_operations",
+            "included": "All 64 parameter updates and the stated task decisions, uncertainty reports and EM fits"
+          },
           "panel_selections": [],
           "sphere_displays": []
         },
         {
-          "page": 18,
+          "page": 17,
           "figure_size_in": [
             7.0,
-            2.8
+            3.7619999999999996
           ],
           "axes": 1,
           "titles": false,
@@ -33292,7 +33328,37 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
+          ],
+          "selection": {
+            "observations": 64,
+            "diagnostic": "memory"
+          },
+          "panel_selections": [
+            {
+              "memory_action_cadence": 64,
+              "method": "mean",
+              "case": "data_T64"
+            }
+          ],
+          "sphere_displays": []
+        },
+        {
+          "page": 18,
+          "figure_size_in": [
+            7.0,
+            3.35
+          ],
+          "axes": 2,
+          "titles": false,
+          "title_audit": {
+            "figure_title": false,
+            "axes_with_title": 0,
+            "preview_dpi": 300.0,
+            "latex": true
+          },
+          "font_sizes_pt": [
+            11.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -33301,7 +33367,7 @@
           "page": 19,
           "figure_size_in": [
             7.0,
-            3.5
+            3.35
           ],
           "axes": 1,
           "titles": false,
@@ -33312,7 +33378,27 @@
             "latex": true
           },
           "font_sizes_pt": [
-            9.0
+            11.0
+          ],
+          "panel_selections": [],
+          "sphere_displays": []
+        },
+        {
+          "page": 20,
+          "figure_size_in": [
+            7.0,
+            3.9899999999999998
+          ],
+          "axes": 1,
+          "titles": false,
+          "title_audit": {
+            "figure_title": false,
+            "axes_with_title": 0,
+            "preview_dpi": 300.0,
+            "latex": true
+          },
+          "font_sizes_pt": [
+            11.0
           ],
           "selection": {
             "scope": "Large-dimension numerical rows, separate mean/normalizer/reference/second-moment/tail/state flags; unevaluated targets never counted as resolved"
@@ -34545,7 +34631,15 @@
             ],
             "endpoint": "observed_oracle_ratio_db"
           },
-          {},
+          {
+            "observations": 64,
+            "diagnostic": "processing_time_and_operations",
+            "included": "All 64 parameter updates and the stated task decisions, uncertainty reports and EM fits"
+          },
+          {
+            "observations": 64,
+            "diagnostic": "memory"
+          },
           {},
           {},
           {
@@ -35052,10 +35146,11 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "99f4d1445e978d431f66eb215790757ce8285c87a51c1ab8bb65303233c6a96d",
-        "scripts/plot_final_simulations.py": "b6b4430a9658ff82e8a7c77bd621a7c9ae7bbe66b46c77a4bcd1dd03492ecb0f",
-        "lib/plotting.py": "8ff3ddc4cbb45bf2682165f7bf76c46acdc51da412cd2993b6444bd351f05ab2",
+        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
+        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -35221,69 +35316,70 @@
         "results/beamforming/tables/paper/theory/numerical_accuracy.csv": "4dc95fd795299aa7924d25b31865ead35d814bec571f86367a561aa5c40e712d"
       },
       "output_hashes": {
-        "supp_variance_prediction_cost.pdf": "7898380e56a1f7f7848d5ded7bd08013f5e4c487d9a63fb6f29fd6b1412c9668"
+        "supp_variance_prediction_cost.pdf": "845e7e2a2d247411e1c87b4fd7b07c521ae0a400794cd7b33b9fbe736e05121b"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     }
   },
   "files": {
-    "setup.pdf": "0378769d1f7fb9456267d7da8554b8a07b9903deb9cb504dd149e0c333ad302d",
-    "preview/setup.png": "8ce5a7085f361423aef7948315f23615e7fb536e1b91ec13dda222f0d35db1af",
-    "task_performance.pdf": "eb599e680291f87cb46a3a8a4a7e2343cdf308c4c3a4a3ec785d33b13ccdae5b",
-    "preview/task_performance.png": "cebf01a74bf50aaeb14f94bc7ba509a1302e26bd325af9f139640530d7705d0b",
-    "posterior_anisotropy.pdf": "7d8820e971d6e9471b5243cacd0173f63468f8b3a6f2441bd33d0dbf890c41b6",
-    "preview/posterior_anisotropy.png": "ad6971632a76f8e30c73d59d7453c926c2850b143da2e5738ebf7f0b3b51706d",
-    "noise_adaptation.pdf": "8d2241dc81bef295e8c33041339fd9524b07fce0cbce208c4bb237af9f1dda02",
-    "preview/noise_adaptation.png": "11a54c9e0782a6d41684008e5df2eaec022c34e56c26118283df6cf6947518e7",
-    "preview/noise_adaptation_page2.png": "20969b2732d4017b0c861a6b9ed8460d0c500f926753b16a32dcace08866e9bb",
-    "preview/noise_adaptation_page3.png": "0c066e6df1890cfe4b0bb34e90abefa11649082d82d054883ac0439390ed3a9a",
-    "information.pdf": "7fe75852e3ce02277c6a5d65d7ccc4e3a7efe3c1099b245cb27979e3cd5691ae",
-    "preview/information.png": "d8326a5e69d1d0550078dc8089ae43b02207face4a897deebc65578bfbff25e1",
-    "posterior_curvature.pdf": "2b80658d8b7e56444e4d5be5fc5e64ee44bbe4e9f81177daf29ba3893651d24f",
-    "preview/posterior_curvature.png": "649415e7d5f11739e3b096df18d2b5d400f588b1f718764450b11fc0df57ffb5",
-    "tracking_bound.pdf": "938b296bdac6fa1f7a065277aa476e6673efeaf401239d4e0feb2bd92b570935",
-    "preview/tracking_bound.png": "66be61e582047ece0d4d14be697b522d2336aa570fcbf15524af309367ff5302",
-    "preview/tracking_bound_page2.png": "1bb7d1efe94ad07888b019614dda7e9d1212a801e1de7344fc41d761189d59e9",
-    "preview/tracking_bound_page3.png": "6e569d2e5fc57c247ebdb35dcc305c4ad9729743b97b82171d9308b38427c534",
-    "preview/tracking_bound_page4.png": "7192c720be3d0d46c9f795725bb0fd35a51f39a04235cd2bff53e7c96c8e80ed",
-    "block_updates.pdf": "c0ef0bb1469978ccb9281b78451338db8179fa8b9941033e461bc1299d83d375",
-    "preview/block_updates.png": "a8c59aace318bcf681d8a7f4ec07cbf8fe411996bfd8779b376295cea1135ada",
-    "additional_comparisons.pdf": "12e9129b9ea3c82db85598694b3609a1ae1082409a72609723a524346151e524",
-    "preview/additional_comparisons.png": "dfb3472fa62af85ae6a3782ca7e2fed53ff8b0e47a732756a4d4fa8836723055",
-    "preview/additional_comparisons_page2.png": "35da63a1721c267047846c654b1d923392d2a9967f7acfa98526f08538fa085c",
-    "preview/additional_comparisons_page3.png": "a3632c6f262cb4424cf9706b1a6bdbed7d90342ed31d300b4e5fda95a5464bb5",
-    "preview/additional_comparisons_page4.png": "99441cd2105c86c5035481accd02a05c480d89443c9dce160791a1fec505bd71",
-    "preview/additional_comparisons_page5.png": "bb33da7e37a9eed210fd8dfa78911f82e504bcbe3c96fff8bcfb8ec04c46e0ea",
-    "preview/additional_comparisons_page6.png": "5d593c3d466b290e3ba2a5a5e70a7019f0984f043bfe380a8a0e86f675cf2537",
-    "preview/additional_comparisons_page7.png": "3cb4f8a26e16d9fd8f6b8d5e7e0370882b4dafe832f51f9616474945a2dfdf57",
-    "preview/additional_comparisons_page8.png": "432c9a29e753419c4842854b4bbcc42851e1a61b6f9129b118fc4a0179fa8598",
-    "variance_estimation.pdf": "b934b651307207baf8d4c082f007c45061273655e7b8fa802481412a6d295067",
-    "preview/variance_estimation.png": "25a6f7298f84982346e6d3d95312e795bfe5b1fb062ca2467f4e80782aff5fd2",
-    "predictive_calibration.pdf": "604239f75bf63bba65045174db5f14a77f98935c03c82f1a1b8df1187053aa96",
-    "preview/predictive_calibration.png": "e230734c7b40f69cc495470c470ec64ed9b6b7a775eb510b6128133d2cdf550e",
-    "preview/predictive_calibration_page2.png": "aecda51cfb99b95af3d192be2250bf1f5585875422b9ae04ba10a91925606365",
-    "preview/predictive_calibration_page3.png": "69958c3b15b62b338efa5883a72987c55277f532d9b7407381f0e18ff51160cb",
-    "preview/predictive_calibration_page4.png": "0721b2aa6007ff6a6c4c1fdaba2800805fb9f97e8782f337de0a10c3f1227ab3",
-    "preview/predictive_calibration_page5.png": "d5e4cf50d7183adab8157a1104c33a2b3982f001084e3a86f9929cdfa5e49e90",
-    "preview/predictive_calibration_page6.png": "b74e251cc71ec2f5f86f60ede9d625f0b95f92033b9c5b6ed81ea6cbe78633fc",
-    "preview/predictive_calibration_page7.png": "3c043438266c90b3ab078e6c5a008ff7050e2e39da3e792d8eed14f2fa25727e",
-    "preview/predictive_calibration_page8.png": "592e111f17fd3877b712255fa902819ca38db05e1aec62ee4a7bdd6216f34bfd",
-    "preview/predictive_calibration_page9.png": "50f167cac2271c7d171414acbf6aa56f4a7f8684ef4a7c1bd04b16fe08d94a9d",
-    "predictive_scores.pdf": "b7761b920fde840dc2b04ef8fa93c0cf262abd6650c324b0003551c41e93b278",
-    "preview/predictive_scores.png": "2eea474490c49a4b138de60877661f8c0a985351f32b7cc4f76b217d23e7200b",
-    "model_mismatch.pdf": "c4adef5709299ef3b2ba9798dbcf027deb178f6145cde6e567d6253670edf798",
-    "preview/model_mismatch.png": "ad056ae005af0ce25a06e468079cc54e4b256160c20ab9e388049808ddb9dadb",
-    "computation_time.pdf": "83332f364772f52281aa56912dc2214ed3c2545e907ec7f31177c22d50c8fa2d",
-    "preview/computation_time.png": "1ff5dd99370933596a1e9f59b6e44f50e21119808154962dedef623095390320",
-    "numerical_accuracy.pdf": "219b2a0954c3d93fae3053a65a34ce6b55a93a535adef39571ad3f2469dde196",
-    "preview/numerical_accuracy.png": "12a4897915ec9d505bf345feb5843ec28287b01bb78d8b022f586cc660feb76a",
-    "preview/numerical_accuracy_page2.png": "c0650f3e109a81e48f39a84805fd0e81aebb081482844bec9bcc96774f671ff8",
-    "preview/numerical_accuracy_page3.png": "3d54b465e7f6c22bf54d3fe667088e19aa8d4b73391ace54633947fedfa56769",
-    "paper_summary.pdf": "fcb45119a493b0cbeae9b658cd04d7760a374ee55ac1d3f0f9a87618c3102cf1",
-    "preview/paper_summary.png": "f1cea54aeeb8526adf4fa1a2af731d2bfead43ec651b3872927325c0560dd763",
-    "supp_information_tracking.pdf": "61e7fd16fb610b2706ac8cdc31f4b56c3825a3b4ee55ac00b317e69f4da56191",
-    "supp_comparisons.pdf": "5c214f1095ce26a749c7598bf3773d6ee3f4df9459ac45c0c0c1d0d1c895aab9",
-    "supp_variance_prediction_cost.pdf": "7898380e56a1f7f7848d5ded7bd08013f5e4c487d9a63fb6f29fd6b1412c9668"
+    "setup.pdf": "6143ab4064b05581ec729c8fe59b7ede876f0cdf76525f3611bc94a00178125a",
+    "preview/setup.png": "f342a0a83f9e0a612f369d5abb15272dd21de71c4232b06f5beb4bdfae6eb85e",
+    "task_performance.pdf": "b7a69919389706ea35e28539819061fcfa6b87555d6072d5e1a14f5762719eeb",
+    "preview/task_performance.png": "71fd0c8d291c6bb54a6ecf3b409fc5e4715a57f55ec69c13b39efce298c46543",
+    "posterior_anisotropy.pdf": "eae2a8d2a2bc6ae2c4975c4a86094355ffb21e9c393ae90392de66394a3c7f9d",
+    "preview/posterior_anisotropy.png": "7b983b13b0c357bafb13f7f2ce2d843ce3cc0fbf0430ba52d576e47395360c48",
+    "noise_adaptation.pdf": "b350a2633fcee891233163ce31d59a8f48eb67f4682a543c61b3d64d5f74e4be",
+    "preview/noise_adaptation.png": "b7dde8073d2b5c3ed9aba9bf363853b8c0e35e1ed9a9ed3cfbe310787494d171",
+    "preview/noise_adaptation_page2.png": "2fcd3e34a70ebb8a3baa4a8c57f2523e921049c52d9b24bf5159bd5762cde385",
+    "preview/noise_adaptation_page3.png": "c730dc1d59b48d54f140751dbf424e7c2bccad53555ec202fc80585ff8b62ae7",
+    "information.pdf": "55389d8b37f86199546625e81f88d6a2c140e4ffdf116396f0de81848a2c7900",
+    "preview/information.png": "4698e4a0c95bcaf448e8a778500323675c66f2f0eb1e9f42f54764bd1a2c3d20",
+    "posterior_curvature.pdf": "112345a06f21ad6e97a0b63a2ba4322252ae0adff0ecc74b06556c6a9044b67d",
+    "preview/posterior_curvature.png": "58cee51df58b550ffb8194d12894d49c38b5025be25eb80e71d11953660f5363",
+    "tracking_bound.pdf": "5cede1f3cab80f450629f39cceb89ffb41d887d074ff6c53dc1e324b5e4a1c00",
+    "preview/tracking_bound.png": "b1f81833c2320c93330160084addbe480003481e3808a267ba60c5e09485be7c",
+    "preview/tracking_bound_page2.png": "f6eca72b4b9ac98b466d47865ec8f7c958a4466cf5ab967b46df3c3beb10ecfe",
+    "preview/tracking_bound_page3.png": "52719ff149e7a29f1fe932eb25b8d6f26690f9bc9898e0277ad1c8f294790d52",
+    "preview/tracking_bound_page4.png": "f5083c7f088b08e13a335dd1ff16b084d35d3d7a20720ebeb659e25fad240c77",
+    "block_updates.pdf": "b55ef3f414105c61e19619f88ac5be8d13d73ca3e782a602fb4a388c92a9a09f",
+    "preview/block_updates.png": "5a97bc9b198cb89ad62fa8916f63e114745319e0fa4fa682eb65ed4bc2f1bcf2",
+    "additional_comparisons.pdf": "aa25eb5d1fea623827ba7829145f5dd70b525353ebc21ebb015aca6d0fb91b89",
+    "preview/additional_comparisons.png": "3745a3eeb633f003f454a2514c4c005a800a2ecfd430c547b1c2c95757e0db5d",
+    "preview/additional_comparisons_page2.png": "17f291bedd995c3cceb9e5fb1e8322b1ac1c92b446ae2184f92abfa0e6a249e1",
+    "preview/additional_comparisons_page3.png": "09efc960c7fb7116c3be2c60c0ae1cb8328ebd5559b1a400779c48a572120bd0",
+    "preview/additional_comparisons_page4.png": "21eb624ddcc19290bd95502bb4a56f55fad906865cdae3d71fe1ab393328065a",
+    "preview/additional_comparisons_page5.png": "d204504e833f1795f45a318d0b3b4c1b538846978acaeba016dec6666554a4ab",
+    "preview/additional_comparisons_page6.png": "d5b61e89edacd781bce748113b1a453a0b2a031bfb3d4d83c9655be83b94a3e5",
+    "preview/additional_comparisons_page7.png": "4a9e3f6b25d22b83ee34122a4740d4f3ea40c4da2fb9ee9f7e09094b7b5a4e4d",
+    "preview/additional_comparisons_page8.png": "3e8b9aaefb2a1c58f8e28297769d688ce8788ea5276203fcf0897ed71c5978ea",
+    "variance_estimation.pdf": "d1a06b6fb1200a1b0cf4f30f3b1b8ebbdc304340f5677aaacff1113c5b7a1d87",
+    "preview/variance_estimation.png": "ca03f405e5409742b92ae87bdb02b93f439b18cdfa561ded1f74ce2d3f5529ca",
+    "predictive_calibration.pdf": "a633e73f93affe5eb2c93ba16a15af8ccd96c895fe653c2dbea0443ae8526a95",
+    "preview/predictive_calibration.png": "d3fd8532ddf43c8fbc3bd50ec9a5e5de4d07bd180f4e9541e7f4a5d6d507def0",
+    "preview/predictive_calibration_page2.png": "1b7c05a60e441516240311f8576e3c4b6dbd2d5e459b4aaef638af6d9eddb193",
+    "preview/predictive_calibration_page3.png": "64484b3999d616f62c338383e3e28e842012cc769c7b99e3b718a15ffdf184fc",
+    "preview/predictive_calibration_page4.png": "33579c3b87d1c8b1715ffc4c09438d8e9a7bc5bb89dc46221c3e36ceebc24228",
+    "preview/predictive_calibration_page5.png": "fe12eb620e35a4912390a1dd3ea7937a7075a0980eb050e0073a80de1767406a",
+    "preview/predictive_calibration_page6.png": "9d9677bfbc4b99aa83cf73a1494c9c589e056cecddda4303289d0c86f4182364",
+    "preview/predictive_calibration_page7.png": "8ce2c489e5dd85c6c72ed23cb2f87287cd11b5acc1e718140140567e3d6bfa31",
+    "preview/predictive_calibration_page8.png": "375833d5321b9e56f355f64fb8c6a545bd00b6cc37e5218a0dcf12b8b644ab52",
+    "preview/predictive_calibration_page9.png": "d5e435037bf4f79325cd588f37c219725418d2de35203fb9f9de131ab865da7d",
+    "predictive_scores.pdf": "568ca919e15886bfc105e5385e7fe752596d9cb211d015bf8f62c60651366249",
+    "preview/predictive_scores.png": "848f55f419c22e696d6b14e09f230a3bbeb18f7c22a3912963cfd57ad2b22534",
+    "model_mismatch.pdf": "a34a23ae71b59e67ecfa1921ab330a3f1a1678f4623f30f3bc22edc01eaf0d6f",
+    "preview/model_mismatch.png": "8e13642bbb7d3b839d0729260fec3b235765d0101a4cd2ebb514db95294dfb01",
+    "computation_time.pdf": "1db47d9144b664e8dbf81282a56039895e8a3495c0afe1ed2681aaf5d01e7ff2",
+    "preview/computation_time.png": "6d783f64c74de454f2d36f4353318abac9862b7bb238da4e1dc6f4c39c50ccac",
+    "preview/computation_time_page2.png": "59c65cee05fe1dd603a01820008c5c471fe1952762907450be036c2388ddf1b8",
+    "numerical_accuracy.pdf": "757ef007b08d3336f6cdeb1f0ec4289536d5744af0b4de4a525dc7adbe1685e5",
+    "preview/numerical_accuracy.png": "4816c81a2ac0fea031104d0d022689985a40f3e4e9c2c2628500b2b62ab513fa",
+    "preview/numerical_accuracy_page2.png": "76b4344d29307cd562a0f04d55f876ace4847786f610118fd4f9b7ff6efa5d40",
+    "preview/numerical_accuracy_page3.png": "2493648c3a18ca36328be1e8af22462d8468b6568541dc57572900622e23b194",
+    "paper_summary.pdf": "6d6c08a54de5ebdc479c27abdfa89e1dc8ced414920dc9b80f8da5891621450a",
+    "preview/paper_summary.png": "3b81b67fbad9c0f70fe815af9b3d1e7dcad0b65db002b0d0305c37ae40557c34",
+    "supp_information_tracking.pdf": "0e8e867de53eb9efea3f886f346f5b4e6cf0e830775c775bccbdd7790f4eab40",
+    "supp_comparisons.pdf": "55b940ed3ca0c57ad13026d72ff671cecee554361722132da79d3dd0235d817f",
+    "supp_variance_prediction_cost.pdf": "845e7e2a2d247411e1c87b4fd7b07c521ae0a400794cd7b33b9fbe736e05121b"
   },
   "unresolved": {},
   "text_usetex": true,

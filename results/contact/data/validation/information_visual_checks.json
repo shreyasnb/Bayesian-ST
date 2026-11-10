@@ -1,0 +1,65 @@
+{
+  "status": "passed",
+  "example": "contact",
+  "producer": "scripts/check_information_visuals.py",
+  "producer_sha256": "7c679ddb620ed8a125514ef9b36a956e81c2e01cc081d9739bb8d00b145a780b",
+  "visual_source": "lib/final_information_visuals.py",
+  "visual_source_sha256": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+  "final_science_hash": "d3e5f91e4bc9ca18bf34d595fe6d2ed0137361dff835dccc72b552ad7bb5ec47",
+  "input_hashes": {
+    "results/contact/data/paper/performance/anisotropy.npz": "d3e7afc0ff19d80534c7385a4ee71956b883bb5a371f8c7f8602ee6685eec311",
+    "results/contact/data/paper/performance/manifest.json": "73d1be8e70beca6aaf76a50300c8f8653c0ce973c6fc97f9b8932ddd4dbd2044"
+  },
+  "checkpoint": 16,
+  "sigma2": 0.0001,
+  "fisher_matrix": [
+    [
+      63.076923076923066,
+      3.0181213039230403e-17
+    ],
+    [
+      3.0181213039230403e-17,
+      1.8461538461538456
+    ]
+  ],
+  "fisher_eigenvalues": [
+    1.8461538461538456,
+    63.076923076923066
+  ],
+  "direct_gaussian_KL_max_error": 1.2434497875801753e-14,
+  "native_normal_unit_error": 4.440892098500626e-16,
+  "finite_difference_Hessian_relative_error": 1.000000255024095e-10,
+  "physical_angle_ray_max_errors": [
+    7.105427357601002e-15,
+    1.6653345369377348e-16
+  ],
+  "exact_contour_max_errors": [
+    8.673617379884035e-18,
+    4.163336342344337e-17,
+    1.6653345369377348e-16,
+    2.220446049250313e-16
+  ],
+  "contour_levels": [
+    0.01,
+    0.05,
+    0.15,
+    0.3
+  ],
+  "marked_angles_deg": [
+    5.0,
+    30.0
+  ],
+  "marked_exact_KL": [
+    0.2395700486536421,
+    0.23076923076923075
+  ],
+  "checks": {
+    "saved_fisher_eigenvalues": true,
+    "direct_mean_KL_equals_closed_form": true,
+    "local_KL_Hessian_equals_Fisher": true,
+    "physical_normal_angles": true,
+    "equal_KL_contours": true,
+    "source_numerical_file_unchanged": true
+  },
+  "scope": "Analytic observation-law geometry at one already-saved design. KL contours are not posterior or confidence regions. No new observations, inference, fitting, benchmark selection or Monte Carlo repetitions."
+}

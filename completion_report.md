@@ -173,7 +173,7 @@ isolate uncertainty.
 
 If Algorithm 1 includes variance learning, make the saved preceding prior,
 disjoint fitting blocks, coordinate alignment, future-only scale use and
-learning cadence explicit. Its fixed-variance tracking theorem does not
+number of observations between variance fits explicit. Its fixed-variance tracking theorem does not
 directly apply to this empirical-Bayes recursion. A constant-state EM block
 can mistake physical drift for noise. See
 [the manuscript checks](docs/final_manuscript_checks.md).
@@ -206,38 +206,55 @@ independent actual-PDF audit passed for all 38 files / 144 pages: seven-inch
 widths, Type 1 fonts, empty PDF titles and no out-of-page text. Preview images
 are 300 dpi. Regenerable checkpoint caches are excluded from Git.
 
-## Native sphere restoration and manuscript exports
+## Plot notation, information geometry and manuscript exports
 
-The mode-facing multicolor display was reverted: its rotation and white
-contours made a correct density look like a flat target. The original native
-coordinates, oblique camera and blue-to-pink palette are restored. Front-visible
-coordinate great circles now provide a geometric depth cue. No density shading,
-mode centering or change of posterior angular width is applied. The original
-n=64, t=64 beamforming checkpoint is retained, and its section is correctly
-identified as a restriction of the complex posterior rather than a physical
-radiation pattern. Both notebooks explain these distinctions.
+The current application notebooks use the implementation notebook's serif
+LaTeX typography: 11-point axis text, 10-point ticks and legends, and 1.6-point
+lines. More panel space preserves readability at a seven-inch PDF width. All
+current previews and PDF raster layers use 300 dpi; text and curves remain
+vector graphics. The sphere camera, native coordinates and saved density
+values are unchanged. Only the color lookup is changed to a continuous
+blue-purple-pink-yellow palette on the existing shared logarithmic scale.
 
-All active plotting defaults and exporters now use centralized 300 dpi. Final
-paper pages are seven inches wide, with vector LaTeX text and curves and
-2100-pixel-wide PNG previews. Full-resolution PNG/PDF links accompany notebook
-images, since an inline preview is scaled to the reader's screen.
+Figure labels use the manuscript's matched isotropic mean,
+$\overline P_t^{\mathrm{iso}}$. Directional-risk axes give their matrix
+expression and query angle in radians. GREAT labels are kept concise, with
+complex-extension provenance in the notebook text. Timing labels state time
+to process 64 observations and describe the task-decision intervals directly.
+Memory is retained on a separate supplementary page.
 
-The PDF manuscript selection is under `results/main/` and
-`results/supplementary/`, with separate application folders, captions, exact
-page selectors and hash provenance. Main figures are single-page selections;
-all remaining study pages are retained in the supplement. Complete original
-application catalogues are preserved for the notebooks and audit trail.
+The main contact task panel shows absolute MSE and pointwise intervals for all
+four same-data controls, including the blue posterior mean. The original
+absolute paired MSE differences are retained on a supplementary page. A
+posterior mean compared with itself has zero paired difference; no artificial
+self confidence interval is introduced. All methods use common independent
+episodes. The intervals of absolute means and paired differences have distinct
+interpretations.
 
-Scientific outputs remain byte-identical to `ded5499`: 574 numerical
-artifacts, 25 scientific manifests and 132 scientific/core source files.
-The unchanged regression suite passed 313 tests and two subtests. Geometry
-checks cover 20 beamforming and 464 contact laws, with native coordinates for
-rendering and separately labeled auxiliary rotation stress checks. See
-[reproduction and validation commands](docs/final_simulations.md).
+The contact information figure now shows exact likelihood distinguishability
+of physical normal rotations using the original saved 16-input design. The
+Gaussian KL and its local Fisher Hessian are checked against independent
+Gaussian-mean differences. No new data, posterior fit, noise setting or
+benchmark policy is introduced. The original Fisher parity validation remains
+in the implementation notebook and saved numerical records.
 
-Both current notebooks executed successfully in clean kernels. The independent
-actual-export audit passed 38 canonical PDFs / 144 pages and 34 manuscript
-selection PDFs / 74 pages, including all placed raster layers at 300 dpi,
-embedded Type1 fonts, seven-inch pages and text within page bounds. All 74
-canonical preview PNGs are 2100 pixels wide at 300 dpi. The extra draft PDFs
-are page copies of the same evidence, not additional experimental results.
+Scientific outputs remain byte-identical to the frozen study: 574 numerical
+artifacts, 25 scientific manifests and 132 scientific/core source files. Both
+current notebooks and the complete PDF catalogue are regenerated from that
+evidence. Main and supplementary insertion PDFs, external captions, page
+selectors and source hashes remain under `results/main/`,
+`results/supplementary/` and `results/draft_figure_manifest.json`. See
+[the reproduction protocol](docs/final_simulations.md) and
+[the typography comparison](docs/plotting_protocol.md).
+
+The updated regression run passed 313 tests and two subtests. Both application
+notebooks executed successfully in clean kernels. The actual-export audit
+passed 38 canonical PDFs / 150 pages and 36 manuscript-selection PDFs / 77
+pages. All raster layers and 77 preview PNGs are 300 dpi, with seven-inch
+PDF pages, embedded Type1 fonts and text within page bounds. Actual PDF text
+traces confirm the nominal 11/10-point typography. A rendered-text scan found
+no occurrences of the removed timing terminology or bracketed extension labels.
+The independent contact likelihood check agreed with direct Gaussian-mean KL
+to 1.24e-14, and its numerical Hessian matched the saved Fisher matrix to a
+relative error of 1.0e-10. These are display/identity checks on the frozen
+experiment, not new statistical repetitions.

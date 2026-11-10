@@ -14,10 +14,13 @@ os.environ.setdefault('XDG_CACHE_HOME', '/tmp/bayesian-st-cache')
 import matplotlib as mpl
 DPI = 300
 PAPER_WIDTH_IN = 7.0
+# Match the implementation notebook's TeX typography and line weight while
+# retaining the seven-inch manuscript width and current 300-dpi exports.
 mpl.rcParams.update({
-    'text.usetex': True, 'font.family': 'serif', 'font.size': 9,
-    'axes.labelsize': 9, 'axes.titlesize': 9, 'legend.fontsize': 9,
-    'xtick.labelsize': 9, 'ytick.labelsize': 9, 'lines.linewidth': 1.35,
+    'text.usetex': True, 'font.family': 'serif', 'font.size': 11,
+    'axes.labelsize': 11, 'axes.titlesize': 11, 'legend.fontsize': 10,
+    'xtick.labelsize': 10, 'ytick.labelsize': 10, 'lines.linewidth': 1.6,
+    'lines.markersize': 4,
     'axes.spines.top': False, 'axes.spines.right': False,
     'figure.figsize': (PAPER_WIDTH_IN, 3.2), 'figure.dpi': DPI,
     'savefig.bbox': None, 'savefig.dpi': DPI,

@@ -39,7 +39,7 @@ regenerable and excluded from Git.
 
 Use Python 3.12, working LaTeX, and the dependencies in `pyproject.toml`.
 Every figure uses `text.usetex=True`. Paper figures have a nominal width of
-7 inches and 9-point text. Preview images and rasterized density layers use
+7 inches with 11-point axis text and 10-point ticks/legends. Preview images and rasterized density layers use
 300 dpi; PDF axes, lines and text remain vector objects.
 
 From the repository root:
@@ -80,6 +80,7 @@ python -m pip install -r requirements-presentation.txt
 python scripts/plot_final_simulations.py --stage paper --example both
 python scripts/export_draft_figures.py
 python scripts/check_sphere_visuals.py
+python scripts/check_information_visuals.py
 python scripts/check_final_pdf_layout.py --include-exports --write
 python scripts/make_final_notebooks.py --stage paper --example both
 python scripts/execute_final_notebooks.py --example both
@@ -88,10 +89,10 @@ python scripts/check_final_simulations.py
 ```
 
 The current display revision restores the original native sphere coordinates,
-oblique camera and continuous blue-to-pink logarithmic scale. Thin gray curves
+oblique camera and continuous blue-purple-pink-yellow palette on the original shared logarithmic scale. Thin gray curves
 are front-visible coordinate great circles, rather than probability contours.
-The mode-facing rotation and white density contours were removed because they
-made the density read as a flat target. Density values and physical angular
+The mode-facing rotation and white density contours remain removed. Color
+positions change only the palette; they do not represent probability quantiles. Density values and physical angular
 widths were never changed. The original n=64, t=64 array checkpoint is restored.
 The array sphere is a real-coefficient section of a complex posterior, not a
 physical radiation field or a normalized sphere marginal; the setup figure
@@ -101,11 +102,15 @@ coordinates and antipodal interpretation.
 For manuscript insertion, the current vector PDFs are also organized in
 `results/main/{beamforming,contact}/` and
 `results/supplementary/{beamforming,contact}/`. The main selection contains
-four single-page figures per application. Every remaining individual study
-page is retained in the supplement; the three existing bundles are excluded
-from this extra export to avoid repeating main figures. Source captions,
-page selectors and hashes are in `results/draft_figure_manifest.json` and the
-folder READMEs. Both original application catalogues remain complete.
+four single-page figures per application. Contact task performance displays
+absolute MSE intervals for every method, including the posterior mean; its
+paired MSE differences are retained on a supplementary page. Processing-time
+figures state the measured 64-observation workload, with memory on a separate
+supplementary page. Contact information uses the same saved inputs to visualize
+exact Gaussian KL under physical plane rotations, with the Fisher matrix as
+its local Hessian; the old eigenvalue validation remains in the implementation
+notebook and numerical tables. Source captions, page selectors and hashes are
+in `results/draft_figure_manifest.json` and the folder READMEs. Both original application catalogues remain complete.
 
 All active plotting defaults and explicit exporters use the shared `DPI=300`
 from `lib/plotting.py`. Seven-inch paper pages yield 2100-pixel-wide previews.
@@ -149,3 +154,11 @@ Original 8-/16-sensor and moving 6-sensor beamforming cohorts retain their
 recorded counts. The new 32-/64-/128-sensor task cohorts are distinct from
 synthetic spectral integration and dimension-cost studies. General-rank
 Fisher checks do not establish general-rank moment or evidence scalability.
+
+The [plotting protocol](plotting_protocol.md) compares the implementation
+notebook's typography with the paper layout. The shared current profile uses
+11-point main/axis text, 10-point ticks/legends and 1.6-point lines at 300 dpi;
+additional panel space preserves legibility at the seven-inch insertion width.
+The new contact likelihood illustration is checked independently with
+`python scripts/check_information_visuals.py`, comparing the direct Gaussian
+means, exact KL formula and numerical Hessian. It introduces no new trials.

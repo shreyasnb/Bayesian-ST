@@ -2,7 +2,7 @@
 
 Implementation and simulations for **Bayesian Subspace Tracking with Grassmann Bingham Distributions**. The current `test` study follows the author's [final simulation guide](docs/final_simulation_guide.md), **v5.tex** as the main manuscript, and **supplementary(14).tex** as its supplement. The old numerical prose does not define the new experiments.
 
-Start with the executed [beamforming notebook](notebooks/01_array.ipynb) or [contact notebook](notebooks/03_contact.ipynb). Each develops the observation model, information, posterior geometry, decisions, comparisons, variance learning and computational cost in order. Figures use LaTeX, 300 dpi previews and raster layers, vector PDFs, a nominal 7-inch paper width and 9-point text. Captions and detailed claims are outside the title-free PDFs. Manuscript selections are organized under [results/main/](results/main/) and [results/supplementary/](results/supplementary/), with page-level captions and provenance.
+Start with the executed [beamforming notebook](notebooks/01_array.ipynb) or [contact notebook](notebooks/03_contact.ipynb). Each develops the observation model, information, posterior geometry, decisions, comparisons, variance learning and computational cost in order. Figures use LaTeX, 300 dpi previews and raster layers, vector PDFs, a nominal 7-inch paper width and 11-point axes and 10-point ticks/legends. Captions and detailed claims are outside the title-free PDFs. Manuscript selections are organized under [results/main/](results/main/) and [results/supplementary/](results/supplementary/), with page-level captions and provenance.
 
 The [completion report](completion_report.md) records completed cohorts, mixed comparisons, numerical failures and unsupported claims. The [mathematical checks](docs/final_manuscript_checks.md) explain identity transport, the sharp modal bound, fixed-boundary EM and the limits of dynamic uncertainty claims.
 
@@ -37,7 +37,7 @@ Reusable inference is in `lib/`. The final study adds:
 - `final_theory.py`: exact discounted/transported blocks, sharp tracking certificates, local curvature and accuracy diagnostics.
 - `final_beamforming.py` and `final_contact.py`: fixed paired cohorts and observed-data validation policies.
 - `causal_variance.py` and `final_prediction.py`: future-only block variance learning and actual-recursion predictions.
-- `final_computation.py` and `final_accuracy.py`: actual cadence costs and independent high-precision integration.
+- `final_computation.py` and `final_accuracy.py`: costs at stated task-decision intervals and independent high-precision integration.
 - `final_paper_visuals.py`: render-only figures from saved verified arrays.
 
 Shared GREAT is in `benchmarks/common/great.py`; application references remain in `benchmarks/case1/` and `benchmarks/case2/`. [GREAT provenance](docs/great_reference.md) distinguishes independent mathematical verification from unavailable direct author-code/PDF parity.

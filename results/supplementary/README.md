@@ -21,11 +21,13 @@ The three original supplementary bundles are not copied because they repeat indi
 - [predictive calibration](beamforming/predictive_calibration.pdf): source pages 1, 2, 3, 4, 5, 6, 7, 8, 9.
 - [predictive scores](beamforming/predictive_scores.pdf): source page 1.
 - [model mismatch](beamforming/model_mismatch.pdf): source page 1.
+- [computation time](beamforming/computation_time.pdf): source page 2.
 - [numerical accuracy](beamforming/numerical_accuracy.pdf): source pages 1, 2, 3.
 - [paper summary](beamforming/paper_summary.pdf): source page 1.
 
 ## Contact
 
+- [task performance](contact/task_performance.pdf): source page 2.
 - [posterior anisotropy](contact/posterior_anisotropy.pdf): source page 2.
 - [noise adaptation](contact/noise_adaptation.pdf): source pages 1, 2, 3, 4.
 - [posterior curvature](contact/posterior_curvature.pdf): source page 1.
@@ -36,6 +38,6 @@ The three original supplementary bundles are not copied because they repeat indi
 - [predictive calibration](contact/predictive_calibration.pdf): source pages 1, 2, 3, 4, 5, 6, 7, 8, 9.
 - [predictive scores](contact/predictive_scores.pdf): source page 1.
 - [model mismatch](contact/model_mismatch.pdf): source page 1.
-- [computation time](contact/computation_time.pdf): source page 1.
+- [computation time](contact/computation_time.pdf): source pages 1, 2.
 - [numerical accuracy](contact/numerical_accuracy.pdf): source pages 1, 2, 3.
 - [paper summary](contact/paper_summary.pdf): source page 1.

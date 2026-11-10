@@ -36,7 +36,8 @@ DEPENDENCIES = {
     'paper_summary': {'performance', 'prediction', 'computation'},
 }
 SOURCES = ('lib/final_paper_visuals.py', 'scripts/plot_final_simulations.py',
-           'lib/plotting.py', 'lib/distribution_geometry_visuals.py')
+           'lib/plotting.py', 'lib/distribution_geometry_visuals.py',
+           'lib/final_information_visuals.py')
 
 
 def json_safe(value):
@@ -144,6 +145,9 @@ def extend_reference_sources(sources,evidence):
 
 def caption_for(name,evidence):
     caption=CAPTIONS[name]
+    if name=='information' and evidence.example=='contact':
+        from lib.final_information_visuals import CONTACT_INFORMATION_CAPTION
+        caption=CONTACT_INFORMATION_CAPTION
     if name=='posterior_anisotropy':
         contact,beam=caption.split('Beamforming:',1)
         if evidence.example=='contact':
@@ -153,7 +157,7 @@ def caption_for(name,evidence):
             caption=beam.strip()
             caption+=' Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval.'
     if name=='posterior_anisotropy' or (evidence.example=='contact' and name in ('paper_summary','noise_adaptation')):
-        caption+=' Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-to-pink logarithmic density scale is shared within comparisons; its four-decade display floor does not mean zero density. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used.'
+        caption+=' Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.'
     if name=='predictive_calibration':
         target=(r'$q^H Pq$ for a known unit complex query $q$' if evidence.example=='beamforming'
             else r'$e_1^T Pq$ for a known unit real query $q$')

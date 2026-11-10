@@ -137,6 +137,12 @@ def verify_display_audits(example):
     assert geometry['plot_protocol']['coordinates'] == 'Native saved coordinates'
     assert geometry['plot_protocol']['mode_centering'] is False
     assert geometry['plot_protocol']['density_contours_drawn'] is False
+    if example == 'contact':
+        information = json.loads((folder/'data/validation/information_visual_checks.json').read_text())
+        assert information['status']=='passed'
+        assert information['producer_sha256']==sha(ROOT/'scripts/check_information_visuals.py')
+        assert information['visual_source_sha256']==sha(ROOT/'lib/final_information_visuals.py')
+        verify_mapping(ROOT, information['input_hashes'])
     preservation = geometry['preservation']
     assert preservation['status'] == 'passed'
     for category, mapping in preservation['unchanged_files'].items():
