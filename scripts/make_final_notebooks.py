@@ -7,6 +7,7 @@ selects a trajectory or calls the plotting/simulation runners.
 from __future__ import annotations
 
 import argparse
+import ast
 import hashlib
 import json
 from pathlib import Path
@@ -424,6 +425,12 @@ Under the full belief, using another action $\overline P_t^{\mathrm{iso}}v$ adds
     loader='lib/notebook_'+example+'_data.py'
     nb.metadata['editable_plotting']={
         'schema':1,'mode':'inline_matplotlib','figure_count':len(displayed),
+        'rendered_figure_count':sum(
+            isinstance(node,ast.Call) and isinstance(node.func,ast.Attribute)
+            and isinstance(node.func.value,ast.Name) and node.func.value.id=='plt'
+            and node.func.attr in ('figure','subplots')
+            for cell in cells if cell.cell_type=='code'
+            for node in ast.walk(ast.parse(cell.source))),
         'input_hashes':saved_input_hashes(root,example),
         'loader_sources':{loader:sha(root/loader),'lib/notebook_inputs.py':sha(root/'lib/notebook_inputs.py')},
         'output_directory':'results/notebook_exports/'+('01_array' if example=='beamforming' else '03_contact'),

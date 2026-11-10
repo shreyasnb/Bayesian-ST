@@ -131,7 +131,7 @@ def verify_notebook(root, name, require_executed=True, check_pdfs=False):
 
     code_cells = [cell for cell in nb['cells']
                   if cell.get('cell_type') == 'code' and _source(cell).strip()]
-    plots, embedded, explicit_pdf_names = [], 0, set()
+    plots, rendered, embedded, explicit_pdf_names = [], 0, 0, set()
     for index, cell in enumerate(code_cells, 1):
         source = _source(cell)
         location = f'{name}, code cell {index}'
@@ -144,6 +144,7 @@ def verify_notebook(root, name, require_executed=True, check_pdfs=False):
                    if _qualified(call.func) in ('plt.figure', 'plt.subplots')]
         if figures:
             plots.append(cell)
+            rendered += len(figures)
             # Require editable controls to live in this figure's own cell.
             assigned = {node.id for node in ast.walk(tree)
                         if isinstance(node, ast.Name) and isinstance(node.ctx, ast.Store)}
@@ -154,9 +155,13 @@ def verify_notebook(root, name, require_executed=True, check_pdfs=False):
                     location + ': figure creation must use dpi=DPI')
                 assert isinstance(kwargs.get('figsize'), ast.Name) and kwargs['figsize'].id == 'FIGSIZE', (
                     location + ': figure creation must use figsize=FIGSIZE')
-            assert any(_qualified(call.func) == 'plt.show' for call in calls), location + ': missing plt.show()'
-            assert any(isinstance(call.func, ast.Attribute) and call.func.attr == 'savefig'
-                       for call in calls), location + ': missing direct figure.savefig()'
+            shows = sum(_qualified(call.func) == 'plt.show' for call in calls)
+            saves = sum(isinstance(call.func, ast.Attribute) and call.func.attr == 'savefig'
+                        for call in calls)
+            assert shows >= len(figures), (
+                location + ': each figure needs its own plt.show()')
+            assert saves >= len(figures), (
+                location + ': each figure needs a direct figure.savefig()')
             for call in calls:
                 function = _qualified(call.func)
                 assert function.rsplit('.', 1)[-1] not in HIDDEN_RENDER_CALLS, (
@@ -181,14 +186,18 @@ def verify_notebook(root, name, require_executed=True, check_pdfs=False):
             embedded += int('image/png' in output.get('data', {}))
 
     expected = _expected_count(meta, name)
+    expected_rendered = int(meta.get('rendered_figure_count', expected))
     assert len(plots) == expected, f'{name}: expected {expected} visible plot cells, found {len(plots)}'
+    assert rendered == expected_rendered, (
+        f'{name}: expected {expected_rendered} figure creations, found {rendered}')
     if require_executed:
-        assert embedded == expected, f'{name}: expected {expected} embedded figures, found {embedded}'
+        assert embedded == expected_rendered, (
+            f'{name}: expected {expected_rendered} embedded figures, found {embedded}')
     pdfs_checked = 0
     if check_pdfs:
         directory = root / meta['output_directory']
         names = explicit_pdf_names or {str(key) + '.pdf' for key in meta.get('figure_ids', [])}
-        assert len(names) == expected, name + ': cannot identify every explicit PDF output'
+        assert len(names) == expected_rendered, name + ': cannot identify every explicit PDF output'
         for filename in names:
             output = directory / filename
             assert output.is_file(), f'{name}: missing editable PDF {output}'
@@ -196,7 +205,7 @@ def verify_notebook(root, name, require_executed=True, check_pdfs=False):
                 assert handle.read(5) == b'%PDF-', f'{name}: output is not a PDF: {filename}'
             pdfs_checked += 1
     return dict(status='verified', notebook=name, code_cells=len(code_cells),
-                plotting_cells=len(plots), embedded_images=embedded,
+                plotting_cells=len(plots), rendered_figures=rendered, embedded_images=embedded,
                 verified_input_files=len(inputs), verified_loader_sources=len(loaders),
                 preserved_numerical_cells=numerical_cells, pdf_headers_checked=pdfs_checked,
                 plotting_controls='User editable; DPI, FIGSIZE and label values are not restricted',

@@ -51,6 +51,13 @@ plt.show()
     return source
 
 
+def _split_panel(name, figsize, filename, code, style=True):
+    """Generate visible source for one independently saved notebook figure."""
+    source = _cell(name, 1, figsize, code, style=style)
+    return source.replace(f"EDITABLE_OUTPUT / '{name}_page1.pdf'",
+                          f"EDITABLE_OUTPUT / '{filename}'", 1)
+
+
 PLOT_CELLS = {}
 PLOT_CELLS[('setup', 1)] = _cell('setup', 1, (15,5), r'''
 fig = plt.figure(figsize=FIGSIZE, dpi=DPI, layout="constrained")
@@ -102,40 +109,48 @@ ax.grid(color="#BFC4C8", alpha=.30, linewidth=.45)
 ax.text(.015, .985, "(b)", transform=ax.transAxes, ha="left", va="top")
 ''', style=False)
 
-PLOT_CELLS[('information', 1)] = _cell('information', 1, (15,5), r'''
-fig, axes = plt.subplots(1, 2, figsize=FIGSIZE, dpi=DPI, layout="constrained")
+PLOT_CELLS[('information', 1)] = (
+_split_panel('information', (7.5, 5), 'information_contours.pdf', r'''
+fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout="constrained")
 levels = [.01, .05, .15, .3]
 contour_styles = [":", "--", "-.", "-"]
-axes[0].contourf(data["z1"], data["z2"], data["kl"], levels=[0., levels[-1]], colors=["#F4EDF7"])
-axes[0].contour(data["z1"], data["z2"], data["kl"], levels=levels,
+ax.contourf(data["z1"], data["z2"], data["kl"], levels=[0., levels[-1]], colors=["#F4EDF7"])
+ax.contour(data["z1"], data["z2"], data["kl"], levels=levels,
                 colors=["#7B3294"], linewidths=1.2, linestyles=contour_styles)
 handles = [Line2D([], [], color="#7B3294", linestyle=style,
                   label=r"$D_{\mathrm{KL}}="+f"{level:g}"+r"$")
            for level, style in zip(levels, contour_styles)]
-axes[0].legend(handles=handles, frameon=False, fontsize=10., loc="lower left")
-axes[0].plot(0., 0., "+", color="#303030", markersize=6.)
-axes[0].set(xlabel=r"$z_1$", ylabel=r"$z_2$", xlim=(-.78, .78), ylim=(-.78, .78),
+ax.legend(handles=handles, frameon=False, fontsize=10., loc="lower left")
+ax.plot(0., 0., "+", color="#303030", markersize=6.)
+ax.set(xlabel=r"$z_1$", ylabel=r"$z_2$", xlim=(-.78, .78), ylim=(-.78, .78),
             xticks=[-.6, 0., .6], yticks=[-.6, 0., .6])
-axes[0].set_aspect("equal", adjustable="box")
+ax.set_aspect("equal", adjustable="box")
 
+for point, color in zip(data["marked_points"], ["#D55E00", "#0072B2"]):
+    ax.plot(*point, "o", color=color, markersize=4.)
+ax.spines[["top", "right"]].set_visible(False)
+ax.grid(color="#BFC4C8", alpha=.30, linewidth=.45)
+ax.text(.015, .985, "(a)", transform=ax.transAxes, ha="left", va="top")
+''', style=False) +
+_split_panel('information', (7.5, 5), 'information_rotation.pdf', r'''
+fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout="constrained")
 for values, label, color, style, point, angle, marked_kl in zip(
         [data["kl_first"], data["kl_second"]],
         [r"$z=(\tan\delta,0)$", r"$z=(0,\tan\delta)$"],
         ["#D55E00", "#0072B2"], ["-", "--"], data["marked_points"],
         data["marked_angles"], data["marked_kl"]):
-    axes[1].plot(data["angle_deg"], values, style, color=color, label=label)
-    axes[0].plot(*point, "o", color=color, markersize=4.)
-    axes[1].plot(angle, marked_kl, "o", color=color, markersize=4.)
-axes[1].set(xlabel=r"$\delta\ ({}^\circ)$", ylabel=r"$D_{\mathrm{KL}}(p_0\,\Vert\,p_Z)$", xlim=(0.,35.))
-axes[1].set_yscale("log")
-axes[1].set_yticks([1e-5, 1e-2, 1e1])
-axes[1].minorticks_off()
-axes[1].legend(frameon=False, fontsize=10., loc="lower right")
-for ax, label in zip(axes, ["(a)", "(b)"]):
-    ax.spines[["top", "right"]].set_visible(False)
-    ax.grid(color="#BFC4C8", alpha=.30, linewidth=.45)
-    ax.text(.015, .985, label, transform=ax.transAxes, ha="left", va="top")
+    ax.plot(data["angle_deg"], values, style, color=color, label=label)
+    ax.plot(angle, marked_kl, "o", color=color, markersize=4.)
+ax.set(xlabel=r"$\delta\ ({}^\circ)$", ylabel=r"$D_{\mathrm{KL}}(p_0\,\Vert\,p_Z)$", xlim=(0.,35.))
+ax.set_yscale("log")
+ax.set_yticks([1e-5, 1e-2, 1e1])
+ax.minorticks_off()
+ax.legend(frameon=False, fontsize=10., loc="lower right")
+ax.spines[["top", "right"]].set_visible(False)
+ax.grid(color="#BFC4C8", alpha=.30, linewidth=.45)
+ax.text(.015, .985, "(b)", transform=ax.transAxes, ha="left", va="top")
 ''', style=False)
+)
 
 PLOT_CELLS[('task_performance', 1)] = _cell('task_performance', 1, (15,5), r'''
 fig, axes = plt.subplots(1, 2, figsize=FIGSIZE, dpi=DPI, layout="constrained")
@@ -163,7 +178,8 @@ for ax, label in zip(axes, ["(a)", "(b)"]):
 fig.legend(*axes[0].get_legend_handles_labels(), loc="outside lower center", ncol=2, frameon=False, fontsize=10.)
 ''')
 
-PLOT_CELLS[('posterior_anisotropy', 1)] = _cell('posterior_anisotropy', 1, (15,10), r'''
+PLOT_CELLS[('posterior_anisotropy', 1)] = (
+_split_panel('posterior_anisotropy', (15, 5), 'posterior_anisotropy_spheres.pdf', r'''
 # All display choices are local to this cell. The saved density values stay fixed.
 ELEVATION, AZIMUTH = 25., -50.
 COLOR_DECADES = 4.
@@ -174,7 +190,7 @@ cmap.set_under(cmap(0.)); cmap.set_over(cmap(1.))
 peak = max(float(np.max(values)) for values in data["log_density"])
 norm = colors.LogNorm(vmin=np.exp(peak-COLOR_DECADES*np.log(10.)), vmax=np.exp(peak), clip=True)
 fig = plt.figure(figsize=FIGSIZE, dpi=DPI, layout="constrained")
-grid = fig.add_gridspec(2,2,height_ratios=(1.25,1.))
+grid = fig.add_gridspec(1,2)
 spheres = [fig.add_subplot(grid[0,index],projection="3d") for index in range(2)]
 el, az = np.deg2rad([ELEVATION, AZIMUTH])
 facing = np.array([np.cos(el)*np.cos(az), np.cos(el)*np.sin(az), np.sin(el)])
@@ -206,7 +222,9 @@ for ax, nodes, log_density, label in zip(spheres,data["nodes"],data["log_density
         axis.line.set_color("#70777D");axis.line.set_linewidth(.65)
     ax.text2D(.02,.97,label,transform=ax.transAxes,ha="left",va="top")
 fig.colorbar(plt.cm.ScalarMappable(norm=norm,cmap=cmap),ax=spheres,label=r"$q([n])$",shrink=.64,pad=.015)
-ax = fig.add_subplot(grid[1,:])
+''', style=True) +
+_split_panel('posterior_anisotropy', (15, 5), 'posterior_anisotropy_risk.pdf', r'''
+fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout="constrained")
 ax.plot(data["theta"],data["risk_full"],color=COLORS["mean"],label=LABELS["mean"])
 ax.plot(data["theta"],data["risk_iso"],"--",color=COLORS["iso"],label=LABELS["iso"])
 ax.set_xlabel(r"$\theta$ (rad)")
@@ -216,7 +234,8 @@ ax.legend(frameon=False,fontsize=10.)
 ax.spines[["top","right"]].set_visible(False)
 ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
 ax.text(.015,.985,"(c)",transform=ax.transAxes,ha="left",va="top")
-''')
+''', style=True)
+)
 
 PLOT_CELLS[('noise_adaptation', 1)] = _cell('noise_adaptation', 1, (15,5), r'''
 fig = plt.figure(figsize=FIGSIZE,dpi=DPI,layout="constrained")
@@ -271,22 +290,27 @@ fig.legend(*axes[0].get_legend_handles_labels(),loc="outside lower center",ncol=
 for _page in (2,6):
     PLOT_CELLS[('predictive_calibration',_page)] = _cell('predictive_calibration',_page,(15,5),_CALIBRATION_CODE)
 
-PLOT_CELLS[('computation_time', 1)] = _cell('computation_time', 1, (15,10), r'''
-fig = plt.figure(figsize=FIGSIZE,dpi=DPI,layout="constrained")
-grid = fig.add_gridspec(2,1)
-axes = [fig.add_subplot(grid[0]),fig.add_subplot(grid[1])]
+PLOT_CELLS[('computation_time', 1)] = (
+_split_panel('computation_time', (15, 5), 'computation_time_scaling.pdf', r'''
+fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 for curve in data["scaling"]:
     method, interval = curve["method"],curve["interval"]
     label=LABELS[method]+(", every observation" if interval==1 else ", every "+str(interval)+" observations")
-    axes[0].plot(curve["n"],curve["milliseconds"],marker=MARKERS[method],linestyle=curve["style"],
+    ax.plot(curve["n"],curve["milliseconds"],marker=MARKERS[method],linestyle=curve["style"],
         color=COLORS[method],label=label)
-axes[0].set_xscale("log",base=2);axes[0].set_yscale("log")
-axes[0].set_xticks([3,16,128],labels=["3","16","128"])
-axes[0].set_yticks([10.,100.,1000.],labels=[r"$10^1$",r"$10^2$",r"$10^3$"])
-axes[0].minorticks_off()
-axes[0].set_xlabel("Ambient dimension")
-axes[0].set_ylabel("Time for 64 observations (ms)")
-axes[0].legend(frameon=False,fontsize=10.,ncol=2,loc="lower center",bbox_to_anchor=(.5,1.02))
+ax.set_xscale("log",base=2);ax.set_yscale("log")
+ax.set_xticks([3,16,128],labels=["3","16","128"])
+ax.set_yticks([10.,100.,1000.],labels=[r"$10^1$",r"$10^2$",r"$10^3$"])
+ax.minorticks_off()
+ax.set_xlabel("Ambient dimension")
+ax.set_ylabel("Time for 64 observations (ms)")
+ax.legend(frameon=False,fontsize=10.,ncol=2,loc="lower center",bbox_to_anchor=(.5,1.02))
+ax.spines[["top","right"]].set_visible(False)
+ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
+ax.text(.015,.985,"(a)",transform=ax.transAxes,ha="left",va="top")
+''', style=True) +
+_split_panel('computation_time', (15, 5), 'computation_time_phases.pdf', r'''
+fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 phase_labels = {"correction":"Parameter update","action":"Task decision","report":"Uncertainty report",
                 "fitting":"EM","overhead":"Other"}
 phase_colors = {"correction":"#0072B2","action":"#D55E00","report":"#CC79A7",
@@ -295,7 +319,7 @@ positions=np.arange(len(data["rows"]))
 bottom=np.zeros(len(positions))
 for phase in data["phases"]:
     key,values=phase["key"],phase["values"]
-    axes[1].barh(positions,values,left=bottom,color=phase_colors[key],height=.7,label=phase_labels[key])
+    ax.barh(positions,values,left=bottom,color=phase_colors[key],height=.7,label=phase_labels[key])
     bottom += values
 row_labels=[]
 for row in data["rows"]:
@@ -303,15 +327,15 @@ for row in data["rows"]:
     if row["method"]=="mean_report":label+=" + uncertainty"
     if row["method"]=="adaptive_mean":label+=" + EM ("+str(int(row["em_iterations"]))+" iterations)"
     row_labels.append(label+"\ndecisions every "+str(int(row["action_cadence"]))+" obs.")
-axes[1].set(yticks=positions,yticklabels=row_labels)
-axes[1].set_xlabel("Time for 64 observations (ms)")
-axes[1].set_ylabel("")
-for ax,label in zip(axes,["(a)","(b)"]):
-    ax.spines[["top","right"]].set_visible(False)
-    ax.grid(axis="x" if ax is axes[1] else "both",color="#BFC4C8",alpha=.30,linewidth=.45)
-    ax.text(.015,.985,label,transform=ax.transAxes,ha="left",va="top")
-fig.legend(*axes[1].get_legend_handles_labels(),loc="outside lower center",ncol=3,frameon=False,fontsize=10.)
-''')
+ax.set(yticks=positions,yticklabels=row_labels)
+ax.set_xlabel("Time for 64 observations (ms)")
+ax.set_ylabel("")
+ax.spines[["top","right"]].set_visible(False)
+ax.grid(axis="x",color="#BFC4C8",alpha=.30,linewidth=.45)
+ax.text(.015,.985,"(b)",transform=ax.transAxes,ha="left",va="top")
+fig.legend(*ax.get_legend_handles_labels(),loc="outside lower center",ncol=3,frameon=False,fontsize=10.)
+''', style=True)
+)
 
 
 def get_plot_cell(name, page=1):

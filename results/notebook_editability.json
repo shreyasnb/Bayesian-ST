@@ -9,6 +9,7 @@
       "notebook": "00_theory.ipynb",
       "code_cells": 13,
       "plotting_cells": 4,
+      "rendered_figures": 4,
       "embedded_images": 4,
       "verified_input_files": 0,
       "verified_loader_sources": 0,
@@ -23,20 +24,22 @@
       "notebook": "01_array.ipynb",
       "code_cells": 10,
       "plotting_cells": 8,
-      "embedded_images": 8,
+      "rendered_figures": 11,
+      "embedded_images": 11,
       "verified_input_files": 109,
       "verified_loader_sources": 2,
       "preserved_numerical_cells": 0,
-      "pdf_headers_checked": 8,
+      "pdf_headers_checked": 11,
       "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
-      "editable_metadata_sha256": "5d07421edf4ce72e7edd485de43c59e004670e725ab74875b8d3b03c1a0f8fa2",
-      "sha256": "d2b229cc19c0660e3273e6136d21b7c6fca17a8ecbbae6d95fd65f6f514213a6"
+      "editable_metadata_sha256": "b8338daf6279c83a8507ab06bc09ddec9d599d4f430a258fde8d376d3a9ea273",
+      "sha256": "d742ece049f3920f58bd4087dc160ba9827c4409d7839524d69eb719f0d9e56a"
     },
     "02_field.ipynb": {
       "status": "verified",
       "notebook": "02_field.ipynb",
       "code_cells": 24,
       "plotting_cells": 17,
+      "rendered_figures": 17,
       "embedded_images": 17,
       "verified_input_files": 20,
       "verified_loader_sources": 1,
@@ -51,20 +54,22 @@
       "notebook": "03_contact.ipynb",
       "code_cells": 10,
       "plotting_cells": 8,
-      "embedded_images": 8,
+      "rendered_figures": 11,
+      "embedded_images": 11,
       "verified_input_files": 104,
       "verified_loader_sources": 2,
       "preserved_numerical_cells": 0,
-      "pdf_headers_checked": 8,
+      "pdf_headers_checked": 11,
       "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
-      "editable_metadata_sha256": "bb8750a5467f04b1fc9186c8bad8de88da40fb770602f2fe2cf9dd9be2c13aeb",
-      "sha256": "c4b2fa6c249efd8d356c2910ac30a24e9767d8636d3fa578a5d41afbae0317dc"
+      "editable_metadata_sha256": "b1e59e5db2eeddac6e088f55366b764553598d4b5c159b19fbd34da49a3c9a5e",
+      "sha256": "c0c8f511b4a63d97ae27ede97353de19604f589e8bbac3d2021965b61941f5a3"
     },
     "04_implementation_audit.ipynb": {
       "status": "verified",
       "notebook": "04_implementation_audit.ipynb",
       "code_cells": 16,
       "plotting_cells": 12,
+      "rendered_figures": 12,
       "embedded_images": 12,
       "verified_input_files": 45,
       "verified_loader_sources": 1,
@@ -78,8 +83,9 @@
   "totals": {
     "notebooks": 5,
     "plotting_cells": 49,
-    "embedded_images": 49,
-    "local_pdf_exports_checked": 49
+    "rendered_figures": 55,
+    "embedded_images": 55,
+    "local_pdf_exports_checked": 55
   },
   "defaults": {
     "text.usetex": true,
@@ -264,7 +270,7 @@
     "scientific_and_publication_verifier": "scripts/check_final_simulations.py"
   },
   "verification_source_hashes": {
-    "scripts/check_editable_notebooks.py": "87fe1c967bcd2212f96dc3cbecd760805b3e2bbc7d33c8c0daab1f8c84f96cb2",
+    "scripts/check_editable_notebooks.py": "7d51761f579011b971768ea896801dcfe40d868e2e87676de7a8da1cf0bead44",
     "scripts/probe_editable_plots.py": "ed622613b67fbe73c3ecd1dd6fd3bf671de55eb112c4932c61a56a3bc804fab3",
     "scripts/execute_editable_notebooks.py": "8e932e2609be5d3a23ff7af5ade6de7384eb8a97fef53f128760b1da8b812122",
     "scripts/check_notebook_bands.py": "7703181bc60baa98030d266cc8506de5ac1ec60b9916607ec00fc24ba5a00ca8"
@@ -974,5 +980,341 @@
     ],
     "rendering": "Both application notebooks executed in fresh kernels and saved sixteen PDFs using visible per-cell save commands.",
     "scope": "Concise axis/legend labels; comparator, coverage and interval definitions are stated in notebook prose."
+  },
+  "selected_figure_splits": {
+    "baseline_commit": "bdf3f886018f224e4bd9891676c4a51fb4e2d898",
+    "scope": {
+      "01_array.ipynb": {
+        "changed_cell_indices": [
+          10,
+          13
+        ],
+        "all_other_cell_sources_byte_identical": true,
+        "cell_count_preserved": 25,
+        "rendered_figures": 11
+      },
+      "03_contact.ipynb": {
+        "changed_cell_indices": [
+          5,
+          14,
+          23
+        ],
+        "all_other_cell_sources_byte_identical": true,
+        "cell_count_preserved": 26,
+        "rendered_figures": 11
+      }
+    },
+    "output_order": {
+      "beamforming": {
+        "task_performance": [
+          "output_power",
+          "paired_difference"
+        ],
+        "posterior_anisotropy": [
+          "sphere",
+          "eigenvalues",
+          "empirical_cdf"
+        ]
+      },
+      "contact": {
+        "information": [
+          "contours",
+          "rotation"
+        ],
+        "posterior_anisotropy": [
+          "side_by_side_spheres",
+          "risk"
+        ],
+        "computation_time": [
+          "scaling",
+          "phases"
+        ]
+      }
+    },
+    "notebook_locations": "All outputs remain in their original code cells, with a direct save and plt.show before each next figure. No markdown or other plot-cell source changes.",
+    "unchanged_rendered_data": {
+      "beamforming": {
+        "10": {
+          "panels": [
+            "(a)",
+            "(b)"
+          ],
+          "arrays_equal": true,
+          "numeric_elements_compared": 182
+        },
+        "13": {
+          "panels": [
+            "(a)",
+            "(b)",
+            "(c)"
+          ],
+          "arrays_equal": true,
+          "numeric_elements_compared": 1026994
+        }
+      },
+      "contact": {
+        "status": "passed",
+        "notebook": "03_contact.ipynb",
+        "figures": [
+          {
+            "figure": "information",
+            "axes_compared": 2,
+            "lines_compared": 7,
+            "collections_compared": 2,
+            "bar_patches_compared": 0,
+            "exact_numeric_artist_parity": true
+          },
+          {
+            "figure": "posterior_anisotropy",
+            "axes_compared": 4,
+            "lines_compared": 8,
+            "collections_compared": 6,
+            "bar_patches_compared": 0,
+            "exact_numeric_artist_parity": true
+          },
+          {
+            "figure": "computation_time",
+            "axes_compared": 2,
+            "lines_compared": 4,
+            "collections_compared": 0,
+            "bar_patches_compared": 35,
+            "exact_numeric_artist_parity": true
+          }
+        ],
+        "scope": "Exact array equality, including contour paths, point coordinates, sphere vertices/colors, risk/line values and stacked bar geometry; labels/layout/text positions excluded."
+      }
+    },
+    "pdf_and_unchanged_image_checks": {
+      "01_array.ipynb": {
+        "unselected_images_byte_identical": 6,
+        "pdfs": {
+          "setup_page1.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": [
+              299.9999878818358,
+              299.999992064523,
+              299.99999330754883,
+              300.00001332645394
+            ]
+          },
+          "information_page1.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "task_performance_output_power.pdf": {
+            "figsize_in": [
+              7.5,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "task_performance_paired_difference.pdf": {
+            "figsize_in": [
+              7.5,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "posterior_anisotropy_sphere.pdf": {
+            "figsize_in": [
+              7.5,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": [
+              299.99999416117777,
+              299.99999416117777,
+              300.0000071018302,
+              300.0000032327943
+            ]
+          },
+          "posterior_anisotropy_eigenvalues.pdf": {
+            "figsize_in": [
+              7.5,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "posterior_anisotropy_empirical_cdf.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "noise_adaptation_page1.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "predictive_calibration_page2.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "predictive_calibration_page6.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "computation_time_page1.pdf": {
+            "figsize_in": [
+              15,
+              10
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          }
+        }
+      },
+      "03_contact.ipynb": {
+        "unselected_images_byte_identical": 5,
+        "pdfs": {
+          "setup_page1.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": [
+              300.0,
+              300.00001209415296
+            ]
+          },
+          "information_contours.pdf": {
+            "figsize_in": [
+              7.5,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "information_rotation.pdf": {
+            "figsize_in": [
+              7.5,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "task_performance_page1.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "posterior_anisotropy_spheres.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": [
+              299.99999416117777,
+              299.99999416117777,
+              299.99999416117777,
+              299.99999416117777,
+              300.0000071018302,
+              300.0000032327943
+            ]
+          },
+          "posterior_anisotropy_risk.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "noise_adaptation_page1.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "predictive_calibration_page2.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "predictive_calibration_page6.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "computation_time_scaling.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          },
+          "computation_time_phases.pdf": {
+            "figsize_in": [
+              15,
+              5
+            ],
+            "dpi": 300,
+            "out_of_page_traced_text": 0,
+            "raster_layer_dpi": []
+          }
+        }
+      }
+    },
+    "unchanged_numerical_and_published_result_files": 3781,
+    "rendering": "Both notebooks executed in fresh kernels; 22 figures and separate PDF exports. All 11 unselected embedded images are byte-identical to the baseline."
   }
 }

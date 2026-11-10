@@ -108,40 +108,44 @@ for ax,tag in zip(axes,["(a)","(b)"]):
     ax.text(.015,.985,tag,transform=ax.transAxes,ha="left",va="top")
 ''',style=False)
 
-PLOT_CELLS['task_performance', 1] = _cell('task_performance', 1, (15,5), r'''
-fig, axes = plt.subplots(1,2,figsize=FIGSIZE,dpi=DPI,layout="constrained",
-                        gridspec_kw={"width_ratios":(1.,1.1)})
+PLOT_CELLS['task_performance', 1] = (
+    _cell('task_performance', 1, (7.5, 5), r'''
+fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 for curve in data["curves"]:
     label,color_,symbol = STYLE[curve["method"]]
     points = curve["points"]
-    axes[0].plot(points[:,0],points[:,1],marker=symbol,color=color_,label=label)
+    ax.plot(points[:,0],points[:,1],marker=symbol,color=color_,label=label)
     if curve["method"]=="mean":
-        axes[0].fill_between(points[:,0],points[:,2],points[:,3],color=color_,alpha=.10)
-axes[0].set(xlabel="Number of sensors",ylabel="Output power relative to ideal MVDR (dB)")
+        ax.fill_between(points[:,0],points[:,2],points[:,3],color=color_,alpha=.10)
+ax.set(xlabel="Number of sensors",ylabel="Output power relative to ideal MVDR (dB)")
+fig.legend(*ax.get_legend_handles_labels(),loc="outside lower center",ncol=2,frameon=False,fontsize=10.)
+ax.spines[["top","right"]].set_visible(False)
+ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
+ax.text(.015,.985,"(a)",transform=ax.transAxes,ha="left",va="top")
+''').replace("'task_performance_page1.pdf'", "'task_performance_output_power.pdf'")
+    + '\n\n' + _cell('task_performance', 1, (7.5, 5), r'''
+fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 labels = [STYLE[item["method"]][0] for item in data["paired"]]
 samples = [item["values"] for item in data["paired"]]
-boxes = axes[1].boxplot(samples,vert=False,patch_artist=True,
+boxes = ax.boxplot(samples,vert=False,patch_artist=True,
     medianprops={"color":"white","linewidth":1.2},
     flierprops={"markersize":1.8,"alpha":.35})
 # Set tick labels explicitly: boxplot's labels keyword was removed in 3.11.
-axes[1].set_yticks(np.arange(1,len(labels)+1),labels=labels)
+ax.set_yticks(np.arange(1,len(labels)+1),labels=labels)
 for patch,item in zip(boxes["boxes"],data["paired"]):
     patch.set(facecolor=STYLE[item["method"]][1],alpha=.85)
-axes[1].axvline(0.,linestyle="--",color="#222222",linewidth=1.)
-axes[1].set_xlabel("Output power difference: method $-$ posterior mean (dB)")
-fig.legend(*axes[0].get_legend_handles_labels(),loc="outside lower center",ncol=2,frameon=False,fontsize=10.)
-for ax,tag in zip(axes,["(a)","(b)"]):
-    ax.spines[["top","right"]].set_visible(False)
-    ax.grid(axis="x" if ax is axes[1] else "both",color="#BFC4C8",alpha=.30,linewidth=.45)
-    ax.text(.015,.985,tag,transform=ax.transAxes,ha="left",va="top")
-''')
+ax.axvline(0.,linestyle="--",color="#222222",linewidth=1.)
+ax.set_xlabel("Output power difference: method $-$ posterior mean (dB)")
+ax.spines[["top","right"]].set_visible(False)
+ax.grid(axis="x",color="#BFC4C8",alpha=.30,linewidth=.45)
+ax.text(.015,.985,"(b)",transform=ax.transAxes,ha="left",va="top")
+''').replace("'task_performance_page1.pdf'", "'task_performance_paired_difference.pdf'")
+)
 
-PLOT_CELLS['posterior_anisotropy', 1] = _cell('posterior_anisotropy', 1, (15,10), r'''
+PLOT_CELLS['posterior_anisotropy', 1] = (
+    _cell('posterior_anisotropy', 1, (7.5, 5), r'''
 fig = plt.figure(figsize=FIGSIZE,dpi=DPI,layout="constrained")
-grid = fig.add_gridspec(2,2,height_ratios=(1.25,1.))
-sphere = fig.add_subplot(grid[0,0],projection="3d")
-ax_spectrum = fig.add_subplot(grid[0,1])
-ax_difference = fig.add_subplot(grid[1,:])
+sphere = fig.add_subplot(111,projection="3d")
 nodes,log_density = data["nodes"],data["log_density"]
 # Color settings remain here so the palette and density range are editable.
 cmap = colors.LinearSegmentedColormap.from_list("blue_pink_yellow",[
@@ -183,21 +187,29 @@ for axis in (sphere.xaxis,sphere.yaxis,sphere.zaxis):
     axis.line.set_linewidth(.65)
 fig.colorbar(plt.cm.ScalarMappable(norm=norm,cmap=cmap),ax=sphere,
     label=r"$q(U_3x)/q(\widehat{\mathcal X})$",shrink=.64,pad=.015)
+sphere.text2D(.02,.97,"(a)",transform=sphere.transAxes,ha="left",va="top")
+''').replace("'posterior_anisotropy_page1.pdf'", "'posterior_anisotropy_sphere.pdf'")
+    + '\n\n' + _cell('posterior_anisotropy', 1, (7.5, 5), r'''
+fig, ax_spectrum = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 p,pi = data["mean_eigenvalues"],data["iso_eigenvalues"]
 ax_spectrum.plot(np.arange(2,len(p)+1),p[1:],"o-",color=STYLE["mean"][1],label=STYLE["mean"][0])
 ax_spectrum.plot(np.arange(2,len(pi)+1),pi[1:],"^--",color=STYLE["iso"][1],label=STYLE["iso"][0])
 ax_spectrum.set(yscale="log",xlabel=r"Eigenvalue index $j$",ylabel="Eigenvalue")
 ax_spectrum.legend(frameon=False,fontsize=10.)
+ax_spectrum.spines[["top","right"]].set_visible(False)
+ax_spectrum.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
+ax_spectrum.text(.015,.985,"(b)",transform=ax_spectrum.transAxes,ha="left",va="top")
+''').replace("'posterior_anisotropy_page1.pdf'", "'posterior_anisotropy_eigenvalues.pdf'")
+    + '\n\n' + _cell('posterior_anisotropy', 1, (15, 5), r'''
+fig, ax_difference = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 ax_difference.step(data["differences"],data["cdf"],where="post",color=STYLE["mean"][1])
 ax_difference.axvline(0.,color="#70777D",linestyle="--",linewidth=1.)
 ax_difference.set(xlabel="Output power reduction (dB)",ylabel="Empirical CDF")
-for ax in (ax_spectrum,ax_difference):
-    ax.spines[["top","right"]].set_visible(False)
-    ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
-sphere.text2D(.02,.97,"(a)",transform=sphere.transAxes,ha="left",va="top")
-for ax,tag in [(ax_spectrum,"(b)"),(ax_difference,"(c)")]:
-    ax.text(.015,.985,tag,transform=ax.transAxes,ha="left",va="top")
-''')
+ax_difference.spines[["top","right"]].set_visible(False)
+ax_difference.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
+ax_difference.text(.015,.985,"(c)",transform=ax_difference.transAxes,ha="left",va="top")
+''').replace("'posterior_anisotropy_page1.pdf'", "'posterior_anisotropy_empirical_cdf.pdf'")
+)
 
 PLOT_CELLS['noise_adaptation', 1] = _cell('noise_adaptation', 1, (15,5), r'''
 fig,axes = plt.subplots(2,2,figsize=FIGSIZE,dpi=DPI,layout="constrained")

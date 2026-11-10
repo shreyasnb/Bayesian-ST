@@ -18,10 +18,19 @@ LaTeX enabled, use 300 dpi, and follow the implementation notebook's serif
 typography. These are editable defaults: there is no hidden function resizing
 the figure or enforcing a particular dpi after the cell creates it.
 
-The beamforming and contact notebooks use the author's current 15-by-5-inch
-canvases, with 15-by-10-inch canvases for the anisotropy and computation figures.
-Contact uses the same sizes, typography and labels as beamforming. Plot labels
-name the quantity; the nearby notebook prose defines the comparison and intervals.
+Unchanged compositions retain the author's 15-by-5-inch or 15-by-10-inch
+canvases. Selected panels now use separate figures: 7.5-by-5 inches for individual
+half-width panels and 15-by-5 inches for full-width curves, timing panels and the
+contact sphere pair. Each figure has its own visible size and PDF filename.
+Plot labels name the quantity; the nearby prose defines the comparison and intervals.
+
+Only these selected compositions display sequential figures within their original
+code cells; the notebook cell order and all other tiling are preserved:
+
+- Beamforming task performance and posterior anisotropy.
+- Contact information, posterior anisotropy and computation time. The contact
+  density spheres remain side by side with a shared colorbar; their risk curve
+  follows as a separate figure.
 
 The data readers in `lib/notebook_*_data.py` load and check saved numerical
 arrays. They do not run a simulator, fit a posterior, or draw a figure. The

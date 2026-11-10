@@ -41,11 +41,12 @@ wide. Notebook previews are scaled to the screen; the accompanying PDF
 and full-resolution PNG links retain the export quality. Existing
 historical result files keep their original metadata.
 
-The current editable beamforming notebook preserves the author's subsequent
-15-by-5-inch figure settings, with 15-by-10-inch anisotropy and computation
-figures. The contact notebook follows these same settings. Their local PDF
-exports use the visible per-cell sizes; the seven-inch published catalogue
-described above remains a separate set of files.
+Unchanged compositions in the editable notebooks preserve the author's
+15-by-5-inch or 15-by-10-inch settings. Selected panels are displayed as separate
+figures in the same code cell, using 7.5-by-5 inches for half-width panels and
+15-by-5 inches for full-width panels. The two contact density spheres retain
+their shared side-by-side figure. Every figure has its own editable size and
+PDF save; the seven-inch published catalogue remains a separate set of files.
 
 Figure changes read the saved, verified arrays. Font, layout and color
 changes do not rerun inference, tune an estimator, or change a benchmark
