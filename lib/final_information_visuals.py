@@ -1,6 +1,6 @@
 """Likelihood geometry of the saved contact experiment, without new inference.
 
-The normal graph chart is n(Z)=(n_0-X z)/sqrt(1+||z||^2), z=vec(Z).
+The normal graph chart is n(z)=(n_0-X z)/sqrt(1+||z||^2), z=(z_1,z_2)^T.
 This module evaluates the Gaussian observation law at other planes; it does
 not fit a posterior, simulate observations, or interpret KL contours as regions
 of posterior probability.
@@ -12,7 +12,7 @@ from .plotting import plt
 from matplotlib.lines import Line2D
 
 
-CONTACT_INFORMATION_CAPTION = r'''Directional likelihood information for the original concentrated-input contact fixture at $t=16$. The generating normal is $n_0=e_3$, $X_0=(e_1,e_2)$, and the plane graph chart has $z=\operatorname{vec}(Z)=(z_1,z_2)^T$ and normal $n(Z)=(n_0-X_0z)/\sqrt{1+\|z\|^2}$. For the same frozen prescribed inputs and true variance, $p_Z$ is the joint Gaussian response law with means $P_{\mathcal X(Z)}v_j$ and covariance $\sigma^2I_3$. Panel (a) shows equal values of the exact divergence $D_{\mathrm{KL}}(p_0\|p_Z)=z^T\mathcal F_{\mathrm{cond}}z/[2(1+\|z\|^2)]$ in native chart coordinates, with equal axis scales. These are likelihood-divergence contours, not credible or confidence regions. Panel (b) evaluates the same divergence along the two native information directions; $\delta$ is the physical angle between $n_0$ and $n(Z)$. The marked rotations $5^\circ$ and $30^\circ$ produce nearly equal divergences, approximately $0.2396$ and $0.2308$, despite their different angular sizes. Thus this input design distinguishes rotations much more strongly in one direction. The local limit is $D_{\mathrm{KL}}=\tfrac12z^T\mathcal F_{\mathrm{cond}}z+o(\|z\|^2)$. This is expected observation-law information at the generating plane, distinct from finite-data posterior curvature. No new observations, inference, fitting, or experimental repetitions are introduced.'''
+CONTACT_INFORMATION_CAPTION = r'''Directional likelihood information for the original concentrated-input contact fixture at $t=16$. The generating normal is $n_0=e_3$, $X_0=(e_1,e_2)$, and the plane graph chart has $z=(z_1,z_2)^\top$ and normal $n(z)=(n_0-X_0z)/\sqrt{1+\|z\|^2}$. For the same frozen prescribed inputs and true variance, $p_z$ is the joint Gaussian response law with means $P_{\mathcal X(z)}v_j$ and covariance $\sigma^2I_3$. Panel (a) shows equal values of the exact divergence $D_{\mathrm{KL}}(p_0\|p_z)=z^T\mathcal F_{\mathrm{cond}}z/[2(1+\|z\|^2)]$ in native chart coordinates, with equal axis scales. These are likelihood-divergence contours, not credible or confidence regions. Panel (b) evaluates the same divergence along the two native information directions; $\delta$ is the physical angle between $n_0$ and $n(z)$. The marked rotations $5^\circ$ and $30^\circ$ produce nearly equal divergences, approximately $0.2396$ and $0.2308$, despite their different angular sizes. Thus this input design distinguishes rotations much more strongly in one direction. The local limit is $D_{\mathrm{KL}}=\tfrac12z^T\mathcal F_{\mathrm{cond}}z+o(\|z\|^2)$. This is expected observation-law information at the generating plane, distinct from finite-data posterior curvature. No new observations, inference, fitting, or experimental repetitions are introduced.'''
 
 
 def contact_information_geometry(record, sigma2):
@@ -96,11 +96,13 @@ def contact_information(evidence):
     handles = [Line2D([], [], color='#7B3294', linestyle=style,
                       label=r'$D_{\mathrm{KL}}='+f'{level:g}'+r'$')
                for level, style in zip(levels, contour_styles)]
-    axes[0].legend(handles=handles, frameon=False, fontsize=10., loc='lower left',
+    axes[0].legend(handles=handles, frameon=False, fontsize=12., loc='lower left',
                    handlelength=1.5, labelspacing=.35, borderaxespad=.3)
     axes[0].plot(0., 0., '+', color='#303030', markersize=6.)
     axes[0].set(xlabel=r'$z_1$', ylabel=r'$z_2$', xlim=(-.78, .78), ylim=(-.78, .78),
                 xticks=[-.6, 0., .6], yticks=[-.6, 0., .6])
+    axes[0].set_xlabel(r'$z_1$', fontsize=12.)
+    axes[0].set_ylabel(r'$z_2$', fontsize=12.)
     axes[0].set_aspect('equal', adjustable='box')
     clean(axes[0])
 
@@ -108,7 +110,7 @@ def contact_information(evidence):
     delta = np.deg2rad(delta_deg)
     rays = [np.column_stack([np.tan(delta), np.zeros_like(delta)]),
             np.column_stack([np.zeros_like(delta), np.tan(delta)])]
-    labels = [r'$z=(\tan\delta,0)$', r'$z=(0,\tan\delta)$']
+    labels = [r'$z=(\tan\delta,0)^\top$', r'$z=(0,\tan\delta)^\top$']
     colors = ['#D55E00', '#0072B2']
     styles = ['-', '--']
     examples = [(5., np.array([np.tan(np.deg2rad(5.)), 0.])),
@@ -119,13 +121,17 @@ def contact_information(evidence):
         axes[0].plot(*point, 'o', color=c, markersize=4.)
         axes[1].plot(angle, value, 'o', color=c, markersize=4.)
     axes[1].set(xlabel=r'$\delta\ ({}^\circ)$',
-                ylabel=r'$D_{\mathrm{KL}}(p_0\,\Vert\,p_Z)$', xlim=(0., 35.))
+                ylabel=r'$D_{\mathrm{KL}}(p_0\,\Vert\,p_z)$', xlim=(0., 35.))
+    axes[1].set_xlabel(r'$\delta\ ({}^\circ)$', fontsize=12.)
+    axes[1].set_ylabel(r'$D_{\mathrm{KL}}(p_0\,\Vert\,p_z)$', fontsize=12.)
     axes[1].set_yscale('log')
     axes[1].set_box_aspect(1.)
-    axes[1].legend(frameon=False, fontsize=10., loc='lower right')
+    axes[1].legend(frameon=False, fontsize=12., loc='lower right')
     clean(axes[1])
     for ax, tag in zip(axes, ['(a)', '(b)']):
         letter(ax, tag)
+        ax.texts[-1].set_fontsize(12.)
+        ax.tick_params(axis='both', labelsize=11.)
     fig._final_selection = dict(
         scope='Exact likelihood geometry at the original frozen contact input design; not a new experiment',
         condition='static_concentrated', episode=0, t=geometry['t'],
@@ -133,8 +139,8 @@ def contact_information(evidence):
         variance_source='performance.config.anisotropy_sigma2', sigma2=geometry['sigma2'],
         normal=geometry['normal'].tolist(), chart_basis=geometry['basis'].tolist(),
         fisher_matrix=geometry['F'].tolist(), fisher_eigenvalues=geometry['fisher_eigenvalues'].tolist(),
-        formula='D_KL(p_0||p_Z)=z^T F_cond z/[2(1+||z||^2)]',
-        chart='n(Z)=(n_0-X z)/sqrt(1+||z||^2), z=vec(Z), X=(e_1,e_2), n_0=e_3',
+        formula='D_KL(p_0||p_z)=z^T F_cond z/[2(1+||z||^2)]',
+        chart='n(z)=(n_0-X z)/sqrt(1+||z||^2), z=(z_1,z_2)^T, X=(e_1,e_2), n_0=e_3',
         contour_levels=levels, contour_scope='Equal Gaussian KL divergence; not credible or confidence regions',
         angular_curves='Exact Gaussian KL along the two native Fisher directions; delta is the physical normal angle',
         marked_angles_deg=[5., 30.],

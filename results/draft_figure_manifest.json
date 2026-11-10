@@ -2,10 +2,10 @@
   "schema": 1,
   "status": "completed",
   "producer": "scripts/export_draft_figures.py",
-  "producer_sha256": "2cc3f6b99623765af42e21e468616b24109b600eaaa989ea43e6a756d6e4aa17",
+  "producer_sha256": "f4115ce640b1fa1d002d09e5540e62dc594dd8c3b0e82aa12f68bbc8fb1ca63c",
   "source_figure_manifests": {
-    "results/beamforming/figure_manifest.json": "bccef591aa0dd013b2c23405f72ed1840e3258d1f7d70337d0e130365d1724b5",
-    "results/contact/figure_manifest.json": "f5eac5829ceb4873857d2aabf0831bba366bf4cf3e72b2321c40fad76ef7f7ea"
+    "results/beamforming/figure_manifest.json": "e7465bd031cee9db96058f7caf45b8f367c08d277cde97a513d58dafefb6f185",
+    "results/contact/figure_manifest.json": "7366ea6c99a76f9c99ffc1da4f28bf8db8b3c5a15b498aef808f973ce5509e7d"
   },
   "dpi": 300,
   "paper_width_in": 7.0,
@@ -20,38 +20,52 @@
     "beamforming",
     "contact"
   ],
-  "page_partition_scope": "Every page of the sixteen individual canonical PDFs per application appears exactly once; the three duplicate bundles remain only in canonical directories.",
-  "selection_scope": "Explicit editorial selection by scientific role; all source pages retained, no benchmark or episode selection.",
+  "page_partition_scope": "Every page of the sixteen individual canonical PDFs per application appears exactly once in a complete supplementary canonical copy; the three duplicate bundles remain in canonical directories.",
+  "selection_scope": "The revised main section uses six notebook PDFs. All canonical evidence is retained in supplementary; no simulations, fitting, settings, benchmarks or episodes are changed.",
   "main_policy": {
     "beamforming": {
-      "setup": "Defines the array geometry and the measurements available to the task.",
-      "task_performance": "Shows moderate-dimensional task losses and paired same-episode controls.",
-      "noise_adaptation": "Shows the declared noise-change intervention and causal variance learning.",
-      "computation_time": "Shows time to process 64 observations, with task-decision intervals and variance-fitting operations stated explicitly."
+      "task_performance_output_power": "Exact-covariance output power after t=n measurements.",
+      "noise_adaptation_page1": "Variance estimation and prediction before each measurement."
     },
     "contact": {
-      "setup": "Defines the physical contact geometry, applied input and measured velocity.",
-      "task_performance": "Shows response MSE and confidence intervals for the posterior mean and same-data modal, isotropic and regularized-projector controls.",
-      "posterior_anisotropy": "Shows the actual saved normal posterior and its matched-isotropic comparison.",
-      "information": "Shows which physical normal rotations the saved applied inputs distinguish, using the exact Gaussian likelihood divergence."
+      "information_rotation": "Likelihood divergence along two physical normal rotations.",
+      "posterior_anisotropy_spheres": "Full and matched isotropic normal densities.",
+      "posterior_anisotropy_risk": "Normalized posterior response variance.",
+      "task_performance_page1": "Mean squared velocity prediction error."
     }
   },
+  "main_notebook_files": [
+    "results/main/beamforming/noise_adaptation_page1.pdf",
+    "results/main/beamforming/task_performance_output_power.pdf",
+    "results/main/contact/information_rotation.pdf",
+    "results/main/contact/posterior_anisotropy_risk.pdf",
+    "results/main/contact/posterior_anisotropy_spheres.pdf",
+    "results/main/contact/task_performance_page1.pdf"
+  ],
+  "main_caption_notes": {
+    "results/main/beamforming/noise_adaptation_page1.pdf": "Beamforming with true variances, fixed variance estimates and EM variance estimates at $n=32$, $T=256$ and variance-estimation block length $L=32$. Panels (a,b) show the variances available before receiving $u_t$. The true noise variance is $0.2$ for $t\\leq128$ and $0.8$ for $t\\geq129$; the true signal variance is one. The change is drawn between measurements 128 and 129. Variance bands contain the middle 50\\% of estimates across 256 Monte Carlo simulations. Panel (c) shows $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, using the prior mean $\\overline P_t^-$ and saved exact covariance powers. Panel (d) shows the normalized Bingham-mixture density $\\log\\pi_t(u_t)$, with $\\pi_t(u)=\\int p(u\\mid\\mathcal X,\\widehat\\theta_t)q_{A_t^-}(\\mathcal X)\\,d\\mu(\\mathcal X)$, evaluated before correction. Power and log-density bands are 95\\% confidence intervals for Monte Carlo means. The unchanged forgetting factors are $0.98$, $0.90$ and $0.98$ for true, fixed and EM variances. An EM fit uses two iterations and affects measurements from $t+1$.",
+    "results/main/beamforming/task_performance_output_power.pdf": "Array output power relative to its minimum under the unit-gain constraint: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $R_t=\\sigma_t^2I_n+\\tau_t^2P_{\\mathcal X_t}$ and $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The interference direction is fixed and estimates use $t=n$ measurements at $n=32,64,128$, with $\\beta=1$. Curves show averages over 256 Monte Carlo simulations, using saved exact covariance powers. Shading is a 95\\% confidence interval for the average obtained with the posterior mean. Settings retain their earlier measured-data selection criterion.",
+    "results/main/contact/information_rotation.pdf": "Change in the conditional measurement distribution under rotations of the saved plane with true normal $e_3$, using the original $t=16$ measurements. The angle $\\delta$ is measured in degrees. The curves evaluate $D_{\\mathrm{KL}}(p_0\\|p_z)$ along $z=(\\tan\\delta,0)^\\top$ and $z=(0,\\tan\\delta)^\\top$, where $n(z)=(e_3-z_1e_1-z_2e_2)/\\sqrt{1+\\|z\\|^2}$ and $p_z$ is the corresponding joint conditional likelihood. Markers retain the $5^\\circ$ and $30^\\circ$ rotations. This standalone figure has no inherited panel letter.",
+    "results/main/contact/posterior_anisotropy_risk.pdf": "Panel (c) of the directional posterior-uncertainty figure. For $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ with $v_0=0.02\\,\\mathrm{m/s}$, the ordinate is $r_t(v(\\theta))/v_0^2$, where $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$. The two curves use $\\overline P_t^+$ and $\\overline P_t^{\\mathrm{iso}}$, respectively, each with its own distribution. The saved unit-input curves equal this normalized quantity; no velocity scaling is applied to them.",
+    "results/main/contact/posterior_anisotropy_spheres.pdf": "Directional posterior uncertainty at $t=16$. Panels (a,b) show the full and matched isotropic normal densities, normalized relative to invariant measure and drawn on a common logarithmic scale. Antipodal normals represent one plane. The point marks the common modal line; gray curves are coordinate great circles. Saved coordinates, camera, density parameters and logarithmic limits are unchanged. These panels are combined with the separate response-variance panel (c) in TeX.",
+    "results/main/contact/task_performance_page1.pdf": "Mean squared velocity prediction error $\\mathcal E_t(D_t)=\\tfrac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, with $v_t^{(j)}=v_0R_t^\\top e_j$ and $v_0=0.02\\,\\mathrm{m/s}$. Panel (a) uses stationary inputs near $e_1$ at measurement indices $t=1,4,16,32$. Panel (b) uses a sphere of radius $0.05$ m; errors are averaged over $t=4,8,\\ldots,192$ within each simulation before averaging the 256 values. Multiplication by $10^6$ converts the saved squared-velocity error to $(\\mathrm{mm}/\\mathrm{s})^2$; no additional factor of three is used. Confidence intervals are shown for the posterior mean in (a) and every method in (b)."
+  },
   "documentation": {
-    "results/main/README.md": "fe440b7891bd0e47fa60f2b08a23b0aef61a664b4dfdb372d55badefc952dc53",
-    "results/supplementary/README.md": "5b5d77619ba08028a1965d5c8ef7755e046721803dbea8b98c0f33df53ef3dd6"
+    "results/main/README.md": "c07843e55c14efc195fe9b481438702df4ad28fec86724b9c5a9ab973c65a6fe",
+    "results/supplementary/README.md": "1a72d159374f277ef9448dd4327481778e98832570d56b24406c15ee418bd04c"
   },
   "files": {
-    "results/main/beamforming/setup.pdf": {
-      "sha256": "6143ab4064b05581ec729c8fe59b7ede876f0cdf76525f3611bc94a00178125a",
-      "bytes": 276500,
+    "results/supplementary/beamforming/setup.pdf": {
+      "sha256": "9a397afb155304a671236e92105f089f99e3a5b8fc78f38cf07e35dc82bc28ff",
+      "bytes": 406421,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
       "metadata_title_empty": true,
       "application": "beamforming",
-      "section": "main",
+      "section": "supplementary",
       "source_pdf": "results/beamforming/setup.pdf",
-      "source_pdf_sha256": "6143ab4064b05581ec729c8fe59b7ede876f0cdf76525f3611bc94a00178125a",
+      "source_pdf_sha256": "9a397afb155304a671236e92105f089f99e3a5b8fc78f38cf07e35dc82bc28ff",
       "source_pages": [
         1
       ],
@@ -71,7 +85,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "episode": 0,
@@ -93,21 +107,21 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Defines the array geometry and the measurements available to the task.",
-      "proposed_latex_caption": "Array geometry, available interference-only proper-complex snapshots and a saved distortionless beampattern. The desired steering vector is known to the task rule. The displayed episode is fixed in advance; evaluation truth is not additional training data.",
-      "full_source_caption": "Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved episode, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved simulation, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information.",
+      "full_source_caption": "Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved simulation, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information."
     },
-    "results/main/beamforming/task_performance.pdf": {
-      "sha256": "b7a69919389706ea35e28539819061fcfa6b87555d6072d5e1a14f5762719eeb",
-      "bytes": 266061,
+    "results/supplementary/beamforming/task_performance.pdf": {
+      "sha256": "dd2aa367efaca7416c116fdbfe26cdca49032bba03f82a7689a534f890efd49c",
+      "bytes": 397063,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
       "metadata_title_empty": true,
       "application": "beamforming",
-      "section": "main",
+      "section": "supplementary",
       "source_pdf": "results/beamforming/task_performance.pdf",
-      "source_pdf_sha256": "b7a69919389706ea35e28539819061fcfa6b87555d6072d5e1a14f5762719eeb",
+      "source_pdf_sha256": "dd2aa367efaca7416c116fdbfe26cdca49032bba03f82a7689a534f890efd49c",
       "source_pages": [
         1
       ],
@@ -127,23 +141,27 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [
             {
               "cohort": "stationary",
+              "condition": "static",
+              "measurement_selection": "t=n",
               "observations_per_sensor": 1,
               "dimensions": [
                 32,
                 64,
                 128
               ],
-              "episode_scope": "All independent test episodes"
+              "endpoint": "true_ratio_db",
+              "simulation_scope": "All 256 independent test Monte Carlo simulations at each dimension",
+              "power_definition": "10 log10(w_t^H R_t w_t / p_t^star); exact saved covariance output"
             },
             {
               "condition": "smooth",
               "n": 32,
-              "endpoint": "heldout_ratio_db",
+              "endpoint": "true_ratio_db",
               "displayed_references": [
                 "mode",
                 "iso",
@@ -160,13 +178,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Shows moderate-dimensional task losses and paired same-episode controls.",
-      "proposed_latex_caption": "Held-out disturbance power relative to the known-covariance oracle at $n=32,64,128$ and $L/n=1$, together with paired moving-task episode differences. Snapshot losses are averaged within each independent episode. The mean curve has pointwise 95\\% confidence bands; paired boxes describe episode differences, not confidence intervals. Complete training-count, control and motion-condition grids remain supplementary.",
-      "full_source_caption": "Task losses on common independent test episodes. Losses are averaged within each episode before pointwise Student 95\\% intervals. For contact, main panel (a) shows stationary concentrated-input checkpoint MSE versus observation count, with the posterior-mean confidence band; panel (b) shows absolute episode-average MSE for the moving sphere condition, with a confidence interval for every method including the posterior mean. All methods in panel (b) use the same independent episodes. The separate second page retains paired MSE differences; these are absolute differences in squared velocity units, not relative MSE. A posterior mean compared with itself has identically zero paired difference. Beamforming paired boxes show the distribution of same-episode differences, not confidence intervals. GREAT and application-specific controls retain their stated information and independently validated settings. Complex beamforming GREAT is an extension of the real algorithm, as described in the notebook text. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
+      "full_source_caption": "Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode."
     },
     "results/supplementary/beamforming/posterior_anisotropy.pdf": {
-      "sha256": "eae2a8d2a2bc6ae2c4975c4a86094355ffb21e9c393ae90392de66394a3c7f9d",
-      "bytes": 242309,
+      "sha256": "ae45df56bb2ea17670c221709b4e40b5dccf14891fa5eb2bb014bb590dabd3bc",
+      "bytes": 338585,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -174,7 +192,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/posterior_anisotropy.pdf",
-      "source_pdf_sha256": "eae2a8d2a2bc6ae2c4975c4a86094355ffb21e9c393ae90392de66394a3c7f9d",
+      "source_pdf_sha256": "ae45df56bb2ea17670c221709b4e40b5dccf14891fa5eb2bb014bb590dabd3bc",
       "source_pages": [
         1
       ],
@@ -194,7 +212,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "cohort": "stationary",
@@ -233,23 +251,25 @@
           ]
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
-      "full_source_caption": "a real-coefficient section $h=U_3x$, $x\\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=t=64$. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full exact-covariance power differences at n=t=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
+      "full_source_caption": "Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=t=64$. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full exact-covariance power differences at n=t=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk."
     },
-    "results/main/beamforming/noise_adaptation.pdf": {
-      "sha256": "301ba2a8cd54012d926a5f67890fc79b1fa3df12f57bc60202ac22df7fe6da88",
-      "bytes": 172752,
-      "export_method": "lossless PDF page-object extraction",
+    "results/supplementary/beamforming/noise_adaptation.pdf": {
+      "sha256": "6b86e89a3f2aa6f13b60f842342d3799a71aadfbc2fdff652a2c2b205f57b51e",
+      "bytes": 282668,
+      "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
       "metadata_title_empty": true,
       "application": "beamforming",
-      "section": "main",
+      "section": "supplementary",
       "source_pdf": "results/beamforming/noise_adaptation.pdf",
-      "source_pdf_sha256": "b350a2633fcee891233163ce31d59a8f48eb67f4682a543c61b3d64d5f74e4be",
+      "source_pdf_sha256": "6b86e89a3f2aa6f13b60f842342d3799a71aadfbc2fdff652a2c2b205f57b51e",
       "source_pages": [
-        1
+        1,
+        2,
+        3
       ],
       "pages": [
         {
@@ -267,33 +287,12 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "noise_change",
           "panel_selections": [],
           "sphere_displays": []
-        }
-      ],
-      "selection_rationale": "Shows the declared noise-change intervention and causal variance learning.",
-      "proposed_latex_caption": "Causal variance learning under the predeclared noise-change intervention. Fits use completed, nonoverlapping past blocks and affect future variances only; every observation is assimilated once. Variance bands describe interquartile repeated-episode spread, not a posterior over the variance. Future-task and excluded-observation score intervals are pointwise 95\\% intervals across independent episodes. Empirical-Bayes plug-in scales omit scale uncertainty and are outside the fixed-variance theorem. Motion and signal-power interventions remain supplementary.",
-      "full_source_caption": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem."
-    },
-    "results/supplementary/beamforming/noise_adaptation.pdf": {
-      "sha256": "ac198ab313e4bcd699faa150a52c8a2f9d7560c6c7ee12d314f521e46a5412d4",
-      "bytes": 178904,
-      "export_method": "lossless PDF page-object extraction",
-      "saved_pdf_rasterized": false,
-      "rendered_page_identity_checked": true,
-      "metadata_title_empty": true,
-      "application": "beamforming",
-      "section": "supplementary",
-      "source_pdf": "results/beamforming/noise_adaptation.pdf",
-      "source_pdf_sha256": "b350a2633fcee891233163ce31d59a8f48eb67f4682a543c61b3d64d5f74e4be",
-      "source_pages": [
-        2,
-        3
-      ],
-      "pages": [
+        },
         {
           "page": 2,
           "figure_size_in": [
@@ -309,7 +308,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "smooth",
           "panel_selections": [],
@@ -330,20 +329,20 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "power_change",
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem.",
-      "full_source_caption": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $128.5$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem.",
+      "full_source_caption": "Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $128.5$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem."
     },
     "results/supplementary/beamforming/information.pdf": {
-      "sha256": "55389d8b37f86199546625e81f88d6a2c140e4ffdf116396f0de81848a2c7900",
-      "bytes": 106281,
+      "sha256": "f75b3ca5ebb5fea5e24d27cc63494da728721084d25b8e372572315c97ab79f0",
+      "bytes": 203373,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -351,7 +350,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/information.pdf",
-      "source_pdf_sha256": "55389d8b37f86199546625e81f88d6a2c140e4ffdf116396f0de81848a2c7900",
+      "source_pdf_sha256": "f75b3ca5ebb5fea5e24d27cc63494da728721084d25b8e372572315c97ab79f0",
       "source_pages": [
         1
       ],
@@ -371,19 +370,19 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Independent Gaussian Fisher, score and curvature checks. Expected information is distinguished from finite-data posterior curvature. All matrix comparisons use aligned tangent coordinates; proper-complex information uses real/imaginary coordinates and its correct factor. Recorded-input excitation and marginalized-input information use the stated common data law. Monte Carlo dataset count differs from observations per dataset. Reused mathematical reference cohorts keep their actual source hashes and repetition counts.",
       "full_source_caption": "Independent Gaussian Fisher, score and curvature checks. Expected information is distinguished from finite-data posterior curvature. All matrix comparisons use aligned tangent coordinates; proper-complex information uses real/imaginary coordinates and its correct factor. Recorded-input excitation and marginalized-input information use the stated common data law. Monte Carlo dataset count differs from observations per dataset. Reused mathematical reference cohorts keep their actual source hashes and repetition counts."
     },
     "results/supplementary/beamforming/posterior_curvature.pdf": {
-      "sha256": "112345a06f21ad6e97a0b63a2ba4322252ae0adff0ecc74b06556c6a9044b67d",
-      "bytes": 229322,
+      "sha256": "dfaadd3287b227006b726e74d7b62b287234011852a1cf0b5f587177149e608e",
+      "bytes": 356206,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -391,7 +390,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/posterior_curvature.pdf",
-      "source_pdf_sha256": "112345a06f21ad6e97a0b63a2ba4322252ae0adff0ecc74b06556c6a9044b67d",
+      "source_pdf_sha256": "dfaadd3287b227006b726e74d7b62b287234011852a1cf0b5f587177149e608e",
       "source_pages": [
         1
       ],
@@ -411,19 +410,19 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Invariant-density Hessian and local accuracy diagnostics. Empirical bounded log-coordinate spread is compared with $H_A^{-1}$ only under recorded locality conditions; broad/nonlocal cases remain visible. The stationary inverse-Fisher study uses fixed known variances and $\\beta=1$, reports estimation bias and local fractions, and treats inverse Fisher as a local reference rather than a global intrinsic Cramer--Rao equality. The real graph-density volume term is a separate quantity, retained in the tables. Forgetting sampling references use squared weights.",
       "full_source_caption": "Invariant-density Hessian and local accuracy diagnostics. Empirical bounded log-coordinate spread is compared with $H_A^{-1}$ only under recorded locality conditions; broad/nonlocal cases remain visible. The stationary inverse-Fisher study uses fixed known variances and $\\beta=1$, reports estimation bias and local fractions, and treats inverse Fisher as a local reference rather than a global intrinsic Cramer--Rao equality. The real graph-density volume term is a separate quantity, retained in the tables. Forgetting sampling references use squared weights."
     },
     "results/supplementary/beamforming/tracking_bound.pdf": {
-      "sha256": "5cede1f3cab80f450629f39cceb89ffb41d887d074ff6c53dc1e324b5e4a1c00",
-      "bytes": 209677,
+      "sha256": "0d54e12ca74d6af965d55a37122f1cda37a55d2297a84bb67c3c9fb3c902cb2d",
+      "bytes": 309648,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -431,7 +430,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/tracking_bound.pdf",
-      "source_pdf_sha256": "5cede1f3cab80f450629f39cceb89ffb41d887d074ff6c53dc1e324b5e4a1c00",
+      "source_pdf_sha256": "0d54e12ca74d6af965d55a37122f1cda37a55d2297a84bb67c3c9fb3c902cb2d",
       "source_pages": [
         1,
         2,
@@ -454,7 +453,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static",
@@ -481,7 +480,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "terminal_cohorts": [
@@ -569,7 +568,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static",
@@ -596,7 +595,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static",
@@ -609,13 +608,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe repeated-episode spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.",
-      "full_source_caption": "Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe repeated-episode spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe across-simulation spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.",
+      "full_source_caption": "Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe across-simulation spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition."
     },
     "results/supplementary/beamforming/block_updates.pdf": {
-      "sha256": "b55ef3f414105c61e19619f88ac5be8d13d73ca3e782a602fb4a388c92a9a09f",
-      "bytes": 136757,
+      "sha256": "0e4cacb80aeeceee0034fcc20bcbfbb2b850dad76e516df007fe1f41b40f2a4c",
+      "bytes": 236639,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -623,7 +622,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/block_updates.pdf",
-      "source_pdf_sha256": "b55ef3f414105c61e19619f88ac5be8d13d73ca3e782a602fb4a388c92a9a09f",
+      "source_pdf_sha256": "0e4cacb80aeeceee0034fcc20bcbfbb2b850dad76e516df007fe1f41b40f2a4c",
       "source_pages": [
         1
       ],
@@ -643,19 +642,19 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing and task-decision cost is reported in the computation output.",
       "full_source_caption": "Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing and task-decision cost is reported in the computation output."
     },
     "results/supplementary/beamforming/additional_comparisons.pdf": {
-      "sha256": "aa25eb5d1fea623827ba7829145f5dd70b525353ebc21ebb015aca6d0fb91b89",
-      "bytes": 337158,
+      "sha256": "3209efd7ce39c03ab058f4eb8fe258622f9a78e57eb517bdd852d734fbec3bc0",
+      "bytes": 465871,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -663,7 +662,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/additional_comparisons.pdf",
-      "source_pdf_sha256": "aa25eb5d1fea623827ba7829145f5dd70b525353ebc21ebb015aca6d0fb91b89",
+      "source_pdf_sha256": "3209efd7ce39c03ab058f4eb8fe258622f9a78e57eb517bdd852d734fbec3bc0",
       "source_pages": [
         1,
         2,
@@ -690,7 +689,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "n": 32,
@@ -731,7 +730,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "n": 64,
@@ -772,7 +771,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "n": 128,
@@ -813,14 +812,14 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "static",
           "panel_selections": [
             {
               "condition": "static",
               "n": 32,
-              "endpoint": "heldout_ratio_db",
+              "endpoint": "true_ratio_db",
               "displayed_references": [
                 "mode",
                 "iso",
@@ -854,14 +853,14 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "smooth",
           "panel_selections": [
             {
               "condition": "smooth",
               "n": 32,
-              "endpoint": "heldout_ratio_db",
+              "endpoint": "true_ratio_db",
               "displayed_references": [
                 "mode",
                 "iso",
@@ -895,14 +894,14 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "abrupt",
           "panel_selections": [
             {
               "condition": "abrupt",
               "n": 32,
-              "endpoint": "heldout_ratio_db",
+              "endpoint": "true_ratio_db",
               "displayed_references": [
                 "mode",
                 "iso",
@@ -936,14 +935,14 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "noise_change",
           "panel_selections": [
             {
               "condition": "noise_change",
               "n": 32,
-              "endpoint": "heldout_ratio_db",
+              "endpoint": "true_ratio_db",
               "displayed_references": [
                 "mode",
                 "iso",
@@ -977,14 +976,14 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "power_change",
           "panel_selections": [
             {
               "condition": "power_change",
               "n": 32,
-              "endpoint": "heldout_ratio_db",
+              "endpoint": "true_ratio_db",
               "displayed_references": [
                 "mode",
                 "iso",
@@ -1004,13 +1003,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms.",
       "full_source_caption": "Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms."
     },
     "results/supplementary/beamforming/variance_estimation.pdf": {
-      "sha256": "d1a06b6fb1200a1b0cf4f30f3b1b8ebbdc304340f5677aaacff1113c5b7a1d87",
-      "bytes": 133834,
+      "sha256": "c391ca39ecccafb51abcdf37a18f661acc53eb76fcafd50d5fe73a60b8c96e51",
+      "bytes": 164900,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -1018,7 +1017,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/variance_estimation.pdf",
-      "source_pdf_sha256": "d1a06b6fb1200a1b0cf4f30f3b1b8ebbdc304340f5677aaacff1113c5b7a1d87",
+      "source_pdf_sha256": "c391ca39ecccafb51abcdf37a18f661acc53eb76fcafd50d5fe73a60b8c96e51",
       "source_pages": [
         1
       ],
@@ -1038,19 +1037,19 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes.",
-      "full_source_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker simulations.",
+      "full_source_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker simulations."
     },
     "results/supplementary/beamforming/predictive_calibration.pdf": {
-      "sha256": "a633e73f93affe5eb2c93ba16a15af8ccd96c895fe653c2dbea0443ae8526a95",
-      "bytes": 194443,
+      "sha256": "c05c7340369c1a3f124e3baa522fb814f59b2171b8bcb9030213ed06105227b5",
+      "bytes": 259542,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -1058,7 +1057,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/predictive_calibration.pdf",
-      "source_pdf_sha256": "a633e73f93affe5eb2c93ba16a15af8ccd96c895fe653c2dbea0443ae8526a95",
+      "source_pdf_sha256": "c05c7340369c1a3f124e3baa522fb814f59b2171b8bcb9030213ed06105227b5",
       "source_pages": [
         1,
         2,
@@ -1086,7 +1085,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -1112,7 +1111,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -1138,7 +1137,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -1164,7 +1163,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -1190,7 +1189,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "drifting",
           "selection": {
@@ -1216,7 +1215,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "drifting",
           "selection": {
@@ -1242,7 +1241,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -1288,7 +1287,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -1334,7 +1333,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "drifting",
           "selection": {
@@ -1366,13 +1365,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $q^H Pq$ for a known unit complex query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime.",
-      "full_source_caption": "Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $q^H Pq$ for a known unit complex query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent Monte Carlo simulations, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent Monte Carlo simulations, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $q^H Pq$ for a known unit complex query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime.",
+      "full_source_caption": "Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent Monte Carlo simulations, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent Monte Carlo simulations, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $q^H Pq$ for a known unit complex query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime."
     },
     "results/supplementary/beamforming/predictive_scores.pdf": {
-      "sha256": "568ca919e15886bfc105e5385e7fe752596d9cb211d015bf8f62c60651366249",
-      "bytes": 115098,
+      "sha256": "3845902f384b9ad0ba8f104da43cec089307ff25d5b00aabc64fa755be9d4414",
+      "bytes": 214972,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -1380,7 +1379,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/predictive_scores.pdf",
-      "source_pdf_sha256": "568ca919e15886bfc105e5385e7fe752596d9cb211d015bf8f62c60651366249",
+      "source_pdf_sha256": "3845902f384b9ad0ba8f104da43cec089307ff25d5b00aabc64fa755be9d4414",
       "source_pages": [
         1
       ],
@@ -1400,7 +1399,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "cohort": "calibration",
@@ -1412,13 +1411,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee.",
-      "full_source_caption": "Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each simulation before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee.",
+      "full_source_caption": "Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each simulation before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee."
     },
     "results/supplementary/beamforming/model_mismatch.pdf": {
-      "sha256": "a34a23ae71b59e67ecfa1921ab330a3f1a1678f4623f30f3bc22edc01eaf0d6f",
-      "bytes": 70622,
+      "sha256": "1d6da1c81e22b40594067b1a63b6545b3b8b0bc6667d4df113ccdd60ade970fe",
+      "bytes": 170677,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -1426,7 +1425,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/model_mismatch.pdf",
-      "source_pdf_sha256": "a34a23ae71b59e67ecfa1921ab330a3f1a1678f4623f30f3bc22edc01eaf0d6f",
+      "source_pdf_sha256": "1d6da1c81e22b40594067b1a63b6545b3b8b0bc6667d4df113ccdd60ade970fe",
       "source_pages": [
         1
       ],
@@ -1446,7 +1445,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "cohort": "mismatch",
@@ -1465,23 +1464,24 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood.",
       "full_source_caption": "Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood."
     },
-    "results/main/beamforming/computation_time.pdf": {
-      "sha256": "e343207adfba4a7f661387fe0d96bf81318cb0c211f6357b5c4a1e8012d48e12",
-      "bytes": 233839,
-      "export_method": "lossless PDF page-object extraction",
+    "results/supplementary/beamforming/computation_time.pdf": {
+      "sha256": "41dffc0e81668daeb57423f3fd19aea2f12f4b514ba05563a184d55533207d2c",
+      "bytes": 268189,
+      "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
       "metadata_title_empty": true,
       "application": "beamforming",
-      "section": "main",
+      "section": "supplementary",
       "source_pdf": "results/beamforming/computation_time.pdf",
-      "source_pdf_sha256": "1db47d9144b664e8dbf81282a56039895e8a3495c0afe1ed2681aaf5d01e7ff2",
+      "source_pdf_sha256": "41dffc0e81668daeb57423f3fd19aea2f12f4b514ba05563a184d55533207d2c",
       "source_pages": [
-        1
+        1,
+        2
       ],
       "pages": [
         {
@@ -1499,7 +1499,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "observations": 64,
@@ -1508,27 +1508,7 @@
           },
           "panel_selections": [],
           "sphere_displays": []
-        }
-      ],
-      "selection_rationale": "Shows time to process 64 observations, with task-decision intervals and variance-fitting operations stated explicitly.",
-      "proposed_latex_caption": "Warmed single-thread time to process exactly 64 observations. Every observation updates the belief; task decisions are computed after every observation or every 16 observations as indicated. The lower panel separates measurement updates, task decisions, uncertainty reports, variance fitting and other execution time for the stated settings. Optional uncertainty reports and variance fits occur every 32 observations, separately from the task-decision interval. EM uses the stated two or four iterations. Sums of per-operation medians need not equal the median total elapsed time. Repeated clocks measure execution variability on one data set, not additional statistical episodes or worst-case deadlines. Memory accounting is retained on the supplementary second page.",
-      "full_source_caption": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance episodes or worst-case deadlines."
-    },
-    "results/supplementary/beamforming/computation_time.pdf": {
-      "sha256": "704479b562d7e8f709c90965688d5f6a8ce2107be5b02adbc35ffe98ae6080a7",
-      "bytes": 231459,
-      "export_method": "lossless PDF page-object extraction",
-      "saved_pdf_rasterized": false,
-      "rendered_page_identity_checked": true,
-      "metadata_title_empty": true,
-      "application": "beamforming",
-      "section": "supplementary",
-      "source_pdf": "results/beamforming/computation_time.pdf",
-      "source_pdf_sha256": "1db47d9144b664e8dbf81282a56039895e8a3495c0afe1ed2681aaf5d01e7ff2",
-      "source_pages": [
-        2
-      ],
-      "pages": [
+        },
         {
           "page": 2,
           "figure_size_in": [
@@ -1544,7 +1524,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "observations": 64,
@@ -1560,13 +1540,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance episodes or worst-case deadlines.",
-      "full_source_caption": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance episodes or worst-case deadlines."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance simulations or worst-case deadlines.",
+      "full_source_caption": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance simulations or worst-case deadlines."
     },
     "results/supplementary/beamforming/numerical_accuracy.pdf": {
-      "sha256": "757ef007b08d3336f6cdeb1f0ec4289536d5744af0b4de4a525dc7adbe1685e5",
-      "bytes": 139639,
+      "sha256": "0071e43ef3f374e6f8de887e0349199e2995152f1e0a104c22fd2a1279791114",
+      "bytes": 135958,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -1574,7 +1554,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/numerical_accuracy.pdf",
-      "source_pdf_sha256": "757ef007b08d3336f6cdeb1f0ec4289536d5744af0b4de4a525dc7adbe1685e5",
+      "source_pdf_sha256": "0071e43ef3f374e6f8de887e0349199e2995152f1e0a104c22fd2a1279791114",
       "source_pages": [
         1,
         2,
@@ -1596,7 +1576,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -1616,7 +1596,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -1636,7 +1616,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "scope": "Large-dimension numerical rows, separate mean/normalizer/reference/second-moment/tail/state flags; unevaluated targets never counted as resolved"
@@ -1645,13 +1625,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration.",
       "full_source_caption": "Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration."
     },
     "results/supplementary/beamforming/paper_summary.pdf": {
-      "sha256": "6d6c08a54de5ebdc479c27abdfa89e1dc8ced414920dc9b80f8da5891621450a",
-      "bytes": 270199,
+      "sha256": "f93077fe1151c2521edc1dd99266dec0fb907c864b3ee04b9b3b91f6a2909882",
+      "bytes": 427625,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -1659,7 +1639,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/paper_summary.pdf",
-      "source_pdf_sha256": "6d6c08a54de5ebdc479c27abdfa89e1dc8ced414920dc9b80f8da5891621450a",
+      "source_pdf_sha256": "f93077fe1151c2521edc1dd99266dec0fb907c864b3ee04b9b3b91f6a2909882",
       "source_pages": [
         1
       ],
@@ -1679,23 +1659,27 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [
             {
               "cohort": "stationary",
+              "condition": "static",
+              "measurement_selection": "t=n",
               "observations_per_sensor": 1,
               "dimensions": [
                 32,
                 64,
                 128
               ],
-              "episode_scope": "All independent test episodes"
+              "endpoint": "true_ratio_db",
+              "simulation_scope": "All 256 independent test Monte Carlo simulations at each dimension",
+              "power_definition": "10 log10(w_t^H R_t w_t / p_t^star); exact saved covariance output"
             },
             {
               "condition": "smooth",
               "n": 32,
-              "endpoint": "heldout_ratio_db",
+              "endpoint": "true_ratio_db",
               "displayed_references": [
                 "mode",
                 "iso",
@@ -1718,21 +1702,21 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and computational cost with matched task-decision intervals. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries.",
       "full_source_caption": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and computational cost with matched task-decision intervals. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries."
     },
-    "results/main/contact/setup.pdf": {
-      "sha256": "ed5004c9e63211dd786e5ce34fe0aa517a3accdd5378905004bcc643da11993b",
-      "bytes": 282931,
+    "results/supplementary/contact/setup.pdf": {
+      "sha256": "398cfd110d0a151e93057106516bd39db0ea64ee5f094b47262b5fc812cbbfef",
+      "bytes": 344997,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
       "metadata_title_empty": true,
       "application": "contact",
-      "section": "main",
+      "section": "supplementary",
       "source_pdf": "results/contact/setup.pdf",
-      "source_pdf_sha256": "ed5004c9e63211dd786e5ce34fe0aa517a3accdd5378905004bcc643da11993b",
+      "source_pdf_sha256": "398cfd110d0a151e93057106516bd39db0ea64ee5f094b47262b5fc812cbbfef",
       "source_pages": [
         1
       ],
@@ -1752,7 +1736,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "episode": 0,
@@ -1763,23 +1747,24 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Defines the physical contact geometry, applied input and measured velocity.",
-      "proposed_latex_caption": "Physical contact geometry, maintained bilateral constraint, applied input and directly measured noisy velocity. Known resistance is part of the conditional observation model. Positions and true normals are used to generate and score the experiment; estimated responses and soft commands are evaluated on the same preassigned stream rather than regenerating closed-loop trajectories.",
-      "full_source_caption": "Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved episode, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved simulation, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information.",
+      "full_source_caption": "Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved simulation, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information."
     },
-    "results/main/contact/task_performance.pdf": {
-      "sha256": "2b3f245e98c0316497ae5f2289f8d2cfe00ad647e72527ad3fdc387ec949cd04",
-      "bytes": 291219,
-      "export_method": "lossless PDF page-object extraction",
+    "results/supplementary/contact/task_performance.pdf": {
+      "sha256": "f576a56ce893b8ac5499acefda1332f293e29aabc932f1b2a53167416cddd723",
+      "bytes": 398188,
+      "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
       "metadata_title_empty": true,
       "application": "contact",
-      "section": "main",
+      "section": "supplementary",
       "source_pdf": "results/contact/task_performance.pdf",
-      "source_pdf_sha256": "aa685a4169e2aedaadbe4dfea3382d9e3edc3d7697efe9f84eda3484d1a6ba1f",
+      "source_pdf_sha256": "f576a56ce893b8ac5499acefda1332f293e29aabc932f1b2a53167416cddd723",
       "source_pages": [
-        1
+        1,
+        2
       ],
       "pages": [
         {
@@ -1797,7 +1782,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [
             {
@@ -1825,27 +1810,7 @@
             }
           ],
           "sphere_displays": []
-        }
-      ],
-      "selection_rationale": "Shows response MSE and confidence intervals for the posterior mean and same-data modal, isotropic and regularized-projector controls.",
-      "proposed_latex_caption": "Physical contact response MSE on independent episodes and common query streams. Panel (a) uses the stationary concentrated-input condition; its posterior-mean curve carries a pointwise 95\\% confidence band. Panel (b) shows absolute episode-average MSE for the moving sphere condition, with pointwise 95\\% intervals for every displayed method, including $\\overline P_t^+$, $P_{\\widehat{\\mathcal X}_t}$, the matched isotropic mean $\\overline P_t^{\\mathrm{iso}}$, and the regularized projector. The isotropic control preserves mode and mean overlap; the regularized projector is $\\rho P_{\\widehat{\\mathcal X}_t}+(1-\\rho)(2/3)I_3$ with independently validated $\\rho$. Query and time losses are averaged within each episode before intervals are formed. Paired MSE differences are retained on the supplementary second page; differences and absolute MSE both have squared velocity units, whereas relative MSE would be a ratio. GREAT has different input information, stated outside its figure label. Full reference and condition grids remain supplementary.",
-      "full_source_caption": "Task losses on common independent test episodes. Losses are averaged within each episode before pointwise Student 95\\% intervals. For contact, main panel (a) shows stationary concentrated-input checkpoint MSE versus observation count, with the posterior-mean confidence band; panel (b) shows absolute episode-average MSE for the moving sphere condition, with a confidence interval for every method including the posterior mean. All methods in panel (b) use the same independent episodes. The separate second page retains paired MSE differences; these are absolute differences in squared velocity units, not relative MSE. A posterior mean compared with itself has identically zero paired difference. Beamforming paired boxes show the distribution of same-episode differences, not confidence intervals. GREAT and application-specific controls retain their stated information and independently validated settings. Complex beamforming GREAT is an extension of the real algorithm, as described in the notebook text. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode."
-    },
-    "results/supplementary/contact/task_performance.pdf": {
-      "sha256": "1459fee599f304581f08bd461ec0ebf44393cfc58d19e42de5e5261924f5be52",
-      "bytes": 289374,
-      "export_method": "lossless PDF page-object extraction",
-      "saved_pdf_rasterized": false,
-      "rendered_page_identity_checked": true,
-      "metadata_title_empty": true,
-      "application": "contact",
-      "section": "supplementary",
-      "source_pdf": "results/contact/task_performance.pdf",
-      "source_pdf_sha256": "aa685a4169e2aedaadbe4dfea3382d9e3edc3d7697efe9f84eda3484d1a6ba1f",
-      "source_pages": [
-        2
-      ],
-      "pages": [
+        },
         {
           "page": 2,
           "figure_size_in": [
@@ -1861,7 +1826,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "sphere",
@@ -1887,23 +1852,24 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Task losses on common independent test episodes. Losses are averaged within each episode before pointwise Student 95\\% intervals. For contact, main panel (a) shows stationary concentrated-input checkpoint MSE versus observation count, with the posterior-mean confidence band; panel (b) shows absolute episode-average MSE for the moving sphere condition, with a confidence interval for every method including the posterior mean. All methods in panel (b) use the same independent episodes. The separate second page retains paired MSE differences; these are absolute differences in squared velocity units, not relative MSE. A posterior mean compared with itself has identically zero paired difference. Beamforming paired boxes show the distribution of same-episode differences, not confidence intervals. GREAT and application-specific controls retain their stated information and independently validated settings. Complex beamforming GREAT is an extension of the real algorithm, as described in the notebook text. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
-      "full_source_caption": "Task losses on common independent test episodes. Losses are averaged within each episode before pointwise Student 95\\% intervals. For contact, main panel (a) shows stationary concentrated-input checkpoint MSE versus observation count, with the posterior-mean confidence band; panel (b) shows absolute episode-average MSE for the moving sphere condition, with a confidence interval for every method including the posterior mean. All methods in panel (b) use the same independent episodes. The separate second page retains paired MSE differences; these are absolute differences in squared velocity units, not relative MSE. A posterior mean compared with itself has identically zero paired difference. Beamforming paired boxes show the distribution of same-episode differences, not confidence intervals. GREAT and application-specific controls retain their stated information and independently validated settings. Complex beamforming GREAT is an extension of the real algorithm, as described in the notebook text. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
+      "full_source_caption": "Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode."
     },
-    "results/main/contact/posterior_anisotropy.pdf": {
-      "sha256": "f26aa0f9db7a00eabf64ae77544f65281c50a63e1e5b71a79119a85838dfd5df",
-      "bytes": 347497,
-      "export_method": "lossless PDF page-object extraction",
+    "results/supplementary/contact/posterior_anisotropy.pdf": {
+      "sha256": "e37008418dea94055b526c47177b686e21df26bd7f12b6db1275dd580ac5ab98",
+      "bytes": 507980,
+      "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
       "metadata_title_empty": true,
       "application": "contact",
-      "section": "main",
+      "section": "supplementary",
       "source_pdf": "results/contact/posterior_anisotropy.pdf",
-      "source_pdf_sha256": "b52d3fce86eb79150d636aea0d64f4daa1988405366b8cb71ebdc8aa039bda34",
+      "source_pdf_sha256": "e37008418dea94055b526c47177b686e21df26bd7f12b6db1275dd580ac5ab98",
       "source_pages": [
-        1
+        1,
+        2
       ],
       "pages": [
         {
@@ -1921,7 +1887,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static_concentrated",
@@ -1932,7 +1898,8 @@
           "panel_selections": [
             {
               "query_family": 1,
-              "normalization": "Squared norm of saved query"
+              "normalization": "r_t(v(theta))/v0^2; saved unit-input curve unchanged",
+              "v0_m_per_s": 0.02
             }
           ],
           "sphere_displays": [
@@ -1989,27 +1956,7 @@
               "display_mesh_only": true
             }
           ]
-        }
-      ],
-      "selection_rationale": "Shows the actual saved normal posterior and its matched-isotropic comparison.",
-      "proposed_latex_caption": "The actual normal-line density $q_{-A_t^+}([n])$ at the fixed concentrated-input checkpoint $t=16$, and its fitted isotropic Bingham law with equal mode and mean squared chordal distance. The mean matrices are denoted by $\\overline P_t^+$ and $\\overline P_t^{\\mathrm{iso}}$, following the supplement. Both unit-sphere views retain the saved coordinates, camera and shared logarithmic density normalization; antipodal normals represent the same plane. The blue--purple--pink--yellow gradient changes only the color mapping. For $v(\\theta)=\\cos\\theta e_2+\\sin\\theta e_3$ and $\\theta$ in radians, the lower panel evaluates $v(\\theta)^\\top[\\overline P-(\\overline P)^2]v(\\theta)$ with each indicated belief and its own mean $\\overline P$. These are posterior expected clean-response errors under different beliefs, rather than two estimators evaluated against one common truth. Practical comparisons use the separate repeated-episode task study. The constructed equal-distance-law example is supplementary.",
-      "full_source_caption": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk."
-    },
-    "results/supplementary/contact/posterior_anisotropy.pdf": {
-      "sha256": "f996e3a44e1aefa751169249548043592842f6e18e8f56fc816315ce81842889",
-      "bytes": 348847,
-      "export_method": "lossless PDF page-object extraction",
-      "saved_pdf_rasterized": false,
-      "rendered_page_identity_checked": true,
-      "metadata_title_empty": true,
-      "application": "contact",
-      "section": "supplementary",
-      "source_pdf": "results/contact/posterior_anisotropy.pdf",
-      "source_pdf_sha256": "b52d3fce86eb79150d636aea0d64f4daa1988405366b8cb71ebdc8aa039bda34",
-      "source_pages": [
-        2
-      ],
-      "pages": [
+        },
         {
           "page": 2,
           "figure_size_in": [
@@ -2025,7 +1972,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "scope": "Constructed swapped-eigenvalue identity, not data-generated performance",
@@ -2126,13 +2073,13 @@
           ]
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
-      "full_source_caption": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=t=64$. The actual posterior is the fixed concentrated-input simulation 0 at t=16. Directional density and repeated-simulation task performance are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
+      "full_source_caption": "Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=t=64$. The actual posterior is the fixed concentrated-input simulation 0 at t=16. Directional density and repeated-simulation task performance are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk."
     },
     "results/supplementary/contact/noise_adaptation.pdf": {
-      "sha256": "55940b3a63495262065b40635334434a9cfdd0529181058c2deb1277799fd009",
-      "bytes": 256607,
+      "sha256": "bc0a45f2419b57ad64b276482d648c4d0fdea1b7449da1d02fb6dfadd9958086",
+      "bytes": 380548,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -2140,7 +2087,7 @@
       "application": "contact",
       "section": "supplementary",
       "source_pdf": "results/contact/noise_adaptation.pdf",
-      "source_pdf_sha256": "55940b3a63495262065b40635334434a9cfdd0529181058c2deb1277799fd009",
+      "source_pdf_sha256": "bc0a45f2419b57ad64b276482d648c4d0fdea1b7449da1d02fb6dfadd9958086",
       "source_pages": [
         1,
         2,
@@ -2163,7 +2110,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "noise_change",
           "panel_selections": [],
@@ -2184,7 +2131,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fast_sphere",
           "panel_selections": [],
@@ -2205,7 +2152,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "contact_noise_change_individual_beliefs",
           "selection": {
@@ -2297,7 +2244,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "contact_noise_change_individual_beliefs",
           "selection": {
@@ -2348,21 +2295,21 @@
           ]
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
-      "full_source_caption": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $128.5$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
+      "full_source_caption": "Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $128.5$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk."
     },
-    "results/main/contact/information.pdf": {
-      "sha256": "5bef48bfe52a3d093eacf4521b70be085c4008ec726ab9b1cc8bb02781cc71e0",
-      "bytes": 222619,
+    "results/supplementary/contact/information.pdf": {
+      "sha256": "125f577caa12cff7fc6e6ef607d48ae1cec032d851a53a04819edb7372a16688",
+      "bytes": 349758,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
       "metadata_title_empty": true,
       "application": "contact",
-      "section": "main",
+      "section": "supplementary",
       "source_pdf": "results/contact/information.pdf",
-      "source_pdf_sha256": "5bef48bfe52a3d093eacf4521b70be085c4008ec726ab9b1cc8bb02781cc71e0",
+      "source_pdf_sha256": "125f577caa12cff7fc6e6ef607d48ae1cec032d851a53a04819edb7372a16688",
       "source_pages": [
         1
       ],
@@ -2382,7 +2329,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "scope": "Exact likelihood geometry at the original frozen contact input design; not a new experiment",
@@ -2430,8 +2377,8 @@
               1.8461538461538456,
               63.076923076923066
             ],
-            "formula": "D_KL(p_0||p_Z)=z^T F_cond z/[2(1+||z||^2)]",
-            "chart": "n(Z)=(n_0-X z)/sqrt(1+||z||^2), z=vec(Z), X=(e_1,e_2), n_0=e_3",
+            "formula": "D_KL(p_0||p_z)=z^T F_cond z/[2(1+||z||^2)]",
+            "chart": "n(z)=(n_0-X z)/sqrt(1+||z||^2), z=(z_1,z_2)^T, X=(e_1,e_2), n_0=e_3",
             "contour_levels": [
               0.01,
               0.05,
@@ -2455,13 +2402,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Shows which physical normal rotations the saved applied inputs distinguish, using the exact Gaussian likelihood divergence.",
-      "proposed_latex_caption": "Which normal rotations the original saved concentrated-input experiment distinguishes. At the generating plane, $n_0=e_3$, $X_0=(e_1,e_2)$ and $z=\\operatorname{vec}(Z)$. The graph chart has normal $n(Z)=(n_0-X_0z)/\\sqrt{1+\\|z\\|^2}$. With the same 16 prescribed inputs and true measurement variance, $p_Z$ is the joint Gaussian velocity law at this plane. Panel (a) shows equal values of its exact divergence $D_{\\mathrm{KL}}(p_0\\|p_Z)=z^\\top\\mathcal F_{\\mathrm{cond}}z/[2(1+\\|z\\|^2)]$. Panel (b) uses the physical normal angle $\\delta$ along the two native information directions: rotations of $5^\\circ$ and $30^\\circ$ yield nearly equal divergences, approximately $0.24$. This connects directional excitation to distinguishability of physical rotations. Near zero the formula gives the manuscript Fisher expansion. The generating plane is used for this theoretical analysis, not supplied to the estimator. The contours are likelihood divergences, not posterior credible regions; no new observations, fitting or independent experimental repetitions are introduced.",
-      "full_source_caption": "Directional likelihood information for the original concentrated-input contact fixture at $t=16$. The generating normal is $n_0=e_3$, $X_0=(e_1,e_2)$, and the plane graph chart has $z=\\operatorname{vec}(Z)=(z_1,z_2)^T$ and normal $n(Z)=(n_0-X_0z)/\\sqrt{1+\\|z\\|^2}$. For the same frozen prescribed inputs and true variance, $p_Z$ is the joint Gaussian response law with means $P_{\\mathcal X(Z)}v_j$ and covariance $\\sigma^2I_3$. Panel (a) shows equal values of the exact divergence $D_{\\mathrm{KL}}(p_0\\|p_Z)=z^T\\mathcal F_{\\mathrm{cond}}z/[2(1+\\|z\\|^2)]$ in native chart coordinates, with equal axis scales. These are likelihood-divergence contours, not credible or confidence regions. Panel (b) evaluates the same divergence along the two native information directions; $\\delta$ is the physical angle between $n_0$ and $n(Z)$. The marked rotations $5^\\circ$ and $30^\\circ$ produce nearly equal divergences, approximately $0.2396$ and $0.2308$, despite their different angular sizes. Thus this input design distinguishes rotations much more strongly in one direction. The local limit is $D_{\\mathrm{KL}}=\\tfrac12z^T\\mathcal F_{\\mathrm{cond}}z+o(\\|z\\|^2)$. This is expected observation-law information at the generating plane, distinct from finite-data posterior curvature. No new observations, inference, fitting, or experimental repetitions are introduced."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Directional likelihood information for the original concentrated-input contact fixture at $t=16$. The generating normal is $n_0=e_3$, $X_0=(e_1,e_2)$, and the plane graph chart has $z=(z_1,z_2)^\\top$ and normal $n(z)=(n_0-X_0z)/\\sqrt{1+\\|z\\|^2}$. For the same frozen prescribed inputs and true variance, $p_z$ is the joint Gaussian response law with means $P_{\\mathcal X(z)}v_j$ and covariance $\\sigma^2I_3$. Panel (a) shows equal values of the exact divergence $D_{\\mathrm{KL}}(p_0\\|p_z)=z^T\\mathcal F_{\\mathrm{cond}}z/[2(1+\\|z\\|^2)]$ in native chart coordinates, with equal axis scales. These are likelihood-divergence contours, not credible or confidence regions. Panel (b) evaluates the same divergence along the two native information directions; $\\delta$ is the physical angle between $n_0$ and $n(z)$. The marked rotations $5^\\circ$ and $30^\\circ$ produce nearly equal divergences, approximately $0.2396$ and $0.2308$, despite their different angular sizes. Thus this input design distinguishes rotations much more strongly in one direction. The local limit is $D_{\\mathrm{KL}}=\\tfrac12z^T\\mathcal F_{\\mathrm{cond}}z+o(\\|z\\|^2)$. This is expected observation-law information at the generating plane, distinct from finite-data posterior curvature. No new observations, inference, fitting, or experimental repetitions are introduced.",
+      "full_source_caption": "Directional likelihood information for the original concentrated-input contact fixture at $t=16$. The generating normal is $n_0=e_3$, $X_0=(e_1,e_2)$, and the plane graph chart has $z=(z_1,z_2)^\\top$ and normal $n(z)=(n_0-X_0z)/\\sqrt{1+\\|z\\|^2}$. For the same frozen prescribed inputs and true variance, $p_z$ is the joint Gaussian response law with means $P_{\\mathcal X(z)}v_j$ and covariance $\\sigma^2I_3$. Panel (a) shows equal values of the exact divergence $D_{\\mathrm{KL}}(p_0\\|p_z)=z^T\\mathcal F_{\\mathrm{cond}}z/[2(1+\\|z\\|^2)]$ in native chart coordinates, with equal axis scales. These are likelihood-divergence contours, not credible or confidence regions. Panel (b) evaluates the same divergence along the two native information directions; $\\delta$ is the physical angle between $n_0$ and $n(z)$. The marked rotations $5^\\circ$ and $30^\\circ$ produce nearly equal divergences, approximately $0.2396$ and $0.2308$, despite their different angular sizes. Thus this input design distinguishes rotations much more strongly in one direction. The local limit is $D_{\\mathrm{KL}}=\\tfrac12z^T\\mathcal F_{\\mathrm{cond}}z+o(\\|z\\|^2)$. This is expected observation-law information at the generating plane, distinct from finite-data posterior curvature. No new observations, inference, fitting, or experimental repetitions are introduced."
     },
     "results/supplementary/contact/posterior_curvature.pdf": {
-      "sha256": "d8788a60afd9ea08fbd80b558b90e82720fc9a71ff9a20c58c7aecb47946a195",
-      "bytes": 229335,
+      "sha256": "ecfb7dfca9f7e94fbb42e54415e722a5dca2310ee63ee0e448a114ef7f3c921b",
+      "bytes": 356221,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -2469,7 +2416,7 @@
       "application": "contact",
       "section": "supplementary",
       "source_pdf": "results/contact/posterior_curvature.pdf",
-      "source_pdf_sha256": "d8788a60afd9ea08fbd80b558b90e82720fc9a71ff9a20c58c7aecb47946a195",
+      "source_pdf_sha256": "ecfb7dfca9f7e94fbb42e54415e722a5dca2310ee63ee0e448a114ef7f3c921b",
       "source_pages": [
         1
       ],
@@ -2489,19 +2436,19 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Invariant-density Hessian and local accuracy diagnostics. Empirical bounded log-coordinate spread is compared with $H_A^{-1}$ only under recorded locality conditions; broad/nonlocal cases remain visible. The stationary inverse-Fisher study uses fixed known variances and $\\beta=1$, reports estimation bias and local fractions, and treats inverse Fisher as a local reference rather than a global intrinsic Cramer--Rao equality. The real graph-density volume term is a separate quantity, retained in the tables. Forgetting sampling references use squared weights.",
       "full_source_caption": "Invariant-density Hessian and local accuracy diagnostics. Empirical bounded log-coordinate spread is compared with $H_A^{-1}$ only under recorded locality conditions; broad/nonlocal cases remain visible. The stationary inverse-Fisher study uses fixed known variances and $\\beta=1$, reports estimation bias and local fractions, and treats inverse Fisher as a local reference rather than a global intrinsic Cramer--Rao equality. The real graph-density volume term is a separate quantity, retained in the tables. Forgetting sampling references use squared weights."
     },
     "results/supplementary/contact/tracking_bound.pdf": {
-      "sha256": "13c4ab98829dabba11c2a5bb6f1a546d385459f69d78226bc2ac67bcfdeef57e",
-      "bytes": 209565,
+      "sha256": "780841fcf0eb3a434267c9c5f40853dcb3ee2b182973b927587068ddcbbcb9be",
+      "bytes": 309584,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -2509,7 +2456,7 @@
       "application": "contact",
       "section": "supplementary",
       "source_pdf": "results/contact/tracking_bound.pdf",
-      "source_pdf_sha256": "13c4ab98829dabba11c2a5bb6f1a546d385459f69d78226bc2ac67bcfdeef57e",
+      "source_pdf_sha256": "780841fcf0eb3a434267c9c5f40853dcb3ee2b182973b927587068ddcbbcb9be",
       "source_pages": [
         1,
         2,
@@ -2532,7 +2479,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static",
@@ -2559,7 +2506,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "terminal_cohorts": [
@@ -2647,7 +2594,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static",
@@ -2674,7 +2621,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static",
@@ -2687,13 +2634,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe repeated-episode spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.",
-      "full_source_caption": "Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe repeated-episode spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe across-simulation spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.",
+      "full_source_caption": "Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe across-simulation spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition."
     },
     "results/supplementary/contact/block_updates.pdf": {
-      "sha256": "52f05778726c281d9a7d6de41200ef3a188216801d0d48ac37ce9b516342e7a4",
-      "bytes": 137430,
+      "sha256": "4ea650a98ec2bda61ca610fb2961ed311e04b51973a72a63aa483cf493684556",
+      "bytes": 234379,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -2701,7 +2648,7 @@
       "application": "contact",
       "section": "supplementary",
       "source_pdf": "results/contact/block_updates.pdf",
-      "source_pdf_sha256": "52f05778726c281d9a7d6de41200ef3a188216801d0d48ac37ce9b516342e7a4",
+      "source_pdf_sha256": "4ea650a98ec2bda61ca610fb2961ed311e04b51973a72a63aa483cf493684556",
       "source_pages": [
         1
       ],
@@ -2721,19 +2668,19 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing and task-decision cost is reported in the computation output.",
       "full_source_caption": "Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing and task-decision cost is reported in the computation output."
     },
     "results/supplementary/contact/additional_comparisons.pdf": {
-      "sha256": "9e0c0949031f2966bb7e05b0b05da493773eb75dd71ce2f6534f717a1fb25632",
-      "bytes": 303070,
+      "sha256": "ed1f59f078cd98a68aecbb963c68e0c0a5815b34017b1c792804c291715fda83",
+      "bytes": 397333,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -2741,7 +2688,7 @@
       "application": "contact",
       "section": "supplementary",
       "source_pdf": "results/contact/additional_comparisons.pdf",
-      "source_pdf_sha256": "9e0c0949031f2966bb7e05b0b05da493773eb75dd71ce2f6534f717a1fb25632",
+      "source_pdf_sha256": "ed1f59f078cd98a68aecbb963c68e0c0a5815b34017b1c792804c291715fda83",
       "source_pages": [
         1,
         2,
@@ -2764,7 +2711,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static_balanced",
@@ -2801,7 +2748,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static_concentrated",
@@ -2838,7 +2785,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "plane",
@@ -2879,7 +2826,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "sphere",
@@ -2906,13 +2853,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms.",
       "full_source_caption": "Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms."
     },
     "results/supplementary/contact/variance_estimation.pdf": {
-      "sha256": "f9facd3b676240005f0c3612e9e13774953a2c209d71688f163a74291e0686be",
-      "bytes": 133547,
+      "sha256": "d12b8edb77e2db7b4ed5563c883269f718ab90fb307cabff2a9c09f967e3d1ee",
+      "bytes": 230712,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -2920,7 +2867,7 @@
       "application": "contact",
       "section": "supplementary",
       "source_pdf": "results/contact/variance_estimation.pdf",
-      "source_pdf_sha256": "f9facd3b676240005f0c3612e9e13774953a2c209d71688f163a74291e0686be",
+      "source_pdf_sha256": "d12b8edb77e2db7b4ed5563c883269f718ab90fb307cabff2a9c09f967e3d1ee",
       "source_pages": [
         1
       ],
@@ -2940,19 +2887,19 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes.",
-      "full_source_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker simulations.",
+      "full_source_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker simulations."
     },
     "results/supplementary/contact/predictive_calibration.pdf": {
-      "sha256": "13f15e171766642f93828e64160c65fd23a08a589645ac3e270070a946b70592",
-      "bytes": 196288,
+      "sha256": "bf6dc978baa49cf03e0555064a794e5ae567e7977991d3ede2e1f1ff719638d3",
+      "bytes": 261408,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -2960,7 +2907,7 @@
       "application": "contact",
       "section": "supplementary",
       "source_pdf": "results/contact/predictive_calibration.pdf",
-      "source_pdf_sha256": "13f15e171766642f93828e64160c65fd23a08a589645ac3e270070a946b70592",
+      "source_pdf_sha256": "bf6dc978baa49cf03e0555064a794e5ae567e7977991d3ede2e1f1ff719638d3",
       "source_pages": [
         1,
         2,
@@ -2988,7 +2935,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -3014,7 +2961,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -3040,7 +2987,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -3066,7 +3013,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -3092,7 +3039,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "drifting",
           "selection": {
@@ -3118,7 +3065,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "drifting",
           "selection": {
@@ -3144,7 +3091,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -3190,7 +3137,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -3236,7 +3183,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "drifting",
           "selection": {
@@ -3268,13 +3215,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime.",
-      "full_source_caption": "Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent Monte Carlo simulations, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent Monte Carlo simulations, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime.",
+      "full_source_caption": "Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent Monte Carlo simulations, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent Monte Carlo simulations, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime."
     },
     "results/supplementary/contact/predictive_scores.pdf": {
-      "sha256": "809ac50df148841060401a9080e1605af3d2e0bf19c5b37df06e02f2d7930443",
-      "bytes": 115297,
+      "sha256": "1127034bcde400f7e942b38a71238e3f4085b3c614a4d883642e61d0fcb0497f",
+      "bytes": 215274,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -3282,7 +3229,7 @@
       "application": "contact",
       "section": "supplementary",
       "source_pdf": "results/contact/predictive_scores.pdf",
-      "source_pdf_sha256": "809ac50df148841060401a9080e1605af3d2e0bf19c5b37df06e02f2d7930443",
+      "source_pdf_sha256": "1127034bcde400f7e942b38a71238e3f4085b3c614a4d883642e61d0fcb0497f",
       "source_pages": [
         1
       ],
@@ -3302,7 +3249,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "cohort": "calibration",
@@ -3314,13 +3261,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee.",
-      "full_source_caption": "Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each simulation before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee.",
+      "full_source_caption": "Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each simulation before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee."
     },
     "results/supplementary/contact/model_mismatch.pdf": {
-      "sha256": "1ab62e01979e5d1efaef647c23990049e67a8d0d831d7c1cd1e18f51dbe1b01c",
-      "bytes": 138796,
+      "sha256": "ed3ed5a697decd44cf79b79f289f5cc16753ce3fd9c434d7685f278f76894716",
+      "bytes": 204020,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -3328,7 +3275,7 @@
       "application": "contact",
       "section": "supplementary",
       "source_pdf": "results/contact/model_mismatch.pdf",
-      "source_pdf_sha256": "1ab62e01979e5d1efaef647c23990049e67a8d0d831d7c1cd1e18f51dbe1b01c",
+      "source_pdf_sha256": "ed3ed5a697decd44cf79b79f289f5cc16753ce3fd9c434d7685f278f76894716",
       "source_pages": [
         1
       ],
@@ -3348,7 +3295,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "cohort": "mismatch",
@@ -3369,13 +3316,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood.",
       "full_source_caption": "Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood."
     },
     "results/supplementary/contact/computation_time.pdf": {
-      "sha256": "28de9da05cfaef6dda114178eaaa1840f72c44597f951e3e5a30ac0bebbf2fff",
-      "bytes": 237527,
+      "sha256": "441b1424c07325e63c46c02608eb2729c276053f3fffb6387423cbf7cb897d4a",
+      "bytes": 268455,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -3383,7 +3330,7 @@
       "application": "contact",
       "section": "supplementary",
       "source_pdf": "results/contact/computation_time.pdf",
-      "source_pdf_sha256": "28de9da05cfaef6dda114178eaaa1840f72c44597f951e3e5a30ac0bebbf2fff",
+      "source_pdf_sha256": "441b1424c07325e63c46c02608eb2729c276053f3fffb6387423cbf7cb897d4a",
       "source_pages": [
         1,
         2
@@ -3404,7 +3351,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "observations": 64,
@@ -3429,7 +3376,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "observations": 64,
@@ -3445,13 +3392,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
-      "proposed_latex_caption": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance episodes or worst-case deadlines.",
-      "full_source_caption": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance episodes or worst-case deadlines."
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
+      "proposed_latex_caption": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance simulations or worst-case deadlines.",
+      "full_source_caption": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance simulations or worst-case deadlines."
     },
     "results/supplementary/contact/numerical_accuracy.pdf": {
-      "sha256": "ff82e1af2e0f4439dbd46ff492a9dde82f7b27a67864861a892f440040ac9926",
-      "bytes": 139283,
+      "sha256": "997546195b6cac3a3bdd9e3d6d5ecc40d9ed20857cb1cafb0a4c282611200eea",
+      "bytes": 170367,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -3459,7 +3406,7 @@
       "application": "contact",
       "section": "supplementary",
       "source_pdf": "results/contact/numerical_accuracy.pdf",
-      "source_pdf_sha256": "ff82e1af2e0f4439dbd46ff492a9dde82f7b27a67864861a892f440040ac9926",
+      "source_pdf_sha256": "997546195b6cac3a3bdd9e3d6d5ecc40d9ed20857cb1cafb0a4c282611200eea",
       "source_pages": [
         1,
         2,
@@ -3481,7 +3428,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -3501,7 +3448,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -3521,7 +3468,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "scope": "Large-dimension numerical rows, separate mean/normalizer/reference/second-moment/tail/state flags; unevaluated targets never counted as resolved"
@@ -3530,13 +3477,13 @@
           "sphere_displays": []
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration.",
       "full_source_caption": "Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration."
     },
     "results/supplementary/contact/paper_summary.pdf": {
-      "sha256": "999fe95974bc3efc1f93c6bcf54bb7f53989908075850722538dd48a546d3d76",
-      "bytes": 316301,
+      "sha256": "47ca9f8732b40d793563fa15fc5de3592c054b0ba4c6af450a0b4c986dba026a",
+      "bytes": 429422,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -3544,7 +3491,7 @@
       "application": "contact",
       "section": "supplementary",
       "source_pdf": "results/contact/paper_summary.pdf",
-      "source_pdf_sha256": "999fe95974bc3efc1f93c6bcf54bb7f53989908075850722538dd48a546d3d76",
+      "source_pdf_sha256": "47ca9f8732b40d793563fa15fc5de3592c054b0ba4c6af450a0b4c986dba026a",
       "source_pages": [
         1
       ],
@@ -3564,12 +3511,13 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [
             {
               "query_family": 1,
-              "normalization": "Squared norm of saved query"
+              "normalization": "r_t(v(theta))/v0^2; saved unit-input curve unchanged",
+              "v0_m_per_s": 0.02
             },
             {
               "condition": "sphere",
@@ -3644,7 +3592,7 @@
           ]
         }
       ],
-      "selection_rationale": "Retains every remaining source page, including other conditions, constructed examples, calibration, limitations and complete diagnostics. The overview PDF is an optional composition of evidence already presented elsewhere.",
+      "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
       "proposed_latex_caption": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and computational cost with matched task-decision intervals. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
       "full_source_caption": "Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and computational cost with matched task-decision intervals. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk."
     }

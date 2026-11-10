@@ -15,7 +15,7 @@ if "split" in frame:
     frame = frame[frame.split.eq("test")]
 if example == "contact":
     frame = frame[frame.endpoint.eq("checkpoint")]
-endpoint = (_finite_column(frame, "heldout_ratio_db") if example == "beamforming"
+endpoint = ("true_ratio_db" if example == "beamforming"
             else _finite_column(frame, "response_mse"))
 scale = 1. if example == "beamforming" else 1e6
 groups = (list(frame.groupby("n", sort=True)) if example == "beamforming"
@@ -66,15 +66,16 @@ xlabels = ([f"{time/identifier:g}" for time in times] if example == "beamforming
            else [str(time) for time in times])
 ax.set(xticks=np.arange(len(times)), xticklabels=xlabels,
        yticks=np.arange(len(methods)), yticklabels=labels,
-       xlabel=r"Observations per sensor $L/n$" if example == "beamforming"
-       else "Number of observations")
+       xlabel=r"Measurements per sensor $t/n$" if example == "beamforming"
+       else r"Measurement index $t$")
 fig.colorbar(image, ax=ax,
-             label="Output power difference (dB)" if example == "beamforming"
-             else r"Response MSE difference $((\mathrm{mm}/\mathrm{s})^2)$",
+             label=r"Difference in $\ell_t$ (dB)" if example == "beamforming"
+             else r"$\mathcal E_t(D)-\mathcal E_t(\overline P_t^+)$"
+             + "\n" + r"$((\mathrm{mm}/\mathrm{s})^2)$",
              shrink=.85)
 ax.legend(handles=[Patch(facecolor="none", hatch="///", edgecolor="#70777D",
                          label="Interval contains zero")], frameon=False,
-          loc="lower center", bbox_to_anchor=(.5, 1.02), fontsize=10.)
+          loc="lower center", bbox_to_anchor=(.5, 1.02), fontsize=LEGEND_FONT_SIZE)
 ax.spines[["top", "right"]].set_visible(False)
 ax.grid(False)
 '''
@@ -82,7 +83,7 @@ ax.grid(False)
 
 _MOVING = r'''
 frame = evidence.frame("performance", "moving_episodes", "episode_metrics", "moving", "stationary")
-endpoint = _column(frame, "heldout_ratio_db", "output_oracle_db", "heldout_power")
+endpoint = "true_ratio_db"
 frame = _episode_losses(frame, endpoint)
 condition = list(frame.condition.drop_duplicates())[CONDITION_INDEX]
 frame = frame[frame.condition.eq(condition)]
@@ -112,7 +113,7 @@ for patch, shade in zip(boxes["boxes"], palette):
     patch.set_facecolor(shade)
     patch.set_alpha(.85)
 ax.axvline(0., linestyle="--", color="#222222", linewidth=1.)
-ax.set_xlabel("Output power difference: method $-$ posterior mean (dB)")
+ax.set_xlabel("Power difference (dB)")
 ax.spines[["top", "right"]].set_visible(False)
 ax.grid(axis="x", color="#BFC4C8", alpha=.30, linewidth=.45)
 '''
@@ -132,7 +133,7 @@ if example == "beamforming":
              & frame[denominator].gt(0) & frame[numerator].gt(0))
     if not valid.any():
         raise ValueError("The saved mismatch comparison has no positive power pairs")
-    endpoint = "observed_oracle_ratio_db"
+    endpoint = "exact_covariance_ratio_db"
     frame[endpoint] = np.nan
     frame.loc[valid, endpoint] = 10*np.log10(
         frame.loc[valid, numerator] / frame.loc[valid, denominator])
@@ -167,9 +168,9 @@ for ax, quantity, scale in [(axes[0], endpoint, 1e6 if example == "contact" else
         patch.set_facecolor([color("mean"), color("mode"), color("iso"), "#70777D"][index % 4])
     ax.spines[["top", "right"]].set_visible(False)
     ax.grid(axis="x", color="#BFC4C8", alpha=.30, linewidth=.45)
-axes[0].set_xlabel("Output power relative to ideal MVDR (dB)" if example == "beamforming"
-                   else r"Response MSE $((\mathrm{mm}/\mathrm{s})^2)$")
-axes[1].set_xlabel("Mean log predictive density")
+axes[0].set_xlabel(r"$\ell_t$ (dB)" if example == "beamforming"
+                   else r"$\mathcal E_t(D_t)$ $((\mathrm{mm}/\mathrm{s})^2)$")
+axes[1].set_xlabel("Mean log density")
 for ax, label in zip(axes, ["(a)", "(b)"]):
     ax.text(.015, .985, label, transform=ax.transAxes, ha="left", va="top")
 '''
@@ -187,29 +188,30 @@ def build_cells(example):
                  else "All comparisons: " + identifier.replace("_", " "))
         cells.append(plot_cell(example, "additional_comparisons", index+1,
             _GRID.replace("GROUP_INDEX", str(index)), title=label,
-            note="Each color is the mean same-trial difference, method minus posterior mean. "
+            note="Each color is the mean same-simulation difference, method minus posterior mean. "
                  "Positive values favor the posterior mean. Hatching marks a pointwise 95% "
                  "Student interval containing zero; intervals are not simultaneous. "
                  "All predeclared methods and observation counts are retained. "
-                 + ("The ideal MVDR reference uses the true interference-plus-noise "
-                    "covariance for evaluation." if example == "beamforming" else
-                    "Identity-transport controls use $G_t=I$." if identifier in ("plane", "sphere") else "")))
+                 + (r"Exact covariance power is $\ell_t=10\log_{10}[(w_t^H R_t w_t)/p_t^\star]$, "
+                    r"where $p_t^\star=(a^H R_t^{-1}a)^{-1}$ is the minimum under unit desired gain." if example == "beamforming" else
+                    "The identity-transport variants use $G_t=I$." if identifier in ("plane", "sphere") else "")))
     if example == "beamforming":
         for index, condition in enumerate(("static", "smooth", "abrupt", "noise_change", "power_change")):
             cells.append(plot_cell(example, "additional_comparisons", index+4,
                 _MOVING.replace("CONDITION_INDEX", str(index)),
                 title="Paired comparisons: " + condition.replace("_", " "),
-                note="These boxes retain all same-trial comparator-minus-posterior-mean "
-                     "differences for the stated condition at 32 sensors. Each independent "
-                     "trial first averages normalized output power over its evaluation "
+                note="These boxes retain all same-simulation comparator-minus-posterior-mean "
+                     "differences for the stated condition at 32 sensors. Each Monte Carlo "
+                     "simulation first averages normalized output power over its evaluation "
                      "times and converts that result to dB. Positive differences favor "
-                     "the posterior mean. Boxes show trial distributions, not confidence intervals."))
+                     "the posterior mean. Boxes show Monte Carlo distributions, not confidence intervals."))
     cells.append(plot_cell(example, "model_mismatch", 1, _MISMATCH,
         title="Model mismatch",
-        note="All declared mismatch conditions are retained for the learned-variance "
-             "posterior-mean method. Boxes describe independent-trial distributions. "
-             "Measurements are scored before updating the model; higher log predictive "
+        note="All declared mismatch conditions are retained for the EM-variance "
+             "posterior-mean method. Boxes describe Monte Carlo simulation distributions. "
+             r"$\pi_t$ is the normalized predictive density before receiving $u_t$. "
+             "Measurements are scored before updating the model; higher mean log "
              "density is better. "
-             + ("The ideal MVDR reference uses the true covariance. " if example == "beamforming" else "")
+             + (r"Power uses the saved exact $R_t$ and $p_t^\star=(a^H R_t^{-1}a)^{-1}$. " if example == "beamforming" else "")
              + "Changing a physical observation model is distinct from uncertainty in its parameters."))
     return cells

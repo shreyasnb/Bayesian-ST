@@ -3,8 +3,8 @@
   "example": "contact",
   "tool": "PyMuPDF 1.26.6",
   "producer": "scripts/check_final_pdf_layout.py",
-  "producer_sha256": "c5b777aa6afe1358bbc569ded8fb87a2b6863077abcd7f53f66c59c5e5f0a7c2",
-  "figure_manifest_sha256": "f5eac5829ceb4873857d2aabf0831bba366bf4cf3e72b2321c40fad76ef7f7ea",
+  "producer_sha256": "75158c812666b5421872a51a7df583abe5182b9e9700f97d83e7b9cd5cbf9222",
+  "figure_manifest_sha256": "7366ea6c99a76f9c99ffc1da4f28bf8db8b3c5a15b498aef808f973ce5509e7d",
   "pdf_files": 19,
   "pdf_pages": 74,
   "font_types": [
@@ -15,7 +15,7 @@
   "preview_files": 38,
   "files": {
     "setup.pdf": {
-      "sha256": "ed5004c9e63211dd786e5ce34fe0aa517a3accdd5378905004bcc643da11993b",
+      "sha256": "398cfd110d0a151e93057106516bd39db0ea64ee5f094b47262b5fc812cbbfef",
       "pages": 1,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -25,8 +25,8 @@
       "all_fonts_embedded": true,
       "raster_layers": 1,
       "raster_dpi_range": [
-        299.9999953479302,
-        300.0000025207251
+        299.99999585359,
+        300.00000626828205
       ],
       "page_checks": [
         {
@@ -37,7 +37,7 @@
             504.0,
             246.24000549316406
           ],
-          "text_spans": 75,
+          "text_spans": 61,
           "raster_layers": 1
         }
       ],
@@ -45,7 +45,7 @@
       "errors": []
     },
     "task_performance.pdf": {
-      "sha256": "aa685a4169e2aedaadbe4dfea3382d9e3edc3d7697efe9f84eda3484d1a6ba1f",
+      "sha256": "f576a56ce893b8ac5499acefda1332f293e29aabc932f1b2a53167416cddd723",
       "pages": 2,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -64,7 +64,7 @@
             504.0,
             311.90399169921875
           ],
-          "text_spans": 60,
+          "text_spans": 62,
           "raster_layers": 0
         },
         {
@@ -83,7 +83,7 @@
       "errors": []
     },
     "posterior_anisotropy.pdf": {
-      "sha256": "b52d3fce86eb79150d636aea0d64f4daa1988405366b8cb71ebdc8aa039bda34",
+      "sha256": "e37008418dea94055b526c47177b686e21df26bd7f12b6db1275dd580ac5ab98",
       "pages": 2,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -93,8 +93,8 @@
       "all_fonts_embedded": true,
       "raster_layers": 6,
       "raster_dpi_range": [
-        299.99998550546877,
-        300.0000105431335
+        299.99998313946054,
+        300.0000093664445
       ],
       "page_checks": [
         {
@@ -105,7 +105,7 @@
             504.0,
             435.02398681640625
           ],
-          "text_spans": 101,
+          "text_spans": 82,
           "raster_layers": 3
         },
         {
@@ -116,7 +116,7 @@
             504.0,
             451.44000244140625
           ],
-          "text_spans": 131,
+          "text_spans": 128,
           "raster_layers": 3
         }
       ],
@@ -124,7 +124,7 @@
       "errors": []
     },
     "noise_adaptation.pdf": {
-      "sha256": "55940b3a63495262065b40635334434a9cfdd0529181058c2deb1277799fd009",
+      "sha256": "bc0a45f2419b57ad64b276482d648c4d0fdea1b7449da1d02fb6dfadd9958086",
       "pages": 4,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -134,8 +134,8 @@
       "all_fonts_embedded": true,
       "raster_layers": 5,
       "raster_dpi_range": [
-        299.999990716445,
-        300.00000592081625
+        299.9999880790715,
+        300.00000785635615
       ],
       "page_checks": [
         {
@@ -146,7 +146,7 @@
             504.0,
             418.6080017089844
           ],
-          "text_spans": 53,
+          "text_spans": 55,
           "raster_layers": 0
         },
         {
@@ -157,7 +157,7 @@
             504.0,
             418.6080017089844
           ],
-          "text_spans": 57,
+          "text_spans": 53,
           "raster_layers": 0
         },
         {
@@ -168,7 +168,7 @@
             504.0,
             295.4880065917969
           ],
-          "text_spans": 51,
+          "text_spans": 49,
           "raster_layers": 3
         },
         {
@@ -179,7 +179,7 @@
             504.0,
             336.52801513671875
           ],
-          "text_spans": 67,
+          "text_spans": 65,
           "raster_layers": 2
         }
       ],
@@ -187,7 +187,7 @@
       "errors": []
     },
     "information.pdf": {
-      "sha256": "5bef48bfe52a3d093eacf4521b70be085c4008ec726ab9b1cc8bb02781cc71e0",
+      "sha256": "125f577caa12cff7fc6e6ef607d48ae1cec032d851a53a04819edb7372a16688",
       "pages": 1,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -214,7 +214,7 @@
       "errors": []
     },
     "posterior_curvature.pdf": {
-      "sha256": "d8788a60afd9ea08fbd80b558b90e82720fc9a71ff9a20c58c7aecb47946a195",
+      "sha256": "ecfb7dfca9f7e94fbb42e54415e722a5dca2310ee63ee0e448a114ef7f3c921b",
       "pages": 1,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -233,7 +233,7 @@
             504.0,
             435.02398681640625
           ],
-          "text_spans": 87,
+          "text_spans": 86,
           "raster_layers": 0
         }
       ],
@@ -241,7 +241,7 @@
       "errors": []
     },
     "tracking_bound.pdf": {
-      "sha256": "13c4ab98829dabba11c2a5bb6f1a546d385459f69d78226bc2ac67bcfdeef57e",
+      "sha256": "780841fcf0eb3a434267c9c5f40853dcb3ee2b182973b927587068ddcbbcb9be",
       "pages": 4,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -251,8 +251,8 @@
       "all_fonts_embedded": true,
       "raster_layers": 1,
       "raster_dpi_range": [
-        300.00000335112503,
-        300.0000074312286
+        299.9999890312223,
+        299.9999891396523
       ],
       "page_checks": [
         {
@@ -263,7 +263,7 @@
             504.0,
             451.44000244140625
           ],
-          "text_spans": 66,
+          "text_spans": 64,
           "raster_layers": 1
         },
         {
@@ -285,7 +285,7 @@
             504.0,
             246.24000549316406
           ],
-          "text_spans": 14,
+          "text_spans": 16,
           "raster_layers": 0
         },
         {
@@ -296,7 +296,7 @@
             504.0,
             246.24000549316406
           ],
-          "text_spans": 15,
+          "text_spans": 17,
           "raster_layers": 0
         }
       ],
@@ -304,7 +304,239 @@
       "errors": []
     },
     "block_updates.pdf": {
-      "sha256": "52f05778726c281d9a7d6de41200ef3a188216801d0d48ac37ce9b516342e7a4",
+      "sha256": "4ea650a98ec2bda61ca610fb2961ed311e04b51973a72a63aa483cf493684556",
+      "pages": 1,
+      "width_in": 7.0,
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            241.1999969482422
+          ],
+          "text_spans": 62,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
+    },
+    "additional_comparisons.pdf": {
+      "sha256": "ed1f59f078cd98a68aecbb963c68e0c0a5815b34017b1c792804c291715fda83",
+      "pages": 4,
+      "width_in": 7.0,
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 8,
+      "raster_dpi_range": [
+        299.9999931404047,
+        300.0000042942184
+      ],
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            361.1520080566406
+          ],
+          "text_spans": 35,
+          "raster_layers": 2
+        },
+        {
+          "page": 2,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            361.1520080566406
+          ],
+          "text_spans": 35,
+          "raster_layers": 2
+        },
+        {
+          "page": 3,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            361.1520080566406
+          ],
+          "text_spans": 52,
+          "raster_layers": 2
+        },
+        {
+          "page": 4,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            361.1520080566406
+          ],
+          "text_spans": 52,
+          "raster_layers": 2
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
+    },
+    "variance_estimation.pdf": {
+      "sha256": "d12b8edb77e2db7b4ed5563c883269f718ab90fb307cabff2a9c09f967e3d1ee",
+      "pages": 1,
+      "width_in": 7.0,
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            241.1999969482422
+          ],
+          "text_spans": 85,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
+    },
+    "predictive_calibration.pdf": {
+      "sha256": "bf6dc978baa49cf03e0555064a794e5ae567e7977991d3ede2e1f1ff719638d3",
+      "pages": 9,
+      "width_in": 7.0,
+      "pdf_title_empty": true,
+      "font_types": [
+        "Type1"
+      ],
+      "all_fonts_embedded": true,
+      "raster_layers": 0,
+      "raster_dpi_range": null,
+      "page_checks": [
+        {
+          "page": 1,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            270.864013671875
+          ],
+          "text_spans": 97,
+          "raster_layers": 0
+        },
+        {
+          "page": 2,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            270.864013671875
+          ],
+          "text_spans": 97,
+          "raster_layers": 0
+        },
+        {
+          "page": 3,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            270.864013671875
+          ],
+          "text_spans": 97,
+          "raster_layers": 0
+        },
+        {
+          "page": 4,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            270.864013671875
+          ],
+          "text_spans": 97,
+          "raster_layers": 0
+        },
+        {
+          "page": 5,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            270.864013671875
+          ],
+          "text_spans": 97,
+          "raster_layers": 0
+        },
+        {
+          "page": 6,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            270.864013671875
+          ],
+          "text_spans": 97,
+          "raster_layers": 0
+        },
+        {
+          "page": 7,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            558.1439819335938
+          ],
+          "text_spans": 109,
+          "raster_layers": 0
+        },
+        {
+          "page": 8,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            558.1439819335938
+          ],
+          "text_spans": 97,
+          "raster_layers": 0
+        },
+        {
+          "page": 9,
+          "media_box_pt": [
+            0.0,
+            0.0,
+            504.0,
+            558.1439819335938
+          ],
+          "text_spans": 124,
+          "raster_layers": 0
+        }
+      ],
+      "out_of_page_text": [],
+      "errors": []
+    },
+    "predictive_scores.pdf": {
+      "sha256": "1127034bcde400f7e942b38a71238e3f4085b3c614a4d883642e61d0fcb0497f",
       "pages": 1,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -330,240 +562,8 @@
       "out_of_page_text": [],
       "errors": []
     },
-    "additional_comparisons.pdf": {
-      "sha256": "9e0c0949031f2966bb7e05b0b05da493773eb75dd71ce2f6534f717a1fb25632",
-      "pages": 4,
-      "width_in": 7.0,
-      "pdf_title_empty": true,
-      "font_types": [
-        "Type1"
-      ],
-      "all_fonts_embedded": true,
-      "raster_layers": 8,
-      "raster_dpi_range": [
-        299.999992037634,
-        300.00001124977786
-      ],
-      "page_checks": [
-        {
-          "page": 1,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            361.1520080566406
-          ],
-          "text_spans": 34,
-          "raster_layers": 2
-        },
-        {
-          "page": 2,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            361.1520080566406
-          ],
-          "text_spans": 34,
-          "raster_layers": 2
-        },
-        {
-          "page": 3,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            361.1520080566406
-          ],
-          "text_spans": 51,
-          "raster_layers": 2
-        },
-        {
-          "page": 4,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            361.1520080566406
-          ],
-          "text_spans": 51,
-          "raster_layers": 2
-        }
-      ],
-      "out_of_page_text": [],
-      "errors": []
-    },
-    "variance_estimation.pdf": {
-      "sha256": "f9facd3b676240005f0c3612e9e13774953a2c209d71688f163a74291e0686be",
-      "pages": 1,
-      "width_in": 7.0,
-      "pdf_title_empty": true,
-      "font_types": [
-        "Type1"
-      ],
-      "all_fonts_embedded": true,
-      "raster_layers": 0,
-      "raster_dpi_range": null,
-      "page_checks": [
-        {
-          "page": 1,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            241.1999969482422
-          ],
-          "text_spans": 90,
-          "raster_layers": 0
-        }
-      ],
-      "out_of_page_text": [],
-      "errors": []
-    },
-    "predictive_calibration.pdf": {
-      "sha256": "13f15e171766642f93828e64160c65fd23a08a589645ac3e270070a946b70592",
-      "pages": 9,
-      "width_in": 7.0,
-      "pdf_title_empty": true,
-      "font_types": [
-        "Type1"
-      ],
-      "all_fonts_embedded": true,
-      "raster_layers": 0,
-      "raster_dpi_range": null,
-      "page_checks": [
-        {
-          "page": 1,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            270.864013671875
-          ],
-          "text_spans": 96,
-          "raster_layers": 0
-        },
-        {
-          "page": 2,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            270.864013671875
-          ],
-          "text_spans": 96,
-          "raster_layers": 0
-        },
-        {
-          "page": 3,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            270.864013671875
-          ],
-          "text_spans": 96,
-          "raster_layers": 0
-        },
-        {
-          "page": 4,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            270.864013671875
-          ],
-          "text_spans": 96,
-          "raster_layers": 0
-        },
-        {
-          "page": 5,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            270.864013671875
-          ],
-          "text_spans": 96,
-          "raster_layers": 0
-        },
-        {
-          "page": 6,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            270.864013671875
-          ],
-          "text_spans": 96,
-          "raster_layers": 0
-        },
-        {
-          "page": 7,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            558.1439819335938
-          ],
-          "text_spans": 98,
-          "raster_layers": 0
-        },
-        {
-          "page": 8,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            558.1439819335938
-          ],
-          "text_spans": 86,
-          "raster_layers": 0
-        },
-        {
-          "page": 9,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            558.1439819335938
-          ],
-          "text_spans": 113,
-          "raster_layers": 0
-        }
-      ],
-      "out_of_page_text": [],
-      "errors": []
-    },
-    "predictive_scores.pdf": {
-      "sha256": "809ac50df148841060401a9080e1605af3d2e0bf19c5b37df06e02f2d7930443",
-      "pages": 1,
-      "width_in": 7.0,
-      "pdf_title_empty": true,
-      "font_types": [
-        "Type1"
-      ],
-      "all_fonts_embedded": true,
-      "raster_layers": 0,
-      "raster_dpi_range": null,
-      "page_checks": [
-        {
-          "page": 1,
-          "media_box_pt": [
-            0.0,
-            0.0,
-            504.0,
-            241.1999969482422
-          ],
-          "text_spans": 70,
-          "raster_layers": 0
-        }
-      ],
-      "out_of_page_text": [],
-      "errors": []
-    },
     "model_mismatch.pdf": {
-      "sha256": "1ab62e01979e5d1efaef647c23990049e67a8d0d831d7c1cd1e18f51dbe1b01c",
+      "sha256": "ed3ed5a697decd44cf79b79f289f5cc16753ce3fd9c434d7685f278f76894716",
       "pages": 1,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -582,7 +582,7 @@
             504.0,
             246.24000549316406
           ],
-          "text_spans": 33,
+          "text_spans": 31,
           "raster_layers": 0
         }
       ],
@@ -590,7 +590,7 @@
       "errors": []
     },
     "computation_time.pdf": {
-      "sha256": "28de9da05cfaef6dda114178eaaa1840f72c44597f951e3e5a30ac0bebbf2fff",
+      "sha256": "441b1424c07325e63c46c02608eb2729c276053f3fffb6387423cbf7cb897d4a",
       "pages": 2,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -609,7 +609,7 @@
             504.0,
             508.89599609375
           ],
-          "text_spans": 79,
+          "text_spans": 86,
           "raster_layers": 0
         },
         {
@@ -628,7 +628,7 @@
       "errors": []
     },
     "numerical_accuracy.pdf": {
-      "sha256": "ff82e1af2e0f4439dbd46ff492a9dde82f7b27a67864861a892f440040ac9926",
+      "sha256": "997546195b6cac3a3bdd9e3d6d5ecc40d9ed20857cb1cafb0a4c282611200eea",
       "pages": 3,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -647,7 +647,7 @@
             504.0,
             241.1999969482422
           ],
-          "text_spans": 45,
+          "text_spans": 43,
           "raster_layers": 0
         },
         {
@@ -677,7 +677,7 @@
       "errors": []
     },
     "paper_summary.pdf": {
-      "sha256": "999fe95974bc3efc1f93c6bcf54bb7f53989908075850722538dd48a546d3d76",
+      "sha256": "47ca9f8732b40d793563fa15fc5de3592c054b0ba4c6af450a0b4c986dba026a",
       "pages": 1,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -687,8 +687,8 @@
       "all_fonts_embedded": true,
       "raster_layers": 3,
       "raster_dpi_range": [
-        299.99998649664747,
-        300.0000093664445
+        299.99999425281027,
+        300.00001100393484
       ],
       "page_checks": [
         {
@@ -699,7 +699,7 @@
             504.0,
             443.23199462890625
           ],
-          "text_spans": 124,
+          "text_spans": 117,
           "raster_layers": 3
         }
       ],
@@ -707,7 +707,7 @@
       "errors": []
     },
     "supp_information_tracking.pdf": {
-      "sha256": "605332db07cfc23ae7f28b2c4d6a580dcf4174d5d5fe69dbc673785cb9cd22a6",
+      "sha256": "e005030a2c8e07920a85aed72099866db2167b273b2974518c8ce06279a015bb",
       "pages": 6,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -717,8 +717,8 @@
       "all_fonts_embedded": true,
       "raster_layers": 1,
       "raster_dpi_range": [
-        300.00000335112503,
-        300.0000074312286
+        299.9999890312223,
+        299.9999891396523
       ],
       "page_checks": [
         {
@@ -740,7 +740,7 @@
             504.0,
             435.02398681640625
           ],
-          "text_spans": 87,
+          "text_spans": 86,
           "raster_layers": 0
         },
         {
@@ -751,7 +751,7 @@
             504.0,
             451.44000244140625
           ],
-          "text_spans": 66,
+          "text_spans": 64,
           "raster_layers": 1
         },
         {
@@ -773,7 +773,7 @@
             504.0,
             246.24000549316406
           ],
-          "text_spans": 14,
+          "text_spans": 16,
           "raster_layers": 0
         },
         {
@@ -784,7 +784,7 @@
             504.0,
             246.24000549316406
           ],
-          "text_spans": 15,
+          "text_spans": 17,
           "raster_layers": 0
         }
       ],
@@ -792,7 +792,7 @@
       "errors": []
     },
     "supp_comparisons.pdf": {
-      "sha256": "9c4367ff56972c716d4ff90c40f3d324a7418070ff53e7aaf39242b236786793",
+      "sha256": "b31f2abd983f44a59e1c81116835ff2f0409dff4cd42903f25dcb3c3d0349564",
       "pages": 9,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -802,8 +802,8 @@
       "all_fonts_embedded": true,
       "raster_layers": 14,
       "raster_dpi_range": [
-        299.99998550546877,
-        300.00001124977786
+        299.99998313946054,
+        300.00001250720464
       ],
       "page_checks": [
         {
@@ -814,7 +814,7 @@
             504.0,
             311.90399169921875
           ],
-          "text_spans": 60,
+          "text_spans": 62,
           "raster_layers": 0
         },
         {
@@ -836,7 +836,7 @@
             504.0,
             241.1999969482422
           ],
-          "text_spans": 74,
+          "text_spans": 62,
           "raster_layers": 0
         },
         {
@@ -847,7 +847,7 @@
             504.0,
             361.1520080566406
           ],
-          "text_spans": 34,
+          "text_spans": 35,
           "raster_layers": 2
         },
         {
@@ -858,7 +858,7 @@
             504.0,
             361.1520080566406
           ],
-          "text_spans": 34,
+          "text_spans": 35,
           "raster_layers": 2
         },
         {
@@ -869,7 +869,7 @@
             504.0,
             361.1520080566406
           ],
-          "text_spans": 51,
+          "text_spans": 52,
           "raster_layers": 2
         },
         {
@@ -880,7 +880,7 @@
             504.0,
             361.1520080566406
           ],
-          "text_spans": 51,
+          "text_spans": 52,
           "raster_layers": 2
         },
         {
@@ -891,7 +891,7 @@
             504.0,
             435.02398681640625
           ],
-          "text_spans": 101,
+          "text_spans": 82,
           "raster_layers": 3
         },
         {
@@ -902,7 +902,7 @@
             504.0,
             451.44000244140625
           ],
-          "text_spans": 131,
+          "text_spans": 122,
           "raster_layers": 3
         }
       ],
@@ -910,7 +910,7 @@
       "errors": []
     },
     "supp_variance_prediction_cost.pdf": {
-      "sha256": "e5cbb3971d3b3165d7ebe366f167c9888c5cd5c2948dd72c2cfec4b9bccf4760",
+      "sha256": "2a46751a0f7c70d4bcb6e313d54b13227bc0767aabdc5b1e65bbb6b76f2fa30b",
       "pages": 21,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -920,8 +920,8 @@
       "all_fonts_embedded": true,
       "raster_layers": 5,
       "raster_dpi_range": [
-        299.9999947474049,
-        300.0000093664445
+        299.9999929193556,
+        300.0000070497487
       ],
       "page_checks": [
         {
@@ -932,7 +932,7 @@
             504.0,
             241.1999969482422
           ],
-          "text_spans": 90,
+          "text_spans": 85,
           "raster_layers": 0
         },
         {
@@ -943,7 +943,7 @@
             504.0,
             418.6080017089844
           ],
-          "text_spans": 53,
+          "text_spans": 55,
           "raster_layers": 0
         },
         {
@@ -954,7 +954,7 @@
             504.0,
             418.6080017089844
           ],
-          "text_spans": 57,
+          "text_spans": 53,
           "raster_layers": 0
         },
         {
@@ -965,7 +965,7 @@
             504.0,
             295.4880065917969
           ],
-          "text_spans": 51,
+          "text_spans": 49,
           "raster_layers": 3
         },
         {
@@ -976,7 +976,7 @@
             504.0,
             336.52801513671875
           ],
-          "text_spans": 67,
+          "text_spans": 65,
           "raster_layers": 2
         },
         {
@@ -987,7 +987,7 @@
             504.0,
             270.864013671875
           ],
-          "text_spans": 96,
+          "text_spans": 97,
           "raster_layers": 0
         },
         {
@@ -998,7 +998,7 @@
             504.0,
             270.864013671875
           ],
-          "text_spans": 96,
+          "text_spans": 97,
           "raster_layers": 0
         },
         {
@@ -1009,7 +1009,7 @@
             504.0,
             270.864013671875
           ],
-          "text_spans": 96,
+          "text_spans": 97,
           "raster_layers": 0
         },
         {
@@ -1020,7 +1020,7 @@
             504.0,
             270.864013671875
           ],
-          "text_spans": 96,
+          "text_spans": 97,
           "raster_layers": 0
         },
         {
@@ -1031,7 +1031,7 @@
             504.0,
             270.864013671875
           ],
-          "text_spans": 96,
+          "text_spans": 97,
           "raster_layers": 0
         },
         {
@@ -1042,7 +1042,7 @@
             504.0,
             270.864013671875
           ],
-          "text_spans": 96,
+          "text_spans": 97,
           "raster_layers": 0
         },
         {
@@ -1053,7 +1053,7 @@
             504.0,
             558.1439819335938
           ],
-          "text_spans": 98,
+          "text_spans": 109,
           "raster_layers": 0
         },
         {
@@ -1064,7 +1064,7 @@
             504.0,
             558.1439819335938
           ],
-          "text_spans": 86,
+          "text_spans": 97,
           "raster_layers": 0
         },
         {
@@ -1075,7 +1075,7 @@
             504.0,
             558.1439819335938
           ],
-          "text_spans": 113,
+          "text_spans": 124,
           "raster_layers": 0
         },
         {
@@ -1086,7 +1086,7 @@
             504.0,
             241.1999969482422
           ],
-          "text_spans": 70,
+          "text_spans": 74,
           "raster_layers": 0
         },
         {
@@ -1097,7 +1097,7 @@
             504.0,
             246.24000549316406
           ],
-          "text_spans": 33,
+          "text_spans": 31,
           "raster_layers": 0
         },
         {
@@ -1108,7 +1108,7 @@
             504.0,
             508.89599609375
           ],
-          "text_spans": 79,
+          "text_spans": 86,
           "raster_layers": 0
         },
         {
@@ -1130,7 +1130,7 @@
             504.0,
             241.1999969482422
           ],
-          "text_spans": 45,
+          "text_spans": 43,
           "raster_layers": 0
         },
         {
@@ -1162,7 +1162,7 @@
   },
   "previews": {
     "preview/setup.png": {
-      "sha256": "16c9cbccb3c813c20a0da59a288103466dd0cc298204b1e38ea8c1fa0c1b4d20",
+      "sha256": "ad0af7be0d8adc8a490dc5fc31ec00258526d7e0bd7343ad073a1a8e6ee24f8f",
       "size_px": [
         2100,
         1026
@@ -1173,7 +1173,7 @@
       ]
     },
     "preview/task_performance.png": {
-      "sha256": "e61a887716a52fbe56a78d95553578e7cc4d86776309c2c56621ec725e5dfc3a",
+      "sha256": "a287544f0980187ecb93f3f8aa72a0b355123afa83ee5f67a1af6ebdf8c85db0",
       "size_px": [
         2100,
         1299
@@ -1184,7 +1184,7 @@
       ]
     },
     "preview/task_performance_page2.png": {
-      "sha256": "3a76b71e26d8dd42ae81c8dc59a6169d5e7df762715bf8cace4d9b366e5a9ff9",
+      "sha256": "2d5facff714e920acd18b96e83193a75b928b14724f0e7d3554e1135c0064228",
       "size_px": [
         2100,
         1128
@@ -1195,7 +1195,7 @@
       ]
     },
     "preview/posterior_anisotropy.png": {
-      "sha256": "a21cc981b285a415b784643ba4d263ff1d004d4d478e798b5baa77917bb601e8",
+      "sha256": "68b6000663b3f081b0015d85ed9874d0e963327acbbae7700c97d4e44e4abd92",
       "size_px": [
         2100,
         1812
@@ -1206,7 +1206,7 @@
       ]
     },
     "preview/posterior_anisotropy_page2.png": {
-      "sha256": "03ec0f313d5556e9930815b872cd33a2cf0df6ea19bb5fa85ec9ae9c0670e488",
+      "sha256": "0a00c3cc7adf9d2ae82eef2e0a119f4c93c8aad5d0662dc388188c9d56593bd9",
       "size_px": [
         2100,
         1880
@@ -1217,7 +1217,7 @@
       ]
     },
     "preview/noise_adaptation.png": {
-      "sha256": "8bd8c529502277319f2bd8cb15f3c6155ab8b8da4949bfd69c3a1b93c2366c3b",
+      "sha256": "6419de9ff1781b527482ed9adf85caa812d2bbc04fe5289c562ba3c7a51fcb69",
       "size_px": [
         2100,
         1744
@@ -1228,7 +1228,7 @@
       ]
     },
     "preview/noise_adaptation_page2.png": {
-      "sha256": "38d85db8a2a85f890bcec0f82f8805c21e8f6cd42ea2a6968e59785c726ff8a6",
+      "sha256": "44b83a8a2dc347ebb6fe897f796fb6c6062a17f6f55a3551eaabbed88603b02c",
       "size_px": [
         2100,
         1744
@@ -1239,7 +1239,7 @@
       ]
     },
     "preview/noise_adaptation_page3.png": {
-      "sha256": "32af4ea8d6368b7e5dda00c9710ef093670d3bc2a38abb8790c756e682cddf4a",
+      "sha256": "c41e1fb1b8e6aad8216ce9ab98d61840533f5886ce832b26f9ae5f1bd6a40a1d",
       "size_px": [
         2100,
         1231
@@ -1250,7 +1250,7 @@
       ]
     },
     "preview/noise_adaptation_page4.png": {
-      "sha256": "7bfd2c7bb100db569784eea395e1c2ac4561db2d5382d88e506e6904216789da",
+      "sha256": "79be1bdf0a2ecc16ed697e5c20982b527426745d7c4cfa0c4517c06d3dfceb02",
       "size_px": [
         2100,
         1402
@@ -1261,7 +1261,7 @@
       ]
     },
     "preview/information.png": {
-      "sha256": "bc306f06d8ac9dc8b482bc98f5913fdae743c6f53f9f2de6a2b43bfc770ccdab",
+      "sha256": "88501c8f0013a662cc8c340afe18b5e622a22a668cff914caf4b4274889fb8f5",
       "size_px": [
         2100,
         1299
@@ -1272,7 +1272,7 @@
       ]
     },
     "preview/posterior_curvature.png": {
-      "sha256": "3706a0c421906c28bb514d4a7f802cc3075b1bbd0fd9567a571cf3345ad19117",
+      "sha256": "304500141d4be437e6c2e7de9161c2b0535cb33dd744092b5904d4c58df03efe",
       "size_px": [
         2100,
         1812
@@ -1283,7 +1283,7 @@
       ]
     },
     "preview/tracking_bound.png": {
-      "sha256": "cea61c053d98ac9434611d12ffb59a84912607d4fcb7e2ea96b32d34419d090a",
+      "sha256": "11ba3ab9ba62c41d4e6f4040b074b806670814b8c86a176cfa8fcafcc9fc21ab",
       "size_px": [
         2100,
         1880
@@ -1294,7 +1294,7 @@
       ]
     },
     "preview/tracking_bound_page2.png": {
-      "sha256": "b03275335002fb6a6ec5a5472bf5953bdb0e58a538e4d64baa64469cdb730725",
+      "sha256": "c545de10db767bee3588ee64a4ed2fee6f289bf9d28f01e680cf446f42cb96b6",
       "size_px": [
         2100,
         1265
@@ -1305,7 +1305,7 @@
       ]
     },
     "preview/tracking_bound_page3.png": {
-      "sha256": "f4431728249ef8aa8ea986ecbcb0c6e36d6e94fdf8ca2e71dfd9652f8295809d",
+      "sha256": "ea644bb0d5e85351929ab1f16b1a4b2ab4c279761709a59f9ff2ccd1148987b3",
       "size_px": [
         2100,
         1026
@@ -1316,7 +1316,7 @@
       ]
     },
     "preview/tracking_bound_page4.png": {
-      "sha256": "5837fd41f609c98a39ea8c1f910700f511bff1c529aea683156879a54b9d2e05",
+      "sha256": "2dbc4a5afdf105ca6c6673e359638a2ec8532aa7979f3ffb209d0a8c8722fba4",
       "size_px": [
         2100,
         1026
@@ -1327,7 +1327,7 @@
       ]
     },
     "preview/block_updates.png": {
-      "sha256": "c1fb63e93c99e0946707991ab44edb0f3a041f54b08a7bb4c63322b4683cbef6",
+      "sha256": "42a0fba215995b21a0ddf1839346bf06b9880fd549a1a06797a9f30d44c1f1f4",
       "size_px": [
         2100,
         1005
@@ -1338,7 +1338,7 @@
       ]
     },
     "preview/additional_comparisons.png": {
-      "sha256": "3df450475c29b643148fd1f1732357e1546f6966f3cdcbbb31bfe5fa5d065773",
+      "sha256": "5805d8ac315c05a5317da206e6fddaf7a43ccbce01fe5526cc1799bd190e488f",
       "size_px": [
         2100,
         1504
@@ -1349,7 +1349,7 @@
       ]
     },
     "preview/additional_comparisons_page2.png": {
-      "sha256": "9e2098f57376d9538f2b482011d9f7a611803b834014fabbabca6c4419b3c21d",
+      "sha256": "b08783e1650a91e0084f3f6ef7baf6d2aa89dea1623a7fe57a7f166f0a4a6bd1",
       "size_px": [
         2100,
         1504
@@ -1360,7 +1360,7 @@
       ]
     },
     "preview/additional_comparisons_page3.png": {
-      "sha256": "db00da26791a8737113a054c51cfe9b13c57bfc683b909bbc79a97af23a6703d",
+      "sha256": "6fe0d552edc5ee01943bddb2e3650c49e32d73384a5ccd52d8e4e606d4f39a9c",
       "size_px": [
         2100,
         1504
@@ -1371,7 +1371,7 @@
       ]
     },
     "preview/additional_comparisons_page4.png": {
-      "sha256": "cfe6d82fc94e538eaf3eb7ec61f085df15792c760223f45ade70e6b11aecf996",
+      "sha256": "4e028c2f2aafe02f2eb98f21a5a61fdea9f0fea35b3749dfa31928aef132e10b",
       "size_px": [
         2100,
         1504
@@ -1382,7 +1382,7 @@
       ]
     },
     "preview/variance_estimation.png": {
-      "sha256": "81952e782afee9902bc5d80415bfa6353c318d1b111f178ed0114b522fc8b467",
+      "sha256": "c955a0d0441fceebe18572d35922644f1c59e894474dc412cd5306caf04f0a96",
       "size_px": [
         2100,
         1005
@@ -1393,7 +1393,7 @@
       ]
     },
     "preview/predictive_calibration.png": {
-      "sha256": "e432526428ccd10657fa946442ee2edf35a76ff11a45307050c0213437b3d363",
+      "sha256": "3e28743d6df7f464684c6fd3864114247f81d7a47791234442ca5ef30a9dfe6b",
       "size_px": [
         2100,
         1128
@@ -1404,7 +1404,7 @@
       ]
     },
     "preview/predictive_calibration_page2.png": {
-      "sha256": "a593f2084627ffe552ce4b1eff40e4e828542dd9163e37c5aaf3ba994f53cd42",
+      "sha256": "ad78ea08ffd5c63e6014892fa846f6baa93ef67bf310ce072615be5b51a467b1",
       "size_px": [
         2100,
         1128
@@ -1415,7 +1415,7 @@
       ]
     },
     "preview/predictive_calibration_page3.png": {
-      "sha256": "b92cbe38e37b425150291e0e10a8ce12f105fe2f00678ed93d9856d86e6f7f6e",
+      "sha256": "c2a9c5d7b70ae143db2714be0230eeca7072a19119b936cbd7086dcde5475acb",
       "size_px": [
         2100,
         1128
@@ -1426,7 +1426,7 @@
       ]
     },
     "preview/predictive_calibration_page4.png": {
-      "sha256": "91601a2342f9c2f62c794a964ef40648948d005646e7c687d95fb7993e04e4d3",
+      "sha256": "acf4713f4e4d320465e98bd5eb7067681322f99a2a6f645bd1651f724fc591a0",
       "size_px": [
         2100,
         1128
@@ -1437,7 +1437,7 @@
       ]
     },
     "preview/predictive_calibration_page5.png": {
-      "sha256": "54b2c07780051d927328e77233281198be789e5cafdee7ceae1435de7f77fc13",
+      "sha256": "869311e91bef6e966503622be2e1e7f05230542ad22e230d4069015b51a82fcf",
       "size_px": [
         2100,
         1128
@@ -1448,7 +1448,7 @@
       ]
     },
     "preview/predictive_calibration_page6.png": {
-      "sha256": "200a475d0e8119b804952aa8a3ab016f1d63849931da76583d06212299df36db",
+      "sha256": "93928d726cee08f79a8d7d3feb3fb0339ac656f03b0f95a75d096ef1e2c89680",
       "size_px": [
         2100,
         1128
@@ -1459,7 +1459,7 @@
       ]
     },
     "preview/predictive_calibration_page7.png": {
-      "sha256": "e8a25862b81de203f327d35b6e6c52a531f839c9533d8e2ef4e783846c8a5b15",
+      "sha256": "deb71205aa83e2fb8b2250a57e6c4e98d633362f31a8954c040feb9405900057",
       "size_px": [
         2100,
         2325
@@ -1470,7 +1470,7 @@
       ]
     },
     "preview/predictive_calibration_page8.png": {
-      "sha256": "77bd5a1659eb6ebb67e678d36745213c9a2694e043c766cba87c24c291d9c39a",
+      "sha256": "14ddb06d0d691a7be78ed4aa936960db2381fd675a1340f9a54bf4267b23f851",
       "size_px": [
         2100,
         2325
@@ -1481,7 +1481,7 @@
       ]
     },
     "preview/predictive_calibration_page9.png": {
-      "sha256": "2bed37020090cc3df7e865ca6b8ea0b061d1254472dfa6d4ec6537af4680567a",
+      "sha256": "fc820e15f12424f381279360e1aa1a155a7121f23b180f5762ba37b13c774117",
       "size_px": [
         2100,
         2325
@@ -1492,7 +1492,7 @@
       ]
     },
     "preview/predictive_scores.png": {
-      "sha256": "717daad7c7907a55a95e5c0a494a975d2ae7af73d11a64ed6beaef39cdc6e3fb",
+      "sha256": "f03ce03aac2e5c1e6e5289015af680e2f4f79e9edd4323fd77b213ba33521e25",
       "size_px": [
         2100,
         1005
@@ -1503,7 +1503,7 @@
       ]
     },
     "preview/model_mismatch.png": {
-      "sha256": "fc7246786bbc6d23fc29b0f90b091bbe79d3f1c19280ae789834a9b54d438a47",
+      "sha256": "22610d2093be2d981770c8a09b2e5cfe3f56c0d8a5525932e28ef98c40095f3e",
       "size_px": [
         2100,
         1026
@@ -1514,7 +1514,7 @@
       ]
     },
     "preview/computation_time.png": {
-      "sha256": "e780e4c8b9a341297535ca663dbd47b8694ff1b4c9dfffdb4d12351926915ab0",
+      "sha256": "ffd9eb9ae68110f7975f11984ae5df977643473aa7e7a225a2753a40dde167fd",
       "size_px": [
         2100,
         2120
@@ -1525,7 +1525,7 @@
       ]
     },
     "preview/computation_time_page2.png": {
-      "sha256": "58c067de24cc14fc3bf1f242a1b557de2ced6d598418d6d6c8e4c120f6701dc9",
+      "sha256": "bb41efa073c95d4406b6cfa76b81cd5d56c26198d1189bbae87f46c2e6532a96",
       "size_px": [
         2100,
         1128
@@ -1536,7 +1536,7 @@
       ]
     },
     "preview/numerical_accuracy.png": {
-      "sha256": "e1c503178bb6288e2498a1fe31f5711028d5ddcb37e12a6637425645a1fb2686",
+      "sha256": "a6f99baac3f5b836613b7707a6428e052fbcf71a944ce63b5d268412313f5277",
       "size_px": [
         2100,
         1005
@@ -1547,7 +1547,7 @@
       ]
     },
     "preview/numerical_accuracy_page2.png": {
-      "sha256": "4e3f3b2bc5526f111b339a1c37a4fca7c5aba2762f6279f639bb2f83eb6ae938",
+      "sha256": "57a96f5b82930e6e145b4b2ac709fd24796095e0f212ef86003c7aa1a151698d",
       "size_px": [
         2100,
         1005
@@ -1558,7 +1558,7 @@
       ]
     },
     "preview/numerical_accuracy_page3.png": {
-      "sha256": "a7882f46a0f6e7566e584050204cb96f1b0c71a633d300b8dab09b5d44204869",
+      "sha256": "7666c9ac4db73d3c7e8e68e06e8535e5730d4656c7dc4206021bfc671a65d378",
       "size_px": [
         2100,
         1197
@@ -1569,7 +1569,7 @@
       ]
     },
     "preview/paper_summary.png": {
-      "sha256": "c39303df4159435127089cfa4b698dbdd6b893bed706b7eb6c345cadf16b6012",
+      "sha256": "b3bd4bbde7380896c5e6824af0a038a40c2d320602bbf1f0b7ee4789748228d3",
       "size_px": [
         2100,
         1846
@@ -1590,12 +1590,12 @@
   "curated_exports": {
     "status": "passed",
     "manifest": "results/draft_figure_manifest.json",
-    "manifest_sha256": "d209f73963320dda4e1e6a4d5d2d6cf062ce35fd8665c4d2dbcc50d57cde6674",
-    "pdf_files": 18,
+    "manifest_sha256": "e2c569ba45f335336c86c7934db02467dc48989491e2f01eec2b53a76757d2d3",
+    "pdf_files": 16,
     "pdf_pages": 38,
     "files": {
-      "results/main/contact/setup.pdf": {
-        "sha256": "ed5004c9e63211dd786e5ce34fe0aa517a3accdd5378905004bcc643da11993b",
+      "results/supplementary/contact/setup.pdf": {
+        "sha256": "398cfd110d0a151e93057106516bd39db0ea64ee5f094b47262b5fc812cbbfef",
         "pages": 1,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -1605,8 +1605,8 @@
         "all_fonts_embedded": true,
         "raster_layers": 1,
         "raster_dpi_range": [
-          299.9999953479302,
-          300.0000025207251
+          299.99999585359,
+          300.00000626828205
         ],
         "page_checks": [
           {
@@ -1617,21 +1617,21 @@
               504.0,
               246.24000549316406
             ],
-            "text_spans": 75,
+            "text_spans": 61,
             "raster_layers": 1
           }
         ],
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/contact/setup.pdf",
-        "source_pdf_sha256": "ed5004c9e63211dd786e5ce34fe0aa517a3accdd5378905004bcc643da11993b",
+        "source_pdf_sha256": "398cfd110d0a151e93057106516bd39db0ea64ee5f094b47262b5fc812cbbfef",
         "source_pages": [
           1
         ]
       },
-      "results/main/contact/task_performance.pdf": {
-        "sha256": "2b3f245e98c0316497ae5f2289f8d2cfe00ad647e72527ad3fdc387ec949cd04",
-        "pages": 1,
+      "results/supplementary/contact/task_performance.pdf": {
+        "sha256": "f576a56ce893b8ac5499acefda1332f293e29aabc932f1b2a53167416cddd723",
+        "pages": 2,
         "width_in": 7.0,
         "pdf_title_empty": true,
         "font_types": [
@@ -1649,32 +1649,11 @@
               504.0,
               311.90399169921875
             ],
-            "text_spans": 60,
+            "text_spans": 62,
             "raster_layers": 0
-          }
-        ],
-        "out_of_page_text": [],
-        "errors": [],
-        "source_pdf": "results/contact/task_performance.pdf",
-        "source_pdf_sha256": "aa685a4169e2aedaadbe4dfea3382d9e3edc3d7697efe9f84eda3484d1a6ba1f",
-        "source_pages": [
-          1
-        ]
-      },
-      "results/supplementary/contact/task_performance.pdf": {
-        "sha256": "1459fee599f304581f08bd461ec0ebf44393cfc58d19e42de5e5261924f5be52",
-        "pages": 1,
-        "width_in": 7.0,
-        "pdf_title_empty": true,
-        "font_types": [
-          "Type1"
-        ],
-        "all_fonts_embedded": true,
-        "raster_layers": 0,
-        "raster_dpi_range": null,
-        "page_checks": [
+          },
           {
-            "page": 1,
+            "page": 2,
             "media_box_pt": [
               0.0,
               0.0,
@@ -1688,24 +1667,25 @@
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/contact/task_performance.pdf",
-        "source_pdf_sha256": "aa685a4169e2aedaadbe4dfea3382d9e3edc3d7697efe9f84eda3484d1a6ba1f",
+        "source_pdf_sha256": "f576a56ce893b8ac5499acefda1332f293e29aabc932f1b2a53167416cddd723",
         "source_pages": [
+          1,
           2
         ]
       },
-      "results/main/contact/posterior_anisotropy.pdf": {
-        "sha256": "f26aa0f9db7a00eabf64ae77544f65281c50a63e1e5b71a79119a85838dfd5df",
-        "pages": 1,
+      "results/supplementary/contact/posterior_anisotropy.pdf": {
+        "sha256": "e37008418dea94055b526c47177b686e21df26bd7f12b6db1275dd580ac5ab98",
+        "pages": 2,
         "width_in": 7.0,
         "pdf_title_empty": true,
         "font_types": [
           "Type1"
         ],
         "all_fonts_embedded": true,
-        "raster_layers": 3,
+        "raster_layers": 6,
         "raster_dpi_range": [
-          299.99998550546877,
-          300.00000887138924
+          299.99998313946054,
+          300.0000093664445
         ],
         "page_checks": [
           {
@@ -1716,55 +1696,32 @@
               504.0,
               435.02398681640625
             ],
-            "text_spans": 101,
+            "text_spans": 82,
             "raster_layers": 3
-          }
-        ],
-        "out_of_page_text": [],
-        "errors": [],
-        "source_pdf": "results/contact/posterior_anisotropy.pdf",
-        "source_pdf_sha256": "b52d3fce86eb79150d636aea0d64f4daa1988405366b8cb71ebdc8aa039bda34",
-        "source_pages": [
-          1
-        ]
-      },
-      "results/supplementary/contact/posterior_anisotropy.pdf": {
-        "sha256": "f996e3a44e1aefa751169249548043592842f6e18e8f56fc816315ce81842889",
-        "pages": 1,
-        "width_in": 7.0,
-        "pdf_title_empty": true,
-        "font_types": [
-          "Type1"
-        ],
-        "all_fonts_embedded": true,
-        "raster_layers": 3,
-        "raster_dpi_range": [
-          299.99999711007786,
-          300.0000105431335
-        ],
-        "page_checks": [
+          },
           {
-            "page": 1,
+            "page": 2,
             "media_box_pt": [
               0.0,
               0.0,
               504.0,
               451.44000244140625
             ],
-            "text_spans": 131,
+            "text_spans": 128,
             "raster_layers": 3
           }
         ],
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/contact/posterior_anisotropy.pdf",
-        "source_pdf_sha256": "b52d3fce86eb79150d636aea0d64f4daa1988405366b8cb71ebdc8aa039bda34",
+        "source_pdf_sha256": "e37008418dea94055b526c47177b686e21df26bd7f12b6db1275dd580ac5ab98",
         "source_pages": [
+          1,
           2
         ]
       },
       "results/supplementary/contact/noise_adaptation.pdf": {
-        "sha256": "55940b3a63495262065b40635334434a9cfdd0529181058c2deb1277799fd009",
+        "sha256": "bc0a45f2419b57ad64b276482d648c4d0fdea1b7449da1d02fb6dfadd9958086",
         "pages": 4,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -1774,8 +1731,8 @@
         "all_fonts_embedded": true,
         "raster_layers": 5,
         "raster_dpi_range": [
-          299.999990716445,
-          300.00000592081625
+          299.9999880790715,
+          300.00000785635615
         ],
         "page_checks": [
           {
@@ -1786,7 +1743,7 @@
               504.0,
               418.6080017089844
             ],
-            "text_spans": 53,
+            "text_spans": 55,
             "raster_layers": 0
           },
           {
@@ -1797,7 +1754,7 @@
               504.0,
               418.6080017089844
             ],
-            "text_spans": 57,
+            "text_spans": 53,
             "raster_layers": 0
           },
           {
@@ -1808,7 +1765,7 @@
               504.0,
               295.4880065917969
             ],
-            "text_spans": 51,
+            "text_spans": 49,
             "raster_layers": 3
           },
           {
@@ -1819,14 +1776,14 @@
               504.0,
               336.52801513671875
             ],
-            "text_spans": 67,
+            "text_spans": 65,
             "raster_layers": 2
           }
         ],
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/contact/noise_adaptation.pdf",
-        "source_pdf_sha256": "55940b3a63495262065b40635334434a9cfdd0529181058c2deb1277799fd009",
+        "source_pdf_sha256": "bc0a45f2419b57ad64b276482d648c4d0fdea1b7449da1d02fb6dfadd9958086",
         "source_pages": [
           1,
           2,
@@ -1834,8 +1791,8 @@
           4
         ]
       },
-      "results/main/contact/information.pdf": {
-        "sha256": "5bef48bfe52a3d093eacf4521b70be085c4008ec726ab9b1cc8bb02781cc71e0",
+      "results/supplementary/contact/information.pdf": {
+        "sha256": "125f577caa12cff7fc6e6ef607d48ae1cec032d851a53a04819edb7372a16688",
         "pages": 1,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -1861,13 +1818,13 @@
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/contact/information.pdf",
-        "source_pdf_sha256": "5bef48bfe52a3d093eacf4521b70be085c4008ec726ab9b1cc8bb02781cc71e0",
+        "source_pdf_sha256": "125f577caa12cff7fc6e6ef607d48ae1cec032d851a53a04819edb7372a16688",
         "source_pages": [
           1
         ]
       },
       "results/supplementary/contact/posterior_curvature.pdf": {
-        "sha256": "d8788a60afd9ea08fbd80b558b90e82720fc9a71ff9a20c58c7aecb47946a195",
+        "sha256": "ecfb7dfca9f7e94fbb42e54415e722a5dca2310ee63ee0e448a114ef7f3c921b",
         "pages": 1,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -1886,20 +1843,20 @@
               504.0,
               435.02398681640625
             ],
-            "text_spans": 87,
+            "text_spans": 86,
             "raster_layers": 0
           }
         ],
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/contact/posterior_curvature.pdf",
-        "source_pdf_sha256": "d8788a60afd9ea08fbd80b558b90e82720fc9a71ff9a20c58c7aecb47946a195",
+        "source_pdf_sha256": "ecfb7dfca9f7e94fbb42e54415e722a5dca2310ee63ee0e448a114ef7f3c921b",
         "source_pages": [
           1
         ]
       },
       "results/supplementary/contact/tracking_bound.pdf": {
-        "sha256": "13c4ab98829dabba11c2a5bb6f1a546d385459f69d78226bc2ac67bcfdeef57e",
+        "sha256": "780841fcf0eb3a434267c9c5f40853dcb3ee2b182973b927587068ddcbbcb9be",
         "pages": 4,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -1909,8 +1866,8 @@
         "all_fonts_embedded": true,
         "raster_layers": 1,
         "raster_dpi_range": [
-          300.00000335112503,
-          300.0000074312286
+          299.9999890312223,
+          299.9999891396523
         ],
         "page_checks": [
           {
@@ -1921,7 +1878,7 @@
               504.0,
               451.44000244140625
             ],
-            "text_spans": 66,
+            "text_spans": 64,
             "raster_layers": 1
           },
           {
@@ -1943,7 +1900,7 @@
               504.0,
               246.24000549316406
             ],
-            "text_spans": 14,
+            "text_spans": 16,
             "raster_layers": 0
           },
           {
@@ -1954,14 +1911,14 @@
               504.0,
               246.24000549316406
             ],
-            "text_spans": 15,
+            "text_spans": 17,
             "raster_layers": 0
           }
         ],
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/contact/tracking_bound.pdf",
-        "source_pdf_sha256": "13c4ab98829dabba11c2a5bb6f1a546d385459f69d78226bc2ac67bcfdeef57e",
+        "source_pdf_sha256": "780841fcf0eb3a434267c9c5f40853dcb3ee2b182973b927587068ddcbbcb9be",
         "source_pages": [
           1,
           2,
@@ -1970,7 +1927,270 @@
         ]
       },
       "results/supplementary/contact/block_updates.pdf": {
-        "sha256": "52f05778726c281d9a7d6de41200ef3a188216801d0d48ac37ce9b516342e7a4",
+        "sha256": "4ea650a98ec2bda61ca610fb2961ed311e04b51973a72a63aa483cf493684556",
+        "pages": 1,
+        "width_in": 7.0,
+        "pdf_title_empty": true,
+        "font_types": [
+          "Type1"
+        ],
+        "all_fonts_embedded": true,
+        "raster_layers": 0,
+        "raster_dpi_range": null,
+        "page_checks": [
+          {
+            "page": 1,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              241.1999969482422
+            ],
+            "text_spans": 62,
+            "raster_layers": 0
+          }
+        ],
+        "out_of_page_text": [],
+        "errors": [],
+        "source_pdf": "results/contact/block_updates.pdf",
+        "source_pdf_sha256": "4ea650a98ec2bda61ca610fb2961ed311e04b51973a72a63aa483cf493684556",
+        "source_pages": [
+          1
+        ]
+      },
+      "results/supplementary/contact/additional_comparisons.pdf": {
+        "sha256": "ed1f59f078cd98a68aecbb963c68e0c0a5815b34017b1c792804c291715fda83",
+        "pages": 4,
+        "width_in": 7.0,
+        "pdf_title_empty": true,
+        "font_types": [
+          "Type1"
+        ],
+        "all_fonts_embedded": true,
+        "raster_layers": 8,
+        "raster_dpi_range": [
+          299.9999931404047,
+          300.0000042942184
+        ],
+        "page_checks": [
+          {
+            "page": 1,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              361.1520080566406
+            ],
+            "text_spans": 35,
+            "raster_layers": 2
+          },
+          {
+            "page": 2,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              361.1520080566406
+            ],
+            "text_spans": 35,
+            "raster_layers": 2
+          },
+          {
+            "page": 3,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              361.1520080566406
+            ],
+            "text_spans": 52,
+            "raster_layers": 2
+          },
+          {
+            "page": 4,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              361.1520080566406
+            ],
+            "text_spans": 52,
+            "raster_layers": 2
+          }
+        ],
+        "out_of_page_text": [],
+        "errors": [],
+        "source_pdf": "results/contact/additional_comparisons.pdf",
+        "source_pdf_sha256": "ed1f59f078cd98a68aecbb963c68e0c0a5815b34017b1c792804c291715fda83",
+        "source_pages": [
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "results/supplementary/contact/variance_estimation.pdf": {
+        "sha256": "d12b8edb77e2db7b4ed5563c883269f718ab90fb307cabff2a9c09f967e3d1ee",
+        "pages": 1,
+        "width_in": 7.0,
+        "pdf_title_empty": true,
+        "font_types": [
+          "Type1"
+        ],
+        "all_fonts_embedded": true,
+        "raster_layers": 0,
+        "raster_dpi_range": null,
+        "page_checks": [
+          {
+            "page": 1,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              241.1999969482422
+            ],
+            "text_spans": 85,
+            "raster_layers": 0
+          }
+        ],
+        "out_of_page_text": [],
+        "errors": [],
+        "source_pdf": "results/contact/variance_estimation.pdf",
+        "source_pdf_sha256": "d12b8edb77e2db7b4ed5563c883269f718ab90fb307cabff2a9c09f967e3d1ee",
+        "source_pages": [
+          1
+        ]
+      },
+      "results/supplementary/contact/predictive_calibration.pdf": {
+        "sha256": "bf6dc978baa49cf03e0555064a794e5ae567e7977991d3ede2e1f1ff719638d3",
+        "pages": 9,
+        "width_in": 7.0,
+        "pdf_title_empty": true,
+        "font_types": [
+          "Type1"
+        ],
+        "all_fonts_embedded": true,
+        "raster_layers": 0,
+        "raster_dpi_range": null,
+        "page_checks": [
+          {
+            "page": 1,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              270.864013671875
+            ],
+            "text_spans": 97,
+            "raster_layers": 0
+          },
+          {
+            "page": 2,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              270.864013671875
+            ],
+            "text_spans": 97,
+            "raster_layers": 0
+          },
+          {
+            "page": 3,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              270.864013671875
+            ],
+            "text_spans": 97,
+            "raster_layers": 0
+          },
+          {
+            "page": 4,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              270.864013671875
+            ],
+            "text_spans": 97,
+            "raster_layers": 0
+          },
+          {
+            "page": 5,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              270.864013671875
+            ],
+            "text_spans": 97,
+            "raster_layers": 0
+          },
+          {
+            "page": 6,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              270.864013671875
+            ],
+            "text_spans": 97,
+            "raster_layers": 0
+          },
+          {
+            "page": 7,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              558.1439819335938
+            ],
+            "text_spans": 109,
+            "raster_layers": 0
+          },
+          {
+            "page": 8,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              558.1439819335938
+            ],
+            "text_spans": 97,
+            "raster_layers": 0
+          },
+          {
+            "page": 9,
+            "media_box_pt": [
+              0.0,
+              0.0,
+              504.0,
+              558.1439819335938
+            ],
+            "text_spans": 124,
+            "raster_layers": 0
+          }
+        ],
+        "out_of_page_text": [],
+        "errors": [],
+        "source_pdf": "results/contact/predictive_calibration.pdf",
+        "source_pdf_sha256": "bf6dc978baa49cf03e0555064a794e5ae567e7977991d3ede2e1f1ff719638d3",
+        "source_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "results/supplementary/contact/predictive_scores.pdf": {
+        "sha256": "1127034bcde400f7e942b38a71238e3f4085b3c614a4d883642e61d0fcb0497f",
         "pages": 1,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -1995,277 +2215,14 @@
         ],
         "out_of_page_text": [],
         "errors": [],
-        "source_pdf": "results/contact/block_updates.pdf",
-        "source_pdf_sha256": "52f05778726c281d9a7d6de41200ef3a188216801d0d48ac37ce9b516342e7a4",
-        "source_pages": [
-          1
-        ]
-      },
-      "results/supplementary/contact/additional_comparisons.pdf": {
-        "sha256": "9e0c0949031f2966bb7e05b0b05da493773eb75dd71ce2f6534f717a1fb25632",
-        "pages": 4,
-        "width_in": 7.0,
-        "pdf_title_empty": true,
-        "font_types": [
-          "Type1"
-        ],
-        "all_fonts_embedded": true,
-        "raster_layers": 8,
-        "raster_dpi_range": [
-          299.999992037634,
-          300.00001124977786
-        ],
-        "page_checks": [
-          {
-            "page": 1,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              361.1520080566406
-            ],
-            "text_spans": 34,
-            "raster_layers": 2
-          },
-          {
-            "page": 2,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              361.1520080566406
-            ],
-            "text_spans": 34,
-            "raster_layers": 2
-          },
-          {
-            "page": 3,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              361.1520080566406
-            ],
-            "text_spans": 51,
-            "raster_layers": 2
-          },
-          {
-            "page": 4,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              361.1520080566406
-            ],
-            "text_spans": 51,
-            "raster_layers": 2
-          }
-        ],
-        "out_of_page_text": [],
-        "errors": [],
-        "source_pdf": "results/contact/additional_comparisons.pdf",
-        "source_pdf_sha256": "9e0c0949031f2966bb7e05b0b05da493773eb75dd71ce2f6534f717a1fb25632",
-        "source_pages": [
-          1,
-          2,
-          3,
-          4
-        ]
-      },
-      "results/supplementary/contact/variance_estimation.pdf": {
-        "sha256": "f9facd3b676240005f0c3612e9e13774953a2c209d71688f163a74291e0686be",
-        "pages": 1,
-        "width_in": 7.0,
-        "pdf_title_empty": true,
-        "font_types": [
-          "Type1"
-        ],
-        "all_fonts_embedded": true,
-        "raster_layers": 0,
-        "raster_dpi_range": null,
-        "page_checks": [
-          {
-            "page": 1,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              241.1999969482422
-            ],
-            "text_spans": 90,
-            "raster_layers": 0
-          }
-        ],
-        "out_of_page_text": [],
-        "errors": [],
-        "source_pdf": "results/contact/variance_estimation.pdf",
-        "source_pdf_sha256": "f9facd3b676240005f0c3612e9e13774953a2c209d71688f163a74291e0686be",
-        "source_pages": [
-          1
-        ]
-      },
-      "results/supplementary/contact/predictive_calibration.pdf": {
-        "sha256": "13f15e171766642f93828e64160c65fd23a08a589645ac3e270070a946b70592",
-        "pages": 9,
-        "width_in": 7.0,
-        "pdf_title_empty": true,
-        "font_types": [
-          "Type1"
-        ],
-        "all_fonts_embedded": true,
-        "raster_layers": 0,
-        "raster_dpi_range": null,
-        "page_checks": [
-          {
-            "page": 1,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              270.864013671875
-            ],
-            "text_spans": 96,
-            "raster_layers": 0
-          },
-          {
-            "page": 2,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              270.864013671875
-            ],
-            "text_spans": 96,
-            "raster_layers": 0
-          },
-          {
-            "page": 3,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              270.864013671875
-            ],
-            "text_spans": 96,
-            "raster_layers": 0
-          },
-          {
-            "page": 4,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              270.864013671875
-            ],
-            "text_spans": 96,
-            "raster_layers": 0
-          },
-          {
-            "page": 5,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              270.864013671875
-            ],
-            "text_spans": 96,
-            "raster_layers": 0
-          },
-          {
-            "page": 6,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              270.864013671875
-            ],
-            "text_spans": 96,
-            "raster_layers": 0
-          },
-          {
-            "page": 7,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              558.1439819335938
-            ],
-            "text_spans": 98,
-            "raster_layers": 0
-          },
-          {
-            "page": 8,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              558.1439819335938
-            ],
-            "text_spans": 86,
-            "raster_layers": 0
-          },
-          {
-            "page": 9,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              558.1439819335938
-            ],
-            "text_spans": 113,
-            "raster_layers": 0
-          }
-        ],
-        "out_of_page_text": [],
-        "errors": [],
-        "source_pdf": "results/contact/predictive_calibration.pdf",
-        "source_pdf_sha256": "13f15e171766642f93828e64160c65fd23a08a589645ac3e270070a946b70592",
-        "source_pages": [
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7,
-          8,
-          9
-        ]
-      },
-      "results/supplementary/contact/predictive_scores.pdf": {
-        "sha256": "809ac50df148841060401a9080e1605af3d2e0bf19c5b37df06e02f2d7930443",
-        "pages": 1,
-        "width_in": 7.0,
-        "pdf_title_empty": true,
-        "font_types": [
-          "Type1"
-        ],
-        "all_fonts_embedded": true,
-        "raster_layers": 0,
-        "raster_dpi_range": null,
-        "page_checks": [
-          {
-            "page": 1,
-            "media_box_pt": [
-              0.0,
-              0.0,
-              504.0,
-              241.1999969482422
-            ],
-            "text_spans": 70,
-            "raster_layers": 0
-          }
-        ],
-        "out_of_page_text": [],
-        "errors": [],
         "source_pdf": "results/contact/predictive_scores.pdf",
-        "source_pdf_sha256": "809ac50df148841060401a9080e1605af3d2e0bf19c5b37df06e02f2d7930443",
+        "source_pdf_sha256": "1127034bcde400f7e942b38a71238e3f4085b3c614a4d883642e61d0fcb0497f",
         "source_pages": [
           1
         ]
       },
       "results/supplementary/contact/model_mismatch.pdf": {
-        "sha256": "1ab62e01979e5d1efaef647c23990049e67a8d0d831d7c1cd1e18f51dbe1b01c",
+        "sha256": "ed3ed5a697decd44cf79b79f289f5cc16753ce3fd9c434d7685f278f76894716",
         "pages": 1,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -2284,20 +2241,20 @@
               504.0,
               246.24000549316406
             ],
-            "text_spans": 33,
+            "text_spans": 31,
             "raster_layers": 0
           }
         ],
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/contact/model_mismatch.pdf",
-        "source_pdf_sha256": "1ab62e01979e5d1efaef647c23990049e67a8d0d831d7c1cd1e18f51dbe1b01c",
+        "source_pdf_sha256": "ed3ed5a697decd44cf79b79f289f5cc16753ce3fd9c434d7685f278f76894716",
         "source_pages": [
           1
         ]
       },
       "results/supplementary/contact/computation_time.pdf": {
-        "sha256": "28de9da05cfaef6dda114178eaaa1840f72c44597f951e3e5a30ac0bebbf2fff",
+        "sha256": "441b1424c07325e63c46c02608eb2729c276053f3fffb6387423cbf7cb897d4a",
         "pages": 2,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -2316,7 +2273,7 @@
               504.0,
               508.89599609375
             ],
-            "text_spans": 79,
+            "text_spans": 86,
             "raster_layers": 0
           },
           {
@@ -2334,14 +2291,14 @@
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/contact/computation_time.pdf",
-        "source_pdf_sha256": "28de9da05cfaef6dda114178eaaa1840f72c44597f951e3e5a30ac0bebbf2fff",
+        "source_pdf_sha256": "441b1424c07325e63c46c02608eb2729c276053f3fffb6387423cbf7cb897d4a",
         "source_pages": [
           1,
           2
         ]
       },
       "results/supplementary/contact/numerical_accuracy.pdf": {
-        "sha256": "ff82e1af2e0f4439dbd46ff492a9dde82f7b27a67864861a892f440040ac9926",
+        "sha256": "997546195b6cac3a3bdd9e3d6d5ecc40d9ed20857cb1cafb0a4c282611200eea",
         "pages": 3,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -2360,7 +2317,7 @@
               504.0,
               241.1999969482422
             ],
-            "text_spans": 45,
+            "text_spans": 43,
             "raster_layers": 0
           },
           {
@@ -2389,7 +2346,7 @@
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/contact/numerical_accuracy.pdf",
-        "source_pdf_sha256": "ff82e1af2e0f4439dbd46ff492a9dde82f7b27a67864861a892f440040ac9926",
+        "source_pdf_sha256": "997546195b6cac3a3bdd9e3d6d5ecc40d9ed20857cb1cafb0a4c282611200eea",
         "source_pages": [
           1,
           2,
@@ -2397,7 +2354,7 @@
         ]
       },
       "results/supplementary/contact/paper_summary.pdf": {
-        "sha256": "999fe95974bc3efc1f93c6bcf54bb7f53989908075850722538dd48a546d3d76",
+        "sha256": "47ca9f8732b40d793563fa15fc5de3592c054b0ba4c6af450a0b4c986dba026a",
         "pages": 1,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -2407,8 +2364,8 @@
         "all_fonts_embedded": true,
         "raster_layers": 3,
         "raster_dpi_range": [
-          299.99998649664747,
-          300.0000093664445
+          299.99999425281027,
+          300.00001100393484
         ],
         "page_checks": [
           {
@@ -2419,14 +2376,14 @@
               504.0,
               443.23199462890625
             ],
-            "text_spans": 124,
+            "text_spans": 117,
             "raster_layers": 3
           }
         ],
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/contact/paper_summary.pdf",
-        "source_pdf_sha256": "999fe95974bc3efc1f93c6bcf54bb7f53989908075850722538dd48a546d3d76",
+        "source_pdf_sha256": "47ca9f8732b40d793563fa15fc5de3592c054b0ba4c6af450a0b4c986dba026a",
         "source_pages": [
           1
         ]

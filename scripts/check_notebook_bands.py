@@ -49,6 +49,7 @@ def audit(root=ROOT):
     for example,loader in [('beamforming',load_beamforming_plot_data),('contact',load_contact_plot_data)]:
         frame=normalize(read(f'results/{example}/tables/paper/prediction/adaptation.csv'))
         frame=frame[(frame.split=='test')&(frame.control=='mean')&(frame.condition=='noise_change')]
+        time_column = 't' if example == 'beamforming' else 'time_s'
         # The raw table records the variance BEFORE each reported update.
         # A fit after that measurement supplies sigma2_next, used for future
         # measurements. Sparse post-step connections are not a dense trajectory.
@@ -79,29 +80,29 @@ def audit(root=ROOT):
             physical_noise_change_time_s=float((change_observation-1)*dt),
             first_report_with_changed_truth_observation=int(changed.t),
             first_report_with_changed_truth_time_s=float(changed.time_s),
-            displayed_event_marker='First reporting checkpoint with changed generating variance; not the exact physical change time.',
+            displayed_event_marker=('Between measurements 128 and 129 (128.5), the exact generating change.' if example=='beamforming' else 'First reporting checkpoint with changed generating variance; not the exact physical change time.'),
             source='Noise variance is multiplied by four at zero-based index T//2 in the saved-study generator; no stream is regenerated here.',
-            interpretation='Displayed estimates are pre-update checkpoint values. Step segments only connect those reports and must not be read as measurements or the exact variance-update trajectory between checkpoints.')
+            interpretation='Displayed estimates are pre-correction checkpoint values. Connecting segments are not additional measurements or a reconstruction of scale updates between checkpoints.')
         payload=loader(root,'noise_adaptation')
         if example=='beamforming':
             for key,panel in payload['variance'].items():
                 for trace in panel['traces']:
                     for idx,tm in enumerate(trace['x']):
-                        g=frame[(frame.method==trace['method'])&(frame.time_s==tm)]
+                        g=frame[(frame.method==trace['method'])&(frame[time_column]==tm)]
                         sample=g[key+'_estimate'].to_numpy();lo,m,hi=np.quantile(sample,[.25,.5,.75])
                         compare(example,'noise_adaptation',key,trace['method'],tm,[m,lo,hi],[trace['y'][idx],trace['low'][idx],trace['high'][idx]],len(sample),'Empirical 25–75% interquartile range')
-            trace_sets=[('task',payload['task'],'heldout_output_oracle_db',1.),('score',payload['score'],'prequential_score',1.)]
+            trace_sets=[('task',payload['task'],'output_oracle_db',1.),('score',payload['score'],'prequential_score',1.)]
         else:
             for trace in payload['variance']:
                 for idx,tm in enumerate(trace['t']):
-                    g=frame[(frame.method==trace['method'])&(frame.time_s==tm)]
+                    g=frame[(frame.method==trace['method'])&(frame[time_column]==tm)]
                     sample=g.sigma2_estimate.to_numpy()*1e6;lo,m,hi=np.quantile(sample,[.25,.5,.75])
                     compare(example,'noise_adaptation','sigma2',trace['method'],tm,[m,lo,hi],[trace['median'][idx],trace['lower'][idx],trace['upper'][idx]],len(sample),'Empirical 25–75% interquartile range')
             trace_sets=[('task',payload['future'],'future_task_loss',1e6),('score',payload['scores'],'prequential_score',1.)]
         for metric,traces,column,scale in trace_sets:
             for trace in traces:
                 for row in trace['points']:
-                    tm=row[0];g=frame[(frame.method==trace['method'])&(frame.time_s==tm)]
+                    tm=row[0];g=frame[(frame.method==trace['method'])&(frame[time_column]==tm)]
                     sample=g.groupby('episode')[column].mean().dropna()*scale
                     compare(example,'noise_adaptation',metric,trace['method'],tm,interval(sample),row[1:],len(sample),'Pointwise Student 95% confidence interval for mean')
         # Every displayed coverage error bar, independently from binary trial records.
@@ -123,11 +124,11 @@ def audit(root=ROOT):
         task=loader(root,'task_performance')
         if example=='beamforming':
             perf=normalize(read('results/beamforming/data/paper/performance/stationary.csv'))
-            perf=perf[perf.t==perf.n]
+            perf=perf[(perf.t==perf.n)&(perf.condition=='static')]
             for trace in task['curves']:
                 for row in trace['points']:
                     n=row[0];g=perf[(perf.n==n)&(perf.method==trace['method'])]
-                    sample=g.groupby('episode').heldout_ratio_db.mean()
+                    sample=g.groupby('episode').true_ratio_db.mean()
                     compare(example,'task_performance','output_power',trace['method'],n,interval(sample),row[1:],len(sample),'Pointwise Student 95% confidence interval for mean')
         else:
             perf=normalize(read('results/contact/tables/paper/performance/metrics.csv'))
@@ -156,10 +157,10 @@ def audit(root=ROOT):
     file='results/beamforming/tables/paper/performance/moving_episodes.csv'
     f=normalize(read(file))
     f=f[(f.condition=='smooth')&(f.n==32)]
-    base=f[f.method=='mean'].set_index('episode').heldout_ratio_db
+    base=f[f.method=='mean'].set_index('episode').true_ratio_db
     box_rows=[]
     for point in load_beamforming_plot_data(root,'task_performance')['paired']:
-        other=f[f.method==point['method']].set_index('episode').heldout_ratio_db
+        other=f[f.method==point['method']].set_index('episode').true_ratio_db
         index=base.index.intersection(other.index)
         expected=(other.loc[index]-base.loc[index]).to_numpy()
         np.testing.assert_array_equal(expected,point['values'])

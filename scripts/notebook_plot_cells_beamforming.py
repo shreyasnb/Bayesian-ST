@@ -11,25 +11,25 @@ DATA_IMPORT = 'from lib.notebook_beamforming_data import load_beamforming_plot_d
 
 STYLE_CODE = r'''
 STYLE = {
-    "mean": (r"$\overline P_t^+$", "#0072B2", "o"),
-    "mode": (r"$P_{\widehat{\mathcal X}_t}$", "#D55E00", "s"),
-    "iso": (r"$\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^"),
-    "isotropic": (r"$\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^"),
-    "scm_loaded": ("MVDR with covariance shrinkage", "#484848", "X"),
+    "mean": (r"Posterior mean $\overline P_t^+$", "#0072B2", "o"),
+    "mode": (r"Mode $P_{\widehat{\mathcal X}_t}$", "#D55E00", "s"),
+    "iso": (r"Isotropic mean $\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^"),
+    "isotropic": (r"Isotropic mean $\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^"),
+    "scm_loaded": ("Regularized sample covariance", "#484848", "X"),
     "great_window": ("GREAT (sliding window)", "#009E73", "D"),
     "great": ("GREAT (sliding window)", "#009E73", "D"),
     "great_ew": ("GREAT (exponential weighting)", "#56B4E9", "v"),
     "known": ("True variances", "#111111", "s"),
     "exact_known": (r"True variances, $\beta=1$", "#111111", "s"),
-    "known_forgetting": ("True variances, forgetting", "#8172B2", "D"),
-    "misspecified": ("Fixed variances", "#999999", "^"),
-    "learned": ("Learned variances", "#0072B2", "o"),
+    "known_forgetting": (r"True variances, $\beta=0.98$", "#8172B2", "D"),
+    "misspecified": ("Fixed variance estimates", "#999999", "^"),
+    "learned": ("EM variance estimates", "#0072B2", "o"),
 }
 '''
 
 
 def _cell(name, page, size, body, *, style=True):
-    section = 'main' if name in {'setup','task_performance','noise_adaptation','computation_time'} else 'supplementary'
+    section = 'main' if name in {'task_performance','noise_adaptation'} else 'supplementary'
     source = f'''# Edit these controls independently for this figure.
 import numpy as np
 import matplotlib.pyplot as plt
@@ -122,11 +122,11 @@ for curve in data["curves"]:
     ax.plot(points[:,0],points[:,1],marker=symbol,color=color_,label=label)
     if curve["method"]=="mean":
         ax.fill_between(points[:,0],points[:,2],points[:,3],color=color_,alpha=.10)
-ax.set(xlabel="Number of sensors",ylabel="Output power relative to ideal MVDR (dB)")
+ax.set(xlabel=r"Number of sensors $n$",ylabel=r"$\ell_t$ (dB)")
 fig.legend(*ax.get_legend_handles_labels(),loc="outside lower center",ncol=2,frameon=False,fontsize=10.)
 ax.spines[["top","right"]].set_visible(False)
 ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
-ax.text(.015,.985,"(a)",transform=ax.transAxes,ha="left",va="top")
+
 ''').replace("'task_performance_page1.pdf'", "'task_performance_output_power.pdf'")
     + '\n\n' + _cell('task_performance', 1, (15, 5), r'''
 fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
@@ -140,11 +140,11 @@ ax.set_yticks(np.arange(1,len(labels)+1),labels=labels)
 for patch,item in zip(boxes["boxes"],data["paired"]):
     patch.set(facecolor=STYLE[item["method"]][1],alpha=.85)
 ax.axvline(0.,linestyle="--",color="#222222",linewidth=1.)
-ax.set_xlabel("Output power difference: method $-$ posterior mean (dB)")
+ax.set_xlabel("Output power difference (dB)")
 ax.spines[["top","right"]].set_visible(False)
 ax.grid(axis="x",color="#BFC4C8",alpha=.30,linewidth=.45)
 ax.text(.015,.985,"(b)",transform=ax.transAxes,ha="left",va="top")
-''').replace("'task_performance_page1.pdf'", "'task_performance_paired_difference.pdf'")
+''').replace("'task_performance_page1.pdf'", "'task_performance_paired_difference.pdf'").replace("DRAFT_SECTION = 'main'", "DRAFT_SECTION = 'supplementary'")
 )
 
 PLOT_CELLS['posterior_anisotropy', 1] = (
@@ -216,21 +216,23 @@ ax_difference.text(.015,.985,"(c)",transform=ax_difference.transAxes,ha="left",v
 ''').replace("'posterior_anisotropy_page1.pdf'", "'posterior_anisotropy_empirical_cdf.pdf'")
 )
 
-PLOT_CELLS['noise_adaptation', 1] = _cell('noise_adaptation', 1, (15,5), r'''
+PLOT_CELLS['noise_adaptation', 1] = _cell('noise_adaptation', 1, (15,7), r'''
 fig,axes = plt.subplots(2,2,figsize=FIGSIZE,dpi=DPI,layout="constrained")
 for ax,key in [(axes[0,0],"sigma2"),(axes[0,1],"tau2")]:
     panel = data["variance"][key]
     for trace in panel["traces"]:
         label,color_,symbol = STYLE[trace["method"]]
-        ax.step(trace["x"],trace["y"],where="post",color=color_,marker=symbol,
+        if trace["method"] == "known":
+            continue  # The full true schedule is drawn below, including t=129.
+        ax.plot(trace["x"],trace["y"],color=color_,marker=symbol,
                 linestyle="--" if trace["method"]=="misspecified" else "-",label=label)
         if trace["method"]=="learned":
-            ax.fill_between(trace["x"],trace["low"],trace["high"],color=color_,alpha=.13,step="post")
-    ax.step(panel["x"],panel["truth"],where="post",color="#222222",linestyle=":",
-            linewidth=1.35,label=r"$\sigma_t^2$" if key=="sigma2" else r"$\tau_t^2$")
+            ax.fill_between(trace["x"],trace["low"],trace["high"],color=color_,alpha=.13)
+    ax.step(panel["x"],panel["truth"],where=panel["truth_step_where"],color="#111111",linestyle="--",
+            linewidth=1.6,label="True variances")
     for event in panel["events"]:
         ax.axvline(event,color="#70777D",linestyle=":",linewidth=.7)
-    ax.set(xlabel=data["time_label"],ylabel=r"Noise variance $\sigma^2$" if key=="sigma2" else r"Signal variance $\tau^2$")
+    ax.set(xlabel=data["time_label"],ylabel=r"$\sigma_t^2,\ \widehat\sigma_t^2$" if key=="sigma2" else r"$\tau_t^2,\ \widehat\tau_t^2$")
 for ax,key in [(axes[1,0],"task"),(axes[1,1],"score")]:
     for trace in data[key]:
         label,color_,symbol = STYLE[trace["method"]]
@@ -238,7 +240,7 @@ for ax,key in [(axes[1,0],"task"),(axes[1,1],"score")]:
         ax.plot(p[:,0],p[:,1],marker=symbol,color=color_,
                 linestyle="--" if trace["method"]=="misspecified" else "-",label=label)
         ax.fill_between(p[:,0],p[:,2],p[:,3],color=color_,alpha=.09)
-    ax.set(xlabel=data["time_label"],ylabel="Output power relative to ideal MVDR (dB)" if key=="task" else "Mean log predictive density")
+    ax.set(xlabel=data["time_label"],ylabel=r"$\ell_t$ (dB)" if key=="task" else r"$\log\pi_t(u_t)$")
 handles = {}
 for ax,tag in zip(axes.flat,["(a)","(b)","(c)","(d)"]):
     for handle,label in zip(*ax.get_legend_handles_labels()):handles.setdefault(label,handle)
@@ -278,19 +280,19 @@ plt.rcParams["text.usetex"] = True
 data = load_beamforming_plot_data(ROOT, "computation_time", page=1)
 
 STYLE = {
-    "mean": (r"$\overline P_t^+$", "#0072B2", "o"),
-    "mode": (r"$P_{\widehat{\mathcal X}_t}$", "#D55E00", "s"),
-    "iso": (r"$\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^"),
-    "isotropic": (r"$\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^"),
-    "scm_loaded": ("MVDR with covariance shrinkage", "#484848", "X"),
+    "mean": (r"Posterior mean $\overline P_t^+$", "#0072B2", "o"),
+    "mode": (r"Mode $P_{\widehat{\mathcal X}_t}$", "#D55E00", "s"),
+    "iso": (r"Isotropic mean $\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^"),
+    "isotropic": (r"Isotropic mean $\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^"),
+    "scm_loaded": ("Regularized sample covariance", "#484848", "X"),
     "great_window": ("GREAT (sliding window)", "#009E73", "D"),
     "great": ("GREAT (sliding window)", "#009E73", "D"),
     "great_ew": ("GREAT (exponential weighting)", "#56B4E9", "v"),
     "known": ("True variances", "#111111", "s"),
     "exact_known": (r"True variances, $\beta=1$", "#111111", "s"),
-    "known_forgetting": ("True variances, forgetting", "#8172B2", "D"),
-    "misspecified": ("Fixed variances", "#999999", "^"),
-    "learned": ("Learned variances", "#0072B2", "o"),
+    "known_forgetting": (r"True variances, $\beta=0.98$", "#8172B2", "D"),
+    "misspecified": ("Fixed variance estimates", "#999999", "^"),
+    "learned": ("EM variance estimates", "#0072B2", "o"),
 }
 
 # Figure 1: computation time versus number of sensors.
@@ -298,7 +300,7 @@ DPI = 300
 FIGSIZE = (15, 5)
 SAVE_PDF = True
 PDF_PATH = EDITABLE_OUTPUT / "computation_time_scaling.pdf"
-DRAFT_SECTION = 'main'
+DRAFT_SECTION = 'supplementary'
 DRAFT_PATH = ROOT / 'results' / DRAFT_SECTION / 'beamforming' / PDF_PATH.name
 
 fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout="constrained")
@@ -306,9 +308,9 @@ fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout="constrained")
 for curve in data["curves"]:
     label, color_, symbol = STYLE[curve["method"]]
     label += (
-        ", every observation"
+        "\nevery observation"
         if curve["interval"] == 1
-        else f", every {curve['interval']} observations"
+        else f"\nevery {curve['interval']} observations"
     )
     ax.plot(
         curve["n"],
@@ -323,7 +325,7 @@ ax.set_xscale("log", base=2)
 ax.set_yscale("log")
 ax.set(
     xlabel="Number of sensors",
-    ylabel="Time for 64 observations (ms)",
+    ylabel="Time for 64\nobservations (ms)",
 )
 ax.legend(
     frameon=False,
@@ -348,10 +350,10 @@ if SAVE_PDF:
 plt.show()
 
 DPI = 300
-FIGSIZE = (15, 5)
+FIGSIZE = (15, 7.5)
 SAVE_PDF = True
 PDF_PATH = EDITABLE_OUTPUT / "computation_time_phases.pdf"
-DRAFT_SECTION = 'main'
+DRAFT_SECTION = 'supplementary'
 DRAFT_PATH = ROOT / 'results' / DRAFT_SECTION / 'beamforming' / PDF_PATH.name
 
 fig, ax = plt.subplots(
@@ -383,7 +385,7 @@ for phase in data["phases"]:
 
 row_labels = []
 for row in data["phase_rows"]:
-    label = STYLE["mean"][0]
+    label = r"$\overline P_t^+$"
     if row["method"] == "mean_report":
         label += " + uncertainty"
     if row["method"] == "adaptive_mean":
@@ -405,6 +407,11 @@ if SAVE_PDF:
     DRAFT_PATH.write_bytes(PDF_PATH.read_bytes())
 
 plt.show()'''
+
+
+from scripts.notebook_publication_style import apply_publication_style
+for _key, _source in list(PLOT_CELLS.items()):
+    PLOT_CELLS[_key] = apply_publication_style(_source)
 
 
 def get_plot_cell(name, page=1):

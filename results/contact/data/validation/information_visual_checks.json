@@ -4,7 +4,7 @@
   "producer": "scripts/check_information_visuals.py",
   "producer_sha256": "7c679ddb620ed8a125514ef9b36a956e81c2e01cc081d9739bb8d00b145a780b",
   "visual_source": "lib/final_information_visuals.py",
-  "visual_source_sha256": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+  "visual_source_sha256": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
   "final_science_hash": "d3e5f91e4bc9ca18bf34d595fe6d2ed0137361dff835dccc72b552ad7bb5ec47",
   "input_hashes": {
     "results/contact/data/paper/performance/anisotropy.npz": "d3e7afc0ff19d80534c7385a4ee71956b883bb5a371f8c7f8602ee6685eec311",

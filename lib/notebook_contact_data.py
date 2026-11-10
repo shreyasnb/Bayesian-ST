@@ -98,10 +98,15 @@ def load_contact_plot_data(root, name, page=1):
         for method in ('mean', 'mode', 'regularized', 'great_window'):
             rows = []
             for t, group in frame[frame.method.eq(method)].groupby('t', sort=True):
+                # response_mse already averages three squared vector norms:
+                # E_t(D) = (1/3) sum_j ||(D-P_X) v_t^(j)||^2.
+                # Convert (m/s)^2 to (mm/s)^2; do not divide by 3 again.
                 values = group.groupby('episode').response_mse.mean()*1e6
                 mean, low, high = _mean_interval(values)
                 rows.append((t, mean, low, high))
             if rows:curves.append(dict(method=method, points=np.asarray(rows)))
+        # The saved episode_average rows already average t=4,8,...,192.
+        # The six stored checkpoint rows alone are not that time average.
         moving = _episode_losses(evidence.frame('performance', 'episode_metrics', 'metrics'), 'response_mse')
         moving = moving[moving.condition.eq('sphere')]
         methods = [m for m in ('mean', 'mode', 'iso', 'isotropic', 'regularized') if moving.method.eq(m).any()]

@@ -10,12 +10,12 @@ DATA_IMPORT = ('from lib.notebook_contact_data import '
 
 _STYLE = r'''
 LABELS = {
-    "mean": r"$\overline P_t^+$", "mode": r"$P_{\widehat{\mathcal X}_t}$",
-    "iso": r"$\overline P_t^{\mathrm{iso}}$", "isotropic": r"$\overline P_t^{\mathrm{iso}}$",
-    "regularized": "Regularized\nprojector", "great_window": "GREAT (sliding window)",
+    "mean": r"Posterior mean $\overline P_t^+$", "mode": r"Mode $P_{\widehat{\mathcal X}_t}$",
+    "iso": r"Isotropic mean $\overline P_t^{\mathrm{iso}}$", "isotropic": r"Isotropic mean $\overline P_t^{\mathrm{iso}}$",
+    "regularized": "Regularized projector", "great_window": "GREAT (sliding window)",
     "known": "True variances", "exact_known": r"True variances, $\beta=1$",
-    "known_forgetting": "True variances, forgetting",
-    "misspecified": "Fixed variances", "learned": "Learned variances",
+    "known_forgetting": r"True variances, $\beta=0.90$",
+    "misspecified": "Fixed variance estimates", "learned": "EM variance estimates",
 }
 COLORS = {"mean":"#0072B2", "mode":"#D55E00", "iso":"#CC79A7", "isotropic":"#CC79A7",
           "regularized":"#8C564B", "great_window":"#009E73", "known":"#111111",
@@ -28,7 +28,7 @@ MARKERS = {"mean":"o", "mode":"s", "iso":"^", "isotropic":"^", "regularized":"P"
 
 
 def _cell(name, page, figsize, code, style=True):
-    section = 'main' if name in {'setup', 'information', 'task_performance', 'posterior_anisotropy'} else 'supplementary'
+    section = 'main' if name in {'information', 'task_performance', 'posterior_anisotropy'} else 'supplementary'
     source = f'''# Edit these controls, the labels below, or any Matplotlib call in this cell.
 import numpy as np
 import matplotlib.pyplot as plt
@@ -136,24 +136,24 @@ for point, color in zip(data["marked_points"], ["#D55E00", "#0072B2"]):
 ax.spines[["top", "right"]].set_visible(False)
 ax.grid(color="#BFC4C8", alpha=.30, linewidth=.45)
 ax.text(.015, .985, "(a)", transform=ax.transAxes, ha="left", va="top")
-''', style=False) +
+''', style=False).replace("DRAFT_SECTION = 'main'", "DRAFT_SECTION = 'supplementary'") +
 _split_panel('information', (15, 5), 'information_rotation.pdf', r'''
 fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout="constrained")
 for values, label, color, style, point, angle, marked_kl in zip(
         [data["kl_first"], data["kl_second"]],
-        [r"$z=(\tan\delta,0)$", r"$z=(0,\tan\delta)$"],
+        [r"$z=(\tan\delta,0)^\top$", r"$z=(0,\tan\delta)^\top$"],
         ["#D55E00", "#0072B2"], ["-", "--"], data["marked_points"],
         data["marked_angles"], data["marked_kl"]):
     ax.plot(data["angle_deg"], values, style, color=color, label=label)
     ax.plot(angle, marked_kl, "o", color=color, markersize=4.)
-ax.set(xlabel=r"$\delta\ ({}^\circ)$", ylabel=r"$D_{\mathrm{KL}}(p_0\,\Vert\,p_Z)$", xlim=(0.,35.))
+ax.set(xlabel=r"$\delta\ ({}^\circ)$", ylabel=r"$D_{\mathrm{KL}}(p_0\,\Vert\,p_z)$", xlim=(0.,35.))
 ax.set_yscale("log")
 ax.set_yticks([1e-5, 1e-2, 1e1])
 ax.minorticks_off()
 ax.legend(frameon=False, fontsize=10., loc="lower right")
 ax.spines[["top", "right"]].set_visible(False)
 ax.grid(color="#BFC4C8", alpha=.30, linewidth=.45)
-ax.text(.015, .985, "(b)", transform=ax.transAxes, ha="left", va="top")
+
 ''', style=False)
 )
 
@@ -164,8 +164,8 @@ for curve in data["curves"]:
     axes[0].plot(points[:,0], points[:,1], marker=MARKERS[method], color=COLORS[method], label=LABELS[method])
     if method == "mean":
         axes[0].fill_between(points[:,0], points[:,2], points[:,3], color=COLORS[method], alpha=.10)
-axes[0].set_xlabel(r"$t$ (observations)")
-axes[0].set_ylabel(r"$\mathrm{MSE}(\widehat u_t)$ $((\mathrm{mm}/\mathrm{s})^2)$")
+axes[0].set_xlabel(r"Measurement index $t$")
+axes[0].set_ylabel(r"$\mathcal E_t(D_t)$ $((\mathrm{mm}/\mathrm{s})^2)$")
 axes[0].margins(y=.12)
 for row, point in enumerate(data["absolute"], 1):
     method = point["method"]
@@ -175,7 +175,7 @@ for row, point in enumerate(data["absolute"], 1):
 axes[1].set(yticks=np.arange(1,len(data["absolute"])+1),
     yticklabels=[LABELS[point["method"]] for point in data["absolute"]],
     ylim=(.5,len(data["absolute"])+.5),
-    xlabel=r"$\mathrm{MSE}(\widehat u)$ $((\mathrm{mm}/\mathrm{s})^2)$")
+    xlabel=r"Time-averaged $\mathcal E_t(D_t)$ $((\mathrm{mm}/\mathrm{s})^2)$")
 for ax, label in zip(axes, ["(a)", "(b)"]):
     ax.spines[["top", "right"]].set_visible(False)
     ax.grid(color="#BFC4C8", alpha=.30, linewidth=.45)
@@ -230,15 +230,15 @@ fig.colorbar(plt.cm.ScalarMappable(norm=norm,cmap=cmap),ax=spheres,label=r"$q([n
 ''', style=True) +
 _split_panel('posterior_anisotropy', (15, 5), 'posterior_anisotropy_risk.pdf', r'''
 fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout="constrained")
-ax.plot(data["theta"],data["risk_full"],color=COLORS["mean"],label=LABELS["mean"])
-ax.plot(data["theta"],data["risk_iso"],"--",color=COLORS["iso"],label=LABELS["iso"])
+ax.plot(data["theta"],data["risk_full"],color=COLORS["mean"],label=r"$\overline P_t^+$")
+ax.plot(data["theta"],data["risk_iso"],"--",color=COLORS["iso"],label=r"$\overline P_t^{\mathrm{iso}}$")
 ax.set_xlabel(r"$\theta$ (rad)")
-ax.set_ylabel(r"$v^\top(\overline P-\overline P^2)v/\|v\|^2$")
+ax.set_ylabel(r"$r_t(v(\theta))/v_0^2$")
 ax.set(xticks=np.linspace(0.,2*np.pi,5),xticklabels=[r"$0$",r"$\pi/2$",r"$\pi$",r"$3\pi/2$",r"$2\pi$"])
 ax.legend(frameon=False,fontsize=10.)
 ax.spines[["top","right"]].set_visible(False)
 ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
-# ax.text(.015,.985,"(c)",transform=ax.transAxes,ha="left",va="top")
+ax.text(.015,.985,"(c)",transform=ax.transAxes,ha="left",va="top")
 ''', style=True)
 )
 
@@ -255,7 +255,7 @@ for curve in data["variance"]:
 axes[0].step(data["truth_t"],data["truth"],where="post",color="#222222",linestyle=":",linewidth=1.35,label=r"$\sigma_t^2$")
 for event in data["events"]:axes[0].axvline(event,color="#70777D",linestyle=":",linewidth=.7)
 axes[0].set_xlabel(data["time_label"])
-axes[0].set_ylabel(r"Noise variance $\sigma^2$ $((\mathrm{mm}/\mathrm{s})^2)$")
+axes[0].set_ylabel(r"$\widehat\sigma_t^2$ $((\mathrm{mm}/\mathrm{s})^2)$")
 for ax, name in zip(axes[1:], ["future","scores"]):
     for curve in data[name]:
         method, points = curve["method"], curve["points"]
@@ -263,8 +263,8 @@ for ax, name in zip(axes[1:], ["future","scores"]):
             linestyle="--" if method=="misspecified" else "-",label=LABELS[method])
         ax.fill_between(points[:,0],points[:,2],points[:,3],color=COLORS[method],alpha=.09)
     ax.set_xlabel(data["time_label"])
-axes[1].set_ylabel(r"Response MSE $((\mathrm{mm}/\mathrm{s})^2)$")
-axes[2].set_ylabel("Mean log predictive density")
+axes[1].set_ylabel("Squared velocity\nerror "+r"$((\mathrm{mm}/\mathrm{s})^2)$")
+axes[2].set_ylabel("Log predictive\ndensity")
 for ax, label in zip(axes,["(a)","(b)","(c)"]):
     ax.spines[["top","right"]].set_visible(False)
     ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
@@ -300,7 +300,7 @@ _split_panel('computation_time', (15, 5), 'computation_time_scaling.pdf', r'''
 fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 for curve in data["scaling"]:
     method, interval = curve["method"],curve["interval"]
-    label=LABELS[method]+(", every observation" if interval==1 else ", every "+str(interval)+" observations")
+    label=LABELS[method]+("\nevery observation" if interval==1 else "\nevery "+str(interval)+" observations")
     ax.plot(curve["n"],curve["milliseconds"],marker=MARKERS[method],linestyle=curve["style"],
         color=COLORS[method],label=label)
 ax.set_xscale("log",base=2);ax.set_yscale("log")
@@ -308,13 +308,13 @@ ax.set_xticks([3,16,128],labels=["3","16","128"])
 ax.set_yticks([10.,100.,1000.],labels=[r"$10^1$",r"$10^2$",r"$10^3$"])
 ax.minorticks_off()
 ax.set_xlabel("Ambient dimension")
-ax.set_ylabel("Time for 64 observations (ms)")
+ax.set_ylabel("Time for 64\nobservations (ms)")
 ax.legend(frameon=False,fontsize=10.,ncol=2,loc="lower center",bbox_to_anchor=(.5,1.02))
 ax.spines[["top","right"]].set_visible(False)
 ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
 # ax.text(.015,.985,"(a)",transform=ax.transAxes,ha="left",va="top")
 ''', style=True) +
-_split_panel('computation_time', (15, 5), 'computation_time_phases.pdf', r'''
+_split_panel('computation_time', (15, 7.5), 'computation_time_phases.pdf', r'''
 fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 phase_labels = {"correction":"Parameter update","action":"Task decision","report":"Uncertainty report",
                 "fitting":"EM","overhead":"Other"}
@@ -328,7 +328,7 @@ for phase in data["phases"]:
     bottom += values
 row_labels=[]
 for row in data["rows"]:
-    label=LABELS["mean"]
+    label=r"$\overline P_t^+$"
     if row["method"]=="mean_report":label+=" + uncertainty"
     if row["method"]=="adaptive_mean":label+=" + EM ("+str(int(row["em_iterations"]))+" iterations)"
     row_labels.append(label+"\ndecisions every "+str(int(row["action_cadence"]))+" obs.")
@@ -341,6 +341,11 @@ ax.grid(axis="x",color="#BFC4C8",alpha=.30,linewidth=.45)
 fig.legend(*ax.get_legend_handles_labels(),loc="outside lower center",ncol=3,frameon=False,fontsize=10.)
 ''', style=True)
 )
+
+
+from scripts.notebook_publication_style import apply_publication_style
+for _key, _source in list(PLOT_CELLS.items()):
+    PLOT_CELLS[_key] = apply_publication_style(_source)
 
 
 def get_plot_cell(name, page=1):

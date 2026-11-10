@@ -179,6 +179,22 @@ def main():
         from scripts.check_supplementary_notebooks import check as check_supplementary
         result['supplementary_notebooks'] = {
             example: check_supplementary(example, ROOT) for example in EXAMPLES}
+        from scripts.check_revised_numerical_figures import audit as audit_quantities
+        quantities = audit_quantities(ROOT)
+        assert quantities['status'] == 'passed'
+        result['revised_numerical_quantities'] = dict(
+            status=quantities['status'],
+            scientific_gate=quantities['frozen_scientific_gate'],
+            verified_saved_inputs=len(quantities['raw_input_sha256']))
+        editability = json.loads((ROOT / 'results/notebook_editability.json').read_text())
+        exported = editability['manuscript_plot_revision']['actual_pdf_audit']
+        assert exported['status'] == 'passed' and not exported['errors']
+        assert exported['producer_sha256'] == sha(ROOT / exported['producer'])
+        assert set(exported['files']) == set(result['notebook_pdf_exports']['files'])
+        for mapping in (exported['files'], exported['canonical_files']):
+            verify_mapping(ROOT, {name: record['sha256'] for name, record in mapping.items()})
+        result['manuscript_export_audit'] = dict(status='verified',
+            notebook_pdfs=len(exported['files']), canonical_pdfs=len(exported['canonical_files']))
         report = (ROOT / 'completion_report.md').read_text()
         assert 'runs are in progress' not in report and 'will be replaced' not in report
         inventory = json.loads((ROOT / 'final_artifact_inventory.json').read_text())

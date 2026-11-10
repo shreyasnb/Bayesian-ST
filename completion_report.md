@@ -293,3 +293,22 @@ artist arrays match the original catalogue plots, and the application tracking
 intervals were independently checked against the same saved 256 trials per
 checkpoint. No simulation, inference, benchmark selection or numerical record
 was changed.
+
+
+## Revised numerical-section figures
+
+The latest presentation revision follows `numerical_section.tex` and the
+attached plot instructions. Array comparisons now read the saved exact
+covariance powers explicitly; no measured validation criterion or estimator
+setting was changed. Variance plots use integer measurement indices and the
+true change between 128 and 129, pre-correction estimates and the unchanged
+normalized predictive log density. Contact curves retain the exact velocity
+error, normalized response variance and native density geometry.
+
+Fonts are sized for six-inch insertion. Tiled figure letters are omitted as
+subsequently requested. All notebook PDF copies and the complete canonical
+catalogue are regenerated; the six files referenced by the revised main
+section occupy `results/main/`, with other figures retained in
+`results/supplementary/`. Scientific data, validation gates and numerical check
+cells remain unchanged. Details and verification commands are in
+[the revised figure notes](docs/revised_numerical_figures.md).

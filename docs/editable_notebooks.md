@@ -129,3 +129,18 @@ The scientific `make_theory_notebook.py` generator remains unchanged. The
 presentation-only `refactor_theory_plots.py` converts its output to editable
 cells, and leaves an already editable theory notebook alone. Use the unified
 builder above for the current workflow; older generators are historical tools.
+
+
+## Revised manuscript figures
+
+The current application cells use the exact quantities in the revised numerical
+section and expose width-aware label, tick and legend sizes. At six-inch
+insertion they are approximately 10, 9.2 and 8.8 points. Most canvases retain
+their aspect ratios; the four-panel array variance canvas is 15-by-7 inches.
+Tiled figures omit panel letters. The six specified main PDFs and all remaining
+supplementary PDFs update from the same visible `SAVE_PDF` blocks.
+
+See [quantities, units and checks](revised_numerical_figures.md). The explicit
+`update_manuscript_plot_cells.py` command refreshes plotting templates during
+presentation development; routine notebook execution does not reset edited
+source or change frozen numerical evidence.

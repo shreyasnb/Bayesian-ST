@@ -11,9 +11,11 @@ data-only helpers load the saved arrays. With `SAVE_PDF=True`, exports go to
 application folder. Each figure exposes its `DRAFT_SECTION` and `DRAFT_PATH`. See
 [editing and running notebook figures](docs/editable_notebooks.md).
 
-Both application notebooks also include the complete supplementary figure
-catalogue and explicit application tracking-error plots. The appended cells use
-15×5-inch figures at 300 dpi and preserve all existing cells and outputs.
+Both application notebooks include the complete supplementary figure catalogue
+and explicit application tracking-error plots. Plotting code remains directly
+editable. The [revised numerical figures](docs/revised_numerical_figures.md) use
+the manuscript quantities and larger fonts for six-inch insertion, with 300-dpi
+raster layers and separate main/supplementary PDF copies.
 
 The [completion report](completion_report.md) records completed cohorts, mixed comparisons, numerical failures and unsupported claims. The [mathematical checks](docs/final_manuscript_checks.md) explain identity transport, the sharp modal bound, fixed-boundary EM and the limits of dynamic uncertainty claims.
 

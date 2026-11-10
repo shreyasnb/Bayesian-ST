@@ -3,7 +3,7 @@
   "status": "passed",
   "example": "beamforming",
   "audit_source_sha256": "5e8203935651c7321aa4b3bfee50e39bcb25d7236333468b0b998bf8461bc34d",
-  "display_source_sha256": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
+  "display_source_sha256": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
   "baseline_snapshot_sha256": "9dd279c57949f578aa9b76578198b076779933a17120c8936915234fcaed6e2e",
   "preservation": {
     "status": "passed",

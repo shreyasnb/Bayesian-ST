@@ -38,7 +38,7 @@ for ax, metric, methods in specifications:
         points = []
         for time, group in selected.groupby("t", sort=True):
             values = group.set_index("episode")[metric].to_numpy(float)
-            # Every curve uses the same independent test-trial repetition unit.
+            # Every curve uses the same Monte Carlo simulation repetition unit.
             assert len(values) == 256 and np.isfinite(values).all()
             mean, lower, upper = _mean_interval(values)
             half = student_t.ppf(.975, len(values)-1) * values.std(ddof=1) / np.sqrt(len(values))
@@ -49,11 +49,11 @@ for ax, metric, methods in specifications:
         ax.plot(points[:,0], points[:,1], marker=marker(method), color=color(method), label=method_label(method))
         ax.fill_between(points[:,0], points[:,2], points[:,3], color=color(method), alpha=.10)
     ax.set_xscale("log", base=2)
-    ax.set_xlabel("Number of observations")
+    ax.set_xlabel(r"Measurement index $t$")
     ax.spines[["top", "right"]].set_visible(False)
     ax.grid(color="#BFC4C8", alpha=.30, linewidth=.45)
-    ax.legend(frameon=False, fontsize=10., loc="best")
-axes[0].set_ylabel(r"$d_{\mathrm{ch}}(\widehat{\mathcal X}_t,\mathcal X_t)$")
+    ax.legend(frameon=False, fontsize=LEGEND_FONT_SIZE, loc="best")
+axes[0].set_ylabel(r"$d_c(\widehat{\mathcal X}_t,\mathcal X_t)$")
 axes[1].set_ylabel(r"$\|D_t-P_{\mathcal X_t}\|_{\mathrm F}/\sqrt{2}$")
 for ax, tag in zip(axes, ["(a)", "(b)"]):
     ax.text(.015, .985, tag, transform=ax.transAxes, ha="left", va="top")
@@ -64,11 +64,11 @@ def build_cells(example):
     setting = ('The saved smooth-motion array experiment uses 32 sensors and a rank-one interference subspace.'
         if example == 'beamforming' else
         'The saved sphere-contact experiment tracks a rank-two plane in three dimensions using measured frame changes.')
-    note = setting + r''' Panel (a) reports chordal distance between the point-estimated and generating subspaces,
-$d_{\mathrm{ch}}(\widehat{\mathcal X},\mathcal X)=\|P_{\widehat{\mathcal X}}-P_{\mathcal X}\|_{\mathrm F}/\sqrt{2}$.
-Panel (b) reports the same scaled Frobenius error for the method's reported matrix $D_t$;
-for the posterior mean and isotropic control, $D_t$ need not be a projector, so this is a matrix error rather than a subspace distance.
-Curves are means across the same 256 independent test trials, with pointwise 95% Student confidence intervals.
+    note = setting + r''' The left panel reports chordal distance between the point-estimated and generating subspaces,
+$d_c(\widehat{\mathcal X},\mathcal X)=\|P_{\widehat{\mathcal X}}-P_{\mathcal X}\|_{\mathrm F}/\sqrt{2}$.
+The right panel reports the same scaled Frobenius error for the method's reported matrix $D_t$;
+for the posterior mean and isotropic mean, $D_t$ need not be a projector, so this is a matrix error rather than a subspace distance.
+Curves are means across the same 256 Monte Carlo simulations, with pointwise 95% Student confidence intervals.
 The two panels use their declared moving application cohorts, rather than the separate theorem fixtures.
 The generating projector is used only for evaluation and is not supplied to the estimators.'''
     return [plot_cell(example, 'tracking_error', 1, _BODY,

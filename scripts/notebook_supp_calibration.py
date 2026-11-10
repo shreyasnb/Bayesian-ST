@@ -68,7 +68,7 @@ for ax, kind, tag in zip(
     ax.grid(color="#BFC4C8", alpha=.30, linewidth=.45)
     ax.text(.015, .985, tag, transform=ax.transAxes, ha="left", va="top")
 fig.legend(*axes[0].get_legend_handles_labels(), loc="outside lower center",
-           ncol=2, frameon=False, fontsize=10.)
+           ncol=2, frameon=False, fontsize=LEGEND_FONT_SIZE)
 '''
 
 _WIDTHS = r'''
@@ -80,9 +80,9 @@ methods = ["exact_known", "known_forgetting", "misspecified", "learned"]
 count = int(evidence.config("prediction")["calibration_test_episodes"])
 quantities = [
     ("state_ball", "Chordal radius"),
-    ("clean_response", r"Interval width of $q^H Pq$" if example == "beamforming"
-        else r"Interval width of $e_1^T Pq$"),
-    ("noisy_observation", r"Interval width of $\operatorname{Re}(u_{t,1})$"),
+    ("clean_response", "Interval width\n"+r"$q^H Pq$" if example == "beamforming"
+        else "Interval width\n"+r"$e_1^T Pq$"),
+    ("noisy_observation", "Interval width\n"+r"$\operatorname{Re}(u_{t,1})$"),
 ]
 fig, axes = plt.subplots(1, 3, figsize=FIGSIZE, dpi=DPI, layout="constrained")
 for ax, (kind, xlabel), tag in zip(axes, quantities, ["(a)", "(b)", "(c)"]):
@@ -106,7 +106,7 @@ for ax, (kind, xlabel), tag in zip(axes, quantities, ["(a)", "(b)", "(c)"]):
         medianprops={"color": "white", "linewidth": 1.2},
         flierprops={"markersize": 1.8, "alpha": .35})
     ax.set_yticks(np.arange(1, len(methods)+1),
-                  labels=[method_label(method) for method in methods])
+                  labels=[method_label(method) for method in methods] if ax is axes[0] else ["" for method in methods])
     for box, method in zip(boxes["boxes"], methods):
         box.set_facecolor(color(method))
     ax.set_xlabel(xlabel)
@@ -158,10 +158,10 @@ for ax, x, y in [(axes[0], episode[gaussian], episode[mixture]),
         ax.plot([lower, high+padding], [lower, high+padding],
                 "--", color="#70777D", linewidth=1.)
         ax.set(xlim=(lower, high+padding), ylim=(lower, high+padding))
-axes[0].set(xlabel="Mean Gaussian log predictive density",
-            ylabel="Mean Bingham-mixture log predictive density")
-axes[1].set(xlabel="Predicted squared response error",
-            ylabel="Observed squared response error")
+axes[0].set(xlabel="Mean Gaussian\nlog predictive density",
+            ylabel="Mean Bingham-mixture\nlog predictive density")
+axes[1].set(xlabel="Predicted squared\nresponse error",
+            ylabel="Observed squared\nresponse error")
 for ax, tag in zip(axes, ["(a)", "(b)"]):
     ax.spines[["top", "right"]].set_visible(False)
     ax.grid(color="#BFC4C8", alpha=.30, linewidth=.45)
@@ -186,22 +186,22 @@ def build_cells(example):
         body = f'REGIME = {regime!r}\nREPORT_TIME = {report_time}\n' + dedent(_COVERAGE)
         note = (f"{names[regime]} at $t={report_time}$. Panels show the latent subspace, "
                 "the clean scalar response and the next noisy scalar observation, respectively. "
-                "Error bars are pointwise exact binomial 95% confidence intervals across independent trials; "
+                "Error bars are pointwise exact binomial 95% confidence intervals across Monte Carlo simulations; "
                 "the diagonal indicates agreement between credible level and empirical coverage.")
         cells.append(plot_cell(example, "predictive_calibration", page, body,
             title=f"Prediction coverage at $t={report_time}$: {names[regime].lower()}", note=note))
     for page, regime in [(7, "prior_predictive"), (8, "fixed_state"), (9, "drifting")]:
         body = f'REGIME = {regime!r}\n' + dedent(_WIDTHS)
-        note = (f"{names[regime]} at $t=64$. Each value is one independent trial's 95% report size. "
-                "Panel (a) uses the chordal radius, the square root of the saved squared-distance threshold. "
-                "Panels (b,c) use upper minus lower endpoints in the three-dimensional calibration fixture units. "
-                "Boxes show medians and interquartile ranges, with 1.5-IQR whiskers and every outlier; "
+        note = (f"{names[regime]} at $t=64$. Each value is one Monte Carlo simulation's 95% report size. "
+                "The left panel uses the chordal radius, the square root of the saved squared-distance threshold. "
+                "The center and right panels use upper minus lower endpoints in the three-dimensional calibration fixture units. "
+                "Method order is the same in all panels. Boxes show medians and interquartile ranges, with 1.5-IQR whiskers and every outlier; "
                 "these are distributions of report sizes, not confidence intervals for their mean.")
         cells.append(plot_cell(example, "predictive_calibration", page, body,
             title=f"Sizes of 95% reports: {names[regime].lower()}", note=note))
     cells.append(plot_cell(example, "predictive_scores", 1, dedent(_SCORES),
         title="Predictive density and response error",
-        note="Each point averages reporting times within one independent trial and probability regime. "
+        note="Each point averages reporting times within one Monte Carlo simulation and probability regime. "
              "The left panel compares the normalized Bingham-mixture density with its Gaussian moment approximation; "
              "higher mean log predictive density is better. The right panel compares predicted posterior squared "
              "response error with observed squared error on the same targets. The dashed lines indicate equality; "

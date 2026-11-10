@@ -21,8 +21,8 @@ for name, label, c, symbol in [
         np.maximum(small.loc[selected, name], 1e-17), color=c,
         marker=symbol, s=18, label=label)
 axes[0].set(xscale='log', yscale='log', xlabel='Spectral span',
-            ylabel='Independent-reference discrepancy')
-axes[0].legend(frameon=False, fontsize=10.)
+            ylabel='Reference error')
+axes[0].legend(frameon=False, fontsize=LEGEND_FONT_SIZE)
 for names, label, c, symbol in [
         (('mean_reference_error', 'mean_error', 'selected_mean_error',
           'maximum_selected_mean_error'), 'Selected mean', color('mean'), 'o'),
@@ -37,8 +37,8 @@ for names, label, c, symbol in [
         marker=symbol, s=18, label=label)
 axes[1].set_xscale('log', base=2)
 axes[1].set(yscale='log', xlabel='Ambient dimension',
-            ylabel='Independent-reference discrepancy')
-axes[1].legend(frameon=False, fontsize=10.)
+            ylabel='Reference error')
+axes[1].legend(frameon=False, fontsize=LEGEND_FONT_SIZE)
 for ax, tag in zip(axes, ['(a)', '(b)']):
     ax.spines[['top', 'right']].set_visible(False)
     ax.grid(color='#BFC4C8', alpha=.30, linewidth=.45)
@@ -58,7 +58,7 @@ fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout='constrained')
 ax.bar(x, passed, color=color('mean'), label='Resolved')
 ax.bar(x, total-passed, bottom=passed, color='#B8BEC4', label='Unresolved')
 ax.set(xticks=x, xticklabels=[name.replace('_ok', '').replace('_', ' ') for name in flags],
-       xlabel='Numerical target', ylabel='Number of requested cases')
+       xlabel='Numerical target', ylabel='Number of cases')
 ax.legend(frameon=False)
 ax.spines[['top', 'right']].set_visible(False)
 ax.grid(axis='y', color='#BFC4C8', alpha=.30, linewidth=.45)
@@ -91,9 +91,9 @@ fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout='constrained')
 ax.bar(x, resolved, color=color('mean'), label='Resolved')
 ax.bar(x, unresolved, bottom=first, color=color('mode'), label='Unresolved')
 ax.bar(x, not_evaluated, bottom=first+second, color='#B8BEC4', label='Not evaluated')
-ax.set(xticks=x, xticklabels=labels, ylabel='Number of saved numerical targets')
+ax.set(xticks=x, xticklabels=labels, ylabel='Number of cases')
 ax.tick_params(axis='x', rotation=20)
-ax.legend(frameon=False, ncol=3, loc='lower center', bbox_to_anchor=(.5, 1.02), fontsize=10.)
+ax.legend(frameon=False, ncol=3, loc='lower center', bbox_to_anchor=(.5, 1.02), fontsize=LEGEND_FONT_SIZE)
 ax.spines[['top', 'right']].set_visible(False)
 ax.grid(axis='y', color='#BFC4C8', alpha=.30, linewidth=.45)
 '''
@@ -126,7 +126,7 @@ ax.set_xscale('log', base=2)
 ax.set_yscale('log')
 ax.set(xlabel='Number of sensors' if example == 'beamforming' else 'Ambient dimension',
        ylabel='Memory (KiB)')
-ax.legend(frameon=False, fontsize=10.)
+ax.legend(frameon=False, fontsize=LEGEND_FONT_SIZE)
 ax.spines[['top', 'right']].set_visible(False)
 ax.grid(color='#BFC4C8', alpha=.30, linewidth=.45)
 '''
@@ -138,8 +138,8 @@ frame = _primary(evidence.frame('performance', 'stationary', 'metrics'))
 if 'ratio' not in frame:
     horizon = _column(frame, 'L', 't', 'observations')
     frame['ratio'] = frame[horizon]/frame.n
-endpoint = _column(frame, 'heldout_ratio_db', 'output_oracle_db', 'heldout_power_ratio_db')
-selected = frame[frame.ratio.eq(1.)]
+endpoint = 'true_ratio_db'
+selected = frame[frame.ratio.eq(1.) & frame.condition.eq('static') & frame.n.isin([32,64,128])]
 for method in ('mean', 'mode', 'scm_loaded', 'great_window'):
     rows = []
     for n, group in selected[selected.method.eq(method)].groupby('n', sort=True):
@@ -151,10 +151,10 @@ for method in ('mean', 'mode', 'scm_loaded', 'great_window'):
                     label=method_label(method, example))
     if method == 'mean':
         axes[0, 0].fill_between(points[:, 0], points[:, 2], points[:, 3], color=color(method), alpha=.10)
-axes[0, 0].set(xlabel='Number of sensors', ylabel='Output power relative to\nideal MVDR (dB)')
+axes[0, 0].set(xlabel='Number of sensors', ylabel=r'$\ell_t$' + '\n(dB)')
 
 moving = evidence.frame('performance', 'moving_episodes', 'episode_metrics', 'moving', 'stationary')
-endpoint = _column(moving, 'heldout_ratio_db', 'output_oracle_db', 'heldout_power')
+endpoint = 'true_ratio_db'
 moving = _episode_losses(moving, endpoint)
 conditions = list(moving.condition.drop_duplicates())
 condition = 'smooth' if 'smooth' in conditions else conditions[0]
@@ -175,38 +175,36 @@ axes[0, 1].set_yticks(np.arange(1, len(labels)+1), labels=labels)
 for patch, c in zip(boxes['boxes'], box_colors):
     patch.set_facecolor(c); patch.set_alpha(.85)
 axes[0, 1].axvline(0., linestyle='--', color='#222222', linewidth=1.)
-axes[0, 1].set_xlabel('Output power difference: method $-$ posterior mean (dB)')
+axes[0, 1].set_xlabel('Power difference (dB)')
 
 adaptation = _normalize(evidence.frame('prediction', 'prediction_adaptation', 'adaptation'))
 if 'split' in adaptation and adaptation.split.eq('test').any():
     adaptation = adaptation[adaptation.split.eq('test')]
 if 'control' in adaptation:
     adaptation = adaptation[adaptation.control.eq('mean')]
-condition_order = ['noise_only', 'motion_only', 'power_only', 'noise', 'motion', 'power']
-conditions = list(adaptation.condition.drop_duplicates())
-ordered = [name for name in condition_order if name in conditions]+[name for name in conditions if name not in condition_order]
-condition = next((name for name in ordered if name in ('noise_only', 'noise')), ordered[0])
-adaptation = adaptation[adaptation.condition.eq(condition)]
-time = _column(adaptation, 'time_s', 't')
+adaptation = adaptation[adaptation.condition.eq('noise_change')]
+if adaptation.empty:
+    raise ValueError('Missing saved noise-change simulations')
+time = 't'
 for method in ('known', 'exact_known', 'known_forgetting', 'misspecified', 'learned'):
     group = adaptation[adaptation.method.eq(method)]
     if group.empty:
         continue
     grouped = group.groupby(time).sigma2_estimate
     points = grouped.median()
-    axes[1, 0].step(points.index, points, where='post', color=color(method),
+    axes[1, 0].plot(points.index, points, color=color(method),
         linestyle='--' if method == 'misspecified' else '-', marker=marker(method), label=method_label(method))
     if method == 'learned':
         axes[1, 0].fill_between(points.index, grouped.quantile(.25), grouped.quantile(.75),
-                              color=color(method), alpha=.13, step='post')
-truth = adaptation.groupby(time).sigma2_true.first()
-axes[1, 0].step(truth.index, truth, where='post', color='#222222', linestyle=':',
-                linewidth=1.35, label=r'$\sigma_t^2$')
-for index in np.flatnonzero(np.abs(np.diff(truth.to_numpy())) > 1e-12):
-    axes[1, 0].axvline(truth.index[index+1], color='#70777D', linestyle=':', linewidth=.7)
-axes[1, 0].set(xlabel='Time (s)' if time == 'time_s' else 'Number of observations',
-               ylabel=r'Noise variance $\sigma^2$')
-axes[1, 0].legend(frameon=False, fontsize=10., loc='upper left')
+                              color=color(method), alpha=.13)
+measurement_indices = np.arange(1, 257)
+true_noise_variance = np.where(measurement_indices <= 128, .2, .8)
+axes[1, 0].step(measurement_indices, true_noise_variance, where='mid', color='#222222',
+                linestyle=':', linewidth=1.35, label=r'$\sigma_t^2$')
+axes[1, 0].axvline(128.5, color='#70777D', linestyle=':', linewidth=.7)
+axes[1, 0].set(xlabel=r'Measurement index $t$',
+               ylabel=r'Noise variance $\widehat\sigma_t^2$')
+axes[1, 0].legend(frameon=False, fontsize=LEGEND_FONT_SIZE, loc='upper left')
 
 cost = _normalize(evidence.frame('computation', 'summary'))
 cost = cost[cost.case.eq('task_stationary')]
@@ -222,7 +220,7 @@ for method in ('mean', 'mode', 'scm_loaded', 'great_window'):
             continue
         reference = target.oracle_power.dropna().unique()
         if len(reference) != 1 or reference[0] <= 0:
-            raise ValueError('The saved timing episode requires one positive reference power')
+            raise ValueError('The saved timing simulation requires one positive reference power')
         loss = float(group.task_loss.mean())
         if not np.isfinite(loss) or loss <= 0:
             continue
@@ -230,9 +228,9 @@ for method in ('mean', 'mode', 'scm_loaded', 'great_window'):
         y.append(10*np.log10(loss/reference[0]))
     if x:
         axes[1, 1].plot(x, y, marker=marker(method), color=color(method), label=method_label(method, example))
-axes[1, 1].set(xscale='log', xlabel='Episode computation time (ms)',
-                ylabel='Output power relative to\nideal MVDR (dB)')
-fig.legend(*axes[0, 0].get_legend_handles_labels(), loc='outside lower center', ncol=2, frameon=False, fontsize=10.)
+axes[1, 1].set(xscale='log', xlabel='Computation time (ms)',
+                ylabel=r'$\ell_t$' + '\n(dB)')
+fig.legend(*axes[0, 0].get_legend_handles_labels(), loc='outside lower center', ncol=2, frameon=False, fontsize=LEGEND_FONT_SIZE)
 for ax, tag in zip(axes.ravel(), ['(a)', '(b)', '(c)', '(d)']):
     ax.spines[['top', 'right']].set_visible(False)
     ax.grid(axis='x' if ax is axes[0, 1] else 'both', color='#BFC4C8', alpha=.30, linewidth=.45)
@@ -281,8 +279,8 @@ for ax, nodes, log_density in zip(spheres, meshes, densities):
     ax.set_xlabel(r'$n_1$', labelpad=-2); ax.set_ylabel(r'$n_2$', labelpad=-2)
     ax.set_zlabel('')
     ax.text2D(.95, .67, r'$n_3$', transform=ax.transAxes, rotation=90,
-              ha='center', va='center', fontsize=11.)
-    ax.tick_params(labelsize=10., pad=-2, length=1); ax.grid(False)
+              ha='center', va='center', fontsize=LABEL_FONT_SIZE)
+    ax.tick_params(labelsize=TICK_FONT_SIZE, pad=-2, length=1); ax.grid(False)
     for axis in (ax.xaxis, ax.yaxis, ax.zaxis):
         axis.pane.set_facecolor((1., 1., 1., 0.))
         axis.pane.set_edgecolor((.65, .68, .72, .35))
@@ -303,12 +301,12 @@ if family is not None:
         angles = angles[selected]
 if angles is None:
     angles = np.linspace(0., 2*np.pi, len(query), endpoint=False)
-risk_ax.plot(angles, risk/norm2, color=color('mean'), label=method_label('mean'))
-risk_ax.plot(angles, iso_risk/norm2, '--', color=color('iso'), label=method_label('iso'))
+risk_ax.plot(angles, risk/norm2, color=color('mean'), label=r'$\overline P_t^+$')
+risk_ax.plot(angles, iso_risk/norm2, '--', color=color('iso'), label=r'$\overline P_t^{\mathrm{iso}}$')
 risk_ax.set_xlabel(r'$\theta$ (rad)')
-risk_ax.set_ylabel(r'$v^\top(\overline P-\overline P^2)v/\|v\|^2$')
+risk_ax.set_ylabel(r'$r_t(v(\theta))/v_0^2$')
 risk_ax.set(xticks=np.linspace(0., 2*np.pi, 5), xticklabels=[r'$0$', r'$\pi/2$', r'$\pi$', r'$3\pi/2$', r'$2\pi$'])
-risk_ax.legend(frameon=False, fontsize=10.)
+risk_ax.legend(frameon=False, fontsize=LEGEND_FONT_SIZE)
 
 paired_ax = fig.add_subplot(grid[1, 1])
 frame = evidence.frame('performance', 'episode_metrics', 'metrics')
@@ -334,7 +332,8 @@ paired_ax.set_yticks(np.arange(1, len(labels)+1), labels=labels)
 for patch, c in zip(boxes['boxes'], box_colors):
     patch.set_facecolor(c); patch.set_alpha(.85)
 paired_ax.axvline(0., linestyle='--', color='#222222', linewidth=1.)
-paired_ax.set_xlabel(r'$\mathrm{MSE}_{\mathrm{method}}-\mathrm{MSE}_{\mathrm{B}}$ $((\mathrm{mm}/\mathrm{s})^2)$')
+paired_ax.set_xlabel(r'Time-averaged $\mathcal E_t$ difference' + '\n'
+                      + r'$((\mathrm{mm}/\mathrm{s})^2)$')
 for ax in (risk_ax, paired_ax):
     ax.spines[['top', 'right']].set_visible(False)
     ax.grid(axis='x' if ax is paired_ax else 'both', color='#BFC4C8', alpha=.30, linewidth=.45)
@@ -359,5 +358,5 @@ def build_cells(example):
         plot_cell(example, 'numerical_accuracy', 3, _ACCURACY_3,
             title='Numerical checks across dimensions', note='Not-evaluated targets remain separate from unresolved targets and are never counted as resolved. Reference, second-moment, quantile and state-report checks have distinct applicability flags.'),
         plot_cell(example, 'paper_summary', 1, _BEAM_SUMMARY if example == 'beamforming' else _CONTACT_SUMMARY,
-            title='Study overview', note=('These panels reuse the same saved arrays and selected cohorts as the individual figures. The cost–power panel uses one preassigned timing episode; clock repetitions are not independent task trials. Variance steps connect pre-update reporting checkpoints.' if example == 'beamforming' else 'These panels reuse the saved concentrated-input normal law, its matched isotropic comparison, and paired moving-sphere trials. The two risk curves evaluate different maintained beliefs; the paired MSE panel uses common observed trials. No new inference or independent repetitions are introduced.')),
+            title='Study overview', note=(r'These panels reuse the same saved arrays and selected cohorts as the individual figures. The cost–power panel uses one preassigned timing simulation; clock repetitions are execution measurements, not independent Monte Carlo simulations. Variance estimates are the values used before each recorded measurement; connecting segments do not reconstruct intervening estimates. Exact stationary power uses true_ratio_db, and moving comparisons use exact covariance ratios averaged within each Monte Carlo simulation. The power ordinate is $\ell_t=10\log_{10}[(w_t^H R_t w_t)/p_t^\star]$, with $p_t^\star=(a^H R_t^{-1}a)^{-1}$.' if example == 'beamforming' else 'These panels reuse the saved concentrated-input normal law, its matched isotropic comparison, and paired moving-sphere Monte Carlo simulations. The two risk curves evaluate different maintained beliefs; the paired error panel uses common Monte Carlo simulations. No new inference or Monte Carlo simulations are introduced.')),
     ]

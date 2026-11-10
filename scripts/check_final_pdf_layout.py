@@ -203,8 +203,10 @@ def audit_exports(root, example):
     errors, files = [], {}
     if not selected:
         errors.append('No curated PDFs are declared for ' + example)
-    if {entry['section'] for entry in selected.values()} != {'main', 'supplementary'}:
-        errors.append('Both main and supplementary exports are required')
+    expected_sections = ({'supplementary'} if 'main_notebook_files' in manifest
+                         else {'main', 'supplementary'})
+    if {entry['section'] for entry in selected.values()} != expected_sections:
+        errors.append('Canonical catalogue sections differ from the declared export policy')
     for name, entry in selected.items():
         path = root / name
         if not path.is_file():

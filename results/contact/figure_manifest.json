@@ -3,7 +3,7 @@
   "status": "completed",
   "example": "contact",
   "stage": "paper",
-  "created_utc": "2026-11-10T01:32:33.937483+00:00",
+  "created_utc": "2026-11-10T22:16:21.771714+00:00",
   "component_stages": {
     "computation": "paper",
     "performance": "paper",
@@ -11,11 +11,11 @@
     "theory": "paper"
   },
   "sources": {
-    "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-    "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+    "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+    "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
     "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
     "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-    "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+    "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
     "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
     "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
     "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -89,7 +89,7 @@
     "setup.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved episode, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information.",
+      "formula_or_claim": "Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved simulation, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.setup",
       "configurations": {
@@ -876,11 +876,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -1430,7 +1430,7 @@
           "results/contact/data/paper/theory/manifest.json"
         ]
       },
-      "proposed_latex_caption": "Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved episode, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information.",
+      "proposed_latex_caption": "Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved simulation, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information.",
       "placement": "main",
       "pages": [
         {
@@ -1448,7 +1448,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "episode": 0,
@@ -1460,8 +1460,8 @@
         }
       ],
       "output_hashes": {
-        "setup.pdf": "ed5004c9e63211dd786e5ce34fe0aa517a3accdd5378905004bcc643da11993b",
-        "preview/setup.png": "16c9cbccb3c813c20a0da59a288103466dd0cc298204b1e38ea8c1fa0c1b4d20"
+        "setup.pdf": "398cfd110d0a151e93057106516bd39db0ea64ee5f094b47262b5fc812cbbfef",
+        "preview/setup.png": "ad0af7be0d8adc8a490dc5fc31ec00258526d7e0bd7343ad073a1a8e6ee24f8f"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -1473,7 +1473,7 @@
     "task_performance.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Task losses on common independent test episodes. Losses are averaged within each episode before pointwise Student 95\\% intervals. For contact, main panel (a) shows stationary concentrated-input checkpoint MSE versus observation count, with the posterior-mean confidence band; panel (b) shows absolute episode-average MSE for the moving sphere condition, with a confidence interval for every method including the posterior mean. All methods in panel (b) use the same independent episodes. The separate second page retains paired MSE differences; these are absolute differences in squared velocity units, not relative MSE. A posterior mean compared with itself has identically zero paired difference. Beamforming paired boxes show the distribution of same-episode differences, not confidence intervals. GREAT and application-specific controls retain their stated information and independently validated settings. Complex beamforming GREAT is an extension of the real algorithm, as described in the notebook text. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
+      "formula_or_claim": "Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.task_performance",
       "configurations": {
@@ -2260,11 +2260,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -2815,7 +2815,7 @@
           "results/contact/data/paper/theory/manifest.json"
         ]
       },
-      "proposed_latex_caption": "Task losses on common independent test episodes. Losses are averaged within each episode before pointwise Student 95\\% intervals. For contact, main panel (a) shows stationary concentrated-input checkpoint MSE versus observation count, with the posterior-mean confidence band; panel (b) shows absolute episode-average MSE for the moving sphere condition, with a confidence interval for every method including the posterior mean. All methods in panel (b) use the same independent episodes. The separate second page retains paired MSE differences; these are absolute differences in squared velocity units, not relative MSE. A posterior mean compared with itself has identically zero paired difference. Beamforming paired boxes show the distribution of same-episode differences, not confidence intervals. GREAT and application-specific controls retain their stated information and independently validated settings. Complex beamforming GREAT is an extension of the real algorithm, as described in the notebook text. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
+      "proposed_latex_caption": "Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
       "placement": "main",
       "pages": [
         {
@@ -2833,7 +2833,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [
             {
@@ -2877,7 +2877,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "sphere",
@@ -2904,9 +2904,9 @@
         }
       ],
       "output_hashes": {
-        "task_performance.pdf": "aa685a4169e2aedaadbe4dfea3382d9e3edc3d7697efe9f84eda3484d1a6ba1f",
-        "preview/task_performance.png": "e61a887716a52fbe56a78d95553578e7cc4d86776309c2c56621ec725e5dfc3a",
-        "preview/task_performance_page2.png": "3a76b71e26d8dd42ae81c8dc59a6169d5e7df762715bf8cace4d9b366e5a9ff9"
+        "task_performance.pdf": "f576a56ce893b8ac5499acefda1332f293e29aabc932f1b2a53167416cddd723",
+        "preview/task_performance.png": "a287544f0980187ecb93f3f8aa72a0b355123afa83ee5f67a1af6ebdf8c85db0",
+        "preview/task_performance_page2.png": "2d5facff714e920acd18b96e83193a75b928b14724f0e7d3554e1135c0064228"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -2915,7 +2915,7 @@
     "posterior_anisotropy.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
+      "formula_or_claim": "Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=t=64$. The actual posterior is the fixed concentrated-input simulation 0 at t=16. Directional density and repeated-simulation task performance are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.posterior_anisotropy",
       "configurations": {
@@ -4114,11 +4114,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -4718,7 +4718,7 @@
           "results/simulation_redesign/paper/geometry/distance_cdf.csv"
         ]
       },
-      "proposed_latex_caption": "actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
+      "proposed_latex_caption": "Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=t=64$. The actual posterior is the fixed concentrated-input simulation 0 at t=16. Directional density and repeated-simulation task performance are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
       "placement": "contact main; beamforming supplementary",
       "pages": [
         {
@@ -4736,7 +4736,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static_concentrated",
@@ -4747,7 +4747,8 @@
           "panel_selections": [
             {
               "query_family": 1,
-              "normalization": "Squared norm of saved query"
+              "normalization": "r_t(v(theta))/v0^2; saved unit-input curve unchanged",
+              "v0_m_per_s": 0.02
             }
           ],
           "sphere_displays": [
@@ -4820,7 +4821,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "scope": "Constructed swapped-eigenvalue identity, not data-generated performance",
@@ -4922,9 +4923,9 @@
         }
       ],
       "output_hashes": {
-        "posterior_anisotropy.pdf": "b52d3fce86eb79150d636aea0d64f4daa1988405366b8cb71ebdc8aa039bda34",
-        "preview/posterior_anisotropy.png": "a21cc981b285a415b784643ba4d263ff1d004d4d478e798b5baa77917bb601e8",
-        "preview/posterior_anisotropy_page2.png": "03ec0f313d5556e9930815b872cd33a2cf0df6ea19bb5fa85ec9ae9c0670e488"
+        "posterior_anisotropy.pdf": "e37008418dea94055b526c47177b686e21df26bd7f12b6db1275dd580ac5ab98",
+        "preview/posterior_anisotropy.png": "68b6000663b3f081b0015d85ed9874d0e963327acbbae7700c97d4e44e4abd92",
+        "preview/posterior_anisotropy_page2.png": "0a00c3cc7adf9d2ae82eef2e0a119f4c93c8aad5d0662dc388188c9d56593bd9"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -4936,7 +4937,7 @@
     "noise_adaptation.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
+      "formula_or_claim": "Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $128.5$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.noise_adaptation",
       "configurations": {
@@ -6135,11 +6136,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -6727,7 +6728,7 @@
           "results/simulation_redesign/paper/geometry/distance_cdf.csv"
         ]
       },
-      "proposed_latex_caption": "Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
+      "proposed_latex_caption": "Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $128.5$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
       "placement": "beamforming main candidate; contact supplementary",
       "pages": [
         {
@@ -6745,7 +6746,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "noise_change",
           "panel_selections": [],
@@ -6766,7 +6767,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fast_sphere",
           "panel_selections": [],
@@ -6787,7 +6788,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "contact_noise_change_individual_beliefs",
           "selection": {
@@ -6879,7 +6880,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "contact_noise_change_individual_beliefs",
           "selection": {
@@ -6931,11 +6932,11 @@
         }
       ],
       "output_hashes": {
-        "noise_adaptation.pdf": "55940b3a63495262065b40635334434a9cfdd0529181058c2deb1277799fd009",
-        "preview/noise_adaptation.png": "8bd8c529502277319f2bd8cb15f3c6155ab8b8da4949bfd69c3a1b93c2366c3b",
-        "preview/noise_adaptation_page2.png": "38d85db8a2a85f890bcec0f82f8805c21e8f6cd42ea2a6968e59785c726ff8a6",
-        "preview/noise_adaptation_page3.png": "32af4ea8d6368b7e5dda00c9710ef093670d3bc2a38abb8790c756e682cddf4a",
-        "preview/noise_adaptation_page4.png": "7bfd2c7bb100db569784eea395e1c2ac4561db2d5382d88e506e6904216789da"
+        "noise_adaptation.pdf": "bc0a45f2419b57ad64b276482d648c4d0fdea1b7449da1d02fb6dfadd9958086",
+        "preview/noise_adaptation.png": "6419de9ff1781b527482ed9adf85caa812d2bbc04fe5289c562ba3c7a51fcb69",
+        "preview/noise_adaptation_page2.png": "44b83a8a2dc347ebb6fe897f796fb6c6062a17f6f55a3551eaabbed88603b02c",
+        "preview/noise_adaptation_page3.png": "c41e1fb1b8e6aad8216ce9ab98d61840533f5886ce832b26f9ae5f1bd6a40a1d",
+        "preview/noise_adaptation_page4.png": "79be1bdf0a2ecc16ed697e5c20982b527426745d7c4cfa0c4517c06d3dfceb02"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -6947,7 +6948,7 @@
     "information.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Directional likelihood information for the original concentrated-input contact fixture at $t=16$. The generating normal is $n_0=e_3$, $X_0=(e_1,e_2)$, and the plane graph chart has $z=\\operatorname{vec}(Z)=(z_1,z_2)^T$ and normal $n(Z)=(n_0-X_0z)/\\sqrt{1+\\|z\\|^2}$. For the same frozen prescribed inputs and true variance, $p_Z$ is the joint Gaussian response law with means $P_{\\mathcal X(Z)}v_j$ and covariance $\\sigma^2I_3$. Panel (a) shows equal values of the exact divergence $D_{\\mathrm{KL}}(p_0\\|p_Z)=z^T\\mathcal F_{\\mathrm{cond}}z/[2(1+\\|z\\|^2)]$ in native chart coordinates, with equal axis scales. These are likelihood-divergence contours, not credible or confidence regions. Panel (b) evaluates the same divergence along the two native information directions; $\\delta$ is the physical angle between $n_0$ and $n(Z)$. The marked rotations $5^\\circ$ and $30^\\circ$ produce nearly equal divergences, approximately $0.2396$ and $0.2308$, despite their different angular sizes. Thus this input design distinguishes rotations much more strongly in one direction. The local limit is $D_{\\mathrm{KL}}=\\tfrac12z^T\\mathcal F_{\\mathrm{cond}}z+o(\\|z\\|^2)$. This is expected observation-law information at the generating plane, distinct from finite-data posterior curvature. No new observations, inference, fitting, or experimental repetitions are introduced.",
+      "formula_or_claim": "Directional likelihood information for the original concentrated-input contact fixture at $t=16$. The generating normal is $n_0=e_3$, $X_0=(e_1,e_2)$, and the plane graph chart has $z=(z_1,z_2)^\\top$ and normal $n(z)=(n_0-X_0z)/\\sqrt{1+\\|z\\|^2}$. For the same frozen prescribed inputs and true variance, $p_z$ is the joint Gaussian response law with means $P_{\\mathcal X(z)}v_j$ and covariance $\\sigma^2I_3$. Panel (a) shows equal values of the exact divergence $D_{\\mathrm{KL}}(p_0\\|p_z)=z^T\\mathcal F_{\\mathrm{cond}}z/[2(1+\\|z\\|^2)]$ in native chart coordinates, with equal axis scales. These are likelihood-divergence contours, not credible or confidence regions. Panel (b) evaluates the same divergence along the two native information directions; $\\delta$ is the physical angle between $n_0$ and $n(z)$. The marked rotations $5^\\circ$ and $30^\\circ$ produce nearly equal divergences, approximately $0.2396$ and $0.2308$, despite their different angular sizes. Thus this input design distinguishes rotations much more strongly in one direction. The local limit is $D_{\\mathrm{KL}}=\\tfrac12z^T\\mathcal F_{\\mathrm{cond}}z+o(\\|z\\|^2)$. This is expected observation-law information at the generating plane, distinct from finite-data posterior curvature. No new observations, inference, fitting, or experimental repetitions are introduced.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.information",
       "configurations": {
@@ -8146,11 +8147,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -8358,8 +8359,8 @@
               1.8461538461538456,
               63.076923076923066
             ],
-            "formula": "D_KL(p_0||p_Z)=z^T F_cond z/[2(1+||z||^2)]",
-            "chart": "n(Z)=(n_0-X z)/sqrt(1+||z||^2), z=vec(Z), X=(e_1,e_2), n_0=e_3",
+            "formula": "D_KL(p_0||p_z)=z^T F_cond z/[2(1+||z||^2)]",
+            "chart": "n(z)=(n_0-X z)/sqrt(1+||z||^2), z=(z_1,z_2)^T, X=(e_1,e_2), n_0=e_3",
             "contour_levels": [
               0.01,
               0.05,
@@ -8769,7 +8770,7 @@
           "results/simulation_redesign/paper/geometry/distance_cdf.csv"
         ]
       },
-      "proposed_latex_caption": "Directional likelihood information for the original concentrated-input contact fixture at $t=16$. The generating normal is $n_0=e_3$, $X_0=(e_1,e_2)$, and the plane graph chart has $z=\\operatorname{vec}(Z)=(z_1,z_2)^T$ and normal $n(Z)=(n_0-X_0z)/\\sqrt{1+\\|z\\|^2}$. For the same frozen prescribed inputs and true variance, $p_Z$ is the joint Gaussian response law with means $P_{\\mathcal X(Z)}v_j$ and covariance $\\sigma^2I_3$. Panel (a) shows equal values of the exact divergence $D_{\\mathrm{KL}}(p_0\\|p_Z)=z^T\\mathcal F_{\\mathrm{cond}}z/[2(1+\\|z\\|^2)]$ in native chart coordinates, with equal axis scales. These are likelihood-divergence contours, not credible or confidence regions. Panel (b) evaluates the same divergence along the two native information directions; $\\delta$ is the physical angle between $n_0$ and $n(Z)$. The marked rotations $5^\\circ$ and $30^\\circ$ produce nearly equal divergences, approximately $0.2396$ and $0.2308$, despite their different angular sizes. Thus this input design distinguishes rotations much more strongly in one direction. The local limit is $D_{\\mathrm{KL}}=\\tfrac12z^T\\mathcal F_{\\mathrm{cond}}z+o(\\|z\\|^2)$. This is expected observation-law information at the generating plane, distinct from finite-data posterior curvature. No new observations, inference, fitting, or experimental repetitions are introduced.",
+      "proposed_latex_caption": "Directional likelihood information for the original concentrated-input contact fixture at $t=16$. The generating normal is $n_0=e_3$, $X_0=(e_1,e_2)$, and the plane graph chart has $z=(z_1,z_2)^\\top$ and normal $n(z)=(n_0-X_0z)/\\sqrt{1+\\|z\\|^2}$. For the same frozen prescribed inputs and true variance, $p_z$ is the joint Gaussian response law with means $P_{\\mathcal X(z)}v_j$ and covariance $\\sigma^2I_3$. Panel (a) shows equal values of the exact divergence $D_{\\mathrm{KL}}(p_0\\|p_z)=z^T\\mathcal F_{\\mathrm{cond}}z/[2(1+\\|z\\|^2)]$ in native chart coordinates, with equal axis scales. These are likelihood-divergence contours, not credible or confidence regions. Panel (b) evaluates the same divergence along the two native information directions; $\\delta$ is the physical angle between $n_0$ and $n(z)$. The marked rotations $5^\\circ$ and $30^\\circ$ produce nearly equal divergences, approximately $0.2396$ and $0.2308$, despite their different angular sizes. Thus this input design distinguishes rotations much more strongly in one direction. The local limit is $D_{\\mathrm{KL}}=\\tfrac12z^T\\mathcal F_{\\mathrm{cond}}z+o(\\|z\\|^2)$. This is expected observation-law information at the generating plane, distinct from finite-data posterior curvature. No new observations, inference, fitting, or experimental repetitions are introduced.",
       "placement": "contact main candidate; complete versions supplementary",
       "pages": [
         {
@@ -8787,7 +8788,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "scope": "Exact likelihood geometry at the original frozen contact input design; not a new experiment",
@@ -8835,8 +8836,8 @@
               1.8461538461538456,
               63.076923076923066
             ],
-            "formula": "D_KL(p_0||p_Z)=z^T F_cond z/[2(1+||z||^2)]",
-            "chart": "n(Z)=(n_0-X z)/sqrt(1+||z||^2), z=vec(Z), X=(e_1,e_2), n_0=e_3",
+            "formula": "D_KL(p_0||p_z)=z^T F_cond z/[2(1+||z||^2)]",
+            "chart": "n(z)=(n_0-X z)/sqrt(1+||z||^2), z=(z_1,z_2)^T, X=(e_1,e_2), n_0=e_3",
             "contour_levels": [
               0.01,
               0.05,
@@ -8861,8 +8862,8 @@
         }
       ],
       "output_hashes": {
-        "information.pdf": "5bef48bfe52a3d093eacf4521b70be085c4008ec726ab9b1cc8bb02781cc71e0",
-        "preview/information.png": "bc306f06d8ac9dc8b482bc98f5913fdae743c6f53f9f2de6a2b43bfc770ccdab"
+        "information.pdf": "125f577caa12cff7fc6e6ef607d48ae1cec032d851a53a04819edb7372a16688",
+        "preview/information.png": "88501c8f0013a662cc8c340afe18b5e622a22a668cff914caf4b4274889fb8f5"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -10070,11 +10071,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -10646,15 +10647,15 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "posterior_curvature.pdf": "d8788a60afd9ea08fbd80b558b90e82720fc9a71ff9a20c58c7aecb47946a195",
-        "preview/posterior_curvature.png": "3706a0c421906c28bb514d4a7f802cc3075b1bbd0fd9567a571cf3345ad19117"
+        "posterior_curvature.pdf": "ecfb7dfca9f7e94fbb42e54415e722a5dca2310ee63ee0e448a114ef7f3c921b",
+        "preview/posterior_curvature.png": "304500141d4be437e6c2e7de9161c2b0535cb33dd744092b5904d4c58df03efe"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -10663,7 +10664,7 @@
     "tracking_bound.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe repeated-episode spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.",
+      "formula_or_claim": "Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe across-simulation spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.tracking_bound",
       "configurations": {
@@ -11862,11 +11863,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -12508,7 +12509,7 @@
           "results/simulation_redesign/paper/geometry/distance_cdf.csv"
         ]
       },
-      "proposed_latex_caption": "Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe repeated-episode spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.",
+      "proposed_latex_caption": "Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe across-simulation spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.",
       "placement": "supplementary",
       "pages": [
         {
@@ -12526,7 +12527,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static",
@@ -12553,7 +12554,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "terminal_cohorts": [
@@ -12641,7 +12642,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static",
@@ -12668,7 +12669,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static",
@@ -12682,11 +12683,11 @@
         }
       ],
       "output_hashes": {
-        "tracking_bound.pdf": "13c4ab98829dabba11c2a5bb6f1a546d385459f69d78226bc2ac67bcfdeef57e",
-        "preview/tracking_bound.png": "cea61c053d98ac9434611d12ffb59a84912607d4fcb7e2ea96b32d34419d090a",
-        "preview/tracking_bound_page2.png": "b03275335002fb6a6ec5a5472bf5953bdb0e58a538e4d64baa64469cdb730725",
-        "preview/tracking_bound_page3.png": "f4431728249ef8aa8ea986ecbcb0c6e36d6e94fdf8ca2e71dfd9652f8295809d",
-        "preview/tracking_bound_page4.png": "5837fd41f609c98a39ea8c1f910700f511bff1c529aea683156879a54b9d2e05"
+        "tracking_bound.pdf": "780841fcf0eb3a434267c9c5f40853dcb3ee2b182973b927587068ddcbbcb9be",
+        "preview/tracking_bound.png": "11ba3ab9ba62c41d4e6f4040b074b806670814b8c86a176cfa8fcafcc9fc21ab",
+        "preview/tracking_bound_page2.png": "c545de10db767bee3588ee64a4ed2fee6f289bf9d28f01e680cf446f42cb96b6",
+        "preview/tracking_bound_page3.png": "ea644bb0d5e85351929ab1f16b1a4b2ab4c279761709a59f9ff2ccd1148987b3",
+        "preview/tracking_bound_page4.png": "2dbc4a5afdf105ca6c6673e359638a2ec8532aa7979f3ffb209d0a8c8722fba4"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -13894,11 +13895,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -14470,15 +14471,15 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "block_updates.pdf": "52f05778726c281d9a7d6de41200ef3a188216801d0d48ac37ce9b516342e7a4",
-        "preview/block_updates.png": "c1fb63e93c99e0946707991ab44edb0f3a041f54b08a7bb4c63322b4683cbef6"
+        "block_updates.pdf": "4ea650a98ec2bda61ca610fb2961ed311e04b51973a72a63aa483cf493684556",
+        "preview/block_updates.png": "42a0fba215995b21a0ddf1839346bf06b9880fd549a1a06797a9f30d44c1f1f4"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -15686,11 +15687,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -16337,7 +16338,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static_balanced",
@@ -16374,7 +16375,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static_concentrated",
@@ -16411,7 +16412,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "plane",
@@ -16452,7 +16453,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "sphere",
@@ -16480,11 +16481,11 @@
         }
       ],
       "output_hashes": {
-        "additional_comparisons.pdf": "9e0c0949031f2966bb7e05b0b05da493773eb75dd71ce2f6534f717a1fb25632",
-        "preview/additional_comparisons.png": "3df450475c29b643148fd1f1732357e1546f6966f3cdcbbb31bfe5fa5d065773",
-        "preview/additional_comparisons_page2.png": "9e2098f57376d9538f2b482011d9f7a611803b834014fabbabca6c4419b3c21d",
-        "preview/additional_comparisons_page3.png": "db00da26791a8737113a054c51cfe9b13c57bfc683b909bbc79a97af23a6703d",
-        "preview/additional_comparisons_page4.png": "cfe6d82fc94e538eaf3eb7ec61f085df15792c760223f45ade70e6b11aecf996"
+        "additional_comparisons.pdf": "ed1f59f078cd98a68aecbb963c68e0c0a5815b34017b1c792804c291715fda83",
+        "preview/additional_comparisons.png": "5805d8ac315c05a5317da206e6fddaf7a43ccbce01fe5526cc1799bd190e488f",
+        "preview/additional_comparisons_page2.png": "b08783e1650a91e0084f3f6ef7baf6d2aa89dea1623a7fe57a7f166f0a4a6bd1",
+        "preview/additional_comparisons_page3.png": "6fe0d552edc5ee01943bddb2e3650c49e32d73384a5ccd52d8e4e606d4f39a9c",
+        "preview/additional_comparisons_page4.png": "4e028c2f2aafe02f2eb98f21a5a61fdea9f0fea35b3749dfa31928aef132e10b"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -16493,7 +16494,7 @@
     "variance_estimation.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes.",
+      "formula_or_claim": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker simulations.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.variance_estimation",
       "configurations": {
@@ -17851,11 +17852,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -18417,7 +18418,7 @@
           "results/implementation_audit/paper/em/residuals.csv"
         ]
       },
-      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes.",
+      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker simulations.",
       "placement": "supplementary",
       "pages": [
         {
@@ -18435,15 +18436,15 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
         }
       ],
       "output_hashes": {
-        "variance_estimation.pdf": "f9facd3b676240005f0c3612e9e13774953a2c209d71688f163a74291e0686be",
-        "preview/variance_estimation.png": "81952e782afee9902bc5d80415bfa6353c318d1b111f178ed0114b522fc8b467"
+        "variance_estimation.pdf": "d12b8edb77e2db7b4ed5563c883269f718ab90fb307cabff2a9c09f967e3d1ee",
+        "preview/variance_estimation.png": "c955a0d0441fceebe18572d35922644f1c59e894474dc412cd5306caf04f0a96"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -18452,7 +18453,7 @@
     "predictive_calibration.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime.",
+      "formula_or_claim": "Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent Monte Carlo simulations, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent Monte Carlo simulations, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.predictive_calibration",
       "configurations": {
@@ -19810,11 +19811,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -20477,7 +20478,7 @@
           "results/implementation_audit/paper/em/residuals.csv"
         ]
       },
-      "proposed_latex_caption": "Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime.",
+      "proposed_latex_caption": "Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent Monte Carlo simulations, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent Monte Carlo simulations, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime.",
       "placement": "supplementary",
       "pages": [
         {
@@ -20495,7 +20496,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -20521,7 +20522,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -20547,7 +20548,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -20573,7 +20574,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -20599,7 +20600,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "drifting",
           "selection": {
@@ -20625,7 +20626,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "drifting",
           "selection": {
@@ -20651,7 +20652,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -20697,7 +20698,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -20743,7 +20744,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "drifting",
           "selection": {
@@ -20776,16 +20777,16 @@
         }
       ],
       "output_hashes": {
-        "predictive_calibration.pdf": "13f15e171766642f93828e64160c65fd23a08a589645ac3e270070a946b70592",
-        "preview/predictive_calibration.png": "e432526428ccd10657fa946442ee2edf35a76ff11a45307050c0213437b3d363",
-        "preview/predictive_calibration_page2.png": "a593f2084627ffe552ce4b1eff40e4e828542dd9163e37c5aaf3ba994f53cd42",
-        "preview/predictive_calibration_page3.png": "b92cbe38e37b425150291e0e10a8ce12f105fe2f00678ed93d9856d86e6f7f6e",
-        "preview/predictive_calibration_page4.png": "91601a2342f9c2f62c794a964ef40648948d005646e7c687d95fb7993e04e4d3",
-        "preview/predictive_calibration_page5.png": "54b2c07780051d927328e77233281198be789e5cafdee7ceae1435de7f77fc13",
-        "preview/predictive_calibration_page6.png": "200a475d0e8119b804952aa8a3ab016f1d63849931da76583d06212299df36db",
-        "preview/predictive_calibration_page7.png": "e8a25862b81de203f327d35b6e6c52a531f839c9533d8e2ef4e783846c8a5b15",
-        "preview/predictive_calibration_page8.png": "77bd5a1659eb6ebb67e678d36745213c9a2694e043c766cba87c24c291d9c39a",
-        "preview/predictive_calibration_page9.png": "2bed37020090cc3df7e865ca6b8ea0b061d1254472dfa6d4ec6537af4680567a"
+        "predictive_calibration.pdf": "bf6dc978baa49cf03e0555064a794e5ae567e7977991d3ede2e1f1ff719638d3",
+        "preview/predictive_calibration.png": "3e28743d6df7f464684c6fd3864114247f81d7a47791234442ca5ef30a9dfe6b",
+        "preview/predictive_calibration_page2.png": "ad78ea08ffd5c63e6014892fa846f6baa93ef67bf310ce072615be5b51a467b1",
+        "preview/predictive_calibration_page3.png": "c2a9c5d7b70ae143db2714be0230eeca7072a19119b936cbd7086dcde5475acb",
+        "preview/predictive_calibration_page4.png": "acf4713f4e4d320465e98bd5eb7067681322f99a2a6f645bd1651f724fc591a0",
+        "preview/predictive_calibration_page5.png": "869311e91bef6e966503622be2e1e7f05230542ad22e230d4069015b51a82fcf",
+        "preview/predictive_calibration_page6.png": "93928d726cee08f79a8d7d3feb3fb0339ac656f03b0f95a75d096ef1e2c89680",
+        "preview/predictive_calibration_page7.png": "deb71205aa83e2fb8b2250a57e6c4e98d633362f31a8954c040feb9405900057",
+        "preview/predictive_calibration_page8.png": "14ddb06d0d691a7be78ed4aa936960db2381fd675a1340f9a54bf4267b23f851",
+        "preview/predictive_calibration_page9.png": "fc820e15f12424f381279360e1aa1a155a7121f23b180f5762ba37b13c774117"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -20794,7 +20795,7 @@
     "predictive_scores.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee.",
+      "formula_or_claim": "Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each simulation before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.predictive_scores",
       "configurations": {
@@ -22152,11 +22153,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -22723,7 +22724,7 @@
           "results/implementation_audit/paper/em/residuals.csv"
         ]
       },
-      "proposed_latex_caption": "Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee.",
+      "proposed_latex_caption": "Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each simulation before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee.",
       "placement": "supplementary",
       "pages": [
         {
@@ -22741,7 +22742,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "cohort": "calibration",
@@ -22754,8 +22755,8 @@
         }
       ],
       "output_hashes": {
-        "predictive_scores.pdf": "809ac50df148841060401a9080e1605af3d2e0bf19c5b37df06e02f2d7930443",
-        "preview/predictive_scores.png": "717daad7c7907a55a95e5c0a494a975d2ae7af73d11a64ed6beaef39cdc6e3fb"
+        "predictive_scores.pdf": "1127034bcde400f7e942b38a71238e3f4085b3c614a4d883642e61d0fcb0497f",
+        "preview/predictive_scores.png": "f03ce03aac2e5c1e6e5289015af680e2f4f79e9edd4323fd77b213ba33521e25"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -24122,11 +24123,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -24720,7 +24721,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "cohort": "mismatch",
@@ -24742,8 +24743,8 @@
         }
       ],
       "output_hashes": {
-        "model_mismatch.pdf": "1ab62e01979e5d1efaef647c23990049e67a8d0d831d7c1cd1e18f51dbe1b01c",
-        "preview/model_mismatch.png": "fc7246786bbc6d23fc29b0f90b091bbe79d3f1c19280ae789834a9b54d438a47"
+        "model_mismatch.pdf": "ed3ed5a697decd44cf79b79f289f5cc16753ce3fd9c434d7685f278f76894716",
+        "preview/model_mismatch.png": "22610d2093be2d981770c8a09b2e5cfe3f56c0d8a5525932e28ef98c40095f3e"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -24752,7 +24753,7 @@
     "computation_time.pdf": {
       "status": "completed",
       "experiment": "contact",
-      "formula_or_claim": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance episodes or worst-case deadlines.",
+      "formula_or_claim": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance simulations or worst-case deadlines.",
       "producer": "scripts/plot_final_simulations.py",
       "routine": "lib.final_paper_visuals.computation_time",
       "configurations": {
@@ -26110,11 +26111,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -26684,7 +26685,7 @@
           "results/implementation_audit/paper/em/residuals.csv"
         ]
       },
-      "proposed_latex_caption": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance episodes or worst-case deadlines.",
+      "proposed_latex_caption": "Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance simulations or worst-case deadlines.",
       "placement": "compact beamforming main; complete versions supplementary",
       "pages": [
         {
@@ -26702,7 +26703,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "observations": 64,
@@ -26727,7 +26728,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "observations": 64,
@@ -26744,9 +26745,9 @@
         }
       ],
       "output_hashes": {
-        "computation_time.pdf": "28de9da05cfaef6dda114178eaaa1840f72c44597f951e3e5a30ac0bebbf2fff",
-        "preview/computation_time.png": "e780e4c8b9a341297535ca663dbd47b8694ff1b4c9dfffdb4d12351926915ab0",
-        "preview/computation_time_page2.png": "58c067de24cc14fc3bf1f242a1b557de2ced6d598418d6d6c8e4c120f6701dc9"
+        "computation_time.pdf": "441b1424c07325e63c46c02608eb2729c276053f3fffb6387423cbf7cb897d4a",
+        "preview/computation_time.png": "ffd9eb9ae68110f7975f11984ae5df977643473aa7e7a225a2753a40dde167fd",
+        "preview/computation_time_page2.png": "bb41efa073c95d4406b6cfa76b81cd5d56c26198d1189bbae87f46c2e6532a96"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -28113,11 +28114,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -28701,7 +28702,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -28721,7 +28722,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -28741,7 +28742,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "scope": "Large-dimension numerical rows, separate mean/normalizer/reference/second-moment/tail/state flags; unevaluated targets never counted as resolved"
@@ -28751,10 +28752,10 @@
         }
       ],
       "output_hashes": {
-        "numerical_accuracy.pdf": "ff82e1af2e0f4439dbd46ff492a9dde82f7b27a67864861a892f440040ac9926",
-        "preview/numerical_accuracy.png": "e1c503178bb6288e2498a1fe31f5711028d5ddcb37e12a6637425645a1fb2686",
-        "preview/numerical_accuracy_page2.png": "4e3f3b2bc5526f111b339a1c37a4fca7c5aba2762f6279f639bb2f83eb6ae938",
-        "preview/numerical_accuracy_page3.png": "a7882f46a0f6e7566e584050204cb96f1b0c71a633d300b8dab09b5d44204869"
+        "numerical_accuracy.pdf": "997546195b6cac3a3bdd9e3d6d5ecc40d9ed20857cb1cafb0a4c282611200eea",
+        "preview/numerical_accuracy.png": "a6f99baac3f5b836613b7707a6428e052fbcf71a944ce63b5d268412313f5277",
+        "preview/numerical_accuracy_page2.png": "57a96f5b82930e6e145b4b2ac709fd24796095e0f212ef86003c7aa1a151698d",
+        "preview/numerical_accuracy_page3.png": "7666c9ac4db73d3c7e8e68e06e8535e5730d4656c7dc4206021bfc671a65d378"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -30121,11 +30122,11 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -30705,12 +30706,13 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [
             {
               "query_family": 1,
-              "normalization": "Squared norm of saved query"
+              "normalization": "r_t(v(theta))/v0^2; saved unit-input curve unchanged",
+              "v0_m_per_s": 0.02
             },
             {
               "condition": "sphere",
@@ -30786,8 +30788,8 @@
         }
       ],
       "output_hashes": {
-        "paper_summary.pdf": "999fe95974bc3efc1f93c6bcf54bb7f53989908075850722538dd48a546d3d76",
-        "preview/paper_summary.png": "c39303df4159435127089cfa4b698dbdd6b893bed706b7eb6c345cadf16b6012"
+        "paper_summary.pdf": "47ca9f8732b40d793563fa15fc5de3592c054b0ba4c6af450a0b4c986dba026a",
+        "preview/paper_summary.png": "b3bd4bbde7380896c5e6824af0a038a40c2d320602bbf1f0b7ee4789748228d3"
       },
       "interval_scope": "Pointwise confidence intervals across independent episodes or explicitly identified posterior/repeated-episode bands; see caption and raw tables.",
       "density_scope": "Real antipodally symmetric normal-line density",
@@ -30806,7 +30808,7 @@
         "posterior_curvature.pdf",
         "tracking_bound.pdf"
       ],
-      "proposed_latex_caption": "Directional likelihood information for the original concentrated-input contact fixture at $t=16$. The generating normal is $n_0=e_3$, $X_0=(e_1,e_2)$, and the plane graph chart has $z=\\operatorname{vec}(Z)=(z_1,z_2)^T$ and normal $n(Z)=(n_0-X_0z)/\\sqrt{1+\\|z\\|^2}$. For the same frozen prescribed inputs and true variance, $p_Z$ is the joint Gaussian response law with means $P_{\\mathcal X(Z)}v_j$ and covariance $\\sigma^2I_3$. Panel (a) shows equal values of the exact divergence $D_{\\mathrm{KL}}(p_0\\|p_Z)=z^T\\mathcal F_{\\mathrm{cond}}z/[2(1+\\|z\\|^2)]$ in native chart coordinates, with equal axis scales. These are likelihood-divergence contours, not credible or confidence regions. Panel (b) evaluates the same divergence along the two native information directions; $\\delta$ is the physical angle between $n_0$ and $n(Z)$. The marked rotations $5^\\circ$ and $30^\\circ$ produce nearly equal divergences, approximately $0.2396$ and $0.2308$, despite their different angular sizes. Thus this input design distinguishes rotations much more strongly in one direction. The local limit is $D_{\\mathrm{KL}}=\\tfrac12z^T\\mathcal F_{\\mathrm{cond}}z+o(\\|z\\|^2)$. This is expected observation-law information at the generating plane, distinct from finite-data posterior curvature. No new observations, inference, fitting, or experimental repetitions are introduced. Invariant-density Hessian and local accuracy diagnostics. Empirical bounded log-coordinate spread is compared with $H_A^{-1}$ only under recorded locality conditions; broad/nonlocal cases remain visible. The stationary inverse-Fisher study uses fixed known variances and $\\beta=1$, reports estimation bias and local fractions, and treats inverse Fisher as a local reference rather than a global intrinsic Cramer--Rao equality. The real graph-density volume term is a separate quantity, retained in the tables. Forgetting sampling references use squared weights. Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe repeated-episode spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.",
+      "proposed_latex_caption": "Directional likelihood information for the original concentrated-input contact fixture at $t=16$. The generating normal is $n_0=e_3$, $X_0=(e_1,e_2)$, and the plane graph chart has $z=(z_1,z_2)^\\top$ and normal $n(z)=(n_0-X_0z)/\\sqrt{1+\\|z\\|^2}$. For the same frozen prescribed inputs and true variance, $p_z$ is the joint Gaussian response law with means $P_{\\mathcal X(z)}v_j$ and covariance $\\sigma^2I_3$. Panel (a) shows equal values of the exact divergence $D_{\\mathrm{KL}}(p_0\\|p_z)=z^T\\mathcal F_{\\mathrm{cond}}z/[2(1+\\|z\\|^2)]$ in native chart coordinates, with equal axis scales. These are likelihood-divergence contours, not credible or confidence regions. Panel (b) evaluates the same divergence along the two native information directions; $\\delta$ is the physical angle between $n_0$ and $n(z)$. The marked rotations $5^\\circ$ and $30^\\circ$ produce nearly equal divergences, approximately $0.2396$ and $0.2308$, despite their different angular sizes. Thus this input design distinguishes rotations much more strongly in one direction. The local limit is $D_{\\mathrm{KL}}=\\tfrac12z^T\\mathcal F_{\\mathrm{cond}}z+o(\\|z\\|^2)$. This is expected observation-law information at the generating plane, distinct from finite-data posterior curvature. No new observations, inference, fitting, or experimental repetitions are introduced. Invariant-density Hessian and local accuracy diagnostics. Empirical bounded log-coordinate spread is compared with $H_A^{-1}$ only under recorded locality conditions; broad/nonlocal cases remain visible. The stationary inverse-Fisher study uses fixed known variances and $\\beta=1$, reports estimation bias and local fractions, and treats inverse Fisher as a local reference rather than a global intrinsic Cramer--Rao equality. The real graph-density volume term is a separate quantity, retained in the tables. Forgetting sampling references use squared weights. Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe across-simulation spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.",
       "placement": "supplementary",
       "pages": [
         {
@@ -30824,7 +30826,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "scope": "Exact likelihood geometry at the original frozen contact input design; not a new experiment",
@@ -30872,8 +30874,8 @@
               1.8461538461538456,
               63.076923076923066
             ],
-            "formula": "D_KL(p_0||p_Z)=z^T F_cond z/[2(1+||z||^2)]",
-            "chart": "n(Z)=(n_0-X z)/sqrt(1+||z||^2), z=vec(Z), X=(e_1,e_2), n_0=e_3",
+            "formula": "D_KL(p_0||p_z)=z^T F_cond z/[2(1+||z||^2)]",
+            "chart": "n(z)=(n_0-X z)/sqrt(1+||z||^2), z=(z_1,z_2)^T, X=(e_1,e_2), n_0=e_3",
             "contour_levels": [
               0.01,
               0.05,
@@ -30911,7 +30913,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -30931,7 +30933,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static",
@@ -30958,7 +30960,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "terminal_cohorts": [
@@ -31046,7 +31048,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static",
@@ -31073,7 +31075,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static",
@@ -32489,8 +32491,8 @@
               1.8461538461538456,
               63.076923076923066
             ],
-            "formula": "D_KL(p_0||p_Z)=z^T F_cond z/[2(1+||z||^2)]",
-            "chart": "n(Z)=(n_0-X z)/sqrt(1+||z||^2), z=vec(Z), X=(e_1,e_2), n_0=e_3",
+            "formula": "D_KL(p_0||p_z)=z^T F_cond z/[2(1+||z||^2)]",
+            "chart": "n(z)=(n_0-X z)/sqrt(1+||z||^2), z=(z_1,z_2)^T, X=(e_1,e_2), n_0=e_3",
             "contour_levels": [
               0.01,
               0.05,
@@ -32995,11 +32997,11 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -33162,7 +33164,7 @@
         "results/contact/tables/paper/theory/numerical_accuracy.csv": "70149bed8eff2c2a0b6d251a86ac289a582cd4c2e5e60724b9851b3ed25f3f4a"
       },
       "output_hashes": {
-        "supp_information_tracking.pdf": "605332db07cfc23ae7f28b2c4d6a580dcf4174d5d5fe69dbc673785cb9cd22a6"
+        "supp_information_tracking.pdf": "e005030a2c8e07920a85aed72099866db2167b273b2974518c8ce06279a015bb"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     },
@@ -33177,7 +33179,7 @@
         "additional_comparisons.pdf",
         "posterior_anisotropy.pdf"
       ],
-      "proposed_latex_caption": "Task losses on common independent test episodes. Losses are averaged within each episode before pointwise Student 95\\% intervals. For contact, main panel (a) shows stationary concentrated-input checkpoint MSE versus observation count, with the posterior-mean confidence band; panel (b) shows absolute episode-average MSE for the moving sphere condition, with a confidence interval for every method including the posterior mean. All methods in panel (b) use the same independent episodes. The separate second page retains paired MSE differences; these are absolute differences in squared velocity units, not relative MSE. A posterior mean compared with itself has identically zero paired difference. Beamforming paired boxes show the distribution of same-episode differences, not confidence intervals. GREAT and application-specific controls retain their stated information and independently validated settings. Complex beamforming GREAT is an extension of the real algorithm, as described in the notebook text. Oracle quantities are evaluation-only. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode. Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing and task-decision cost is reported in the computation output. Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms. actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\\theta)=\\cos\\theta\\,e_2+\\sin\\theta\\,e_3$ and plots $v(\\theta)^T(M-M^2)v(\\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
+      "proposed_latex_caption": "Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode. Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing and task-decision cost is reported in the computation output. Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms. Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=t=64$. The actual posterior is the fixed concentrated-input simulation 0 at t=16. Directional density and repeated-simulation task performance are separate comparisons. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
       "placement": "supplementary",
       "pages": [
         {
@@ -33195,7 +33197,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [
             {
@@ -33239,7 +33241,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "sphere",
@@ -33279,7 +33281,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -33299,7 +33301,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static_balanced",
@@ -33336,7 +33338,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static_concentrated",
@@ -33373,7 +33375,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "plane",
@@ -33414,7 +33416,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "sphere",
@@ -33455,7 +33457,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "condition": "static_concentrated",
@@ -33466,7 +33468,8 @@
           "panel_selections": [
             {
               "query_family": 1,
-              "normalization": "Squared norm of saved query"
+              "normalization": "r_t(v(theta))/v0^2; saved unit-input curve unchanged",
+              "v0_m_per_s": 0.02
             }
           ],
           "sphere_displays": [
@@ -33539,7 +33542,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "scope": "Constructed swapped-eigenvalue identity, not data-generated performance",
@@ -35523,11 +35526,11 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -35690,7 +35693,7 @@
         "results/contact/tables/paper/theory/numerical_accuracy.csv": "70149bed8eff2c2a0b6d251a86ac289a582cd4c2e5e60724b9851b3ed25f3f4a"
       },
       "output_hashes": {
-        "supp_comparisons.pdf": "9c4367ff56972c716d4ff90c40f3d324a7418070ff53e7aaf39242b236786793"
+        "supp_comparisons.pdf": "b31f2abd983f44a59e1c81116835ff2f0409dff4cd42903f25dcb3c3d0349564"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     },
@@ -35708,7 +35711,7 @@
         "computation_time.pdf",
         "numerical_accuracy.pdf"
       ],
-      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes. Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk. Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime. Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee. Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood. Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance episodes or worst-case deadlines. Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration.",
+      "proposed_latex_caption": "Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker simulations. Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $128.5$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk. Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent Monte Carlo simulations, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent Monte Carlo simulations, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy. Both applications use n=3 reliability fixtures. On the inclusion pages, panel (a) checks latent-subspace inclusion in its HPD set; panel (b) reports the clean scalar $e_1^T Pq$ for a known unit real query $q$; panel (c) reports the noisy scalar $\\operatorname{Re}(u_{t,1})$. Contact observations are real. On the appended size pages, panels (a), (b), (c) show the state-ball chordal radius, clean scalar width and noisy scalar width, respectively. These are 128 independent test episodes per fixed checkpoint and regime. Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each simulation before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee. Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood. Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance simulations or worst-case deadlines. Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration.",
       "placement": "supplementary",
       "pages": [
         {
@@ -35726,7 +35729,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -35746,7 +35749,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "noise_change",
           "panel_selections": [],
@@ -35767,7 +35770,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fast_sphere",
           "panel_selections": [],
@@ -35788,7 +35791,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "contact_noise_change_individual_beliefs",
           "selection": {
@@ -35880,7 +35883,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "contact_noise_change_individual_beliefs",
           "selection": {
@@ -35945,7 +35948,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -35971,7 +35974,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -35997,7 +36000,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -36023,7 +36026,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -36049,7 +36052,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "drifting",
           "selection": {
@@ -36075,7 +36078,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "drifting",
           "selection": {
@@ -36101,7 +36104,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "prior_predictive",
           "selection": {
@@ -36147,7 +36150,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "fixed_state",
           "selection": {
@@ -36193,7 +36196,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "condition": "drifting",
           "selection": {
@@ -36239,7 +36242,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "cohort": "calibration",
@@ -36265,7 +36268,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "cohort": "mismatch",
@@ -36300,7 +36303,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "observations": 64,
@@ -36325,7 +36328,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "observations": 64,
@@ -36355,7 +36358,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -36375,7 +36378,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "panel_selections": [],
           "sphere_displays": []
@@ -36395,7 +36398,7 @@
             "latex": true
           },
           "font_sizes_pt": [
-            11.0
+            12.0
           ],
           "selection": {
             "scope": "Large-dimension numerical rows, separate mean/normalizer/reference/second-moment/tail/state flags; unevaluated targets never counted as resolved"
@@ -38330,11 +38333,11 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "2e2499bb4388f38409fb089fd7a03426a1679dbe7c1f9e3e8c883e0c46b92c96",
-        "scripts/plot_final_simulations.py": "ab3bd5a0bf9de15da00b0010038b64a8d79bc8163ab0cbd31f60c99137ec1322",
+        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
-        "lib/final_information_visuals.py": "0da22b7fa7b06e1a2a1e31d5d3bb983734cd676f3fda0e4cdc3e65876710d41e",
+        "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
         "lib/final_computation.py": "f85b9b49b0e53150eccfd862b16f6622a53bef515b8b1e45cb056cf1a55f8c88",
         "scripts/run_final_computation.py": "a7d2d07c961a103f6ae91ecf3ca9ad3a279b127bfbfb48b8454fbb2cb43b3609",
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
@@ -38497,69 +38500,69 @@
         "results/contact/tables/paper/theory/numerical_accuracy.csv": "70149bed8eff2c2a0b6d251a86ac289a582cd4c2e5e60724b9851b3ed25f3f4a"
       },
       "output_hashes": {
-        "supp_variance_prediction_cost.pdf": "e5cbb3971d3b3165d7ebe366f167c9888c5cd5c2948dd72c2cfec4b9bccf4760"
+        "supp_variance_prediction_cost.pdf": "2a46751a0f7c70d4bcb6e313d54b13227bc0767aabdc5b1e65bbb6b76f2fa30b"
       },
       "alias_scope": "Reuses the same saved arrays and Matplotlib figures, not additional independent experiments."
     }
   },
   "files": {
-    "setup.pdf": "ed5004c9e63211dd786e5ce34fe0aa517a3accdd5378905004bcc643da11993b",
-    "preview/setup.png": "16c9cbccb3c813c20a0da59a288103466dd0cc298204b1e38ea8c1fa0c1b4d20",
-    "task_performance.pdf": "aa685a4169e2aedaadbe4dfea3382d9e3edc3d7697efe9f84eda3484d1a6ba1f",
-    "preview/task_performance.png": "e61a887716a52fbe56a78d95553578e7cc4d86776309c2c56621ec725e5dfc3a",
-    "preview/task_performance_page2.png": "3a76b71e26d8dd42ae81c8dc59a6169d5e7df762715bf8cace4d9b366e5a9ff9",
-    "posterior_anisotropy.pdf": "b52d3fce86eb79150d636aea0d64f4daa1988405366b8cb71ebdc8aa039bda34",
-    "preview/posterior_anisotropy.png": "a21cc981b285a415b784643ba4d263ff1d004d4d478e798b5baa77917bb601e8",
-    "preview/posterior_anisotropy_page2.png": "03ec0f313d5556e9930815b872cd33a2cf0df6ea19bb5fa85ec9ae9c0670e488",
-    "noise_adaptation.pdf": "55940b3a63495262065b40635334434a9cfdd0529181058c2deb1277799fd009",
-    "preview/noise_adaptation.png": "8bd8c529502277319f2bd8cb15f3c6155ab8b8da4949bfd69c3a1b93c2366c3b",
-    "preview/noise_adaptation_page2.png": "38d85db8a2a85f890bcec0f82f8805c21e8f6cd42ea2a6968e59785c726ff8a6",
-    "preview/noise_adaptation_page3.png": "32af4ea8d6368b7e5dda00c9710ef093670d3bc2a38abb8790c756e682cddf4a",
-    "preview/noise_adaptation_page4.png": "7bfd2c7bb100db569784eea395e1c2ac4561db2d5382d88e506e6904216789da",
-    "information.pdf": "5bef48bfe52a3d093eacf4521b70be085c4008ec726ab9b1cc8bb02781cc71e0",
-    "preview/information.png": "bc306f06d8ac9dc8b482bc98f5913fdae743c6f53f9f2de6a2b43bfc770ccdab",
-    "posterior_curvature.pdf": "d8788a60afd9ea08fbd80b558b90e82720fc9a71ff9a20c58c7aecb47946a195",
-    "preview/posterior_curvature.png": "3706a0c421906c28bb514d4a7f802cc3075b1bbd0fd9567a571cf3345ad19117",
-    "tracking_bound.pdf": "13c4ab98829dabba11c2a5bb6f1a546d385459f69d78226bc2ac67bcfdeef57e",
-    "preview/tracking_bound.png": "cea61c053d98ac9434611d12ffb59a84912607d4fcb7e2ea96b32d34419d090a",
-    "preview/tracking_bound_page2.png": "b03275335002fb6a6ec5a5472bf5953bdb0e58a538e4d64baa64469cdb730725",
-    "preview/tracking_bound_page3.png": "f4431728249ef8aa8ea986ecbcb0c6e36d6e94fdf8ca2e71dfd9652f8295809d",
-    "preview/tracking_bound_page4.png": "5837fd41f609c98a39ea8c1f910700f511bff1c529aea683156879a54b9d2e05",
-    "block_updates.pdf": "52f05778726c281d9a7d6de41200ef3a188216801d0d48ac37ce9b516342e7a4",
-    "preview/block_updates.png": "c1fb63e93c99e0946707991ab44edb0f3a041f54b08a7bb4c63322b4683cbef6",
-    "additional_comparisons.pdf": "9e0c0949031f2966bb7e05b0b05da493773eb75dd71ce2f6534f717a1fb25632",
-    "preview/additional_comparisons.png": "3df450475c29b643148fd1f1732357e1546f6966f3cdcbbb31bfe5fa5d065773",
-    "preview/additional_comparisons_page2.png": "9e2098f57376d9538f2b482011d9f7a611803b834014fabbabca6c4419b3c21d",
-    "preview/additional_comparisons_page3.png": "db00da26791a8737113a054c51cfe9b13c57bfc683b909bbc79a97af23a6703d",
-    "preview/additional_comparisons_page4.png": "cfe6d82fc94e538eaf3eb7ec61f085df15792c760223f45ade70e6b11aecf996",
-    "variance_estimation.pdf": "f9facd3b676240005f0c3612e9e13774953a2c209d71688f163a74291e0686be",
-    "preview/variance_estimation.png": "81952e782afee9902bc5d80415bfa6353c318d1b111f178ed0114b522fc8b467",
-    "predictive_calibration.pdf": "13f15e171766642f93828e64160c65fd23a08a589645ac3e270070a946b70592",
-    "preview/predictive_calibration.png": "e432526428ccd10657fa946442ee2edf35a76ff11a45307050c0213437b3d363",
-    "preview/predictive_calibration_page2.png": "a593f2084627ffe552ce4b1eff40e4e828542dd9163e37c5aaf3ba994f53cd42",
-    "preview/predictive_calibration_page3.png": "b92cbe38e37b425150291e0e10a8ce12f105fe2f00678ed93d9856d86e6f7f6e",
-    "preview/predictive_calibration_page4.png": "91601a2342f9c2f62c794a964ef40648948d005646e7c687d95fb7993e04e4d3",
-    "preview/predictive_calibration_page5.png": "54b2c07780051d927328e77233281198be789e5cafdee7ceae1435de7f77fc13",
-    "preview/predictive_calibration_page6.png": "200a475d0e8119b804952aa8a3ab016f1d63849931da76583d06212299df36db",
-    "preview/predictive_calibration_page7.png": "e8a25862b81de203f327d35b6e6c52a531f839c9533d8e2ef4e783846c8a5b15",
-    "preview/predictive_calibration_page8.png": "77bd5a1659eb6ebb67e678d36745213c9a2694e043c766cba87c24c291d9c39a",
-    "preview/predictive_calibration_page9.png": "2bed37020090cc3df7e865ca6b8ea0b061d1254472dfa6d4ec6537af4680567a",
-    "predictive_scores.pdf": "809ac50df148841060401a9080e1605af3d2e0bf19c5b37df06e02f2d7930443",
-    "preview/predictive_scores.png": "717daad7c7907a55a95e5c0a494a975d2ae7af73d11a64ed6beaef39cdc6e3fb",
-    "model_mismatch.pdf": "1ab62e01979e5d1efaef647c23990049e67a8d0d831d7c1cd1e18f51dbe1b01c",
-    "preview/model_mismatch.png": "fc7246786bbc6d23fc29b0f90b091bbe79d3f1c19280ae789834a9b54d438a47",
-    "computation_time.pdf": "28de9da05cfaef6dda114178eaaa1840f72c44597f951e3e5a30ac0bebbf2fff",
-    "preview/computation_time.png": "e780e4c8b9a341297535ca663dbd47b8694ff1b4c9dfffdb4d12351926915ab0",
-    "preview/computation_time_page2.png": "58c067de24cc14fc3bf1f242a1b557de2ced6d598418d6d6c8e4c120f6701dc9",
-    "numerical_accuracy.pdf": "ff82e1af2e0f4439dbd46ff492a9dde82f7b27a67864861a892f440040ac9926",
-    "preview/numerical_accuracy.png": "e1c503178bb6288e2498a1fe31f5711028d5ddcb37e12a6637425645a1fb2686",
-    "preview/numerical_accuracy_page2.png": "4e3f3b2bc5526f111b339a1c37a4fca7c5aba2762f6279f639bb2f83eb6ae938",
-    "preview/numerical_accuracy_page3.png": "a7882f46a0f6e7566e584050204cb96f1b0c71a633d300b8dab09b5d44204869",
-    "paper_summary.pdf": "999fe95974bc3efc1f93c6bcf54bb7f53989908075850722538dd48a546d3d76",
-    "preview/paper_summary.png": "c39303df4159435127089cfa4b698dbdd6b893bed706b7eb6c345cadf16b6012",
-    "supp_information_tracking.pdf": "605332db07cfc23ae7f28b2c4d6a580dcf4174d5d5fe69dbc673785cb9cd22a6",
-    "supp_comparisons.pdf": "9c4367ff56972c716d4ff90c40f3d324a7418070ff53e7aaf39242b236786793",
-    "supp_variance_prediction_cost.pdf": "e5cbb3971d3b3165d7ebe366f167c9888c5cd5c2948dd72c2cfec4b9bccf4760"
+    "setup.pdf": "398cfd110d0a151e93057106516bd39db0ea64ee5f094b47262b5fc812cbbfef",
+    "preview/setup.png": "ad0af7be0d8adc8a490dc5fc31ec00258526d7e0bd7343ad073a1a8e6ee24f8f",
+    "task_performance.pdf": "f576a56ce893b8ac5499acefda1332f293e29aabc932f1b2a53167416cddd723",
+    "preview/task_performance.png": "a287544f0980187ecb93f3f8aa72a0b355123afa83ee5f67a1af6ebdf8c85db0",
+    "preview/task_performance_page2.png": "2d5facff714e920acd18b96e83193a75b928b14724f0e7d3554e1135c0064228",
+    "posterior_anisotropy.pdf": "e37008418dea94055b526c47177b686e21df26bd7f12b6db1275dd580ac5ab98",
+    "preview/posterior_anisotropy.png": "68b6000663b3f081b0015d85ed9874d0e963327acbbae7700c97d4e44e4abd92",
+    "preview/posterior_anisotropy_page2.png": "0a00c3cc7adf9d2ae82eef2e0a119f4c93c8aad5d0662dc388188c9d56593bd9",
+    "noise_adaptation.pdf": "bc0a45f2419b57ad64b276482d648c4d0fdea1b7449da1d02fb6dfadd9958086",
+    "preview/noise_adaptation.png": "6419de9ff1781b527482ed9adf85caa812d2bbc04fe5289c562ba3c7a51fcb69",
+    "preview/noise_adaptation_page2.png": "44b83a8a2dc347ebb6fe897f796fb6c6062a17f6f55a3551eaabbed88603b02c",
+    "preview/noise_adaptation_page3.png": "c41e1fb1b8e6aad8216ce9ab98d61840533f5886ce832b26f9ae5f1bd6a40a1d",
+    "preview/noise_adaptation_page4.png": "79be1bdf0a2ecc16ed697e5c20982b527426745d7c4cfa0c4517c06d3dfceb02",
+    "information.pdf": "125f577caa12cff7fc6e6ef607d48ae1cec032d851a53a04819edb7372a16688",
+    "preview/information.png": "88501c8f0013a662cc8c340afe18b5e622a22a668cff914caf4b4274889fb8f5",
+    "posterior_curvature.pdf": "ecfb7dfca9f7e94fbb42e54415e722a5dca2310ee63ee0e448a114ef7f3c921b",
+    "preview/posterior_curvature.png": "304500141d4be437e6c2e7de9161c2b0535cb33dd744092b5904d4c58df03efe",
+    "tracking_bound.pdf": "780841fcf0eb3a434267c9c5f40853dcb3ee2b182973b927587068ddcbbcb9be",
+    "preview/tracking_bound.png": "11ba3ab9ba62c41d4e6f4040b074b806670814b8c86a176cfa8fcafcc9fc21ab",
+    "preview/tracking_bound_page2.png": "c545de10db767bee3588ee64a4ed2fee6f289bf9d28f01e680cf446f42cb96b6",
+    "preview/tracking_bound_page3.png": "ea644bb0d5e85351929ab1f16b1a4b2ab4c279761709a59f9ff2ccd1148987b3",
+    "preview/tracking_bound_page4.png": "2dbc4a5afdf105ca6c6673e359638a2ec8532aa7979f3ffb209d0a8c8722fba4",
+    "block_updates.pdf": "4ea650a98ec2bda61ca610fb2961ed311e04b51973a72a63aa483cf493684556",
+    "preview/block_updates.png": "42a0fba215995b21a0ddf1839346bf06b9880fd549a1a06797a9f30d44c1f1f4",
+    "additional_comparisons.pdf": "ed1f59f078cd98a68aecbb963c68e0c0a5815b34017b1c792804c291715fda83",
+    "preview/additional_comparisons.png": "5805d8ac315c05a5317da206e6fddaf7a43ccbce01fe5526cc1799bd190e488f",
+    "preview/additional_comparisons_page2.png": "b08783e1650a91e0084f3f6ef7baf6d2aa89dea1623a7fe57a7f166f0a4a6bd1",
+    "preview/additional_comparisons_page3.png": "6fe0d552edc5ee01943bddb2e3650c49e32d73384a5ccd52d8e4e606d4f39a9c",
+    "preview/additional_comparisons_page4.png": "4e028c2f2aafe02f2eb98f21a5a61fdea9f0fea35b3749dfa31928aef132e10b",
+    "variance_estimation.pdf": "d12b8edb77e2db7b4ed5563c883269f718ab90fb307cabff2a9c09f967e3d1ee",
+    "preview/variance_estimation.png": "c955a0d0441fceebe18572d35922644f1c59e894474dc412cd5306caf04f0a96",
+    "predictive_calibration.pdf": "bf6dc978baa49cf03e0555064a794e5ae567e7977991d3ede2e1f1ff719638d3",
+    "preview/predictive_calibration.png": "3e28743d6df7f464684c6fd3864114247f81d7a47791234442ca5ef30a9dfe6b",
+    "preview/predictive_calibration_page2.png": "ad78ea08ffd5c63e6014892fa846f6baa93ef67bf310ce072615be5b51a467b1",
+    "preview/predictive_calibration_page3.png": "c2a9c5d7b70ae143db2714be0230eeca7072a19119b936cbd7086dcde5475acb",
+    "preview/predictive_calibration_page4.png": "acf4713f4e4d320465e98bd5eb7067681322f99a2a6f645bd1651f724fc591a0",
+    "preview/predictive_calibration_page5.png": "869311e91bef6e966503622be2e1e7f05230542ad22e230d4069015b51a82fcf",
+    "preview/predictive_calibration_page6.png": "93928d726cee08f79a8d7d3feb3fb0339ac656f03b0f95a75d096ef1e2c89680",
+    "preview/predictive_calibration_page7.png": "deb71205aa83e2fb8b2250a57e6c4e98d633362f31a8954c040feb9405900057",
+    "preview/predictive_calibration_page8.png": "14ddb06d0d691a7be78ed4aa936960db2381fd675a1340f9a54bf4267b23f851",
+    "preview/predictive_calibration_page9.png": "fc820e15f12424f381279360e1aa1a155a7121f23b180f5762ba37b13c774117",
+    "predictive_scores.pdf": "1127034bcde400f7e942b38a71238e3f4085b3c614a4d883642e61d0fcb0497f",
+    "preview/predictive_scores.png": "f03ce03aac2e5c1e6e5289015af680e2f4f79e9edd4323fd77b213ba33521e25",
+    "model_mismatch.pdf": "ed3ed5a697decd44cf79b79f289f5cc16753ce3fd9c434d7685f278f76894716",
+    "preview/model_mismatch.png": "22610d2093be2d981770c8a09b2e5cfe3f56c0d8a5525932e28ef98c40095f3e",
+    "computation_time.pdf": "441b1424c07325e63c46c02608eb2729c276053f3fffb6387423cbf7cb897d4a",
+    "preview/computation_time.png": "ffd9eb9ae68110f7975f11984ae5df977643473aa7e7a225a2753a40dde167fd",
+    "preview/computation_time_page2.png": "bb41efa073c95d4406b6cfa76b81cd5d56c26198d1189bbae87f46c2e6532a96",
+    "numerical_accuracy.pdf": "997546195b6cac3a3bdd9e3d6d5ecc40d9ed20857cb1cafb0a4c282611200eea",
+    "preview/numerical_accuracy.png": "a6f99baac3f5b836613b7707a6428e052fbcf71a944ce63b5d268412313f5277",
+    "preview/numerical_accuracy_page2.png": "57a96f5b82930e6e145b4b2ac709fd24796095e0f212ef86003c7aa1a151698d",
+    "preview/numerical_accuracy_page3.png": "7666c9ac4db73d3c7e8e68e06e8535e5730d4656c7dc4206021bfc671a65d378",
+    "paper_summary.pdf": "47ca9f8732b40d793563fa15fc5de3592c054b0ba4c6af450a0b4c986dba026a",
+    "preview/paper_summary.png": "b3bd4bbde7380896c5e6824af0a038a40c2d320602bbf1f0b7ee4789748228d3",
+    "supp_information_tracking.pdf": "e005030a2c8e07920a85aed72099866db2167b273b2974518c8ce06279a015bb",
+    "supp_comparisons.pdf": "b31f2abd983f44a59e1c81116835ff2f0409dff4cd42903f25dcb3c3d0349564",
+    "supp_variance_prediction_cost.pdf": "2a46751a0f7c70d4bcb6e313d54b13227bc0767aabdc5b1e65bbb6b76f2fa30b"
   },
   "unresolved": {},
   "text_usetex": true,

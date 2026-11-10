@@ -10,6 +10,7 @@ import argparse
 import ast
 import hashlib
 import json
+import re
 from pathlib import Path
 import sys
 import nbformat
@@ -105,10 +106,10 @@ This notebook displays saved, source-verified evidence only, in theoretical-to-a
 
 SECTION_NOTES={
 1:r'''These checks distinguish the known-input and marginalized observation laws, finite-data curvature and expected information, exact aggregation and delayed actions. The sharper tracking envelope is evaluated only where its stated sufficient condition holds. Bound gaps, initialization and drift use generating quantities available for analysis, not online credible radii. Nonuniform priors, zero-signal data and concentrated inputs remain separate cohorts.''',
-2:r'''Losses are paired on independent episodes and common held-out data. Observation/query averages within one episode are not extra repetitions. Main panels use predeclared representative conditions; the complete grids and strong controls remain in the additional comparisons and machine-readable records. A gain over GREAT may reflect input information or optimization/tracking differences; a gain attributable to posterior anisotropy requires the same-mode and matched-isotropic comparisons.''',
+2:r'''Losses are paired on Monte Carlo simulations and common held-out data. Observation/query averages within one episode are not extra repetitions. Main panels use predeclared representative conditions; the complete grids and strong controls remain in the additional comparisons and machine-readable records. A gain over GREAT may reflect input information or optimization/tracking differences; a gain attributable to posterior anisotropy requires the same-mode and matched-isotropic comparisons.''',
 3:r'''A fixed-radius 3D sphere encodes density by color under one shared logarithmic normalization. The continuous blue--purple--pink--yellow gradient changes only the color assigned to a density value; saved coordinates, camera, density values and angular widths are retained. Colors do not denote probability-mass quantiles. Gray curves are visible coordinate great circles that help locate directions on the sphere; they are not density contours or credible regions. Contact normals use true antipodal real-line densities. The complex-array sphere is a real-coefficient density section at the original $n=t=64$ checkpoint: it is not a physical far-field radiation pattern, a full posterior, or a normalized sphere marginal. The setup figure shows the physical array response. No estimator or benchmark parameters have changed. Mode, radius and mean overlap do not determine directional response risk. Visible anisotropy does not itself prove a repeated-experiment task advantage. PDFs retain vector LaTeX text and curves; all current preview and raster layers are 300 dpi. The font sizes, line widths and figure layout follow the implementation-notebook protocol. Inline images are scaled for reading; the full-resolution PNG and PDF links preserve the export resolution.''',
 4:r'''Causal scale fits use completed disjoint past blocks and change future variances only. Each observation is assimilated once. The saved pre-observation predictive score excludes the scored observation from fitting. State, clean-response and noisy-next-observation intervals are distinct targets. Inclusion, widths and proper scores must be read together; integration/quantile precision and frequentist calibration are different checks.''',
-5:r'''The cost plots separate measurement updates, task decisions, uncertainty reports and variance fitting. Each timing on the first PDF page processes exactly 64 observations. Its upper panel includes an update for every observation and computes a task decision at the stated interval. The lower panel separates the nonoverlapping operations for the same 64 observations: optional uncertainty reports and EM fits occur every 32 observations, independently of how often a task decision is computed. Less frequent task decisions still assimilate every observation. Summed medians of individual operations need not equal the median total elapsed time. The second PDF page reports memory, with stored arrays distinguished from tracked allocations. Timings use one predeclared data set and repeated warmed single-thread executions; repetitions of the clock are not additional statistical episodes or worst-case deadlines. Native rank/codimension-one first-moment accuracy does not certify arbitrary-rank moments, floating-point error, second moments or tails.''',
+5:r'''The cost plots separate measurement updates, task decisions, uncertainty reports and variance fitting. Each timing on the first PDF page processes exactly 64 observations. Its upper panel includes an update for every observation and computes a task decision at the stated interval. The lower panel separates the nonoverlapping operations for the same 64 observations: optional uncertainty reports and EM fits occur every 32 observations, independently of how often a task decision is computed. Less frequent task decisions still assimilate every observation. Summed medians of individual operations need not equal the median total elapsed time. The second PDF page reports memory, with stored arrays distinguished from tracked allocations. Timings use one predeclared data set and repeated warmed single-thread executions; repetitions of the clock are not additional Monte Carlo simulations or worst-case deadlines. Native rank/codimension-one first-moment accuracy does not certify arbitrary-rank moments, floating-point error, second moments or tails.''',
 6:r'''The summary is a composition of the same verified arrays. It contains no extra experiment and no favorable-trajectory selection. Proposed captions, exact page selectors, configuration/seed sets, omitted-condition locations, numerical status and hashes are in the figure manifest.''',
 }
 
@@ -130,15 +131,15 @@ def paper_findings(root,example):
     labels={'mode':r'$P_{\widehat{\mathcal X}_t}$',
         'isotropic':r'$\overline P_t^{\mathrm{iso}}$',
         'regularized':'Regularized projector',
-        'covariance_loading':'Loaded EW covariance','great_window':'GREAT'}
+        'covariance_loading':'Regularized sample covariance','great_window':'GREAT'}
     rows=[];signs=[]
     if example=='beamforming':
         frame=pd.read_csv(folder/'performance/paired_stationary.csv')
-        chosen=frame[frame.endpoint.eq('heldout_ratio_db')&frame.n.isin([32,64])&frame.t.eq(frame.n)
+        chosen=frame[frame.endpoint.eq('true_ratio_db')&frame.n.isin([32,64])&frame.t.eq(frame.n)
             &frame.reference.isin(['mode','isotropic','covariance_loading','great_window'])]
-        unit='dB';selectors='the predeclared stationary $L=n$ cells at $n=32,64$'
+        unit='dB';selectors=r'the stationary $t=n$ measurements at $n=32,64$, using $\ell_t$ from the exact covariance'
         for row in chosen.itertuples():
-            rows.append([f'$n=L={row.n}$',labels[row.reference],
+            rows.append([f'$n=t={row.n}$',labels[row.reference],
                 _number(row.gain)+' ['+_number(row.lower)+', '+_number(row.upper)+']',str(row.resolved_pairs)+'/'+str(row.episodes)])
             signs.append((row.lower,row.upper))
         if len(rows)!=8:raise RuntimeError('Expected all eight predeclared beamforming paired cells')
@@ -148,9 +149,9 @@ def paper_findings(root,example):
             &((frame.condition.eq('static_concentrated')&frame.endpoint.eq('checkpoint')&frame.t.eq(16))
               |(frame.condition.eq('sphere')&frame.endpoint.eq('episode_average'))) ]
         unit='$(\\mathrm{mm}/\\mathrm{s})^2$'
-        selectors='the concentrated-input stationary checkpoint $t=16$ and the full sphere episode'
+        selectors='the concentrated-input stationary checkpoint $t=16$ and the full sphere simulation'
         for row in chosen.itertuples():
-            label='Concentrated, $t=16$' if row.condition=='static_concentrated' else 'Sphere episode'
+            label='Concentrated, $t=16$' if row.condition=='static_concentrated' else 'Sphere simulation'
             rows.append([label,labels[row.reference],
                 _number(1e6*row.gain)+' ['+_number(1e6*row.lower)+', '+_number(1e6*row.upper)+']',str(row.finite_episodes)+'/'+str(row.episodes)])
             signs.append((row.lower,row.upper))
@@ -158,7 +159,7 @@ def paper_findings(root,example):
     positive=sum(lower>0 for lower,upper in signs);negative=sum(upper<0 for lower,upper in signs)
     task=('The table reports reference loss minus posterior-mean loss on '+selectors+'. Positive values favor the posterior mean; brackets are paired pointwise 95% Student intervals in '+unit+'. '
         +f'Across these eight fixed comparisons, {positive} intervals lie above zero, {negative} lie below zero, and {8-positive-negative} include zero. '
-        +'Resolved pairs are shown relative to scheduled independent episodes. These cells are displayed together, including losses and uncertain differences; this count is descriptive and has no simultaneous-coverage guarantee.\n\n'
+        +'Resolved pairs are shown relative to scheduled Monte Carlo simulations. These cells are displayed together, including losses and uncertain differences; this count is descriptive and has no simultaneous-coverage guarantee.\n\n'
         +_table(['Condition','Reference','Paired gain [95% CI]','Resolved pairs'],rows)
         +'\n\nA benefit over the mode can arise from shrinkage. A benefit over the matched isotropic control supports the value of directional posterior moments for that task and cohort. The latter comparison is the direct anisotropy test. A GREAT comparison also changes the estimator and, in contact, the available input information.')
     if example=='contact':
@@ -169,7 +170,7 @@ def paper_findings(root,example):
         checks=checks.set_index('condition')
         def paired_text(row):
             return _number(1e6*row.gain)+' ['+_number(1e6*row.lower)+', '+_number(1e6*row.upper)+']'
-        task+='\n\nThe full grid also retains the plane episode-average isotropic-minus-full gain, '+paired_text(checks.loc['plane'])+', and the final sphere checkpoint gain, '+paired_text(checks.loc['sphere'])+', in $(\\mathrm{mm}/\\mathrm{s})^2$. These fixed checks show why an episode-average gain should not be interpreted as uniform superiority at every time and input condition.'
+        task+='\n\nThe full grid also retains the plane time-averaged isotropic-minus-full gain, '+paired_text(checks.loc['plane'])+', and the final sphere checkpoint gain, '+paired_text(checks.loc['sphere'])+', in $(\\mathrm{mm}/\\mathrm{s})^2$. These fixed checks show why an time-averaged gain should not be interpreted as uniform superiority at every time and input condition.'
     paired=pd.read_csv(folder/'prediction/paired.csv')
     chosen=paired[paired.reference.eq('misspecified')&paired.reference_control.eq('mean')&paired.endpoint.eq('future_task_loss')]
     scale=1e6 if example=='contact' else 1.
@@ -178,10 +179,10 @@ def paper_findings(root,example):
     if len(noise_rows)!=(2 if example=='contact' else 3):raise RuntimeError('Missing declared noise-learning comparison')
     noise=('Across all declared interventions, fixed-minus-learned observed future-task gains are '+
         '; '.join(row[0]+': '+row[1] for row in noise_rows)+'. These are paired pointwise 95% intervals over '
-        +str(int(chosen.episodes.iloc[0]))+' independent episodes; positive gains favor learning. '
+        +str(int(chosen.episodes.iloc[0]))+' Monte Carlo simulations; positive gains favor learning. '
         +('Contact values are in $(\\mathrm{mm}/\\mathrm{s})^2$.' if example=='contact' else 'Beamforming values are held-out disturbance power, not decibels.')
-        +' Observation/query losses are averaged inside each episode. The [paired summaries](../results/'+example+'/tables/paper/prediction/paired.csv) retain every control and endpoint.\n\n'
-        +'A fit changes only future observations and decisions. The shaded variance trajectories show repeated-episode spread, not a posterior distribution of the variance. '
+        +' Observation/squared response errores are averaged inside each episode. The [paired summaries](../results/'+example+'/tables/paper/prediction/paired.csv) retain every control and endpoint.\n\n'
+        +'A fit changes only future observations and decisions. The shaded variance trajectories show Monte Carlo spread, not a posterior distribution of the variance. '
         +('The supplementary sphere page separately shows an individual pre-observation subspace belief. ' if example=='contact' else '')
         +'These displays do not establish calibration of empirical-Bayes scales.')
     classifications=[]
@@ -209,7 +210,7 @@ def paper_findings(root,example):
     misses=[cal_labels[row.kind] for row in chosen.itertuples() if row.upper<.95]
     calibration_note=('For the matched joint prior-predictive test with true variances, the predeclared $t=64$ 95% reports have inclusion '+coverage_sentence(matched)+'. '
         +'The corresponding learned-variance reports under drift have inclusion '+coverage_sentence(chosen)+'. Brackets are exact binomial 95% intervals over '
-        +str(int(chosen.episodes.iloc[0]))+' independent episodes. '
+        +str(int(chosen.episodes.iloc[0]))+' Monte Carlo simulations. '
         +('The upper interval is below 0.95 for '+', '.join(misses)+', supporting undercoverage in those drifting targets. ' if misses else 'These drifting intervals do not establish a general coverage guarantee. ')
         +'There are '+str(int(matched.unresolved.sum()))+' unresolved matched reports and '+str(int(chosen.unresolved.sum()))+' unresolved drifting reports in these cells.\n\n'
         +'The [calibration summaries](../results/'+example+'/tables/paper/prediction/calibration_summary.csv) also report widths in each target\'s native units. '
@@ -277,6 +278,61 @@ print('Saved mean: command first-order condition, directional risk and isotropic
 """}
 
 
+
+MAIN_PLOT_NOTES = {
+'beamforming_task': r'''
+The array comparison uses the exact covariance
+$R_t=\sigma_t^2I_n+\tau_t^2P_{\mathcal X_t}$ and
+$p_t^\star=(a^H R_t^{-1}a)^{-1}$. Its ordinate is
+$\ell_t=10\log_{10}(w_t^H R_tw_t/p_t^\star)$ in dB.
+The stationary curves use $t=n\in\{32,64,128\}$ and the existing settings
+selected with separate validation measurements. They summarize `true_ratio_db`
+from the saved per-simulation records, not the older frozen summary of power
+estimated from additional measurements. Shading is a pointwise Student 95%
+confidence interval for the posterior-mean average over 256 Monte Carlo simulations.
+''',
+'beamforming_noise': r'''
+Here $n=32$, $T=256$, and EM uses $L=32$ measurements per block and two iterations.
+The true noise variance is $0.2$ for $t\le128$ and $0.8$ for $t\ge129$;
+$\tau_t^2=1$. A fit completed after measurement $t$ is used from $t+1$.
+The displayed $\widehat\sigma_t^2,\widehat\tau_t^2$ are the estimates available
+before receiving $u_t$, at the stored integer reporting indices.
+The full dashed truth changes between measurements 128 and 129.
+Forgetting factors remain $\beta=0.98,0.90,0.98$ for true, fixed and EM variances.
+The lower-left plot uses the same exact-covariance $\ell_t$, with the beamformer formed
+from the prior mean $\overline P_t^-$.
+The lower-right plot is $\log\pi_t(u_t)$, where
+$\pi_t(u)=\int p(u\mid\mathcal X,\widehat\theta_t)q_{A_t^-}(\mathcal X)\,d\mu(\mathcal X)$.
+Variance bands show the middle 50% of pre-correction estimates across simulations;
+power and log-density bands are Student 95% confidence intervals for the Monte Carlo means.
+Averaging the eight reporting values per simulation gives exact output-power
+comparisons of $0.434633$, $1.056295$ and $0.378372$ dB for EM, fixed and true
+variances. Corresponding mean log densities are $-53.3$, $-237.4$ and $-40.9$.
+''',
+'contact_task': r'''
+For $v_t^{(j)}=v_0R_t^\top e_j$, $v_0=0.02\,\mathrm{m/s}$, the velocity error is
+$\mathcal E_t(D_t)=\frac13\sum_{j=1}^3\|D_tv_t^{(j)}-P_{\mathcal X_t}v_t^{(j)}\|^2$.
+The squared norm sums the three velocity coordinates; there is no further division by three.
+Multiplying the saved values by $10^6$ converts $(\mathrm{m/s})^2$ to $(\mathrm{mm/s})^2$.
+The stationary panel uses $t=1,4,16,32$. On the sphere of radius $0.05$ m,
+errors are averaged over all $t=4,8,\ldots,192$ within each simulation before
+forming the mean and Student 95% confidence interval across the 256 simulations.
+The left plot shows the posterior-mean interval; the right shows an interval for every method.
+''',
+'contact_risk': r'''
+The saved concentrated-input example has $t=16$ and generating normal $e_3$.
+The spheres show density relative to normalized invariant measure, with their
+unchanged camera, coordinates, common mode marker and logarithmic color limits.
+Antipodal normals describe the same plane. Define
+$v(\theta)=v_0(\cos\theta e_2+\sin\theta e_3)$ and
+$r_t(v)=v^\top[\overline P_t^+-(\overline P_t^+)^2]v$.
+Panel (c) plots $r_t(v(\theta))/v_0^2$ with $\theta$ in radians.
+The saved unit-input curve equals this normalized quantity exactly; no numerical
+rescaling is applied. Each curve uses its own distribution and mean matrix.
+''',
+}
+
+
 def editable_setup(example):
     from importlib import import_module
     data_import=import_module('scripts.notebook_plot_cells_'+example).DATA_IMPORT
@@ -315,9 +371,9 @@ if get_ipython() is not None:
 plt.rcParams.update({{
     'text.usetex': True,
     'text.latex.preamble': r'\usepackage{{amsmath}}\usepackage{{amssymb}}',
-    'font.family': 'serif', 'font.size': 11,
-    'axes.labelsize': 11, 'axes.titlesize': 11,
-    'legend.fontsize': 10, 'xtick.labelsize': 10, 'ytick.labelsize': 10,
+    'font.family': 'serif', 'font.size': 25,
+    'axes.labelsize': 25, 'axes.titlesize': 25,
+    'legend.fontsize': 22, 'xtick.labelsize': 23, 'ytick.labelsize': 23,
     'lines.linewidth': 1.6, 'lines.markersize': 4,
     'figure.dpi': 300, 'savefig.dpi': 300, 'savefig.bbox': None,
     'axes.spines.top': False, 'axes.spines.right': False,
@@ -359,9 +415,9 @@ Use the same 16 recorded inputs from the fixed concentrated-input example. At it
 \[
 n(Z)=\frac{n_0-X_0z}{\sqrt{1+\|z\|^2}}.
 \]
-Let $p_Z$ be the joint Gaussian velocity law at this rotated plane, with means $P_{\mathcal X(Z)}v_j$ and the same true measurement variance. For this fixture the exact divergence is
+Let $p_z$ be the joint Gaussian velocity law at this rotated plane, with means $P_{\mathcal X(Z)}v_j$ and the same true measurement variance. For this fixture the exact divergence is
 \[
-D_{\mathrm{KL}}(p_0\|p_Z)
+D_{\mathrm{KL}}(p_0\|p_z)
 =\frac{z^\top\mathcal F_{\mathrm{cond}}z}{2(1+\|z\|^2)}.
 \]
 The left panel shows equal values of this divergence in the two native graph directions. The right panel converts each direction into the physical normal-rotation angle $\delta$: a $5^\circ$ rotation in the first direction and a $30^\circ$ rotation in the second both give a divergence of about $0.24$. The same input program therefore distinguishes these rotations very differently. Near the origin the expression reduces to the paper's $D_{\mathrm{KL}}=\tfrac12z^\top\mathcal F_{\mathrm{cond}}z+o(\|z\|^2)$.
@@ -381,20 +437,19 @@ The mode and matched-isotropic controls substitute their own projectors/means in
 v_t^{\mathrm B}=[I_3+\lambda(I_3-\overline P_t^+)]^{-1}v_{\rm des}.
 \]
 The mode, matched-isotropic and regularized-projector controls substitute their own matrices into the same task rule. $\overline P_t^+$ is a plane-projector mean, so $I_3-\overline P_t^+$ is the corresponding normal-line mean. The penalty is an expected cost, not a hard contact guarantee.''')
-    markdown('## 3. Task decisions and outcomes\n\n'+task_equation+'\n\n'+SECTION_NOTES[2])
+    markdown('## 3. Task decisions and outcomes\n\n'+task_equation+'\n\n'+SECTION_NOTES[2]+'\n\n'+MAIN_PLOT_NOTES[example+'_task'])
     markdown(r'''Define the matched isotropic mean by:
 \[
-\overline P_t^{\mathrm{iso}}
-=\alpha_t P_{\widehat{\mathcal X}_t}
-+\xi_t(I-P_{\widehat{\mathcal X}_t}),\qquad
-\alpha_t=\frac{\operatorname{tr}(P_{\widehat{\mathcal X}_t}\overline P_t^+)}{k},
-\quad \xi_t=\frac{k-k\alpha_t}{n-k}.
+\zeta_t=k-\operatorname{tr}(\overline P_t^+P_{\widehat{\mathcal X}_t}),\qquad
+\overline P_t^{\mathrm{iso}}=
+\left(1-\frac{\zeta_t}{k}\right)P_{\widehat{\mathcal X}_t}
++\frac{\zeta_t}{n-k}(I_n-P_{\widehat{\mathcal X}_t}).
 \]
 It retains the mode and mean overlap and makes the eigenvalues equal within the modal subspace and within its orthogonal complement. In beamforming this is the saved matched **mean**; no isotropic density or concentration is fitted for the plot.''')
     markdown('The following deterministic library calls reuse the displayed episode’s stored mean; they do not rerun inference or generate observations.')
     cells.append(nbformat.v4.new_code_cell(DETERMINISTIC_CHECKS[example]));image(2)
     if example=='contact':
-        markdown(r'''Panel (a) uses stationary concentrated inputs. Panel (b) reports absolute episode-average $\mathrm{MSE}(\widehat u)$ for the moving sphere condition: every method, including $\overline P_t^+$, has a pointwise 95% interval across the same 256 independent episodes. MSE is the squared error relative to the clean response $P_{\mathcal X_t}v_t$, averaged within each episode, and is displayed in $(\mathrm{mm}/\mathrm{s})^2$. The supplementary second page shows $\mathrm{MSE}_{\mathrm{ref}}-\mathrm{MSE}_{\mathrm B}$ on paired episodes. This is an absolute difference in squared velocity units, rather than a ratio or relative MSE. The mean's self-difference is exactly zero, which explains its absence from the old difference panel. Intervals of absolute means do not replace paired comparisons.''')
+        markdown(r'''The left plot uses stationary concentrated inputs. The right plot reports absolute time-averaged $\mathcal E_t(D_t)$ for the moving sphere condition: every method, including $\overline P_t^+$, has a pointwise 95% interval across the same 256 Monte Carlo simulations. MSE is the squared error relative to the clean response $P_{\mathcal X_t}v_t$, averaged within each episode, and is displayed in $(\mathrm{mm}/\mathrm{s})^2$. The supplementary second page shows $\mathrm{MSE}_{\mathrm{ref}}-\mathrm{MSE}_{\mathrm B}$ on paired episodes. This is an absolute difference in squared velocity units, rather than a ratio or relative MSE. The mean's self-difference is exactly zero, which explains its absence from the old difference panel. Intervals of absolute means do not replace paired comparisons.''')
     markdown(findings['task'])
     markdown(r'''## 4. Which uncertainty matters for the decision
 
@@ -403,8 +458,8 @@ For a fixed query, the posterior squared response risk is
 \mathbb E[\|P_{\mathcal X_t}v-\overline P_t^+v\|^2\mid u_{1:t}]
 =v^H[\overline P_t^+-(\overline P_t^+)^2]v.
 \]
-Under the full belief, using another action $\overline P_t^{\mathrm{iso}}v$ adds exactly $\|(\overline P_t^+-\overline P_t^{\mathrm{iso}})v\|^2$ to this expected response error. This is model-based optimality; paired test episodes determine whether it yields a practical advantage under the data-generating process. The matched isotropic control has the same mode and mean squared chordal distance, but can change directional risk and the task action. '''+SECTION_NOTES[3]+(r''' In the contact risk panel, $v(\theta)=\cos\theta\,e_2+\sin\theta\,e_3$ is a unit query and $\theta$ is measured in radians. The vertical axis is $v(\theta)^\top[\overline P-(\overline P)^2]v(\theta)$, where $\overline P$ denotes the full $\overline P_t^+$ or the matched $\overline P_t^{\mathrm{iso}}$ indicated in the legend. Each curve uses its own belief and its own mean; they are not two algorithms' errors against a common truth. The visible orange marker identifies the common modal normal; its antipode is the same contact plane. The constructed equal-distance-law counterexample is a separately identified supplementary page.''' if example=='contact' else r''' The lower panel is a paired repeated-episode difference against the matched isotropic action. The sphere above is a real-coefficient restriction of the complex density; it has no normalized real-sphere probability interpretation.'''));image(3)
-    markdown('## 5. Learning variances for future observations\n\n'+SECTION_NOTES[4]);image(4);markdown(findings['noise'])
+Under the full belief, using another action $\overline P_t^{\mathrm{iso}}v$ adds exactly $\|(\overline P_t^+-\overline P_t^{\mathrm{iso}})v\|^2$ to this expected response error. This is model-based optimality; paired test Monte Carlo simulations determine whether it yields a practical advantage under the data-generating process. The matched isotropic control has the same mode and mean squared chordal distance, but can change directional risk and the task action. '''+SECTION_NOTES[3]+(r''' In the contact risk panel, $v(\theta)=\cos\theta\,e_2+\sin\theta\,e_3$ is a unit query and $\theta$ is measured in radians. The vertical axis is $v(\theta)^\top[\overline P-(\overline P)^2]v(\theta)$, where $\overline P$ denotes the full $\overline P_t^+$ or the matched $\overline P_t^{\mathrm{iso}}$ indicated in the legend. Each curve uses its own belief and its own mean; they are not two algorithms' errors against a common truth. The visible orange marker identifies the common modal normal; its antipode is the same contact plane. The constructed equal-distance-law counterexample is a separately identified supplementary page.''' if example=='contact' else r''' The lower panel is a paired Monte Carlo difference against the matched isotropic action. The sphere above is a real-coefficient restriction of the complex density; it has no normalized real-sphere probability interpretation.''')+('\n\n'+MAIN_PLOT_NOTES['contact_risk'] if example=='contact' else ''));image(3)
+    markdown('## 5. Learning variances for future observations\n\n'+SECTION_NOTES[4]+('\n\n'+MAIN_PLOT_NOTES['beamforming_noise'] if example=='beamforming' else ''));image(4);markdown(findings['noise'])
     calibration_targets=(r'For a known unit complex query $q$, the clean scalar target is $q^H Pq$.' if example=='beamforming' else r'For a known unit real query $q$, the clean scalar target is $e_1^T Pq$, the first component of its projected response.')
     markdown('## 6. Coverage of credible regions\n\nThese calibration experiments use $n=3$ reliability fixtures with unit queries. '+calibration_targets+r' The noisy target is $\operatorname{Re}(u_{t,1})$; contact observations are real. State ball/HPD reports target the latent subspace and remain separate from these scalar reports. '+('The sensor counts $n=32,64,128$ belong to the task-performance cohorts; these calibration fixtures do not establish coverage at those dimensions. ' if example=='beamforming' else 'The scalar widths use these fixture units rather than the physical trajectory velocity scale. ')+'The first page checks the matched joint prior-predictive regime at $t=64$; the second shows the predeclared drift diagnostic at the same checkpoint. The appended PDF pages show 95% state-ball chordal radii and scalar interval widths at t=64 across all three regimes; each value is computed per independent episode. Fixed-state inclusion checks and all numerical records remain in the full PDF and summary tables.');image(5);image(6);markdown(findings['calibration'])
     markdown('## 7. Computation and the decision to use the framework\n\n'+SECTION_NOTES[5]);image(7);markdown(findings['cost'])
@@ -438,6 +493,11 @@ Under the full belief, using another action $\overline P_t^{\mathrm{iso}}v$ adds
         'source_arrays':'Frozen published numerical data; no inference or benchmark rerun',
     }
     nb.cells[0].source+='\n\nEvery figure is now drawn by the full Matplotlib code in its own cell. Edit `DPI`, `FIGSIZE`, labels, styles, color scales or the PDF save command there. The setup cell exposes the shared `rcParams`. The one-line data loaders read the saved numerical arrays only. Notebook exports are separate from the published PDFs, so plotting experiments leave the scientific results intact.'
+    for cell in nb.cells:
+        if cell.cell_type == 'markdown':
+            cell.source=cell.source.replace('episode-average','time-averaged').replace('within-episode','within-simulation')
+            cell.source=re.sub(r'\bepisodes\b','Monte Carlo simulations',cell.source)
+            cell.source=re.sub(r'\bepisode\b','simulation',cell.source)
     nbformat.validate(nb)
     return nb
 

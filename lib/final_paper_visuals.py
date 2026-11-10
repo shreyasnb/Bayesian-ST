@@ -25,28 +25,28 @@ from .distribution_geometry_visuals import (
 
 
 METHODS = {
-    'mean': r'$\overline P_t^+$',
-    'mode': r'$P_{\widehat{\mathcal X}_t}$',
-    'iso': r'$\overline P_t^{\mathrm{iso}}$',
-    'isotropic': r'$\overline P_t^{\mathrm{iso}}$',
+    'mean': r'Posterior mean $\overline P_t^+$',
+    'mode': r'Mode $P_{\widehat{\mathcal X}_t}$',
+    'iso': r'Isotropic mean $\overline P_t^{\mathrm{iso}}$',
+    'isotropic': r'Isotropic mean $\overline P_t^{\mathrm{iso}}$',
     'mode_loaded': 'Loaded mode',
     'modal_loading': 'Loaded modal beamformer',
-    'covariance_loading': 'Loaded EW covariance',
-    'regularized': 'Regularized\nprojector',
-    'scm': 'Loaded EW covariance',
-    'scm_loaded': 'Loaded EW covariance',
-    'ew_covariance': 'EW covariance',
+    'covariance_loading': 'Regularized sample covariance',
+    'regularized': 'Regularized projector',
+    'scm': 'Regularized sample covariance',
+    'scm_loaded': 'Regularized sample covariance',
+    'ew_covariance': 'Sample covariance',
     'lw': 'Ledoit--Wolf',
     'grouse': 'GROUSE',
     'great': 'GREAT',
     'great_window': 'GREAT',
-    'great_ew': 'GREAT EW',
-    'oracle': 'Known covariance',
+    'great_ew': 'GREAT (exponential weighting)',
+    'oracle': r'$p_t^\star$ reference',
     'known': 'True variances',
     'exact_known': r'True variances, $\beta=1$',
-    'known_forgetting': 'True variances, forgetting',
-    'misspecified': 'Fixed variances',
-    'learned': 'Learned variances',
+    'known_forgetting': 'True variances',
+    'misspecified': 'Fixed variance estimates',
+    'learned': 'EM variance estimates',
     'block_em': 'Block EM',
     'residual': 'Residual fit',
     'ridge': 'Ridge regression',
@@ -85,9 +85,9 @@ DENSITY_CMAP.set_under(DENSITY_CMAP(0.))
 DENSITY_CMAP.set_over(DENSITY_CMAP(1.))
 PAPER_STYLE = {
     'text.usetex': True, 'text.latex.preamble': r'\usepackage{amsmath}\usepackage{amssymb}',
-    'font.family': 'serif', 'font.size': 11.,
-    'axes.labelsize': 11., 'legend.fontsize': 10.,
-    'xtick.labelsize': 10., 'ytick.labelsize': 10.,
+    'font.family': 'serif', 'font.size': 12.,
+    'axes.labelsize': 12., 'legend.fontsize': 11.,
+    'xtick.labelsize': 11., 'ytick.labelsize': 11.,
     'lines.linewidth': 1.6, 'lines.markersize': 4.,
     'figure.dpi': DPI, 'savefig.dpi': DPI, 'savefig.bbox': None,
     'figure.figsize': (FIGURE_WIDTH, 3.2),
@@ -149,6 +149,8 @@ def prepare_paper_axes(fig):
     if not getattr(fig, '_implementation_spacing', False):
         fig.set_figheight(max(3.35, float(fig.get_figheight())*1.14))
         fig._implementation_spacing = True
+    if fig.get_layout_engine() is not None and hasattr(fig.get_layout_engine(), 'set'):
+        fig.get_layout_engine().set(h_pad=.12, w_pad=.08)
     from matplotlib.ticker import FixedLocator, NullLocator, LogFormatterSciNotation, ScalarFormatter, FuncFormatter
     for ax in fig.axes:
         for name in ('x','y'):
@@ -419,8 +421,8 @@ def density_sphere(ax, nodes, log_density, norm, coordinate='n', mode=None, trut
     ax.set_ylabel(r'$' + coordinate + r'_2$', labelpad=-2)
     ax.set_zlabel('')
     ax.text2D(.95, .67, r'$' + coordinate + r'_3$', transform=ax.transAxes,
-              rotation=90, ha='center', va='center', fontsize=11.)
-    ax.tick_params(labelsize=10., pad=-2, length=1)
+              rotation=90, ha='center', va='center', fontsize=12.)
+    ax.tick_params(labelsize=11., pad=-2, length=1)
     ax.grid(False)
     for axis in (ax.xaxis, ax.yaxis, ax.zaxis):
         axis.pane.set_facecolor((1., 1., 1., 0.))
@@ -436,39 +438,45 @@ def density_sphere(ax, nodes, log_density, norm, coordinate='n', mode=None, trut
 
 
 def _draw_task_dimensions(ax, evidence):
+    """Stationary exact-covariance power, with one value per simulation."""
     frame = _primary(evidence.frame('performance', 'stationary', 'metrics'))
-    xname = 'ratio' if 'ratio' in frame else None
-    if xname is None:
-        Lname = _column(frame, 'L', 't', 'observations')
-        frame['ratio'] = frame[Lname] / frame.n
-    value = _column(frame, 'heldout_ratio_db', 'output_oracle_db',
-                    'heldout_power_ratio_db', 'response_mse')
-    if evidence.example == 'contact':
+    if evidence.example == 'beamforming':
+        required = {'condition','t','n','episode','method','true_ratio_db'}
+        if not required <= set(frame):
+            raise KeyError('Exact stationary output needs raw true_ratio_db records: '
+                           + ', '.join(sorted(required-set(frame))))
+        dimensions = [32,64,128] if evidence.stage == 'paper' else sorted(frame.n.unique())
+        frame = frame[frame.condition.eq('static') & frame.t.eq(frame.n)
+                      & frame.n.isin(dimensions)]
+        value = 'true_ratio_db'
+    else:
+        dimensions = sorted(frame.n.unique())
         value = _column(frame, 'response_mse', 'response_loss', 'heldout_response_mse')
     methods = [method for method in ('mean','mode','scm_loaded','great_window')
-        if method in set(frame.method.astype(str))]
-    # The principal panel uses the four declared ratios and all new dimensions.
-    ratios = sorted(frame.ratio.unique())
-    styles = ['-', '--', '-.', ':']
-    for index, (ratio, group) in enumerate(frame.groupby('ratio', sort=True)):
-        if ratio not in (1.,):
-            continue
-        for method in methods:
-            g = group[group.method.eq(method)]
-            means, lows, highs, dimensions = [], [], [], []
-            for n, h in g.groupby('n', sort=True):
-                h = h.groupby('episode', sort=False)[value].mean()
-                mean, low, high = _mean_interval(h)
-                dimensions.append(n); means.append(mean); lows.append(low); highs.append(high)
-            ax.plot(dimensions, means, linestyle='-', marker=marker(method),
-                    color=color(method), label=method_label(method, evidence.example))
-            if method=='mean':ax.fill_between(dimensions,lows,highs,color=color(method),alpha=.10)
-    ax.set_xlabel('Number of sensors' if evidence.example == 'beamforming' else 'Number of observations')
-    ax.set_ylabel('Output power / oracle power (dB)' if evidence.example == 'beamforming' else 'Response MSE')
+               if method in set(frame.method.astype(str))]
+    for method in methods:
+        means,lows,highs,observed_dimensions = [],[],[],[]
+        for n in dimensions:
+            sample = frame[frame.method.eq(method)&frame.n.eq(n)].groupby('episode',sort=False)[value].mean()
+            if (evidence.example == 'beamforming' and evidence.stage == 'paper'
+                    and (len(sample)!=256 or not np.isfinite(sample).all())):
+                raise ValueError('Stationary exact-power figure needs 256 finite Monte Carlo simulations: '
+                                 +method+', n='+str(n))
+            if not len(sample):
+                continue
+            mean,low,high = _mean_interval(sample)
+            observed_dimensions.append(n);means.append(mean);lows.append(low);highs.append(high)
+        ax.plot(observed_dimensions,means,'-',marker=marker(method),color=color(method),
+                label=method_label(method,evidence.example))
+        if method=='mean':
+            ax.fill_between(observed_dimensions,lows,highs,color=color(method),alpha=.10)
+    ax.set_xlabel('Number of sensors $n$' if evidence.example=='beamforming' else 'Number of measurements')
+    ax.set_ylabel(r'$\ell_t$ (dB)' if evidence.example=='beamforming' else 'Squared velocity error')
     clean(ax)
-    ax._final_selection=dict(cohort='stationary',observations_per_sensor=1,
-        dimensions=sorted(frame.n.unique().tolist()),episode_scope='All independent test episodes')
-
+    ax._final_selection=dict(cohort='stationary',condition='static',measurement_selection='t=n',
+        observations_per_sensor=1,dimensions=dimensions,endpoint=value,
+        simulation_scope='All 256 independent test Monte Carlo simulations at each dimension',
+        power_definition='10 log10(w_t^H R_t w_t / p_t^star); exact saved covariance output')
 
 def _episode_losses(frame, endpoint):
     frame = _primary(frame)
@@ -492,7 +500,8 @@ def _boxplot(ax,data,**kwargs):
 def _draw_paired_tasks(ax, evidence, all_references=False, condition=None, references=None, confidence=False):
     if evidence.example == 'beamforming':
         frame = evidence.frame('performance', 'moving_episodes', 'episode_metrics', 'moving', 'stationary')
-        endpoint = _column(frame, 'heldout_ratio_db', 'output_oracle_db', 'heldout_power')
+        endpoint = 'true_ratio_db'
+        if endpoint not in frame:raise KeyError('Moving-array power comparison requires true_ratio_db')
     else:
         frame = evidence.frame('performance', 'episode_metrics', 'metrics')
         endpoint = _column(frame, 'response_mse', 'response_loss', 'heldout_response_mse')
@@ -539,8 +548,8 @@ def _draw_paired_tasks(ax, evidence, all_references=False, condition=None, refer
             patch.set_facecolor(c)
             patch.set_alpha(.85)
     ax.axvline(0., linestyle='--', color=BLACK, linewidth=1.)
-    ax.set_xlabel('Paired loss difference (dB)' if evidence.example == 'beamforming'
-                  else r'$\mathrm{MSE}_{\mathrm{ref}}-\mathrm{MSE}_{\mathrm{B}}$ $((\mathrm{mm}/\mathrm{s})^2)$')
+    ax.set_xlabel(r'$\ell_t(D)-\ell_t(\overline P_t^+)$ (dB)' if evidence.example == 'beamforming'
+                  else r'$\mathcal E_{\mathrm{ref}}-\mathcal E_{\mathrm B}$ $((\mathrm{mm}/\mathrm{s})^2)$')
     clean(ax, 'x')
     ax._final_selection=dict(condition=condition,n=n if 'n' in frame else None,
         endpoint=endpoint,displayed_references=list(references),
@@ -554,7 +563,7 @@ def task_performance(evidence):
         fig, axes = plt.subplots(1,2,figsize=(FIGURE_WIDTH,4.1),layout='constrained',gridspec_kw={'width_ratios':(1.,1.1)})
         _draw_task_dimensions(axes[0], evidence)
         _draw_paired_tasks(axes[1], evidence)
-        fig.legend(*axes[0].get_legend_handles_labels(),loc='outside lower center',ncol=2,frameon=False,fontsize=10.)
+        fig.legend(*axes[0].get_legend_handles_labels(),loc='outside lower center',ncol=2,frameon=False,fontsize=11.)
     else:
         frame = _primary(evidence.frame('performance', 'metrics', 'episode_metrics'))
         if 'endpoint' in frame:
@@ -580,14 +589,14 @@ def task_performance(evidence):
                 if method=='mean':
                     axes[0].fill_between(points[:, 0], points[:, 2], points[:, 3],
                                          color=color(method), alpha=.10)
-            axes[0].set_xlabel(r'$t$ (observations)')
-            axes[0].set_ylabel(r'$\mathrm{MSE}(\widehat u_t)$ $((\mathrm{mm}/\mathrm{s})^2)$')
+            axes[0].set_xlabel(r'Measurement index $t$')
+            axes[0].set_ylabel(r'$\mathcal E_t(D_t)$ $((\mathrm{mm}/\mathrm{s})^2)$')
             axes[0].margins(y=.12)
             clean(axes[0])
         else:
             _draw_paired_tasks(axes[0], evidence)
         _draw_contact_absolute_tasks(axes[1], evidence)
-        fig.legend(*axes[0].get_legend_handles_labels(),loc='outside lower center',ncol=2,frameon=False,fontsize=10.)
+        fig.legend(*axes[0].get_legend_handles_labels(),loc='outside lower center',ncol=2,frameon=False,fontsize=11.)
         axes[0]._final_selection=dict(condition=condition,displayed_methods=['mean','mode','regularized','great_window'],
             omitted_methods='All remaining methods are retained in additional_comparisons.pdf')
     for ax, tag in zip(axes, ('(a)', '(b)')):
@@ -616,7 +625,7 @@ def _draw_contact_absolute_tasks(ax, evidence):
             color=color(method),capsize=3.,markersize=5.)
     ax.set(yticks=np.arange(1,len(methods)+1),
         yticklabels=[method_label(key) for key in methods],ylim=(.5,len(methods)+.5),
-        xlabel=r'$\mathrm{MSE}(\widehat u)$ $((\mathrm{mm}/\mathrm{s})^2)$')
+        xlabel=r'Time-averaged $\mathcal E_t(D_t)$ $((\mathrm{mm}/\mathrm{s})^2)$')
     clean(ax,'x')
     ax._final_selection=dict(condition='sphere',endpoint='episode_average',
         displayed_methods=methods,episodes=len(common),diagnostic='absolute_response_mse',
@@ -668,7 +677,7 @@ def setup(evidence):
         if interfering is not None:
             ax.axvline(np.rad2deg(float(interfering)), color='#D55E00', linestyle=':', linewidth=1.)
         ax.set_xlabel('Arrival angle (deg)'); ax.set_ylabel(r'$|w^H a(\theta)|^2$ (dB)')
-        ax.legend(frameon=False, fontsize=10.); clean(ax)
+        ax.legend(frameon=False, fontsize=11.); clean(ax)
     else:
         grid = fig.add_gridspec(1, 2, width_ratios=(1.15, 1.))
         ax = fig.add_subplot(grid[0, 0], projection='3d')
@@ -708,7 +717,7 @@ def setup(evidence):
         ax.autoscale_view()
         ax.axhline(0., color=GREY, linewidth=.8)
         ax.set_xlabel('Tangential velocity (mm/s)'); ax.set_ylabel('Normal velocity (mm/s)')
-        ax.legend(frameon=False, fontsize=10.); clean(ax)
+        ax.legend(frameon=False, fontsize=11.); clean(ax)
     for i, ax in enumerate([ax for ax in fig.axes if ax.get_label() != '<colorbar>']):
         letter(ax, f'({chr(97+i)})')
     fig._final_selection=dict(episode=0,story=evidence.config('performance').get('story',{}),
@@ -732,11 +741,11 @@ def _draw_contact_risk(ax, record):
         angles = np.linspace(0., 2*np.pi, len(query), endpoint=False)
     ax.plot(angles, risk/norm2, color=color('mean'), label=r'$\overline P_t^+$')
     ax.plot(angles, iso/norm2, '--', color=color('iso'), label=r'$\overline P_t^{\mathrm{iso}}$')
-    ax.set_xlabel(r'$\theta$ (rad)'); ax.set_ylabel(r'$v^\top(\overline P-\overline P^2)v/\|v\|^2$')
+    ax.set_xlabel(r'$\theta$ (rad)'); ax.set_ylabel(r'$r_t(v(\theta))/v_0^2$')
     ax.set(xticks=np.linspace(0., 2*np.pi, 5),
            xticklabels=[r'$0$',r'$\pi/2$',r'$\pi$',r'$3\pi/2$',r'$2\pi$'])
-    ax.legend(frameon=False, fontsize=10.); clean(ax)
-    ax._final_selection=dict(query_family=1,normalization='Squared norm of saved query')
+    ax.legend(frameon=False, fontsize=11.); clean(ax)
+    ax._final_selection=dict(query_family=1,normalization='r_t(v(theta))/v0^2; saved unit-input curve unchanged',v0_m_per_s=.02)
 
 
 def posterior_anisotropy(evidence):
@@ -780,21 +789,22 @@ def posterior_anisotropy(evidence):
         pi = _saved(record, 'section_iso_mean_eigenvalues', 'setup_iso_mean_eigenvalues')
         ax.plot(np.arange(2, len(p)+1), p[1:], 'o-', color=color('mean'), label=r'$\overline P_t^+$')
         ax.plot(np.arange(2, len(pi)+1), pi[1:], '^--', color=color('iso'), label=r'$\overline P_t^{\mathrm{iso}}$')
-        ax.set_yscale('log'); ax.set_xlabel('Complementary direction')
-        ax.set_ylabel('Mean eigenvalue'); ax.legend(frameon=False, fontsize=10.); clean(ax)
+        ax.set_yscale('log'); ax.set_xlabel(r'Eigenvalue index $j$')
+        ax.set_ylabel('Eigenvalue'); ax.legend(frameon=False, fontsize=11.); clean(ax)
         risk_ax = fig.add_subplot(grid[1,:])
         frame_data = _normalize(evidence.frame('performance', 'stationary'))
-        frame_data = frame_data[frame_data.n.eq(64)]
+        frame_data = frame_data[frame_data.n.eq(64)&frame_data.condition.eq('static')]
         horizon = _column(frame_data, 'L', 't', 'observations')
         frame_data = frame_data[frame_data[horizon].eq(64)]
-        value = _column(frame_data, 'heldout_ratio_db', 'output_oracle_db')
+        value = 'true_ratio_db'
+        if value not in frame_data:raise KeyError('Stationary anisotropy comparison requires true_ratio_db')
         full = frame_data[frame_data.method.eq('mean')].set_index('episode')[value]
         iso = frame_data[frame_data.method.isin(['iso', 'isotropic'])].set_index('episode')[value]
         indices = full.index.intersection(iso.index)
         delta = np.sort((iso.loc[indices]-full.loc[indices]).to_numpy())
         risk_ax.step(delta, np.arange(1, len(delta)+1)/len(delta), color=color('mean'), where='post')
         risk_ax.axvline(0., color=GREY, linestyle='--', linewidth=1.)
-        risk_ax.set_xlabel('Isotropic minus full (dB)'); risk_ax.set_ylabel('Fraction of episodes')
+        risk_ax.set_xlabel('Output-power reduction (dB)'); risk_ax.set_ylabel('Empirical CDF')
         clean(risk_ax)
     for ax, tag in zip(axes+[risk_ax], ['(a)', '(b)', '(c)']):
         letter(ax, tag)
@@ -836,9 +846,9 @@ def _constructed_anisotropy(evidence):
         lower[0].plot(g.radius,g.cdf,color=c,linestyle=style,label=label)
         g=directional[directional.case.eq(case)&directional.angle.notna()]
         lower[1].plot(g.angle,g.risk,color=c,linestyle=style,label=label)
-    lower[0].set(xlabel='Chordal distance',ylabel='Cumulative probability')
+    lower[0].set(xlabel=r'$d_c$',ylabel='Cumulative probability')
     lower[1].set(xlabel=r'$\theta$ (rad)',ylabel=r'$v^\top(\overline P-\overline P^2)v$')
-    for ax in lower:ax.legend(frameon=False,fontsize=10.);clean(ax)
+    for ax in lower:ax.legend(frameon=False,fontsize=11.);clean(ax)
     for ax,tag in zip(spheres+lower,['(a)','(b)','(c)','(d)']):letter(ax,tag)
     fig._final_selection=dict(scope='Constructed swapped-eigenvalue identity, not data-generated performance',
         normal_parameters=parameters.tolist(),same_mode=True,same_entire_centered_chordal_distance_law=True)
@@ -864,74 +874,83 @@ def _condition_groups(frame):
     return [(name, frame[frame.condition.eq(name)]) for name in ordered]
 
 
-def _draw_variance_time(ax, frame, example, signal=False, legend=True):
-    time = _column(frame, 'time_s', 't')
+def _draw_variance_time(ax, frame, example, signal=False, legend=True, config=None):
+    """Use pre-correction estimates at stored integer measurement indices."""
+    time = 't'
     true = 'tau2_true' if signal else 'sigma2_true'
     fitted = 'tau2_estimate' if signal else 'sigma2_estimate'
-    scale = 1e6 if example == 'contact' and not signal else 1.
-    if true not in frame or fitted not in frame:
-        raise KeyError(f'Causal variance trajectories need {true} and {fitted}')
-    for method in ['known', 'exact_known', 'known_forgetting', 'misspecified', 'learned']:
+    scale = 1e6 if example=='contact' and not signal else 1.
+    if not {time,true,fitted} <= set(frame):
+        raise KeyError(f'Variance trajectories need stored t, {true} and {fitted}')
+    truth = frame.groupby(time)[true].first().sort_index()
+    condition = str(frame.condition.iloc[0]) if 'condition' in frame else ''
+    config = {} if config is None else config
+    length = int(config.get('primary_beam_T' if example=='beamforming' else 'primary_contact_T',
+                            int(frame.t.max())))
+    full_t = np.arange(1,length+1)
+    if condition in ('noise_change','power_change'):
+        full_truth = np.where(full_t<=length//2,float(truth.iloc[0]),float(truth.iloc[-1]))
+        if not np.allclose(full_truth[truth.index.to_numpy(dtype=int)-1],truth.to_numpy(),
+                           rtol=1e-12,atol=1e-12):
+            raise ValueError('Saved true variance does not match the declared change schedule')
+    elif truth.nunique()==1:
+        full_truth = np.full(length,float(truth.iloc[0]))
+    else:
+        raise ValueError('A dense true-variance schedule is unavailable for '+condition)
+    ax.step(full_t,full_truth*scale,where='mid',color=BLACK,linestyle='--',
+            linewidth=1.35,label='True variances')
+    if not np.isclose(full_truth[0],full_truth[-1]):
+        ax.axvline(length//2+.5,color=GREY,linestyle=':',linewidth=.7)
+    # The supplied-true-variance line above is the full schedule, not its sparse
+    # checkpoint approximation. Fitted values remain the recorded pre-u_t ones.
+    for method in ['exact_known','known_forgetting','misspecified','learned']:
         group = frame[frame.method.eq(method)]
         if group.empty:
             continue
         grouped = group.groupby(time)[fitted]
         points = grouped.median()
-        c = color(method)
-        ax.step(points.index, points*scale, where='post', color=c,
-                linestyle='--' if method == 'misspecified' else '-',
-                marker=marker(method), label=method_label(method))
-        if method == 'learned':
-            low, high = grouped.quantile(.25), grouped.quantile(.75)
-            ax.fill_between(points.index, low*scale, high*scale, color=c, alpha=.13, step='post')
-    truth = frame.groupby(time)[true].first()
-    ax.step(truth.index, truth*scale, where='post', color=BLACK, linestyle=':',
-            linewidth=1.35, label=r'$\tau_t^2$' if signal else r'$\sigma_t^2$')
-    differences = np.flatnonzero(np.abs(np.diff(truth.to_numpy())) > 1e-12)
-    for index in differences:
-        ax.axvline(truth.index[index+1], color=GREY, linestyle=':', linewidth=.7)
-    ax.set_xlabel('Time (s)' if time == 'time_s' else 'Number of observations')
-    ax.set_ylabel(r'Signal variance $\tau^2$' if signal else
-        r'Noise variance $((\mathrm{mm}/\mathrm{s})^2)$' if example == 'contact'
-        else r'Noise variance $\sigma^2$')
-    if legend:ax.legend(frameon=False, fontsize=10., ncol=1,loc='upper left')
+        ax.plot(points.index,points*scale,color=color(method),
+                linestyle='--' if method=='misspecified' else '-',marker=marker(method),
+                label=method_label(method))
+        if method=='learned':
+            low,high=grouped.quantile(.25),grouped.quantile(.75)
+            ax.fill_between(points.index,low*scale,high*scale,color=color(method),alpha=.13)
+    ax.set_xlim(1,length)
+    ax.set_xlabel(r'Measurement index $t$')
+    ax.set_ylabel(r'Signal variance $\tau_t^2,\widehat{\tau}_t^2$' if signal else
+        r'Noise variance $((\mathrm{mm}/\mathrm{s})^2)$' if example=='contact' else
+        r'Noise variance $\sigma_t^2,\widehat{\sigma}_t^2$')
+    if legend:ax.legend(frameon=False,fontsize=11.,ncol=1,loc='upper left')
     clean(ax)
-
+    ax._final_variance_timing=dict(index='stored t',estimate='before receiving u_t',
+        fitted_next_effect='t+1',true_change_boundary=length//2+.5 if not np.isclose(full_truth[0],full_truth[-1]) else None)
 
 def _draw_future_time(ax, frame, example, scores=False, legend=True):
-    time = _column(frame, 'time_s', 't')
-    if scores:
-        endpoint = _finite_column(frame, 'prequential_score', 'mixture_log_score')
-    elif example == 'beamforming':
-        endpoint = _finite_column(frame, 'heldout_output_oracle_db', 'heldout_ratio_db')
-    else:
-        endpoint = _finite_column(frame, 'future_task_loss', 'observed_response_mse')
-    scale = 1e6 if example == 'contact' and not scores else 1.
-    for method in ['known', 'exact_known', 'known_forgetting', 'misspecified', 'learned']:
-        group = frame[frame.method.eq(method)]
-        if group.empty:
-            continue
-        rows = []
-        for t, g in group.groupby(time, sort=True):
-            values = (g.groupby('episode')[endpoint].mean()*scale).dropna()
-            if not len(values):
-                continue
-            mean, low, high = _mean_interval(values)
-            rows.append((t, mean, low, high))
+    time='t'
+    if time not in frame:
+        raise KeyError('Prediction displays require the stored integer measurement index t')
+    endpoint = 'prequential_score' if scores else 'output_oracle_db' if example=='beamforming' else _finite_column(frame,'future_task_loss','observed_response_mse')
+    if endpoint not in frame:
+        raise KeyError('Saved prediction records are missing the requested endpoint: '+endpoint)
+    scale=1e6 if example=='contact' and not scores else 1.
+    for method in ['known','exact_known','known_forgetting','misspecified','learned']:
+        rows=[]
+        for t,group in frame[frame.method.eq(method)].groupby(time,sort=True):
+            values=(group.groupby('episode')[endpoint].mean()*scale).dropna()
+            if len(values):
+                rows.append((t,*_mean_interval(values)))
         if not rows:
             continue
-        points = np.asarray(rows)
-        ax.plot(points[:, 0], points[:, 1], marker=marker(method), color=color(method),
-                linestyle='--' if method == 'misspecified' else '-',
-                label=method_label(method))
-        ax.fill_between(points[:, 0], points[:, 2], points[:, 3], color=color(method), alpha=.09)
-    ax.set_xlabel('Time (s)' if time == 'time_s' else 'Number of observations')
-    ax.set_ylabel('Predictive log score' if scores else
-        'Output power / oracle power (dB)' if example == 'beamforming' else
-        r'Observed future response MSE $((\mathrm{mm}/\mathrm{s})^2)$')
-    if legend:ax.legend(frameon=False, fontsize=10.)
+        points=np.asarray(rows)
+        ax.plot(points[:,0],points[:,1],marker=marker(method),color=color(method),
+                linestyle='--' if method=='misspecified' else '-',label=method_label(method))
+        ax.fill_between(points[:,0],points[:,2],points[:,3],color=color(method),alpha=.09)
+    ax.set_xlabel(r'Measurement index $t$')
+    ax.set_ylabel(r'$\log\pi_t(u_t)$' if scores else r'$\ell_t$ (dB)' if example=='beamforming'
+                  else r'Squared velocity error $((\mathrm{mm}/\mathrm{s})^2)$')
+    if legend:ax.legend(frameon=False,fontsize=11.)
     clean(ax)
-
+    ax._final_endpoint=dict(column=endpoint,time='stored t',information='Prior before receiving u_t')
 
 def noise_adaptation(evidence):
     frame = _prediction_rows(evidence)
@@ -939,8 +958,8 @@ def noise_adaptation(evidence):
     for condition, group in _condition_groups(frame):
         if evidence.example == 'beamforming':
             fig, axes = plt.subplots(2, 2, figsize=(FIGURE_WIDTH, 5.4), layout='constrained')
-            _draw_variance_time(axes[0, 0], group, evidence.example,legend=False)
-            _draw_variance_time(axes[0, 1], group, evidence.example, signal=True,legend=False)
+            _draw_variance_time(axes[0, 0], group, evidence.example,legend=False,config=evidence.config('prediction'))
+            _draw_variance_time(axes[0, 1], group, evidence.example, signal=True,legend=False,config=evidence.config('prediction'))
             _draw_future_time(axes[1, 0], group, evidence.example,legend=False)
             _draw_future_time(axes[1, 1], group, evidence.example, scores=True,legend=False)
             flattened = axes.ravel()
@@ -948,7 +967,7 @@ def noise_adaptation(evidence):
             fig = plt.figure(figsize=(FIGURE_WIDTH, 5.1), layout='constrained')
             grid = fig.add_gridspec(2, 2)
             flattened = [fig.add_subplot(grid[0, :]), fig.add_subplot(grid[1, 0]), fig.add_subplot(grid[1, 1])]
-            _draw_variance_time(flattened[0], group, evidence.example,legend=False)
+            _draw_variance_time(flattened[0], group, evidence.example,legend=False,config=evidence.config('prediction'))
             _draw_future_time(flattened[1], group, evidence.example,legend=False)
             _draw_future_time(flattened[2], group, evidence.example, scores=True,legend=False)
         for ax, tag in zip(flattened, ['(a)', '(b)', '(c)', '(d)']):
@@ -956,7 +975,7 @@ def noise_adaptation(evidence):
         handles={}
         for ax in flattened:
             for handle,label in zip(*ax.get_legend_handles_labels()):handles.setdefault(label,handle)
-        fig.legend(list(handles.values()),list(handles),loc='outside lower center',ncol=3,frameon=False,fontsize=10.)
+        fig.legend(list(handles.values()),list(handles),loc='outside lower center',ncol=3,frameon=False,fontsize=11.)
         fig._final_condition = str(condition)
         figures.append(fig)
     if evidence.example == 'contact':
@@ -1054,7 +1073,7 @@ def variance_estimation(evidence):
         axes[0].plot(group.iteration, group.log_evidence-group.log_evidence.iloc[0],
                      'o-', color=palette[index % len(palette)], markersize=2.5, label=label)
     axes[0].set_xlabel('EM iteration'); axes[0].set_ylabel('Log-evidence increase')
-    axes[0].legend(frameon=False, fontsize=10.); clean(axes[0])
+    axes[0].legend(frameon=False, fontsize=11.); clean(axes[0])
     data, ticks, positions, boxcolors = [], [], [], []
     for index, start in enumerate(starts):
         group = fits[fits.start.eq(start)]
@@ -1074,7 +1093,7 @@ def variance_estimation(evidence):
     handles = [Patch(facecolor=color('mean'), label=r'$\widehat\sigma^2/\sigma^2$')]
     if evidence.example == 'beamforming':
         handles.append(Patch(facecolor=color('iso'), label=r'$\widehat\tau^2/\tau^2$'))
-    axes[1].legend(handles=handles, frameon=False, fontsize=10.); clean(axes[1], 'y')
+    axes[1].legend(handles=handles, frameon=False, fontsize=11.); clean(axes[1], 'y')
     if evidence.example == 'contact':
         residual = _reference_frame(evidence, 'em', 'residuals')
         residual = residual[residual.model.eq(model)]
@@ -1090,6 +1109,20 @@ def variance_estimation(evidence):
     for ax, tag in zip(axes, ['(a)', '(b)', '(c)']):
         letter(ax, tag)
     return [fig]
+
+
+def _calibration_method_label(evidence, method):
+    """Keep saved forgetting factors explicit for the true-variance references."""
+    if method not in ('exact_known','known','known_forgetting'):
+        return method_label(method)
+    frame = evidence.frame('prediction','calibration')
+    rows = frame[frame.method.eq(method)]
+    if 'split' in rows:
+        rows = rows[rows.split.eq('test')]
+    factors = rows.beta.dropna().unique()
+    if len(factors)!=1:
+        raise ValueError('Calibration reference needs one recorded beta: '+method)
+    return r'True variances, $\beta='+format(float(factors[0]),'g')+'$'
 
 
 def predictive_calibration(evidence):
@@ -1133,15 +1166,15 @@ def predictive_calibration(evidence):
                         upper = 1. if successes == count else beta_distribution.ppf(.975, successes+1, count-successes)
                     xs.append(probability); ys.append(inclusion); lows.append(lower); highs.append(upper)
                 ax.plot(xs, ys, marker=marker(method), color=color(method),
-                        linestyle='--' if method == 'misspecified' else '-', label=method_label(method))
+                        linestyle='--' if method == 'misspecified' else '-', label=_calibration_method_label(evidence,method))
                 ax.errorbar(xs,ys,yerr=[np.asarray(ys)-np.asarray(lows),np.asarray(highs)-np.asarray(ys)],
                     fmt='none',ecolor=color(method),alpha=.65,elinewidth=.7,capsize=2.)
             ax.plot([0., 1.], [0., 1.], '--', color=GREY, linewidth=1.)
             ax.set(xlim=(.43,1.02),ylim=(-.01,1.03),xticks=[.5,.8,.95])
-            ax.set_xlabel('Nominal probability'); ax.set_ylabel('Observed inclusion')
+            ax.set_xlabel('Credible level'); ax.set_ylabel('Empirical coverage')
 
             clean(ax); letter(ax, tag)
-        fig.legend(*axes[0].get_legend_handles_labels(),loc='outside lower center',ncol=2,frameon=False,fontsize=10.)
+        fig.legend(*axes[0].get_legend_handles_labels(),loc='outside lower center',ncol=2,frameon=False,fontsize=11.)
         fig._final_condition = str(value[0] if isinstance(value, tuple) else value)
         fig._final_selection = dict(zip(grouping,value if isinstance(value,tuple) else [value]))
         fig._final_selection['diagnostic']='inclusion'
@@ -1157,7 +1190,7 @@ def _calibration_widths(evidence):
         &frame.stress.eq('matched')&frame.t.eq(64)&np.isclose(frame.nominal,.95)]
     methods=['exact_known','known_forgetting','misspecified','learned']
     count=int(evidence.config('prediction')['calibration_test_episodes'])
-    quantities=[('state_ball','Chordal radius'),
+    quantities=[('state_ball',r'Chordal radius $d_c$'),
         ('clean_response',r'Interval width of $q^H Pq$' if evidence.example=='beamforming'
             else r'Interval width of $e_1^T Pq$'),
         ('noisy_observation',r'Interval width of $\operatorname{Re}(u_{t,1})$')]
@@ -1181,7 +1214,7 @@ def _calibration_widths(evidence):
                     width=np.sqrt(upper)
                 arrays.append(width)
             boxes=_boxplot(ax,arrays,orientation='horizontal',
-                tick_labels=[method_label(method) for method in methods],patch_artist=True,
+                tick_labels=[_calibration_method_label(evidence,method) for method in methods],patch_artist=True,
                 medianprops={'color':'white','linewidth':1.2},
                 flierprops={'markersize':1.8,'alpha':.35})
             for box,method in zip(boxes['boxes'],methods):box.set_facecolor(color(method))
@@ -1228,8 +1261,8 @@ def predictive_scores(evidence):
     episode = frame.groupby(keys, sort=False)[list(dict.fromkeys(columns))].mean().reset_index()
     axes[0].scatter(episode[gaussian], episode[mixture], s=10, alpha=.45, color=color('mean'))
     _identity(axes[0], episode[gaussian], episode[mixture])
-    axes[0].set_xlabel('Gaussian predictive log score')
-    axes[0].set_ylabel('Mixture predictive log score')
+    axes[0].set_xlabel('Gaussian log predictive density')
+    axes[0].set_ylabel(r'$\log\pi_t(u_t)$')
     clean(axes[0])
     if predicted is None or realized is None:
         raise KeyError('Predictive scores need saved predicted/realized clean-response risks')
@@ -1294,9 +1327,9 @@ def model_mismatch(evidence):
         for index, box in enumerate(boxes['boxes']):
             box.set_facecolor([color('mean'), color('mode'), color('iso'), GREY][index % 4])
         clean(ax, 'x')
-    axes[0].set_xlabel('Output power / oracle power (dB)' if evidence.example == 'beamforming'
+    axes[0].set_xlabel(r'Measured power / $p_t^\star$ (dB)' if evidence.example == 'beamforming'
                        else r'Response MSE $((\mathrm{mm}/\mathrm{s})^2)$')
-    axes[1].set_xlabel('Predictive log score')
+    axes[1].set_xlabel(r'$\log\pi_t(u_t)$')
     for ax, tag in zip(axes, ['(a)', '(b)']):
         letter(ax, tag)
     fig._final_selection=dict(cohort='mismatch',method='learned',control='mean',
@@ -1310,7 +1343,7 @@ def additional_comparisons(evidence):
     frame=_normalize(evidence.frame('performance',field))
     if 'split' in frame:frame=frame[frame.split.eq('test')]
     if evidence.example=='contact':frame=frame[frame.endpoint.eq('checkpoint')]
-    endpoint=_finite_column(frame,'heldout_ratio_db') if evidence.example=='beamforming' else _finite_column(frame,'response_mse')
+    endpoint='true_ratio_db' if evidence.example=='beamforming' else _finite_column(frame,'response_mse')
     axis='t';scale=1. if evidence.example=='beamforming' else 1e6
     groups=list(frame.groupby('n',sort=True)) if evidence.example=='beamforming' else list(frame.groupby('condition',sort=False))
     prepared=[];maximum=0.
@@ -1341,9 +1374,9 @@ def additional_comparisons(evidence):
             labels.append(r'$\overline P_t^+,G_t=I$' if method=='mean_identity' else r'$P_{\widehat{\mathcal X}_t},G_t=I$' if method=='mode_identity' else method_label(method,evidence.example))
         xlabels=[f'{t/identifier:g}' for t in times] if evidence.example=='beamforming' else [str(t) for t in times]
         ax.set(xticks=np.arange(len(times)),xticklabels=xlabels,yticks=np.arange(len(methods)),yticklabels=labels,
-            xlabel=r'Observations per sensor $L/n$' if evidence.example=='beamforming' else 'Number of observations')
-        fig.colorbar(image,ax=ax,label='Paired loss difference (dB)' if evidence.example=='beamforming' else r'$\mathrm{MSE}_{\mathrm{ref}}-\mathrm{MSE}_{\mathrm{B}}$ $((\mathrm{mm}/\mathrm{s})^2)$',shrink=.85)
-        ax.legend(handles=[Patch(facecolor='none',hatch='///',edgecolor=GREY,label='Interval contains zero')],frameon=False,loc='lower center',bbox_to_anchor=(.5,1.02),fontsize=10.)
+            xlabel=r'Measurements per sensor $t/n$' if evidence.example=='beamforming' else r'Measurement index $t$')
+        fig.colorbar(image,ax=ax,label=r'$\ell_t^{\mathrm{method}}-\ell_t^{\mathrm{mean}}$ (dB)' if evidence.example=='beamforming' else r'$\mathcal E_{\mathrm{ref}}-\mathcal E_{\mathrm B}$ $((\mathrm{mm}/\mathrm{s})^2)$',shrink=.85)
+        ax.legend(handles=[Patch(facecolor='none',hatch='///',edgecolor=GREY,label='Interval contains zero')],frameon=False,loc='lower center',bbox_to_anchor=(.5,1.02),fontsize=11.)
         fig._final_selection={'n':int(identifier)} if evidence.example=='beamforming' else {'condition':str(identifier)}
         fig._final_selection.update(methods=methods,reporting_times=[int(t) for t in times],paired_interval='Pointwise Student95% interval of independent-episode differences; not simultaneous')
         figures.append(fig)
@@ -1380,7 +1413,7 @@ def _draw_cost_tradeoff(ax, evidence):
             if not np.isfinite(loss) or loss<=0:continue
             x.append(float(g.median_ms.median()));y.append(10*np.log10(loss/oracle[0]))
         if x:ax.plot(x,y,marker=marker(method),color=color(method),label=method_label(method,evidence.example))
-    ax.set(xscale='log',xlabel='Episode computation time (ms)',ylabel='Output power / oracle power (dB)')
+    ax.set(xscale='log',xlabel='Computation time (ms)',ylabel=r'$\ell_t$ (dB)')
     clean(ax)
     ax._final_selection=dict(timing_case='task_stationary',performance_episode=0,
         task_loss='True-covariance loss of the same predeclared timing episode, not a population average',
@@ -1406,13 +1439,13 @@ def computation_time(evidence):
         if g.empty:
             continue
         g = g.sort_values('n')
-        label=method_label(method)+(', every observation' if interval==1 else ', every '+str(interval)+' observations')
+        label=method_label(method)+('\nevery observation' if interval==1 else '\nevery '+str(interval)+' observations')
         axes[0].plot(g.n, g[elapsed], marker=marker(method), linestyle=style,
                      color=color(method), label=label)
     axes[0].set_xscale('log', base=2); axes[0].set_yscale('log')
     axes[0].set_xlabel('Ambient dimension' if evidence.example == 'contact' else 'Number of sensors')
     axes[0].set_ylabel('Time for 64 observations (ms)')
-    axes[0].legend(frameon=False,fontsize=10.,ncol=2,loc='lower center',bbox_to_anchor=(.5,1.02));clean(axes[0])
+    axes[0].legend(frameon=False,fontsize=11.,ncol=2,loc='lower center',bbox_to_anchor=(.5,1.02));clean(axes[0])
     n = 3 if evidence.example=='contact' else 32 if 32 in set(cadence.n) else int(cadence.n.max())
     group = cadence[cadence.n.eq(n)]
     if group.method.eq('adaptive_mean').any():
@@ -1444,7 +1477,7 @@ def computation_time(evidence):
         labels.append(name+'\ndecisions every '+str(int(r['action_cadence']))+' obs.')
     axes[1].set(yticks=positions,yticklabels=labels)
     axes[1].set_xlabel('Time for 64 observations (ms)'); axes[1].set_ylabel('')
-    fig.legend(*axes[1].get_legend_handles_labels(),loc='outside lower center',ncol=3,frameon=False,fontsize=10.)
+    fig.legend(*axes[1].get_legend_handles_labels(),loc='outside lower center',ncol=3,frameon=False,fontsize=11.)
     clean(axes[1], 'x')
     if 'case' in memory:
         g = memory[memory.case.eq('data_T64')]
@@ -1466,7 +1499,7 @@ def computation_time(evidence):
             axes[2].plot(points.index, points, marker='o', linestyle=style, color=c, label=label)
     axes[2].set_xscale('log', base=2); axes[2].set_yscale('log')
     axes[2].set_xlabel('Ambient dimension'); axes[2].set_ylabel('Memory (KiB)')
-    axes[2].legend(frameon=False, fontsize=10.); clean(axes[2])
+    axes[2].legend(frameon=False, fontsize=11.); clean(axes[2])
     for ax, tag in zip(axes, ['(a)', '(b)', '(a)']):
         letter(ax, tag)
     fig._final_selection=dict(observations=64,diagnostic='processing_time_and_operations',
@@ -1493,7 +1526,7 @@ def numerical_accuracy(evidence):
                         color=c, marker=m, s=18, label=label)
     axes[0].set_xscale('log'); axes[0].set_yscale('log')
     axes[0].set_xlabel('Spectral span'); axes[0].set_ylabel('Independent-reference discrepancy')
-    axes[0].legend(frameon=False, fontsize=10.); clean(axes[0])
+    axes[0].legend(frameon=False, fontsize=11.); clean(axes[0])
     for names, label, c, m in [
             (('mean_reference_error','mean_error', 'selected_mean_error', 'maximum_selected_mean_error'), 'Selected mean', color('mean'), 'o'),
             (('normalizer_reference_error','log_normalizer_error', 'logz_error', 'logz_absolute_error'), 'Log normalizer', color('mode'), 's')]:
@@ -1505,7 +1538,7 @@ def numerical_accuracy(evidence):
                         color=c, marker=m, s=18, label=label)
     axes[1].set_xscale('log', base=2); axes[1].set_yscale('log')
     axes[1].set_xlabel('Ambient dimension'); axes[1].set_ylabel('Independent-reference discrepancy')
-    axes[1].legend(frameon=False, fontsize=10.); clean(axes[1])
+    axes[1].legend(frameon=False, fontsize=11.); clean(axes[1])
     for ax, tag in zip(axes, ['(a)', '(b)']):
         letter(ax, tag)
     figures = [fig]
@@ -1544,7 +1577,7 @@ def numerical_accuracy(evidence):
     ax.bar(x,not_evaluated,bottom=first+second,color='#B8BEC4',label='Not evaluated')
     ax.set(xticks=x,xticklabels=labels,ylabel='Number of saved numerical targets')
     ax.tick_params(axis='x',rotation=20)
-    ax.legend(frameon=False,ncol=3,loc='lower center',bbox_to_anchor=(.5,1.02),fontsize=10.);clean(ax,'y')
+    ax.legend(frameon=False,ncol=3,loc='lower center',bbox_to_anchor=(.5,1.02),fontsize=11.);clean(ax,'y')
     fig._final_selection={'scope':'Large-dimension numerical rows, separate mean/normalizer/reference/second-moment/tail/state flags; unevaluated targets never counted as resolved'}
     figures.append(fig)
     return figures
@@ -1557,10 +1590,10 @@ def paper_summary(evidence):
         _draw_paired_tasks(axes[0, 1], evidence)
         frame = _prediction_rows(evidence)
         conditions = _condition_groups(frame)
-        condition = next((item for item in conditions if item[0] in ('noise_only', 'noise')), conditions[0])
-        _draw_variance_time(axes[1, 0], condition[1], evidence.example)
+        condition = next((item for item in conditions if item[0] in ('noise_change', 'noise_only', 'noise')), conditions[0])
+        _draw_variance_time(axes[1, 0], condition[1], evidence.example,config=evidence.config('prediction'))
         _draw_cost_tradeoff(axes[1, 1], evidence)
-        fig.legend(*axes[0,0].get_legend_handles_labels(),loc='outside lower center',ncol=2,frameon=False,fontsize=10.)
+        fig.legend(*axes[0,0].get_legend_handles_labels(),loc='outside lower center',ncol=2,frameon=False,fontsize=11.)
         for ax, tag in zip(axes.ravel(), ['(a)', '(b)', '(c)', '(d)']):
             letter(ax, tag)
     else:
@@ -1613,22 +1646,22 @@ BUNDLES = {
 }
 
 CAPTIONS = {
-    'setup': r'Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved episode, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information.',
-    'task_performance': 'Task losses on common independent test episodes. Losses are averaged within each episode before pointwise Student 95\\% intervals. For contact, main panel (a) shows stationary concentrated-input checkpoint MSE versus observation count, with the posterior-mean confidence band; panel (b) shows absolute episode-average MSE for the moving sphere condition, with a confidence interval for every method including the posterior mean. All methods in panel (b) use the same independent episodes. The separate second page retains paired MSE differences; these are absolute differences in squared velocity units, not relative MSE. A posterior mean compared with itself has identically zero paired difference. Beamforming paired boxes show the distribution of same-episode differences, not confidence intervals. GREAT and application-specific controls retain their stated information and independently validated settings. Complex beamforming GREAT is an extension of the real algorithm, as described in the notebook text. Oracle quantities are evaluation-only.',
-    'posterior_anisotropy': r'Contact: actual data-generated $q_{-A_t^+}([n])$ and a fitted isotropic Bingham law with equal mode and mean squared chordal distance. Their fixed-radius orthographic views share camera and color normalization; antipodal normals represent one plane. Color clips only display resolution below its logarithmic floor. Panels (a) and (b) show the actual and fitted-isotropic laws; the orange marker identifies the visible representative of their common modal line. Panel (c) uses $v(\theta)=\cos\theta\,e_2+\sin\theta\,e_3$ and plots $v(\theta)^T(M-M^2)v(\theta)$ using each law and its own mean $M$. These are belief-specific predictive risks, not losses of two estimators evaluated against one common truth. A separate constructed swapped-eigenvalue page has identical centered chordal-distance laws but different directional risks. Beamforming: a real-coefficient section $h=U_3x$, $x\in S^2$, of the ambient complex-line density, shown relative to its mode; this is not a normalized marginal or a full posterior. A matched isotropic mean is a task control, not an invented probability law. Visible anisotropy and empirical task benefit are separate comparisons.',
-    'noise_adaptation': r'Actual causal variance learning from completed nonoverlapping past blocks. Each observation is corrected once; a fit updates only subsequent variances while retaining the streamed subspace belief. Known coordinate changes are aligned before block fitting. Curves show saved trajectory/episode summaries; variance bands are interquartile repeated-episode spread, not a posterior over variance. Future-task and pre-observation score intervals are pointwise 95\% intervals across independent episodes. Each page retains one predeclared noise-, motion-, or signal-power intervention. The contact supplementary density pages show one predeclared episode: panels (a,b) of the first density page use $t=32,96$, and panel (a) of the following density page uses $t=192$; pre-correction $A_t^-$ is converted to the wrist-frame normal law $q_{-A_t^-}$ with normalizer $\psi_1(-A_t^-)=\psi_2(A_t^-)-\operatorname{tr}(A_t^-)$. The three orthographic spheres share a density scale; panel (b) of the following density page shows the physical-query risk at all three checkpoints, $v_t^T(M_t^--(M_t^-)^2)v_t$ at the recorded physical query. This is individual belief uncertainty, distinct from the repeated-episode variance bands and from calibration. Empirical-Bayes plug-in scales omit their uncertainty and are outside the fixed-true-variance theorem.',
-    'information': r'Independent Gaussian Fisher, score and curvature checks. Expected information is distinguished from finite-data posterior curvature. All matrix comparisons use aligned tangent coordinates; proper-complex information uses real/imaginary coordinates and its correct factor. Recorded-input excitation and marginalized-input information use the stated common data law. Monte Carlo dataset count differs from observations per dataset. Reused mathematical reference cohorts keep their actual source hashes and repetition counts.',
-    'posterior_curvature': r'Invariant-density Hessian and local accuracy diagnostics. Empirical bounded log-coordinate spread is compared with $H_A^{-1}$ only under recorded locality conditions; broad/nonlocal cases remain visible. The stationary inverse-Fisher study uses fixed known variances and $\beta=1$, reports estimation bias and local fractions, and treats inverse Fisher as a local reference rather than a global intrinsic Cramer--Rao equality. The real graph-density volume term is a separate quantity, retained in the tables. Forgetting sampling references use squared weights.',
-    'tracking_bound': r'Recomputed sharp fixed-time envelope $\sqrt{\min(k,n-k)}\,\epsilon_t/(\gamma_t-\epsilon_t)$ under $\epsilon_t<\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe repeated-episode spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.',
-    'block_updates': r'Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\sum_{j=t-L+1}^t B_j}$ with $\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing and task-decision cost is reported in the computation output.',
-    'additional_comparisons': r'Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms.',
-    'variance_estimation': r'Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker episodes.',
-    'predictive_calibration': r'Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent episodes, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent episodes, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy.',
-    'predictive_scores': r'Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each episode before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee.',
-    'model_mismatch': r'Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood.',
-    'computation_time': 'Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance episodes or worst-case deadlines.',
-    'numerical_accuracy': r'Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration.',
-    'paper_summary': r'Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and computational cost with matched task-decision intervals. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries.',
+    'setup': 'Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved simulation, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information.',
+    'task_performance': 'Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces.',
+    'posterior_anisotropy': 'Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=t=64$.',
+    'noise_adaptation': 'Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $128.5$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem.',
+    'information': 'Independent Gaussian Fisher, score and curvature checks. Expected information is distinguished from finite-data posterior curvature. All matrix comparisons use aligned tangent coordinates; proper-complex information uses real/imaginary coordinates and its correct factor. Recorded-input excitation and marginalized-input information use the stated common data law. Monte Carlo dataset count differs from observations per dataset. Reused mathematical reference cohorts keep their actual source hashes and repetition counts.',
+    'posterior_curvature': 'Invariant-density Hessian and local accuracy diagnostics. Empirical bounded log-coordinate spread is compared with $H_A^{-1}$ only under recorded locality conditions; broad/nonlocal cases remain visible. The stationary inverse-Fisher study uses fixed known variances and $\\beta=1$, reports estimation bias and local fractions, and treats inverse Fisher as a local reference rather than a global intrinsic Cramer--Rao equality. The real graph-density volume term is a separate quantity, retained in the tables. Forgetting sampling references use squared weights.',
+    'tracking_bound': 'Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe across-simulation spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.',
+    'block_updates': 'Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing and task-decision cost is reported in the computation output.',
+    'additional_comparisons': 'Complete declared dimension, memory and method comparisons. Heatmaps show comparator-minus-full posterior-mean loss; positive values favor the full mean. Hatching marks cells whose paired pointwise Student 95\\% interval includes zero. No simultaneous-coverage claim is made. Test episodes never tune a setting. Paired differences include losses and inconclusive intervals; broad grids are exploratory without simultaneous coverage. Contact GREAT is response-only and cannot isolate the benefit of known inputs. The same-parameter local Gaussian and recursive EKF are distinct supplementary references with their validity diagnostics retained. Identical modal/PCA or conditional spectral least-squares solutions are not counted as independent algorithms.',
+    'variance_estimation': 'Fixed-boundary stationary-block EM reference. Every E-step reconstructs the full block from one saved boundary prior. Evidence curves are shifted by their own initial value, so final heights do not rank starts; absolute normalized evidence selects starts. Both positive starts and the uniform-prior zero-signal boundary are retained. Noise floors and pooled isotropic M-steps are tested in the numerical tables. Contact residual updates include posterior response uncertainty, not only a squared residual using the mean projector. These reference blocks are not online adaptive-tracker simulations.',
+    'predictive_calibration': 'Actual-recursion calibration with distinct state, clean-response and noisy-next-observation targets. Pages separate joint prior-predictive sampling, fixed-state repetitions and drift diagnostics. Vertical intervals are pointwise exact binomial uncertainty across independent Monte Carlo simulations, not credible uncertainty. All intervals are evaluated at their declared time before the scored future observation is seen. Appended pages show 95% report-size distributions at t=64 for every probability regime. State-ball sizes are chordal radii, obtained by taking the square root of each recorded squared-distance upper threshold; HPD energy thresholds are not used as geometric widths. Scalar sizes are upper minus lower in the n=3 fixture units. Boxes show the median and interquartile range across independent Monte Carlo simulations, with 1.5-IQR whiskers and every outlier; this spread is not a posterior distribution or a confidence interval over width. Proper-score checks are separate. Validation-fitted widths do not establish a matched-coverage advantage if achieved test coverage misses its target. Numerical mass and quantile precision are separate from mean accuracy.',
+    'predictive_scores': 'Excluded-observation proper scores and response risk under the actual causal recursion. The normalized Bingham-mixture predictive density and Gaussian moment surrogate are distinct densities. Snapshot/query errors are averaged within each simulation before comparison. The risk identity predicts total squared clean-response error; a full directional covariance requires second projector moments. Neither pointwise identity lines nor a single trajectory establish a universal score improvement or calibration guarantee.',
+    'model_mismatch': 'Declared mismatch experiments under the actual recursion. Beamforming changes training contamination, source powers/geometry, sensor covariance or motion speed. Contact changes constrained mechanics or sensor construction, including dissipative friction/sticking and contact loss. Known anisotropic resistance requires transformed measurements and the correct sensor covariance; isotropic physical velocity noise becomes $\\sigma^2D$. Position differencing induces correlated velocity errors. Increased posterior spread is not a repair of an incorrect likelihood.',
+    'computation_time': 'Time to process exactly 64 observations on one BLAS thread. Panel (a) includes all 64 parameter corrections and task decisions every one or sixteen observations; its displayed curves exclude optional uncertainty reports. Panel (b) separates parameter updates, task decisions, uncertainty reports, EM and other time for the same 64-observation workload. Row labels state task-decision intervals; optional uncertainty reports and EM fits occur every 32 observations. EM rows use two or four iterations. Phase stacks sum per-phase medians and need not equal median total elapsed time. The separate memory page distinguishes stored arrays from tracked allocations and excludes unmeasured native workspaces/RSS. Repeated clocks measure execution variability on a fixed statistical state, not independent task-performance simulations or worst-case deadlines.',
+    'numerical_accuracy': 'Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration.',
+    'paper_summary': 'Selected main panels from the same saved arrays used by the individual figures. Contact emphasizes the physical input/constraint model and directional posterior uncertainty; beamforming emphasizes moderate-dimensional task performance, causal variance learning and computational cost with matched task-decision intervals. No simulation, posterior resampling, tuning or trajectory selection occurs during summary composition. Caption conditions and full numerical records remain in the associated figure entries.',
 }
 
 
@@ -1713,15 +1746,15 @@ def information(evidence):
                 axes[1].plot(design[x], design[name], 'o-', color=c, label=label)
         axes[1].set_xlabel(r'$\tau^2/\sigma^2$' if x == 'snr' else r'Noise variance $\sigma^2$' if x=='sigma2' else x.replace('_', ' '))
         axes[1].set_ylabel('Fisher coefficient')
-        axes[1].legend(frameon=False, fontsize=10.)
+        axes[1].legend(frameon=False, fontsize=11.)
     else:
         x = _column(frame, 'L', 'observations', 'sigma2', 'sigma2')
         y = _column(frame, 'relative_error', 'score_relative_error', 'error', 'mc_error')
         for group, g in frame.groupby('sigma2', sort=True) if 'sigma2' in frame else [(None, frame)]:
             axes[1].plot(g[x], g[y], 'o-', label=(r'$\sigma^2='+f'{group:g}'+r'$') if group is not None else None)
-        axes[1].set_xlabel('Number of observations' if x in ('L', 'observations') else r'$\sigma^2$')
+        axes[1].set_xlabel(r'Block length $L$' if x in ('L','observations') else r'$\sigma^2$')
         axes[1].set_ylabel('Relative information error')
-        axes[1].legend(frameon=False, fontsize=10.)
+        axes[1].legend(frameon=False, fontsize=11.)
     clean(axes[1])
     for ax, tag in zip(axes, ['(a)', '(b)']):
         letter(ax, tag)
@@ -1750,7 +1783,7 @@ def posterior_curvature(evidence):
         axes[0].set_xscale('log'); axes[0].set_yscale('log')
     axes[0].set_xlabel(r'$H_A^{-1}$ tangent variance')
     axes[0].set_ylabel('Empirical log-coordinate variance')
-    axes[0].legend(frameon=False, fontsize=10.); clean(axes[0])
+    axes[0].legend(frameon=False, fontsize=11.); clean(axes[0])
     L = _column(accuracy, 'L', 'observations', 't')
     mse = _column(accuracy, 'mse', 'tangent_mse', 'empirical_mse')
     ref = _column(accuracy, 'reftrace', 'inverse_fisher_trace', 'reference_trace')
@@ -1764,18 +1797,18 @@ def posterior_curvature(evidence):
         axes[1].fill_between(stationary[L], stationary.tangent_mse_lower,
                              stationary.tangent_mse_upper, color=color('mean'), alpha=.12)
     axes[1].set_xscale('log'); axes[1].set_yscale('log')
-    axes[1].set_xlabel('Number of observations'); axes[1].set_ylabel('Squared tangent error')
-    axes[1].legend(frameon=False, fontsize=10.); clean(axes[1])
+    axes[1].set_xlabel(r'Block length $L$'); axes[1].set_ylabel('Squared tangent error')
+    axes[1].legend(frameon=False, fontsize=11.); clean(axes[1])
     fraction = _column(accuracy, 'local_fraction', 'fraction_local')
     bias = _column(accuracy, 'biasnorm', 'bias_norm', 'tangent_bias_norm')
     axes[2].plot(stationary[L], stationary[fraction], 'o-', color=color('mean'), label='Local fraction')
     normalized_bias = stationary[bias]/np.sqrt(stationary[ref])
     axes[2].plot(stationary[L], normalized_bias, '^--', color=color('mode'),
                  label=r'Bias$/\sqrt{\operatorname{tr}(\mathcal F^{-1})}$')
-    axes[2].set_xscale('log'); axes[2].set_xlabel('Number of observations')
+    axes[2].set_xscale('log'); axes[2].set_xlabel(r'Block length $L$')
     axes[2].set_ylabel('Local fraction / normalized bias')
     axes[2].set_ylim(bottom=0)
-    axes[2].legend(frameon=False, fontsize=10.); clean(axes[2])
+    axes[2].legend(frameon=False, fontsize=11.); clean(axes[2])
     for ax, tag in zip(axes, ['(a)', '(b)', '(c)']):
         letter(ax, tag)
     return [fig]
@@ -1793,7 +1826,7 @@ def _tracking_plot(ax, rows):
                         group.modal_error.quantile(.75),group.bound.iloc[0],
                         group.ceiling.iloc[0],bool(group.valid.iloc[0])))
     points=np.asarray(summary)
-    ax.plot(points[:,0],points[:,1],'o-',color=color('mean'),label='Modal error')
+    ax.plot(points[:,0],points[:,1],'o-',color=color('mean'),label='Tracking error')
     ax.fill_between(points[:,0],points[:,2],points[:,3],color=color('mean'),alpha=.12)
     ax.plot(points[:,0],points[:,4],'s-',color=color('iso'),label='Theorem bound')
     ax.plot(points[:,0],points[:,5],'--',color=BLACK,label='Distance ceiling')
@@ -1801,7 +1834,7 @@ def _tracking_plot(ax, rows):
     if bad.any():ax.scatter(points[bad,0],points[bad,5],marker='x',color=GREY,label=r'$\epsilon_t\ge\gamma_t/2$')
     ax.set(xscale='log' if len(times)>1 else 'linear',
         yscale='log' if np.all(points[:,1:4]>0) else 'linear',
-        xlabel='Number of observations',ylabel='Chordal distance')
+        xlabel=r'Measurement index $t$',ylabel=r'$d_c$')
     if len(times)==1:
         ax.set_xlim(times[0]*.9,times[0]*1.1);ax.set_xticks(times)
     if not np.all(points[:,1:4]>0):ax.set_ylim(-.05,1.08*points[:,5].max())
@@ -1829,7 +1862,7 @@ def tracking_bound(evidence):
     grid=fig.add_gridspec(2,2,height_ratios=(1.3,1.))
     axes=[fig.add_subplot(grid[0,:]),fig.add_subplot(grid[1,0]),fig.add_subplot(grid[1,1])]
     _tracking_plot(axes[0],base)
-    axes[0].legend(frameon=False,ncol=2,fontsize=10.,loc='lower center',bbox_to_anchor=(.5,1.02))
+    axes[0].legend(frameon=False,ncol=2,fontsize=11.,loc='lower center',bbox_to_anchor=(.5,1.02))
     last=base[base.t.eq(base.t.max())]
     axes[1].scatter(last.epsilon,last.actual_perturbation,s=12,color=color('mean'),alpha=.6)
     _identity(axes[1],last.epsilon,last.actual_perturbation)
@@ -1867,7 +1900,7 @@ def tracking_bound(evidence):
     ax.set(xticks=x,xticklabels=labels,ylabel='Operator perturbation allowance')
     ax.tick_params(axis='x',rotation=35)
     ax.set_yscale('symlog',linthresh=.01)
-    ax.legend(frameon=False,ncol=2,fontsize=10.,loc='lower center',bbox_to_anchor=(.5,1.02));clean(ax,'y')
+    ax.legend(frameon=False,ncol=2,fontsize=11.,loc='lower center',bbox_to_anchor=(.5,1.02));clean(ax,'y')
     fig._final_selection={'terminal_cohorts':contributions[keys].to_dict('records'),'quantity':'epsilon = initialization + drift + noise; gamma/2 shown separately'}
     figures.append(fig)
     # Special fixtures never enter the base error distribution.
@@ -1879,7 +1912,7 @@ def tracking_bound(evidence):
     for selection,group in special.groupby(keys,dropna=False,sort=False):
         fig,ax=plt.subplots(figsize=(FIGURE_WIDTH,3.),layout='constrained')
         _tracking_plot(ax,group)
-        ax.legend(frameon=False,ncol=2,fontsize=10.,loc='lower center',bbox_to_anchor=(.5,1.02))
+        ax.legend(frameon=False,ncol=2,fontsize=11.,loc='lower center',bbox_to_anchor=(.5,1.02))
         fig._final_selection=dict(zip(keys,selection if isinstance(selection,tuple) else [selection]))
         figures.append(fig)
     return figures
@@ -1902,15 +1935,17 @@ def block_updates(evidence):
                 points = checks.groupby(L)[name].max()
                 axes[0].plot(points.index, np.maximum(points, 1e-16), 'o-', label=name.replace('_error', ''))
     axes[0].axhline(1e-10, color=GREY, linestyle='--', linewidth=.8)
-    axes[0].set_yscale('log'); axes[0].set_xlabel('Observations per block')
+    axes[0].set_yscale('log'); axes[0].set_xlabel(r'Block length $L$')
     axes[0].set_ylabel('Aggregation discrepancy')
-    axes[0].legend(frameon=False, fontsize=10.); clean(axes[0])
+    axes[0].legend(frameon=False, fontsize=11.); clean(axes[0])
     L = _column(trade, 'L', 'block_length')
     if 'condition' in trade:
         condition = 'sphere' if 'sphere' in set(trade.condition) else trade.condition.iloc[0]
         trade = trade[trade.condition.eq(condition)]
-    endpoint = next((name for name in ('heldout_ratio_db', 'output_oracle_db', 'response_mse',
-                        'task_loss', 'loss') if name in trade), None)
+    endpoint = ('true_ratio_db' if evidence.example=='beamforming' else
+        next((name for name in ('response_mse','task_loss','loss') if name in trade),None))
+    if evidence.example=='beamforming' and endpoint not in trade:
+        raise KeyError('Block-array power comparison requires true_ratio_db')
     if endpoint is None and 'delayed_response_mse' in trade:
         for column, label, c, m in [
                 ('delayed_response_mse', 'Delayed action', color('mean'), 'o'),
@@ -1936,21 +1971,21 @@ def block_updates(evidence):
                      marker=('o', 's', '^')[index % 3], label={
                         'delayed_exact':'Delayed exact aggregation',
                         'constant_state_window':'Block likelihood'}.get(str(name),str(name).replace('_',' ')))
-    axes[1].set_xlabel('Observations per block')
-    axes[1].set_ylabel('Output power / oracle power (dB)' if evidence.example == 'beamforming'
+    axes[1].set_xlabel(r'Block length $L$')
+    axes[1].set_ylabel(r'$\ell_t$ (dB)' if evidence.example == 'beamforming'
                        else r'Response MSE $((\mathrm{mm}/\mathrm{s})^2)$')
-    axes[1].legend(frameon=False, fontsize=10.); clean(axes[1])
+    axes[1].legend(frameon=False, fontsize=11.); clean(axes[1])
     delay = next((name for name in ('delay_s', 'mean_delay_s', 'action_delay_s',
                                     'maximum_output_age_s','maximum_delay_s') if name in trade), None)
     cost = next((name for name in ('processing_ms', 'total_ms', 'computation_ms', 'elapsed_ms') if name in trade), None)
     if cost is not None:
         points = trade.groupby(L)[cost].mean()
         axes[2].plot(points.index, points, 'o-', color=color('mean'))
-        axes[2].set_xlabel('Observations per block'); axes[2].set_ylabel('Computation time (ms)')
+        axes[2].set_xlabel(r'Block length $L$'); axes[2].set_ylabel('Computation time (ms)')
     elif delay is not None:
         points = trade.groupby(L)[delay].mean()
         axes[2].plot(points.index, points, 'o-', color=color('mode'))
-        axes[2].set_xlabel('Observations per block'); axes[2].set_ylabel('Action delay (s)')
+        axes[2].set_xlabel(r'Block length $L$'); axes[2].set_ylabel('Action delay (s)')
     else:
         raise KeyError('Block tradeoff needs saved processing cost or physical action delay')
     clean(axes[2])

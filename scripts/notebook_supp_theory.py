@@ -42,13 +42,13 @@ if ineligible.any():
                         color="#70777D", label=r"$\epsilon_t\geq\gamma_t/2$")
 tracking_ax.set(xscale="log" if len(times)>1 else "linear",
     yscale="log" if np.all(points[:,1:4]>0) else "linear",
-    xlabel="Number of observations", ylabel=r"$d_{\mathrm{ch}}(\widehat{\mathcal X}_t,\mathcal X_t)$")
+    xlabel=r"Measurement index $t$", ylabel=r"$d_c(\widehat{\mathcal X}_t,\mathcal X_t)$")
 if len(times)==1:
     tracking_ax.set_xlim(times[0]*.9, times[0]*1.1)
     tracking_ax.set_xticks(times)
 if not np.all(points[:,1:4]>0):
     tracking_ax.set_ylim(-.05, 1.08*points[:,5].max())
-tracking_ax.legend(frameon=False, ncol=2, fontsize=10., loc="lower center", bbox_to_anchor=(.5,1.02))
+tracking_ax.legend(frameon=False, ncol=2, fontsize=LEGEND_FONT_SIZE, loc="lower center", bbox_to_anchor=(.5,1.02))
 '''
 
 _TRACKING_PAGE1 = _TRACKING_TABLES + r'''
@@ -66,7 +66,7 @@ padding = max(.06*(high-low), .01*max(abs(low),abs(high)), 1e-10)
 lower = max(low-padding,.8*low) if low>0 else low-padding
 axes[1].plot([lower,high+padding], [lower,high+padding], "--", color="#70777D", linewidth=1.)
 axes[1].set(xlim=(lower,high+padding),ylim=(lower,high+padding))
-axes[1].set(xlabel=r"Perturbation allowance $\epsilon_t$", ylabel="Operator perturbation")
+axes[1].set(xlabel=r"Perturbation allowance $\epsilon_t$", ylabel="Operator\nperturbation")
 phase = phase.sort_values(["beta","drift_rate"]).copy()
 phase["state"] = phase.valid.astype(bool).astype(int)
 table = phase.pivot(index="beta", columns="drift_rate", values="state")
@@ -82,7 +82,7 @@ for value in table.index:
         beta_labels.append(f"{value:.9g}")
 axes[2].set(xticks=np.arange(len(table.columns)), xticklabels=[f"{v:g}" for v in table.columns],
     yticks=np.arange(len(table.index)), yticklabels=beta_labels,
-    xlabel="Subspace angular speed", ylabel=r"Forgetting factor $\beta$")
+    xlabel="Subspace angular speed", ylabel=r"$\beta$")
 bar = fig.colorbar(image, ax=axes[2], ticks=[0,1], shrink=.85)
 bar.ax.set_yticklabels([r"$\epsilon\geq\gamma/2$", r"$\epsilon<\gamma/2$"])
 for ax, tag in zip(axes, ["(a)","(b)","(c)"]):
@@ -103,7 +103,7 @@ for key, label, c in [("initialization","Initialization",color("mode")),
                        ("noise","Measurement noise",color("mean"))]:
     ax.bar(x, contributions[key], bottom=bottom, label=label, color=c, width=.7)
     bottom += contributions[key]
-ax.scatter(x,.5*contributions.gamma,marker="_",s=75,color="#222222",label=r"$\gamma_t/2$",zorder=4)
+ax.scatter(x,.5*contributions.gamma,marker="_",s=75,color="#222222",label=r"$\gamma_T/2$",zorder=4)
 labels = []
 for row in contributions.to_dict("records"):
     text = {"static":"Static","smooth":"Smooth","abrupt":"Abrupt"}.get(row["condition"],row["condition"])
@@ -116,10 +116,10 @@ for row in contributions.to_dict("records"):
         if 0<gap<.001 and np.isclose(gap,10.**int(np.round(np.log10(gap))),rtol=1e-6,atol=0)
         else f"{beta:.9g}")
     labels.append(text+"\n"+r"$\beta="+beta_text+r"$")
-ax.set(xticks=x,xticklabels=labels,ylabel="Operator perturbation allowance")
+ax.set(xticks=x,xticklabels=labels,ylabel=r"$\epsilon_T$")
 ax.tick_params(axis="x",rotation=35)
 ax.set_yscale("symlog",linthresh=.01)
-ax.legend(frameon=False,ncol=2,fontsize=10.,loc="lower center",bbox_to_anchor=(.5,1.02))
+ax.legend(frameon=False,ncol=2,fontsize=LEGEND_FONT_SIZE,loc="lower center",bbox_to_anchor=(.5,1.02))
 ax.spines[["top","right"]].set_visible(False)
 ax.grid(axis="y",color="#BFC4C8",alpha=.30,linewidth=.45)
 '''
@@ -165,8 +165,8 @@ axes[0].set(xlim=(lower,high+padding),ylim=(lower,high+padding))
 if np.min(curve[[x,y]].to_numpy())>0:
     axes[0].set_xscale("log");axes[0].set_yscale("log")
 axes[0].set_xlabel(r"$H_A^{-1}$ tangent variance")
-axes[0].set_ylabel("Empirical log-coordinate\nvariance")
-axes[0].legend(frameon=False,fontsize=10.)
+axes[0].set_ylabel("Coordinate\nvariance")
+axes[0].legend(frameon=False,fontsize=LEGEND_FONT_SIZE)
 L = _column(accuracy,"L","observations","t")
 mse = _column(accuracy,"mse","tangent_mse","empirical_mse")
 ref = _column(accuracy,"reftrace","inverse_fisher_trace","reference_trace")
@@ -179,16 +179,16 @@ for label,values,c,style in [("Empirical MSE",stationary[mse],color("mean"),"-")
 if {"tangent_mse_lower","tangent_mse_upper"}.issubset(stationary):
     axes[1].fill_between(stationary[L],stationary.tangent_mse_lower,stationary.tangent_mse_upper,color=color("mean"),alpha=.12)
 axes[1].set_xscale("log");axes[1].set_yscale("log")
-axes[1].set_xlabel("Number of observations");axes[1].set_ylabel("Squared tangent error")
-axes[1].legend(frameon=False,fontsize=10.)
+axes[1].set_xlabel(r"Stationary block length $L$");axes[1].set_ylabel("Tangent MSE")
+axes[1].legend(frameon=False,fontsize=LEGEND_FONT_SIZE)
 fraction = _column(accuracy,"local_fraction","fraction_local")
 bias = _column(accuracy,"biasnorm","bias_norm","tangent_bias_norm")
 axes[2].plot(stationary[L],stationary[fraction],"o-",color=color("mean"),label="Local fraction")
 normalized_bias = stationary[bias]/np.sqrt(stationary[ref])
 axes[2].plot(stationary[L],normalized_bias,"^--",color=color("mode"),label=r"Bias$/\sqrt{\operatorname{tr}(\mathcal F^{-1})}$")
-axes[2].set_xscale("log");axes[2].set_xlabel("Number of observations")
-axes[2].set_ylabel("Local fraction / normalized bias");axes[2].set_ylim(bottom=0)
-axes[2].legend(frameon=False,fontsize=10.)
+axes[2].set_xscale("log");axes[2].set_xlabel(r"Stationary block length $L$")
+axes[2].set_ylabel("Locality /\nbias");axes[2].set_ylim(bottom=0)
+axes[2].legend(frameon=False,fontsize=LEGEND_FONT_SIZE)
 for ax,tag in zip(axes,["(a)","(b)","(c)"]):
     ax.spines[["top","right"]].set_visible(False)
     ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
@@ -211,13 +211,16 @@ else:
             points = checks.groupby(L)[name].max()
             axes[0].plot(points.index,np.maximum(points,1e-16),"o-",label=name.replace("_error",""))
 axes[0].axhline(1e-10,color="#70777D",linestyle="--",linewidth=.8)
-axes[0].set_yscale("log");axes[0].set_xlabel("Observations per block")
-axes[0].set_ylabel("Aggregation discrepancy");axes[0].legend(frameon=False,fontsize=10.)
+axes[0].set_yscale("log");axes[0].set_xlabel(r"Block length $L$")
+axes[0].set_ylabel("Aggregation\ndiscrepancy");axes[0].legend(frameon=False,fontsize=LEGEND_FONT_SIZE)
 L = _column(trade,"L","block_length")
 if "condition" in trade:
     condition = "sphere" if "sphere" in set(trade.condition) else trade.condition.iloc[0]
     trade = trade[trade.condition.eq(condition)]
-endpoint = next((name for name in ("heldout_ratio_db","output_oracle_db","response_mse","task_loss","loss") if name in trade),None)
+endpoint = ("true_ratio_db" if example=="beamforming" else
+    next((name for name in ("response_mse","response_loss","loss") if name in trade),None))
+if example=="beamforming" and endpoint not in trade:
+    raise KeyError("The block comparison requires saved exact covariance power")
 if endpoint is None and "delayed_response_mse" in trade:
     for column,label,c,m in [("delayed_response_mse","Delayed action",color("mean"),"o"),
                             ("common_endpoint_response_mse","Common endpoint",color("mode"),"s"),
@@ -240,19 +243,19 @@ for index,(name,group) in enumerate(groups):
     points = group.groupby(L)[endpoint].mean()
     axes[1].plot(points.index,points*(1e6 if example=="contact" and "mse" in endpoint else 1.),
         marker=("o","s","^")[index%3],label={"delayed_exact":"Delayed exact aggregation","constant_state_window":"Block likelihood"}.get(str(name),str(name).replace("_"," ")))
-axes[1].set_xlabel("Observations per block")
-axes[1].set_ylabel("Output power relative to ideal MVDR (dB)" if example=="beamforming" else r"Response MSE $((\mathrm{mm}/\mathrm{s})^2)$")
-axes[1].legend(frameon=False,fontsize=10.)
+axes[1].set_xlabel(r"Block length $L$")
+axes[1].set_ylabel(r"$\ell_t$ (dB)" if example=="beamforming" else r"$\mathcal E_t(D_t)$ $((\mathrm{mm}/\mathrm{s})^2)$")
+axes[1].legend(frameon=False,fontsize=LEGEND_FONT_SIZE)
 delay = next((name for name in ("delay_s","mean_delay_s","action_delay_s","maximum_output_age_s","maximum_delay_s") if name in trade),None)
 cost = next((name for name in ("processing_ms","total_ms","computation_ms","elapsed_ms") if name in trade),None)
 if cost is not None:
     points = trade.groupby(L)[cost].mean()
     axes[2].plot(points.index,points,"o-",color=color("mean"))
-    axes[2].set_xlabel("Observations per block");axes[2].set_ylabel("Computation time (ms)")
+    axes[2].set_xlabel(r"Block length $L$");axes[2].set_ylabel("Computation time (ms)")
 elif delay is not None:
     points = trade.groupby(L)[delay].mean()
     axes[2].plot(points.index,points,"o-",color=color("mode"))
-    axes[2].set_xlabel("Observations per block");axes[2].set_ylabel("Action delay (s)")
+    axes[2].set_xlabel(r"Block length $L$");axes[2].set_ylabel("Action delay (s)")
 else:
     raise KeyError("Block tradeoff needs a saved cost or delay")
 for ax,tag in zip(axes,["(a)","(b)","(c)"]):
@@ -265,16 +268,16 @@ for ax,tag in zip(axes,["(a)","(b)","(c)"]):
 def build_cells(example):
     """Return the six missing theory pages for one application."""
     tracking_note = (r"Tracking error is the chordal distance "
-        r"$d_{\mathrm{ch}}(\widehat{\mathcal X}_t,\mathcal X_t)="
+        r"$d_c(\widehat{\mathcal X}_t,\mathcal X_t)="
         r"\|P_{\widehat{\mathcal X}_t}-P_{\mathcal X_t}\|_F/\sqrt{2}$. "
-        r"The curve and shading show the median and interquartile range across independent trials. "
+        r"The curve and shading show the median and interquartile range across Monte Carlo simulations. "
         r"The fixed-time bound is evaluated only when $\epsilon_t<\gamma_t/2$; "
         r"crosses retain ineligible conditions. The true path, gap and perturbation are analysis quantities, not online credible radii.")
     return [
         plot_cell(example,"tracking_bound",1,_TRACKING_PAGE1,title="Tracking error and the fixed-time bound",note="This is the saved static, uniform-prior theory fixture with $\\beta=1$. "+tracking_note),
-        plot_cell(example,"tracking_bound",2,_TRACKING_PAGE2,title="Contributions to the tracking bound",note=r"The terminal allowance is $\epsilon_t=$ initialization + motion + noise. The separate marks show $\gamma_t/2$; contributions remain defined when the gap is zero."),
+        plot_cell(example,"tracking_bound",2,_TRACKING_PAGE2,title="Contributions to the tracking bound",note=r"The terminal allowance is $\epsilon_T=$ initialization + motion + noise. The separate marks show $\gamma_T/2$; contributions remain defined when the gap is zero."),
         plot_cell(example,"tracking_bound",3,_special_tracking(0),title=("Tracking with zero signal" if example=="beamforming" else "Tracking with concentrated inputs"),note=tracking_note+" The first saved special fixture is kept separate from the balanced-input, nonzero-signal reference."),
         plot_cell(example,"tracking_bound",4,_special_tracking(1),title="Tracking with a nonuniform prior",note=tracking_note+" This saved special fixture has a nonuniform initial prior. Ineligible bounds are not tested for violations."),
-        plot_cell(example,"posterior_curvature",1,_CURVATURE,title="Posterior curvature and local estimation error",note=r"$H_A$ is the Hessian of the negative invariant log density at its mode, in tangent coordinates; $\mathcal F$ is the expected Fisher matrix. Their inverses are local references. The panels retain cases outside the recorded local regime, estimation bias and the fraction of trials satisfying the locality criterion."),
-        plot_cell(example,"block_updates",1,_BLOCK,title="Block aggregation and delayed decisions",note="Exact aggregation, delayed actions and a constant-state block likelihood are separate comparisons. Aggregation errors below 1e-16 use that display floor; saved tables retain their full values. Task comparisons use the same block endpoints and the recorded condition. The block-likelihood control assumes one fixed subspace over its observation window; delayed aggregation retains the streamed estimate and reports after a block arrives."),
+        plot_cell(example,"posterior_curvature",1,_CURVATURE,title="Posterior curvature and local estimation error",note=r"$H_A$ is the Hessian of the negative invariant log density at its mode, in tangent coordinates; $\mathcal F$ is the expected Fisher matrix. Their inverses are local references. The coordinate-variance ordinate is the empirical variance in the saved log coordinates. The panels retain cases outside the recorded local regime, estimation bias and the fraction of Monte Carlo simulations satisfying the locality criterion."),
+        plot_cell(example,"block_updates",1,_BLOCK,title="Block aggregation and delayed decisions",note="Exact aggregation, delayed actions and a constant-state block likelihood are separate comparisons. Aggregation errors below 1e-16 use that display floor; saved tables retain their full values. Prediction comparisons use the same block endpoints and the recorded condition. The block-likelihood comparison assumes one fixed subspace over its observation window; delayed aggregation retains the streamed estimate and reports after a block arrives."),
     ]

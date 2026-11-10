@@ -16,7 +16,7 @@ if 'split' in frame and frame.split.eq('test').any():
 if 'control' in frame:
     frame = frame[frame.control.eq('mean')]
 frame = frame[frame.condition.eq(CONDITION)]
-time = _column(frame, 'time_s', 't')
+time = 't'
 fig = plt.figure(figsize=FIGSIZE, dpi=DPI, layout='constrained')
 if example == 'beamforming':
     grid = fig.add_gridspec(2,2)
@@ -37,25 +37,33 @@ for ax, key in variance_axes:
             continue
         grouped = group.groupby(time)[key+'_estimate']
         median = grouped.median()
-        ax.step(median.index, median*scale, where='post', color=color(method),
+        ax.plot(median.index, median*scale, color=color(method),
             linestyle='--' if method == 'misspecified' else '-', marker=marker(method),
             label=method_label(method))
         if method == 'learned':
             ax.fill_between(median.index, grouped.quantile(.25)*scale,
-                grouped.quantile(.75)*scale, color=color(method), alpha=.13, step='post')
+                grouped.quantile(.75)*scale, color=color(method), alpha=.13)
     truth = frame.groupby(time)[key+'_true'].first()
-    ax.step(truth.index, truth*scale, where='post', color='#222222', linestyle=':',
+    total = int(evidence.config('prediction')[
+        'primary_beam_T' if example == 'beamforming' else 'primary_contact_T'])
+    measurement_index = np.arange(1, total+1)
+    initial_truth, final_truth = float(truth.iloc[0]), float(truth.iloc[-1])
+    true_schedule = np.where(measurement_index <= total//2,
+                             initial_truth, final_truth)
+    ax.step(measurement_index, true_schedule*scale, where='mid', color='#222222', linestyle=':',
         linewidth=1.35, label=r'$\tau_t^2$' if key == 'tau2' else r'$\sigma_t^2$')
-    for index in np.flatnonzero(abs(np.diff(truth.to_numpy())) > 1e-12):
-        ax.axvline(truth.index[index+1], color='#70777D', linestyle=':', linewidth=.7)
-    ax.set_xlabel('Time (s)' if time == 'time_s' else 'Number of observations')
-    ax.set_ylabel(r'Signal variance $\tau^2$' if key == 'tau2' else
-        r'Noise variance $\sigma^2$ $((\mathrm{mm}/\mathrm{s})^2)$' if example == 'contact'
-        else r'Noise variance $\sigma^2$')
+    if not np.isclose(initial_truth, final_truth):
+        ax.axvline(total//2+.5, color='#70777D', linestyle=':', linewidth=.7)
+    ax.set_xlabel(r'Measurement index $t$')
+    ax.set_ylabel(r'$\tau_t^2,\ \widehat\tau_t^2$' if key == 'tau2' else
+        r'$\sigma_t^2,\ \widehat\sigma_t^2$'+'\n'+r'$((\mathrm{mm}/\mathrm{s})^2)$' if example == 'contact'
+        else r'$\sigma_t^2,\ \widehat\sigma_t^2$')
 for ax, scores in future_axes:
-    endpoint = (_finite_column(frame, 'prequential_score', 'mixture_log_score') if scores else
-        _finite_column(frame, 'heldout_output_oracle_db', 'heldout_ratio_db') if example == 'beamforming'
+    endpoint = ('prequential_score' if scores else
+        'output_oracle_db' if example == 'beamforming'
         else _finite_column(frame, 'future_task_loss', 'observed_response_mse'))
+    if endpoint not in frame:
+        raise KeyError('Missing saved numerical quantity: '+endpoint)
     scale = 1e6 if example == 'contact' and not scores else 1.
     for method in ('known', 'exact_known', 'known_forgetting', 'misspecified', 'learned'):
         rows = []
@@ -69,10 +77,10 @@ for ax, scores in future_axes:
         ax.plot(points[:,0], points[:,1], marker=marker(method), color=color(method),
             linestyle='--' if method == 'misspecified' else '-', label=method_label(method))
         ax.fill_between(points[:,0], points[:,2], points[:,3], color=color(method), alpha=.09)
-    ax.set_xlabel('Time (s)' if time == 'time_s' else 'Number of observations')
-    ax.set_ylabel('Mean log predictive density' if scores else
-        'Output power relative to ideal MVDR (dB)' if example == 'beamforming' else
-        r'Response MSE $((\mathrm{mm}/\mathrm{s})^2)$')
+    ax.set_xlabel(r'Measurement index $t$')
+    ax.set_ylabel(r'$\log\pi_t(u_t)$' if scores else
+        r'$\ell_t$ (dB)' if example == 'beamforming' else
+        'Noisy velocity error\n'+r'$((\mathrm{mm}/\mathrm{s})^2)$')
 handles = {}
 for ax, tag in zip(plotted_axes, ['(a)', '(b)', '(c)', '(d)']):
     ax.spines[['top','right']].set_visible(False)
@@ -81,7 +89,7 @@ for ax, tag in zip(plotted_axes, ['(a)', '(b)', '(c)', '(d)']):
     for handle, label in zip(*ax.get_legend_handles_labels()):
         handles.setdefault(label, handle)
 fig.legend(list(handles.values()), list(handles), loc='outside lower center',
-    ncol=3, frameon=False, fontsize=10.)
+    ncol=3, frameon=False, fontsize=LEGEND_FONT_SIZE)
 '''
 
 _VARIANCE_ESTIMATION = r'''
@@ -99,12 +107,12 @@ palette = [color('mean'), color('iso'), color('mode'), '#70777D']
 for index, (start, group) in enumerate(story.groupby('start', sort=False)):
     group = group.sort_values('iteration')
     initial = group.iloc[0]
-    label = (r'$\sigma_0^2='+f'{initial.s:g}'+r',\ \tau_0^2='+f'{initial.tau2:g}'+r'$'
-        if example == 'beamforming' else r'$\sigma_0^2='+f'{initial.s:g}'+r'$')
+    label = (r'$\widehat\sigma_0^2='+f'{initial.s:g}'+r',\ \widehat\tau_0^2='+f'{initial.tau2:g}'+r'$'
+        if example == 'beamforming' else r'$\widehat\sigma_0^2='+f'{initial.s:g}'+r'$')
     axes[0].plot(group.iteration, group.log_evidence-group.log_evidence.iloc[0],
         'o-', color=palette[index % len(palette)], markersize=2.5, label=label)
 axes[0].set(xlabel='EM iteration', ylabel='Log-evidence increase')
-axes[0].legend(frameon=False, fontsize=10.)
+axes[0].legend(frameon=False, fontsize=LEGEND_FONT_SIZE)
 values, positions, ticks, box_colors = [], [], [], []
 for index, start in enumerate(starts):
     group = fits[fits.start.eq(start)]
@@ -122,11 +130,11 @@ for box, shade in zip(boxes['boxes'], box_colors):
     box.set_facecolor(shade)
 axes[1].axhline(1., linestyle='--', color='#222222', linewidth=1.)
 axes[1].set(xticks=ticks, xticklabels=[str(i+1) for i in ticks],
-    xlabel='Initialization', ylabel='Variance estimate / true variance')
+    xlabel='Initialization', ylabel='Estimate / truth')
 legend_handles = [Patch(facecolor=color('mean'), label=r'$\widehat\sigma^2/\sigma^2$')]
 if example == 'beamforming':
     legend_handles.append(Patch(facecolor=color('iso'), label=r'$\widehat\tau^2/\tau^2$'))
-axes[1].legend(handles=legend_handles, frameon=False, fontsize=10.)
+axes[1].legend(handles=legend_handles, frameon=False, fontsize=LEGEND_FONT_SIZE)
 if example == 'contact':
     residual = _reference_frame(evidence, 'em', 'residuals')
     residual = residual[residual.model.eq(model)]
@@ -178,8 +186,8 @@ ax.set(xlim=(-1.12,1.12),ylim=(-1.12,1.12),zlim=(-1.12,1.12),
 ax.set_xlabel(r'$n_1$',labelpad=-2)
 ax.set_ylabel(r'$n_2$',labelpad=-2)
 ax.set_zlabel('')
-ax.text2D(.95,.67,r'$n_3$',transform=ax.transAxes,rotation=90,ha='center',va='center',fontsize=11.)
-ax.tick_params(labelsize=10.,pad=-2,length=1)
+ax.text2D(.95,.67,r'$n_3$',transform=ax.transAxes,rotation=90,ha='center',va='center',fontsize=LABEL_FONT_SIZE)
+ax.tick_params(labelsize=TICK_FONT_SIZE,pad=-2,length=1)
 ax.grid(False)
 for axis in (ax.xaxis,ax.yaxis,ax.zaxis):
     axis.pane.set_facecolor((1.,1.,1.,0.))
@@ -236,9 +244,8 @@ nodes, log_density, mode, tag = meshes[2], densities[2], None, '(a)'
 ''' + dedent(_SPHERE_ARTISTS) + r'''
 sphere = ax
 ax = fig.add_subplot(grid[0,1])
-dt = float(evidence.config('prediction')['primary_contact_dt'])
-ax.plot((np.asarray(checkpoints)-1)*dt,risks,'o-',color=color('mean'))
-ax.set(xlabel='Time (s)',ylabel=r'Response risk $((\mathrm{mm}/\mathrm{s})^2)$')
+ax.plot(np.asarray(checkpoints),risks,'o-',color=color('mean'))
+ax.set(xlabel=r'Measurement index $t$',ylabel=r'$r_t(v_t)$ $((\mathrm{mm}/\mathrm{s})^2)$')
 ax.yaxis.tick_right()
 ax.yaxis.set_label_position('right')
 ax.spines[['top','right']].set_visible(False)
@@ -271,10 +278,10 @@ for case, shade, style in [(0,color('mean'),'-'),(1,color('iso'),'--')]:
     lower[0].plot(group.radius,group.cdf,color=shade,linestyle=style,label=label)
     group = directional[directional.case.eq(case)&directional.angle.notna()]
     lower[1].plot(group.angle,group.risk,color=shade,linestyle=style,label=label)
-lower[0].set(xlabel='Chordal distance',ylabel='Cumulative probability')
+lower[0].set(xlabel=r'$d_c$',ylabel='Cumulative probability')
 lower[1].set(xlabel=r'$\theta$ (rad)',ylabel=r'$v^\top(\overline P-\overline P^2)v$')
 for ax,tag in zip(lower,['(c)','(d)']):
-    ax.legend(frameon=False,fontsize=10.)
+    ax.legend(frameon=False,fontsize=LEGEND_FONT_SIZE)
     ax.spines[['top','right']].set_visible(False)
     ax.grid(color='#BFC4C8',alpha=.30,linewidth=.45)
     ax.text(.015,.985,tag,transform=ax.transAxes,ha='left',va='top')
@@ -303,7 +310,7 @@ for method in ('mode','iso','isotropic','regularized'):
         color=color(method),capsize=3.,markersize=4.)
 ax.set(yticks=np.arange(1,len(labels)+1),yticklabels=labels,ylim=(.5,len(labels)+.5))
 ax.axvline(0.,linestyle='--',color='#222222',linewidth=1.)
-ax.set_xlabel(r'$\mathrm{MSE}_{\mathrm{ref}}-\mathrm{MSE}_{\mathrm B}$ $((\mathrm{mm}/\mathrm{s})^2)$')
+ax.set_xlabel(r'$\overline{\mathcal E}(D)-\overline{\mathcal E}(\overline P_t^+)$'+'\n'+r'$((\mathrm{mm}/\mathrm{s})^2)$')
 ax.spines[['top','right']].set_visible(False)
 ax.grid(axis='x',color='#BFC4C8',alpha=.30,linewidth=.45)
 ax.text(.015,.985,'(a)',transform=ax.transAxes,ha='left',va='top')
@@ -318,21 +325,21 @@ def build_cells(example):
             'CONDITION = '+repr(condition)+'\n'+dedent(_ADAPTATION),
             title='Variance learning: '+('moving interference' if condition=='smooth' else
                 'signal-power change' if condition=='power_change' else 'faster contact motion'),
-            note='Variance curves show medians and 25th–75th percentiles across independent trials; task and log-density bands are pointwise 95% Student intervals for trial means. Variance values are pre-update reporting checkpoints; connecting steps do not reconstruct the trajectory between reports.'))
+            note=r'Variance curves show medians and 25th–75th percentiles across Monte Carlo simulations. Markers are estimates used before receiving $u_t$, at the stored integer reporting index $t$; connecting lines do not reconstruct estimates between reports. True schedules change between measurements $T/2$ and $T/2+1$, where applicable. Power and log-density bands are pointwise 95% Student confidence intervals for Monte Carlo means. For the array, $\ell_t=10\log_{10}[(w_t^H R_t w_t)/p_t^\star]$ uses saved exact covariance power, and $p_t^\star=(a^H R_t^{-1}a)^{-1}$. The density $\pi_t$ integrates the measurement law under the prior before assimilation. The contact error panel retains prediction errors against independent noisy velocities, including their measurement noise; this is distinct from the clean-velocity error $\mathcal E_t$ in the main comparison.'))
     cells.append(plot_cell(example, 'variance_estimation', 1, dedent(_VARIANCE_ESTIMATION),
         title='Fixed-block variance estimation',
-        note='These saved stationary-block EM references hold the boundary prior fixed. The evidence curve for each initialization is shifted by its own initial value, so heights do not compare different starts. Boxes summarize fitted-to-true variance ratios across the original trials. For contact, the mean-response residual omits posterior response uncertainty; the expected residual includes it.'))
+        note=r'These saved stationary-block EM references hold the boundary prior fixed. The evidence curve for each initialization is shifted by its own initial value, so heights do not compare different starts. The Estimate / truth boxes summarize $\widehat\sigma^2/\sigma^2$ and, for the array, $\widehat\tau^2/\tau^2$ across the original Monte Carlo simulations. For contact, the mean-response residual omits posterior response uncertainty; the expected residual includes it.'))
     if example == 'contact':
         cells.append(plot_cell(example,'noise_adaptation',3,_ADAPTIVE_TWO_SPHERES,
             title='Predictive contact beliefs at two checkpoints',
-            note='The two saved pre-correction normal densities are from one preassigned noise-change episode at observations 32 and 96. They share the density scale of observations 32, 96 and 192. Antipodal normals represent the same plane; these are individual beliefs, not repeated-trial confidence regions.'))
+            note='The two saved pre-correction normal densities are from one preassigned noise-change Monte Carlo simulation at observations 32 and 96. They share the density scale of observations 32, 96 and 192. Antipodal normals represent the same plane; these are individual beliefs, not confidence regions across Monte Carlo simulations.'))
         cells.append(plot_cell(example,'noise_adaptation',4,_ADAPTIVE_FINAL,
             title='Predictive contact belief and response risk',
-            note=r'The sphere is the saved pre-correction density at observation 192. Here $M_t^-$ is the predictive mean plane projector before the current observation is assimilated. The curve evaluates $v_t^\top[M_t^--(M_t^-)^2]v_t$ at the physical applied query for all three saved checkpoints, in squared millimetres per second. The normal parameter is $-A_t^-$ and its log normalizer is the saved plane log normalizer minus $\operatorname{tr}(A_t^-)$.'))
+            note=r'The sphere is the saved pre-correction density at $t=192$. Here $\overline P_t^-$ is the predictive mean plane projector before receiving $u_t$. The curve evaluates $r_t(v_t)=v_t^\top[\overline P_t^--(\overline P_t^-)^2]v_t$ at the physical applied input for all three saved measurement indices, in squared millimetres per second. The normal parameter is $-A_t^-$ and its log normalizer is the saved plane log normalizer minus $\operatorname{tr}(A_t^-)$.'))
         cells.append(plot_cell(example,'posterior_anisotropy',2,_CONSTRUCTED,
             title='Equal distance distributions and different directional risks',
-            note=r'This constructed identity uses $A^{(1)}=\operatorname{diag}(0,-8,-80)$ and $A^{(2)}=\operatorname{diag}(0,-80,-8)$. Their mode and the entire chordal-distance distribution around it coincide. The directional response risks differ because the two transverse eigenvalues are interchanged. These deterministic reference calculations are not extra task-performance trials.'))
+            note=r'This constructed identity uses $A^{(1)}=\operatorname{diag}(0,-8,-80)$ and $A^{(2)}=\operatorname{diag}(0,-80,-8)$. Their mode and the entire chordal-distance distribution around it coincide. The directional response risks differ because the two transverse eigenvalues are interchanged. These deterministic reference calculations are not extra task-performance Monte Carlo simulations.'))
         cells.append(plot_cell(example,'task_performance',2,dedent(_CONTACT_PAIRED),
             title='Paired contact response errors',
-            note=r'Each point is the mean same-trial response-MSE difference relative to $\overline P_t^+$ for the moving-sphere condition; horizontal bars are pointwise 95% Student intervals. Positive differences favor the posterior mean. Its self-difference is identically zero, so no artificial self confidence interval is shown.'))
+            note=r'Each point is the mean same-simulation response-MSE difference relative to $\overline P_t^+$ for the moving-sphere condition; horizontal bars are pointwise 95% Student intervals. Positive differences favor the posterior mean. Its self-difference is identically zero, so no artificial self confidence interval is shown.'))
     return cells

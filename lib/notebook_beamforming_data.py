@@ -195,9 +195,13 @@ def load_beamforming_plot_data(root, name, page=1):
             design=curves,design_xlabel=(r'$\tau^2/\sigma^2$' if xname=='snr' else r'Noise variance $\sigma^2$' if xname=='sigma2' else xname.replace('_',' ')))
     elif name == 'task_performance':
         frame=_primary(study.table('performance','stationary'))
-        if 'ratio' not in frame:frame['ratio']=frame[_column(frame,'L','t','observations')]/frame.n
-        frame=frame[frame.ratio.eq(1.)]
-        endpoint=_column(frame,'heldout_ratio_db','output_oracle_db','heldout_power_ratio_db')
+        frame=frame[frame.condition.eq('static') & frame.n.isin([32,64,128])
+                    & frame.t.eq(frame.n)]
+        # The revised loss uses the saved exact covariance, not an independent
+        # finite-snapshot estimate of output power. Deliberately no fallback.
+        endpoint='true_ratio_db'
+        if endpoint not in frame:
+            raise KeyError('Stationary beamforming requires saved true_ratio_db')
         curves=[]
         for method in ('mean','mode','scm_loaded','great_window'):
             points=[]
@@ -205,7 +209,7 @@ def load_beamforming_plot_data(root, name, page=1):
                 points.append((n,*_interval(g.groupby('episode')[endpoint].mean())))
             if points:curves.append(dict(method=method,points=np.asarray(points)))
         moving=_primary(study.table('performance','moving_episodes'))
-        value=_column(moving,'heldout_ratio_db','output_oracle_db','heldout_power')
+        value=_column(moving,'true_ratio_db')
         groupcols=[k for k in ('condition','n','method','episode') if k in moving]
         moving=moving.groupby(groupcols,sort=False,dropna=False)[value].mean().reset_index()
         moving=moving[moving.condition.eq('smooth')&moving.n.eq(32)]
@@ -215,7 +219,9 @@ def load_beamforming_plot_data(root, name, page=1):
             other=moving[moving.method.eq(method)].set_index('episode')[value]
             common=base.index.intersection(other.index)
             if len(common):paired.append(dict(method=method,values=(other.loc[common]-base.loc[common]).to_numpy()))
-        data.update(curves=curves,paired=paired)
+        data.update(curves=curves,paired=paired,stationary_endpoint=endpoint,
+            stationary_condition='static',stationary_dimensions=[32,64,128],
+            stationary_selection='t=n; one exact-covariance loss per simulation')
     elif name == 'posterior_anisotropy':
         r=study.array('performance','stories','story')
         A=_saved(r,'section_A','setup_A');frame=_saved(r,'section_frame','setup_section_frame')
@@ -226,7 +232,7 @@ def load_beamforming_plot_data(root, name, page=1):
         stationary=_normalize(study.table('performance','stationary'))
         horizon=_column(stationary,'L','t','observations')
         stationary=stationary[stationary.n.eq(64)&stationary[horizon].eq(64)]
-        value=_column(stationary,'heldout_ratio_db','output_oracle_db')
+        value=_column(stationary,'true_ratio_db')
         mean=stationary[stationary.method.eq('mean')].set_index('episode')[value]
         iso=stationary[stationary.method.isin(['iso','isotropic'])].set_index('episode')[value]
         common=mean.index.intersection(iso.index);delta=np.sort((iso.loc[common]-mean.loc[common]).to_numpy())
@@ -237,7 +243,22 @@ def load_beamforming_plot_data(root, name, page=1):
     elif name == 'noise_adaptation':
         frame=_primary(study.table('prediction','adaptation'))
         frame=frame[frame.condition.eq('noise_change')]
-        time=_column(frame,'time_s','t');variance={}
+        # t is the stored one-based measurement index. Physical-time columns
+        # use different origins elsewhere and must not be converted back to t.
+        time='t'
+        if not np.isfinite(frame[time]).all() or not np.equal(frame[time],np.floor(frame[time])).all():
+            raise ValueError('Variance reports require stored integer measurement indices')
+        config=study.meta('prediction')['config']
+        total=int(config['primary_beam_T'])
+        if total!=256:
+            raise ValueError('The declared noise-change figure requires T=256')
+        measurement_index=np.arange(1,total+1,dtype=int)
+        change_after=total//2
+        schedules={
+            'sigma2':np.where(measurement_index<=change_after,.2,.8),
+            'tau2':np.ones(total),
+        }
+        variance={}
         for key in ('sigma2','tau2'):
             traces=[]
             for method in ('known','exact_known','known_forgetting','misspecified','learned'):
@@ -247,12 +268,28 @@ def load_beamforming_plot_data(root, name, page=1):
                 points=grouped.median()
                 traces.append(dict(method=method,x=points.index.to_numpy(),y=points.to_numpy(),
                     low=grouped.quantile(.25).to_numpy(),high=grouped.quantile(.75).to_numpy()))
-            truth=frame.groupby(time)[key+'_true'].first()
-            changes=np.flatnonzero(np.abs(np.diff(truth.to_numpy()))>1e-12)
-            variance[key]=dict(traces=traces,x=truth.index.to_numpy(),truth=truth.to_numpy(),events=truth.index[changes+1].to_numpy())
-        data.update(variance=variance,time_label='Time (s)' if time=='time_s' else 'Number of observations',
-            task=_traces(frame,_finite_column(frame,'heldout_output_oracle_db','heldout_ratio_db'),time),
-            score=_traces(frame,_finite_column(frame,'prequential_score','mixture_log_score'),time))
+            recorded=frame.groupby(time)[key+'_true'].first()
+            schedule=schedules[key]
+            if not np.array_equal(recorded.to_numpy(),schedule[recorded.index.to_numpy(dtype=int)-1]):
+                raise ValueError('Saved true variances disagree with the declared noise-change schedule')
+            variance[key]=dict(traces=traces,x=measurement_index.copy(),truth=schedule,
+                events=np.array([change_after+.5]) if key=='sigma2' else np.array([]),
+                truth_step_where='mid',
+                reporting_t=recorded.index.to_numpy(dtype=int),
+                estimate_phase='Before receiving the measurement at the stored index')
+        # Use the normalized mixture density before receiving u_t. Neither
+        # the held-out power estimate nor the Gaussian score is a substitute.
+        for endpoint in ('output_oracle_db','prequential_score'):
+            if endpoint not in frame:
+                raise KeyError('Noise adaptation requires saved '+endpoint)
+        data.update(variance=variance,time_label=r'Measurement index $t$',
+            reporting_t=np.sort(frame.t.unique()).astype(int),
+            T=total,variance_block_length=int(config['primary_report_every']),
+            task=_traces(frame,'output_oracle_db',time),
+            score=_traces(frame,'prequential_score',time),
+            task_endpoint='output_oracle_db',score_endpoint='prequential_score',
+            beta_by_method={str(method):float(group.beta.iloc[0])
+                            for method,group in frame.groupby('method',sort=False)})
     elif name == 'predictive_calibration':
         frame=_normalize(study.table('prediction','calibration_summary','prediction_calibration_summary'))
         if 'split' in frame and frame.split.eq('test').any():frame=frame[frame.split.eq('test')]

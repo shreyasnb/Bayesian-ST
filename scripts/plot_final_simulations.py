@@ -149,13 +149,13 @@ def caption_for(name,evidence):
         from lib.final_information_visuals import CONTACT_INFORMATION_CAPTION
         caption=CONTACT_INFORMATION_CAPTION
     if name=='posterior_anisotropy':
-        contact,beam=caption.split('Beamforming:',1)
+        if 'Beamforming:' in caption:
+            contact, beam = caption.split('Beamforming:', 1)
+            caption = contact.removeprefix('Contact:').strip() if evidence.example == 'contact' else beam.strip()
         if evidence.example=='contact':
-            caption=contact.removeprefix('Contact:').strip()
-            caption+=' The actual posterior is the predeclared concentrated-input episode 0 at t=16. Visible anisotropy and repeated-experiment task benefit are separate comparisons.'
+            caption+=' The actual posterior is the fixed concentrated-input simulation 0 at t=16. Directional density and repeated-simulation task performance are separate comparisons.'
         else:
-            caption=beam.strip()
-            caption+=' Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full held-out power-ratio losses at n=L=64, in dB; it is not a confidence interval.'
+            caption+=' Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full exact-covariance power differences at n=t=64, in dB; it is not a confidence interval.'
     if name=='posterior_anisotropy' or (evidence.example=='contact' and name in ('paper_summary','noise_adaptation')):
         caption+=' Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.'
     if name=='predictive_calibration':
@@ -193,6 +193,11 @@ def render(root, example, stage, selected, out, engineering=False):
                     raise RuntimeError('A required figure has no completed numerical panels')
                 for fig in figures:
                     prepare_paper_axes(fig)
+                    if len([ax for ax in fig.axes if ax.get_label() != '<colorbar>']) > 1:
+                        for ax in fig.axes:
+                            for text in list(ax.texts):
+                                if text.get_text() in ('(a)', '(b)', '(c)', '(d)', '(e)', '(f)'):
+                                    text.remove()
                     verify_title_free(fig)
                     if not abs(float(fig.get_figwidth())-FIGURE_WIDTH)<1e-12:
                         raise RuntimeError('Every final paper page must be seven inches wide')

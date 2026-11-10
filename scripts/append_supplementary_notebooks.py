@@ -51,9 +51,9 @@ if get_ipython() is not None:
 plt.rcParams.update({
     'text.usetex': True,
     'text.latex.preamble': r'\usepackage{amsmath}\usepackage{amssymb}',
-    'font.family': 'serif', 'font.size': 11,
-    'axes.labelsize': 11, 'axes.titlesize': 11,
-    'legend.fontsize': 10, 'xtick.labelsize': 10, 'ytick.labelsize': 10,
+    'font.family': 'serif', 'font.size': 25,
+    'axes.labelsize': 25, 'axes.titlesize': 25,
+    'legend.fontsize': 22, 'xtick.labelsize': 23, 'ytick.labelsize': 23,
     'lines.linewidth': 1.6, 'lines.markersize': 4,
     'figure.dpi': 300, 'savefig.dpi': 300, 'savefig.bbox': None,
     'axes.spines.top': False, 'axes.spines.right': False,
@@ -124,7 +124,7 @@ def append(example, root=ROOT, refresh_added=False):
         'The following cells expose the remaining saved figure pages and application '
         'tracking errors. Each figure uses an editable `(15, 5)` canvas, 300 dpi and '
         'LaTeX. Saving writes the local PDF and its supplementary manuscript copy. '
-        'These cells read the existing trials and numerical checks; they do not '
+        'These cells read the saved Monte Carlo simulations and numerical checks; they do not '
         'rerun inference, simulation or benchmark selection.\n',
         'supplementary-heading'),
         make_cell('code', SETUP.replace('__EXAMPLE__', repr(example)).replace(
@@ -159,6 +159,7 @@ def append(example, root=ROOT, refresh_added=False):
         generation_sources={f'scripts/notebook_supp_{family}.py': sha(
             root/f'scripts/notebook_supp_{family}.py') for family in FAMILIES},
         prefix_scope='Original cells preserved including source, outputs, execution counts and metadata. The stored hashes document this append operation; they do not lock future user styling edits.')
+    notebook['metadata']['supplementary_appendix']['generation_sources']['scripts/notebook_publication_style.py'] = sha(root/'scripts/notebook_publication_style.py')
     path.write_text(json.dumps(notebook, indent=1, ensure_ascii=False)+'\n')
     saved = json.loads(path.read_text())
     assert saved['cells'][:len(prefix)] == prefix

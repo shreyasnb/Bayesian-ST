@@ -6,19 +6,20 @@ does not render figures or produce numerical results.
 from __future__ import annotations
 
 from textwrap import dedent
+from scripts.notebook_publication_style import apply_publication_style
 
 
 STYLE_SOURCE = r'''
 LABELS = {
-    'mean': r'$\overline P_t^+$',
-    'mode': r'$P_{\widehat{\mathcal X}_t}$',
-    'iso': r'$\overline P_t^{\mathrm{iso}}$',
-    'isotropic': r'$\overline P_t^{\mathrm{iso}}$',
+    'mean': r'Posterior mean $\overline P_t^+$',
+    'mode': r'Mode $P_{\widehat{\mathcal X}_t}$',
+    'iso': r'Isotropic mean $\overline P_t^{\mathrm{iso}}$',
+    'isotropic': r'Isotropic mean $\overline P_t^{\mathrm{iso}}$',
     'mode_loaded': 'Loaded modal beamformer',
     'modal_loading': 'Loaded modal beamformer',
-    'covariance_loading': 'MVDR with covariance shrinkage',
-    'scm': 'MVDR with covariance shrinkage',
-    'scm_loaded': 'MVDR with covariance shrinkage',
+    'covariance_loading': 'Regularized sample covariance',
+    'scm': 'Regularized sample covariance',
+    'scm_loaded': 'Regularized sample covariance',
     'ew_covariance': 'Sample covariance',
     'regularized': 'Regularized projector',
     'lw': 'Ledoit--Wolf', 'ledoit_wolf': 'Ledoit--Wolf',
@@ -26,12 +27,12 @@ LABELS = {
     'great': 'GREAT (sliding window)',
     'great_window': 'GREAT (sliding window)',
     'great_ew': 'GREAT (exponential weighting)',
-    'oracle': 'Ideal MVDR',
+    'oracle': 'True covariance',
     'known': 'True variances',
     'exact_known': r'True variances, $\beta=1$',
-    'known_forgetting': 'True variances, forgetting',
-    'misspecified': 'Fixed variances',
-    'learned': 'Learned variances',
+    'known_forgetting': r'True variances, $\beta=' + ('0.98' if example == 'beamforming' else '0.9') + r'$',
+    'misspecified': 'Fixed variance estimates',
+    'learned': 'EM variance estimates',
     'block_em': 'Block EM', 'residual': 'Residual fit',
     'ridge': 'Ridge regression', 'gaussian': 'Extended Kalman filter',
     'laplace': r'$\mathcal N(0,H_A^{-1})$',
@@ -103,6 +104,7 @@ DRAFT_PATH = ROOT / 'results' / DRAFT_SECTION / {example!r} / PDF_PATH.name
     DRAFT_PATH.write_bytes(PDF_PATH.read_bytes())
 plt.show()
 '''
+    source = apply_publication_style(source)
     return dict(example=example, stem=stem, page=page,
                 title=title or stem.replace('_', ' ').capitalize(),
                 note=note, source=source)
