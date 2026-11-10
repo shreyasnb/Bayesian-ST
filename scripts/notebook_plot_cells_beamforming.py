@@ -120,9 +120,11 @@ for curve in data["curves"]:
 axes[0].set(xlabel="Number of sensors",ylabel="Output power / oracle power (dB)")
 labels = [STYLE[item["method"]][0] for item in data["paired"]]
 samples = [item["values"] for item in data["paired"]]
-boxes = axes[1].boxplot(samples,vert=False,labels=labels,patch_artist=True,
+boxes = axes[1].boxplot(samples,vert=False,patch_artist=True,
     medianprops={"color":"white","linewidth":1.2},
     flierprops={"markersize":1.8,"alpha":.35})
+# Set tick labels explicitly: boxplot's labels keyword was removed in 3.11.
+axes[1].set_yticks(np.arange(1,len(labels)+1),labels=labels)
 for patch,item in zip(boxes["boxes"],data["paired"]):
     patch.set(facecolor=STYLE[item["method"]][1],alpha=.85)
 axes[1].axvline(0.,linestyle="--",color="#222222",linewidth=1.)

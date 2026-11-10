@@ -30,7 +30,7 @@
       "pdf_headers_checked": 8,
       "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
       "editable_metadata_sha256": "5d07421edf4ce72e7edd485de43c59e004670e725ab74875b8d3b03c1a0f8fa2",
-      "sha256": "abd8a83b1861f3b8c6f645159e05819b419781d3b3cc2d74986f4c18849b76f0"
+      "sha256": "f4a101fb3f5219c0e9c3009cea3280cc3896cf1233260007079039c08e1abaf6"
     },
     "02_field.ipynb": {
       "status": "verified",
@@ -268,5 +268,16 @@
     "scripts/probe_editable_plots.py": "ed622613b67fbe73c3ecd1dd6fd3bf671de55eb112c4932c61a56a3bc804fab3",
     "scripts/execute_editable_notebooks.py": "8e932e2609be5d3a23ff7af5ade6de7384eb8a97fef53f128760b1da8b812122"
   },
-  "editing_policy": "DPI, figure size, labels, colors, layout and export paths are user controls. Their values and rendered PNG hashes are not restricted by the notebook verifier. Saved numerical inputs and data readers remain independently verified."
+  "editing_policy": "DPI, figure size, labels, colors, layout and export paths are user controls. Their values and rendered PNG hashes are not restricted by the notebook verifier. Saved numerical inputs and data readers remain independently verified.",
+  "matplotlib_boxplot_compatibility": {
+    "status": "passed",
+    "notebook": "01_array.ipynb",
+    "figure": "task_performance",
+    "removed_labels_keyword_rejected": true,
+    "tick_labels_preserved": true,
+    "box_count_preserved": true,
+    "rendered_png_byte_identical": true,
+    "technical_functions_changed": false,
+    "change": "Set y tick labels explicitly after boxplot creation; no dependency installation or numerical changes required."
+  }
 }
