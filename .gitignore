@@ -74,3 +74,8 @@ results/contact/**/pytest.xml
 # General-validation diagnostic plots are regenerable, not final paper exports.
 results/beamforming/data/validation/*.pdf
 results/beamforming/data/validation/*.png
+
+# User-edited notebook exports and fresh theory diagnostics are regenerable.
+results/notebook_exports/
+results/notebook_runs/
+!results/notebook_editability.json

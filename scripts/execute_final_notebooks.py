@@ -45,6 +45,8 @@ def execute(example):
     target = path.with_suffix('.executed.tmp')
     nbformat.write(nb, target)
     target.replace(path)
+    from scripts.check_editable_notebooks import verify_notebook
+    verify_notebook(ROOT, name, check_pdfs=True)
     print(json.dumps(dict(status='executed', notebook=name,
         code_cells=sum(cell.cell_type == 'code' for cell in nb.cells),
         embedded_images=sum('image/png' in output.get('data', {})

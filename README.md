@@ -4,6 +4,12 @@ Implementation and simulations for **Bayesian Subspace Tracking with Grassmann B
 
 Start with the executed [beamforming notebook](notebooks/01_array.ipynb) or [contact notebook](notebooks/03_contact.ipynb). Each develops the observation model, information, posterior geometry, decisions, comparisons, variance learning and computational cost in order. Figures use LaTeX, 300 dpi previews and raster layers, vector PDFs, a nominal 7-inch paper width and 11-point axes and 10-point ticks/legends. Captions and detailed claims are outside the title-free PDFs. Manuscript selections are organized under [results/main/](results/main/) and [results/supplementary/](results/supplementary/), with page-level captions and provenance.
 
+All five root notebooks now contain full editable Matplotlib code in their
+figure cells. Edit `DPI`, `FIGSIZE`, labels, colors and PDF saves directly;
+data-only helpers load the saved arrays. New exports go to
+`results/notebook_exports/` so the published figures stay intact. See
+[editing and running notebook figures](docs/editable_notebooks.md).
+
 The [completion report](completion_report.md) records completed cohorts, mixed comparisons, numerical failures and unsupported claims. The [mathematical checks](docs/final_manuscript_checks.md) explain identity transport, the sharp modal bound, fixed-boundary EM and the limits of dynamic uncertainty claims.
 
 ## Results
@@ -54,10 +60,10 @@ Identity transport is permitted when motion is unknown. Forgetting is then an ap
 
 | Notebook | Status |
 | --- | --- |
-| [00_theory](notebooks/00_theory.ipynb) | Original preserved general validation; a complete fresh execution is saved under the final validation directory |
+| [00_theory](notebooks/00_theory.ipynb) | General validation with unchanged numerical checks and editable figures; fresh diagnostics use `results/notebook_runs/00_theory/` |
 | [01_array](notebooks/01_array.ipynb) | Current beamforming walkthrough |
-| [02_field](notebooks/02_field.ipynb) | Historical field reconstruction study with its original environment and outputs |
+| [02_field](notebooks/02_field.ipynb) | Editable figures from verified historical field data, runnable in the current environment |
 | [03_contact](notebooks/03_contact.ipynb) | Current contact walkthrough |
-| [04_implementation_audit](notebooks/04_implementation_audit.ipynb) | Historical implementation audit at `a91faab`, with its original evidence |
+| [04_implementation_audit](notebooks/04_implementation_audit.ipynb) | Editable figures from verified historical implementation-audit data, runnable in the current environment |
 
-The [starting-revision archive](archive/a91faab/preservation.json) preserves 229 original source/notebook files and binds 2,358 historical result files left in place. Original certificates have not been refreshed to claim new producers. Historical scripts and notebooks should be reproduced with their matching commit/source tree. Earlier redesign, implementation-audit, contact and field evidence remains in its original directories. The `main` and `dev` branches are unchanged.
+The [starting-revision archive](archive/a91faab/preservation.json) preserves 229 original source/notebook files and binds 2,358 historical result files left in place. Original certificates have not been refreshed to claim new producers. Reproducing the archived simulations requires their matching commit/source tree; the five current root notebooks expose editable plotting code and run in the current environment. Earlier redesign, implementation-audit, contact and field evidence remains in its original directories. The `main` and `dev` branches are unchanged.

@@ -99,28 +99,8 @@ def verify_figures(example):
 
 
 def verify_notebook(name):
-    import nbformat
-    path = ROOT / 'notebooks' / name
-    nb = nbformat.read(path, as_version=4)
-    example = 'beamforming' if name == '01_array.ipynb' else 'contact'
-    record = nb.metadata['final_study']
-    assert record['example'] == example and record['stage'] == 'paper'
-    assert record['producer_sha256'] == sha(ROOT / 'scripts/make_final_notebooks.py')
-    assert record['figure_manifest_sha256'] == sha(
-        ROOT / 'results' / example / 'figure_manifest.json')
-    code = [cell for cell in nb.cells if cell.cell_type == 'code' and cell.source.strip()]
-    assert code and all(cell.execution_count is not None for cell in code), name
-    assert not any(output.output_type == 'error'
-                   for cell in code for output in cell.get('outputs', [])), name
-    embedded = [hashlib.sha256(base64.b64decode(output['data']['image/png'])).hexdigest()
-                for cell in code for output in cell.get('outputs', [])
-                if 'image/png' in output.get('data', {})]
-    expected = record['displayed_previews']
-    verify_mapping(ROOT, expected)
-    assert sorted(embedded) == sorted(expected.values()), name
-    images = len(embedded)
-    assert 5 <= images <= 10, (name, images)
-    return dict(code_cells=len(code), embedded_images=images, sha256=sha(path))
+    from scripts.check_editable_notebooks import verify_notebook as verify_editable
+    return verify_editable(ROOT, name)
 
 
 def verify_display_audits(example):
@@ -190,7 +170,7 @@ def main():
     if not args.science_only:
         result['figures'] = {example: verify_figures(example) for example in EXAMPLES}
         result['notebooks'] = {name: verify_notebook(name)
-                               for name in ('01_array.ipynb', '03_contact.ipynb')}
+                               for name in ('00_theory.ipynb','01_array.ipynb','02_field.ipynb','03_contact.ipynb','04_implementation_audit.ipynb')}
         result['display_audits'] = {example: verify_display_audits(example) for example in EXAMPLES}
         from scripts.export_draft_figures import verify_export
         result['draft_figures'] = verify_export(ROOT)

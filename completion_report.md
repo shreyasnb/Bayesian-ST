@@ -258,3 +258,21 @@ The independent contact likelihood check agreed with direct Gaussian-mean KL
 to 1.24e-14, and its numerical Hessian matched the saved Fisher matrix to a
 relative error of 1.0e-10. These are display/identity checks on the frozen
 experiment, not new statistical repetitions.
+
+## Editable notebook figures
+
+The five root notebooks now contain 49 complete Matplotlib figure cells: four
+in theory, eight in beamforming, seventeen in field reconstruction, eight in
+contact tracking and twelve in the implementation audit. Every figure cell
+exposes its data, DPI, FIGSIZE, artists, labels, direct PDF save and plt.show.
+No image-display facade or imported plotting routine hides those choices.
+The numerical library and scientific generators remain unchanged.
+
+All five notebooks executed successfully. The theory notebook retained its
+original assertions and passed all 315 regression checks. New read-only data
+helpers verify the saved numerical inputs; field/audit execution no longer
+triggers historical simulations. Editable exports and fresh theory diagnostics
+use separate local directories. All 3,781 previously tracked result files,
+including published PDFs, remain byte-identical. The scientific gate and all
+24 stage/component records remain valid. See the [notebook editability report](results/notebook_editability.json)
+and [the editing workflow](docs/editable_notebooks.md).

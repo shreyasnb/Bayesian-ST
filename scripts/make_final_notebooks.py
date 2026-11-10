@@ -244,9 +244,9 @@ def _preview_selection(meta,name,**selector):
 
 DETERMINISTIC_CHECKS={
 'beamforming':r"""import numpy as np
-from lib.final_paper_visuals import load_evidence
+from lib.notebook_inputs import load_final_array, load_final_config
 from lib.final_prediction import mvdr
-record=load_evidence(ROOT,EXAMPLE,'paper',components=['performance']).array('performance','stories')
+record=load_final_array(ROOT,EXAMPLE,'performance','stories')
 M,a=record['setup_M'],record['setup_a']
 R=float(record['setup_sigma2'])*np.eye(len(M))+float(record['setup_tau2'])*M
 w=mvdr(R,a)
@@ -257,13 +257,12 @@ assert np.allclose(w,record['setup_weights'][index],rtol=1e-10,atol=1e-11)
 print('Saved mean: distortionless action, first-order condition and saved weight agree.')
 """,
 'contact':r"""import numpy as np
-from lib.final_paper_visuals import load_evidence
+from lib.notebook_inputs import load_final_array, load_final_config
 from lib.final_contact import soft_commands
 from lib.geometry import risk
-evidence=load_evidence(ROOT,EXAMPLE,'paper',components=['performance'])
-record=evidence.array('performance','anisotropy')
+record=load_final_array(ROOT,EXAMPLE,'performance','anisotropy')
 M=record['plane_mean']
-lam=float(evidence.config('performance')['task_lambda'])
+lam=float(load_final_config(ROOT,EXAMPLE,'performance')['task_lambda'])
 desired=record['physical_queries']
 commands=soft_commands(M,desired,lam)
 assert np.allclose(commands@(np.eye(3)+lam*(np.eye(3)-M)).T,desired,rtol=1e-11,atol=1e-12)
@@ -276,6 +275,55 @@ assert np.allclose(expected_iso,computed+excess,rtol=1e-10,atol=1e-11)
 print('Saved mean: command first-order condition, directional risk and isotropic-action excess agree.')
 """}
 
+
+def editable_setup(example):
+    from importlib import import_module
+    data_import=import_module('scripts.notebook_plot_cells_'+example).DATA_IMPORT
+    stem='01_array' if example=='beamforming' else '03_contact'
+    return rf'''from pathlib import Path
+import os
+import sys
+ROOT = Path.cwd() if (Path.cwd()/'lib').exists() else Path.cwd().parent
+sys.path.insert(0, str(ROOT))
+EXAMPLE = {example!r}
+
+# Use the optional local TeX installation when running in the cloud environment.
+# On a machine with a system TeX installation this block has no effect.
+LOCAL_TEX = Path('/workspace/.local/tex')
+if (LOCAL_TEX / 'usr/bin/dvipng').exists():
+    os.environ['PATH'] = str(LOCAL_TEX / 'usr/bin') + os.pathsep + os.environ['PATH']
+    os.environ.setdefault('TEXMFHOME', str(LOCAL_TEX / 'usr/share/texmf'))
+
+# Import data readers before setting the visible plotting defaults.
+{data_import}
+from lib.notebook_inputs import verify_saved_inputs
+from IPython import get_ipython
+from IPython.display import display, Markdown
+import numpy as np
+import matplotlib.pyplot as plt
+
+INPUT_HASHES = verify_saved_inputs(ROOT, EXAMPLE)
+EDITABLE_OUTPUT = ROOT / 'results/notebook_exports/{stem}'
+EDITABLE_OUTPUT.mkdir(parents=True, exist_ok=True)
+
+# Shared defaults are editable here. Each figure cell also owns DPI and FIGSIZE.
+if get_ipython() is not None:
+    get_ipython().run_line_magic('matplotlib', 'inline')
+    get_ipython().run_line_magic('config', "InlineBackend.figure_format = 'png'")
+    get_ipython().run_line_magic('config', "InlineBackend.print_figure_kwargs = {{'bbox_inches': None}}")
+plt.rcParams.update({{
+    'text.usetex': True,
+    'text.latex.preamble': r'\usepackage{{amsmath}}\usepackage{{amssymb}}',
+    'font.family': 'serif', 'font.size': 11,
+    'axes.labelsize': 11, 'axes.titlesize': 11,
+    'legend.fontsize': 10, 'xtick.labelsize': 10, 'ytick.labelsize': 10,
+    'lines.linewidth': 1.6, 'lines.markersize': 4,
+    'figure.dpi': 300, 'savefig.dpi': 300, 'savefig.bbox': None,
+    'axes.spines.top': False, 'axes.spines.right': False,
+}})
+print('Verified', len(INPUT_HASHES), 'saved numerical inputs.')
+print('Editable PDF output:', EDITABLE_OUTPUT)
+'''
 
 def build(root,example):
     root=Path(root);meta=verify_figures(root,example);findings=paper_findings(root,example)
@@ -292,33 +340,14 @@ def build(root,example):
     cells=[nbformat.v4.new_markdown_cell(INTRODUCTION[example])]
     manifest_digest=sha(root/'results'/example/'figure_manifest.json')
     producer_digest=sha(root/'scripts/make_final_notebooks.py')
-    cells.append(nbformat.v4.new_code_cell(f'''from pathlib import Path
-import sys,json
-ROOT=Path.cwd() if (Path.cwd()/'lib').exists() else Path.cwd().parent
-sys.path.insert(0,str(ROOT))
-from scripts.make_final_notebooks import verify_figures,sha
-from IPython.display import display,Image,Markdown
-EXAMPLE={example!r}
-meta=verify_figures(ROOT,EXAMPLE)
-assert sha(ROOT/'results'/EXAMPLE/'figure_manifest.json')=={manifest_digest!r}, 'Figures changed: regenerate this notebook'
-assert sha(ROOT/'scripts/make_final_notebooks.py')=={producer_digest!r}, 'Notebook maker changed: regenerate this notebook'
-FOLDER=ROOT/'results'/EXAMPLE
-DISPLAYED_PREVIEWS={previews!r}
-print('Verified',EXAMPLE,'paper evidence:',len(meta['figures']),'PDFs')
-
-def show_saved(name,page=1):
-    entry=meta['figures'][name+'.pdf']
-    assert any(record['page']==page for record in entry['pages'])
-    suffix='' if page==1 else '_page'+str(page)
-    path=FOLDER/'preview'/(name+suffix+'.png')
-    relative=path.relative_to(ROOT).as_posix()
-    assert sha(path)==DISPLAYED_PREVIEWS[relative], 'Preview changed: regenerate notebook'
-    display(Image(data=path.read_bytes(),width=1400))
-    display(Markdown('[Vector PDF and supplementary pages](../results/'+EXAMPLE+'/'+name+'.pdf) | [Full-resolution PNG](../results/'+EXAMPLE+'/preview/'+name+suffix+'.png)'))
-'''))
+    cells.append(nbformat.v4.new_code_cell(editable_setup(example)))
     def markdown(text):cells.append(nbformat.v4.new_markdown_cell(text))
     def image(index):
-        name,page=displayed[index];cells.append(nbformat.v4.new_code_cell(f'show_saved({name!r},page={page})'))
+        name,page=displayed[index]
+        module_name='scripts.notebook_plot_cells_'+example
+        from importlib import import_module
+        source=import_module(module_name).get_plot_cell(name,page)
+        cells.append(nbformat.v4.new_code_cell(source,metadata={'editable_plotting_role':'plot','figure_id':name,'source_page':page}))
     markdown('## 1. Measurements and geometry\n\n'+SECTION_NOTES[1]);image(0)
     if example=='contact':
         information_note=r'''## 2. Which normal rotations the observations distinguish
@@ -388,9 +417,20 @@ Under the full belief, using another action $\overline P_t^{\mathrm{iso}}v$ adds
         'kernelspec':{'display_name':'Python 3','language':'python','name':'python3'},
         'language_info':{'name':'python'},
         'final_study':{'example':example,'stage':'paper','figure_manifest_sha256':manifest_digest,
-            'displayed_previews':previews,'producer':'scripts/make_final_notebooks.py',
+            'reference_previews':previews,'rendering':'inline_matplotlib','producer':'scripts/make_final_notebooks.py',
             'producer_sha256':producer_digest,
             'calculations':'Deterministic task actions and identities from stored moments; no inference, integration, sampling or fitting'}})
+    from lib.notebook_inputs import saved_input_hashes
+    loader='lib/notebook_'+example+'_data.py'
+    nb.metadata['editable_plotting']={
+        'schema':1,'mode':'inline_matplotlib','figure_count':len(displayed),
+        'input_hashes':saved_input_hashes(root,example),
+        'loader_sources':{loader:sha(root/loader),'lib/notebook_inputs.py':sha(root/'lib/notebook_inputs.py')},
+        'output_directory':'results/notebook_exports/'+('01_array' if example=='beamforming' else '03_contact'),
+        'controls':'DPI, FIGSIZE, styles, labels and PDF saves are ordinary visible code in every figure cell',
+        'source_arrays':'Frozen published numerical data; no inference or benchmark rerun',
+    }
+    nb.cells[0].source+='\n\nEvery figure is now drawn by the full Matplotlib code in its own cell. Edit `DPI`, `FIGSIZE`, labels, styles, color scales or the PDF save command there. The setup cell exposes the shared `rcParams`. The one-line data loaders read the saved numerical arrays only. Notebook exports are separate from the published PDFs, so plotting experiments leave the scientific results intact.'
     nbformat.validate(nb)
     return nb
 

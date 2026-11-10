@@ -6,12 +6,12 @@
   "final_science_hash": "d3e5f91e4bc9ca18bf34d595fe6d2ed0137361dff835dccc72b552ad7bb5ec47",
   "files": {
     ".gitignore": {
-      "sha256": "4223eda72de1a72a23365605a4895936174187d9d67fd389527363cbb324d901",
-      "bytes": 2300
+      "sha256": "7ba778b07142200376107af0753f07b43c00cf6ac03d3221c702b54a02f3fd20",
+      "bytes": 2462
     },
     "README.md": {
-      "sha256": "2165df7a980ca2c1fc8e41bfd160b8c6b7ae8be4fd1477dbc19174ec5f41f73d",
-      "bytes": 6707
+      "sha256": "9586f620dcc5341cf497594b57b268dc1d6b54a810daef836246ebaa7b07d38b",
+      "bytes": 7201
     },
     "archive/a91faab/.gitignore": {
       "sha256": "ec991057117da956aafef786c47b430a702258130bb06e4c47ed91d0d21a4055",
@@ -942,8 +942,12 @@
       "bytes": 9642
     },
     "completion_report.md": {
-      "sha256": "cee44040d16eb821ff8f7004cb9f68f79866db9fd310112140f29beab53de4f2",
-      "bytes": 16051
+      "sha256": "fa89b7e0e4059d271c4e37e799e0672cebf6dfe8bd4e6d3a706eaab4b686fb31",
+      "bytes": 17160
+    },
+    "docs/editable_notebooks.md": {
+      "sha256": "14e1552d7b3de113feb165e36d47480bf7976519b6f1777f54206a37b3ccbb06",
+      "bytes": 3536
     },
     "docs/final_manuscript_checks.md": {
       "sha256": "52c664a63d46ec61a44498cae35e5fafd3fb0152a34024723119c3835622e719",
@@ -954,8 +958,8 @@
       "bytes": 53553
     },
     "docs/final_simulations.md": {
-      "sha256": "3a6225626b9ec5f4e747252ef1948cb0a2ebfe39a1ea6378985d57d651e72d3e",
-      "bytes": 9146
+      "sha256": "e4696746366d79db34b4308f5ac4cff6a0f1b3b23cb95a9603aa6aac7dfedfb4",
+      "bytes": 10066
     },
     "docs/great_reference.md": {
       "sha256": "8d77f6da6d6ba3a2954a9b90fa5e725fd88f87e64d4377836bcd848391c716fc",
@@ -1029,6 +1033,26 @@
       "sha256": "77b400c9848cdf2be39d511e3909553e619f4d1375bc8308ac9c49ef053b66a1",
       "bytes": 3831
     },
+    "lib/notebook_audit_data.py": {
+      "sha256": "4f9d824f9950c95c3a6e94361f3e37a2f9fb2f616a9f90577d640db44d067fa4",
+      "bytes": 3771
+    },
+    "lib/notebook_beamforming_data.py": {
+      "sha256": "8820eebaecd1d8449fdbfe429d6bbe6257fb978292294b4511cfc25482b24809",
+      "bytes": 15623
+    },
+    "lib/notebook_contact_data.py": {
+      "sha256": "b0d0a161cbb105552eeb1aa1a5db9ae90a44d784d2857a21807d1b82b5432966",
+      "bytes": 12254
+    },
+    "lib/notebook_field_data.py": {
+      "sha256": "2c00d80ea0f316c6fff38d58b8a430db38087d4d10774603c600a45ad89233c6",
+      "bytes": 2968
+    },
+    "lib/notebook_inputs.py": {
+      "sha256": "788c8e06052a728f3e33f64d634c2eb2fe2d3dd6971fe36325efb6cd633fca32",
+      "bytes": 2224
+    },
     "lib/plotting.py": {
       "sha256": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
       "bytes": 1550
@@ -1049,13 +1073,25 @@
       "sha256": "63b3b363856efe98628550457fe0d95d8220821ce76a36785d1e3db6722783d6",
       "bytes": 20387
     },
+    "notebooks/00_theory.ipynb": {
+      "sha256": "7ed7d7027c9e660f3d6fb82e7ff8f9fcd1db03edeaa4fb8e34b6a84e64f0457f",
+      "bytes": 855544
+    },
     "notebooks/01_array.ipynb": {
-      "sha256": "c716249cbb06119f388a2d8877f84dd77555db0e389acccfa65d5a6020b52dbc",
-      "bytes": 1838820
+      "sha256": "abd8a83b1861f3b8c6f645159e05819b419781d3b3cc2d74986f4c18849b76f0",
+      "bytes": 1896078
+    },
+    "notebooks/02_field.ipynb": {
+      "sha256": "bd54ee558e46f39e609cb1a7e36a838359baf77de87e01abdcea592480700e6c",
+      "bytes": 6914995
     },
     "notebooks/03_contact.ipynb": {
-      "sha256": "00307c105aad3480bc7288f64c5057115dc6476ffdff622d619a698026e225e9",
-      "bytes": 2241319
+      "sha256": "3c9095145ebdd93a90f8ce9caf1ce5244e9f2576e2821b38d332afb9c5c78b5e",
+      "bytes": 2298754
+    },
+    "notebooks/04_implementation_audit.ipynb": {
+      "sha256": "97886604c9a0af612526943bcce50df6a9e6b3818bdb585e94e9a17b69e237e3",
+      "bytes": 4551201
     },
     "pyproject.toml": {
       "sha256": "8220133389552906c7471dcd038ab3ba8314d38b7fb16a4fbffaf51bf734dcf0",
@@ -6645,6 +6681,10 @@
       "sha256": "2b3f245e98c0316497ae5f2289f8d2cfe00ad647e72527ad3fdc387ec949cd04",
       "bytes": 291219
     },
+    "results/notebook_editability.json": {
+      "sha256": "d9f3169b217c5d73e7e539052e3adc5341f353dda504bf2f35c4a42bbe7f7390",
+      "bytes": 12689
+    },
     "results/supplementary/README.md": {
       "sha256": "b9ad523beafe78d23bb7e77382293b5a98bb0a0a584feb2957033b8040ff096f",
       "bytes": 3326
@@ -6773,13 +6813,17 @@
       "sha256": "0c6b28eac84d9fc8786521200dc85121a7ea32986bd5e916d4c1870d6071b443",
       "bytes": 5739
     },
+    "scripts/check_editable_notebooks.py": {
+      "sha256": "87fe1c967bcd2212f96dc3cbecd760805b3e2bbc7d33c8c0daab1f8c84f96cb2",
+      "bytes": 10878
+    },
     "scripts/check_final_pdf_layout.py": {
       "sha256": "c5b777aa6afe1358bbc569ded8fb87a2b6863077abcd7f53f66c59c5e5f0a7c2",
       "bytes": 13788
     },
     "scripts/check_final_simulations.py": {
-      "sha256": "dc64f2debd744aea02871ce5f4a009a8768d37d9791f09cb14a87ee2a9e82eb8",
-      "bytes": 12356
+      "sha256": "d5cc438f680e7aea8adf60c54a27cb28de26157bef2155408e8269ed35684b68",
+      "bytes": 11249
     },
     "scripts/check_implementation_audit.py": {
       "sha256": "8c230711ca0c8bd347f11a4e35630589ac73bf1fcd5f77f9d1bc208497c5dead",
@@ -6797,9 +6841,13 @@
       "sha256": "5e8203935651c7321aa4b3bfee50e39bcb25d7236333468b0b998bf8461bc34d",
       "bytes": 18732
     },
+    "scripts/execute_editable_notebooks.py": {
+      "sha256": "8e932e2609be5d3a23ff7af5ade6de7384eb8a97fef53f128760b1da8b812122",
+      "bytes": 1798
+    },
     "scripts/execute_final_notebooks.py": {
-      "sha256": "68f60bd1afa02f95f83a95d4b98445b0967e56bd9552d0c1c4678a0d4c724638",
-      "bytes": 2727
+      "sha256": "324ed4d51627ea575f81fe3415cff62149d3e746fea99cd84675ab870fd7d2a9",
+      "bytes": 2841
     },
     "scripts/export_draft_figures.py": {
       "sha256": "e7db51231ee51e8ba042e4627e477a8f6413947f5df97c5e557c21c8f076688e",
@@ -6817,21 +6865,41 @@
       "sha256": "91e8c57268f74f50dd881c8113b4e6f401f2d7f80d67c813702097986acf79c8",
       "bytes": 19843
     },
+    "scripts/make_editable_notebooks.py": {
+      "sha256": "45717bb6ca526e817e0628a822a6332bd1947e1883820d5cb4ce74dc5827d11c",
+      "bytes": 2667
+    },
     "scripts/make_example_notebooks.py": {
-      "sha256": "96daad319caba8745e7a030bd1925053ca02cf50ccffdca329419db44ef4db17",
-      "bytes": 25403
+      "sha256": "43decadc1480eff1bdd7a335a8388173bbc71b2cdb8b80218d76bd7522647ea1",
+      "bytes": 449
     },
     "scripts/make_final_notebooks.py": {
-      "sha256": "7ab768ef230313909c005fac31b0c81ca2e7c60644e94caa9a16fcb79313961c",
-      "bytes": 39660
+      "sha256": "965a09e2b875b6424fcf0ffd2ca41df965f643a18d3f09a3650aaf2185592533",
+      "bytes": 41894
     },
     "scripts/make_geometry_notebooks.py": {
       "sha256": "afb9390edfde746575c0062df7ec357ad9da05474f5f0a38da927d5f2fc8be6e",
       "bytes": 22038
     },
     "scripts/make_implementation_audit_notebook.py": {
-      "sha256": "39e0ccabfa612bbd13ee2ebbe87ef03d18007ffa45fcc1954f7c235d1c7c529e",
-      "bytes": 17375
+      "sha256": "62c0d5960379106beca310a0fd69d5a769101b43d9c7de36e3a0afc72d6ca7ba",
+      "bytes": 2287
+    },
+    "scripts/notebook_plot_cells_beamforming.py": {
+      "sha256": "d80486a423c4fc2e488153bac77a90dac0f0e2872bc60c141c5c2d2d3aa0f4a3",
+      "bytes": 15376
+    },
+    "scripts/notebook_plot_cells_contact.py": {
+      "sha256": "d3b30728e7aaeba0eff3c5491bcdfb49f942fd1ef623c175648a9ae7ec8478d4",
+      "bytes": 17160
+    },
+    "scripts/notebook_templates/02_field.json": {
+      "sha256": "b755115e4b40e25589967b2f0b0187a7d43bba7884dddf160fe10b6d4ce2676f",
+      "bytes": 73232
+    },
+    "scripts/notebook_templates/04_implementation_audit.json": {
+      "sha256": "992ec417d35b86a411ad2733f8301c43ab300b648dddd8634e9ec17a9df1cf98",
+      "bytes": 62383
     },
     "scripts/plot_beamforming_unified.py": {
       "sha256": "b212834d703e16e33a8af6345e6be2ac248c700a6ff01b80834b1f6a56dcc5d7",
@@ -6864,6 +6932,14 @@
     "scripts/plot_prediction_ablation.py": {
       "sha256": "9f335af1d9cfa5ea3859f9a2d714160abd5fc327a01572e494800a5bb52afa39",
       "bytes": 5992
+    },
+    "scripts/probe_editable_plots.py": {
+      "sha256": "ed622613b67fbe73c3ecd1dd6fd3bf671de55eb112c4932c61a56a3bc804fab3",
+      "bytes": 11126
+    },
+    "scripts/refactor_theory_plots.py": {
+      "sha256": "decb9603a524f69e05dfee54d9e54286ea6055c3745845dda8d684b66e106c94",
+      "bytes": 6866
     },
     "scripts/run_final_beamforming.py": {
       "sha256": "efeb7b0c53926c88c5aa898d07c6b4a04cb8283c1b6776bad0c43e6a8dc57f68",
@@ -6942,8 +7018,8 @@
       "bytes": 6263
     }
   },
-  "retained_files": 1734,
-  "retained_bytes": 399487789,
+  "retained_files": 1753,
+  "retained_bytes": 412142657,
   "excluded_regenerable_files": 11194,
   "excluded_regenerable_bytes": 1257382437,
   "excluded_scope": "Git-ignored checkpoint caches, pytest XML and original general-notebook diagnostic PDF/PNG exports. Component manifests exclude these caches; required raw arrays/tables and executed general notebook are retained.",

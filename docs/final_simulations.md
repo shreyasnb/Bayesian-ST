@@ -112,8 +112,8 @@ its local Hessian; the old eigenvalue validation remains in the implementation
 notebook and numerical tables. Source captions, page selectors and hashes are
 in `results/draft_figure_manifest.json` and the folder READMEs. Both original application catalogues remain complete.
 
-All active plotting defaults and explicit exporters use the shared `DPI=300`
-from `lib/plotting.py`. Seven-inch paper pages yield 2100-pixel-wide previews.
+Published exporters use the shared `DPI=300` from `lib/plotting.py`; editable
+notebook cells expose their own `DPI=300` defaults. Seven-inch paper pages yield 2100-pixel-wide previews.
 PDF text and curves remain vector objects: dpi applies to their raster layers
 and PNG previews. Notebook images are scaled to fit the screen; full-resolution
 PNG and PDF links are supplied beside every image. Preserved historical output
@@ -134,9 +134,9 @@ Reports live under each application's `data/validation/`. No tuning, simulation
 or benchmark timing is repeated by a plotting or export command.
 
 The notebook maker requires completed figure evidence. The execution command
-uses clean kernels and saves both notebooks before the last check. They verify
-and display saved figures; executing them does not repeat the Monte Carlo
-study. See `completion_report.md` for the tested commands and revision.
+uses clean kernels and saves both notebooks before the last check. They verify numerical inputs and draw each figure using the full Matplotlib
+code written in its notebook cell; executing the application notebooks does not
+repeat the Monte Carlo study. See `completion_report.md` for the tested commands and revision.
 
 ## Historical evidence
 
@@ -144,11 +144,14 @@ study. See `completion_report.md` for the tested commands and revision.
 and 2,358 historical result files from the starting revision. The original
 result files remain in place. Old certificates are not refreshed to pretend
 that a new source tree produced old data. In particular,
-`02_field.ipynb` and `04_implementation_audit.ipynb` remain historical
-walkthroughs, including their original 200-dpi assertions and outputs. Run
-those with their matching historical source/environment, available at commit
-`a91faab` and in the archive. The current application notebooks are
-`01_array.ipynb` and `03_contact.ipynb`; their regenerated figures use 300 dpi.
+the original field and implementation-audit notebooks, including their old
+plotting assertions and outputs, remain available at commit `a91faab` and in
+the archive. Reproducing those original simulations requires that historical
+source/environment. The current root `02_field.ipynb` and
+`04_implementation_audit.ipynb` instead read verified historical arrays and
+render editable 300-dpi figures in the current environment, without rerunning
+the old producers. The current application studies are `01_array.ipynb` and
+`03_contact.ipynb`.
 
 Original 8-/16-sensor and moving 6-sensor beamforming cohorts retain their
 recorded counts. The new 32-/64-/128-sensor task cohorts are distinct from
@@ -162,3 +165,14 @@ additional panel space preserves legibility at the seven-inch insertion width.
 The new contact likelihood illustration is checked independently with
 `python scripts/check_information_visuals.py`, comparing the direct Gaussian
 means, exact KL formula and numerical Hessian. It introduces no new trials.
+
+## Editable notebook plotting
+
+All five root notebooks expose their figure code directly. Per-cell DPI,
+FIGSIZE, artists, labels, colors and PDF saves can be changed independently.
+Data-only helpers read the saved arrays, while editable exports are kept under
+`results/notebook_exports/`. The published figure catalogue and raw numerical
+records remain frozen. See [the editing workflow](editable_notebooks.md).
+The theory notebook's original numerical checks write their fresh diagnostic
+outputs to `results/notebook_runs/00_theory/`; field and audit notebooks read
+historical data without rerunning the old simulation producers.
