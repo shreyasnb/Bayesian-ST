@@ -2,7 +2,7 @@
   "schema": 1,
   "status": "inventoried",
   "base_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
-  "scientific_content_commit": null,
+  "scientific_content_commit": "88e9b867d6b56418609817a4812ad57d0c053a74",
   "final_science_hash": "e926a6a16fea47e35f0625afcc811d5fbdd533fb812c8c1fa9314484f16b24ee",
   "files": {
     ".gitignore": {
