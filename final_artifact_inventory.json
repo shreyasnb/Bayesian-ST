@@ -2,12 +2,12 @@
   "schema": 1,
   "status": "inventoried",
   "base_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
-  "scientific_content_commit": "8f4e8f596408915dd3c7b6e3b7827812f299bc3e",
+  "scientific_content_commit": null,
   "final_science_hash": "e926a6a16fea47e35f0625afcc811d5fbdd533fb812c8c1fa9314484f16b24ee",
   "files": {
     ".gitignore": {
-      "sha256": "82bd8b71718d33a94badcb84ca6937ee2b8108bb2a4b23e878b982d30e667f7e",
-      "bytes": 3439
+      "sha256": "746103018245ab014816a76d17dfecb29ba9fa05f3303961fbf66cdfe4500046",
+      "bytes": 3501
     },
     "README.md": {
       "sha256": "4de38ab60795f0784d9a539d79a4df19b55c3febed8656e83d0951ba3e1e56ca",
@@ -1330,8 +1330,8 @@
       "bytes": 23071
     },
     "lib/presentation_update_provenance.py": {
-      "sha256": "abdd56b19efc7d3f596ed95156bf6b3e856e1f49086777403411273e1542b5d6",
-      "bytes": 7512
+      "sha256": "11998eaa0912ef72fa51a3a7a40f4fe97dbe811183752b2dc5dd32a0b34e47bd",
+      "bytes": 7607
     },
     "lib/rendering_provenance.py": {
       "sha256": "37e499f6f8f9e438c573a373b9b16ea37d9fbf975641135f994d9efdba9ded4c",
@@ -1354,8 +1354,8 @@
       "bytes": 855544
     },
     "notebooks/01_array.ipynb": {
-      "sha256": "6ab791435ca6160435cc9427a2f6c1d3de91896fa3be81f911b10d8ff92b74a4",
-      "bytes": 13330014
+      "sha256": "06a949970b110b646f576daaba1ce9f13f0e7377c4de2e0cb3b4a045bc48b96d",
+      "bytes": 13354323
     },
     "notebooks/02_field.ipynb": {
       "sha256": "bd54ee558e46f39e609cb1a7e36a838359baf77de87e01abdcea592480700e6c",
@@ -27458,12 +27458,12 @@
       "bytes": 195635
     },
     "results/main/beamforming/noise_adaptation_page1.pdf": {
-      "sha256": "065a73a67ef2a53c99ed2fc2f99cff190cf6eb9882748631a7e376bf88d56758",
+      "sha256": "44ac1482d2711ce8067331ba60ec471d5772f20050f972fa5b2bac6c44d31f84",
       "bytes": 129130
     },
     "results/main/beamforming/noise_adaptation_page1.png": {
-      "sha256": "3b0d17c133fd540ce373baaa0ccd50e727d9845a23aaf48e6e851202a21d94b0",
-      "bytes": 349714
+      "sha256": "50920224f3d990cb9db956048e9b0a286179466a6308bc436ae20e26b8f287b1",
+      "bytes": 367952
     },
     "results/main/beamforming/stationary_T200_table.tex": {
       "sha256": "678ecfc3ccfe1e49a7b71099fc8a554bb928c85defa13eff28bcda84b841df7a",
@@ -27537,9 +27537,29 @@
       "sha256": "1f448b82b339031994e2ae3bd00fb685c053eb7d7f726c3f8a857f13235449a0",
       "bytes": 2738
     },
+    "results/noise_legend_update/authorized_updates.json": {
+      "sha256": "f2eb9a975da73a8da9fe0ba9b85cc586e0bef5fd6d3cb1495c31d1141f5e1be2",
+      "bytes": 2402
+    },
+    "results/noise_legend_update/pdf_layout_checks.json": {
+      "sha256": "1bdaad207b12351d04c05c71ada27a7c8df882830faa0e28800999a6bdd6321f",
+      "bytes": 338775
+    },
+    "results/noise_legend_update/pdf_legend_check.json": {
+      "sha256": "7c4ff297ec12303a77b427dcaaef1ec448beb5eba5955913a60d46f4fff55223",
+      "bytes": 1080
+    },
+    "results/noise_legend_update/preserved_presentation.json": {
+      "sha256": "7b00d95182ed511cf81be84acafee03bb91eb8840fd20f00538e8399518715b9",
+      "bytes": 1146
+    },
+    "results/noise_legend_update/render_checks.json": {
+      "sha256": "39147da34ba2dea914ff07e6ee0c42852cd963c9ae35acdaee22a74e75e6ed42",
+      "bytes": 2984
+    },
     "results/notebook_editability.json": {
-      "sha256": "23fd50b3af22f2cd173435ab0ed194f2dbfaa987b5dbcfd41b7bf037db701113",
-      "bytes": 2758572
+      "sha256": "e35158879fff2057b1e7fc95f9d5117b25cb6e4b3ef1791fb73240608b88fad2",
+      "bytes": 2758863
     },
     "results/solid_trajectory_update/authorized_updates.json": {
       "sha256": "71b7d0286ceff05a61b44d55a83bef8ce8e74041af5ac70d1432f025a6ff7048",
@@ -28278,8 +28298,8 @@
       "bytes": 28637
     },
     "scripts/notebook_plot_cells_beamforming.py": {
-      "sha256": "c12c86b3288b7cd937b68bed7618954b0cbec7b25d710f94cc03baf7ca613e2b",
-      "bytes": 21821
+      "sha256": "329a95f7a91b17a116864f5cbfd8906f9314a1da7d06d2168d8c1d4067c5416b",
+      "bytes": 21838
     },
     "scripts/notebook_plot_cells_contact.py": {
       "sha256": "72f8ada51b2a843960b9560a0ac315e9892e0cd74af93751b15c0c1a7e229d2d",
@@ -28494,8 +28514,8 @@
       "bytes": 6263
     }
   },
-  "retained_files": 7122,
-  "retained_bytes": 743015578,
+  "retained_files": 7127,
+  "retained_bytes": 743404977,
   "excluded_regenerable_files": 11967,
   "excluded_regenerable_bytes": 1292540465,
   "excluded_scope": "Git-ignored checkpoint caches, pytest XML and original general-notebook diagnostic PDF/PNG exports. Component manifests exclude these caches; required raw arrays/tables and executed general notebook are retained.",

@@ -269,7 +269,7 @@ for ax,tag in zip(axes.flat,["(a)","(b)","(c)","(d)"]):
     ax.spines[["top","right"]].set_visible(False)
     ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
     ax.text(.015,.985,tag,transform=ax.transAxes,ha="left",va="top")
-fig.legend(list(handles.values()),list(handles),loc="outside lower center",ncol=3,frameon=False,fontsize=10.)
+fig.legend(list(handles.values()),list(handles),loc="outside lower center",ncol=4,columnspacing=.8,frameon=False,fontsize=10.)
 ''')
 
 _CALIBRATION_BODY = r'''

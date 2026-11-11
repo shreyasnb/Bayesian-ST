@@ -32,7 +32,7 @@
       "pdf_headers_checked": 45,
       "plotting_controls": "User editable; DPI, FIGSIZE and label values are not restricted",
       "editable_metadata_sha256": "c2d55bc6997a11553cb4413e339872b29e6edc2acfd813fe032744071b1a6084",
-      "sha256": "6ab791435ca6160435cc9427a2f6c1d3de91896fa3be81f911b10d8ff92b74a4"
+      "sha256": "06a949970b110b646f576daaba1ce9f13f0e7377c4de2e0cb3b4a045bc48b96d"
     },
     "02_field.ipynb": {
       "status": "verified",
@@ -342,7 +342,7 @@
     "scripts/check_manuscript_plot_exports.py": "eeea9b09d6f6e1bd981ac39ab283208a9cfffa1a1b3df4c97f97805bf32bfbe3",
     "scripts/notebook_publication_style.py": "b0b0287c5ac4ea7cf332734b23e00aa48b534d55b49850747bbf52ef7c04fd41",
     "scripts/update_manuscript_plot_cells.py": "2efa2983979e8fb6f5940ee147d4e36080fb99adb93b719dba657378561efc60",
-    "scripts/notebook_plot_cells_beamforming.py": "c12c86b3288b7cd937b68bed7618954b0cbec7b25d710f94cc03baf7ca613e2b",
+    "scripts/notebook_plot_cells_beamforming.py": "329a95f7a91b17a116864f5cbfd8906f9314a1da7d06d2168d8c1d4067c5416b",
     "scripts/notebook_plot_cells_contact.py": "72f8ada51b2a843960b9560a0ac315e9892e0cd74af93751b15c0c1a7e229d2d",
     "scripts/plot_final_simulations.py": "0ae410aaf711f9c1f5bd7a1ab3046fd546deba2944d6279de227bfc101587312",
     "scripts/make_final_notebooks.py": "00100838a09b31524ec3dcf6172a2553e97d7249025d362a5ca100dc9f45b666",
@@ -362,7 +362,7 @@
     "scripts/update_contact_plotting_addendum.py": "32426b18728ffc940971e146e75f850720025eb70233a43222a71c408c280ab3",
     "scripts/update_contact_diagnostics_borders.py": "2844838c23242e18d1d764775b8a4a8cabe36e94dd91303b6497f2a4361fbaeb",
     "scripts/make_contact_prediction_diagnostics_notebook.py": "90cb16fcb0947a0798aa14549189f8b867594e68e4f2faf4f311e06de263d3de",
-    "lib/presentation_update_provenance.py": "abdd56b19efc7d3f596ed95156bf6b3e856e1f49086777403411273e1542b5d6",
+    "lib/presentation_update_provenance.py": "11998eaa0912ef72fa51a3a7a40f4fe97dbe811183752b2dc5dd32a0b34e47bd",
     "scripts/make_beamforming_comparison_audit_notebooks.py": "c8f86c22f54b37257a2b86c4f838c1011ac91c09129efea749d9fff1830da743",
     "scripts/check_beamforming_comparison_audit.py": "f4630977270f53f933cf7b6c09767e24254427951688069d84c7495413b8a96d",
     "lib/beamforming_comparison_summaries.py": "6cd5e3cd3a56067be19b1d2f668ff32a039d83f82ab5b0bc3110c74921d30ba9",
@@ -12794,7 +12794,7 @@
           "local_pdf": "results/notebook_exports/01_array/posterior_anisotropy_empirical_cdf.pdf"
         },
         "results/main/beamforming/noise_adaptation_page1.pdf": {
-          "sha256": "065a73a67ef2a53c99ed2fc2f99cff190cf6eb9882748631a7e376bf88d56758",
+          "sha256": "44ac1482d2711ce8067331ba60ec471d5772f20050f972fa5b2bac6c44d31f84",
           "pages": [
             {
               "page": 1,
@@ -12869,7 +12869,7 @@
             },
             "notebook": "notebooks/01_array.ipynb",
             "cell": 16,
-            "source_sha256": "d5415bb9e4361c9c378af7acdd7f1e9bf3289592902897b2813aa1014b610682"
+            "source_sha256": "1cf149530241f9a827edfab2d047ac120b86ae4a42db20b8dd48732603de547b"
           },
           "local_pdf": "results/notebook_exports/01_array/noise_adaptation_page1.pdf"
         },
@@ -64818,7 +64818,7 @@
       ]
     },
     "three_dimensional_spheres_preserved": true,
-    "current_actual_pdf_audit": "results/moving_linewidth_update/pdf_layout_checks.json"
+    "current_actual_pdf_audit": "results/noise_legend_update/pdf_layout_checks.json"
   },
   "historical_pre_solid_trajectories": {
     "scope": "User-requested application plotting updates: compact moving comparison with empirical interquartile performance bands; four-sided 2D borders; targeted contact input scan and saved identity-transport control. Original scientific records and source certificates retained.",
@@ -83761,5 +83761,14 @@
     "plot_cell_source_changes": 2,
     "other_cells_and_numerical_results_unchanged": true,
     "proof": "results/contact_legend_update/authorized_updates.json"
+  },
+  "noise_legend_update": {
+    "status": "verified",
+    "figure": "noise_adaptation_page1.pdf",
+    "legend_columns": 4,
+    "columnspacing": 0.8,
+    "labels_and_fonts_unchanged": true,
+    "plot_cell_source_changes": 1,
+    "proof": "results/noise_legend_update/authorized_updates.json"
   }
 }

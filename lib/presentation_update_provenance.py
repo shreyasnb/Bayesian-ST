@@ -16,6 +16,7 @@ PROOF = 'results/application_plotting_update/authorized_updates.json'
 FOLLOWUP_PROOF = 'results/solid_trajectory_update/authorized_updates.json'
 WIDTH_PROOF = 'results/moving_linewidth_update/authorized_updates.json'
 LEGEND_PROOF = 'results/contact_legend_update/authorized_updates.json'
+NOISE_LEGEND_PROOF = 'results/noise_legend_update/authorized_updates.json'
 NOTEBOOKS = {
     'notebooks/01_array.ipynb', 'notebooks/03_contact.ipynb',
     'notebooks/beamforming_moving_interference.ipynb',
@@ -100,7 +101,7 @@ def load_authorized_updates(root):
     """
     root = Path(root).resolve()
     updates = {}
-    for filename in (PROOF, FOLLOWUP_PROOF, WIDTH_PROOF, LEGEND_PROOF):
+    for filename in (PROOF, FOLLOWUP_PROOF, WIDTH_PROOF, LEGEND_PROOF, NOISE_LEGEND_PROOF):
         path = root/filename
         if not path.is_file():
             continue

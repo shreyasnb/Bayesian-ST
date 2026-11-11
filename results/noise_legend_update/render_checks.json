@@ -1,0 +1,87 @@
+{
+  "status": "passed",
+  "notebook": "notebooks/01_array.ipynb",
+  "notebook_sha256": "06a949970b110b646f576daaba1ce9f13f0e7377c4de2e0cb3b4a045bc48b96d",
+  "generator_sha256": "329a95f7a91b17a116864f5cbfd8906f9314a1da7d06d2168d8c1d4067c5416b",
+  "modified_cell": "f2772ed9",
+  "source_change": "Only the noise-adaptation common legend row count and compact spacing if required",
+  "other_cell_objects_preserved": 91,
+  "protected_files_checked": 7967,
+  "all_data_colors_widths_bands_limits_fonts_figsize_dpi_borders_unchanged": true,
+  "legend_labels": [
+    "Fixed variance estimates",
+    "EM variance estimates",
+    "True variances",
+    "Noise variance change"
+  ],
+  "legend_columns": 4,
+  "legend_fonts": [
+    22.0,
+    22.0,
+    22.0,
+    22.0
+  ],
+  "layout_attempts": [
+    {
+      "replacement": "list(handles.values()),list(handles),loc=\"outside lower center\",ncol=4,frameon=False,fontsize=LEGEND_FONT_SIZE)",
+      "legend_extent": [
+        -104.9823423696786,
+        45.83333333333334,
+        4709.964684739358,
+        155.2632827093711
+      ],
+      "inside_canvas": false
+    },
+    {
+      "replacement": "list(handles.values()),list(handles),loc=\"outside lower center\",ncol=4,columnspacing=1.5,frameon=False,fontsize=LEGEND_FONT_SIZE)",
+      "legend_extent": [
+        -36.23234236967861,
+        45.83333333333334,
+        4572.464684739358,
+        155.2632827093711
+      ],
+      "inside_canvas": false
+    },
+    {
+      "replacement": "list(handles.values()),list(handles),loc=\"outside lower center\",ncol=4,columnspacing=1.0,frameon=False,fontsize=LEGEND_FONT_SIZE)",
+      "legend_extent": [
+        32.517657630321835,
+        45.83333333333334,
+        4434.964684739356,
+        155.2632827093711
+      ],
+      "inside_canvas": false
+    },
+    {
+      "replacement": "list(handles.values()),list(handles),loc=\"outside lower center\",ncol=4,columnspacing=.8,frameon=False,fontsize=LEGEND_FONT_SIZE)",
+      "legend_extent": [
+        60.01765763032138,
+        45.83333333333334,
+        4379.964684739358,
+        155.2632827093711
+      ],
+      "inside_canvas": true
+    }
+  ],
+  "legend_extent": [
+    60.01765763032138,
+    45.83333333333334,
+    4379.964684739358,
+    155.2632827093711
+  ],
+  "canvas": [
+    0.0,
+    0.0,
+    4500.0,
+    2100.0
+  ],
+  "all_other_assets_and_raw_data_unchanged": true,
+  "figure_outputs": {
+    "results/main/beamforming/noise_adaptation_page1.pdf": "44ac1482d2711ce8067331ba60ec471d5772f20050f972fa5b2bac6c44d31f84",
+    "results/main/beamforming/noise_adaptation_page1.png": "50920224f3d990cb9db956048e9b0a286179466a6308bc436ae20e26b8f287b1",
+    "results/notebook_exports/01_array/noise_adaptation_page1.pdf": "44ac1482d2711ce8067331ba60ec471d5772f20050f972fa5b2bac6c44d31f84",
+    "results/notebook_exports/01_array/noise_adaptation_page1.png": "50920224f3d990cb9db956048e9b0a286179466a6308bc436ae20e26b8f287b1"
+  },
+  "legend_columnspacing": 0.8,
+  "original_nonplot_outputs_preserved": true
+}

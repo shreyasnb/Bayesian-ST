@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "status": "verified",
+  "scope": "User-requested application plotting updates",
+  "baseline_commit": "261eda0",
+  "previous_proof": "results/contact_legend_update/authorized_updates.json",
+  "previous_proof_sha256": "d495170008e857da4f04dd2d1d093856c4f7817404d502f233cbb13d4519af1e",
+  "updates": {
+    "notebooks/01_array.ipynb": {
+      "before_sha256": "6ab791435ca6160435cc9427a2f6c1d3de91896fa3be81f911b10d8ff92b74a4",
+      "after_sha256": "06a949970b110b646f576daaba1ce9f13f0e7377c4de2e0cb3b4a045bc48b96d",
+      "role": "notebook"
+    },
+    "lib/presentation_update_provenance.py": {
+      "before_sha256": "abdd56b19efc7d3f596ed95156bf6b3e856e1f49086777403411273e1542b5d6",
+      "after_sha256": "11998eaa0912ef72fa51a3a7a40f4fe97dbe811183752b2dc5dd32a0b34e47bd",
+      "role": "presentation_validation_source"
+    },
+    "results/notebook_editability.json": {
+      "before_sha256": "23fd50b3af22f2cd173435ab0ed194f2dbfaa987b5dbcfd41b7bf037db701113",
+      "after_sha256": "e35158879fff2057b1e7fc95f9d5117b25cb6e4b3ef1791fb73240608b88fad2",
+      "role": "presentation_metadata"
+    },
+    "results/main/beamforming/noise_adaptation_page1.pdf": {
+      "before_sha256": "065a73a67ef2a53c99ed2fc2f99cff190cf6eb9882748631a7e376bf88d56758",
+      "after_sha256": "44ac1482d2711ce8067331ba60ec471d5772f20050f972fa5b2bac6c44d31f84",
+      "role": "pdf"
+    },
+    "results/main/beamforming/noise_adaptation_page1.png": {
+      "before_sha256": "3b0d17c133fd540ce373baaa0ccd50e727d9845a23aaf48e6e851202a21d94b0",
+      "after_sha256": "50920224f3d990cb9db956048e9b0a286179466a6308bc436ae20e26b8f287b1",
+      "role": "png"
+    },
+    "results/notebook_exports/01_array/noise_adaptation_page1.pdf": {
+      "before_sha256": "065a73a67ef2a53c99ed2fc2f99cff190cf6eb9882748631a7e376bf88d56758",
+      "after_sha256": "44ac1482d2711ce8067331ba60ec471d5772f20050f972fa5b2bac6c44d31f84",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/noise_adaptation_page1.png": {
+      "before_sha256": "3b0d17c133fd540ce373baaa0ccd50e727d9845a23aaf48e6e851202a21d94b0",
+      "after_sha256": "50920224f3d990cb9db956048e9b0a286179466a6308bc436ae20e26b8f287b1",
+      "role": "png"
+    }
+  },
+  "change": "Only the beamforming noise-adaptation shared legend becomes one row with compact column spacing; labels, font size, data, bands and other plotting protocols are unchanged."
+}

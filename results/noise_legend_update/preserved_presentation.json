@@ -1,0 +1,12 @@
+{
+  "notebooks/01_array.ipynb": "6ab791435ca6160435cc9427a2f6c1d3de91896fa3be81f911b10d8ff92b74a4",
+  "lib/presentation_update_provenance.py": "abdd56b19efc7d3f596ed95156bf6b3e856e1f49086777403411273e1542b5d6",
+  "results/draft_figure_manifest.json": "e236424c9670a35b157872a567c7c40798fcd79dbbb085e16d7d74a75909fc4b",
+  "results/notebook_editability.json": "23fd50b3af22f2cd173435ab0ed194f2dbfaa987b5dbcfd41b7bf037db701113",
+  "results/main/README.md": "3216639c66b88c78e59421a0b005ffd12f8dbd18477ec3b7a4915d1b490dad1f",
+  "results/supplementary/README.md": "4ef2bf57dda332fb2ea24db5fb92d81b1d2527c332221298dd9d4a30a7edaaed",
+  "results/main/beamforming/noise_adaptation_page1.pdf": "065a73a67ef2a53c99ed2fc2f99cff190cf6eb9882748631a7e376bf88d56758",
+  "results/main/beamforming/noise_adaptation_page1.png": "3b0d17c133fd540ce373baaa0ccd50e727d9845a23aaf48e6e851202a21d94b0",
+  "results/notebook_exports/01_array/noise_adaptation_page1.pdf": "065a73a67ef2a53c99ed2fc2f99cff190cf6eb9882748631a7e376bf88d56758",
+  "results/notebook_exports/01_array/noise_adaptation_page1.png": "3b0d17c133fd540ce373baaa0ccd50e727d9845a23aaf48e6e851202a21d94b0"
+}

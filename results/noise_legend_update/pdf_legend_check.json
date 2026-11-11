@@ -1,0 +1,50 @@
+{
+  "status": "passed",
+  "native_pdf_size_pt": [
+    0.0,
+    0.0,
+    1080.0,
+    504.0
+  ],
+  "legend_entries": [
+    {
+      "text": "Fixed variance estimates",
+      "bbox": [
+        84.80423736572266,
+        463.5039367675781,
+        300.5748596191406,
+        485.4217224121094
+      ]
+    },
+    {
+      "text": "EM variance estimates",
+      "bbox": [
+        379.996826171875,
+        463.5039367675781,
+        578.8247680664062,
+        485.4217224121094
+      ]
+    },
+    {
+      "text": "True variances",
+      "bbox": [
+        658.1932373046875,
+        463.5039367675781,
+        785.147216796875,
+        485.4217224121094
+      ]
+    },
+    {
+      "text": "Noise variance change",
+      "bbox": [
+        864.4935913085938,
+        463.5039367675781,
+        1056.568115234375,
+        485.4217224121094
+      ]
+    }
+  ],
+  "one_row": true,
+  "no_clipped_legend_entries": true,
+  "visually_inspected": "Native15\u00d77in PDF raster at72dpi; all four unchanged labels readable on one row with visible outer margin; panels, event lines and bands intact."
+}
