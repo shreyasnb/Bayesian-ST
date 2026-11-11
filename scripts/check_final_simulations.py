@@ -195,6 +195,9 @@ def main():
         from scripts.check_moving_beamforming import fullcheck as check_moving
         from scripts.export_draft_figures import optional_moving_copies
         result['moving_interference_candidates'] = check_moving(ROOT)
+        if (ROOT/'notebooks/contact_prediction_diagnostics.ipynb').is_file():
+            from scripts.check_contact_prediction_diagnostics import fullcheck as check_contact_diagnostics
+            result['contact_prediction_diagnostics'] = check_contact_diagnostics(ROOT)
         from scripts.check_supplementary_notebooks import check as check_supplementary
         result['supplementary_notebooks'] = {
             example: check_supplementary(example, ROOT) for example in EXAMPLES}

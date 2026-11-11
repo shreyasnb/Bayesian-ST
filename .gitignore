@@ -62,6 +62,8 @@ results/implementation_audit/**/pytest.xml
 !results/contact/**
 !results/beamforming_moving/
 !results/beamforming_moving/**
+!results/contact_prediction_diagnostics/
+!results/contact_prediction_diagnostics/**
 !results/main/
 !results/main/**/
 !results/main/**

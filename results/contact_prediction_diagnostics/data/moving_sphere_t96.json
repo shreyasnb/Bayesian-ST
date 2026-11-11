@@ -1,0 +1,195 @@
+{
+  "t": 96,
+  "condition": "sphere",
+  "simulation": 0,
+  "beta": 0.9,
+  "checks": {
+    "status": "passed",
+    "condition": "sphere",
+    "simulation": 0,
+    "t": 96,
+    "corrected_after_measurement": 96,
+    "report_index": 23,
+    "beta": 0.9,
+    "mean_tolerance": 5e-08,
+    "algebra_tolerance": 1e-10,
+    "parameter_reconstruction_error": 0.0,
+    "saved_mean_error": 0.0,
+    "saved_mode_error": 0.0,
+    "saved_isotropic_mean_error": 3.4617131258739487e-16,
+    "isotropic_kappa": 126.0766498072234,
+    "isotropic_mode_overlap_error": 1.1102230246251565e-16,
+    "isotropic_mean_match_error": 3.4617131258739487e-16,
+    "expected_squared_chordal_distance_full": 0.007963781412742232,
+    "expected_squared_chordal_distance_isotropic": 0.007963781412742121,
+    "curvature_eigenvalues": [
+      230.9352932573118,
+      277.68599941683647
+    ],
+    "isotropic_curvature_eigenvalues": [
+      252.1532996144468,
+      252.15329961444684
+    ],
+    "curvature_ratio": 1.202440716185526,
+    "antipodal_mode_true_angle_deg": 4.261287810209432,
+    "log_density_at_true_normal_full": 4.798182309518779,
+    "log_density_at_true_normal_isotropic": 4.829933534230804,
+    "density_at_true_normal_full": 121.28974980300227,
+    "density_at_true_normal_isotropic": 125.20263868851953,
+    "independent_normal_quadrature": {
+      "full": {
+        "mean_error": 1.8831745135696428e-14,
+        "log_normalizer_error": 1.4210854715202004e-14
+      },
+      "isotropic": {
+        "mean_error": 3.3197720713433124e-14,
+        "log_normalizer_error": 2.842170943040401e-14
+      }
+    },
+    "full_mean_resolution_error": 8.673617379884035e-19,
+    "full_log_normalizer_resolution_error": 0.0,
+    "isotropic_mean_resolution_error": 0.0,
+    "isotropic_log_normalizer_resolution_error": 0.0,
+    "sensor_frame_normal_verified": true,
+    "measured_transport_verified": true,
+    "fixed_radius_sphere": true,
+    "display_rotation": [
+      [
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "matched_normal_mode_projector_error": 2.752987527484629e-16,
+    "display_mesh_used_for_integration": false,
+    "new_measurements": 0,
+    "new_tracker_runs": 0,
+    "isotropic_comparison_law_fitted": true
+  },
+  "provenance": {
+    "original_manifest": "results/contact/data/paper/performance/manifest.json",
+    "original_manifest_sha256": "73d1be8e70beca6aaf76a50300c8f8653c0ce973c6fc97f9b8932ddd4dbd2044",
+    "original_story": "results/contact/data/paper/performance/story.npz",
+    "original_story_sha256": "d86191c85660423022e0c9bb0e49269e2a59ac531c666a3afe77aa40a228eebc",
+    "original_sources": {
+      "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+      "scripts/run_final_contact.py": "a698c1ae99f82614649a1ef89f0cdeab5c7711ddc026b175be2d2c6bb7335dd1",
+      "tests/test_final_contact.py": "fd09685a57a58054c4e3e3b866a14cde44baf5e19deb91ae1867e61c045ed5a7",
+      "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+      "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+      "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+      "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+      "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+      "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+      "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+      "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+      "benchmarks/common/__init__.py": "1b45903cc938c76c7b9f44eae5fcf1115e0b3b805237acedb399ee3e4f9815d6"
+    },
+    "source_hashes": {
+      "lib/contact_moving_snapshot.py": "321a3076952140ebcfd1847a13609c604e73bd2f1008125bafba78a298fcf13b",
+      "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+      "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+      "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+      "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+      "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+      "lib/final_validation.py": "3b8ae90ed322edd8affc3385246d2fc678ada0a05ec61970076def526b5f9952"
+    },
+    "snapshot": "Original moving-sphere simulation0, fixed corrected measurement index 96",
+    "coordinate_frame": "Saved sensor coordinates; R_t maps sensor to world, G_t=R_t^T R_{t-1}",
+    "density": "q_B([n])=exp(n^T B n-log Z_1(B)), relative to normalized invariant measure",
+    "complement_identity": "B=-A_t^+ and log Z_1(-A)=log Z_2(A)-tr(A)",
+    "curvature": "Negative Hessian of log q_B at its mode in orthonormal normal-line tangent coordinates: 2(lambda_max(B)-lambda_j(B)); no chart-volume Jacobian",
+    "sign_rule": "Mode largest-magnitude coordinate positive; true normal sign chosen to have nonnegative inner product with mode",
+    "matching": "Same normal mode and expected squared chordal distance; each response variance uses its own law mean",
+    "interpretation": "Physical tangent drift is not supplied by the measured coordinate transport G_t; this snapshot makes no posterior coverage claim"
+  },
+  "input_hashes": {
+    "results/contact/data/paper/performance/manifest.json": "73d1be8e70beca6aaf76a50300c8f8653c0ce973c6fc97f9b8932ddd4dbd2044",
+    "results/contact/data/paper/performance/story.npz": "d86191c85660423022e0c9bb0e49269e2a59ac531c666a3afe77aa40a228eebc",
+    "results/contact/data/paper/performance/selected.json": "0548b0e434a3c1cf278d8b1e29593e2533a9c9da0b96e5dfcec424e03b2a3c57",
+    "archive/dd399ba/stationary_source_proof.json": "c693f5b5f874f08a245ef6187c072e1e93c30c2242fde8d7119e8015a8e30222",
+    "results/beamforming/data/validation/validation.json": "9d4746230f45733ca612dee26fbb6576b9d24751389624fbe2f8252ed76a2c85",
+    "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+    "scripts/run_final_contact.py": "a698c1ae99f82614649a1ef89f0cdeab5c7711ddc026b175be2d2c6bb7335dd1",
+    "tests/test_final_contact.py": "fd09685a57a58054c4e3e3b866a14cde44baf5e19deb91ae1867e61c045ed5a7",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "benchmarks/common/__init__.py": "1b45903cc938c76c7b9f44eae5fcf1115e0b3b805237acedb399ee3e4f9815d6"
+  },
+  "source_hashes": {
+    "lib/contact_moving_snapshot.py": "321a3076952140ebcfd1847a13609c604e73bd2f1008125bafba78a298fcf13b",
+    "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/final_validation.py": "3b8ae90ed322edd8affc3385246d2fc678ada0a05ec61970076def526b5f9952"
+  },
+  "original_source_hashes": {
+    "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+    "scripts/run_final_contact.py": "a698c1ae99f82614649a1ef89f0cdeab5c7711ddc026b175be2d2c6bb7335dd1",
+    "tests/test_final_contact.py": "fd09685a57a58054c4e3e3b866a14cde44baf5e19deb91ae1867e61c045ed5a7",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "benchmarks/common/__init__.py": "1b45903cc938c76c7b9f44eae5fcf1115e0b3b805237acedb399ee3e4f9815d6"
+  },
+  "camera": {
+    "elev": 25.0,
+    "azim": -50.0
+  },
+  "color_map_stops": [
+    [
+      0.0,
+      "#263a8b"
+    ],
+    [
+      0.28,
+      "#55209a"
+    ],
+    [
+      0.53,
+      "#b33695"
+    ],
+    [
+      0.72,
+      "#ed78a4"
+    ],
+    [
+      0.88,
+      "#ffc85a"
+    ],
+    [
+      1.0,
+      "#f4f52b"
+    ]
+  ],
+  "status": "completed",
+  "array_path": "results/contact_prediction_diagnostics/data/moving_sphere_t96.npz",
+  "array_sha256": "0133c073ae24b6fbae6510f1149daff47e8b95451e9a7e5dae75ceea79ed50c8",
+  "density_limits": [
+    0.02522216445250937,
+    252.2216445250939
+  ]
+}

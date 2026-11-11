@@ -1,0 +1,68 @@
+{
+  "static_concentrated": {
+    "condition": "static_concentrated",
+    "beta": 1.0,
+    "regularization_rho": 0.6492223094270835,
+    "validation_loss": 0.00034454407493784197,
+    "great_window": {
+      "kind": "window",
+      "window": 16,
+      "beta": null,
+      "stepsize": 10.0,
+      "inner_steps": 3,
+      "validation_loss": 0.0004173308268177401
+    },
+    "great_ew": {
+      "kind": "ew",
+      "window": null,
+      "beta": 0.9,
+      "stepsize": 50.0,
+      "inner_steps": 1,
+      "validation_loss": 0.0004148029825763474
+    }
+  },
+  "plane": {
+    "condition": "plane",
+    "beta": 1.0,
+    "regularization_rho": 0.9931639573323646,
+    "validation_loss": 4.841999444339017e-05,
+    "great_window": {
+      "kind": "window",
+      "window": 64,
+      "beta": null,
+      "stepsize": 50.0,
+      "inner_steps": 8,
+      "validation_loss": 5.1923678356986005e-05
+    },
+    "great_ew": {
+      "kind": "ew",
+      "window": null,
+      "beta": 0.98,
+      "stepsize": 50.0,
+      "inner_steps": 8,
+      "validation_loss": 5.192489871526627e-05
+    }
+  },
+  "sphere": {
+    "condition": "sphere",
+    "beta": 0.9,
+    "regularization_rho": 0.9280718164228191,
+    "validation_loss": 5.8747477471816965e-05,
+    "great_window": {
+      "kind": "window",
+      "window": 16,
+      "beta": null,
+      "stepsize": 10.0,
+      "inner_steps": 3,
+      "validation_loss": 0.0001238508879568282
+    },
+    "great_ew": {
+      "kind": "ew",
+      "window": null,
+      "beta": 0.9,
+      "stepsize": 50.0,
+      "inner_steps": 1,
+      "validation_loss": 0.00013484032484921066
+    }
+  }
+}

@@ -83,6 +83,40 @@ def optional_moving_copies(root):
     return records
 
 
+def contact_diagnostic_copies(root):
+    """Read independent new exports without replacing the retained catalogue."""
+    root = Path(root)
+    if not (root/'notebooks/contact_prediction_diagnostics.ipynb').is_file():
+        return {}
+    from scripts.check_contact_prediction_diagnostics import optional_contact_diagnostic_routes
+    records = {}
+    for destination, route in optional_contact_diagnostic_routes(root).items():
+        path, local = root/destination, root/route['local_pdf']
+        if not path.is_file() or not local.is_file():
+            raise RuntimeError('Run the contact diagnostics notebook to export: '+destination)
+        if path.read_bytes()[:5] != b'%PDF-' or sha(path) != sha(local):
+            raise RuntimeError('Contact diagnostic differs from its source export: '+destination)
+        records[destination] = dict(route, sha256=sha(path), bytes=path.stat().st_size)
+    return records
+
+
+def verify_export_producer(root, exported):
+    """Verify the exact retained export producer while keeping old outputs intact."""
+    if exported['status'] != 'completed':
+        raise RuntimeError('Incomplete draft figure export')
+    expected = exported['producer_sha256']
+    if expected == sha(root/'scripts/export_draft_figures.py'):
+        return
+    # Only this exact pre-diagnostics manifest may retain its historical
+    # producer. Its data, captions, selectors and PDF hashes remain strict.
+    archive = root/'archive/dba55ba/presentation_sources/scripts/export_draft_figures.py'
+    if (sha(root/MANIFEST) == '58ffecda530f0dd3f4386b3ed015e827819d83cb5b376dc00dfa5cb54bf6c788'
+            and expected == 'a9b5e2482b063d8f6f947d655e55952426fa2583c1785df0c8b775b2239dd3d7'
+            and archive.is_file() and sha(archive) == expected):
+        return
+    raise RuntimeError('Stale or unverified draft figure export producer')
+
+
 def verify_mapping(root, mapping):
     for name, expected in mapping.items():
         digest = expected['sha256'] if isinstance(expected, dict) else expected
@@ -266,8 +300,7 @@ def verify_export(root=ROOT):
     root = Path(root)
     path = root/MANIFEST
     exported = json.loads(path.read_text())
-    if exported['status']!='completed' or exported['producer_sha256']!=sha(root/'scripts/export_draft_figures.py'):
-        raise RuntimeError('Stale or incomplete draft figure export')
+    verify_export_producer(root, exported)
     meta = catalogues(root)
     expected = plan(meta)
     if set(expected)!=set(exported['files']):
@@ -285,10 +318,12 @@ def verify_export(root=ROOT):
     notebook_copies = verify_notebook_pdf_exports(root)
     _check_main_notebook_routes(notebook_copies['routes'])
     moving_copies = optional_moving_copies(root)
-    if actual!=set(expected)|set(notebook_copies['files'])|set(moving_copies):
+    contact_copies = contact_diagnostic_copies(root)
+    if actual!=set(expected)|set(notebook_copies['files'])|set(moving_copies)|set(contact_copies):
         raise RuntimeError('Unexpected or missing categorized PDF files')
     actual_main = {name for name in actual if name.startswith('results/main/')}
-    if actual_main!=MAIN_NOTEBOOK_PDFS|set(moving_copies):
+    contact_main = {name for name, record in contact_copies.items() if record['section']=='main'}
+    if actual_main!=MAIN_NOTEBOOK_PDFS|set(moving_copies)|contact_main:
         raise RuntimeError('Unexpected main figure outside the six retained figures and optional moving candidates')
     if exported.get('optional_moving_candidates', {}) != moving_copies:
         raise RuntimeError('Stale independent moving candidate export records')
@@ -322,6 +357,7 @@ def verify_export(root=ROOT):
         dpi=EXPECTED_DPI, paper_width_in=WIDTH_IN,
         notebook_pdf_copies=len(notebook_copies['files']),
         optional_moving_candidates=len(moving_copies),
+        contact_diagnostic_exports=len(contact_copies),
         retained_main_figures=len(MAIN_NOTEBOOK_PDFS))
 
 
@@ -334,7 +370,8 @@ def export(root=ROOT):
     notebook_copies = verify_notebook_pdf_exports(root)
     _check_main_notebook_routes(notebook_copies['routes'])
     moving_copies = optional_moving_copies(root)
-    live_copies = set(notebook_copies['files']) | set(moving_copies)
+    contact_copies = contact_diagnostic_copies(root)
+    live_copies = set(notebook_copies['files']) | set(moving_copies) | set(contact_copies)
     if not MAIN_NOTEBOOK_PDFS<=live_copies:
         raise RuntimeError('Save the six revised main notebook figures before exporting')
     if set(selected)&set(notebook_copies['routes']):
