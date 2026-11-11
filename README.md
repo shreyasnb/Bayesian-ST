@@ -21,6 +21,15 @@ The [completion report](completion_report.md) records completed cohorts, mixed c
 
 ## Results
 
+The stationary beamforming comparison now uses **T=200** measurements for every
+array size n=32,64,128. [Tables, configuration and checks](docs/fixed_T200_beamforming.md)
+record the new 64-validation/256-test simulations per dimension; other experiments
+retain their original records.
+
+The [independent moving-interference notebook](notebooks/beamforming_moving_interference.ipynb)
+reuses the verified smooth and abrupt experiments. Its [summaries and optional
+candidate figures](docs/moving_beamforming.md) do not replace the stationary results.
+
 | Evidence | Beamforming | Contact |
 | --- | --- | --- |
 | Paper summary | [PDF](results/beamforming/paper_summary.pdf) | [PDF](results/contact/paper_summary.pdf) |
@@ -28,7 +37,7 @@ The [completion report](completion_report.md) records completed cohorts, mixed c
 | Figure claims, sources and hashes | [Manifest](results/beamforming/figure_manifest.json) | [Manifest](results/contact/figure_manifest.json) |
 | Proposed captions | [Notes](results/beamforming/caption_notes.md) | [Notes](results/contact/caption_notes.md) |
 
-Beamforming task cohorts use proper-complex rank-one interference at 32, 64 and 128 sensors, with observation counts scaled to dimension. Moving studies use 32 sensors. Contact retains a physical three-dimensional maintained plane/sphere constraint with known isotropic resistance and measured wrist motion. Higher-dimensional real fixtures concern generalized-coordinate numerical cost, rather than a complete robot controller.
+Beamforming task cohorts use proper-complex rank-one interference at 32, 64 and 128 sensors. The current stationary comparison fixes the measurement total at 200; dimension-scaled historical cohorts remain separately recorded. Moving studies use 32 sensors and 256 measurements. Contact retains a physical three-dimensional maintained plane/sphere constraint with known isotropic resistance and measured wrist motion. Higher-dimensional real fixtures concern generalized-coordinate numerical cost, rather than a complete robot controller.
 
 Both applications compare the posterior mean, the same-parameter mode and a matched isotropic control. GREAT uses finite Grassmann exponential steps and a recursively maintained raw covariance. Its native complex extension is explicitly labeled. Beamforming also retains independently validated modal/covariance loading, GROUSE and Ledoit--Wolf references. Contact GREAT receives measured responses only; conditional estimators also know applied inputs.
 

@@ -25,14 +25,18 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from lib.notebook_beamforming_data import load_beamforming_plot_data
 from lib.notebook_contact_data import load_contact_plot_data
+from lib.final_stationary_evidence import (stationary_component_path,
+                                           verify_stationary_component)
 
 
 def audit(root=ROOT):
     root = Path(root).resolve()
-    records=[];summaries={};input_hashes={};reporting_timing={}
-    def read(path):
+    records=[];summaries={};input_hashes={};reporting_timing={};cohorts={}
+    def record_hash(path):
         p=root/path;input_hashes[path]=hashlib.sha256(p.read_bytes()).hexdigest()
-        return pd.read_csv(p)
+        return p
+    def read(path):
+        return pd.read_csv(record_hash(path))
     def interval(values):
         a=np.asarray(values,float);a=a[np.isfinite(a)]
         m=float(np.mean(a));half=float(student_t.ppf(.975,len(a)-1)*np.std(a,ddof=1)/np.sqrt(len(a)))
@@ -60,6 +64,26 @@ def audit(root=ROOT):
         prefix='primary_beam_' if example=='beamforming' else 'primary_contact_'
         dt=float(config[prefix+'dt']);length=int(config[prefix+'T'])
         learned=frame[frame.method.eq('learned')]
+        assert learned.episode.nunique()==256
+        expected_reporting=np.arange(int(config['primary_report_every']),length+1,
+                                     int(config['primary_report_every']))
+        assert not learned.duplicated(['episode','t']).any()
+        variance_keys=['sigma2','tau2'] if example=='beamforming' else ['sigma2']
+        maximum_transition_error=0.
+        for _,simulation in learned.groupby('episode',sort=True):
+            simulation=simulation.sort_values('t')
+            np.testing.assert_array_equal(simulation.t,expected_reporting)
+            assert simulation.fit_performed.astype(bool).all()
+            for key in variance_keys:
+                # A fit performed after u_t must first appear in the estimate
+                # used at a later report; the post-fit value is not used at t.
+                before=simulation[key+'_estimate'].to_numpy()[1:]
+                previous_fit=simulation[key+'_next'].to_numpy()[:-1]
+                np.testing.assert_allclose(before,previous_fit,rtol=1e-13,atol=1e-15)
+                maximum_transition_error=max(maximum_transition_error,
+                    float(np.max(np.abs(before-previous_fit))))
+        assert frame.prediction_scope.eq('Before assimilation of the scored observation').all()
+        assert frame.score_numerical_ok.astype(bool).all()
         episode=int(learned.episode.min())
         trajectory=learned[learned.episode.eq(episode)].sort_values('t')
         first=trajectory.iloc[0]
@@ -69,7 +93,7 @@ def audit(root=ROOT):
         assert np.isclose(trajectory.iloc[1].sigma2_estimate,first.sigma2_next)
         change_observation=length//2+1
         reporting_timing[example]=dict(
-            clock='The adaptation table uses time_s=(t-1)*dt, with the first observation at zero.',
+            clock=('The displayed clock is the stored integer measurement index t; time_s=(t-1)*dt is retained only for checking the original records.' if example=='beamforming' else 'The adaptation table uses time_s=(t-1)*dt, with the first observation at zero.'),
             independently_selected_episode=episode,
             reporting_interval_observations=int(config['primary_report_every']),
             first_reporting_observation=int(first.t),first_reporting_time_s=float(first.time_s),
@@ -80,15 +104,28 @@ def audit(root=ROOT):
             physical_noise_change_time_s=float((change_observation-1)*dt),
             first_report_with_changed_truth_observation=int(changed.t),
             first_report_with_changed_truth_time_s=float(changed.time_s),
-            displayed_event_marker=('Between measurements 128 and 129 (128.5), the exact generating change.' if example=='beamforming' else 'First reporting checkpoint with changed generating variance; not the exact physical change time.'),
+            displayed_event_marker=('Measurement 129, the first measurement using the changed generating variance; the true step uses where=post.' if example=='beamforming' else 'First reporting checkpoint with changed generating variance; not the exact physical change time.'),
+            independently_checked_prequential_simulations=int(learned.episode.nunique()),
+            maximum_prequential_variance_transition_error=maximum_transition_error,
             source='Noise variance is multiplied by four at zero-based index T//2 in the saved-study generator; no stream is regenerated here.',
             interpretation='Displayed estimates are pre-correction checkpoint values. Connecting segments are not additional measurements or a reconstruction of scale updates between checkpoints.')
         payload=loader(root,'noise_adaptation')
         if example=='beamforming':
+            assert payload['event']==129 and payload['T']==256
+            assert payload['task_endpoint']=='output_oracle_db'
+            assert payload['score_endpoint']=='prequential_score'
+            reporting_timing[example]['displayed_event_measurement']=129
             for key,panel in payload['variance'].items():
+                np.testing.assert_array_equal(panel['x'],np.arange(1,257))
+                expected_truth=(np.where(np.arange(1,257)<=128,.2,.8)
+                                if key=='sigma2' else np.ones(256))
+                np.testing.assert_array_equal(panel['truth'],expected_truth)
+                np.testing.assert_array_equal(panel['events'],[129])
+                assert panel['truth_step_where']=='post'
                 for trace in panel['traces']:
                     for idx,tm in enumerate(trace['x']):
                         g=frame[(frame.method==trace['method'])&(frame[time_column]==tm)]
+                        assert g.episode.nunique()==len(g)==256
                         sample=g[key+'_estimate'].to_numpy();lo,m,hi=np.quantile(sample,[.25,.5,.75])
                         compare(example,'noise_adaptation',key,trace['method'],tm,[m,lo,hi],[trace['y'][idx],trace['low'][idx],trace['high'][idx]],len(sample),'Empirical 25–75% interquartile range')
             trace_sets=[('task',payload['task'],'output_oracle_db',1.),('score',payload['score'],'prequential_score',1.)]
@@ -123,13 +160,65 @@ def audit(root=ROOT):
                         compare(example,'predictive_calibration',regime+':'+target,trace['method'],nominal,[success/count,lo,hi],row[1:],count,'Pointwise exact binomial 95% confidence interval for coverage')
         task=loader(root,'task_performance')
         if example=='beamforming':
-            perf=normalize(read('results/beamforming/data/paper/performance/stationary.csv'))
-            perf=perf[(perf.t==perf.n)&(perf.condition=='static')]
+            stationary_meta=verify_stationary_component(root,stage='paper')
+            sidecar=stationary_component_path(root,stage='paper')
+            record_hash(sidecar.relative_to(root).as_posix())
+            raw=[name for name in stationary_meta['artifacts']
+                 if Path(name).name=='stationary.csv']
+            assert len(raw)==1
+            perf=normalize(read(raw[0]))
+            assert perf.condition.eq('static').all()
+            assert perf.stationary.astype(bool).all()
+            assert perf['T'].eq(200).all()
+            assert perf.sigma2.eq(.2).all() and perf.tau2.eq(1.).all()
+            assert perf[perf.method.isin(['mean','mode','iso'])].beta.eq(1.).all()
+            np.testing.assert_array_equal(np.sort(perf.t.unique()),[25,50,100,200])
+            np.testing.assert_allclose(perf.true_ratio_db,
+                10*np.log10(perf.true_power/perf.oracle_power),rtol=1e-12,atol=1e-12)
+            assert task['stationary_T']==task['stationary_primary_t']==200
+            perf=perf[perf.t.eq(200)]
+            assert not perf.duplicated(['n','method','episode']).any()
             for trace in task['curves']:
                 for row in trace['points']:
                     n=row[0];g=perf[(perf.n==n)&(perf.method==trace['method'])]
-                    sample=g.groupby('episode').true_ratio_db.mean()
+                    np.testing.assert_array_equal(np.sort(g.episode),np.arange(256))
+                    sample=g.true_ratio_db.to_numpy()
                     compare(example,'task_performance','output_power',trace['method'],n,interval(sample),row[1:],len(sample),'Pointwise Student 95% confidence interval for mean')
+            cohorts['stationary']=dict(raw_input=raw[0],T=200,primary_t=200,
+                dimensions=[32,64,128],reporting_t=[25,50,100,200],beta=1.,
+                sigma2=.2,tau2=1.,simulations_per_dimension=256,
+                endpoint='true_ratio_db',role='Supplementary fixed-dimension comparison')
+
+            abrupt=loader(root,'abrupt_tracking')
+            moving_name='results/beamforming/data/paper/performance/moving_checkpoints.csv.gz'
+            moving=normalize(read(moving_name))
+            moving=moving[moving.condition.eq('abrupt')&moving.n.eq(32)
+                          &moving.method.isin(['mean','mode','iso','great_window'])]
+            assert not moving.duplicated(['method','episode','t']).any()
+            assert np.isfinite(moving.t).all() and np.equal(moving.t,np.floor(moving.t)).all()
+            np.testing.assert_array_equal(np.sort(moving.t.unique()),np.arange(8,257,8))
+            assert moving.sigma2.eq(.2).all() and moving.tau2.eq(1.).all()
+            assert moving[moving.method.isin(['mean','mode','iso'])].beta.eq(.97).all()
+            assert moving.numerical_ok.astype(bool).all()
+            np.testing.assert_allclose(moving.true_ratio_db,
+                10*np.log10(moving.true_power/moving.oracle_power),rtol=1e-12,atol=1e-12)
+            assert abrupt['n']==32 and abrupt['T']==256 and abrupt['event']==129
+            assert abrupt['beta']==.97 and abrupt['endpoint']=='true_ratio_db'
+            np.testing.assert_array_equal(abrupt['time'],np.arange(8,257,8))
+            assert [trace['method'] for trace in abrupt['curves']]==['mean','mode','iso','great_window']
+            for trace in abrupt['curves']:
+                assert len(trace['points'])==32
+                for row in trace['points']:
+                    tm=row[0];g=moving[moving.method.eq(trace['method'])&moving.t.eq(tm)]
+                    np.testing.assert_array_equal(np.sort(g.episode),np.arange(256))
+                    sample=g.true_ratio_db.to_numpy()
+                    compare(example,'abrupt_tracking','output_power',trace['method'],tm,
+                        interval(sample),row[1:],len(sample),
+                        'Pointwise Student 95% confidence interval for mean')
+            cohorts['abrupt']=dict(raw_input=moving_name,n=32,T=256,event=129,
+                reporting_t=list(range(8,257,8)),beta=.97,sigma2=.2,tau2=1.,
+                methods=['mean','mode','iso','great_window'],simulations_per_checkpoint=256,
+                endpoint='true_ratio_db',role='Main abrupt-interference comparison')
         else:
             perf=normalize(read('results/contact/tables/paper/performance/metrics.csv'))
             checkpoints=perf[(perf.endpoint=='checkpoint')&(perf.condition=='static_concentrated')]
@@ -175,6 +264,7 @@ def audit(root=ROOT):
     report['counts']=dict(interval_summaries=len(records),boxplot_sample_sets=len(box_rows))
     report['reporting_scope']='Adaptation values are pre-update estimates at sparse reporting times, not a dense trajectory between reports.'
     report['reporting_timing']=reporting_timing
+    report['beamforming_cohorts']=cohorts
     return report
 
 

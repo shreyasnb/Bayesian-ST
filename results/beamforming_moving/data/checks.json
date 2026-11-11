@@ -1,0 +1,133 @@
+{
+  "status": "passed",
+  "original_sources_and_all_artifacts_verified": true,
+  "original_manifest_proof_bound": true,
+  "raw_rows_selected": 65536,
+  "conditions": [
+    "smooth",
+    "abrupt"
+  ],
+  "methods": [
+    "mean",
+    "mode",
+    "iso",
+    "great_window"
+  ],
+  "checkpoints_per_simulation": 32,
+  "test_simulations_per_condition": 256,
+  "validation_simulations_per_condition": 64,
+  "exact_covariance_power_identity_checked": true,
+  "all_simulation_identifiers_present": true,
+  "all_native_means_resolved": true,
+  "selection": {
+    "smooth": {
+      "validation_simulations": 64,
+      "existing_beta_and_GREAT_selection_verified": true,
+      "validation_measurements": [
+        32,
+        40,
+        48,
+        56,
+        64,
+        72,
+        80,
+        88,
+        96,
+        104,
+        112,
+        120,
+        128,
+        136,
+        144,
+        152,
+        160,
+        168,
+        176,
+        184,
+        192,
+        200,
+        208,
+        216,
+        224,
+        232,
+        240,
+        248,
+        256
+      ],
+      "selection_objective": "Mean independent held-out measured output power; no oracle normalization"
+    },
+    "abrupt": {
+      "validation_simulations": 64,
+      "existing_beta_and_GREAT_selection_verified": true,
+      "validation_measurements": [
+        32,
+        40,
+        48,
+        56,
+        64,
+        72,
+        80,
+        88,
+        96,
+        104,
+        112,
+        120,
+        128,
+        136,
+        144,
+        152,
+        160,
+        168,
+        176,
+        184,
+        192,
+        200,
+        208,
+        216,
+        224,
+        232,
+        240,
+        248,
+        256
+      ],
+      "selection_objective": "Mean independent held-out measured output power; no oracle normalization"
+    }
+  },
+  "saved_geometry": {
+    "smooth": {
+      "saved_simulation": 0,
+      "full_angle_schedule_exact": true,
+      "steering_vectors_match_angles": true,
+      "initial_desired_overlap": 0.5,
+      "uniform_initial_parameter": true,
+      "identity_transport_recursion_verified": true,
+      "shared_corrected_posterior_verified_at": [
+        32,
+        128,
+        256
+      ],
+      "maximum_parameter_absolute_error": 2.842519862355112e-14,
+      "maximum_action_absolute_error": 2.558937633260452e-16,
+      "selected_beta": 0.97
+    },
+    "abrupt": {
+      "saved_simulation": 0,
+      "full_angle_schedule_exact": true,
+      "steering_vectors_match_angles": true,
+      "initial_desired_overlap": 0.5,
+      "uniform_initial_parameter": true,
+      "identity_transport_recursion_verified": true,
+      "shared_corrected_posterior_verified_at": [
+        32,
+        128,
+        256
+      ],
+      "maximum_parameter_absolute_error": 3.552713679859292e-14,
+      "maximum_action_absolute_error": 4.742874840267547e-16,
+      "selected_beta": 0.97
+    }
+  },
+  "new_simulations": 0,
+  "new_parameter_selections": 0,
+  "new_posterior_fits": 0
+}

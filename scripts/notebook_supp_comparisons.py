@@ -13,7 +13,10 @@ field = "stationary" if example == "beamforming" else "metrics"
 frame = _normalize(evidence.frame("performance", field))
 if "split" in frame:
     frame = frame[frame.split.eq("test")]
-if example == "contact":
+if example == "beamforming":
+    stationary_times = evidence.config("performance")["stationary_times"]
+    frame = frame[frame.condition.eq("static") & frame.t.isin(stationary_times)]
+else:
     frame = frame[frame.endpoint.eq("checkpoint")]
 endpoint = ("true_ratio_db" if example == "beamforming"
             else _finite_column(frame, "response_mse"))
@@ -62,12 +65,10 @@ for method in methods:
     labels.append(r"$\overline P_t^+,\ G_t=I$" if method == "mean_identity" else
                   r"$P_{\widehat{\mathcal X}_t},\ G_t=I$" if method == "mode_identity"
                   else method_label(method, example))
-xlabels = ([f"{time/identifier:g}" for time in times] if example == "beamforming"
-           else [str(time) for time in times])
+xlabels = [str(time) for time in times]
 ax.set(xticks=np.arange(len(times)), xticklabels=xlabels,
        yticks=np.arange(len(methods)), yticklabels=labels,
-       xlabel=r"Measurements per sensor $t/n$" if example == "beamforming"
-       else r"Measurement index $t$")
+       xlabel=r"Measurement index $t$")
 fig.colorbar(image, ax=ax,
              label=r"Difference in $\ell_t$ (dB)" if example == "beamforming"
              else r"$\mathcal E_t(D)-\mathcal E_t(\overline P_t^+)$"
@@ -193,7 +194,8 @@ def build_cells(example):
                  "Student interval containing zero; intervals are not simultaneous. "
                  "All predeclared methods and observation counts are retained. "
                  + (r"Exact covariance power is $\ell_t=10\log_{10}[(w_t^H R_t w_t)/p_t^\star]$, "
-                    r"where $p_t^\star=(a^H R_t^{-1}a)^{-1}$ is the minimum under unit desired gain." if example == "beamforming" else
+                    r"where $p_t^\star=(a^H R_t^{-1}a)^{-1}$ is the minimum under unit desired gain. "
+                    r"Every sensor count uses the same stationary horizon $T=200$ and checkpoints $t=25,50,100,200$." if example == "beamforming" else
                     "The identity-transport variants use $G_t=I$." if identifier in ("plane", "sphere") else "")))
     if example == "beamforming":
         for index, condition in enumerate(("static", "smooth", "abrupt", "noise_change", "power_change")):

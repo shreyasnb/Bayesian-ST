@@ -4,7 +4,7 @@
   "tool": "PyMuPDF 1.26.6",
   "producer": "scripts/check_final_pdf_layout.py",
   "producer_sha256": "75158c812666b5421872a51a7df583abe5182b9e9700f97d83e7b9cd5cbf9222",
-  "figure_manifest_sha256": "7366ea6c99a76f9c99ffc1da4f28bf8db8b3c5a15b498aef808f973ce5509e7d",
+  "figure_manifest_sha256": "3227dcb2beb7276506a19688ac954e8b6ede16e200815035d35e17fe5898bd52",
   "pdf_files": 19,
   "pdf_pages": 74,
   "font_types": [
@@ -1590,7 +1590,7 @@
   "curated_exports": {
     "status": "passed",
     "manifest": "results/draft_figure_manifest.json",
-    "manifest_sha256": "e2c569ba45f335336c86c7934db02467dc48989491e2f01eec2b53a76757d2d3",
+    "manifest_sha256": "58ffecda530f0dd3f4386b3ed015e827819d83cb5b376dc00dfa5cb54bf6c788",
     "pdf_files": 16,
     "pdf_pages": 38,
     "files": {

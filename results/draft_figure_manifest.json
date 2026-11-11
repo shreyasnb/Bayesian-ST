@@ -2,10 +2,10 @@
   "schema": 1,
   "status": "completed",
   "producer": "scripts/export_draft_figures.py",
-  "producer_sha256": "f4115ce640b1fa1d002d09e5540e62dc594dd8c3b0e82aa12f68bbc8fb1ca63c",
+  "producer_sha256": "a9b5e2482b063d8f6f947d655e55952426fa2583c1785df0c8b775b2239dd3d7",
   "source_figure_manifests": {
-    "results/beamforming/figure_manifest.json": "e7465bd031cee9db96058f7caf45b8f367c08d277cde97a513d58dafefb6f185",
-    "results/contact/figure_manifest.json": "7366ea6c99a76f9c99ffc1da4f28bf8db8b3c5a15b498aef808f973ce5509e7d"
+    "results/beamforming/figure_manifest.json": "9d7fbdc2541e82ebcafcfa7fcbc208b222043dbe8f31220e785396234dd0bc4d",
+    "results/contact/figure_manifest.json": "3227dcb2beb7276506a19688ac954e8b6ede16e200815035d35e17fe5898bd52"
   },
   "dpi": 300,
   "paper_width_in": 7.0,
@@ -24,7 +24,7 @@
   "selection_scope": "The revised main section uses six notebook PDFs. All canonical evidence is retained in supplementary; no simulations, fitting, settings, benchmarks or episodes are changed.",
   "main_policy": {
     "beamforming": {
-      "task_performance_output_power": "Exact-covariance output power after t=n measurements.",
+      "task_performance_output_power": "Stationary dimension comparison with a fixed total of T=200 measurements; the n=64 table is available separately.",
       "noise_adaptation_page1": "Variance estimation and prediction before each measurement."
     },
     "contact": {
@@ -42,22 +42,45 @@
     "results/main/contact/posterior_anisotropy_spheres.pdf",
     "results/main/contact/task_performance_page1.pdf"
   ],
+  "optional_moving_candidates": {
+    "results/main/beamforming/moving_interference_smooth_output_power.pdf": {
+      "notebook": "notebooks/beamforming_moving_interference.ipynb",
+      "cell": 9,
+      "example": "beamforming",
+      "section": "main",
+      "filename": "moving_interference_smooth_output_power.pdf",
+      "local_pdf": "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf",
+      "sha256": "bb42b86d38389b349a6174b18179719c7a55b05ca8f2053fcad3e1e103527589",
+      "bytes": 195534
+    },
+    "results/main/beamforming/moving_interference_abrupt_output_power.pdf": {
+      "notebook": "notebooks/beamforming_moving_interference.ipynb",
+      "cell": 11,
+      "example": "beamforming",
+      "section": "main",
+      "filename": "moving_interference_abrupt_output_power.pdf",
+      "local_pdf": "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf",
+      "sha256": "f897f216043d0e9e7008b39982627e4fde8a0765d22a3bbb6d203c8253e5e520",
+      "bytes": 195658
+    }
+  },
+  "optional_moving_scope": "Independent candidates for review only; the six retained main figures and stationary tables are unchanged by this notebook.",
   "main_caption_notes": {
-    "results/main/beamforming/noise_adaptation_page1.pdf": "Beamforming with true variances, fixed variance estimates and EM variance estimates at $n=32$, $T=256$ and variance-estimation block length $L=32$. Panels (a,b) show the variances available before receiving $u_t$. The true noise variance is $0.2$ for $t\\leq128$ and $0.8$ for $t\\geq129$; the true signal variance is one. The change is drawn between measurements 128 and 129. Variance bands contain the middle 50\\% of estimates across 256 Monte Carlo simulations. Panel (c) shows $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, using the prior mean $\\overline P_t^-$ and saved exact covariance powers. Panel (d) shows the normalized Bingham-mixture density $\\log\\pi_t(u_t)$, with $\\pi_t(u)=\\int p(u\\mid\\mathcal X,\\widehat\\theta_t)q_{A_t^-}(\\mathcal X)\\,d\\mu(\\mathcal X)$, evaluated before correction. Power and log-density bands are 95\\% confidence intervals for Monte Carlo means. The unchanged forgetting factors are $0.98$, $0.90$ and $0.98$ for true, fixed and EM variances. An EM fit uses two iterations and affects measurements from $t+1$.",
-    "results/main/beamforming/task_performance_output_power.pdf": "Array output power relative to its minimum under the unit-gain constraint: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $R_t=\\sigma_t^2I_n+\\tau_t^2P_{\\mathcal X_t}$ and $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The interference direction is fixed and estimates use $t=n$ measurements at $n=32,64,128$, with $\\beta=1$. Curves show averages over 256 Monte Carlo simulations, using saved exact covariance powers. Shading is a 95\\% confidence interval for the average obtained with the posterior mean. Settings retain their earlier measured-data selection criterion.",
+    "results/main/beamforming/noise_adaptation_page1.pdf": "Beamforming with true variances, fixed variance estimates and EM variance estimates at $n=32$, $T=256$ and variance-estimation block length $L=32$. Panels (a,b) show the variances available before receiving $u_t$. The true noise variance is $0.2$ for $t\\leq128$ and $0.8$ for $t\\geq129$; the true signal variance is one. The true step and the common dashed event marker are drawn at $t=129$, with one common-legend entry Noise variance change. Variance bands contain the middle 50\\% of estimates across 256 Monte Carlo simulations. Panel (c) shows $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, using the prior mean $\\overline P_t^-$ and saved exact covariance powers. Panel (d) shows the normalized Bingham-mixture density $\\log\\pi_t(u_t)$, with $\\pi_t(u)=\\int p(u\\mid\\mathcal X,\\widehat\\theta_t)q_{A_t^-}(\\mathcal X)\\,d\\mu(\\mathcal X)$, evaluated before correction. Power and log-density bands are 95\\% confidence intervals for Monte Carlo means. The unchanged forgetting factors are $0.98$, $0.90$ and $0.98$ for true, fixed and EM variances. An EM fit uses two iterations and affects measurements from $t+1$.",
+    "results/main/beamforming/task_performance_output_power.pdf": "Stationary beamforming with fixed measurement total $T=200$ at every sensor count $n=32,64,128$. The interference direction is fixed, $\\sigma^2=0.2$, $\\tau^2=1$, $|a^{\\mathrm H}h|^2=1/2$, the Bingham initialization is uniform and $\\beta=1$. Each curve averages the individual covariance-based $\\ell_T=10\\log_{10}[(w_T^{\\mathrm H}Rw_T)/p^\\star]$ values over 256 independent simulations, with $R=\\sigma^2I+\\tau^2P_{\\mathcal X}$ and $p^\\star=(a^{\\mathrm H}R^{-1}a)^{-1}$. The posterior mean is taken after correction with measurement 200. Shading is a pointwise Student 95\\% confidence interval for its mean; smaller relative power is better. Parameter selection uses the unchanged measured-power criterion on 64 independent validation simulations per sensor count. The main table reports $n=64$, and the supplementary table reports all three sensor counts. This stationary figure is retained independently of the optional moving-interference candidates.",
     "results/main/contact/information_rotation.pdf": "Change in the conditional measurement distribution under rotations of the saved plane with true normal $e_3$, using the original $t=16$ measurements. The angle $\\delta$ is measured in degrees. The curves evaluate $D_{\\mathrm{KL}}(p_0\\|p_z)$ along $z=(\\tan\\delta,0)^\\top$ and $z=(0,\\tan\\delta)^\\top$, where $n(z)=(e_3-z_1e_1-z_2e_2)/\\sqrt{1+\\|z\\|^2}$ and $p_z$ is the corresponding joint conditional likelihood. Markers retain the $5^\\circ$ and $30^\\circ$ rotations. This standalone figure has no inherited panel letter.",
     "results/main/contact/posterior_anisotropy_risk.pdf": "Panel (c) of the directional posterior-uncertainty figure. For $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ with $v_0=0.02\\,\\mathrm{m/s}$, the ordinate is $r_t(v(\\theta))/v_0^2$, where $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$. The two curves use $\\overline P_t^+$ and $\\overline P_t^{\\mathrm{iso}}$, respectively, each with its own distribution. The saved unit-input curves equal this normalized quantity; no velocity scaling is applied to them.",
     "results/main/contact/posterior_anisotropy_spheres.pdf": "Directional posterior uncertainty at $t=16$. Panels (a,b) show the full and matched isotropic normal densities, normalized relative to invariant measure and drawn on a common logarithmic scale. Antipodal normals represent one plane. The point marks the common modal line; gray curves are coordinate great circles. Saved coordinates, camera, density parameters and logarithmic limits are unchanged. These panels are combined with the separate response-variance panel (c) in TeX.",
     "results/main/contact/task_performance_page1.pdf": "Mean squared velocity prediction error $\\mathcal E_t(D_t)=\\tfrac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, with $v_t^{(j)}=v_0R_t^\\top e_j$ and $v_0=0.02\\,\\mathrm{m/s}$. Panel (a) uses stationary inputs near $e_1$ at measurement indices $t=1,4,16,32$. Panel (b) uses a sphere of radius $0.05$ m; errors are averaged over $t=4,8,\\ldots,192$ within each simulation before averaging the 256 values. Multiplication by $10^6$ converts the saved squared-velocity error to $(\\mathrm{mm}/\\mathrm{s})^2$; no additional factor of three is used. Confidence intervals are shown for the posterior mean in (a) and every method in (b)."
   },
   "documentation": {
-    "results/main/README.md": "c07843e55c14efc195fe9b481438702df4ad28fec86724b9c5a9ab973c65a6fe",
-    "results/supplementary/README.md": "1a72d159374f277ef9448dd4327481778e98832570d56b24406c15ee418bd04c"
+    "results/main/README.md": "042d6eb2f74bfbfa74cde754066a602a151a4cd4f28d736f3673d16cfbeb5543",
+    "results/supplementary/README.md": "4ef2bf57dda332fb2ea24db5fb92d81b1d2527c332221298dd9d4a30a7edaaed"
   },
   "files": {
     "results/supplementary/beamforming/setup.pdf": {
-      "sha256": "9a397afb155304a671236e92105f089f99e3a5b8fc78f38cf07e35dc82bc28ff",
-      "bytes": 406421,
+      "sha256": "a2684b7f3bbf241ef93deeebc755ed3fb3e887aa8ca6e16bb30d41c11734e371",
+      "bytes": 406346,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -65,7 +88,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/setup.pdf",
-      "source_pdf_sha256": "9a397afb155304a671236e92105f089f99e3a5b8fc78f38cf07e35dc82bc28ff",
+      "source_pdf_sha256": "a2684b7f3bbf241ef93deeebc755ed3fb3e887aa8ca6e16bb30d41c11734e371",
       "source_pages": [
         1
       ],
@@ -91,7 +114,6 @@
             "episode": 0,
             "story": {
               "stationary_n": 64,
-              "stationary_ratio": 1.0,
               "episode": 0,
               "moving_episode": 0,
               "moving_time": 128,
@@ -99,7 +121,9 @@
                 32,
                 128,
                 256
-              ]
+              ],
+              "stationary_time": 200,
+              "stationary_t": 200
             },
             "contact_condition": null
           },
@@ -112,8 +136,8 @@
       "full_source_caption": "Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved simulation, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information."
     },
     "results/supplementary/beamforming/task_performance.pdf": {
-      "sha256": "dd2aa367efaca7416c116fdbfe26cdca49032bba03f82a7689a534f890efd49c",
-      "bytes": 397063,
+      "sha256": "135282c4414d166c1044b19b2eb758c971205f5497d9827fe126a4b294b978cf",
+      "bytes": 397066,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -121,7 +145,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/task_performance.pdf",
-      "source_pdf_sha256": "dd2aa367efaca7416c116fdbfe26cdca49032bba03f82a7689a534f890efd49c",
+      "source_pdf_sha256": "135282c4414d166c1044b19b2eb758c971205f5497d9827fe126a4b294b978cf",
       "source_pages": [
         1
       ],
@@ -147,8 +171,8 @@
             {
               "cohort": "stationary",
               "condition": "static",
-              "measurement_selection": "t=n",
-              "observations_per_sensor": 1,
+              "measurement_selection": "t=200",
+              "measurements": 200,
               "dimensions": [
                 32,
                 64,
@@ -179,12 +203,12 @@
         }
       ],
       "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
-      "proposed_latex_caption": "Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
-      "full_source_caption": "Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode."
+      "proposed_latex_caption": "Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=T=200$ for $n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode.",
+      "full_source_caption": "Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=T=200$ for $n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces. This cohort has 256 independent test episodes per condition; snapshots and queries are averaged within each episode."
     },
     "results/supplementary/beamforming/posterior_anisotropy.pdf": {
-      "sha256": "ae45df56bb2ea17670c221709b4e40b5dccf14891fa5eb2bb014bb590dabd3bc",
-      "bytes": 338585,
+      "sha256": "2a1fc5a9ccf6737d91342727d4b50eae6e235e8c15828bb12d8d601ea0a43eb6",
+      "bytes": 337536,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -192,7 +216,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/posterior_anisotropy.pdf",
-      "source_pdf_sha256": "ae45df56bb2ea17670c221709b4e40b5dccf14891fa5eb2bb014bb590dabd3bc",
+      "source_pdf_sha256": "2a1fc5a9ccf6737d91342727d4b50eae6e235e8c15828bb12d8d601ea0a43eb6",
       "source_pages": [
         1
       ],
@@ -217,7 +241,7 @@
           "selection": {
             "cohort": "stationary",
             "n": 64,
-            "t": 64,
+            "t": 200,
             "section": "Real coefficient great sphere in the saved complex three-frame; not a normalized marginal"
           },
           "panel_selections": [],
@@ -252,12 +276,12 @@
         }
       ],
       "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
-      "proposed_latex_caption": "Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=t=64$. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full exact-covariance power differences at n=t=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
-      "full_source_caption": "Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=t=64$. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full exact-covariance power differences at n=t=64, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk."
+      "proposed_latex_caption": "Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=64$, $t=T=200$. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full exact-covariance power differences at n=64, t=T=200, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk.",
+      "full_source_caption": "Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=64$, $t=T=200$. Complementary mean eigenvalues compare the full and isotropic means. The lower panel is the empirical distribution of paired isotropic-minus-full exact-covariance power differences at n=64, t=T=200, in dB; it is not a confidence interval. Spheres retain the original saved physical/coefficient coordinates and shared oblique camera. The blue-purple-pink-yellow palette uses the unchanged shared logarithmic density scale; its four-decade display floor does not mean zero density. Color positions are not probability quantiles. Thin gray curves are front-visible coordinate great circles, not density contours or credible regions. No mode-facing rotation, density deformation or additional posterior fitting is used. In the directional-risk panel, theta is in radians and the indicated mean is either the full posterior mean or the manuscript-defined isotropic mean; each curve is its own belief risk."
     },
     "results/supplementary/beamforming/noise_adaptation.pdf": {
-      "sha256": "6b86e89a3f2aa6f13b60f842342d3799a71aadfbc2fdff652a2c2b205f57b51e",
-      "bytes": 282668,
+      "sha256": "ae2f9e9d5208a441cd707a87812bcdd2ef02b410bfcf78ac70097362fd094cf2",
+      "bytes": 541159,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -265,7 +289,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/noise_adaptation.pdf",
-      "source_pdf_sha256": "6b86e89a3f2aa6f13b60f842342d3799a71aadfbc2fdff652a2c2b205f57b51e",
+      "source_pdf_sha256": "ae2f9e9d5208a441cd707a87812bcdd2ef02b410bfcf78ac70097362fd094cf2",
       "source_pages": [
         1,
         2,
@@ -337,8 +361,8 @@
         }
       ],
       "selection_rationale": "Retains the complete verified canonical PDF. The revised main section uses only its six declared notebook PDFs.",
-      "proposed_latex_caption": "Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $128.5$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem.",
-      "full_source_caption": "Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $128.5$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem."
+      "proposed_latex_caption": "Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $t=129$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem.",
+      "full_source_caption": "Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $t=129$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem."
     },
     "results/supplementary/beamforming/information.pdf": {
       "sha256": "f75b3ca5ebb5fea5e24d27cc63494da728721084d25b8e372572315c97ab79f0",
@@ -653,8 +677,8 @@
       "full_source_caption": "Exact discounted aggregation, delayed actions and constant-subspace approximation are separate checks. Aggregation retains the boundary factor $\\beta^L$, within-block weights, per-observation variances and recorded noncommuting transport. Numerical zeros are displayed at a $10^{-16}$ plotting floor; full tolerances remain in the tables. Delayed actions are evaluated only after a block arrives, with common endpoints and physical output age reported separately. The block-likelihood reference resets to the uniform prior, $A_0=0$, and uses $q_{\\sum_{j=t-L+1}^t B_j}$ with $\\beta=1$ within the raw $L$-observation window. It does not retain the singleton history. Under motion its one-state likelihood is an approximation, distinct from the algebraic aggregation identity. Processing and task-decision cost is reported in the computation output."
     },
     "results/supplementary/beamforming/additional_comparisons.pdf": {
-      "sha256": "3209efd7ce39c03ab058f4eb8fe258622f9a78e57eb517bdd852d734fbec3bc0",
-      "bytes": 465871,
+      "sha256": "a3d0f14fc190b6ce3895927ad8068033890decd83a2a23bf734086d05b3fb2d1",
+      "bytes": 904101,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -662,7 +686,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/additional_comparisons.pdf",
-      "source_pdf_sha256": "3209efd7ce39c03ab058f4eb8fe258622f9a78e57eb517bdd852d734fbec3bc0",
+      "source_pdf_sha256": "a3d0f14fc190b6ce3895927ad8068033890decd83a2a23bf734086d05b3fb2d1",
       "source_pages": [
         1,
         2,
@@ -705,10 +729,10 @@
               "grouse"
             ],
             "reporting_times": [
-              8,
-              16,
-              32,
-              64
+              25,
+              50,
+              100,
+              200
             ],
             "paired_interval": "Pointwise Student95% interval of independent-episode differences; not simultaneous"
           },
@@ -746,10 +770,10 @@
               "grouse"
             ],
             "reporting_times": [
-              16,
-              32,
-              64,
-              128
+              25,
+              50,
+              100,
+              200
             ],
             "paired_interval": "Pointwise Student95% interval of independent-episode differences; not simultaneous"
           },
@@ -787,10 +811,10 @@
               "grouse"
             ],
             "reporting_times": [
-              32,
-              64,
-              128,
-              256
+              25,
+              50,
+              100,
+              200
             ],
             "paired_interval": "Pointwise Student95% interval of independent-episode differences; not simultaneous"
           },
@@ -1630,8 +1654,8 @@
       "full_source_caption": "Independent accuracy at the requested targets. Normalizer, mean, second moments, derivative and quantile diagnostics retain separate flags. Small-state quadrature and high-precision native complex-line references have their own resolution limits. A first-derivative truncation certificate is not a floating-point, second-moment or tail certificate. Broad and highly concentrated unresolved cases are retained; rank/codimension-one feasibility does not establish arbitrary-rank integration."
     },
     "results/supplementary/beamforming/paper_summary.pdf": {
-      "sha256": "f93077fe1151c2521edc1dd99266dec0fb907c864b3ee04b9b3b91f6a2909882",
-      "bytes": 427625,
+      "sha256": "a9a58af1651cb11f49b45ba074c136216c169998139446a7ef50478e6248902f",
+      "bytes": 427630,
       "export_method": "byte-exact PDF copy",
       "saved_pdf_rasterized": false,
       "rendered_page_identity_checked": true,
@@ -1639,7 +1663,7 @@
       "application": "beamforming",
       "section": "supplementary",
       "source_pdf": "results/beamforming/paper_summary.pdf",
-      "source_pdf_sha256": "f93077fe1151c2521edc1dd99266dec0fb907c864b3ee04b9b3b91f6a2909882",
+      "source_pdf_sha256": "a9a58af1651cb11f49b45ba074c136216c169998139446a7ef50478e6248902f",
       "source_pages": [
         1
       ],
@@ -1665,8 +1689,8 @@
             {
               "cohort": "stationary",
               "condition": "static",
-              "measurement_selection": "t=n",
-              "observations_per_sensor": 1,
+              "measurement_selection": "t=200",
+              "measurements": 200,
               "dimensions": [
                 32,
                 64,
@@ -1695,7 +1719,8 @@
             {
               "timing_case": "task_stationary",
               "performance_episode": 0,
-              "task_loss": "True-covariance loss of the same predeclared timing episode, not a population average",
+              "task_loss": "Saved true-covariance loss and original covariance minimum of the separate n-measurement timing simulation",
+              "observations": "n; unchanged timing cohort, distinct from fixed-T stationary performance",
               "timing_repetitions": "Repeated clocks on one saved episode"
             }
           ],

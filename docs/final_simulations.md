@@ -5,6 +5,36 @@ This protocol implements the author's
 and `supplementary(14).tex` as its supplement. See
 [mathematical checks and interpretation](final_manuscript_checks.md).
 
+## Current stationary revision and independent moving notebook
+
+The stationary comparison now fixes $T=200$ at every $n=32,64,128$.
+Its new evidence is separate from the original mixed performance component:
+
+```bash
+python scripts/validate_final_simulations.py --revision stationary_T200
+python scripts/run_final_beamforming.py --stage paper --stationary-only --workers 4
+python scripts/export_stationary_beamforming_tables.py
+```
+
+The original full-component commands below document the earlier study; they
+are not the entry point for this stationary revision. Their completed outputs
+remain immutable. The dedicated stationary runner checks its own current
+certificate, retains its checkpoints and writes exact-covariance summaries
+under `performance/stationary_T200/`. See
+[configuration and results](fixed_T200_beamforming.md).
+
+The independent moving notebook reuses matching original records:
+
+```bash
+python scripts/summarize_moving_beamforming.py
+python scripts/make_moving_beamforming_notebook.py --execute
+python scripts/check_moving_beamforming.py
+```
+
+It writes only its own result root and separately named optional candidate
+copies. It does not overwrite the stationary or noise figures or modify the
+five existing notebooks. See [the moving comparison](moving_beamforming.md).
+
 ## Evidence and stages
 
 Final vector PDFs are in `results/beamforming/` and `results/contact/`.
@@ -93,7 +123,9 @@ oblique camera and continuous blue-purple-pink-yellow palette on the original sh
 are front-visible coordinate great circles, rather than probability contours.
 The mode-facing rotation and white density contours remain removed. Color
 positions change only the palette; they do not represent probability quantiles. Density values and physical angular
-widths were never changed. The original n=64, t=64 array checkpoint is restored.
+widths were never changed. The historical n=64,t=64 array checkpoint was retained for that revision.
+The active stationary comparison and its saved n=64 state now use fixed
+T=200; see [the fixed-horizon study](fixed_T200_beamforming.md).
 The array sphere is a real-coefficient section of a complex posterior, not a
 physical radiation field or a normalized sphere marginal; the setup figure
 shows the physical beam response. Contact normals retain their measured wrist
@@ -101,8 +133,9 @@ coordinates and antipodal interpretation.
 
 For manuscript insertion, the current vector PDFs are also organized in
 `results/main/{beamforming,contact}/` and
-`results/supplementary/{beamforming,contact}/`. The main selection contains
-four single-page figures per application. Contact task performance displays
+`results/supplementary/{beamforming,contact}/`. The retained main selection has
+two beamforming and four contact PDFs, plus the new stationary table. Two
+independent moving PDFs are optional candidates for review. Contact task performance displays
 absolute MSE intervals for every method, including the posterior mean; its
 paired MSE differences are retained on a supplementary page. Processing-time
 figures state the measured 64-observation workload, with memory on a separate

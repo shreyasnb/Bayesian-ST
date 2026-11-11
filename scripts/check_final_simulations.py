@@ -12,6 +12,7 @@ sys.path.insert(0, str(ROOT))
 from lib.final_validation import (
     BASE_COMMIT, EXAMPLES, STAGES, COMPONENTS, require_gate, verify_component,
     verify_history, verify_mapping, sha, gate_path)
+from lib.rendering_provenance import resolve_source_mapping
 
 INDIVIDUAL = (
     'setup', 'task_performance', 'posterior_anisotropy', 'noise_adaptation',
@@ -109,7 +110,8 @@ def verify_display_audits(example):
     geometry = json.loads((folder / 'data/validation/sphere_visual_checks.json').read_text())
     assert geometry['status'] == 'passed' and geometry['example'] == example
     assert geometry['audit_source_sha256'] == sha(ROOT / 'scripts/check_sphere_visuals.py')
-    assert geometry['display_source_sha256'] == sha(ROOT / 'lib/final_paper_visuals.py')
+    verify_mapping(ROOT, resolve_source_mapping(ROOT, {
+        'lib/final_paper_visuals.py': geometry['display_source_sha256']}))
     assert geometry['laws_checked'] == geometry['shared_rotation_checks'] == len(geometry['laws'])
     assert geometry['laws_checked'] == (20 if example == 'beamforming' else 464)
     assert geometry['native_coordinate_checks'] == geometry['laws_checked']
@@ -127,7 +129,8 @@ def verify_display_audits(example):
     assert preservation['status'] == 'passed'
     for category, mapping in preservation['unchanged_files'].items():
         assert len(mapping) == preservation['unchanged_file_counts'][category]
-        verify_mapping(ROOT, mapping)
+        verify_mapping(ROOT, resolve_source_mapping(ROOT, mapping)
+                       if category == 'sources' else mapping)
     exported = json.loads((folder / 'data/validation/pdf_layout_checks.json').read_text())
     assert exported['status'] == 'passed' and not exported['errors']
     assert exported['producer_sha256'] == sha(ROOT / 'scripts/check_final_pdf_layout.py')
@@ -167,6 +170,19 @@ def main():
                     verify_paper_budget(example, component, meta)
                 result['components'][example][stage][component] = dict(
                     status=meta['status'], artifacts=len(meta['artifacts']))
+    from lib.final_stationary_evidence import verify_stationary_component
+    stationary = verify_stationary_component(ROOT, 'paper')
+    cfg, checks = stationary['config'], stationary['checks']
+    assert cfg['stationary_T'] == cfg['stationary_primary_t'] == 200
+    assert cfg['stationary_times'] == [25, 50, 100, 200]
+    assert cfg['dimensions'] == [32, 64, 128]
+    assert checks['validation_simulations'] == 192
+    assert checks['final_simulations'] == 768
+    assert checks['native_mean_calls'] == 3072
+    assert checks['native_mean_unresolved'] == checks['unresolved_method_rows'] == 0
+    result['stationary_fixed_horizon'] = dict(status='verified', T=200,
+        dimensions=cfg['dimensions'], validation_simulations=192,
+        final_simulations=768, methods=len(checks['all_methods']))
     if not args.science_only:
         result['figures'] = {example: verify_figures(example) for example in EXAMPLES}
         result['notebooks'] = {name: verify_notebook(name)
@@ -176,6 +192,9 @@ def main():
         result['draft_figures'] = verify_export(ROOT)
         from lib.notebook_pdf_exports import verify_notebook_pdf_exports
         result['notebook_pdf_exports'] = verify_notebook_pdf_exports(ROOT, require_all=True)
+        from scripts.check_moving_beamforming import fullcheck as check_moving
+        from scripts.export_draft_figures import optional_moving_copies
+        result['moving_interference_candidates'] = check_moving(ROOT)
         from scripts.check_supplementary_notebooks import check as check_supplementary
         result['supplementary_notebooks'] = {
             example: check_supplementary(example, ROOT) for example in EXAMPLES}
@@ -190,7 +209,8 @@ def main():
         exported = editability['manuscript_plot_revision']['actual_pdf_audit']
         assert exported['status'] == 'passed' and not exported['errors']
         assert exported['producer_sha256'] == sha(ROOT / exported['producer'])
-        assert set(exported['files']) == set(result['notebook_pdf_exports']['files'])
+        assert set(exported['files']) == (set(result['notebook_pdf_exports']['files'])
+                                          | set(optional_moving_copies(ROOT)))
         for mapping in (exported['files'], exported['canonical_files']):
             verify_mapping(ROOT, {name: record['sha256'] for name, record in mapping.items()})
         result['manuscript_export_audit'] = dict(status='verified',

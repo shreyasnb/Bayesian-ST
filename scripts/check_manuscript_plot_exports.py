@@ -35,6 +35,8 @@ from lib.notebook_pdf_exports import declared_notebook_pdf_routes
 MAIN_PANELS = {
     ('beamforming', 'task_performance_output_power.pdf'): [],
     ('beamforming', 'noise_adaptation_page1.pdf'): [],
+    ('beamforming', 'moving_interference_smooth_output_power.pdf'): [],
+    ('beamforming', 'moving_interference_abrupt_output_power.pdf'): [],
     ('contact', 'information_rotation.pdf'): [],
     ('contact', 'task_performance_page1.pdf'): [],
     ('contact', 'posterior_anisotropy_spheres.pdf'): [],
@@ -225,6 +227,12 @@ def audit_pdf(path, expected_sizes, expected_dpi=300., primary_fonts=None,
 def run(root, previews=None, main_only=False):
     root = Path(root).resolve()
     routes = declared_notebook_pdf_routes(root)
+    if (root/'notebooks/beamforming_moving_interference.ipynb').is_file():
+        from scripts.check_moving_beamforming import optional_moving_routes
+        candidates = optional_moving_routes(root)
+        if set(routes) & set(candidates):
+            raise ValueError('An optional moving candidate replaces an existing figure')
+        routes.update(candidates)
     declarations = notebook_declarations(root, routes)
     files, errors = {}, []
     matched = 0
@@ -294,8 +302,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=ROOT)
     parser.add_argument('--output', type=Path, help='Write the JSON audit to this path')
-    parser.add_argument('--previews', type=Path, help='Render six revised main previews to this directory')
-    parser.add_argument('--main-only', action='store_true', help='Inspect only the six revised live main exports')
+    parser.add_argument('--previews', type=Path, help='Render retained main and optional candidate previews to this directory')
+    parser.add_argument('--main-only', action='store_true', help='Inspect retained main figures and optional moving candidates')
     args = parser.parse_args()
     report = run(args.root, previews=args.previews, main_only=args.main_only)
     if args.output:

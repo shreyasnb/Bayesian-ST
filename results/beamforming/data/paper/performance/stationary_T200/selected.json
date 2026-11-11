@@ -1,0 +1,251 @@
+[
+  {
+    "n": 32,
+    "condition": "static",
+    "stationary": true,
+    "times": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "selection_objective": "Mean independent held-out measured output power; no oracle normalization",
+    "primary_times": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "policies": [
+      {
+        "times": [
+          25
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5669754656593768,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          50
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5069545320542769,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          100
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.4373349078045467,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          200
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.3538007162976233,
+        "shared_beta": 1.0
+      }
+    ],
+    "shared_beta": 1.0,
+    "great_window": {
+      "window": 64,
+      "beta": null,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 1.0,
+      "stepsize": 0.003125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1,
+    "primary_evaluation_time": 200,
+    "validation_scored_times": [
+      25,
+      50,
+      100,
+      200
+    ]
+  },
+  {
+    "n": 64,
+    "condition": "static",
+    "stationary": true,
+    "times": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "selection_objective": "Mean independent held-out measured output power; no oracle normalization",
+    "primary_times": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "policies": [
+      {
+        "times": [
+          25
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.617780043568838,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          50
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5904256754540775,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          100
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5262493853156766,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          200
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.45923178071496473,
+        "shared_beta": 1.0
+      }
+    ],
+    "shared_beta": 1.0,
+    "great_window": {
+      "window": 128,
+      "beta": null,
+      "stepsize": 0.0015625,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 1.0,
+      "stepsize": 0.0015625,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1,
+    "primary_evaluation_time": 200,
+    "validation_scored_times": [
+      25,
+      50,
+      100,
+      200
+    ]
+  },
+  {
+    "n": 128,
+    "condition": "static",
+    "stationary": true,
+    "times": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "selection_objective": "Mean independent held-out measured output power; no oracle normalization",
+    "primary_times": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "policies": [
+      {
+        "times": [
+          25
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.592910541910997,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          50
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.6192626339085355,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          100
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5881687013426274,
+        "shared_beta": 1.0
+      },
+      {
+        "times": [
+          200
+        ],
+        "scalar_beta": 1.0,
+        "rho": 1.0,
+        "covariance_beta": 1.0,
+        "alpha": 0.5304028814675519,
+        "shared_beta": 1.0
+      }
+    ],
+    "shared_beta": 1.0,
+    "great_window": {
+      "window": 128,
+      "beta": null,
+      "stepsize": 0.0015625,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "great_ew": {
+      "window": null,
+      "beta": 1.0,
+      "stepsize": 0.00078125,
+      "inner_steps": 3,
+      "step_multiplier": 0.24
+    },
+    "grouse_step": 0.1,
+    "primary_evaluation_time": 200,
+    "validation_scored_times": [
+      25,
+      50,
+      100,
+      200
+    ]
+  }
+]

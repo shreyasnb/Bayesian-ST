@@ -38,7 +38,7 @@ INDIVIDUAL = (
 # Canonical catalogue copies are retained in supplementary/ in their entirety.
 MAIN = {
     'beamforming': {
-        'task_performance_output_power': 'Exact-covariance output power after t=n measurements.',
+        'task_performance_output_power': 'Stationary dimension comparison with a fixed total of T=200 measurements; the n=64 table is available separately.',
         'noise_adaptation_page1': 'Variance estimation and prediction before each measurement.',
     },
     'contact': {
@@ -53,8 +53,8 @@ MAIN_NOTEBOOK_PDFS = frozenset(
     for example, figures in MAIN.items() for stem in figures)
 
 MAIN_CAPTIONS = {
-    ('beamforming', 'task_performance_output_power'): r'Array output power relative to its minimum under the unit-gain constraint: $\ell_t=10\log_{10}[(w_t^{\mathrm H}R_tw_t)/p_t^\star]$, where $R_t=\sigma_t^2I_n+\tau_t^2P_{\mathcal X_t}$ and $p_t^\star=(a^{\mathrm H}R_t^{-1}a)^{-1}$. The interference direction is fixed and estimates use $t=n$ measurements at $n=32,64,128$, with $\beta=1$. Curves show averages over 256 Monte Carlo simulations, using saved exact covariance powers. Shading is a 95\% confidence interval for the average obtained with the posterior mean. Settings retain their earlier measured-data selection criterion.',
-    ('beamforming', 'noise_adaptation_page1'): r'Beamforming with true variances, fixed variance estimates and EM variance estimates at $n=32$, $T=256$ and variance-estimation block length $L=32$. Panels (a,b) show the variances available before receiving $u_t$. The true noise variance is $0.2$ for $t\leq128$ and $0.8$ for $t\geq129$; the true signal variance is one. The change is drawn between measurements 128 and 129. Variance bands contain the middle 50\% of estimates across 256 Monte Carlo simulations. Panel (c) shows $\ell_t=10\log_{10}[(w_t^{\mathrm H}R_tw_t)/p_t^\star]$, using the prior mean $\overline P_t^-$ and saved exact covariance powers. Panel (d) shows the normalized Bingham-mixture density $\log\pi_t(u_t)$, with $\pi_t(u)=\int p(u\mid\mathcal X,\widehat\theta_t)q_{A_t^-}(\mathcal X)\,d\mu(\mathcal X)$, evaluated before correction. Power and log-density bands are 95\% confidence intervals for Monte Carlo means. The unchanged forgetting factors are $0.98$, $0.90$ and $0.98$ for true, fixed and EM variances. An EM fit uses two iterations and affects measurements from $t+1$.',
+    ('beamforming', 'task_performance_output_power'): r'Stationary beamforming with fixed measurement total $T=200$ at every sensor count $n=32,64,128$. The interference direction is fixed, $\sigma^2=0.2$, $\tau^2=1$, $|a^{\mathrm H}h|^2=1/2$, the Bingham initialization is uniform and $\beta=1$. Each curve averages the individual covariance-based $\ell_T=10\log_{10}[(w_T^{\mathrm H}Rw_T)/p^\star]$ values over 256 independent simulations, with $R=\sigma^2I+\tau^2P_{\mathcal X}$ and $p^\star=(a^{\mathrm H}R^{-1}a)^{-1}$. The posterior mean is taken after correction with measurement 200. Shading is a pointwise Student 95\% confidence interval for its mean; smaller relative power is better. Parameter selection uses the unchanged measured-power criterion on 64 independent validation simulations per sensor count. The main table reports $n=64$, and the supplementary table reports all three sensor counts. This stationary figure is retained independently of the optional moving-interference candidates.',
+    ('beamforming', 'noise_adaptation_page1'): r'Beamforming with true variances, fixed variance estimates and EM variance estimates at $n=32$, $T=256$ and variance-estimation block length $L=32$. Panels (a,b) show the variances available before receiving $u_t$. The true noise variance is $0.2$ for $t\leq128$ and $0.8$ for $t\geq129$; the true signal variance is one. The true step and the common dashed event marker are drawn at $t=129$, with one common-legend entry Noise variance change. Variance bands contain the middle 50\% of estimates across 256 Monte Carlo simulations. Panel (c) shows $\ell_t=10\log_{10}[(w_t^{\mathrm H}R_tw_t)/p_t^\star]$, using the prior mean $\overline P_t^-$ and saved exact covariance powers. Panel (d) shows the normalized Bingham-mixture density $\log\pi_t(u_t)$, with $\pi_t(u)=\int p(u\mid\mathcal X,\widehat\theta_t)q_{A_t^-}(\mathcal X)\,d\mu(\mathcal X)$, evaluated before correction. Power and log-density bands are 95\% confidence intervals for Monte Carlo means. The unchanged forgetting factors are $0.98$, $0.90$ and $0.98$ for true, fixed and EM variances. An EM fit uses two iterations and affects measurements from $t+1$.',
     ('contact', 'information_rotation'): r'Change in the conditional measurement distribution under rotations of the saved plane with true normal $e_3$, using the original $t=16$ measurements. The angle $\delta$ is measured in degrees. The curves evaluate $D_{\mathrm{KL}}(p_0\|p_z)$ along $z=(\tan\delta,0)^\top$ and $z=(0,\tan\delta)^\top$, where $n(z)=(e_3-z_1e_1-z_2e_2)/\sqrt{1+\|z\|^2}$ and $p_z$ is the corresponding joint conditional likelihood. Markers retain the $5^\circ$ and $30^\circ$ rotations. This standalone figure has no inherited panel letter.',
     ('contact', 'posterior_anisotropy_spheres'): r'Directional posterior uncertainty at $t=16$. Panels (a,b) show the full and matched isotropic normal densities, normalized relative to invariant measure and drawn on a common logarithmic scale. Antipodal normals represent one plane. The point marks the common modal line; gray curves are coordinate great circles. Saved coordinates, camera, density parameters and logarithmic limits are unchanged. These panels are combined with the separate response-variance panel (c) in TeX.',
     ('contact', 'posterior_anisotropy_risk'): r'Panel (c) of the directional posterior-uncertainty figure. For $v(\theta)=v_0(\cos\theta\,e_2+\sin\theta\,e_3)$ with $v_0=0.02\,\mathrm{m/s}$, the ordinate is $r_t(v(\theta))/v_0^2$, where $r_t(v)=v^\top[\overline P_t^+-(\overline P_t^+)^2]v$. The two curves use $\overline P_t^+$ and $\overline P_t^{\mathrm{iso}}$, respectively, each with its own distribution. The saved unit-input curves equal this normalized quantity; no velocity scaling is applied to them.',
@@ -64,6 +64,23 @@ MAIN_CAPTIONS = {
 
 def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def optional_moving_copies(root):
+    """Verify independent candidate copies without changing the main policy."""
+    root = Path(root)
+    if not (root/'notebooks/beamforming_moving_interference.ipynb').is_file():
+        return {}
+    from scripts.check_moving_beamforming import optional_moving_routes
+    records = {}
+    for destination, route in optional_moving_routes(root).items():
+        path, local = root/destination, root/route['local_pdf']
+        if not path.is_file() or not local.is_file():
+            raise RuntimeError('Run the independent moving notebook to export: '+destination)
+        if path.read_bytes()[:5] != b'%PDF-' or sha(path) != sha(local):
+            raise RuntimeError('Moving candidate differs from its source export: '+destination)
+        records[destination] = dict(route, sha256=sha(path), bytes=path.stat().st_size)
+    return records
 
 
 def verify_mapping(root, mapping):
@@ -267,11 +284,14 @@ def verify_export(root=ROOT):
               for path in (root/'results'/section).rglob('*.pdf')}
     notebook_copies = verify_notebook_pdf_exports(root)
     _check_main_notebook_routes(notebook_copies['routes'])
-    if actual!=set(expected)|set(notebook_copies['files']):
+    moving_copies = optional_moving_copies(root)
+    if actual!=set(expected)|set(notebook_copies['files'])|set(moving_copies):
         raise RuntimeError('Unexpected or missing categorized PDF files')
     actual_main = {name for name in actual if name.startswith('results/main/')}
-    if actual_main!=MAIN_NOTEBOOK_PDFS:
-        raise RuntimeError('The main folder must contain exactly the six revised notebook PDFs')
+    if actual_main!=MAIN_NOTEBOOK_PDFS|set(moving_copies):
+        raise RuntimeError('Unexpected main figure outside the six retained figures and optional moving candidates')
+    if exported.get('optional_moving_candidates', {}) != moving_copies:
+        raise RuntimeError('Stale independent moving candidate export records')
     if (exported.get('main_notebook_files')!=sorted(MAIN_NOTEBOOK_PDFS)
             or exported.get('main_policy')!=MAIN):
         raise RuntimeError('Draft export uses a different main-figure policy')
@@ -300,7 +320,9 @@ def verify_export(root=ROOT):
         source_pages=len(all_pages), main_pdf_files=len(actual_main),
         supplementary_pdf_files=len(actual-actual_main),
         dpi=EXPECTED_DPI, paper_width_in=WIDTH_IN,
-        notebook_pdf_copies=len(notebook_copies['files']))
+        notebook_pdf_copies=len(notebook_copies['files']),
+        optional_moving_candidates=len(moving_copies),
+        retained_main_figures=len(MAIN_NOTEBOOK_PDFS))
 
 
 def export(root=ROOT):
@@ -311,7 +333,8 @@ def export(root=ROOT):
                 for path in (root/'results'/section).rglob('*.pdf')}
     notebook_copies = verify_notebook_pdf_exports(root)
     _check_main_notebook_routes(notebook_copies['routes'])
-    live_copies = set(notebook_copies['files'])
+    moving_copies = optional_moving_copies(root)
+    live_copies = set(notebook_copies['files']) | set(moving_copies)
     if not MAIN_NOTEBOOK_PDFS<=live_copies:
         raise RuntimeError('Save the six revised main notebook figures before exporting')
     if set(selected)&set(notebook_copies['routes']):
@@ -361,6 +384,16 @@ def export(root=ROOT):
         path = root/'results'/section/'README.md'
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(readme(section, files, declared_notebook_pdf_routes(root)))
+        if section == 'main' and moving_copies:
+            with path.open('a') as stream:
+                stream.write('\n## Optional moving-interference candidates\n\n'
+                    'These independent exports are candidates for review. They do not '
+                    'replace the stationary presentation or select a manuscript block. '
+                    'Their editable source and summaries are in '
+                    '[the moving notebook](../../notebooks/beamforming_moving_interference.ipynb).\n\n')
+                for name in sorted(moving_copies):
+                    stream.write('- ['+Path(name).name+']('
+                        +Path(name).relative_to('results/main').as_posix()+').\n')
         documentation[path.relative_to(root).as_posix()] = sha(path)
     manifest = dict(schema=1, status='completed', producer='scripts/export_draft_figures.py',
         producer_sha256=sha(root/'scripts/export_draft_figures.py'),
@@ -371,6 +404,8 @@ def export(root=ROOT):
         page_partition_scope='Every page of the sixteen individual canonical PDFs per application appears exactly once in a complete supplementary canonical copy; the three duplicate bundles remain in canonical directories.',
         selection_scope='The revised main section uses six notebook PDFs. All canonical evidence is retained in supplementary; no simulations, fitting, settings, benchmarks or episodes are changed.',
         main_policy=MAIN, main_notebook_files=sorted(MAIN_NOTEBOOK_PDFS),
+        optional_moving_candidates=moving_copies,
+        optional_moving_scope='Independent candidates for review only; the six retained main figures and stationary tables are unchanged by this notebook.',
         main_caption_notes={name: MAIN_CAPTIONS[Path(name).parent.name, Path(name).stem]
                             for name in sorted(MAIN_NOTEBOOK_PDFS)},
         documentation=documentation, files=files)

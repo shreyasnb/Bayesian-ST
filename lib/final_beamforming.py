@@ -47,7 +47,8 @@ def configuration(stage='verify'):
     verify = stage == 'verify'
     offset = 20000 if verify else 10000 if stage == 'pilot' else 0
     return dict(schema=1, stage=stage, source_commit=SOURCE_COMMIT, rank=1,
-        dimensions=[32, 64, 128], stationary_ratios=[.25, .5, 1., 2.],
+        dimensions=[32, 64, 128], stationary_T=200,
+        stationary_times=[25, 50, 100, 200], stationary_primary_t=200,
         validation_episodes=3 if verify else 8 if stage == 'pilot' else 64,
         test_episodes=3 if verify else 12 if stage == 'pilot' else 256,
         validation_seed=2026111001 + offset, test_seed=2026111002 + offset,
@@ -65,10 +66,10 @@ def configuration(stage='verify'):
         block_lengths=[1, 4, 16, 32], block_test_episodes=3 if verify else 8 if stage == 'pilot' else 64,
         block_n=32, block_T=64, block_beta=.97,
         block_conditions=['static', 'smooth'],
-        story=dict(stationary_n=64, stationary_ratio=1., episode=0,
+        story=dict(stationary_n=64, stationary_time=200, episode=0,
                    moving_episode=0, moving_time=32 if verify else 128,
                    moving_times=[16,32,64] if verify else [32,128,256]),
-        outcome='Independent held-out disturbance power divided by true-covariance oracle power; 10 log10 of the episode-averaged ratio for displayed dB outcomes.',
+        outcome='Stationary primary: arithmetic mean of individual exact-covariance true_ratio_db at t=T=200. Measured heldout power remains the parameter-selection criterion. Moving records retain their original episode-averaged ratio definitions.',
         repetition_unit='Independent episode. Held-out snapshots average inside a checkpoint; moving primary outcomes average checkpoints inside the episode.',
         selection='Independent held-out measured disturbance power on disjoint validation episodes only; no true signature, covariance, oracle power or drift enters policy selection. Static beta=1. Moving mean/mode/isotropic share a mode-selected beta. Modal loading and loaded covariance select their own memory/loading. Sliding GREAT selects window/step/inner count; EW GREAT matches the shared Bingham beta and selects step/inner count.',
         great_ew_weights='Complex EW GREAT receives sqrt(eta_j/eta_initial)*u_j, eta_j=tau2_j/[sigma2_j*(sigma2_j+tau2_j)]. Its covariance matches the uncentered Bingham statistic up to the fixed positive factor eta_initial under the uniform prior. Fixed-variance data are unchanged; raw sliding-window GREAT retains the original residual objective.',
@@ -127,7 +128,7 @@ def beam_episode(cfg, n, condition, trial, split='test', stationary=False, lengt
     stream_seed = np.random.SeedSequence([seed, n, CONDITIONS.index(condition), int(trial)])
     # SeedSequence is accepted by generate_stream through a reproducible state.
     seed_words = stream_seed.generate_state(4).tolist()
-    length = (2*n if stationary else cfg['moving_T']) if length is None else int(length)
+    length = (cfg['stationary_T'] if stationary else cfg['moving_T']) if length is None else int(length)
     return generate_stream(n, length, condition, seed_words, cfg['sigma2'],
                            cfg['tau2'], cfg['overlap'], cfg['dt'])
 
@@ -251,7 +252,12 @@ def great_likelihood_observations(U,sigma2,tau2):
 
 
 def great_grid(cfg, n, sigma2, tau2, beta=1., exponential=False):
-    """Fixed step values; objective covariance is never secretly normalized."""
+    """Fixed dimension-based step scales, independent of the stream horizon.
+
+    The candidate windows and the 2*n step scale are method settings, rather
+    than stream allocations. Changing the stationary horizon preserves them.
+    Objective covariance is never secretly normalized.
+    """
     windows = [None] if exponential else sorted(set(max(1, int(round(n*r)))
                                                    for r in cfg['great_window_ratios']))
     memory = 2*n if beta == 1 else min(2*n, 1/(1-beta))
@@ -345,8 +351,11 @@ def _candidate_score(lines, data, times):
 
 def validation_case(cfg, n, condition, stationary, *, validation_data=None):
     """Select by measured held-out power; hidden truth is evaluation-only."""
-    times = [int(round(n*r)) for r in cfg['stationary_ratios']] if stationary else list(
+    times = list(cfg['stationary_times']) if stationary else list(
         range(cfg['action_cadence'], cfg['moving_T']+1, cfg['action_cadence']))
+    # Selection still averages the same four predeclared checkpoints. The
+    # stationary primary comparison is the final corrected state, separately
+    # from the checkpoints used to select point-method settings.
     scored_times = times if stationary else [t for t in times if t >= cfg['primary_burnin']]
     betas = [1.] if stationary else cfg['betas']
     streams=([beam_episode(cfg,n,condition,trial,'validation',stationary)
@@ -440,10 +449,14 @@ def validation_case(cfg, n, condition, stationary, *, validation_data=None):
     for row in curves:
         row.update(loss_source='Independent held-out measured output power',
                    loss_units='Power',heldout_snapshots_per_checkpoint=cfg['heldout_snapshots'])
-    return dict(n=n, condition=condition, stationary=stationary, times=times,
+    selected = dict(n=n, condition=condition, stationary=stationary, times=times,
         selection_objective='Mean independent held-out measured output power; no oracle normalization',
         primary_times=scored_times, policies=policies, shared_beta=shared_beta,
-        **great_selected, grouse_step=cfg['grouse_steps'][int(np.argmin(grouse_losses))]), curves
+        **great_selected, grouse_step=cfg['grouse_steps'][int(np.argmin(grouse_losses))])
+    if stationary:
+        selected.update(primary_evaluation_time=int(cfg['stationary_primary_t']),
+                        validation_scored_times=scored_times)
+    return selected, curves
 
 
 def decision_records(U, sigma2, tau2, a, initial, policy, cfg, return_states=False):
@@ -581,7 +594,7 @@ def evaluate_episode(cfg, policy, trial, stationary=False, save_story=False):
         for name in ('U','h','a','angles','sigma2','tau2','time'):
             stories[prefix+name] = data[name]
         if stationary and n == cfg['story']['stationary_n']:
-            chosen_t = int(round(n*cfg['story']['stationary_ratio']))
+            chosen_t = int(cfg['story']['stationary_time'])
             record = next(item for item in estimated if item['t'] == chosen_t)
             scan = np.linspace(-4/n, 4/n, 161)
             signatures = np.array([ula(n, value) for value in scan])

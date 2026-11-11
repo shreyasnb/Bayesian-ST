@@ -153,14 +153,150 @@ def legacy_evidence():
         scope='Historical n=8,16 fixed-angle/Haar evidence retained separately. Its geometry and repetition counts are not relabeled as the new overlap-controlled dimensional cohorts.')
 
 
+def run_stationary_only(cfg, args):
+    """Run the revised stationary cohort without regenerating any other study.
+
+    The original mixed performance component is preserved. This separately
+    declared component replaces its stationary dimension comparison only.
+    """
+    from lib.final_validation import require_current_gate, current_gate_path
+    gate = require_current_gate(ROOT)
+    if cfg['stationary_T'] != 200 or cfg['stationary_primary_t'] != 200:
+        raise ValueError('The revised stationary comparison requires T=t=200')
+    data = args.output or ROOT/'results/beamforming/data'/args.stage/'performance/stationary_T200'
+    tables = (data/'tables' if args.output else
+              ROOT/'results/beamforming/tables'/args.stage/'performance/stationary_T200')
+    data.mkdir(parents=True, exist_ok=True)
+    tables.mkdir(parents=True, exist_ok=True)
+    sources = {name: sha(ROOT/name) for name in [*SOURCES, 'lib/final_stationary_evidence.py']}
+    source_hash = fingerprint(sources)
+    certificate = current_gate_path(ROOT)
+    declaration = dict(config=cfg, sources=sources, source_hash=source_hash,
+        experiment='Stationary dimensions at a fixed total of 200 training measurements',
+        primary_measurement=200, reporting_measurements=list(cfg['stationary_times']),
+        evaluation_endpoint='true_ratio_db',
+        selection_endpoint='Independent held-out measured output power',
+        validation_path=certificate.relative_to(ROOT).as_posix(),
+        validation_sha256=sha(certificate))
+    manifest = data/'manifest.json'
+    if manifest.exists():
+        old=json.loads(manifest.read_text())
+        if old['config'] != cfg or old['sources'] != sources:
+            raise RuntimeError('Preserve completed stationary evidence before changing its declaration')
+        for name,digest in old['artifacts'].items():
+            if sha(ROOT/name)!=digest:
+                raise RuntimeError('Changed saved stationary artifact: '+name)
+        print('Verified completed',args.stage,'fixed-T200 stationary performance')
+        return old
+    registered=data/'preregistered.json'
+    if registered.exists():
+        old=json.loads(registered.read_text())
+        if any(old.get(key) != value for key,value in declaration.items()):
+            raise RuntimeError('Preserve the earlier stationary declaration; use a fresh output directory')
+    else:
+        write(registered,dict(declaration,registered_utc=datetime.now(timezone.utc).isoformat()))
+    begin=perf_counter()
+    jobs=[('validation',cfg,dict(n=n,condition='static',stationary=True))
+          for n in cfg['dimensions']]
+    validated,timings=execute_tasks(jobs,data/'checkpoints/validation',source_hash,args.workers,'stationary validation')
+    policies=[value[0] for value in validated]
+    assert len(policies)==3
+    for policy in policies:
+        assert policy['stationary'] and policy['condition']=='static' and policy['shared_beta']==1.
+        assert policy['times']==cfg['stationary_times']
+        # Preserve the original measured-power aggregation across reporting times.
+        assert policy['primary_times']==cfg['stationary_times']
+        assert policy['primary_evaluation_time']==cfg['stationary_primary_t']
+    write(data/'selected.json',policies)
+    pd.DataFrame([row for value in validated for row in value[1]]).to_csv(tables/'validation_curves.csv',index=False)
+    jobs=[('test',cfg,dict(policy=policy,trial=trial,stationary=True,
+            story=trial==cfg['story']['episode'] and policy['n']==cfg['story']['stationary_n']))
+          for policy in policies for trial in range(cfg['test_episodes'])]
+    evaluated,clocks=execute_tasks(jobs,data/'checkpoints/test',source_hash,args.workers,'stationary test')
+    timings+=clocks
+    records=[row for result,arrays in evaluated for row in result]
+    frame=pd.DataFrame(records)
+    frame['T']=int(cfg['stationary_T'])
+    assert frame.stationary.astype(bool).all() and frame.condition.eq('static').all()
+    assert set(frame.n)==set(cfg['dimensions']) and set(frame.method)==set(METHODS)
+    assert set(frame.t)==set(cfg['stationary_times'])
+    assert not frame.duplicated(['n','trial','t','method']).any()
+    assert frame.groupby(['n','t','method']).trial.nunique().eq(cfg['test_episodes']).all()
+    assert frame.numerical_ok.astype(bool).all() and frame.mean_ok.astype(bool).all()
+    assert np.isfinite(frame.true_ratio_db).all()
+    np.testing.assert_allclose(frame.true_ratio_db,
+        10*np.log10(frame.true_power/frame.oracle_power),rtol=1e-12,atol=1e-12)
+    stories={}
+    for result,arrays in evaluated:
+        for name,value in arrays.items():
+            if name in stories and not np.array_equal(stories[name],value):
+                raise RuntimeError('Conflicting revised stationary saved states: '+name)
+            stories[name]=value
+    assert stories['static_n64_U'].shape==(cfg['stationary_T'],64)
+    assert stories['setup_U'].shape==(cfg['stationary_T'],64)
+    assert 'static_n64_t200_A' in stories
+    np.savez_compressed(data/'stories.npz',**stories)
+    frame.to_csv(data/'stationary.csv',index=False)
+    summary(frame,['n','condition','t','method'],endpoint='true_ratio_db').to_csv(tables/'stationary_summary.csv',index=False)
+    summary(frame,['n','condition','t','method'],endpoint='heldout_ratio_db').to_csv(tables/'stationary_measured_summary.csv',index=False)
+    paired_summary(frame,['n','condition','t']).to_csv(tables/'paired_stationary.csv',index=False)
+    pd.DataFrame(timings).to_csv(tables/'execution_times.csv',index=False)
+    write(data/'method_information.json',METHOD_INFORMATION)
+    means=frame[frame.method.eq('mean')]
+    checks=dict(stationary_T=200,primary_t=200,reporting_times=list(cfg['stationary_times']),
+        validation_simulations_per_dimension=cfg['validation_episodes'],
+        validation_simulations=cfg['validation_episodes']*len(cfg['dimensions']),
+        final_simulations_per_dimension=cfg['test_episodes'],
+        final_simulations=cfg['test_episodes']*len(cfg['dimensions']),
+        measurement_records=len(frame),all_methods=list(METHODS),
+        native_mean_calls=len(means),native_mean_unresolved=int((~means.numerical_ok.astype(bool)).sum()),
+        unresolved_method_rows=int((~frame.numerical_ok.astype(bool)).sum()),
+        maximum_unit_gain_error=float(frame.unit_gain_error.max()),
+        maximum_native_order=float(means.mean_order.max()),
+        maximum_native_mean_error_bound=float(means.mean_error_bound.max()),
+        native_cap_extensions=int(means.mean_cap_extension.astype(bool).sum()),
+        validation_hidden_truth_used=False,validation_loss_source='Independent held-out measured output power',
+        heldout_validation_snapshots_per_checkpoint=cfg['heldout_snapshots'],
+        primary_outcome='Arithmetic mean of individual true_ratio_db at t=T=200',
+        confidence_interval='Pointwise Student 95% interval across independent final simulations',
+        all_methods_share_training_measurements=True,
+        uniform_Bingham_initialization=True,stationary_beta=1.,
+        unchanged_experiments='Moving-subspace, block, variance-estimation, contact, theory and computation records are not regenerated',
+        total_seconds=perf_counter()-begin,
+        timing_scope='Concurrent execution metadata only, not a computational benchmark')
+    write(data/'checks.json',checks)
+    if any(sha(ROOT/name)!=digest for name,digest in sources.items()):
+        raise RuntimeError('Stationary scientific producers changed during the run')
+    artifacts={str(path.relative_to(ROOT)):sha(path) for folder in (data,tables)
+        for path in sorted(folder.rglob('*')) if path.is_file()
+        and 'checkpoints' not in path.parts and path.name not in ('manifest.json','status.json')}
+    result=dict(status='completed',example='beamforming',stage=args.stage,component='stationary_T200',
+        config=cfg,sources=sources,artifacts=artifacts,checks=checks,
+        validation_path=declaration['validation_path'],validation_sha256=declaration['validation_sha256'],
+        gate_science_hash=gate['final_science_hash'],
+        replaces='The stationary dimension comparison only; original mixed performance evidence is retained at its original paths',
+        preserved_source_commit='dd399bacae3d7b37e31abb949b24740c1f07a4f3',
+        created_utc=datetime.now(timezone.utc).isoformat(),
+        versions=dict(python=platform.python_version(),numpy=np.__version__,scipy=scipy.__version__),
+        probability_scope='Pointwise and paired Student intervals; no simultaneous ranking guarantee')
+    write(manifest,result)
+    write(data/'status.json',dict(status='completed',checks=checks))
+    print(json.dumps(portable(checks),indent=2,allow_nan=False),flush=True)
+    return result
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--stage',choices=['verify','pilot','paper'],default='verify')
     parser.add_argument('--workers',type=int,default=1)
     parser.add_argument('--output',type=Path)
+    parser.add_argument('--stationary-only',action='store_true',help='Run only the fixed-T200 stationary revision; retain all other experiments.')
     args=parser.parse_args()
     if args.workers<1:raise ValueError('Positive worker count required')
     cfg=configuration(args.stage)
+    if args.stationary_only:
+        run_stationary_only(cfg,args)
+        return
     data=args.output or ROOT/'results/beamforming/data'/args.stage/'performance'
     tables=(data/'tables' if args.output else ROOT/'results/beamforming/tables'/args.stage/'performance')
     data.mkdir(parents=True,exist_ok=True);tables.mkdir(parents=True,exist_ok=True)

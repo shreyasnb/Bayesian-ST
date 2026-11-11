@@ -135,11 +135,12 @@ ax.grid(color='#BFC4C8', alpha=.30, linewidth=.45)
 _BEAM_SUMMARY = r'''
 fig, axes = plt.subplots(2, 2, figsize=FIGSIZE, dpi=DPI, layout='constrained')
 frame = _primary(evidence.frame('performance', 'stationary', 'metrics'))
-if 'ratio' not in frame:
-    horizon = _column(frame, 'L', 't', 'observations')
-    frame['ratio'] = frame[horizon]/frame.n
+stationary_time = int(evidence.config('performance')['stationary_primary_t'])
 endpoint = 'true_ratio_db'
-selected = frame[frame.ratio.eq(1.) & frame.condition.eq('static') & frame.n.isin([32,64,128])]
+selected = frame[frame.t.eq(stationary_time) & frame.condition.eq('static')
+                 & frame.n.isin([32,64,128])]
+if selected.empty:
+    raise ValueError('The saved fixed-horizon stationary cohort is missing')
 for method in ('mean', 'mode', 'scm_loaded', 'great_window'):
     rows = []
     for n, group in selected[selected.method.eq(method)].groupby('n', sort=True):
@@ -208,7 +209,7 @@ axes[1, 0].legend(frameon=False, fontsize=LEGEND_FONT_SIZE, loc='upper left')
 
 cost = _normalize(evidence.frame('computation', 'summary'))
 cost = cost[cost.case.eq('task_stationary')]
-stationary = _normalize(evidence.frame('performance', 'stationary'))
+stationary = _normalize(evidence.frame('performance', 'stationary_timing_reference'))
 horizon = _column(stationary, 'L', 't', 'observations')
 stationary = stationary[stationary[horizon].eq(stationary.n) & stationary.episode.eq(0)]
 for method in ('mean', 'mode', 'scm_loaded', 'great_window'):
@@ -358,5 +359,5 @@ def build_cells(example):
         plot_cell(example, 'numerical_accuracy', 3, _ACCURACY_3,
             title='Numerical checks across dimensions', note='Not-evaluated targets remain separate from unresolved targets and are never counted as resolved. Reference, second-moment, quantile and state-report checks have distinct applicability flags.'),
         plot_cell(example, 'paper_summary', 1, _BEAM_SUMMARY if example == 'beamforming' else _CONTACT_SUMMARY,
-            title='Study overview', note=(r'These panels reuse the same saved arrays and selected cohorts as the individual figures. The cost–power panel uses one preassigned timing simulation; clock repetitions are execution measurements, not independent Monte Carlo simulations. Variance estimates are the values used before each recorded measurement; connecting segments do not reconstruct intervening estimates. Exact stationary power uses true_ratio_db, and moving comparisons use exact covariance ratios averaged within each Monte Carlo simulation. The power ordinate is $\ell_t=10\log_{10}[(w_t^H R_t w_t)/p_t^\star]$, with $p_t^\star=(a^H R_t^{-1}a)^{-1}$.' if example == 'beamforming' else 'These panels reuse the saved concentrated-input normal law, its matched isotropic comparison, and paired moving-sphere Monte Carlo simulations. The two risk curves evaluate different maintained beliefs; the paired error panel uses common Monte Carlo simulations. No new inference or Monte Carlo simulations are introduced.')),
+            title='Study overview', note=(r'The stationary panel compares sensors after the same $T=200$ measurements. The cost–power panel retains the earlier $t=n$ timing cohort at $n=32,64,128$ and its matched power references; it is not a timing measurement for the $T=200$ cohort. Clock repetitions are execution measurements, not independent Monte Carlo simulations. Variance estimates are the values used before each recorded measurement; connecting segments do not reconstruct intervening estimates. Exact stationary power uses true_ratio_db, and moving comparisons use exact covariance ratios averaged within each Monte Carlo simulation. The power ordinate is $\ell_t=10\log_{10}[(w_t^H R_t w_t)/p_t^\star]$, with $p_t^\star=(a^H R_t^{-1}a)^{-1}$.' if example == 'beamforming' else 'These panels reuse the saved concentrated-input normal law, its matched isotropic comparison, and paired moving-sphere Monte Carlo simulations. The two risk curves evaluate different maintained beliefs; the paired error panel uses common Monte Carlo simulations. No new inference or Monte Carlo simulations are introduced.')),
     ]

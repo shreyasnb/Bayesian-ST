@@ -1,0 +1,48 @@
+{
+  "status": "completed",
+  "checks": {
+    "stationary_T": 200,
+    "primary_t": 200,
+    "reporting_times": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "validation_simulations_per_dimension": 64,
+    "validation_simulations": 192,
+    "final_simulations_per_dimension": 256,
+    "final_simulations": 768,
+    "measurement_records": 30720,
+    "all_methods": [
+      "mean",
+      "mode",
+      "isotropic",
+      "modal_loading",
+      "covariance_loading",
+      "great_window",
+      "great_ew",
+      "grouse",
+      "ledoit_wolf",
+      "oracle"
+    ],
+    "native_mean_calls": 3072,
+    "native_mean_unresolved": 0,
+    "unresolved_method_rows": 0,
+    "maximum_unit_gain_error": 4.453106456896229e-16,
+    "maximum_native_order": 2510.0,
+    "maximum_native_mean_error_bound": 9.999036269181844e-11,
+    "native_cap_extensions": 0,
+    "validation_hidden_truth_used": false,
+    "validation_loss_source": "Independent held-out measured output power",
+    "heldout_validation_snapshots_per_checkpoint": 256,
+    "primary_outcome": "Arithmetic mean of individual true_ratio_db at t=T=200",
+    "confidence_interval": "Pointwise Student 95% interval across independent final simulations",
+    "all_methods_share_training_measurements": true,
+    "uniform_Bingham_initialization": true,
+    "stationary_beta": 1.0,
+    "unchanged_experiments": "Moving-subspace, block, variance-estimation, contact, theory and computation records are not regenerated",
+    "total_seconds": 311.3759475759871,
+    "timing_scope": "Concurrent execution metadata only, not a computational benchmark"
+  }
+}

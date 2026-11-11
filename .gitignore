@@ -60,6 +60,8 @@ results/implementation_audit/**/pytest.xml
 !results/contact/
 !results/contact/**/
 !results/contact/**
+!results/beamforming_moving/
+!results/beamforming_moving/**
 !results/main/
 !results/main/**/
 !results/main/**

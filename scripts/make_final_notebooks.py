@@ -107,7 +107,7 @@ This notebook displays saved, source-verified evidence only, in theoretical-to-a
 SECTION_NOTES={
 1:r'''These checks distinguish the known-input and marginalized observation laws, finite-data curvature and expected information, exact aggregation and delayed actions. The sharper tracking envelope is evaluated only where its stated sufficient condition holds. Bound gaps, initialization and drift use generating quantities available for analysis, not online credible radii. Nonuniform priors, zero-signal data and concentrated inputs remain separate cohorts.''',
 2:r'''Losses are paired on Monte Carlo simulations and common held-out data. Observation/query averages within one episode are not extra repetitions. Main panels use predeclared representative conditions; the complete grids and strong controls remain in the additional comparisons and machine-readable records. A gain over GREAT may reflect input information or optimization/tracking differences; a gain attributable to posterior anisotropy requires the same-mode and matched-isotropic comparisons.''',
-3:r'''A fixed-radius 3D sphere encodes density by color under one shared logarithmic normalization. The continuous blue--purple--pink--yellow gradient changes only the color assigned to a density value; saved coordinates, camera, density values and angular widths are retained. Colors do not denote probability-mass quantiles. Gray curves are visible coordinate great circles that help locate directions on the sphere; they are not density contours or credible regions. Contact normals use true antipodal real-line densities. The complex-array sphere is a real-coefficient density section at the original $n=t=64$ checkpoint: it is not a physical far-field radiation pattern, a full posterior, or a normalized sphere marginal. The setup figure shows the physical array response. No estimator or benchmark parameters have changed. Mode, radius and mean overlap do not determine directional response risk. Visible anisotropy does not itself prove a repeated-experiment task advantage. PDFs retain vector LaTeX text and curves; all current preview and raster layers are 300 dpi. The font sizes, line widths and figure layout follow the implementation-notebook protocol. Inline images are scaled for reading; the full-resolution PNG and PDF links preserve the export resolution.''',
+3:r'''A fixed-radius 3D sphere encodes density by color under one shared logarithmic normalization. The continuous blue--purple--pink--yellow gradient changes only the color assigned to a density value; saved coordinates, camera, density values and angular widths are retained. Colors do not denote probability-mass quantiles. Gray curves are visible coordinate great circles that help locate directions on the sphere; they are not density contours or credible regions. Contact normals use true antipodal real-line densities. The complex-array sphere is a real-coefficient density section at the $n=64$, $t=T=200$ stationary checkpoint: it is not a physical far-field radiation pattern, a full posterior, or a normalized sphere marginal. The setup figure shows the physical array response. No estimator or benchmark parameters have changed. Mode, radius and mean overlap do not determine directional response risk. Visible anisotropy does not itself prove a repeated-experiment task advantage. PDFs retain vector LaTeX text and curves; all current preview and raster layers are 300 dpi. The font sizes, line widths and figure layout follow the implementation-notebook protocol. Inline images are scaled for reading; the full-resolution PNG and PDF links preserve the export resolution.''',
 4:r'''Causal scale fits use completed disjoint past blocks and change future variances only. Each observation is assimilated once. The saved pre-observation predictive score excludes the scored observation from fitting. State, clean-response and noisy-next-observation intervals are distinct targets. Inclusion, widths and proper scores must be read together; integration/quantile precision and frequentist calibration are different checks.''',
 5:r'''The cost plots separate measurement updates, task decisions, uncertainty reports and variance fitting. Each timing on the first PDF page processes exactly 64 observations. Its upper panel includes an update for every observation and computes a task decision at the stated interval. The lower panel separates the nonoverlapping operations for the same 64 observations: optional uncertainty reports and EM fits occur every 32 observations, independently of how often a task decision is computed. Less frequent task decisions still assimilate every observation. Summed medians of individual operations need not equal the median total elapsed time. The second PDF page reports memory, with stored arrays distinguished from tracked allocations. Timings use one predeclared data set and repeated warmed single-thread executions; repetitions of the clock are not additional Monte Carlo simulations or worst-case deadlines. Native rank/codimension-one first-moment accuracy does not certify arbitrary-rank moments, floating-point error, second moments or tails.''',
 6:r'''The summary is a composition of the same verified arrays. It contains no extra experiment and no favorable-trajectory selection. Proposed captions, exact page selectors, configuration/seed sets, omitted-condition locations, numerical status and hashes are in the figure manifest.''',
@@ -124,6 +124,59 @@ def _number(value):
     return f'{float(value):.3g}'
 
 
+def _stationary_beamforming_findings(root):
+    """Summarize the fixed-horizon records without reusing old t/n tables."""
+    import numpy as np
+    import pandas as pd
+    from scipy.stats import t as student_t
+    from lib.final_stationary_evidence import (
+        verify_stationary_component, stationary_component_path,
+    )
+
+    manifest=verify_stationary_component(root,stage='paper')
+    folder=stationary_component_path(root,stage='paper').parent
+    config=manifest['config']
+    horizon=int(config['stationary_T'])
+    primary=int(config['stationary_primary_t'])
+    if horizon!=200 or primary!=horizon:
+        raise RuntimeError('The stationary dimension comparison requires T=t=200')
+    dimensions=[int(value) for value in config['dimensions']]
+    scheduled=int(config['test_episodes'])
+    frame=pd.read_csv(folder/'stationary.csv').rename(columns={'trial':'episode'})
+    if 'split' in frame:
+        frame=frame[frame.split.eq('test')]
+    frame=frame[frame.condition.eq('static')&frame.t.eq(primary)&frame.n.isin(dimensions)]
+    if frame.duplicated(['n','method','episode']).any():
+        raise RuntimeError('Duplicated fixed-horizon stationary measurements')
+
+    def interval(values):
+        values=np.asarray(values,float)
+        values=values[np.isfinite(values)]
+        if len(values)<2:
+            raise RuntimeError('Insufficient resolved fixed-horizon simulations')
+        mean=float(values.mean())
+        half=float(student_t.ppf(.975,len(values)-1)*values.std(ddof=1)/np.sqrt(len(values)))
+        return mean,mean-half,mean+half,len(values)
+
+    methods=('mean','mode','covariance_loading','great_window')
+    pairs=[];means=[]
+    for n in dimensions:
+        group=frame[frame.n.eq(n)]
+        for method in (*methods,'isotropic'):
+            if group[group.method.eq(method)].episode.nunique()!=scheduled:
+                raise RuntimeError(f'Missing stationary T={horizon} records for n={n}, method={method}')
+        values=group.pivot(index='episode',columns='method',values='true_ratio_db')
+        for method in methods:
+            mean,lower,upper,count=interval(values[method])
+            means.append(dict(n=n,t=primary,method=method,mean=mean,lower=lower,upper=upper,
+                              resolved_pairs=count,episodes=scheduled))
+        for reference in ('mode','isotropic','covariance_loading','great_window'):
+            gain,lower,upper,count=interval(values[reference]-values['mean'])
+            pairs.append(dict(n=n,t=primary,reference=reference,gain=gain,lower=lower,upper=upper,
+                              resolved_pairs=count,episodes=scheduled))
+    return config,pd.DataFrame(pairs),pd.DataFrame(means)
+
+
 def paper_findings(root,example):
     """Describe fixed paper cohorts from their published paired summaries."""
     import pandas as pd
@@ -133,16 +186,27 @@ def paper_findings(root,example):
         'regularized':'Regularized projector',
         'covariance_loading':'Regularized sample covariance','great_window':'GREAT'}
     rows=[];signs=[]
+    mean_power_table=''
     if example=='beamforming':
-        frame=pd.read_csv(folder/'performance/paired_stationary.csv')
-        chosen=frame[frame.endpoint.eq('true_ratio_db')&frame.n.isin([32,64])&frame.t.eq(frame.n)
-            &frame.reference.isin(['mode','isotropic','covariance_loading','great_window'])]
-        unit='dB';selectors=r'the stationary $t=n$ measurements at $n=32,64$, using $\ell_t$ from the exact covariance'
+        config,chosen,means=_stationary_beamforming_findings(root)
+        dimensions=[int(value) for value in config['dimensions']]
+        unit='dB';selectors=(r'the stationary $t=T=200$ measurements at $n='
+            +','.join(map(str,dimensions))+r'$, using $\ell_T$ from the exact covariance')
         for row in chosen.itertuples():
-            rows.append([f'$n=t={row.n}$',labels[row.reference],
+            rows.append([rf'$n={row.n},\ t={row.t}$',labels[row.reference],
                 _number(row.gain)+' ['+_number(row.lower)+', '+_number(row.upper)+']',str(row.resolved_pairs)+'/'+str(row.episodes)])
             signs.append((row.lower,row.upper))
-        if len(rows)!=8:raise RuntimeError('Expected all eight predeclared beamforming paired cells')
+        if len(rows)!=4*len(dimensions):raise RuntimeError('Missing fixed-horizon beamforming paired cells')
+        mean_rows=[]
+        for n in dimensions:
+            group=means[means.n.eq(n)].set_index('method')
+            mean_rows.append([f'$n={n}$',*[
+                _number(group.loc[method,'mean'])+' ['+_number(group.loc[method,'lower'])+', '
+                +_number(group.loc[method,'upper'])+']'
+                for method in ('mean','mode','covariance_loading','great_window')]])
+        mean_power_table=('At the same $T=200$ observations for every sensor count, the mean exact-covariance '
+            r'losses $\ell_T$ and pointwise Student 95% intervals in dB are:'+'\n\n'
+            +_table(['Sensors','Posterior mean','Mode','Regularized sample covariance','GREAT'],mean_rows)+'\n\n')
     else:
         frame=pd.read_csv(folder/'performance/paired.csv')
         chosen=frame[frame.metric.eq('response_mse')&frame.reference.isin(['mode','isotropic','regularized','great_window'])
@@ -157,8 +221,9 @@ def paper_findings(root,example):
             signs.append((row.lower,row.upper))
         if len(rows)!=8:raise RuntimeError('Expected all eight predeclared contact paired cells')
     positive=sum(lower>0 for lower,upper in signs);negative=sum(upper<0 for lower,upper in signs)
-    task=('The table reports reference loss minus posterior-mean loss on '+selectors+'. Positive values favor the posterior mean; brackets are paired pointwise 95% Student intervals in '+unit+'. '
-        +f'Across these eight fixed comparisons, {positive} intervals lie above zero, {negative} lie below zero, and {8-positive-negative} include zero. '
+    comparisons=len(rows)
+    task=(mean_power_table+'The paired table reports reference loss minus posterior-mean loss on '+selectors+'. Positive values favor the posterior mean; brackets are paired pointwise 95% Student intervals in '+unit+'. '
+        +f'Across these {comparisons} fixed comparisons, {positive} intervals lie above zero, {negative} lie below zero, and {comparisons-positive-negative} include zero. '
         +'Resolved pairs are shown relative to scheduled Monte Carlo simulations. These cells are displayed together, including losses and uncertain differences; this count is descriptive and has no simultaneous-coverage guarantee.\n\n'
         +_table(['Condition','Reference','Paired gain [95% CI]','Resolved pairs'],rows)
         +'\n\nA benefit over the mode can arise from shrinkage. A benefit over the matched isotropic control supports the value of directional posterior moments for that task and cohort. The latter comparison is the direct anisotropy test. A GREAT comparison also changes the estimator and, in contact, the available input information.')
@@ -280,16 +345,22 @@ print('Saved mean: command first-order condition, directional risk and isotropic
 
 
 MAIN_PLOT_NOTES = {
+'beamforming_stationary': r'''
+The stationary curves use the same $t=T=200$ observations at every sensor count
+$n\in\{32,64,128\}$. The settings were selected using separate validation measurements.
+The plotted `true_ratio_db` values use the exact covariance; shading is a pointwise
+Student 95% interval for the posterior-mean average over 256 Monte Carlo simulations.
+The separate supplementary dimension plot retains the same fixed-horizon results.
+''',
 'beamforming_task': r'''
 The array comparison uses the exact covariance
 $R_t=\sigma_t^2I_n+\tau_t^2P_{\mathcal X_t}$ and
 $p_t^\star=(a^H R_t^{-1}a)^{-1}$. Its ordinate is
 $\ell_t=10\log_{10}(w_t^H R_tw_t/p_t^\star)$ in dB.
-The stationary curves use $t=n\in\{32,64,128\}$ and the existing settings
-selected with separate validation measurements. They summarize `true_ratio_db`
-from the saved per-simulation records, not the older frozen summary of power
-estimated from additional measurements. Shading is a pointwise Student 95%
-confidence interval for the posterior-mean average over 256 Monte Carlo simulations.
+The stationary curves use the same $t=T=200$ observations at every sensor count
+$n\in\{32,64,128\}$. The settings were selected using separate validation measurements.
+Shading is a pointwise Student 95% interval for the posterior-mean average over 256 Monte Carlo simulations.
+The separate supplementary dimension plot retains the same fixed-horizon results.
 ''',
 'beamforming_noise': r'''
 Here $n=32$, $T=256$, and EM uses $L=32$ measurements per block and two iterations.
@@ -404,7 +475,10 @@ def build(root,example):
         module_name='scripts.notebook_plot_cells_'+example
         from importlib import import_module
         source=import_module(module_name).get_plot_cell(name,page)
-        cells.append(nbformat.v4.new_code_cell(source,metadata={'editable_plotting_role':'plot','figure_id':name,'source_page':page}))
+        info={'editable_plotting_role':'plot','figure_id':name,'source_page':page}
+        if example=='beamforming' and name=='task_performance':
+            info.update(figure_id='task_performance',source_catalogue_page=True)
+        cells.append(nbformat.v4.new_code_cell(source,metadata=info))
     markdown('## 1. Measurements and geometry\n\n'+SECTION_NOTES[1]);image(0)
     if example=='contact':
         information_note=r'''## 2. Which normal rotations the observations distinguish
@@ -451,6 +525,11 @@ It retains the mode and mean overlap and makes the eigenvalues equal within the 
     if example=='contact':
         markdown(r'''The left plot uses stationary concentrated inputs. The right plot reports absolute time-averaged $\mathcal E_t(D_t)$ for the moving sphere condition: every method, including $\overline P_t^+$, has a pointwise 95% interval across the same 256 Monte Carlo simulations. MSE is the squared error relative to the clean response $P_{\mathcal X_t}v_t$, averaged within each episode, and is displayed in $(\mathrm{mm}/\mathrm{s})^2$. The supplementary second page shows $\mathrm{MSE}_{\mathrm{ref}}-\mathrm{MSE}_{\mathrm B}$ on paired episodes. This is an absolute difference in squared velocity units, rather than a ratio or relative MSE. The mean's self-difference is exactly zero, which explains its absence from the old difference panel. Intervals of absolute means do not replace paired comparisons.''')
     markdown(findings['task'])
+    if example=='beamforming':
+        from scripts.notebook_plot_cells_beamforming import get_plot_cell
+        cells.append(nbformat.v4.new_code_cell(get_plot_cell('stationary_dimensions',1),
+            id='stationary-dimensions-T200',metadata={'editable_plotting_role':'plot',
+            'figure_id':'task_performance','source_page':1,'source_catalogue_page':False}))
     markdown(r'''## 4. Which uncertainty matters for the decision
 
 For a fixed query, the posterior squared response risk is
@@ -479,7 +558,8 @@ Under the full belief, using another action $\overline P_t^{\mathrm{iso}}v$ adds
     from lib.notebook_inputs import saved_input_hashes
     loader='lib/notebook_'+example+'_data.py'
     nb.metadata['editable_plotting']={
-        'schema':1,'mode':'inline_matplotlib','figure_count':len(displayed),
+        'schema':1,'mode':'inline_matplotlib','figure_count':sum(
+            cell.metadata.get('editable_plotting_role')=='plot' for cell in cells),
         'rendered_figure_count':sum(
             isinstance(node,ast.Call) and isinstance(node.func,ast.Attribute)
             and isinstance(node.func.value,ast.Name) and node.func.value.id=='plt'

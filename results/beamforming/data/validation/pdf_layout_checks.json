@@ -4,7 +4,7 @@
   "tool": "PyMuPDF 1.26.6",
   "producer": "scripts/check_final_pdf_layout.py",
   "producer_sha256": "75158c812666b5421872a51a7df583abe5182b9e9700f97d83e7b9cd5cbf9222",
-  "figure_manifest_sha256": "e7465bd031cee9db96058f7caf45b8f367c08d277cde97a513d58dafefb6f185",
+  "figure_manifest_sha256": "9d7fbdc2541e82ebcafcfa7fcbc208b222043dbe8f31220e785396234dd0bc4d",
   "pdf_files": 19,
   "pdf_pages": 76,
   "font_types": [
@@ -15,7 +15,7 @@
   "preview_files": 39,
   "files": {
     "setup.pdf": {
-      "sha256": "9a397afb155304a671236e92105f089f99e3a5b8fc78f38cf07e35dc82bc28ff",
+      "sha256": "a2684b7f3bbf241ef93deeebc755ed3fb3e887aa8ca6e16bb30d41c11734e371",
       "pages": 1,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -45,7 +45,7 @@
       "errors": []
     },
     "task_performance.pdf": {
-      "sha256": "dd2aa367efaca7416c116fdbfe26cdca49032bba03f82a7689a534f890efd49c",
+      "sha256": "135282c4414d166c1044b19b2eb758c971205f5497d9827fe126a4b294b978cf",
       "pages": 1,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -72,7 +72,7 @@
       "errors": []
     },
     "posterior_anisotropy.pdf": {
-      "sha256": "ae45df56bb2ea17670c221709b4e40b5dccf14891fa5eb2bb014bb590dabd3bc",
+      "sha256": "2a1fc5a9ccf6737d91342727d4b50eae6e235e8c15828bb12d8d601ea0a43eb6",
       "pages": 1,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -82,8 +82,8 @@
       "all_fonts_embedded": true,
       "raster_layers": 2,
       "raster_dpi_range": [
-        299.9999910692709,
-        300.0000007737723
+        300.0,
+        300.0000084260384
       ],
       "page_checks": [
         {
@@ -94,7 +94,7 @@
             504.0,
             435.02398681640625
           ],
-          "text_spans": 86,
+          "text_spans": 103,
           "raster_layers": 2
         }
       ],
@@ -102,7 +102,7 @@
       "errors": []
     },
     "noise_adaptation.pdf": {
-      "sha256": "6b86e89a3f2aa6f13b60f842342d3799a71aadfbc2fdff652a2c2b205f57b51e",
+      "sha256": "ae2f9e9d5208a441cd707a87812bcdd2ef02b410bfcf78ac70097362fd094cf2",
       "pages": 3,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -121,7 +121,7 @@
             504.0,
             443.23199462890625
           ],
-          "text_spans": 98,
+          "text_spans": 89,
           "raster_layers": 0
         },
         {
@@ -295,7 +295,7 @@
       "errors": []
     },
     "additional_comparisons.pdf": {
-      "sha256": "3209efd7ce39c03ab058f4eb8fe258622f9a78e57eb517bdd852d734fbec3bc0",
+      "sha256": "a3d0f14fc190b6ce3895927ad8068033890decd83a2a23bf734086d05b3fb2d1",
       "pages": 8,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -305,8 +305,8 @@
       "all_fonts_embedded": true,
       "raster_layers": 6,
       "raster_dpi_range": [
-        299.99998863404954,
-        300.00001170751125
+        299.9999931404047,
+        300.0000082703466
       ],
       "page_checks": [
         {
@@ -317,7 +317,7 @@
             504.0,
             361.1520080566406
           ],
-          "text_spans": 64,
+          "text_spans": 40,
           "raster_layers": 2
         },
         {
@@ -328,7 +328,7 @@
             504.0,
             361.1520080566406
           ],
-          "text_spans": 64,
+          "text_spans": 40,
           "raster_layers": 2
         },
         {
@@ -339,7 +339,7 @@
             504.0,
             361.1520080566406
           ],
-          "text_spans": 64,
+          "text_spans": 40,
           "raster_layers": 2
         },
         {
@@ -685,7 +685,7 @@
       "errors": []
     },
     "paper_summary.pdf": {
-      "sha256": "f93077fe1151c2521edc1dd99266dec0fb907c864b3ee04b9b3b91f6a2909882",
+      "sha256": "a9a58af1651cb11f49b45ba074c136216c169998139446a7ef50478e6248902f",
       "pages": 1,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -797,7 +797,7 @@
       "errors": []
     },
     "supp_comparisons.pdf": {
-      "sha256": "4a1f6c3718de8c682bdcadeb19d0bb6ccb282bed389cfed4177e98c1383cacc7",
+      "sha256": "d5d26b8da72997d0c7ea65798188c0fdcf9daa78f35f7a356c1b1c26e4f15aeb",
       "pages": 11,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -807,8 +807,8 @@
       "all_fonts_embedded": true,
       "raster_layers": 8,
       "raster_dpi_range": [
-        299.99998863404954,
-        300.0000157307112
+        299.9999931404047,
+        300.0000084260384
       ],
       "page_checks": [
         {
@@ -841,7 +841,7 @@
             504.0,
             361.1520080566406
           ],
-          "text_spans": 64,
+          "text_spans": 40,
           "raster_layers": 2
         },
         {
@@ -852,7 +852,7 @@
             504.0,
             361.1520080566406
           ],
-          "text_spans": 64,
+          "text_spans": 40,
           "raster_layers": 2
         },
         {
@@ -863,7 +863,7 @@
             504.0,
             361.1520080566406
           ],
-          "text_spans": 64,
+          "text_spans": 40,
           "raster_layers": 2
         },
         {
@@ -929,7 +929,7 @@
             504.0,
             435.02398681640625
           ],
-          "text_spans": 85,
+          "text_spans": 103,
           "raster_layers": 2
         }
       ],
@@ -937,7 +937,7 @@
       "errors": []
     },
     "supp_variance_prediction_cost.pdf": {
-      "sha256": "542bbd8233852bf9643f7697e06788f9ce0b439ee11d5448738092e31c819394",
+      "sha256": "912bdeb1164b2720f85f09d4f7ce1e128f06e1f30568850a67dc13752a304979",
       "pages": 20,
       "width_in": 7.0,
       "pdf_title_empty": true,
@@ -967,7 +967,7 @@
             504.0,
             443.23199462890625
           ],
-          "text_spans": 98,
+          "text_spans": 89,
           "raster_layers": 0
         },
         {
@@ -1175,7 +1175,7 @@
   },
   "previews": {
     "preview/setup.png": {
-      "sha256": "df3010c75c4b0559e02ebe8606cfbae408e0171671a81dbc7e1794dbb082e128",
+      "sha256": "612872ad4a9766022d14409be1df8cf453bb9e4db4a6f6d9ebbbd6cdbd76e4a2",
       "size_px": [
         2100,
         1026
@@ -1186,7 +1186,7 @@
       ]
     },
     "preview/task_performance.png": {
-      "sha256": "104e087b8873e99cc5c7bb2d5d61a64fe5167ffeb09e5493b1abde6b879b6cf6",
+      "sha256": "10c764d88d7039a9a266967fe942c3c7fbec0b0f5a86fc1f117884cd53fbd7ef",
       "size_px": [
         2100,
         1402
@@ -1197,7 +1197,7 @@
       ]
     },
     "preview/posterior_anisotropy.png": {
-      "sha256": "ca40e4694aca1f65d7d3ded973ef4cd94f00473de7bf327b4bde07d3559666f7",
+      "sha256": "9c74e4da8a10582cc24455371d591cb28f10419076e5d939b4a67c7cdeda5d8a",
       "size_px": [
         2100,
         1812
@@ -1208,7 +1208,7 @@
       ]
     },
     "preview/noise_adaptation.png": {
-      "sha256": "2e59708e8885be0c4e57bf121c4af306ae8dd302be8f09d1703e4cd2ad0c8fdf",
+      "sha256": "e97cd27c503182a5a367f74ab5b3d40e8a7eab4bf2d0069d1984ef60023a426f",
       "size_px": [
         2100,
         1846
@@ -1318,7 +1318,7 @@
       ]
     },
     "preview/additional_comparisons.png": {
-      "sha256": "fd8895f98ea06d7705287a95dca64fa3194c3cde6adfc04dd24f0466fa3a5e88",
+      "sha256": "579b8c23d3212b876b2eb87fc56cdca66e734101ccf55b368965315853bc4cf5",
       "size_px": [
         2100,
         1504
@@ -1329,7 +1329,7 @@
       ]
     },
     "preview/additional_comparisons_page2.png": {
-      "sha256": "3b2b1a88434ab96600b82fc591cc57b78205135c0ea5a5abf8dc233929bb2505",
+      "sha256": "101499398faa8c2d5efe6a65293a75a7757bbb6e8356a137c9196d330204ca25",
       "size_px": [
         2100,
         1504
@@ -1340,7 +1340,7 @@
       ]
     },
     "preview/additional_comparisons_page3.png": {
-      "sha256": "04a8764c9cccefab62aacf2111a0c737d4a06e010c7c8c790f1f36a0b8dfd209",
+      "sha256": "520ca3fae58e661e84311e2aaa965feb9553643c548e4e9efbd83e1ffa08dd36",
       "size_px": [
         2100,
         1504
@@ -1593,7 +1593,7 @@
       ]
     },
     "preview/paper_summary.png": {
-      "sha256": "934d3b0955b542f052493d6a47818daa3d67b18614aa9bf01226e6fab4ce39d5",
+      "sha256": "5a67d44251517bf63b39da7632fae9054d5aafbf21075bb470afca13e8150621",
       "size_px": [
         2100,
         2257
@@ -1614,12 +1614,12 @@
   "curated_exports": {
     "status": "passed",
     "manifest": "results/draft_figure_manifest.json",
-    "manifest_sha256": "e2c569ba45f335336c86c7934db02467dc48989491e2f01eec2b53a76757d2d3",
+    "manifest_sha256": "58ffecda530f0dd3f4386b3ed015e827819d83cb5b376dc00dfa5cb54bf6c788",
     "pdf_files": 16,
     "pdf_pages": 39,
     "files": {
       "results/supplementary/beamforming/setup.pdf": {
-        "sha256": "9a397afb155304a671236e92105f089f99e3a5b8fc78f38cf07e35dc82bc28ff",
+        "sha256": "a2684b7f3bbf241ef93deeebc755ed3fb3e887aa8ca6e16bb30d41c11734e371",
         "pages": 1,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -1648,13 +1648,13 @@
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/beamforming/setup.pdf",
-        "source_pdf_sha256": "9a397afb155304a671236e92105f089f99e3a5b8fc78f38cf07e35dc82bc28ff",
+        "source_pdf_sha256": "a2684b7f3bbf241ef93deeebc755ed3fb3e887aa8ca6e16bb30d41c11734e371",
         "source_pages": [
           1
         ]
       },
       "results/supplementary/beamforming/task_performance.pdf": {
-        "sha256": "dd2aa367efaca7416c116fdbfe26cdca49032bba03f82a7689a534f890efd49c",
+        "sha256": "135282c4414d166c1044b19b2eb758c971205f5497d9827fe126a4b294b978cf",
         "pages": 1,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -1680,13 +1680,13 @@
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/beamforming/task_performance.pdf",
-        "source_pdf_sha256": "dd2aa367efaca7416c116fdbfe26cdca49032bba03f82a7689a534f890efd49c",
+        "source_pdf_sha256": "135282c4414d166c1044b19b2eb758c971205f5497d9827fe126a4b294b978cf",
         "source_pages": [
           1
         ]
       },
       "results/supplementary/beamforming/posterior_anisotropy.pdf": {
-        "sha256": "ae45df56bb2ea17670c221709b4e40b5dccf14891fa5eb2bb014bb590dabd3bc",
+        "sha256": "2a1fc5a9ccf6737d91342727d4b50eae6e235e8c15828bb12d8d601ea0a43eb6",
         "pages": 1,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -1696,8 +1696,8 @@
         "all_fonts_embedded": true,
         "raster_layers": 2,
         "raster_dpi_range": [
-          299.9999910692709,
-          300.0000007737723
+          300.0,
+          300.0000084260384
         ],
         "page_checks": [
           {
@@ -1708,20 +1708,20 @@
               504.0,
               435.02398681640625
             ],
-            "text_spans": 86,
+            "text_spans": 103,
             "raster_layers": 2
           }
         ],
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/beamforming/posterior_anisotropy.pdf",
-        "source_pdf_sha256": "ae45df56bb2ea17670c221709b4e40b5dccf14891fa5eb2bb014bb590dabd3bc",
+        "source_pdf_sha256": "2a1fc5a9ccf6737d91342727d4b50eae6e235e8c15828bb12d8d601ea0a43eb6",
         "source_pages": [
           1
         ]
       },
       "results/supplementary/beamforming/noise_adaptation.pdf": {
-        "sha256": "6b86e89a3f2aa6f13b60f842342d3799a71aadfbc2fdff652a2c2b205f57b51e",
+        "sha256": "ae2f9e9d5208a441cd707a87812bcdd2ef02b410bfcf78ac70097362fd094cf2",
         "pages": 3,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -1740,7 +1740,7 @@
               504.0,
               443.23199462890625
             ],
-            "text_spans": 98,
+            "text_spans": 89,
             "raster_layers": 0
           },
           {
@@ -1769,7 +1769,7 @@
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/beamforming/noise_adaptation.pdf",
-        "source_pdf_sha256": "6b86e89a3f2aa6f13b60f842342d3799a71aadfbc2fdff652a2c2b205f57b51e",
+        "source_pdf_sha256": "ae2f9e9d5208a441cd707a87812bcdd2ef02b410bfcf78ac70097362fd094cf2",
         "source_pages": [
           1,
           2,
@@ -1944,7 +1944,7 @@
         ]
       },
       "results/supplementary/beamforming/additional_comparisons.pdf": {
-        "sha256": "3209efd7ce39c03ab058f4eb8fe258622f9a78e57eb517bdd852d734fbec3bc0",
+        "sha256": "a3d0f14fc190b6ce3895927ad8068033890decd83a2a23bf734086d05b3fb2d1",
         "pages": 8,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -1954,8 +1954,8 @@
         "all_fonts_embedded": true,
         "raster_layers": 6,
         "raster_dpi_range": [
-          299.99998863404954,
-          300.00001170751125
+          299.9999931404047,
+          300.0000082703466
         ],
         "page_checks": [
           {
@@ -1966,7 +1966,7 @@
               504.0,
               361.1520080566406
             ],
-            "text_spans": 64,
+            "text_spans": 40,
             "raster_layers": 2
           },
           {
@@ -1977,7 +1977,7 @@
               504.0,
               361.1520080566406
             ],
-            "text_spans": 64,
+            "text_spans": 40,
             "raster_layers": 2
           },
           {
@@ -1988,7 +1988,7 @@
               504.0,
               361.1520080566406
             ],
-            "text_spans": 64,
+            "text_spans": 40,
             "raster_layers": 2
           },
           {
@@ -2050,7 +2050,7 @@
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/beamforming/additional_comparisons.pdf",
-        "source_pdf_sha256": "3209efd7ce39c03ab058f4eb8fe258622f9a78e57eb517bdd852d734fbec3bc0",
+        "source_pdf_sha256": "a3d0f14fc190b6ce3895927ad8068033890decd83a2a23bf734086d05b3fb2d1",
         "source_pages": [
           1,
           2,
@@ -2387,7 +2387,7 @@
         ]
       },
       "results/supplementary/beamforming/paper_summary.pdf": {
-        "sha256": "f93077fe1151c2521edc1dd99266dec0fb907c864b3ee04b9b3b91f6a2909882",
+        "sha256": "a9a58af1651cb11f49b45ba074c136216c169998139446a7ef50478e6248902f",
         "pages": 1,
         "width_in": 7.0,
         "pdf_title_empty": true,
@@ -2413,7 +2413,7 @@
         "out_of_page_text": [],
         "errors": [],
         "source_pdf": "results/beamforming/paper_summary.pdf",
-        "source_pdf_sha256": "f93077fe1151c2521edc1dd99266dec0fb907c864b3ee04b9b3b91f6a2909882",
+        "source_pdf_sha256": "a9a58af1651cb11f49b45ba074c136216c169998139446a7ef50478e6248902f",
         "source_pages": [
           1
         ]

@@ -29,7 +29,7 @@ def check(example, root=ROOT, original_baseline=None, enforce_defaults=False):
         if info.get('editable_plotting_role') != 'plot':
             continue
         stem, page = info['figure_id'], int(info.get('source_page', 1))
-        if stem != 'tracking_error':
+        if info.get('source_catalogue_page', stem != 'tracking_error'):
             covered.add((stem, page))
         if index < start:
             continue

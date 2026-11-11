@@ -248,7 +248,43 @@ def load_evidence(root, example, stage, *, components=None, require_general=True
             elif artifact.suffix == '.npz':
                 with np.load(artifact, allow_pickle=False) as record:
                     arrays[component][artifact.stem] = {key: record[key] for key in record.files}
-    return Evidence(root, example, stage, components, tables, arrays, inputs)
+    evidence=Evidence(root, example, stage, components, tables, arrays, inputs)
+    if example=='beamforming' and 'performance' in components:
+        _overlay_stationary_evidence(evidence)
+    return evidence
+
+
+def _overlay_stationary_evidence(evidence):
+    """Overlay the independently verified fixed-T study; retain legacy cohorts."""
+    from .final_stationary_evidence import (stationary_component_path,
+                                           verify_stationary_component)
+    meta=verify_stationary_component(evidence.root,evidence.stage)
+    manifest=stationary_component_path(evidence.root,evidence.stage)
+    evidence.inputs[str(manifest.relative_to(evidence.root))]=sha(manifest)
+    evidence.components['stationary_T200']=meta
+    config=dict(evidence.components['performance']['config'])
+    config.update({key:value for key,value in meta['config'].items()
+                   if key.startswith('stationary_') or key=='dimensions'})
+    config.pop('stationary_ratios',None)
+    story=dict(config.get('story',{}))
+    story.update({key:value for key,value in meta['config'].get('story',{}).items()
+                  if key.startswith('stationary_')})
+    story.pop('stationary_ratio',None)
+    story['stationary_t']=int(config['stationary_T'])
+    config['story']=story
+    evidence.components['performance']={**evidence.components['performance'],'config':config}
+    tables=evidence.tables['performance'];arrays=evidence.arrays['performance']
+    tables['stationary_timing_reference']=tables['stationary']
+    for basename,key in [('stationary.csv','stationary'),('stories.npz','stories')]:
+        matches=[name for name in meta['artifacts'] if Path(name).name==basename]
+        if len(matches)!=1:
+            raise ValueError('Fixed-T stationary component needs one '+basename)
+        path=evidence.root/matches[0]
+        if key=='stationary':
+            tables[key]=pd.read_csv(path)
+        else:
+            with np.load(path,allow_pickle=False) as saved:
+                arrays[key]={**arrays.get(key,{}),**{name:saved[name] for name in saved.files}}
 
 
 def _column(frame, *names):
@@ -446,14 +482,17 @@ def _draw_task_dimensions(ax, evidence):
             raise KeyError('Exact stationary output needs raw true_ratio_db records: '
                            + ', '.join(sorted(required-set(frame))))
         dimensions = [32,64,128] if evidence.stage == 'paper' else sorted(frame.n.unique())
-        frame = frame[frame.condition.eq('static') & frame.t.eq(frame.n)
+        final_t = int(evidence.config('performance')['stationary_T'])
+        frame = frame[frame.condition.eq('static') & frame.t.eq(final_t)
                       & frame.n.isin(dimensions)]
         value = 'true_ratio_db'
     else:
         dimensions = sorted(frame.n.unique())
+        final_t = None
         value = _column(frame, 'response_mse', 'response_loss', 'heldout_response_mse')
-    methods = [method for method in ('mean','mode','scm_loaded','great_window')
-               if method in set(frame.method.astype(str))]
+    methods = list(('mean','mode','scm_loaded','great_window'))
+    if evidence.example!='beamforming':
+        methods=[method for method in methods if method in set(frame.method.astype(str))]
     for method in methods:
         means,lows,highs,observed_dimensions = [],[],[],[]
         for n in dimensions:
@@ -473,8 +512,8 @@ def _draw_task_dimensions(ax, evidence):
     ax.set_xlabel('Number of sensors $n$' if evidence.example=='beamforming' else 'Number of measurements')
     ax.set_ylabel(r'$\ell_t$ (dB)' if evidence.example=='beamforming' else 'Squared velocity error')
     clean(ax)
-    ax._final_selection=dict(cohort='stationary',condition='static',measurement_selection='t=n',
-        observations_per_sensor=1,dimensions=dimensions,endpoint=value,
+    ax._final_selection=dict(cohort='stationary',condition='static',measurement_selection='t='+str(final_t),
+        measurements=final_t,dimensions=dimensions,endpoint=value,
         simulation_scope='All 256 independent test Monte Carlo simulations at each dimension',
         power_definition='10 log10(w_t^H R_t w_t / p_t^star); exact saved covariance output')
 
@@ -792,15 +831,18 @@ def posterior_anisotropy(evidence):
         ax.set_yscale('log'); ax.set_xlabel(r'Eigenvalue index $j$')
         ax.set_ylabel('Eigenvalue'); ax.legend(frameon=False, fontsize=11.); clean(ax)
         risk_ax = fig.add_subplot(grid[1,:])
-        frame_data = _normalize(evidence.frame('performance', 'stationary'))
-        frame_data = frame_data[frame_data.n.eq(64)&frame_data.condition.eq('static')]
-        horizon = _column(frame_data, 'L', 't', 'observations')
-        frame_data = frame_data[frame_data[horizon].eq(64)]
+        frame_data = _primary(evidence.frame('performance', 'stationary'))
+        final_t = int(evidence.config('performance')['stationary_T'])
+        frame_data = frame_data[frame_data.n.eq(64)&frame_data.condition.eq('static')
+                                &frame_data.t.eq(final_t)]
         value = 'true_ratio_db'
         if value not in frame_data:raise KeyError('Stationary anisotropy comparison requires true_ratio_db')
         full = frame_data[frame_data.method.eq('mean')].set_index('episode')[value]
         iso = frame_data[frame_data.method.isin(['iso', 'isotropic'])].set_index('episode')[value]
         indices = full.index.intersection(iso.index)
+        if evidence.stage=='paper' and (len(indices)!=256 or not indices.is_unique
+                or not full.index.is_unique or not iso.index.is_unique):
+            raise ValueError('Fixed-T anisotropy comparison needs 256 matched Monte Carlo simulations')
         delta = np.sort((iso.loc[indices]-full.loc[indices]).to_numpy())
         risk_ax.step(delta, np.arange(1, len(delta)+1)/len(delta), color=color('mean'), where='post')
         risk_ax.axvline(0., color=GREY, linestyle='--', linewidth=1.)
@@ -810,7 +852,8 @@ def posterior_anisotropy(evidence):
         letter(ax, tag)
     fig._final_selection=(dict(condition=evidence.config('performance').get('anisotropy_input','static_concentrated'),
         episode=0,t=evidence.config('performance').get('anisotropy_time',16),query_family=1)
-        if evidence.example=='contact' else dict(cohort='stationary',n=64,t=64,
+        if evidence.example=='contact' else dict(cohort='stationary',n=64,
+        t=int(evidence.config('performance')['stationary_T']),
         section='Real coefficient great sphere in the saved complex three-frame; not a normalized marginal'))
     figures=[fig]
     if evidence.example=='contact':
@@ -897,9 +940,10 @@ def _draw_variance_time(ax, frame, example, signal=False, legend=True, config=No
         full_truth = np.full(length,float(truth.iloc[0]))
     else:
         raise ValueError('A dense true-variance schedule is unavailable for '+condition)
-    ax.step(full_t,full_truth*scale,where='mid',color=BLACK,linestyle='--',
-            linewidth=1.35,label='True variances')
-    if not np.isclose(full_truth[0],full_truth[-1]):
+    beam_noise_change=example=='beamforming' and condition=='noise_change'
+    ax.step(full_t,full_truth*scale,where='post' if beam_noise_change else 'mid',
+            color=BLACK,linestyle='--',linewidth=1.35,label='True variances')
+    if not beam_noise_change and not np.isclose(full_truth[0],full_truth[-1]):
         ax.axvline(length//2+.5,color=GREY,linestyle=':',linewidth=.7)
     # The supplied-true-variance line above is the full schedule, not its sparse
     # checkpoint approximation. Fitted values remain the recorded pre-u_t ones.
@@ -923,7 +967,9 @@ def _draw_variance_time(ax, frame, example, signal=False, legend=True, config=No
     if legend:ax.legend(frameon=False,fontsize=11.,ncol=1,loc='upper left')
     clean(ax)
     ax._final_variance_timing=dict(index='stored t',estimate='before receiving u_t',
-        fitted_next_effect='t+1',true_change_boundary=length//2+.5 if not np.isclose(full_truth[0],full_truth[-1]) else None)
+        fitted_next_effect='t+1',
+        true_change_boundary=(length//2+1 if beam_noise_change else length//2+.5)
+            if not np.isclose(full_truth[0],full_truth[-1]) else None)
 
 def _draw_future_time(ax, frame, example, scores=False, legend=True):
     time='t'
@@ -970,6 +1016,11 @@ def noise_adaptation(evidence):
             _draw_variance_time(flattened[0], group, evidence.example,legend=False,config=evidence.config('prediction'))
             _draw_future_time(flattened[1], group, evidence.example,legend=False)
             _draw_future_time(flattened[2], group, evidence.example, scores=True,legend=False)
+        if evidence.example=='beamforming' and condition=='noise_change':
+            for index,ax in enumerate(flattened):
+                ax.axvline(129,color='#7B3294',linewidth=1.3,linestyle='--',
+                    zorder=20,label='Noise variance change' if index==0 else '_nolegend_')
+                ax.set(xlabel=r'$t$',xlim=(1,256))
         for ax, tag in zip(flattened, ['(a)', '(b)', '(c)', '(d)']):
             letter(ax, tag)
         handles={}
@@ -1343,6 +1394,7 @@ def additional_comparisons(evidence):
     frame=_normalize(evidence.frame('performance',field))
     if 'split' in frame:frame=frame[frame.split.eq('test')]
     if evidence.example=='contact':frame=frame[frame.endpoint.eq('checkpoint')]
+    else:frame=frame[frame.condition.eq('static')]
     endpoint='true_ratio_db' if evidence.example=='beamforming' else _finite_column(frame,'response_mse')
     axis='t';scale=1. if evidence.example=='beamforming' else 1e6
     groups=list(frame.groupby('n',sort=True)) if evidence.example=='beamforming' else list(frame.groupby('condition',sort=False))
@@ -1372,9 +1424,9 @@ def additional_comparisons(evidence):
         labels=[]
         for method in methods:
             labels.append(r'$\overline P_t^+,G_t=I$' if method=='mean_identity' else r'$P_{\widehat{\mathcal X}_t},G_t=I$' if method=='mode_identity' else method_label(method,evidence.example))
-        xlabels=[f'{t/identifier:g}' for t in times] if evidence.example=='beamforming' else [str(t) for t in times]
+        xlabels=[str(t) for t in times]
         ax.set(xticks=np.arange(len(times)),xticklabels=xlabels,yticks=np.arange(len(methods)),yticklabels=labels,
-            xlabel=r'Measurements per sensor $t/n$' if evidence.example=='beamforming' else r'Measurement index $t$')
+            xlabel=r'Measurement index $t$')
         fig.colorbar(image,ax=ax,label=r'$\ell_t^{\mathrm{method}}-\ell_t^{\mathrm{mean}}$ (dB)' if evidence.example=='beamforming' else r'$\mathcal E_{\mathrm{ref}}-\mathcal E_{\mathrm B}$ $((\mathrm{mm}/\mathrm{s})^2)$',shrink=.85)
         ax.legend(handles=[Patch(facecolor='none',hatch='///',edgecolor=GREY,label='Interval contains zero')],frameon=False,loc='lower center',bbox_to_anchor=(.5,1.02),fontsize=11.)
         fig._final_selection={'n':int(identifier)} if evidence.example=='beamforming' else {'condition':str(identifier)}
@@ -1398,9 +1450,11 @@ def _draw_cost_tradeoff(ax, evidence):
     cost=_computation_summary(evidence)
     cost=cost[cost.case.eq('task_stationary')]
     if cost.empty:raise ValueError('Matching statistical-state task timing cohort is missing')
-    frame=_normalize(evidence.frame('performance','stationary'))
-    horizon=_column(frame,'L','t','observations')
-    frame=frame[frame[horizon].eq(frame.n) & frame.episode.eq(0)]
+    frame=_normalize(evidence.frame('performance','stationary_timing_reference'))
+    # This separate timing cohort still processes n measurements. Its saved
+    # output and its matching normalization both retain the original data.
+    frame=frame[frame.condition.eq('static') & frame.t.eq(frame.n)
+                & frame.episode.eq(0)]
     for method in ('mean','mode','scm_loaded','great_window'):
         x=[];y=[]
         for n,g in cost[cost.method.eq(method)].groupby('n',sort=True):
@@ -1416,7 +1470,8 @@ def _draw_cost_tradeoff(ax, evidence):
     ax.set(xscale='log',xlabel='Computation time (ms)',ylabel=r'$\ell_t$ (dB)')
     clean(ax)
     ax._final_selection=dict(timing_case='task_stationary',performance_episode=0,
-        task_loss='True-covariance loss of the same predeclared timing episode, not a population average',
+        task_loss='Saved true-covariance loss and original covariance minimum of the separate n-measurement timing simulation',
+        observations='n; unchanged timing cohort, distinct from fixed-T stationary performance',
         timing_repetitions='Repeated clocks on one saved episode')
 
 
@@ -1647,9 +1702,9 @@ BUNDLES = {
 
 CAPTIONS = {
     'setup': 'Available measurements and task geometry. Beamforming uses interference-only proper-complex snapshots; the desired unit steering vector enters the distortionless decision. The displayed beampattern uses a predeclared saved simulation, not another independent repetition. Contact uses an independently solved maintained bilateral constraint with known resistance, applied input and directly measured noisy velocity. Positions and normals are generation/scoring information.',
-    'task_performance': 'Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces.',
-    'posterior_anisotropy': 'Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=t=64$.',
-    'noise_adaptation': 'Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $128.5$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem.',
+    'task_performance': 'Beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, where $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. The stationary panel uses exact saved covariance output at $t=T=200$ for $n\\in\\{32,64,128\\}$; curves average 256 Monte Carlo simulations and shading gives the posterior-mean pointwise Student 95\\% interval. Settings remain those selected using additional noisy measurements. Supplementary moving-array boxes use exact covariance output-power differences between methods on the same simulation; boxes are distributions rather than confidence intervals. Contact: $\\mathcal E_t(D_t)=\\frac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, $v_t^{(j)}=0.02R_t^\\top e_j$ m/s. Saved three-input errors are multiplied by $10^6$ to obtain $(\\mathrm{mm}/\\mathrm{s})^2$, with no additional division. Panel (a) uses the stationary inputs at $t=1,4,16,32$ and the posterior-mean confidence band. Panel (b) first averages over $t=4,8,\\ldots,192$ in each of 256 sphere simulations, then computes each method mean and pointwise Student 95\\% interval. The supplementary paired panel uses absolute error differences from these same simulations. GREAT uses a complex Grassmann update for the array and receives measured velocities and frame rotations for contact; conditional contact methods also receive the known forces.',
+    'posterior_anisotropy': 'Contact: the saved concentrated-input posterior at $t=16$ has normal $e_3$. Panels (a,b) show $q_{-A_t^+}([n])$ and its matched isotropic law with the same mode and expected squared chordal distance. The fixed-radius spheres retain their native coordinates, common camera and logarithmic density scale. Colors are density relative to normalized invariant measure; antipodal normals represent one plane. The point marks their common modal line. Panel (c) plots $r_t(v(\\theta))/v_0^2$, with $v(\\theta)=v_0(\\cos\\theta\\,e_2+\\sin\\theta\\,e_3)$ and $v_0=0.02$ m/s. Each curve uses its own mean in $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$; the saved unit-input curve already equals this normalized quantity. The supplementary constructed example separates equal centered chordal-distance laws from directional response variance. Beamforming shows a real-coefficient section $h=U_3x$, $x\\in S^2$, of the complex-line density relative to its mode, rather than a normalized marginal. Its supplementary empirical CDF uses exact saved covariance output-power reductions at $n=64$, $t=T=200$.',
+    'noise_adaptation': 'Causal variance estimation from completed nonoverlapping $L=32$ measurement blocks. An EM fit completed after $u_t$ supplies variances from $t+1$; plotted estimates are the saved values before receiving $u_t$. The horizontal coordinate is the stored measurement index $t$. In the array noise-change experiment, true $\\sigma_t^2$ is $0.2$ through $t=128$ and $0.8$ from $t=129$, while $\\tau_t^2=1$; the full dashed references change at $t=129$. Estimates show medians and the middle 50\\% across Monte Carlo simulations. The array power panel uses exact saved $\\ell_t$, and the log-density panel uses the unchanged normalized Bingham-mixture value $\\log\\pi_t(u_t)$, both from $A_t^-$ before correction. Their bands are pointwise Student 95\\% confidence intervals for means over the 256 simulations. The selected forgetting factors remain $0.98$, $0.90$, $0.98$ for true, fixed and EM variance cases. The contact supplementary response error is for the recorded applied input and differs from the three-input $\\mathcal E_t$ comparison. Supplementary contact densities use a single saved simulation at $t=32,96,192$: the normal law is $q_{-A_t^-}$ with $\\psi_1(-A_t^-)=\\psi_2(A_t^-)-\\operatorname{tr}(A_t^-)$. Spheres share one density scale and response variances use their recorded physical inputs. Empirical-Bayes plug-in variances omit scale uncertainty and are outside the fixed-true-variance theorem.',
     'information': 'Independent Gaussian Fisher, score and curvature checks. Expected information is distinguished from finite-data posterior curvature. All matrix comparisons use aligned tangent coordinates; proper-complex information uses real/imaginary coordinates and its correct factor. Recorded-input excitation and marginalized-input information use the stated common data law. Monte Carlo dataset count differs from observations per dataset. Reused mathematical reference cohorts keep their actual source hashes and repetition counts.',
     'posterior_curvature': 'Invariant-density Hessian and local accuracy diagnostics. Empirical bounded log-coordinate spread is compared with $H_A^{-1}$ only under recorded locality conditions; broad/nonlocal cases remain visible. The stationary inverse-Fisher study uses fixed known variances and $\\beta=1$, reports estimation bias and local fractions, and treats inverse Fisher as a local reference rather than a global intrinsic Cramer--Rao equality. The real graph-density volume term is a separate quantity, retained in the tables. Forgetting sampling references use squared weights.',
     'tracking_bound': 'Recomputed sharp fixed-time envelope $\\sqrt{\\min(k,n-k)}\\,\\epsilon_t/(\\gamma_t-\\epsilon_t)$ under $\\epsilon_t<\\gamma_t/2$, with the exact aggregate conditional drift and the appropriate real/complex constants. True path, gap and drift are analysis quantities, not online confidence radii. Invalid conditions remain marked and receive no violation test. Error bands describe across-simulation spread. The geometric ceiling is not used to clip the theorem. Phase tables and exact binomial violation intervals retain every declared condition.',

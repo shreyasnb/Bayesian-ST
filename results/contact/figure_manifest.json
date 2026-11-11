@@ -11,8 +11,8 @@
     "theory": "paper"
   },
   "sources": {
-    "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-    "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+    "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+    "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
     "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
     "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
     "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -21,7 +21,7 @@
     "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
     "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
     "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-    "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+    "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
     "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
     "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
     "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -876,8 +876,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -886,7 +886,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -2260,8 +2260,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -2270,7 +2270,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -4114,8 +4114,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -4124,7 +4124,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -6136,8 +6136,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -6146,7 +6146,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -8147,8 +8147,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -8157,7 +8157,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -10071,8 +10071,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -10081,7 +10081,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -11863,8 +11863,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -11873,7 +11873,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -13895,8 +13895,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -13905,7 +13905,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -15687,8 +15687,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -15697,7 +15697,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -17852,8 +17852,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -17862,7 +17862,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -19811,8 +19811,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -19821,7 +19821,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -22153,8 +22153,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -22163,7 +22163,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -24123,8 +24123,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -24133,7 +24133,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -26111,8 +26111,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -26121,7 +26121,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -28114,8 +28114,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -28124,7 +28124,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -30122,8 +30122,8 @@
         }
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -30132,7 +30132,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -32997,8 +32997,8 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -33007,7 +33007,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -35526,8 +35526,8 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -35536,7 +35536,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",
@@ -38333,8 +38333,8 @@
         ]
       },
       "source_hashes": {
-        "lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
-        "scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
+        "archive/dd399ba/rendering_sources/lib/final_paper_visuals.py": "807f4f38adc8647ec269e9ac1985978b341cc91426145299bb680b22380f63a1",
+        "archive/dd399ba/rendering_sources/scripts/plot_final_simulations.py": "a3c329b02279806fbf86625b73ed6cb46e83464093475dc4a2f3830a212b8cdc",
         "lib/plotting.py": "8855eb54dc69005996cfc00c9c98383d5d5c0968081f84800afc6a087f85c59f",
         "lib/distribution_geometry_visuals.py": "74f4df777d73f652d9be725fdddd6f7b435bbaa689b9b968b999a5355defa8e9",
         "lib/final_information_visuals.py": "1eacfb0f5a967ee7bfc4aa49ee9acbc11682be7941a8bca6975188f5f6be55bc",
@@ -38343,7 +38343,7 @@
         "tests/test_final_computation.py": "f2c9bdb1dd3a07f759684f9558fd7ca405d2ed91d879cb651d83de62bec5aab5",
         "lib/final_accuracy.py": "44a98dbd4cc2ec25bbe0a1478e039ee4dadcd36775d4f9015c1e5f8610ac0b0e",
         "tests/test_final_accuracy.py": "53d798b3b24c3fdb2375b8d426eedfb0d7d33d25b7fc4f6968547e081e515354",
-        "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+        "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
         "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
         "lib/final_prediction.py": "8433684c224c94b2dc3e469e54de82511beadb3cd275bde30df816f7bcba835a",
         "scripts/run_final_prediction.py": "e45ce07cf859efce66687343de9ea6b4f51120ee3949b86dc2cb394bfb8a189a",

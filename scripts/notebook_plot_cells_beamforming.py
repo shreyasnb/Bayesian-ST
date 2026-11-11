@@ -29,7 +29,7 @@ STYLE = {
 
 
 def _cell(name, page, size, body, *, style=True):
-    section = 'main' if name in {'task_performance','noise_adaptation'} else 'supplementary'
+    section = 'main' if name in {'task_performance','abrupt_tracking','noise_adaptation'} else 'supplementary'
     source = f'''# Edit these controls independently for this figure.
 import numpy as np
 import matplotlib.pyplot as plt
@@ -113,8 +113,10 @@ for ax,tag in zip(axes,["(a)","(b)"]):
     ax.text(.015,.985,tag,transform=ax.transAxes,ha="left",va="top")
 ''',style=False)
 
-PLOT_CELLS['task_performance', 1] = (
+PLOT_CELLS['stationary_dimensions', 1] = (
     _cell('task_performance', 1, (15, 5), r'''
+# All sensor counts use the same number of assimilated measurements.
+assert data["stationary_T"] == data["stationary_primary_t"] == 200
 fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 for curve in data["curves"]:
     label,color_,symbol = STYLE[curve["method"]]
@@ -122,12 +124,31 @@ for curve in data["curves"]:
     ax.plot(points[:,0],points[:,1],marker=symbol,color=color_,label=label)
     if curve["method"]=="mean":
         ax.fill_between(points[:,0],points[:,2],points[:,3],color=color_,alpha=.10)
-ax.set(xlabel=r"Number of sensors $n$",ylabel=r"$\ell_t$ (dB)")
+ax.set(xlabel=r"Number of sensors $n$",ylabel=r"$\ell_T$ (dB)")
 fig.legend(*ax.get_legend_handles_labels(),loc="outside lower center",ncol=2,frameon=False,fontsize=10.)
 ax.spines[["top","right"]].set_visible(False)
 ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
 
-''').replace("'task_performance_page1.pdf'", "'task_performance_output_power.pdf'")
+''').replace("'task_performance_page1.pdf'", "'stationary_dimensions_T200.pdf'")
+.replace("DRAFT_SECTION = 'main'", "DRAFT_SECTION = 'supplementary'")
+)
+
+PLOT_CELLS['task_performance', 1] = (
+    _cell('abrupt_tracking', 1, (15, 5), r'''
+fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
+for curve in data["curves"]:
+    label,color_,symbol = STYLE[curve["method"]]
+    points = curve["points"]
+    ax.plot(points[:,0],points[:,1],marker=symbol,color=color_,label=label)
+    if curve["method"]=="mean":
+        ax.fill_between(points[:,0],points[:,2],points[:,3],color=color_,alpha=.10)
+ax.axvline(129,color="#7B3294",linewidth=1.3,linestyle="--",zorder=20,
+           label="Direction change")
+ax.set(xlabel=r"$t$",ylabel=r"$\ell_t$ (dB)",xlim=(1,256))
+fig.legend(*ax.get_legend_handles_labels(),loc="outside lower center",ncol=3,frameon=False,fontsize=10.)
+ax.spines[["top","right"]].set_visible(False)
+ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
+''').replace("'abrupt_tracking_page1.pdf'", "'task_performance_output_power.pdf'")
     + '\n\n' + _cell('task_performance', 1, (15, 5), r'''
 fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout="constrained")
 labels = [STYLE[item["method"]][0] for item in data["paired"]]
@@ -228,11 +249,9 @@ for ax,key in [(axes[0,0],"sigma2"),(axes[0,1],"tau2")]:
                 linestyle="--" if trace["method"]=="misspecified" else "-",label=label)
         if trace["method"]=="learned":
             ax.fill_between(trace["x"],trace["low"],trace["high"],color=color_,alpha=.13)
-    ax.step(panel["x"],panel["truth"],where=panel["truth_step_where"],color="#111111",linestyle="--",
+    ax.step(panel["x"],panel["truth"],where="post",color="#111111",linestyle="--",
             linewidth=1.6,label="True variances")
-    for event in panel["events"]:
-        ax.axvline(event,color="#70777D",linestyle=":",linewidth=.7)
-    ax.set(xlabel=data["time_label"],ylabel=r"$\sigma_t^2,\ \widehat\sigma_t^2$" if key=="sigma2" else r"$\tau_t^2,\ \widehat\tau_t^2$")
+    ax.set(xlabel=r"$t$",ylabel=r"$\sigma_t^2,\ \widehat\sigma_t^2$" if key=="sigma2" else r"$\tau_t^2,\ \widehat\tau_t^2$")
 for ax,key in [(axes[1,0],"task"),(axes[1,1],"score")]:
     for trace in data[key]:
         label,color_,symbol = STYLE[trace["method"]]
@@ -240,9 +259,12 @@ for ax,key in [(axes[1,0],"task"),(axes[1,1],"score")]:
         ax.plot(p[:,0],p[:,1],marker=symbol,color=color_,
                 linestyle="--" if trace["method"]=="misspecified" else "-",label=label)
         ax.fill_between(p[:,0],p[:,2],p[:,3],color=color_,alpha=.09)
-    ax.set(xlabel=data["time_label"],ylabel=r"$\ell_t$ (dB)" if key=="task" else r"$\log\pi_t(u_t)$")
+    ax.set(xlabel=r"$t$",ylabel=r"$\ell_t$ (dB)" if key=="task" else r"$\log\pi_t(u_t)$")
 handles = {}
 for ax,tag in zip(axes.flat,["(a)","(b)","(c)","(d)"]):
+    ax.axvline(129,color="#7B3294",linewidth=1.3,linestyle="--",zorder=20,
+               label="Noise variance change")
+    ax.set_xlim(1,256)
     for handle,label in zip(*ax.get_legend_handles_labels()):handles.setdefault(label,handle)
     ax.spines[["top","right"]].set_visible(False)
     ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
@@ -408,6 +430,26 @@ if SAVE_PDF:
 
 plt.show()'''
 
+
+# Keep the prior abrupt figure available for the separate moving study.
+PLOT_CELLS['abrupt_tracking', 1] = PLOT_CELLS['task_performance', 1]
+# The existing application notebook retains its fixed-horizon dimension result.
+_previous_task_source = PLOT_CELLS['task_performance', 1]
+_end_first_show = _previous_task_source.index('plt.show()') + len('plt.show()')
+_stationary_main = PLOT_CELLS['stationary_dimensions', 1].replace(
+    "'stationary_dimensions_T200.pdf'", "'task_performance_output_power.pdf'").replace(
+    "DRAFT_SECTION = 'supplementary'", "DRAFT_SECTION = 'main'")
+PLOT_CELLS['task_performance', 1] = _stationary_main + _previous_task_source[_end_first_show:]
+
+# Export full-resolution PNG previews beside the selected manuscript PDFs.
+# The statements below are copied into the editable plotting cells.
+for _preview_key in [('task_performance',1),('abrupt_tracking',1),('stationary_dimensions',1),('noise_adaptation',1)]:
+    _source = PLOT_CELLS[_preview_key]
+    _show = _source.index('plt.show()')
+    _first, _rest = _source[:_show], _source[_show:]
+    _save = "    DRAFT_PATH.write_bytes(PDF_PATH.read_bytes())"
+    _png = "\n    PNG_PATH = PDF_PATH.with_suffix('.png')\n    fig.savefig(PNG_PATH, dpi=DPI, bbox_inches=None)\n    DRAFT_PNG_PATH = DRAFT_PATH.with_suffix('.png')\n    DRAFT_PNG_PATH.write_bytes(PNG_PATH.read_bytes())"
+    PLOT_CELLS[_preview_key] = _first.replace(_save, _save+_png, 1) + _rest
 
 from scripts.notebook_publication_style import apply_publication_style
 for _key, _source in list(PLOT_CELLS.items()):

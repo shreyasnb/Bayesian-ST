@@ -4,6 +4,7 @@ import os
 import sys
 import json
 import hashlib
+import argparse
 for name in ('OPENBLAS_NUM_THREADS', 'OMP_NUM_THREADS', 'MKL_NUM_THREADS'):
     os.environ[name] = '1'
 os.environ.setdefault('MPLCONFIGDIR', '/tmp/bayesian-st-matplotlib')
@@ -14,12 +15,23 @@ from nbclient import NotebookClient
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from lib.final_validation import science_hash, science_sources, verify_history, gate_path, sha
+from lib.final_validation import (
+    science_hash, science_sources, verify_history, gate_path, current_gate_path, sha,
+)
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--revision', choices=['stationary_T200'],
+        help='Write a fresh revision certificate while preserving the original validation.')
+    args = parser.parse_args()
     verify_history(ROOT)
-    out = gate_path(ROOT).parent
+    certificate = current_gate_path(ROOT) if args.revision else gate_path(ROOT)
+    if certificate == gate_path(ROOT) and certificate.exists():
+        previous = json.loads(certificate.read_text())
+        if previous.get('final_science_hash') != science_hash(ROOT):
+            raise RuntimeError('The original certificate is preserved; use --revision stationary_T200')
+    out = certificate.parent
     out.mkdir(parents=True, exist_ok=True)
     original = ROOT / 'notebooks/00_theory.ipynb'
     before = original.read_bytes()
@@ -35,7 +47,6 @@ def main():
         if cell.cell_type == 'code':
             cell.outputs = []
             cell.execution_count = None
-    certificate = gate_path(ROOT)
     certificate.unlink(missing_ok=True)
     try:
         NotebookClient(nb, timeout=3600, kernel_name='python3',
@@ -46,6 +57,7 @@ def main():
         gate.update(final_science_hash=fingerprint,
             sources={name: sha(ROOT / name) for name in science_sources(ROOT)},
             original_notebook_sha256=hashlib.sha256(before).hexdigest(),
+            revision=args.revision,
             scope='Complete original general notebook and all current regressions. '
                   'Final stage-specific scientific and statistical limitations are '
                   'retained independently of algebra/test success.')

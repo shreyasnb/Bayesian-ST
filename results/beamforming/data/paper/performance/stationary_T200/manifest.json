@@ -1,0 +1,199 @@
+{
+  "status": "completed",
+  "example": "beamforming",
+  "stage": "paper",
+  "component": "stationary_T200",
+  "config": {
+    "schema": 1,
+    "stage": "paper",
+    "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+    "rank": 1,
+    "dimensions": [
+      32,
+      64,
+      128
+    ],
+    "stationary_T": 200,
+    "stationary_times": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "stationary_primary_t": 200,
+    "validation_episodes": 64,
+    "test_episodes": 256,
+    "validation_seed": 2026111001,
+    "test_seed": 2026111002,
+    "story_seed": 2026111003,
+    "sigma2": 0.2,
+    "tau2": 1.0,
+    "overlap": 0.5,
+    "moving_n": 32,
+    "moving_T": 256,
+    "moving_conditions": [
+      "static",
+      "smooth",
+      "abrupt",
+      "noise_change",
+      "power_change"
+    ],
+    "action_cadence": 8,
+    "primary_burnin": 32,
+    "dt": 0.01,
+    "betas": [
+      1.0,
+      0.99,
+      0.97,
+      0.9
+    ],
+    "great_step_multipliers": [
+      0.02,
+      0.08,
+      0.24
+    ],
+    "great_inner_steps": [
+      1,
+      3
+    ],
+    "great_window_ratios": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "grouse_steps": [
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "loading_bracket_points": 33,
+    "heldout_snapshots": 256,
+    "moment_tolerance": 1e-10,
+    "moment_max_order": 4096,
+    "moment_fallback_max_order": 8192,
+    "block_lengths": [
+      1,
+      4,
+      16,
+      32
+    ],
+    "block_test_episodes": 64,
+    "block_n": 32,
+    "block_T": 64,
+    "block_beta": 0.97,
+    "block_conditions": [
+      "static",
+      "smooth"
+    ],
+    "story": {
+      "stationary_n": 64,
+      "stationary_time": 200,
+      "episode": 0,
+      "moving_episode": 0,
+      "moving_time": 128,
+      "moving_times": [
+        32,
+        128,
+        256
+      ]
+    },
+    "outcome": "Stationary primary: arithmetic mean of individual exact-covariance true_ratio_db at t=T=200. Measured heldout power remains the parameter-selection criterion. Moving records retain their original episode-averaged ratio definitions.",
+    "repetition_unit": "Independent episode. Held-out snapshots average inside a checkpoint; moving primary outcomes average checkpoints inside the episode.",
+    "selection": "Independent held-out measured disturbance power on disjoint validation episodes only; no true signature, covariance, oracle power or drift enters policy selection. Static beta=1. Moving mean/mode/isotropic share a mode-selected beta. Modal loading and loaded covariance select their own memory/loading. Sliding GREAT selects window/step/inner count; EW GREAT matches the shared Bingham beta and selects step/inner count.",
+    "great_ew_weights": "Complex EW GREAT receives sqrt(eta_j/eta_initial)*u_j, eta_j=tau2_j/[sigma2_j*(sigma2_j+tau2_j)]. Its covariance matches the uncentered Bingham statistic up to the fixed positive factor eta_initial under the uniform prior. Fixed-variance data are unchanged; raw sliding-window GREAT retains the original residual objective.",
+    "variance_convention": "Proper-complex covariance sigma2*I; real/imaginary component variances sigma2/2. Unit steering signatures give total interference power tau2.",
+    "motion": "Identity transport for all primary unknown-motion comparisons. Baseline half-power desired/interference overlap is held exactly fixed across dimensions.",
+    "numerical_scope": "Native complex rank-one means and normalizers only; no higher-rank, tail, interval or second-moment accuracy is inferred from these mean flags.",
+    "scale_information": "This performance cohort conditions on the generating variances at correction/action time as a calibrated reference. The separate causal variance-learning cohort never receives future generating scales.",
+    "block_budget": "Supplementary cadence/constant-state-block experiment uses 64 independent test episodes per motion at n=32,T=64. Primary stationary/moving performance cohorts retain 256. This smaller block cohort was selected from operation counts/native-mean preflight before any block task outcomes.",
+    "precision": "Paper plan: 64 validation and 256 independent test episodes per primary cohort; all paired pointwise 95% intervals and achieved SEs retained. Broad grids are exploratory without multiplicity correction."
+  },
+  "sources": {
+    "lib/final_beamforming.py": "29d183650f9c156e25e19553e72559291c884d4d68ee400d448e5430793a9a8f",
+    "scripts/run_final_beamforming.py": "6974595a6645fab94b4b86ecbb4a6e5ec87f5294e089ac7c679c7f2b04b15b3c",
+    "tests/test_final_beamforming.py": "d3c41d5d483f967d5e588cf998211e0bd5c1d51cbbdb90bf6ca649d3b4c5aa8c",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+    "lib/final_stationary_evidence.py": "55650162cc4eee030c4925000a1624daca566e101561b6f73138160bca981b55"
+  },
+  "artifacts": {
+    "results/beamforming/data/paper/performance/stationary_T200/checks.json": "e7764896b7f2de86604ea9a6ec7f4b4e2b0cffac907b7130cffb7956fa392516",
+    "results/beamforming/data/paper/performance/stationary_T200/method_information.json": "8a3d15f859dc3c77b68cddd0bcc5182911bcba51caa11126a165f59deaa9b1f0",
+    "results/beamforming/data/paper/performance/stationary_T200/preregistered.json": "53ee80f209616423896ebf891bce29423b3eb26ee2cbcebfd1afa19e77d6b746",
+    "results/beamforming/data/paper/performance/stationary_T200/selected.json": "f1734d95197a32d873669e2ad80bded92f88f99dac489606a77400cdde668019",
+    "results/beamforming/data/paper/performance/stationary_T200/stationary.csv": "0ebf63ee9d3170d3e79b23b72cd6d5cde0a7ef210ac02e1178b8f81d6f996d71",
+    "results/beamforming/data/paper/performance/stationary_T200/stories.npz": "5c94fb730d4ebd5d4862ef05bf349d18b6f4983635ef16c805bbafa86b6e4f12",
+    "results/beamforming/tables/paper/performance/stationary_T200/execution_times.csv": "cc541c0acf249db932d617bd461402dcb3491dd3a1f2c066785320d42f348374",
+    "results/beamforming/tables/paper/performance/stationary_T200/paired_stationary.csv": "f2e780894807d707f38296291285a1e51f250b833efb960a39cab0c7c2956b86",
+    "results/beamforming/tables/paper/performance/stationary_T200/stationary_measured_summary.csv": "e4746f4bb55bd6f248b14cdf635e4645519fbe4eecd53a277f1577cccde2f28a",
+    "results/beamforming/tables/paper/performance/stationary_T200/stationary_summary.csv": "fb32943303df8344fd15d3d3d5ac948ce7b5676a93a5df35a6a67fea315d4707",
+    "results/beamforming/tables/paper/performance/stationary_T200/validation_curves.csv": "8b4b9cb0b8b64a0b19055aa227ab2f4db01bb611772ffa6b741cdb9bfb97988e"
+  },
+  "checks": {
+    "stationary_T": 200,
+    "primary_t": 200,
+    "reporting_times": [
+      25,
+      50,
+      100,
+      200
+    ],
+    "validation_simulations_per_dimension": 64,
+    "validation_simulations": 192,
+    "final_simulations_per_dimension": 256,
+    "final_simulations": 768,
+    "measurement_records": 30720,
+    "all_methods": [
+      "mean",
+      "mode",
+      "isotropic",
+      "modal_loading",
+      "covariance_loading",
+      "great_window",
+      "great_ew",
+      "grouse",
+      "ledoit_wolf",
+      "oracle"
+    ],
+    "native_mean_calls": 3072,
+    "native_mean_unresolved": 0,
+    "unresolved_method_rows": 0,
+    "maximum_unit_gain_error": 4.453106456896229e-16,
+    "maximum_native_order": 2510.0,
+    "maximum_native_mean_error_bound": 9.999036269181844e-11,
+    "native_cap_extensions": 0,
+    "validation_hidden_truth_used": false,
+    "validation_loss_source": "Independent held-out measured output power",
+    "heldout_validation_snapshots_per_checkpoint": 256,
+    "primary_outcome": "Arithmetic mean of individual true_ratio_db at t=T=200",
+    "confidence_interval": "Pointwise Student 95% interval across independent final simulations",
+    "all_methods_share_training_measurements": true,
+    "uniform_Bingham_initialization": true,
+    "stationary_beta": 1.0,
+    "unchanged_experiments": "Moving-subspace, block, variance-estimation, contact, theory and computation records are not regenerated",
+    "total_seconds": 311.3759475759871,
+    "timing_scope": "Concurrent execution metadata only, not a computational benchmark"
+  },
+  "validation_path": "results/beamforming/data/validation/stationary_T200/validation.json",
+  "validation_sha256": "31489683fd6d25991b8db002b6be14091b83019a83869467981c463041be3ec2",
+  "gate_science_hash": "e926a6a16fea47e35f0625afcc811d5fbdd533fb812c8c1fa9314484f16b24ee",
+  "replaces": "The stationary dimension comparison only; original mixed performance evidence is retained at its original paths",
+  "preserved_source_commit": "dd399bacae3d7b37e31abb949b24740c1f07a4f3",
+  "created_utc": "2026-11-10T23:27:13.780773+00:00",
+  "versions": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0"
+  },
+  "probability_scope": "Pointwise and paired Student intervals; no simultaneous ranking guarantee"
+}

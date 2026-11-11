@@ -108,7 +108,8 @@ def append(example, root=ROOT, refresh_added=False):
     existing_pages = {(cell.get('metadata', {}).get('figure_id'),
                        int(cell.get('metadata', {}).get('source_page', 1)))
                       for cell in prefix
-                      if cell.get('metadata', {}).get('editable_plotting_role') == 'plot'}
+                      if cell.get('metadata', {}).get('editable_plotting_role') == 'plot'
+                      and cell.get('metadata', {}).get('source_catalogue_page', True)}
     records = [record for family in FAMILIES
         for record in import_module('scripts.notebook_supp_'+family).build_cells(example)]
     missing = catalogue(root, example) - existing_pages

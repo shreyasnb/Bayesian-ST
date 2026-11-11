@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\small
+\caption{Stationary beamforming after $T=200$ measurements with $n\in\{32,64,128\}$ sensors, $\sigma^2=0.2$, $\tau^2=1$, and $|a^{\mathrm H}h|^2=1/2$. The Bingham tracker uses the uniform prior $A_0=0$ and $\beta=1$. Relative power is $\ell_{200}=10\log_{10}((w_{200}^{\mathrm H}R_{200}w_{200})/p_{200}^{\star})$, where $p_{200}^{\star}$ is the minimum output power under the unit-gain constraint. The mean and two-sided Student 95\% confidence interval use the 256 individual Monte Carlo simulation scores in dB (255 degrees of freedom). Settings are selected using 64 separate validation simulations. Smaller values are better.}
+\label{tab:beamforming-stationary-T200-supp}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+ & \shortstack{Posterior\\mean} & Mode & \shortstack{GREAT\\(sliding window)} & \shortstack{Regularized sample\\covariance} \\
+\midrule
+\multicolumn{5}{l}{$n=32,\ T=200$} \\
+Mean relative power (dB) & 0.119 & 0.114 & 0.363 & 0.379 \\
+95\% confidence interval (dB) & $[0.115,\ 0.122]$ & $[0.111,\ 0.118]$ & $[0.351,\ 0.375]$ & $[0.369,\ 0.389]$ \\
+\midrule
+\multicolumn{5}{l}{$n=64,\ T=200$} \\
+Mean relative power (dB) & 0.237 & 0.223 & 0.350 & 0.576 \\
+95\% confidence interval (dB) & $[0.231,\ 0.242]$ & $[0.218,\ 0.228]$ & $[0.342,\ 0.358]$ & $[0.565,\ 0.588]$ \\
+\midrule
+\multicolumn{5}{l}{$n=128,\ T=200$} \\
+Mean relative power (dB) & 0.482 & 0.440 & 0.677 & 0.856 \\
+95\% confidence interval (dB) & $[0.473,\ 0.490]$ & $[0.433,\ 0.448]$ & $[0.666,\ 0.689]$ & $[0.844,\ 0.868]$ \\
+\bottomrule
+\end{tabular}
+\end{table}

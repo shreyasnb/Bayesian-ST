@@ -41,6 +41,7 @@ Running a figure cell with `SAVE_PDF=True` updates its local PDF and the same-na
 - [beamforming/predictive_calibration_supp_page9.pdf](beamforming/predictive_calibration_supp_page9.pdf).
 - [beamforming/predictive_scores_supp_page1.pdf](beamforming/predictive_scores_supp_page1.pdf).
 - [beamforming/setup_page1.pdf](beamforming/setup_page1.pdf).
+- [beamforming/stationary_dimensions_T200.pdf](beamforming/stationary_dimensions_T200.pdf).
 - [beamforming/task_performance_paired_difference.pdf](beamforming/task_performance_paired_difference.pdf).
 - [beamforming/tracking_bound_supp_page1.pdf](beamforming/tracking_bound_supp_page1.pdf).
 - [beamforming/tracking_bound_supp_page2.pdf](beamforming/tracking_bound_supp_page2.pdf).

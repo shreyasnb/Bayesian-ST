@@ -27,16 +27,32 @@ class _SavedStudy:
         require_gate(self.root)
         self.components = {}
         self.input_hashes = {}
+        self.stationary_meta = None
+        self.legacy_performance_meta = None
 
     def meta(self, component):
         if component not in self.components:
             self.components[component] = verify_component(self.root, 'beamforming', 'paper', component)
             name = f'results/beamforming/data/paper/{component}/manifest.json'
             self.input_hashes[name] = _sha(self.root/name)
+            if component=='performance':
+                from .final_stationary_evidence import (stationary_component_path,
+                                                       verify_stationary_component)
+                self.legacy_performance_meta=self.components[component]
+                self.stationary_meta=verify_stationary_component(self.root,'paper')
+                manifest=stationary_component_path(self.root,'paper')
+                self.input_hashes[str(manifest.relative_to(self.root))]=_sha(manifest)
+                config=dict(self.components[component]['config'])
+                config.update({key:value for key,value in self.stationary_meta['config'].items()
+                    if key.startswith('stationary_') or key=='dimensions'})
+                config.pop('stationary_ratios',None)
+                self.components[component]={**self.components[component],'config':config}
         return self.components[component]
 
     def path(self, component, *names):
         artifacts = self.meta(component)['artifacts']
+        if component=='performance' and any(name in ('stationary','stories','story') for name in names):
+            artifacts=self.stationary_meta['artifacts']
         for name in names:
             candidates = [p for p in artifacts if Path(p).name in (name+'.csv', name+'.csv.gz', name+'.npz')]
             if len(candidates) == 1:
@@ -53,8 +69,24 @@ class _SavedStudy:
         return pd.read_csv(self.path(component, *names))
 
     def array(self, component, *names):
-        with np.load(self.path(component, *names), allow_pickle=False) as saved:
-            return {name: saved[name] for name in saved.files}
+        path=self.path(component,*names)
+        result={}
+        if component=='performance' and any(name in ('stories','story') for name in names):
+            # Preserve every moving-story array while replacing stationary/setup
+            # arrays with the independently verified fixed-T recording.
+            matches=[name for name in self.legacy_performance_meta['artifacts']
+                     if Path(name).name=='stories.npz']
+            if len(matches)!=1:raise ValueError('Legacy moving stories need one stories.npz')
+            original=self.root/matches[0]
+            expected=self.legacy_performance_meta['artifacts'][matches[0]]
+            digest=expected['sha256'] if isinstance(expected,dict) else expected
+            if _sha(original)!=digest:raise RuntimeError('Legacy moving stories changed')
+            self.input_hashes[matches[0]]=digest
+            with np.load(original,allow_pickle=False) as saved:
+                result.update({name:saved[name] for name in saved.files})
+        with np.load(path,allow_pickle=False) as saved:
+            result.update({name:saved[name] for name in saved.files})
+        return result
 
 
 def _normalize(frame):
@@ -153,10 +185,64 @@ def load_beamforming_plot_data(root, name, page=1):
     """
     root = Path(root).resolve()
     study = _SavedStudy(root)
-    manifest = json.loads((root/'results/beamforming/figure_manifest.json').read_text())
-    note = next(p for p in manifest['figures'][name+'.pdf']['pages'] if p['page']==page)
-    data = dict(name=name, page=page, figsize=tuple(note['figure_size_in']))
-    if name == 'setup':
+    if name == 'abrupt_tracking':
+        if page != 1:
+            raise ValueError('Abrupt tracking has one saved-data page')
+        data = dict(name=name, page=page, figsize=(15,5))
+    else:
+        manifest = json.loads((root/'results/beamforming/figure_manifest.json').read_text())
+        note = next(p for p in manifest['figures'][name+'.pdf']['pages'] if p['page']==page)
+        data = dict(name=name, page=page, figsize=tuple(note['figure_size_in']))
+    if name == 'abrupt_tracking':
+        # This is the original moving cohort. It does not use the separately
+        # recorded fixed-horizon stationary replacement or a PDF-page selector.
+        meta=verify_component(root,'beamforming','paper','performance')
+        manifest_path=root/'results/beamforming/data/paper/performance/manifest.json'
+        matches=[path for path in meta['artifacts']
+                 if Path(path).name=='moving_checkpoints.csv.gz']
+        if len(matches)!=1:
+            raise KeyError('Abrupt tracking needs one original moving-checkpoint table')
+        relative=matches[0]
+        expected=meta['artifacts'][relative]
+        digest=expected['sha256'] if isinstance(expected,dict) else expected
+        if _sha(root/relative)!=digest:
+            raise RuntimeError('Saved moving checkpoints changed: '+relative)
+        study.input_hashes[manifest_path.relative_to(root).as_posix()]=_sha(manifest_path)
+        study.input_hashes[relative]=digest
+        frame=_primary(pd.read_csv(root/relative))
+        methods=('mean','mode','iso','great_window')
+        frame=frame[frame.condition.eq('abrupt') & frame.n.eq(32)
+                    & frame.method.isin(methods)]
+        times=np.arange(8,257,8,dtype=int)
+        simulations=np.arange(256,dtype=int)
+        if (not np.isfinite(frame.t).all()
+                or not np.equal(frame.t,np.floor(frame.t)).all()
+                or not np.array_equal(np.sort(frame.t.unique()),times)
+                or frame.duplicated(['episode','t','method']).any()):
+            raise ValueError('Abrupt tracking requires 32 unique stored integer checkpoints per simulation/method')
+        if not (frame.sigma2.eq(.2).all() and frame.tau2.eq(1.).all()):
+            raise ValueError('Abrupt tracking requires the saved fixed generating variances')
+        if not frame[frame.method.isin(('mean','mode','iso'))].beta.eq(.97).all():
+            raise ValueError('Abrupt tracking requires the saved Bingham forgetting factor 0.97')
+        if ('true_ratio_db' not in frame or not np.isfinite(frame.true_ratio_db).all()
+                or not frame.numerical_ok.astype(bool).all()):
+            raise ValueError('Abrupt tracking requires finite resolved exact-covariance losses')
+        curves=[]
+        for method in methods:
+            points=[]
+            for t,group in frame[frame.method.eq(method)].groupby('t',sort=True):
+                if not np.array_equal(np.sort(group.episode.to_numpy()),simulations):
+                    raise ValueError('Abrupt tracking needs all 256 simulation identifiers at every checkpoint')
+                points.append((t,*_interval(group.true_ratio_db.to_numpy())))
+            if len(points)!=len(times):
+                raise ValueError('Abrupt tracking is missing a method/checkpoint')
+            curves.append(dict(method=method,points=np.asarray(points),
+                               sample_counts=np.full(len(times),256,dtype=int)))
+        data.update(curves=curves,time=times,T=256,n=32,beta=.97,event=129,
+            events=np.array([129],dtype=int),condition='abrupt',sigma2=.2,tau2=1.,
+            endpoint='true_ratio_db',simulations=256,
+            time_label=r'Measurement index $t$')
+    elif name == 'setup':
         r = study.array('performance','stories','story')
         U = _saved(r,'setup_U','U')
         patterns = r.get('beampatterns', r.get('setup_beampatterns'))
@@ -195,8 +281,9 @@ def load_beamforming_plot_data(root, name, page=1):
             design=curves,design_xlabel=(r'$\tau^2/\sigma^2$' if xname=='snr' else r'Noise variance $\sigma^2$' if xname=='sigma2' else xname.replace('_',' ')))
     elif name == 'task_performance':
         frame=_primary(study.table('performance','stationary'))
+        final_t=int(study.meta('performance')['config']['stationary_T'])
         frame=frame[frame.condition.eq('static') & frame.n.isin([32,64,128])
-                    & frame.t.eq(frame.n)]
+                    & frame.t.eq(final_t)]
         # The revised loss uses the saved exact covariance, not an independent
         # finite-snapshot estimate of output power. Deliberately no fallback.
         endpoint='true_ratio_db'
@@ -206,8 +293,13 @@ def load_beamforming_plot_data(root, name, page=1):
         for method in ('mean','mode','scm_loaded','great_window'):
             points=[]
             for n,g in frame[frame.method.eq(method)].groupby('n',sort=True):
-                points.append((n,*_interval(g.groupby('episode')[endpoint].mean())))
-            if points:curves.append(dict(method=method,points=np.asarray(points)))
+                sample=g.groupby('episode')[endpoint].mean()
+                if len(sample)!=256 or not np.isfinite(sample).all():
+                    raise ValueError('Fixed-T stationary comparison requires 256 finite test simulations per dimension/method')
+                points.append((n,*_interval(sample)))
+            if len(points)!=3:
+                raise ValueError('Fixed-T stationary comparison is missing a declared dimension at t='+str(final_t))
+            curves.append(dict(method=method,points=np.asarray(points)))
         moving=_primary(study.table('performance','moving_episodes'))
         value=_column(moving,'true_ratio_db')
         groupcols=[k for k in ('condition','n','method','episode') if k in moving]
@@ -221,7 +313,8 @@ def load_beamforming_plot_data(root, name, page=1):
             if len(common):paired.append(dict(method=method,values=(other.loc[common]-base.loc[common]).to_numpy()))
         data.update(curves=curves,paired=paired,stationary_endpoint=endpoint,
             stationary_condition='static',stationary_dimensions=[32,64,128],
-            stationary_selection='t=n; one exact-covariance loss per simulation')
+            stationary_T=final_t,stationary_primary_t=final_t,
+            stationary_selection='t='+str(final_t)+'; one exact-covariance loss per simulation')
     elif name == 'posterior_anisotropy':
         r=study.array('performance','stories','story')
         A=_saved(r,'section_A','setup_A');frame=_saved(r,'section_frame','setup_section_frame')
@@ -229,17 +322,22 @@ def load_beamforming_plot_data(root, name, page=1):
         nodes=_mesh(B)
         logq=np.einsum('...i,ij,...j->...',nodes,B,nodes)-float(np.max(_saved(r,'section_eigenvalues','setup_eigenvalues')))
         peak=float(np.exp(np.max(logq)))
-        stationary=_normalize(study.table('performance','stationary'))
-        horizon=_column(stationary,'L','t','observations')
-        stationary=stationary[stationary.n.eq(64)&stationary[horizon].eq(64)]
+        stationary=_primary(study.table('performance','stationary'))
+        final_t=int(study.meta('performance')['config']['stationary_T'])
+        stationary=stationary[stationary.condition.eq('static')&stationary.n.eq(64)
+                              &stationary.t.eq(final_t)]
         value=_column(stationary,'true_ratio_db')
         mean=stationary[stationary.method.eq('mean')].set_index('episode')[value]
         iso=stationary[stationary.method.isin(['iso','isotropic'])].set_index('episode')[value]
-        common=mean.index.intersection(iso.index);delta=np.sort((iso.loc[common]-mean.loc[common]).to_numpy())
+        common=mean.index.intersection(iso.index)
+        if len(common)!=256 or not common.is_unique or not mean.index.is_unique or not iso.index.is_unique:
+            raise ValueError('Fixed-T anisotropy comparison needs 256 matched Monte Carlo simulations')
+        delta=np.sort((iso.loc[common]-mean.loc[common]).to_numpy())
         data.update(nodes=nodes,log_density=logq,density_limits=(peak/1e4,peak),
             mean_eigenvalues=_saved(r,'section_mean_eigenvalues','setup_mean_eigenvalues'),
             iso_eigenvalues=_saved(r,'section_iso_mean_eigenvalues','setup_iso_mean_eigenvalues'),
-            differences=delta,cdf=np.arange(1,len(delta)+1)/len(delta))
+            differences=delta,cdf=np.arange(1,len(delta)+1)/len(delta),
+            stationary_T=final_t,stationary_primary_t=final_t,stationary_n=64)
     elif name == 'noise_adaptation':
         frame=_primary(study.table('prediction','adaptation'))
         frame=frame[frame.condition.eq('noise_change')]
@@ -273,8 +371,8 @@ def load_beamforming_plot_data(root, name, page=1):
             if not np.array_equal(recorded.to_numpy(),schedule[recorded.index.to_numpy(dtype=int)-1]):
                 raise ValueError('Saved true variances disagree with the declared noise-change schedule')
             variance[key]=dict(traces=traces,x=measurement_index.copy(),truth=schedule,
-                events=np.array([change_after+.5]) if key=='sigma2' else np.array([]),
-                truth_step_where='mid',
+                events=np.array([change_after+1],dtype=int),
+                truth_step_where='post',
                 reporting_t=recorded.index.to_numpy(dtype=int),
                 estimate_phase='Before receiving the measurement at the stored index')
         # Use the normalized mixture density before receiving u_t. Neither
@@ -284,7 +382,8 @@ def load_beamforming_plot_data(root, name, page=1):
                 raise KeyError('Noise adaptation requires saved '+endpoint)
         data.update(variance=variance,time_label=r'Measurement index $t$',
             reporting_t=np.sort(frame.t.unique()).astype(int),
-            T=total,variance_block_length=int(config['primary_report_every']),
+            T=total,event=change_after+1,
+            variance_block_length=int(config['primary_report_every']),
             task=_traces(frame,'output_oracle_db',time),
             score=_traces(frame,'prequential_score',time),
             task_endpoint='output_oracle_db',score_endpoint='prequential_score',

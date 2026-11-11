@@ -1,3 +1,8 @@
+> The fixed-T200 stationary revision supersedes only the earlier stationary
+> dimension comparison in the historical sections below. See
+> [its configuration and tables](docs/fixed_T200_beamforming.md). Other experiment
+> records retain their original values.
+
 # Final simulation study
 
 Working branch: `test`. Starting revision:
@@ -312,3 +317,41 @@ section occupy `results/main/`, with other figures retained in
 `results/supplementary/`. Scientific data, validation gates and numerical check
 cells remain unchanged. Details and verification commands are in
 [the revised figure notes](docs/revised_numerical_figures.md).
+
+
+## Fixed measurement total for stationary beamforming
+
+The new stationary cohort uses exactly T=200 training measurements at each
+of n=32,64,128, with common checkpoints 25,50,100,200 and primary evaluation
+after the final correction. Parameter selection was repeated on 64 independent
+validation simulations per dimension using the unchanged measured-power
+criterion and candidate grids. Each dimension then completed 256 independent
+final simulations with all ten methods sharing the same training stream.
+
+All 768 final simulations resolved. The 3,072 native posterior means met the
+original 1e-10 tolerance without cap extension. The fresh general-validation
+certificate passed 319 tests. Original mixed performance records, contact,
+variance, moving, theory and isolated timing data remain untouched; the current
+stationary component has its own source hashes and validation certificate.
+
+The main table contains n=64,T=200; the consolidated supplementary table contains
+all three dimensions. Tables use arithmetic means of individual true_ratio_db
+values and Student 95% intervals. Complete all-method and paired summaries are
+retained as CSV/JSON. See [the study notes](docs/fixed_T200_beamforming.md).
+
+
+## Independent moving-interference candidates
+
+The stationary fixed-T200 results retain their main figure and n=64 table,
+consolidated supplementary table and supplementary dimension curve. The
+temporarily repurposed main PDF was preserved separately before the stationary
+figure was restored. The independent moving-interference notebook uses the
+matching original smooth and abrupt records at n=32, T=256, beta=0.97 with
+covariance-based true_ratio_db. Its candidate exports have new filenames and
+do not replace the stationary presentation. Details are in
+[the independent moving study](docs/moving_beamforming.md).
+
+Direction and noise events use t=129 and a single legend entry. The noise
+step, pre-measurement estimates, exact power and mixture predictive densities
+retain their existing numerical records; the new moving notebook never
+writes the noise figure.
