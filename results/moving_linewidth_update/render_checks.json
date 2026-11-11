@@ -1,0 +1,93 @@
+{
+  "status": "passed",
+  "changed_plot_cells": [
+    "smooth-output-power",
+    "abrupt-output-power",
+    "combined-output-power"
+  ],
+  "all_other_stored_cells_exactly_unchanged": true,
+  "all_other_plot_controls_exactly_unchanged": true,
+  "numerical_file_hashes_unchanged": 14,
+  "pointwise_iqr_and_mean_ci_tables_unchanged": true,
+  "no_whole_notebook_rebuild": true,
+  "current_generator_sha256": "cbdf9e43f9c265c8305d24c826422679745ef07a10eb43d7d2b50e2c880d22b5",
+  "notebook_sha256": "6f1e9686d6b6384b9707a758b54527f11682affad2439f3ed6f35c9375a5b60c",
+  "figure_manifest_sha256": "61084f4dcbe0a50665478b074fdb4416f34d3cc6a249a655cfb31b7543c9b869",
+  "plotting_manifest_sha256": "68b6607d6f20323d1734b5764bb95bd2d5612993db7f4f5702e3466ae7d52dec",
+  "actual_pdf_vector_widths_verified": true,
+  "all_original_numerical_inputs_unchanged": true,
+  "outputs": {
+    "moving_interference_smooth_output_power": {
+      "native_size_in": [
+        15,
+        5
+      ],
+      "expected_method_width_pt": 2.142857142857143,
+      "actual_method_widths_pt": {
+        "mean": [
+          2.142857074737549
+        ],
+        "mode": [
+          2.142857074737549
+        ],
+        "iso": [
+          2.142857074737549
+        ],
+        "great_window": [
+          2.142857074737549
+        ]
+      },
+      "event_width_pt": null,
+      "pdf_sha256": "d981235b40f789323a8a8b867d1eedb8221d24a87fa721be31a7e40b3fe8505c",
+      "png_sha256": "64727e68cf85be35cae0917c6293916865b23ab0d14675f96b1c3f8ba1362553"
+    },
+    "moving_interference_abrupt_output_power": {
+      "native_size_in": [
+        15,
+        5
+      ],
+      "expected_method_width_pt": 2.142857142857143,
+      "actual_method_widths_pt": {
+        "mean": [
+          2.142857074737549
+        ],
+        "mode": [
+          2.142857074737549
+        ],
+        "iso": [
+          2.142857074737549
+        ],
+        "great_window": [
+          2.142857074737549
+        ]
+      },
+      "event_width_pt": 1.3,
+      "pdf_sha256": "53bd2719efcd8eb6d3a7627a99c280c5039425c23e57e76363d25ffd9502e42f",
+      "png_sha256": "66de1127548b9d32d007aa850d0375d65518d179e5af1fc82bce99a5e02a63c6"
+    },
+    "moving_interference_comparison": {
+      "native_size_in": [
+        7,
+        3.5
+      ],
+      "expected_method_width_pt": 1.0,
+      "actual_method_widths_pt": {
+        "mean": [
+          1.0
+        ],
+        "mode": [
+          1.0
+        ],
+        "iso": [
+          1.0
+        ],
+        "great_window": [
+          1.0
+        ]
+      },
+      "event_width_pt": 1.3,
+      "pdf_sha256": "822593e92dbf418e2e011881101bda46caf3c4c0b54dd88c6e28f6e4111b0db8",
+      "png_sha256": "3786356ef969d85858654b69551b02f225a872f5fe4bb6145425228e20a272eb"
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "status": "verified",
+  "scope": "User-requested application plotting updates",
+  "baseline_commit": "3b098335ad2c0a2a6cfd17af9103762bb55dcb3f",
+  "previous_proof": "results/solid_trajectory_update/authorized_updates.json",
+  "previous_proof_sha256": "71b7d0286ceff05a61b44d55a83bef8ce8e74041af5ac70d1432f025a6ff7048",
+  "updates": {
+    "notebooks/beamforming_moving_interference.ipynb": {
+      "before_sha256": "9fb1a4f85aa6923a2330c6e7a5208518c286fce8862f17147d0833978e78c563",
+      "after_sha256": "6f1e9686d6b6384b9707a758b54527f11682affad2439f3ed6f35c9375a5b60c",
+      "role": "notebook"
+    },
+    "lib/presentation_update_provenance.py": {
+      "before_sha256": "ba7bcc6ee1d8e49174175225f0649facf9cf2defb3583b68876d0a3c5a1b5547",
+      "after_sha256": "2ac932ca2d8c0b7f9304fc9b17f4975dcdab6c89837e3709441a87c0be3a266b",
+      "role": "presentation_validation_source"
+    },
+    "results/beamforming_moving/figure_manifest.json": {
+      "before_sha256": "8cee545b41f07dbed4dc5ca90df0226767b31d472278b8b790b295edbab2a572",
+      "after_sha256": "61084f4dcbe0a50665478b074fdb4416f34d3cc6a249a655cfb31b7543c9b869",
+      "role": "presentation_metadata"
+    },
+    "results/beamforming_moving/plotting/manifest.json": {
+      "before_sha256": "88f44ebdccc251a5b4f6da5a489783d310a077b6b8ac04c01d83fb6eb0eaef89",
+      "after_sha256": "68b6607d6f20323d1734b5764bb95bd2d5612993db7f4f5702e3466ae7d52dec",
+      "role": "presentation_metadata"
+    },
+    "results/notebook_editability.json": {
+      "before_sha256": "020c41d7bfe32af5aef9f0d90c709d495167446420237c6d45aee318816d388a",
+      "after_sha256": "a4a537b8d1ff1527d2fcc0c410c0389cb5151b9979a359bf526eeb9317f24f4a",
+      "role": "presentation_metadata"
+    },
+    "results/draft_figure_manifest.json": {
+      "before_sha256": "8e0306612be14b8d916ff0822434f514342f2e88835801455457b99ab1ad9e55",
+      "after_sha256": "e236424c9670a35b157872a567c7c40798fcd79dbbb085e16d7d74a75909fc4b",
+      "role": "presentation_metadata"
+    },
+    "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf": {
+      "before_sha256": "9f98fd740a4ae047780545e9dcfb59cb088dedf77824e80b69763cef78b01270",
+      "after_sha256": "53bd2719efcd8eb6d3a7627a99c280c5039425c23e57e76363d25ffd9502e42f",
+      "role": "pdf"
+    },
+    "results/beamforming_moving/figures/moving_interference_comparison.png": {
+      "before_sha256": "d0f517d22202a1a5bf632b431b1b6d01342b5b491e1391d7992875c059db9fc8",
+      "after_sha256": "3786356ef969d85858654b69551b02f225a872f5fe4bb6145425228e20a272eb",
+      "role": "png"
+    },
+    "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf": {
+      "before_sha256": "34912ed2ec3cf2db0be7a4d3232a25a339551610da9ed80d6e80157351257d0c",
+      "after_sha256": "d981235b40f789323a8a8b867d1eedb8221d24a87fa721be31a7e40b3fe8505c",
+      "role": "pdf"
+    },
+    "results/beamforming_moving/figures/moving_interference_comparison.pdf": {
+      "before_sha256": "dd9b32f0439719d5bd53a86dd4433fc2a273a0c5348e7c58594d2afd614c682d",
+      "after_sha256": "822593e92dbf418e2e011881101bda46caf3c4c0b54dd88c6e28f6e4111b0db8",
+      "role": "pdf"
+    },
+    "results/beamforming_moving/figures/moving_interference_smooth_output_power.png": {
+      "before_sha256": "0d7de61ed5f29c36af79edf61082c3f031b4afd8aab165604b930e1bfb8aeda2",
+      "after_sha256": "64727e68cf85be35cae0917c6293916865b23ab0d14675f96b1c3f8ba1362553",
+      "role": "png"
+    },
+    "results/beamforming_moving/figures/moving_interference_abrupt_output_power.png": {
+      "before_sha256": "19f6d4002a19f61403842d6b4011117a37cf82a18d77f64c682d918fe7f24621",
+      "after_sha256": "66de1127548b9d32d007aa850d0375d65518d179e5af1fc82bce99a5e02a63c6",
+      "role": "png"
+    },
+    "results/main/beamforming/moving_interference_abrupt_output_power.pdf": {
+      "before_sha256": "9f98fd740a4ae047780545e9dcfb59cb088dedf77824e80b69763cef78b01270",
+      "after_sha256": "53bd2719efcd8eb6d3a7627a99c280c5039425c23e57e76363d25ffd9502e42f",
+      "role": "pdf"
+    },
+    "results/main/beamforming/moving_interference_comparison.png": {
+      "before_sha256": "d0f517d22202a1a5bf632b431b1b6d01342b5b491e1391d7992875c059db9fc8",
+      "after_sha256": "3786356ef969d85858654b69551b02f225a872f5fe4bb6145425228e20a272eb",
+      "role": "png"
+    },
+    "results/main/beamforming/moving_interference_smooth_output_power.pdf": {
+      "before_sha256": "34912ed2ec3cf2db0be7a4d3232a25a339551610da9ed80d6e80157351257d0c",
+      "after_sha256": "d981235b40f789323a8a8b867d1eedb8221d24a87fa721be31a7e40b3fe8505c",
+      "role": "pdf"
+    },
+    "results/main/beamforming/moving_interference_comparison.pdf": {
+      "before_sha256": "dd9b32f0439719d5bd53a86dd4433fc2a273a0c5348e7c58594d2afd614c682d",
+      "after_sha256": "822593e92dbf418e2e011881101bda46caf3c4c0b54dd88c6e28f6e4111b0db8",
+      "role": "pdf"
+    },
+    "results/main/beamforming/moving_interference_smooth_output_power.png": {
+      "before_sha256": "0d7de61ed5f29c36af79edf61082c3f031b4afd8aab165604b930e1bfb8aeda2",
+      "after_sha256": "64727e68cf85be35cae0917c6293916865b23ab0d14675f96b1c3f8ba1362553",
+      "role": "png"
+    },
+    "results/main/beamforming/moving_interference_abrupt_output_power.png": {
+      "before_sha256": "19f6d4002a19f61403842d6b4011117a37cf82a18d77f64c682d918fe7f24621",
+      "after_sha256": "66de1127548b9d32d007aa850d0375d65518d179e5af1fc82bce99a5e02a63c6",
+      "role": "png"
+    }
+  },
+  "change": "Moving-beamforming trajectory width factor 1.8 to 1.0 only; saved numerical data, other notebook cells and other plotting protocols preserved."
+}

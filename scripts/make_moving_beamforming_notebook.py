@@ -62,7 +62,7 @@ TICK_FONT_SIZE = {11. if combined else 23.}
 LEGEND_FONT_SIZE = {10.5 if combined else 22.}
 PRINT_WIDTH_IN = 7.
 PRINT_SCALE = FIGSIZE[0] / PRINT_WIDTH_IN
-LINE_WIDTH = 1.8 * PRINT_SCALE
+LINE_WIDTH = 1.0 * PRINT_SCALE
 SPINE_WIDTH = 0.95
 IQR_ALPHA = 0.22
 SHOW_IQR = {{"mean": True, "mode": True, "iso": True, "great_window": True}}
@@ -449,7 +449,7 @@ def write_figure_manifest(root,notebook,evidence):
             plotting=dict(labels=12 if condition=='comparison' else 25,
                 ticks=11 if condition=='comparison' else 23,
                 legend=10.5 if condition=='comparison' else 22,
-                line_width=1.8 if condition=='comparison' else 1.8*15/7,
+                line_width=1.0 if condition=='comparison' else 15/7,
                 trajectory_style='Solid lines without markers; original colors retained.'),
             output_hashes=outputs)
         files.update(outputs)

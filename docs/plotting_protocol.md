@@ -38,6 +38,11 @@ experiment and a noise-variance change in the separate variance-estimation
 experiment. It does not denote a sensor fault. Current tiled manuscript
 figures use positional descriptions in their captions instead of panel letters.
 
+Moving-beamforming method curves use `LINE_WIDTH = 1.0 * PRINT_SCALE`, with
+`PRINT_SCALE = FIGSIZE[0] / 7`, so both the compact and individual exports have
+one-point curves at seven-inch insertion width. Their dashed event line
+retains its 1.3-point width.
+
 Ordinary 2D notebook plots have four visible borders, 0.9–0.95 pt wide, with
 inward ticks on all four sides and tick labels on the bottom and left. The
 3D density-sphere presentation and colorbars retain their separate controls.

@@ -50,7 +50,7 @@
       "section": "main",
       "filename": "moving_interference_smooth_output_power.pdf",
       "local_pdf": "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf",
-      "sha256": "34912ed2ec3cf2db0be7a4d3232a25a339551610da9ed80d6e80157351257d0c",
+      "sha256": "d981235b40f789323a8a8b867d1eedb8221d24a87fa721be31a7e40b3fe8505c",
       "bytes": 194675
     },
     "results/main/beamforming/moving_interference_abrupt_output_power.pdf": {
@@ -60,7 +60,7 @@
       "section": "main",
       "filename": "moving_interference_abrupt_output_power.pdf",
       "local_pdf": "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf",
-      "sha256": "9f98fd740a4ae047780545e9dcfb59cb088dedf77824e80b69763cef78b01270",
+      "sha256": "53bd2719efcd8eb6d3a7627a99c280c5039425c23e57e76363d25ffd9502e42f",
       "bytes": 194813
     },
     "results/main/beamforming/moving_interference_comparison.pdf": {
@@ -70,7 +70,7 @@
       "section": "main",
       "filename": "moving_interference_comparison.pdf",
       "local_pdf": "results/beamforming_moving/figures/moving_interference_comparison.pdf",
-      "sha256": "dd9b32f0439719d5bd53a86dd4433fc2a273a0c5348e7c58594d2afd614c682d",
+      "sha256": "822593e92dbf418e2e011881101bda46caf3c4c0b54dd88c6e28f6e4111b0db8",
       "bytes": 337998
     }
   },

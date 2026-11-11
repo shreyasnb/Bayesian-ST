@@ -1,0 +1,341 @@
+{
+  "status": "passed",
+  "notebook": "notebooks/beamforming_moving_interference.ipynb",
+  "notebook_sha256": "6f1e9686d6b6384b9707a758b54527f11682affad2439f3ed6f35c9375a5b60c",
+  "routes": {
+    "results/main/beamforming/moving_interference_smooth_output_power.pdf": {
+      "notebook": "notebooks/beamforming_moving_interference.ipynb",
+      "cell": 9,
+      "example": "beamforming",
+      "section": "main",
+      "filename": "moving_interference_smooth_output_power.pdf",
+      "local_pdf": "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf"
+    },
+    "results/main/beamforming/moving_interference_abrupt_output_power.pdf": {
+      "notebook": "notebooks/beamforming_moving_interference.ipynb",
+      "cell": 11,
+      "example": "beamforming",
+      "section": "main",
+      "filename": "moving_interference_abrupt_output_power.pdf",
+      "local_pdf": "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf"
+    },
+    "results/main/beamforming/moving_interference_comparison.pdf": {
+      "notebook": "notebooks/beamforming_moving_interference.ipynb",
+      "cell": 13,
+      "example": "beamforming",
+      "section": "main",
+      "filename": "moving_interference_comparison.pdf",
+      "local_pdf": "results/beamforming_moving/figures/moving_interference_comparison.pdf"
+    }
+  },
+  "notebook_checks": {
+    "code_cells": 7,
+    "visible_figures": 3,
+    "embedded_images": 3,
+    "text_usetex": true,
+    "dpi": 300,
+    "figure_size_in": [
+      15,
+      5
+    ],
+    "native_combined_size_in": [
+      7,
+      3.5
+    ],
+    "all_bands_empirical_iqr": true,
+    "method_trajectories": {
+      "linestyle": "-",
+      "markers": false,
+      "marker_staggering": false
+    },
+    "numerical_inputs": 20,
+    "producer_sources": 2
+  },
+  "files": {
+    "results/main/beamforming/moving_interference_smooth_output_power.pdf": {
+      "sha256": "d981235b40f789323a8a8b867d1eedb8221d24a87fa721be31a7e40b3fe8505c",
+      "local_pdf": "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf",
+      "png_sha256": "64727e68cf85be35cae0917c6293916865b23ab0d14675f96b1c3f8ba1362553",
+      "png_size_px": [
+        4500,
+        1500
+      ],
+      "figure_size_in": [
+        15,
+        5
+      ]
+    },
+    "results/main/beamforming/moving_interference_abrupt_output_power.pdf": {
+      "sha256": "53bd2719efcd8eb6d3a7627a99c280c5039425c23e57e76363d25ffd9502e42f",
+      "local_pdf": "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf",
+      "png_sha256": "66de1127548b9d32d007aa850d0375d65518d179e5af1fc82bce99a5e02a63c6",
+      "png_size_px": [
+        4500,
+        1500
+      ],
+      "figure_size_in": [
+        15,
+        5
+      ]
+    },
+    "results/main/beamforming/moving_interference_comparison.pdf": {
+      "sha256": "822593e92dbf418e2e011881101bda46caf3c4c0b54dd88c6e28f6e4111b0db8",
+      "local_pdf": "results/beamforming_moving/figures/moving_interference_comparison.pdf",
+      "png_sha256": "3786356ef969d85858654b69551b02f225a872f5fe4bb6145425228e20a272eb",
+      "png_size_px": [
+        2100,
+        1050
+      ],
+      "figure_size_in": [
+        7,
+        3.5
+      ]
+    }
+  },
+  "numerical": {
+    "raw_simulation_rows": 65536,
+    "checkpoint_intervals": 256,
+    "paired_checkpoint_intervals": 192,
+    "paired_checkpoint_differences": 49152,
+    "simulation_time_averages": 2048,
+    "time_average_intervals": 8,
+    "paired_time_average_intervals": 6,
+    "paired_time_average_differences": 1536,
+    "exported_dataframes_roundtripped": 8,
+    "arithmetic_mean_of_individual_db_values": true,
+    "confidence_level": 0.95,
+    "interval_degrees_of_freedom": 255,
+    "exact_covariance_power_and_ideal_power_checked": true,
+    "model_and_shared_posterior_checks": {
+      "smooth": {
+        "saved_simulation": 0,
+        "full_angle_schedule_exact": true,
+        "steering_vectors_match_angles": true,
+        "initial_desired_overlap": 0.5,
+        "uniform_initial_parameter": true,
+        "identity_transport_recursion_verified": true,
+        "shared_corrected_posterior_verified_at": [
+          32,
+          128,
+          256
+        ],
+        "maximum_parameter_absolute_error": 2.842519862355112e-14,
+        "maximum_action_absolute_error": 2.558937633260452e-16,
+        "selected_beta": 0.97
+      },
+      "abrupt": {
+        "saved_simulation": 0,
+        "full_angle_schedule_exact": true,
+        "steering_vectors_match_angles": true,
+        "initial_desired_overlap": 0.5,
+        "uniform_initial_parameter": true,
+        "identity_transport_recursion_verified": true,
+        "shared_corrected_posterior_verified_at": [
+          32,
+          128,
+          256
+        ],
+        "maximum_parameter_absolute_error": 3.552713679859292e-14,
+        "maximum_action_absolute_error": 4.742874840267547e-16,
+        "selected_beta": 0.97
+      }
+    },
+    "time_average_summary": [
+      {
+        "condition": "smooth",
+        "method": "mean",
+        "simulations": 256,
+        "mean": 0.3297822034940866,
+        "lower": 0.32274111421722107,
+        "upper": 0.33682329277095213
+      },
+      {
+        "condition": "smooth",
+        "method": "mode",
+        "simulations": 256,
+        "mean": 0.3306711911667899,
+        "lower": 0.3232585850170583,
+        "upper": 0.3380837973165215
+      },
+      {
+        "condition": "smooth",
+        "method": "iso",
+        "simulations": 256,
+        "mean": 0.33182845650340537,
+        "lower": 0.32469261008904365,
+        "upper": 0.3389643029177671
+      },
+      {
+        "condition": "smooth",
+        "method": "great_window",
+        "simulations": 256,
+        "mean": 0.29623613721994557,
+        "lower": 0.28999088247469035,
+        "upper": 0.3024813919652008
+      },
+      {
+        "condition": "abrupt",
+        "method": "mean",
+        "simulations": 256,
+        "mean": 0.680179718095304,
+        "lower": 0.6685932603864799,
+        "upper": 0.691766175804128
+      },
+      {
+        "condition": "abrupt",
+        "method": "mode",
+        "simulations": 256,
+        "mean": 0.6646205001204009,
+        "lower": 0.6524886020912513,
+        "upper": 0.6767523981495505
+      },
+      {
+        "condition": "abrupt",
+        "method": "iso",
+        "simulations": 256,
+        "mean": 0.6947618672712268,
+        "lower": 0.6828954429042468,
+        "upper": 0.7066282916382068
+      },
+      {
+        "condition": "abrupt",
+        "method": "great_window",
+        "simulations": 256,
+        "mean": 0.6936354218834279,
+        "lower": 0.6840024801560634,
+        "upper": 0.7032683636107924
+      }
+    ],
+    "paired_time_average_summary": [
+      {
+        "condition": "smooth",
+        "reference": "mode",
+        "simulations": 256,
+        "mean": 0.0008889876727032891,
+        "lower": -0.0007695690533085298,
+        "upper": 0.002547544398715108
+      },
+      {
+        "condition": "smooth",
+        "reference": "iso",
+        "simulations": 256,
+        "mean": 0.002046253009318785,
+        "lower": 0.001754684773206967,
+        "upper": 0.002337821245430603
+      },
+      {
+        "condition": "smooth",
+        "reference": "great_window",
+        "simulations": 256,
+        "mean": -0.03354606627414104,
+        "lower": -0.03745232424761401,
+        "upper": -0.029639808300668077
+      },
+      {
+        "condition": "abrupt",
+        "reference": "mode",
+        "simulations": 256,
+        "mean": -0.015559217974903183,
+        "lower": -0.01771485925223755,
+        "upper": -0.013403576697568814
+      },
+      {
+        "condition": "abrupt",
+        "reference": "iso",
+        "simulations": 256,
+        "mean": 0.014582149175922703,
+        "lower": 0.01380648147617249,
+        "upper": 0.015357816875672916
+      },
+      {
+        "condition": "abrupt",
+        "reference": "great_window",
+        "simulations": 256,
+        "mean": 0.013455703788123819,
+        "lower": 0.006212246533229561,
+        "upper": 0.020699161043018076
+      }
+    ],
+    "data_manifest_sha256": "f6a5f19f7850144347e740291113230fa1f1b2f455f669363c471f63aa603895"
+  },
+  "preservation": {
+    "status": "passed",
+    "protected_files": 787,
+    "baseline_sha256": "0e8f8b7f8c69df4e1aa76fa39b69cec855703057612d8cdd4d4211e7adc4e858",
+    "exact_preservation": {
+      "status": "passed",
+      "files_checked": 787,
+      "unchanged_files": 783,
+      "authorized_presentation_updates": [
+        "notebooks/01_array.ipynb",
+        "notebooks/03_contact.ipynb",
+        "results/main/beamforming/noise_adaptation_page1.pdf",
+        "results/main/beamforming/task_performance_output_power.pdf"
+      ],
+      "proof": "results/application_plotting_update/authorized_updates.json",
+      "followup_proof": "results/solid_trajectory_update/authorized_updates.json"
+    },
+    "scientific_data_and_settings_unchanged": true
+  },
+  "figure_manifest": {
+    "manifest": "results/beamforming_moving/figure_manifest.json",
+    "sha256": "61084f4dcbe0a50665478b074fdb4416f34d3cc6a249a655cfb31b7543c9b869",
+    "exported_files": 12,
+    "optional_main_candidates": true
+  },
+  "display_spread": {
+    "points": 256,
+    "simulations_per_point": 256,
+    "all_four_methods": true,
+    "quantiles": [
+      0.25,
+      0.75
+    ],
+    "computed_from_original_trial_records": true,
+    "means_and_original_table_confidence_intervals_unchanged": true,
+    "empirical_spread_not_posterior_credible_interval": true,
+    "exclusive_render_guard_passed": true,
+    "guarded_files": 16,
+    "plotting_manifest_sha256": "68b6607d6f20323d1734b5764bb95bd2d5612993db7f4f5702e3466ae7d52dec"
+  },
+  "scientific_sha256": "e926a6a16fea47e35f0625afcc811d5fbdd533fb812c8c1fa9314484f16b24ee",
+  "input_hashes": {
+    "results/beamforming/data/paper/performance/manifest.json": "473a680b450c3b350fb2ad9259f4678d3ac56bca26ab18581dc88d0bd8cd4dcb",
+    "archive/dd399ba/stationary_source_proof.json": "c693f5b5f874f08a245ef6187c072e1e93c30c2242fde8d7119e8015a8e30222",
+    "results/beamforming/data/paper/performance/moving_checkpoints.csv.gz": "6f07236c41f8ca8696bc9b6cbf5e576411127c65f3f58385068bbb402bea5b29",
+    "results/beamforming/data/paper/performance/selected.json": "81c9d90aeb8a7ae779367d21a4fb857082ce46dddcd3cd932fbcb6af5f947eb7",
+    "results/beamforming/data/paper/performance/stories.npz": "9cb008124703a4fd6d3ee17f8beb96c7270c90472eeeb0c1d89cc82fa38cd8dd",
+    "results/beamforming/tables/paper/performance/validation_curves.csv": "8c5b8025efb2e911cb5402f1b1e64674220a92337687ebff383fc4fcb9d0c433",
+    "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+    "archive/dd399ba/sources/scripts/run_final_beamforming.py": "efeb7b0c53926c88c5aa898d07c6b4a04cb8283c1b6776bad0c43e6a8dc57f68",
+    "archive/dd399ba/sources/tests/test_final_beamforming.py": "61d072eed3117a264ce7c5ec6becb5c995be9179df100cf8dac2f6d117d606d3",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3"
+  },
+  "original_producer_hashes": {
+    "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+    "archive/dd399ba/sources/scripts/run_final_beamforming.py": "efeb7b0c53926c88c5aa898d07c6b4a04cb8283c1b6776bad0c43e6a8dc57f68",
+    "archive/dd399ba/sources/tests/test_final_beamforming.py": "61d072eed3117a264ce7c5ec6becb5c995be9179df100cf8dac2f6d117d606d3",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3"
+  },
+  "current_loader_sha256": "36786cfe98474f00e3a31f96ce7eac5d178a986568765e48fb4656198d67f252"
+}

@@ -82,7 +82,7 @@
     "beamforming_moving_interference.ipynb": {
       "status": "verified",
       "notebook": "beamforming_moving_interference.ipynb",
-      "sha256": "9fb1a4f85aa6923a2330c6e7a5208518c286fce8862f17147d0833978e78c563",
+      "sha256": "6f1e9686d6b6384b9707a758b54527f11682affad2439f3ed6f35c9375a5b60c",
       "code_cells": 7,
       "plotting_cells": 3,
       "rendered_figures": 3,
@@ -353,7 +353,7 @@
     "scripts/check_moving_beamforming.py": "3f179c9d06bc7e9bd82fbdeb4baaf2f8e876efcd3d90c613a340e14dbc76ddc5",
     "scripts/update_fixed_stationary_notebook.py": "9b2bf2668b922be0256cebe8488ee3671ab9ee52800061f79c230d00cf9b0180",
     "scripts/export_stationary_beamforming_tables.py": "888f8d0fd5593246e969ff6a77cf6bc6dd14f46d33e1954864bc78ea53eff3a1",
-    "scripts/make_moving_beamforming_notebook.py": "ca5799430d504756c695076293b64d08fcf1ff8d9622cda10a692246e3253941",
+    "scripts/make_moving_beamforming_notebook.py": "cbdf9e43f9c265c8305d24c826422679745ef07a10eb43d7d2b50e2c880d22b5",
     "scripts/summarize_moving_beamforming.py": "3a37de90350e897531be4c25c342f7f9cdecf3758eac748b510486eb879e355c",
     "lib/beamforming_moving_evidence.py": "36786cfe98474f00e3a31f96ce7eac5d178a986568765e48fb4656198d67f252",
     "lib/final_stationary_evidence.py": "55650162cc4eee030c4925000a1624daca566e101561b6f73138160bca981b55",
@@ -362,7 +362,7 @@
     "scripts/update_contact_plotting_addendum.py": "32426b18728ffc940971e146e75f850720025eb70233a43222a71c408c280ab3",
     "scripts/update_contact_diagnostics_borders.py": "2844838c23242e18d1d764775b8a4a8cabe36e94dd91303b6497f2a4361fbaeb",
     "scripts/make_contact_prediction_diagnostics_notebook.py": "c1b86f9ce279fb11402614c7a1e78362267508b7e80014f46813fdce30f60933",
-    "lib/presentation_update_provenance.py": "ba7bcc6ee1d8e49174175225f0649facf9cf2defb3583b68876d0a3c5a1b5547",
+    "lib/presentation_update_provenance.py": "2ac932ca2d8c0b7f9304fc9b17f4975dcdab6c89837e3709441a87c0be3a266b",
     "scripts/make_beamforming_comparison_audit_notebooks.py": "c8f86c22f54b37257a2b86c4f838c1011ac91c09129efea749d9fff1830da743",
     "scripts/check_beamforming_comparison_audit.py": "f4630977270f53f933cf7b6c09767e24254427951688069d84c7495413b8a96d",
     "lib/beamforming_comparison_summaries.py": "6cd5e3cd3a56067be19b1d2f668ff32a039d83f82ab5b0bc3110c74921d30ba9",
@@ -19270,7 +19270,7 @@
           "local_pdf": "results/notebook_exports/03_contact/paper_summary_supp_page1.pdf"
         },
         "results/main/beamforming/moving_interference_smooth_output_power.pdf": {
-          "sha256": "34912ed2ec3cf2db0be7a4d3232a25a339551610da9ed80d6e80157351257d0c",
+          "sha256": "d981235b40f789323a8a8b867d1eedb8221d24a87fa721be31a7e40b3fe8505c",
           "pages": [
             {
               "page": 1,
@@ -19357,12 +19357,12 @@
             },
             "notebook": "notebooks/beamforming_moving_interference.ipynb",
             "cell": 9,
-            "source_sha256": "a15769e756f171c676d285f2e5f39870aa0d1cfa8fa34e9002b5a0a90989db99"
+            "source_sha256": "5531ac516481086d2de8a01e1f7a6e13e2027d46b85d78b106bbc9b476431ea2"
           },
           "local_pdf": "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf"
         },
         "results/main/beamforming/moving_interference_abrupt_output_power.pdf": {
-          "sha256": "9f98fd740a4ae047780545e9dcfb59cb088dedf77824e80b69763cef78b01270",
+          "sha256": "53bd2719efcd8eb6d3a7627a99c280c5039425c23e57e76363d25ffd9502e42f",
           "pages": [
             {
               "page": 1,
@@ -19449,12 +19449,12 @@
             },
             "notebook": "notebooks/beamforming_moving_interference.ipynb",
             "cell": 11,
-            "source_sha256": "3b02f330cc61fa43a6fbc43b65a33159281b1f2b4527b332048ecae77d682e84"
+            "source_sha256": "f21022b8d683700d31283bd28fb6015677c24231274ba06178189fcc5c4d65d5"
           },
           "local_pdf": "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf"
         },
         "results/main/beamforming/moving_interference_comparison.pdf": {
-          "sha256": "dd9b32f0439719d5bd53a86dd4433fc2a273a0c5348e7c58594d2afd614c682d",
+          "sha256": "822593e92dbf418e2e011881101bda46caf3c4c0b54dd88c6e28f6e4111b0db8",
           "pages": [
             {
               "page": 1,
@@ -19561,7 +19561,7 @@
             },
             "notebook": "notebooks/beamforming_moving_interference.ipynb",
             "cell": 13,
-            "source_sha256": "1d3d982823af12cfc3a62e43016ce3cee0142f83bf534b75f26d01c98de1ffe0"
+            "source_sha256": "a374221fe15f4f3d107bdc57350f1708c03f983da184455c6c6237a34c1d8ce5"
           },
           "local_pdf": "results/beamforming_moving/figures/moving_interference_comparison.pdf"
         }
@@ -64818,7 +64818,7 @@
       ]
     },
     "three_dimensional_spheres_preserved": true,
-    "current_actual_pdf_audit": "results/solid_trajectory_update/pdf_layout_checks.json"
+    "current_actual_pdf_audit": "results/moving_linewidth_update/pdf_layout_checks.json"
   },
   "historical_pre_solid_trajectories": {
     "scope": "User-requested application plotting updates: compact moving comparison with empirical interquartile performance bands; four-sided 2D borders; targeted contact input scan and saved identity-transport control. Original scientific records and source certificates retained.",
@@ -83741,5 +83741,16 @@
     },
     "contact_extra_supplementary_figures": 4,
     "late_error_increase_preserved": true
+  },
+  "moving_linewidth_update": {
+    "status": "verified",
+    "line_width_factor": 1.0,
+    "scale": "FIGSIZE[0]/7",
+    "combined_native_line_width_pt": 1.0,
+    "individual_native_line_width_pt": 2.142857142857143,
+    "event_width_pt": 1.3,
+    "other_controls_and_numerical_results_unchanged": true,
+    "proof": "results/moving_linewidth_update/authorized_updates.json",
+    "figure_manifest": "results/beamforming_moving/figure_manifest.json"
   }
 }

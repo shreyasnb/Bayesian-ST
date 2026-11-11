@@ -2,7 +2,7 @@
   "schema": 1,
   "status": "completed",
   "producer": "scripts/make_moving_beamforming_notebook.py",
-  "producer_sha256": "ca5799430d504756c695076293b64d08fcf1ff8d9622cda10a692246e3253941",
+  "producer_sha256": "cbdf9e43f9c265c8305d24c826422679745ef07a10eb43d7d2b50e2c880d22b5",
   "inputs": {
     "results/beamforming/data/paper/performance/manifest.json": "473a680b450c3b350fb2ad9259f4678d3ac56bca26ab18581dc88d0bd8cd4dcb",
     "archive/dd399ba/stationary_source_proof.json": "c693f5b5f874f08a245ef6187c072e1e93c30c2242fde8d7119e8015a8e30222",
@@ -46,5 +46,13 @@
     "plotting_cell_sources_unchanged": true,
     "all_rendered_assets_unchanged": true,
     "pointwise_statistics_unchanged": true
+  },
+  "line_width_only_source_update": {
+    "previous_generator_sha256": "ca5799430d504756c695076293b64d08fcf1ff8d9622cda10a692246e3253941",
+    "current_generator_sha256": "cbdf9e43f9c265c8305d24c826422679745ef07a10eb43d7d2b50e2c880d22b5",
+    "updated_utc": "2026-11-11T04:17:36.528591+00:00",
+    "pointwise_statistics_recomputed": false,
+    "source_change": "Method LINE_WIDTH 1.8*PRINT_SCALE to 1.0*PRINT_SCALE only; event-line width remains 1.3.",
+    "all_numerical_artifacts_unchanged": true
   }
 }

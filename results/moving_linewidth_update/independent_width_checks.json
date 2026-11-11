@@ -1,0 +1,138 @@
+{
+  "status": "passed",
+  "baseline_commit": "3b098335ad2c0a2a6cfd17af9103762bb55dcb3f",
+  "notebook": "notebooks/beamforming_moving_interference.ipynb",
+  "notebook_sha256": "6f1e9686d6b6384b9707a758b54527f11682affad2439f3ed6f35c9375a5b60c",
+  "changed_plot_cells": [
+    9,
+    11,
+    13
+  ],
+  "all_other_notebook_cells_exact": true,
+  "files": {
+    "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf": {
+      "before_sha256": "34912ed2ec3cf2db0be7a4d3232a25a339551610da9ed80d6e80157351257d0c",
+      "after_sha256": "d981235b40f789323a8a8b867d1eedb8221d24a87fa721be31a7e40b3fe8505c",
+      "native_method_width_pt": 2.142857142857143,
+      "method_width_at_seven_inches_pt": 1.0,
+      "curves_and_legend": {
+        "mean": {
+          "curves": 1,
+          "legend": 1
+        },
+        "mode": {
+          "curves": 1,
+          "legend": 1
+        },
+        "iso": {
+          "curves": 1,
+          "legend": 1
+        },
+        "great_window": {
+          "curves": 1,
+          "legend": 1
+        }
+      },
+      "changed_stroke_paths": 8,
+      "event_stroke_width_pt": 1.3,
+      "event_paths": [],
+      "all_other_vector_geometry_text_colors_opacities_bands_exact": true
+    },
+    "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf": {
+      "before_sha256": "9f98fd740a4ae047780545e9dcfb59cb088dedf77824e80b69763cef78b01270",
+      "after_sha256": "53bd2719efcd8eb6d3a7627a99c280c5039425c23e57e76363d25ffd9502e42f",
+      "native_method_width_pt": 2.142857142857143,
+      "method_width_at_seven_inches_pt": 1.0,
+      "curves_and_legend": {
+        "mean": {
+          "curves": 1,
+          "legend": 1
+        },
+        "mode": {
+          "curves": 1,
+          "legend": 1
+        },
+        "iso": {
+          "curves": 1,
+          "legend": 1
+        },
+        "great_window": {
+          "curves": 1,
+          "legend": 1
+        }
+      },
+      "changed_stroke_paths": 8,
+      "event_stroke_width_pt": 1.3,
+      "event_paths": [
+        {
+          "width_points": 1.2999999523162842,
+          "bounds": [
+            565.4505004882812,
+            3.2806396484375,
+            565.4505004882812,
+            219.0010986328125
+          ]
+        },
+        {
+          "width_points": 1.2999999523162842,
+          "bounds": [
+            709.8464965820312,
+            295.37078857421875,
+            749.446533203125,
+            295.37078857421875
+          ]
+        }
+      ],
+      "all_other_vector_geometry_text_colors_opacities_bands_exact": true
+    },
+    "results/beamforming_moving/figures/moving_interference_comparison.pdf": {
+      "before_sha256": "dd9b32f0439719d5bd53a86dd4433fc2a273a0c5348e7c58594d2afd614c682d",
+      "after_sha256": "822593e92dbf418e2e011881101bda46caf3c4c0b54dd88c6e28f6e4111b0db8",
+      "native_method_width_pt": 1.0,
+      "method_width_at_seven_inches_pt": 1.0,
+      "curves_and_legend": {
+        "mean": {
+          "curves": 2,
+          "legend": 1
+        },
+        "mode": {
+          "curves": 2,
+          "legend": 1
+        },
+        "iso": {
+          "curves": 2,
+          "legend": 1
+        },
+        "great_window": {
+          "curves": 2,
+          "legend": 1
+        }
+      },
+      "changed_stroke_paths": 12,
+      "event_stroke_width_pt": 1.3,
+      "event_paths": [
+        {
+          "width_points": 1.2999999523162842,
+          "bounds": [
+            391.4615478515625,
+            2.8800048828125,
+            391.4615478515625,
+            177.8441162109375
+          ]
+        },
+        {
+          "width_points": 1.2999999523162842,
+          "bounds": [
+            338.2059631347656,
+            221.20654296875,
+            357.10595703125,
+            221.20654296875
+          ]
+        }
+      ],
+      "all_other_vector_geometry_text_colors_opacities_bands_exact": true
+    }
+  },
+  "scope": "Only PDF vector paths and notebook sources are read; no plotting, simulation or timing is executed.",
+  "checker_sha256": "d9b9ed40dfb335f7799cbb974e99ae2dfd9ed291a7574302079e5cad4420e1e9"
+}

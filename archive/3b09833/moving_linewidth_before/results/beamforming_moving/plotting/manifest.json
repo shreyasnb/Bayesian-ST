@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "status": "completed",
+  "producer": "scripts/make_moving_beamforming_notebook.py",
+  "producer_sha256": "ca5799430d504756c695076293b64d08fcf1ff8d9622cda10a692246e3253941",
+  "inputs": {
+    "results/beamforming/data/paper/performance/manifest.json": "473a680b450c3b350fb2ad9259f4678d3ac56bca26ab18581dc88d0bd8cd4dcb",
+    "archive/dd399ba/stationary_source_proof.json": "c693f5b5f874f08a245ef6187c072e1e93c30c2242fde8d7119e8015a8e30222",
+    "results/beamforming/data/paper/performance/moving_checkpoints.csv.gz": "6f07236c41f8ca8696bc9b6cbf5e576411127c65f3f58385068bbb402bea5b29",
+    "results/beamforming/data/paper/performance/selected.json": "81c9d90aeb8a7ae779367d21a4fb857082ce46dddcd3cd932fbcb6af5f947eb7",
+    "results/beamforming/data/paper/performance/stories.npz": "9cb008124703a4fd6d3ee17f8beb96c7270c90472eeeb0c1d89cc82fa38cd8dd",
+    "results/beamforming/tables/paper/performance/validation_curves.csv": "8c5b8025efb2e911cb5402f1b1e64674220a92337687ebff383fc4fcb9d0c433",
+    "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+    "archive/dd399ba/sources/scripts/run_final_beamforming.py": "efeb7b0c53926c88c5aa898d07c6b4a04cb8283c1b6776bad0c43e6a8dc57f68",
+    "archive/dd399ba/sources/tests/test_final_beamforming.py": "61d072eed3117a264ce7c5ec6becb5c995be9179df100cf8dac2f6d117d606d3",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3"
+  },
+  "artifacts": {
+    "results/beamforming_moving/plotting/pointwise_iqr.csv": "8d210559255d3adde8df98ab7eeda857dde934026727c53801bef0a31b8010e7",
+    "results/beamforming_moving/plotting/run_guard.json": "56b02726657d2f22b9c09c9a83cdce25de2671a84f4fe604ba63e43b326fe298"
+  },
+  "display": "Pointwise empirical 25th\u201375th percentiles of true_ratio_db across all 256 simulations.",
+  "mean_definition": "The existing arithmetic Monte Carlo mean at each saved measurement index.",
+  "points": 256,
+  "simulations_per_point": 256,
+  "means_unchanged": true,
+  "no_smoothing_jitter_or_added_points": true,
+  "old_confidence_intervals_unchanged": true,
+  "render_guard": "Passed under the shared exclusive notebook-render lock.",
+  "caption_only_source_update": {
+    "scope": "Caption and explanatory markdown only; no rendering or numerical computation.",
+    "updated_utc": "2026-11-11T02:21:58.957181+00:00",
+    "previous_generator_sha256": "7c43a9091f29409f347db8d26968a2474b5f23defa80a63a6699deefbe9981c5",
+    "current_generator_sha256": "ca5799430d504756c695076293b64d08fcf1ff8d9622cda10a692246e3253941",
+    "plotting_functions_unchanged": true,
+    "plotting_cell_sources_unchanged": true,
+    "all_rendered_assets_unchanged": true,
+    "pointwise_statistics_unchanged": true
+  }
+}

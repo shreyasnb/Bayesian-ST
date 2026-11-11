@@ -14,6 +14,7 @@ from pathlib import Path, PurePosixPath
 
 PROOF = 'results/application_plotting_update/authorized_updates.json'
 FOLLOWUP_PROOF = 'results/solid_trajectory_update/authorized_updates.json'
+WIDTH_PROOF = 'results/moving_linewidth_update/authorized_updates.json'
 NOTEBOOKS = {
     'notebooks/01_array.ipynb', 'notebooks/03_contact.ipynb',
     'notebooks/beamforming_moving_interference.ipynb',
@@ -97,7 +98,7 @@ def load_authorized_updates(root):
     """
     root = Path(root).resolve()
     updates = {}
-    for filename in (PROOF, FOLLOWUP_PROOF):
+    for filename in (PROOF, FOLLOWUP_PROOF, WIDTH_PROOF):
         path = root/filename
         if not path.is_file():
             continue
