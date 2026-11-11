@@ -380,3 +380,28 @@ closes most of the earlier GREAT gap; more EW optimization steps substantially
 reduce the moving optimization error, with rare transient errors retained.
 The posterior mean has no uniform frequentist dB-performance advantage.
 See [the complete comparison audit](docs/beamforming_comparison_audit.md).
+
+## Solid trajectories and contact transport diagnostics
+
+Application method trajectories and legend handles now use solid lines without
+sampling markers. Standalone scientific points and dashed event indicators are
+retained. Layouts, line widths, colours, existing uncertainty bands and original
+numerical results are preserved; the identity-transport contact control now has
+the separately requested dark gray colour. Copy-pastable, statistically verified
+captions are in [the caption file](docs/solid_trajectory_captions.tex).
+
+The original 256 sphere simulations were replayed with unchanged settings and
+seeds to retain all 48 existing prediction indices. All 14,336 frozen checkpoint
+and whole-run rows match the original tolerances; 24,576 native moment checks
+pass. Original data are unchanged, with recovered records stored separately in
+`results/contact_transport_diagnostics/`. The identity-control rise between
+t=128 and 192 is widespread (94.5% of simulations); the dense history also
+preserves its temporary advantage near t=160. Four supplementary diagnostics
+check paired changes, projector transport, input excitation and posterior
+curvature. The prescribed rotation schedule alone does not establish a causal
+explanation. A short draft explanation is in
+[contact_transport_explanation.tex](docs/contact_transport_explanation.tex).
+
+The contact information figure keeps its exact divergence curves and adds a
+thin connector at the actual values 0.2395700487 at 5 degrees and 0.2307692308
+at 30 degrees, with no equality imposed on their heights.

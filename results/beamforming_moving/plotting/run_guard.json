@@ -15,12 +15,6 @@
     "results/beamforming_moving/tables/paired_checkpoint_summary.csv": "824b9b8d260fec417da0309d86f493fcd32dbb2cda0f28e251c50f0919d981c1",
     "results/beamforming_moving/tables/paired_time_average_summary.csv": "6540fd4a8741521d79bfd8eb466140d82e820d38deceab6013e62ff17c753ded",
     "results/beamforming_moving/tables/paired_checkpoint_differences.csv.gz": "82d09a3fd4a97906d14b1f54900baf4a5a4966f6a573507ab7afcae3d3e444cf",
-    "notebooks/contact_prediction_diagnostics.ipynb": "57f057fcc7d8992bed5de2c591f5253add4e232aed6a85328787ee03c6eecca7",
-    "notebooks/04_implementation_audit.ipynb": "97886604c9a0af612526943bcce50df6a9e6b3818bdb585e94e9a17b69e237e3",
-    "notebooks/02_field.ipynb": "bd54ee558e46f39e609cb1a7e36a838359baf77de87e01abdcea592480700e6c",
-    "notebooks/03_contact.ipynb": "292225145b174378d6590cb11db7e156946a58c091c163a26d70e20f1aaf5858",
-    "notebooks/00_theory.ipynb": "7ed7d7027c9e660f3d6fb82e7ff8f9fcd1db03edeaa4fb8e34b6a84e64f0457f",
-    "notebooks/01_array.ipynb": "c3f7e8abff6a4c2106cd27c4dda150ff0c8c0a375de945e7035a3e283cc251c6",
     "results/beamforming/data/paper/performance/manifest.json": "473a680b450c3b350fb2ad9259f4678d3ac56bca26ab18581dc88d0bd8cd4dcb",
     "results/beamforming/data/paper/performance/selected.json": "81c9d90aeb8a7ae779367d21a4fb857082ce46dddcd3cd932fbcb6af5f947eb7",
     "results/beamforming/data/paper/performance/moving_checkpoints.csv.gz": "6f07236c41f8ca8696bc9b6cbf5e576411127c65f3f58385068bbb402bea5b29"
@@ -39,17 +33,11 @@
     "results/beamforming_moving/tables/paired_checkpoint_summary.csv": "824b9b8d260fec417da0309d86f493fcd32dbb2cda0f28e251c50f0919d981c1",
     "results/beamforming_moving/tables/paired_time_average_summary.csv": "6540fd4a8741521d79bfd8eb466140d82e820d38deceab6013e62ff17c753ded",
     "results/beamforming_moving/tables/paired_checkpoint_differences.csv.gz": "82d09a3fd4a97906d14b1f54900baf4a5a4966f6a573507ab7afcae3d3e444cf",
-    "notebooks/contact_prediction_diagnostics.ipynb": "57f057fcc7d8992bed5de2c591f5253add4e232aed6a85328787ee03c6eecca7",
-    "notebooks/04_implementation_audit.ipynb": "97886604c9a0af612526943bcce50df6a9e6b3818bdb585e94e9a17b69e237e3",
-    "notebooks/02_field.ipynb": "bd54ee558e46f39e609cb1a7e36a838359baf77de87e01abdcea592480700e6c",
-    "notebooks/03_contact.ipynb": "292225145b174378d6590cb11db7e156946a58c091c163a26d70e20f1aaf5858",
-    "notebooks/00_theory.ipynb": "7ed7d7027c9e660f3d6fb82e7ff8f9fcd1db03edeaa4fb8e34b6a84e64f0457f",
-    "notebooks/01_array.ipynb": "c3f7e8abff6a4c2106cd27c4dda150ff0c8c0a375de945e7035a3e283cc251c6",
     "results/beamforming/data/paper/performance/manifest.json": "473a680b450c3b350fb2ad9259f4678d3ac56bca26ab18581dc88d0bd8cd4dcb",
     "results/beamforming/data/paper/performance/selected.json": "81c9d90aeb8a7ae779367d21a4fb857082ce46dddcd3cd932fbcb6af5f947eb7",
     "results/beamforming/data/paper/performance/moving_checkpoints.csv.gz": "6f07236c41f8ca8696bc9b6cbf5e576411127c65f3f58385068bbb402bea5b29"
   },
   "all_protected_files_unchanged": true,
-  "protected_count": 22,
-  "scope": "All other notebooks and original numerical/settings files were unchanged during this exclusive render window."
+  "protected_count": 16,
+  "scope": "Original numerical/settings files were unchanged during this exclusive render window; separately authorized notebook/figure updates are outside this data-only guard."
 }

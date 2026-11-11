@@ -1,0 +1,38 @@
+{
+  "beamforming": [
+    {
+      "group": "('static', np.float64(1.0), np.True_, np.False_, 'balanced')",
+      "t": [
+        16384
+      ],
+      "realizations": 128
+    },
+    {
+      "group": "('static', np.float64(1.0), np.False_, np.True_, 'balanced')",
+      "t": [
+        256
+      ],
+      "realizations": 128
+    }
+  ],
+  "contact": [
+    {
+      "group": "('static', np.float64(1.0), np.True_, np.False_, 'balanced')",
+      "t": [
+        16384
+      ],
+      "realizations": 128
+    },
+    {
+      "group": "('static', np.float64(1.0), np.False_, np.False_, 'concentrated')",
+      "t": [
+        256
+      ],
+      "realizations": 128
+    }
+  ],
+  "hashes": {
+    "scripts/notebook_trajectory_style.py": "d51ce04df2af2f2abfb687b44f52ccaf167032c4276e52b0f0a7fb78cec7413e",
+    "scripts/notebook_publication_style.py": "b0b0287c5ac4ea7cf332734b23e00aa48b534d55b49850747bbf52ef7c04fd41"
+  }
+}

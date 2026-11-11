@@ -166,10 +166,15 @@ def _notebook_check(root, notebook, routes, data):
             assert ast.literal_eval(assigned['IQR_ALPHA'])==.22
             assert ast.literal_eval(assigned['SPINE_WIDTH'])==.95
             assert all(ast.literal_eval(assigned['SHOW_IQR']).values())
-            assert ast.literal_eval(assigned['MARKER_OFFSETS'])=={'mean':0,'mode':1,'iso':2,'great_window':3}
+            assert 'MARKER_OFFSETS' not in assigned and 'MARKER_SIZE' not in assigned
             styles=ast.literal_eval(assigned['STYLE'])
             assert {key:value[2:] for key,value in styles.items()}=={
-                'mean':('o','-'),'mode':('s','--'),'iso':('^','-.'),'great_window':('D',':')}
+                method:('-',) for method in ('mean','mode','iso','great_window')}
+            trajectories=[call for call in calls if _qualified(call.func)=='ax.plot']
+            assert len(trajectories)==1
+            keywords={item.arg:item.value for item in trajectories[0].keywords}
+            assert not {'marker','markersize','markevery'} & set(keywords)
+            assert isinstance(keywords['linestyle'],ast.Name) and keywords['linestyle'].id=='linestyle_'
             assert not any(isinstance(call.func,ast.Attribute) and call.func.attr in ('set_visible','annotate','text') for call in calls)
             quantiles=[call for call in calls if isinstance(call.func,ast.Attribute) and call.func.attr=='quantile']
             assert len(quantiles)==1 and ast.literal_eval(quantiles[0].args[0])==[.25,.75]
@@ -196,6 +201,7 @@ def _notebook_check(root, notebook, routes, data):
     return dict(code_cells=code_count, visible_figures=figures, embedded_images=images,
                 text_usetex=True, dpi=300, figure_size_in=[15, 5],
                 native_combined_size_in=[7,3.5],all_bands_empirical_iqr=True,
+                method_trajectories=dict(linestyle='-',markers=False,marker_staggering=False),
                 numerical_inputs=len(inputs), producer_sources=len(sources))
 
 
@@ -491,6 +497,7 @@ def main():
     args = parser.parse_args()
     report = optional_moving_routes(args.root) if args.routes_only else fullcheck(args.root)
     if args.report:
+        args.report.parent.mkdir(parents=True,exist_ok=True)
         args.report.write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps(report, indent=2))
 

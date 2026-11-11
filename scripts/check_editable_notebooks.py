@@ -34,6 +34,9 @@ HIDDEN_RENDER_MODULES = {
     'lib.final_paper_visuals', 'lib.final_information_visuals', 'lib.visuals',
     'lib.story_visuals', 'lib.decision_visuals',
     'scripts.plot_final_simulations', 'scripts.plot_implementation_audit'}
+# This unchanged numerical function evaluates a Gaussian divergence and creates
+# no artists. Its containing module also has renderers, which remain forbidden.
+NUMERICAL_IMPORTS = {'lib.final_information_visuals': {'exact_contact_kl'}}
 
 
 def sha(path):
@@ -171,7 +174,9 @@ def verify_notebook(root, name, require_executed=True, check_pdfs=False):
                     location + ': hidden plotting helper ' + function)
             for node in ast.walk(tree):
                 if isinstance(node, ast.ImportFrom):
-                    assert node.module not in HIDDEN_RENDER_MODULES, (
+                    numerical_only = (node.module in NUMERICAL_IMPORTS
+                        and {alias.name for alias in node.names} <= NUMERICAL_IMPORTS[node.module])
+                    assert node.module not in HIDDEN_RENDER_MODULES or numerical_only, (
                         location + ': imports a hidden renderer ' + str(node.module))
                 if isinstance(node, ast.Import):
                     assert not any(alias.name in HIDDEN_RENDER_MODULES for alias in node.names), (

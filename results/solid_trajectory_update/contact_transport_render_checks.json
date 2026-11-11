@@ -1,0 +1,89 @@
+{
+  "status": "passed",
+  "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+  "updated_original_plot_cells": [
+    4,
+    6
+  ],
+  "appended_figures": [
+    "transport_paired_rise",
+    "transport_projector_change",
+    "transport_excitation",
+    "transport_curvature"
+  ],
+  "protection": {
+    "status": "passed",
+    "numeric_inputs": 64,
+    "unselected_assets": 8,
+    "unchanged_original_cell_objects": 11,
+    "baseline": "/tmp/contact-dense-transport-baseline-lvwjf1gv.json",
+    "reports": [
+      {
+        "figure": "prediction_error_stationary",
+        "solid_markerless_trajectories": 3,
+        "line_arrays_equal": true,
+        "CI_paths_equal": true,
+        "band_alpha_equal": true,
+        "labels_colors_widths_fonts_figsize_limits_equal": true,
+        "legend_handles_solid_markerless": true
+      },
+      {
+        "figure": "prediction_error_sphere",
+        "action_times": 48,
+        "simulations": 256,
+        "all_verified_means_exact": true,
+        "all_original_checkpoint_means_and_CIs_unchanged": true,
+        "mean_Student_CI_polygon_exact": true,
+        "original_colors_except_gray_identity": true,
+        "line_widths_labels_fonts_figsize_and_band_opacity_unchanged": true,
+        "solid_markerless_trajectories": 4,
+        "event_at_128_added": false
+      },
+      {
+        "figure": "transport_paired_rise",
+        "verified_saved_data_only": true,
+        "solid_markerless_trajectories": true,
+        "four_borders": true,
+        "figure_size_in": [
+          15,
+          5
+        ],
+        "dpi": 300
+      },
+      {
+        "figure": "transport_projector_change",
+        "verified_saved_data_only": true,
+        "solid_markerless_trajectories": true,
+        "four_borders": true,
+        "figure_size_in": [
+          15,
+          5
+        ],
+        "dpi": 300
+      },
+      {
+        "figure": "transport_excitation",
+        "verified_saved_data_only": true,
+        "solid_markerless_trajectories": true,
+        "four_borders": true,
+        "figure_size_in": [
+          15,
+          5
+        ],
+        "dpi": 300
+      },
+      {
+        "figure": "transport_curvature",
+        "verified_saved_data_only": true,
+        "solid_markerless_trajectories": true,
+        "four_borders": true,
+        "figure_size_in": [
+          15,
+          5
+        ],
+        "dpi": 300
+      }
+    ],
+    "scope": "Original numerical evidence and all untouched contact forest/3D exports; only two histories and appended diagnostics rendered."
+  }
+}

@@ -1,0 +1,1086 @@
+{
+  "schema": 1,
+  "status": "verified",
+  "scope": "User-requested application plotting updates",
+  "baseline_commit": "2e2767abdd7355f1c6494ec5757f7898a2601d5a",
+  "previous_proof": "results/application_plotting_update/authorized_updates.json",
+  "previous_proof_sha256": "d78947f41b1ef331aae7258e4243eaf4046251b59e4fc94bc29d0124a986aff4",
+  "local_baseline_sha256": "b1894ba3e6fffe3c59a621f6f567a5b874d6b5e50500598091132816b7f8ec2f",
+  "baseline_files": 33158,
+  "unchanged_files": 32944,
+  "updates": {
+    "lib/presentation_update_provenance.py": {
+      "before_sha256": "a5042942fb776d330748fe047b9e9b9f25ac8de8f3ee82a14b5690a1e35f5460",
+      "after_sha256": "ba7bcc6ee1d8e49174175225f0649facf9cf2defb3583b68876d0a3c5a1b5547",
+      "role": "presentation_validation_source"
+    },
+    "notebooks/01_array.ipynb": {
+      "before_sha256": "4d9ef07d744f6c4934a6bc9d8a99e594daf63fe4ec7c9241e02b7d520aa85f3b",
+      "after_sha256": "6ab791435ca6160435cc9427a2f6c1d3de91896fa3be81f911b10d8ff92b74a4",
+      "role": "notebook"
+    },
+    "notebooks/03_contact.ipynb": {
+      "before_sha256": "34436b8e8643d34faf29a80095c5426fa8b80307323152f3e4d64c95da290151",
+      "after_sha256": "b2f8fb559ce25097fee1acf86b8e50228f5ee35df407b9225b1acd2f63b033de",
+      "role": "notebook"
+    },
+    "notebooks/beamforming_moving_comparison_audit.ipynb": {
+      "before_sha256": "f5f9a147d2c4b69e7c47605cfc756b1380f68c6084af1d466acce9309d224aea",
+      "after_sha256": "3241ab12e452d839987db89215826097c05e38774d06941c0c17920dcd1085b8",
+      "role": "notebook"
+    },
+    "notebooks/beamforming_moving_interference.ipynb": {
+      "before_sha256": "81122ee489132286e48deb8208d4f7d694d1deafbb1b13b02e6ef4db8f9066d4",
+      "after_sha256": "9fb1a4f85aa6923a2330c6e7a5208518c286fce8862f17147d0833978e78c563",
+      "role": "notebook"
+    },
+    "notebooks/beamforming_stationary_comparison_audit.ipynb": {
+      "before_sha256": "b2a69b1527215878b23b871ce11f0a97a709297286627ee34de900ab6227190e",
+      "after_sha256": "848047e02112aa02e1f53334b1e548a3042a60753212e22eec74407d852576a1",
+      "role": "notebook"
+    },
+    "notebooks/contact_prediction_diagnostics.ipynb": {
+      "before_sha256": "57f057fcc7d8992bed5de2c591f5253add4e232aed6a85328787ee03c6eecca7",
+      "after_sha256": "be97359cc1af07d7fe2ca64d31fc5f00e67a2bb347dacec60b209800a96c35a7",
+      "role": "notebook"
+    },
+    "results/beamforming_comparison_audit/moving/figure_manifest.json": {
+      "before_sha256": "18f52b47bab8d70e8db26abaa848b6d2cdebeee27711e5c65ba1f8d1dc44a05e",
+      "after_sha256": "705741681942a36c3f3673ebd7027f09ba2a08c012e620e36a5fecfa0e4f6524",
+      "role": "presentation_metadata"
+    },
+    "results/beamforming_comparison_audit/moving/figures/abrupt_history.pdf": {
+      "before_sha256": "4f8b71f93a0bcbd8fa7867b2c660bde3c59225d4a929344e13c0b53bdd838bba",
+      "after_sha256": "88298fd47f38e16c5096c64561cd9bad71c82f98404d7115b3e30b9dbc596d28",
+      "role": "pdf"
+    },
+    "results/beamforming_comparison_audit/moving/figures/abrupt_history.png": {
+      "before_sha256": "3fa8700aa192f93a283b54236fe9874a9c8e65f8158ac156f67bd095b7f2aecd",
+      "after_sha256": "4d9bc9bf2f650533740acca7b1770e129a3d57112a4c11cb36b01b7c240e06c9",
+      "role": "png"
+    },
+    "results/beamforming_comparison_audit/moving/figures/posterior_mean_beta.pdf": {
+      "before_sha256": "be2fa63a1979d4f05498ea1e31fd9837338fb57f89ae54078e18d3ae34b31c08",
+      "after_sha256": "9234c46ec0e5c4a3cc3f5f6add55f0e3c631f8434f16d34b4682d44702624637",
+      "role": "pdf"
+    },
+    "results/beamforming_comparison_audit/moving/figures/posterior_mean_beta.png": {
+      "before_sha256": "09bc9be8db83f1e653220ce5f1ec37e36a54c0b41360fd9391940c9e44b8b786",
+      "after_sha256": "7d0847c2d93c3f55729ae7a95d861c6a703311a2a6ae45fce71d1b1f389dc811",
+      "role": "png"
+    },
+    "results/beamforming_comparison_audit/moving/figures/smooth_history.pdf": {
+      "before_sha256": "7930f38ffcdf2a6c01404d375cf8a49120bf10c1ddb84cd1ab2d298c05511558",
+      "after_sha256": "fbc7736ada2f9accb1f10d0be4534ec8353a153a2d5feb2be8706d0ae3cf806d",
+      "role": "pdf"
+    },
+    "results/beamforming_comparison_audit/moving/figures/smooth_history.png": {
+      "before_sha256": "44541433dbc82449995704947eedc12abc589b21f5bb4c3db3c0c0d8e7e64a49",
+      "after_sha256": "e4e42a800322dd5cf58247fa5a045aa5b5c08d31747ad6fa84b1d12615f7d8dc",
+      "role": "png"
+    },
+    "results/beamforming_comparison_audit/stationary/figure_manifest.json": {
+      "before_sha256": "a1aa8baff2400e19fd6fb6d9ad6b80f31ec1e5d98f5dbfdaf6c5e3f7605c7648",
+      "after_sha256": "7e208b7dec772ec4393839c5c76173e58075c3751f0cbda2e5d6530395997d6f",
+      "role": "presentation_metadata"
+    },
+    "results/beamforming_comparison_audit/stationary/figures/final_time_selection.pdf": {
+      "before_sha256": "bf03ff49a99da751e9d1d8af207d2e1c7bf5e5ae35d3d2aa593a0dac72228392",
+      "after_sha256": "cc3d1e64f6d5c4bc93c315ac70c96d9bd383e9553a7ce014a3f358f7d26f4b7d",
+      "role": "pdf"
+    },
+    "results/beamforming_comparison_audit/stationary/figures/final_time_selection.png": {
+      "before_sha256": "6fd157208c77c4950ef1a9b7f9c10129b31f56c94021cde0b17be3bd0caa9ae2",
+      "after_sha256": "e3bbc77585cfd065a8b5e423cd5fdabe5114b005e6573b360644287ac38fd606",
+      "role": "png"
+    },
+    "results/beamforming_comparison_audit/stationary/figures/original_settings.pdf": {
+      "before_sha256": "581214f734ba7a4bac52e73a107e89545d62c97f85bb84194daa9a2a5ef8d0fe",
+      "after_sha256": "8a459767e1303d9461f332217ffaa00721379b96549c75a4ca24e66b34346524",
+      "role": "pdf"
+    },
+    "results/beamforming_comparison_audit/stationary/figures/original_settings.png": {
+      "before_sha256": "bc061ba62307ab7cf6f3eb3e5bc2abbc9e3fc4573765e2628b0c4429e0313a40",
+      "after_sha256": "c0e1052d2ceb4c98fc4e40a5d53c888a00752b0966612ccb8d09e5e46c59fb80",
+      "role": "png"
+    },
+    "results/beamforming_comparison_audit/stationary/figures/posterior_mean_beta.pdf": {
+      "before_sha256": "4b3c3ea37d42adea3b624b6cc1c23971b1d130fd553ab3967083ca539dc850cb",
+      "after_sha256": "efde64953bd00facf8f70887e4c33137b0a38442fb664914dac4d79de0876ee1",
+      "role": "pdf"
+    },
+    "results/beamforming_comparison_audit/stationary/figures/posterior_mean_beta.png": {
+      "before_sha256": "7b9c75928ca803c851fc3df6bb450c3f8490da53d175aa78a1170780f483d13a",
+      "after_sha256": "ef2fdfdbabd296453a414af332f0464d7a6d4bc78e75f7985c0f8cd3568c2533",
+      "role": "png"
+    },
+    "results/beamforming_moving/figure_manifest.json": {
+      "before_sha256": "c04c84f30fd17bc6c5ed73b5150c87ccfd20d168080c0d29cc3e0081f9b91206",
+      "after_sha256": "8cee545b41f07dbed4dc5ca90df0226767b31d472278b8b790b295edbab2a572",
+      "role": "presentation_metadata"
+    },
+    "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf": {
+      "before_sha256": "730fe503654d7bcbfebc1f789b4e6f72cf9ac0871c5f2a25f9c5e3d3f81c7e7b",
+      "after_sha256": "9f98fd740a4ae047780545e9dcfb59cb088dedf77824e80b69763cef78b01270",
+      "role": "pdf"
+    },
+    "results/beamforming_moving/figures/moving_interference_abrupt_output_power.png": {
+      "before_sha256": "3cbeff966bb1d786b2619e29912dea2e1cd5d2dc1b3fdc269d20b33da3b7273f",
+      "after_sha256": "19f6d4002a19f61403842d6b4011117a37cf82a18d77f64c682d918fe7f24621",
+      "role": "png"
+    },
+    "results/beamforming_moving/figures/moving_interference_comparison.pdf": {
+      "before_sha256": "2207ceb588f766270ea896108bbaebad9f6b2af1254c3afd971062cbe15817aa",
+      "after_sha256": "dd9b32f0439719d5bd53a86dd4433fc2a273a0c5348e7c58594d2afd614c682d",
+      "role": "pdf"
+    },
+    "results/beamforming_moving/figures/moving_interference_comparison.png": {
+      "before_sha256": "aab234ddcb275aa6d1fa9dd6d8372508237a90971650bfcdd2e5eb1aa7bf7154",
+      "after_sha256": "d0f517d22202a1a5bf632b431b1b6d01342b5b491e1391d7992875c059db9fc8",
+      "role": "png"
+    },
+    "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf": {
+      "before_sha256": "1cc54a3319e1eca4e7fdc7d7a2b8472d66e027e067518e7f4f76215984087f8c",
+      "after_sha256": "34912ed2ec3cf2db0be7a4d3232a25a339551610da9ed80d6e80157351257d0c",
+      "role": "pdf"
+    },
+    "results/beamforming_moving/figures/moving_interference_smooth_output_power.png": {
+      "before_sha256": "f0fc1ee621fd3f00fa2a72bb311e213212632fdd76682b58a7b4a717bc88221a",
+      "after_sha256": "0d7de61ed5f29c36af79edf61082c3f031b4afd8aab165604b930e1bfb8aeda2",
+      "role": "png"
+    },
+    "results/beamforming_moving/plotting/manifest.json": {
+      "before_sha256": "944d3010c5f5d6d32525c348beb88b8430838e0c64c761820655b0b6a151e839",
+      "after_sha256": "88f44ebdccc251a5b4f6da5a489783d310a077b6b8ac04c01d83fb6eb0eaef89",
+      "role": "presentation_metadata"
+    },
+    "results/beamforming_moving/plotting/run_guard.json": {
+      "before_sha256": "859bcbc25ed5142a974c55c8140239d322d4302df0df97b7b9bd20789ab4d719",
+      "after_sha256": "56b02726657d2f22b9c09c9a83cdce25de2671a84f4fe604ba63e43b326fe298",
+      "role": "presentation_metadata"
+    },
+    "results/contact_prediction_diagnostics/figure_manifest.json": {
+      "before_sha256": "13423f663991993fde0091f0d64b1d20349e4c6ff4f6144d72be1dd197c83e0f",
+      "after_sha256": "c57d28632f6a1bca7294e5922508fea083e6429faa85731933f9fc2c62db3e76",
+      "role": "presentation_metadata"
+    },
+    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf": {
+      "before_sha256": "e02beab3c6b03f5f5016646ce50d55acda7556d76c094188d50a0144ea57ec5b",
+      "after_sha256": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
+      "role": "pdf"
+    },
+    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.png": {
+      "before_sha256": "00f8b930b5f56c4a936366f7b04c2b3f09f601d349cdf74b68c8e7af567d41d6",
+      "after_sha256": "2f706a1fe7abdcf3eb5aa2fdf256adbe7cf6b05719f7f9e9d7dc5ea5c0e6eee7",
+      "role": "png"
+    },
+    "results/contact_prediction_diagnostics/figures/prediction_error_stationary.pdf": {
+      "before_sha256": "e1512ed1f432e7abb7ace4369af43ab2cce0948bcd44b6ad1bbe2cbb8e17fc9b",
+      "after_sha256": "5d15cd5678c8af9760718187dbcfba78dca1e6ecf92febe9ec6e9547dc9c5252",
+      "role": "pdf"
+    },
+    "results/contact_prediction_diagnostics/figures/prediction_error_stationary.png": {
+      "before_sha256": "dc4ef975da4697797c2f069972058e4167eab483186ce8a77c4beec08d6f5fdb",
+      "after_sha256": "15a69cc77cb36a92674ed96a85e0424f0b153aab9bc565560a8117a08aaaaf88",
+      "role": "png"
+    },
+    "results/contact_prediction_diagnostics/pdf_layout_checks.json": {
+      "before_sha256": "bbf69a1cc2774cd617b9fd6e62ff2f7a180c11733af42e6fb8e1956db32bb6a1",
+      "after_sha256": "34d24c228ae18bdca861bfae8215f1c4db5d178223a7cbacb4449882cfe82482",
+      "role": "presentation_metadata"
+    },
+    "results/draft_figure_manifest.json": {
+      "before_sha256": "58cd3dd1ca0d5ef0eefa4f92eff26fc65de093d6565a7e0581f47502e9b610d5",
+      "after_sha256": "8e0306612be14b8d916ff0822434f514342f2e88835801455457b99ab1ad9e55",
+      "role": "presentation_metadata"
+    },
+    "results/main/README.md": {
+      "before_sha256": "e211e90665b7bc2ea7852e493f7be516d94629b86010c2feda97a9cb1706e7d1",
+      "after_sha256": "3216639c66b88c78e59421a0b005ffd12f8dbd18477ec3b7a4915d1b490dad1f",
+      "role": "presentation_metadata"
+    },
+    "results/main/beamforming/moving_interference_abrupt_output_power.pdf": {
+      "before_sha256": "730fe503654d7bcbfebc1f789b4e6f72cf9ac0871c5f2a25f9c5e3d3f81c7e7b",
+      "after_sha256": "9f98fd740a4ae047780545e9dcfb59cb088dedf77824e80b69763cef78b01270",
+      "role": "pdf"
+    },
+    "results/main/beamforming/moving_interference_abrupt_output_power.png": {
+      "before_sha256": "3cbeff966bb1d786b2619e29912dea2e1cd5d2dc1b3fdc269d20b33da3b7273f",
+      "after_sha256": "19f6d4002a19f61403842d6b4011117a37cf82a18d77f64c682d918fe7f24621",
+      "role": "png"
+    },
+    "results/main/beamforming/moving_interference_comparison.pdf": {
+      "before_sha256": "2207ceb588f766270ea896108bbaebad9f6b2af1254c3afd971062cbe15817aa",
+      "after_sha256": "dd9b32f0439719d5bd53a86dd4433fc2a273a0c5348e7c58594d2afd614c682d",
+      "role": "pdf"
+    },
+    "results/main/beamforming/moving_interference_comparison.png": {
+      "before_sha256": "aab234ddcb275aa6d1fa9dd6d8372508237a90971650bfcdd2e5eb1aa7bf7154",
+      "after_sha256": "d0f517d22202a1a5bf632b431b1b6d01342b5b491e1391d7992875c059db9fc8",
+      "role": "png"
+    },
+    "results/main/beamforming/moving_interference_smooth_output_power.pdf": {
+      "before_sha256": "1cc54a3319e1eca4e7fdc7d7a2b8472d66e027e067518e7f4f76215984087f8c",
+      "after_sha256": "34912ed2ec3cf2db0be7a4d3232a25a339551610da9ed80d6e80157351257d0c",
+      "role": "pdf"
+    },
+    "results/main/beamforming/moving_interference_smooth_output_power.png": {
+      "before_sha256": "f0fc1ee621fd3f00fa2a72bb311e213212632fdd76682b58a7b4a717bc88221a",
+      "after_sha256": "0d7de61ed5f29c36af79edf61082c3f031b4afd8aab165604b930e1bfb8aeda2",
+      "role": "png"
+    },
+    "results/main/beamforming/noise_adaptation_page1.pdf": {
+      "before_sha256": "5c82e70d4a510c768f342df3d802d63b9a03fb1bb8120c5c19a9545cc72b5bb2",
+      "after_sha256": "065a73a67ef2a53c99ed2fc2f99cff190cf6eb9882748631a7e376bf88d56758",
+      "role": "pdf"
+    },
+    "results/main/beamforming/noise_adaptation_page1.png": {
+      "before_sha256": "de061003733107f9f413dfbada6c2e9058204b2271b62c235a3a2bc67f618a71",
+      "after_sha256": "3b0d17c133fd540ce373baaa0ccd50e727d9845a23aaf48e6e851202a21d94b0",
+      "role": "png"
+    },
+    "results/main/beamforming/task_performance_output_power.pdf": {
+      "before_sha256": "dfaa5d3886919c6ebfb4b09ed02ccf924dc8b11d1eca411941d6031ecc8183fd",
+      "after_sha256": "8fdb773ba05b602938e276bd7e40389d277442aa2cb9056a12eeff943d2edd07",
+      "role": "pdf"
+    },
+    "results/main/beamforming/task_performance_output_power.png": {
+      "before_sha256": "6132b0aefda3881cc2061c00fcc71d1fae92e8a3e430d147829ce87b7d63e754",
+      "after_sha256": "9ba4290564f75e814a117ece47d7e204e6b6b69fc2c2e19bc74fe490de8d1ab8",
+      "role": "png"
+    },
+    "results/main/contact/information_rotation.pdf": {
+      "before_sha256": "dd765a08af944b69185018a49f20b9821b820c8b16de89a54a169071ef82f593",
+      "after_sha256": "09546aeb0cda4e85cb73b8724c727093dbb3e61f6f56eff87ed203fb9f46338a",
+      "role": "pdf"
+    },
+    "results/main/contact/posterior_anisotropy_risk.pdf": {
+      "before_sha256": "ac0a516e29324ce8e0ffc7175e427e14f182341ef071124ef0d56116abd45c14",
+      "after_sha256": "939f24432429b80031dd555fe307c72d2722ed61235157fb1f46684c65db1d62",
+      "role": "pdf"
+    },
+    "results/main/contact/posterior_anisotropy_risk.png": {
+      "before_sha256": "12540b37b4fa695ab4da611ba82d2fececf0f49e26d8b2dc431bd599f96c8ea2",
+      "after_sha256": "174ca3edfe98900e8605f6e11cef2f4a818e4a1ab99de66ad2787d360293d56d",
+      "role": "png"
+    },
+    "results/main/contact/prediction_error_sphere.pdf": {
+      "before_sha256": "e02beab3c6b03f5f5016646ce50d55acda7556d76c094188d50a0144ea57ec5b",
+      "after_sha256": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
+      "role": "pdf"
+    },
+    "results/main/contact/prediction_error_sphere.png": {
+      "before_sha256": "00f8b930b5f56c4a936366f7b04c2b3f09f601d349cdf74b68c8e7af567d41d6",
+      "after_sha256": "2f706a1fe7abdcf3eb5aa2fdf256adbe7cf6b05719f7f9e9d7dc5ea5c0e6eee7",
+      "role": "png"
+    },
+    "results/main/contact/prediction_error_stationary.pdf": {
+      "before_sha256": "e1512ed1f432e7abb7ace4369af43ab2cce0948bcd44b6ad1bbe2cbb8e17fc9b",
+      "after_sha256": "5d15cd5678c8af9760718187dbcfba78dca1e6ecf92febe9ec6e9547dc9c5252",
+      "role": "pdf"
+    },
+    "results/main/contact/prediction_error_stationary.png": {
+      "before_sha256": "dc4ef975da4697797c2f069972058e4167eab483186ce8a77c4beec08d6f5fdb",
+      "after_sha256": "15a69cc77cb36a92674ed96a85e0424f0b153aab9bc565560a8117a08aaaaf88",
+      "role": "png"
+    },
+    "results/main/contact/task_performance_page1.pdf": {
+      "before_sha256": "9b50d8ccd77b12f12317de28cbf80e0e84597e12f945cfb44d8ff588a3a1935a",
+      "after_sha256": "3927b9c28cabbb0b5eceb9bc5a57c31bf0ec2434cafd3d55749361f676978b3d",
+      "role": "pdf"
+    },
+    "results/notebook_editability.json": {
+      "before_sha256": "4a556932a0250e8c44dc29a1bc5196bbf40382d9fe455887df0af73083a094f5",
+      "after_sha256": "020c41d7bfe32af5aef9f0d90c709d495167446420237c6d45aee318816d388a",
+      "role": "presentation_metadata"
+    },
+    "results/notebook_exports/01_array/additional_comparisons_supp_page1.pdf": {
+      "before_sha256": "db6280eb752c0887085b5c58a448c393d651a0f0e7ea6d718beb9921905693da",
+      "after_sha256": "9f42ac0426791c2a2dfd4539c0e87b169748bc7f193898017460c11c7ba3e153",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/additional_comparisons_supp_page2.pdf": {
+      "before_sha256": "bbdd5b3f4e2ded2f06b9c0528f6a2a50acc714dace76f25da7138f48b86734f0",
+      "after_sha256": "001af50b059bfe345eccf212949eee328cd17d8a3efee947ca0c0ea99a60ed77",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/additional_comparisons_supp_page3.pdf": {
+      "before_sha256": "da3d64476c25983ba158878bdf4994171399946ad0e7f46769b72528ecbc5edf",
+      "after_sha256": "d6d0a7ec245891f02414264cfa9c253b285fb7581895eba941b5945c21729ea2",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/additional_comparisons_supp_page4.pdf": {
+      "before_sha256": "a902cda857cd600261734869082e533053ed7378882cfc3843dde926db326739",
+      "after_sha256": "fc97f2f3c777ee37257f900fcc33a27d37b481a1238d4ddb9d3937ed374d9ed4",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/additional_comparisons_supp_page5.pdf": {
+      "before_sha256": "08a2c8ea481b457f0ef900c42c5eaf09c6d0f8dc0951da7f78dac37370399384",
+      "after_sha256": "da24d91606d29c621cf25227f0cef97542cc01d1c931b41c386685e84a82fce2",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/additional_comparisons_supp_page6.pdf": {
+      "before_sha256": "28d20b46956bd6fa5f9d39266e27d75bd3a2ca9b29c813d2f5f3a3bc342fcb83",
+      "after_sha256": "045377133ce324f34110bca333b289a12d0fbb68483decf238cd3faef6709561",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/additional_comparisons_supp_page7.pdf": {
+      "before_sha256": "99bc75c3e706086bc2a74238f0b22258e9b00f3bf4b15738e76d506669a7ede8",
+      "after_sha256": "a5aeed70a4e4ccdd59c09fead3616b2b76985312c50152eaa5500fb7e29f1e4e",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/additional_comparisons_supp_page8.pdf": {
+      "before_sha256": "3a50c0b4fdb71570b086c28dec066eb1d119f04324ac981cfac71d91c479a180",
+      "after_sha256": "40b6e17678d581e7b80103a5c398f33eb44d6f02181a38146e0b07c67cbba9c1",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/block_updates_supp_page1.pdf": {
+      "before_sha256": "f271f6bac159dd679f83eacc521e9dd006bf594d73ace0d476b900d98888a671",
+      "after_sha256": "6f1517ec7dbf14cae9dd7fcb93199ac15a6039cee0d0878afe758892b3d01f3f",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/computation_time_scaling.pdf": {
+      "before_sha256": "c78aa0dace1e9a2d6ca615ba0a64f3cdcc0c30048dc07327744f6b05f61b22dc",
+      "after_sha256": "8858399a92d505686cadca6b8fe9729b7b0f3ed3d3290d76ad64295a4aeaab48",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/computation_time_supp_page2.pdf": {
+      "before_sha256": "3faac23b79efd1da71a47747a43bbcf00aaa6987864e6a1e5ae19a5a19e14127",
+      "after_sha256": "af930c679d7913c449be4fb75d25fc296bc8282f9d6b50e1eb1d69d7c979f370",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/information_page1.pdf": {
+      "before_sha256": "8281b3a7c16d80ade1031d3b7ccff6f147cde482d7652979a1ac740e1f371204",
+      "after_sha256": "4d5bbbced00624c6af6dcee935c04e0b181ea5beaa203ea2135e5d93f3ebad32",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/model_mismatch_supp_page1.pdf": {
+      "before_sha256": "b7df5e9e0710b7d18e990bf8e058a527fc94f7e7a7f0a3a33ed5bc178f8ab136",
+      "after_sha256": "598fe80d23950a7cdbcff07c488da748ae006aa13f0093c34b911e190a2ce295",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/noise_adaptation_page1.pdf": {
+      "before_sha256": "5c82e70d4a510c768f342df3d802d63b9a03fb1bb8120c5c19a9545cc72b5bb2",
+      "after_sha256": "065a73a67ef2a53c99ed2fc2f99cff190cf6eb9882748631a7e376bf88d56758",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/noise_adaptation_page1.png": {
+      "before_sha256": "de061003733107f9f413dfbada6c2e9058204b2271b62c235a3a2bc67f618a71",
+      "after_sha256": "3b0d17c133fd540ce373baaa0ccd50e727d9845a23aaf48e6e851202a21d94b0",
+      "role": "png"
+    },
+    "results/notebook_exports/01_array/noise_adaptation_supp_page2.pdf": {
+      "before_sha256": "e4a7c553fe6093f0a804aa321f654e803351dae2f39d83cd3144347141f4b5d8",
+      "after_sha256": "03a44f30f4a471f11a1d0fc44a74fb19c9a2ce7c6b3965e29524c005201c58ca",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/noise_adaptation_supp_page3.pdf": {
+      "before_sha256": "71872abd700cb32ba5cb4c12365f68f7e7e06d12f84579f895a078986eeed78e",
+      "after_sha256": "95fa944e5bd47a48044b6af4b68cbbc8ee1edf2fffb6f3fd9358e3a758ad7426",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/numerical_accuracy_supp_page1.pdf": {
+      "before_sha256": "5496cb39b30d170511fd05f46206237908011b169679dce8a355de95863408cc",
+      "after_sha256": "799a429fe7ff283a5d990e60d0130caf244d37d0ecc45aac98565f2c92f0d9b7",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/numerical_accuracy_supp_page2.pdf": {
+      "before_sha256": "15aea0da068369a0d6f6ea1d5b1531637bbc6532557a313deeed7d50a8271745",
+      "after_sha256": "cd894920ed32b45e9381878a2c2b83ca2e2803a9b3fb5371ebcb0162f0e7058c",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/numerical_accuracy_supp_page3.pdf": {
+      "before_sha256": "1063347ccc8e586b24b494f49f76403d8462cfdd7df9fe2f108d75adf8968993",
+      "after_sha256": "e72dceee6850fbc72b65546642029b5c2b6690f63d3485655eedd318457f91c5",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/paper_summary_supp_page1.pdf": {
+      "before_sha256": "242a5ce4a51d25fcdae085579d143b83a8e066a77c1ec0967473c86f34e1e36f",
+      "after_sha256": "28db7dc465a159fda52781f19fbb7a968cec10df421687eb2280ffab05a751ad",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/posterior_anisotropy_eigenvalues.pdf": {
+      "before_sha256": "13b599ce7fb5f42ead61f46a274417ada7b745880c394d7b6c224892f8f8c285",
+      "after_sha256": "d2cda320b46057a3575f4c6ebd4d090ae436991a9f7441ca35724bea63e6ed4f",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/posterior_curvature_supp_page1.pdf": {
+      "before_sha256": "9b7085b5d451f8153d1f28288d866aed8e6deac85702d1721383fd335057ba16",
+      "after_sha256": "ad23c8be60e6e7520e5ab98cc3713a0dee1b6095c4b782db12577d75f1febc9d",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/predictive_calibration_page2.pdf": {
+      "before_sha256": "050e360fdfcf4ddcc45f5b1867550d3b2a81d26bcb4016bd18b676c09963112c",
+      "after_sha256": "2999784df655c840e1afdb66d22130d9b4476a8daf69cca68fd11a915a9c6989",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/predictive_calibration_page6.pdf": {
+      "before_sha256": "2b0998bb5d595cb1f8b0294fafda69383645e5e60b89bc2bbf1c302d72fe7a63",
+      "after_sha256": "d9b29301e4ce7679a564691a906d6024f080ff5a8629d03f747254e9ef4403f9",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/predictive_calibration_supp_page1.pdf": {
+      "before_sha256": "c239eabbd122823cc1f0015a9550213e3b24d5306abeec222fbed01b08cef4d3",
+      "after_sha256": "228e53988eb8ad4a674e1c3cbb09362b1c55605a006c31a5fe867d27e7f3e269",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/predictive_calibration_supp_page3.pdf": {
+      "before_sha256": "a5a5901f6e89feb3794f3cc626031a2f302375f6ca856085e38c7c3fc5ca86dd",
+      "after_sha256": "10170e3c2dc25ec8f068b0c8211bab7788363d5acf02a6b47f66fe8ec3b71044",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/predictive_calibration_supp_page4.pdf": {
+      "before_sha256": "70b47840b3f0bccb9778b7394b504581b3c07e0daa187144f73dbc60a1877f6b",
+      "after_sha256": "83f247744ecc0d43e3f5dfd19a730783cb3664170ccd5263f48b9f84ff9e3879",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/predictive_calibration_supp_page5.pdf": {
+      "before_sha256": "b13e5a11148a9a8b429831670f78d106fc390b10aa99543bd2b0144881ca5585",
+      "after_sha256": "172d06b508ca6df4bf33b056188e340f3128919a02ac532adea0712ee7029c3c",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/predictive_calibration_supp_page7.pdf": {
+      "before_sha256": "554e46b3c3c55befca2d986812a3c459d5758d3ead28aa84c18d12b2a964b9de",
+      "after_sha256": "23dd3804245c111837a89b7c013e4b6e5c489ea96cc4b4359fde50b7adf71881",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/predictive_calibration_supp_page8.pdf": {
+      "before_sha256": "07e17170940d4d8f30c701f5e99934ea23c0577431b15a0d82e283c82897a28c",
+      "after_sha256": "581b15724abcc1a215d8d01a9cff34da978676283933445e05145e45795d7699",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/predictive_calibration_supp_page9.pdf": {
+      "before_sha256": "468b6ad976d6f0239f7c5b71d4b380df4c2d08c52a26edcd6dbaf5aa565db10c",
+      "after_sha256": "c2a334bb4fa8842cb5a676eba1c3c6895ed94105be12aa34401a623794e535b5",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/predictive_scores_supp_page1.pdf": {
+      "before_sha256": "49d6c51b8bcc7014c0bf0e96de772510982bf34c2071fac1b57222c839695daa",
+      "after_sha256": "5ed112fa0d7d7056eadac9f230fc2cdae4153d85a76265094f272bd997e4f6b2",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/setup_page1.pdf": {
+      "before_sha256": "ca8bf5f2780665b6eec280ba9dbce723db60955845d19b83f2b5a3bc915d8a2b",
+      "after_sha256": "e062ac718604cb35187c0ef672ff76ba3c4df45b5ac6fcc2ba25b588615c70f7",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/stationary_dimensions_T200.pdf": {
+      "before_sha256": "26c1d7957407fef332fe0cde80602c400504932aa059e6084de5f80ef36079ad",
+      "after_sha256": "9d02b83e751c865782fdaf195a94dcc794dc83496a2f5a1f9f28a0c0a1bb5051",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/stationary_dimensions_T200.png": {
+      "before_sha256": "6132b0aefda3881cc2061c00fcc71d1fae92e8a3e430d147829ce87b7d63e754",
+      "after_sha256": "9ba4290564f75e814a117ece47d7e204e6b6b69fc2c2e19bc74fe490de8d1ab8",
+      "role": "png"
+    },
+    "results/notebook_exports/01_array/task_performance_output_power.pdf": {
+      "before_sha256": "dfaa5d3886919c6ebfb4b09ed02ccf924dc8b11d1eca411941d6031ecc8183fd",
+      "after_sha256": "8fdb773ba05b602938e276bd7e40389d277442aa2cb9056a12eeff943d2edd07",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/task_performance_output_power.png": {
+      "before_sha256": "6132b0aefda3881cc2061c00fcc71d1fae92e8a3e430d147829ce87b7d63e754",
+      "after_sha256": "9ba4290564f75e814a117ece47d7e204e6b6b69fc2c2e19bc74fe490de8d1ab8",
+      "role": "png"
+    },
+    "results/notebook_exports/01_array/task_performance_paired_difference.pdf": {
+      "before_sha256": "9d97ad71518d829ee205f3c70f293633dc39bb6ae165434024336bd224af136e",
+      "after_sha256": "14bd91412666719854289a8704544130696f83cd08f497efa7a328c12678c98e",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/tracking_bound_supp_page1.pdf": {
+      "before_sha256": "f5cefb74d60acb5afdcb3bb6ae36f68b6c4b16d83b90e745d694649f8ac0df06",
+      "after_sha256": "b41b2adac54261490ae6c00c0bc4f20c5fcdffc450944eceb607a4a68fb398b2",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/tracking_bound_supp_page2.pdf": {
+      "before_sha256": "907863dc65cf06966383a17a9dd84c2cf5a703b9479517db24e8bc406786d046",
+      "after_sha256": "ca89debb1a3deb02a1c948d63a3c22171431883389c670dac52774f573015f6d",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/tracking_bound_supp_page3.pdf": {
+      "before_sha256": "36d8b56210772c91743fbce355ac02c67c6efcdbc17007943169eaf74df3e9f9",
+      "after_sha256": "6f13b99ad7ba8eaee8839b031020524d29ae543626142b7baef75036070b5fe1",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/tracking_bound_supp_page4.pdf": {
+      "before_sha256": "b34e32ac38a02f98a0643b652636edb7b8b8098b2b3635bfd3968e2aa7ea99a1",
+      "after_sha256": "ded66f63c9021ec2fb28692926f6c769293e6226a849fa83b5d7967684b28a22",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/tracking_error_supp_page1.pdf": {
+      "before_sha256": "7f17de4bcab6e1d7ab0bcb1ee8ea300d497bf565ca79bacacacacb33a14abaaa",
+      "after_sha256": "7d1b0d37cd8cf46cb4b0f51fbd23393856148db244bed2d5f38ae801d86e55c3",
+      "role": "pdf"
+    },
+    "results/notebook_exports/01_array/variance_estimation_supp_page1.pdf": {
+      "before_sha256": "41b4a5d2194d328d6abc9da7ff6074309698855c62e167761cf1819fbea0d422",
+      "after_sha256": "0c1e8b59a2394af68b2909ca578f3059aa1c806ab1e137af90c2654183b3df6e",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/additional_comparisons_supp_page1.pdf": {
+      "before_sha256": "429f6c90d64c5c13e038237135ccd59b895e7e0b4fabe92e244111b4cce7e796",
+      "after_sha256": "7d1d7160bc4d254406b7e519882bc009e945cbf552cb9f72e7610b020e280e66",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/additional_comparisons_supp_page2.pdf": {
+      "before_sha256": "c4f2cd8c69b050d3099a692d6afca97d7f67f744be1c0faa87a299852976bc63",
+      "after_sha256": "d9c99a0c368db15e3c6f0d64d887b2ddcd9de8be1fa854c99b7e6b03f9910939",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/additional_comparisons_supp_page3.pdf": {
+      "before_sha256": "6b16faa798a99356b00e3332c0350590ae5db2ace97d7eb4dacbf56b5eee5aa7",
+      "after_sha256": "a35532cfc40bec358938cbb16aefc8ed3b98398c18e16c02b24689d81ea0218c",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/additional_comparisons_supp_page4.pdf": {
+      "before_sha256": "90b50149796398205adcff39517e2d8f811a2f6875b7ecafb77ac0414af0babb",
+      "after_sha256": "d9ccef16490598f66946643a603cd5f0702113b411e058c341cf5913cf771327",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/block_updates_supp_page1.pdf": {
+      "before_sha256": "0e233162eb967ad899add1c2d6a890d40f8e1800c6c4f85eafbdc1ad4b58d48f",
+      "after_sha256": "2a118ecdbdde126359c94109abdb9932cbabf14465058c4b267cb80b2ebe5cd8",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/computation_time_phases.pdf": {
+      "before_sha256": "7464bdcbe10fed0c5dbb03f457791b9c86b3b7c8fc4a8d256846ebf2776d7bab",
+      "after_sha256": "b8e2f9e6da92ecf8661d46c7a92e83fdb490858575c2d6e044bf5f070a3f7d68",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/computation_time_scaling.pdf": {
+      "before_sha256": "d405ca83e92091cbcb0a07293a96c6db3305550940b3156bd7fc38394fe14def",
+      "after_sha256": "aa617aa7fcaac06038be6d9a54f28c8480505d1ce02fe455d2001d4d958fd00f",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/computation_time_supp_page2.pdf": {
+      "before_sha256": "dc48a502fb0b3b265a099a617dc1894f4395ed6bc1406a6ee353317d68001fed",
+      "after_sha256": "401bbda9c4c1633bfa6af328ba2d571f9e838baf7c6b9f0087185c1c4eb2eb6f",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/information_rotation.pdf": {
+      "before_sha256": "dd765a08af944b69185018a49f20b9821b820c8b16de89a54a169071ef82f593",
+      "after_sha256": "09546aeb0cda4e85cb73b8724c727093dbb3e61f6f56eff87ed203fb9f46338a",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/model_mismatch_supp_page1.pdf": {
+      "before_sha256": "84de5349169d1d9662bdbed5e70b304de13760e633de73183f0e283cfe50eaab",
+      "after_sha256": "b5e1a186d13b916fafda2b22be9c98a0f30768d03e0cd39917efe00da99232dd",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/noise_adaptation_page1.pdf": {
+      "before_sha256": "9cb4f091e3b009133a55bd1905e1a7a8e85048b80984d7fc6d1eb775b8397a57",
+      "after_sha256": "4edaa05e2f8146dc80ee0af0c83f2e76055151bff3b5b336735ec63925e51ead",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/noise_adaptation_supp_page2.pdf": {
+      "before_sha256": "018857214fd6b6db232c84030b8ae453062643213856ef20de1d0d43f0eb0b4d",
+      "after_sha256": "343c3c440985439da0dae98936702a68e5b1ec72e9a030dbc2390d70e8b3f7a5",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/noise_adaptation_supp_page4.pdf": {
+      "before_sha256": "89b4bfed8c791eaf06aa664d64c8b4bbc030606668c5dc1250ebc88f289abebd",
+      "after_sha256": "3871d01780d4ff751310873ffcf1253296f180163c8a58ab85e85b693259104e",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/numerical_accuracy_supp_page1.pdf": {
+      "before_sha256": "c7ff9eab3a4911f80f87dd2bdaf02427011e494bcdaa4d0fee16e77d5a6641f6",
+      "after_sha256": "6246b28a36c6b98b1169b6594e6834dc53a0736e02a3265b302c288d6da5e383",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/numerical_accuracy_supp_page2.pdf": {
+      "before_sha256": "d40f04f5e999b256939556a5d1bdcbd09bfd0500d5b6a2e03574ae40f6051398",
+      "after_sha256": "35145ba3cd65f244b477b43c98e5258fb726889c931d012fdfa908097f7a415d",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/numerical_accuracy_supp_page3.pdf": {
+      "before_sha256": "62d7815042668d48c86931bd666b4a32930a02089ac8802cc9baaba3de210612",
+      "after_sha256": "2b851247d57d05f2d99ab747ac628922ce572e58430ce97b9a7bae03beda5180",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/paper_summary_supp_page1.pdf": {
+      "before_sha256": "ec6225ca77ceb2001abb6df79dc30a0039ec6c5c2574299280dafb9bb6610d75",
+      "after_sha256": "9ccf5ff430e22ee6928417673fe8ad8edbc093723e11b5534ddbc874def75021",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/posterior_anisotropy_risk.pdf": {
+      "before_sha256": "ac0a516e29324ce8e0ffc7175e427e14f182341ef071124ef0d56116abd45c14",
+      "after_sha256": "939f24432429b80031dd555fe307c72d2722ed61235157fb1f46684c65db1d62",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/posterior_curvature_supp_page1.pdf": {
+      "before_sha256": "00a9921e239cf69131eb7393e9606899d37e6bec7e7288a8dcfab3b170dbded0",
+      "after_sha256": "15ba8ece7e20e17d7231df9d9ad8fc3f9db157ae44e4e229f128961f1b5e344b",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/predictive_calibration_page2.pdf": {
+      "before_sha256": "c6df8d8b939b15e97d29087ab4412cb4bda8d5e7545a74aeac0d1afcee0f7fb0",
+      "after_sha256": "bcdea505ef9974055ef4192823ec361444d7032ec87299eb454ffc3a353cd2fb",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/predictive_calibration_page6.pdf": {
+      "before_sha256": "0ff897d0b9c853135172c85c9e1500f3bee154a248ebda3b027c64b711aa3bde",
+      "after_sha256": "80eb2227cdc107537ad83be1b1a11d47a895d4586bdb354fd1441498fdc44d8e",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/predictive_calibration_supp_page1.pdf": {
+      "before_sha256": "04bb8f360f419abbcc6efc842970043ad4b4897b60534f9e6c6766e937bc93d1",
+      "after_sha256": "54c5adf54ec792b86305fd74d421d08d5e6436391eaff8a576107f0eb9114bd2",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/predictive_calibration_supp_page3.pdf": {
+      "before_sha256": "9f60a23b78358806ea3f13c26d171a44ee39b33b9c1512f98619c6a9724bdd71",
+      "after_sha256": "31483b676e2e4abdb53472cab51d31f9fab19d5f3c702eadf6e20a55e38c0ef2",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/predictive_calibration_supp_page4.pdf": {
+      "before_sha256": "7abcd104d2ac0aa9fc337d13ff7519d5e0c84f8c55e615e38c3503245e48ea82",
+      "after_sha256": "143f35694bac5a95e94ff68c312dc8d51b94fcc56fc39923d8aa3a503c0fc3f5",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/predictive_calibration_supp_page5.pdf": {
+      "before_sha256": "e3bc4fb2704ad68233fe9782640287a6498e2e673d9bdc8dc28f302443acd08d",
+      "after_sha256": "4ec0bc321f45716a2f36a7e657ddc62f156e225020ae18c1514c69864c862311",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/predictive_calibration_supp_page7.pdf": {
+      "before_sha256": "ee5c22de73f0fa35c7de0ad2785d4dc9c1287748894f226ff20826aeee69754e",
+      "after_sha256": "41ea666853e0e61e1deb9b449cbe8a5745ccd42bf3a519faa10bed149d98a872",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/predictive_calibration_supp_page8.pdf": {
+      "before_sha256": "a96b9dd8cfadf360b4587fd4ee89e3b4a2d01475ab5c35639dd0978ce888a3ee",
+      "after_sha256": "4a0fa099abb8d07bd6d4bc271ce4588696352d59a0d1df6b72ec86c9d0be6368",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/predictive_calibration_supp_page9.pdf": {
+      "before_sha256": "d96809e5a980dace5c37097ce71cdd3b20b87d9675aca6499b6edd59c8b154ef",
+      "after_sha256": "785157940ab38317cfcf7fb74a57fa5f2fc41785095637b75b687bc300cd3f7c",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/predictive_scores_supp_page1.pdf": {
+      "before_sha256": "7db9e82065ae826fe875489cecf19fa0227f057a86a1c505523ceb899c60f5fe",
+      "after_sha256": "e16c91277af48ac82a92a034ed830ed60c992b3993d1bf58ae7e78a315e40b44",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/task_performance_page1.pdf": {
+      "before_sha256": "9b50d8ccd77b12f12317de28cbf80e0e84597e12f945cfb44d8ff588a3a1935a",
+      "after_sha256": "3927b9c28cabbb0b5eceb9bc5a57c31bf0ec2434cafd3d55749361f676978b3d",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/task_performance_supp_page2.pdf": {
+      "before_sha256": "fc04bf1aa658487028889867ec443a907e9e6402a9a03773a33b5355689e3cf5",
+      "after_sha256": "71c7e284ac5f1933d4e77495700a329de898b3e51f36e3657ed94a9ddfeb0117",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/tracking_bound_supp_page1.pdf": {
+      "before_sha256": "a440c9a03cc776609cb3b87e709a2d6404a478bb0ede5624bc241038a5951f92",
+      "after_sha256": "9baaef2840864ebbe42f3cd58f26c51a9660fa1b9b6121c35a8fcf8bd5720d94",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/tracking_bound_supp_page2.pdf": {
+      "before_sha256": "2d027eb9b781b2a25a2b4a14a2bfa0cd5ddba5ce105c53b512c747c8586173a2",
+      "after_sha256": "d5f4d7fa169543b1ecac7e042ed93a350e253d8ea48504adb5c01fd855f94bdc",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/tracking_bound_supp_page3.pdf": {
+      "before_sha256": "96868521d87c29030a36a5ded2d0bfb398ba1da635e880608b2d4cf0230a7d18",
+      "after_sha256": "dbcb382f4ac1753cb7c5500af3fd29bdbd9ad09a25c83bd77f7f623c0a37f95b",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/tracking_bound_supp_page4.pdf": {
+      "before_sha256": "d6e94de5653066c430276cd04c8a5729ba8f3a866aedc5c6b561d429245c1a61",
+      "after_sha256": "9d2f7e1b7d5701f38702f8044169482b199979ffe352eba10d9b9599bc14d4c8",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/tracking_error_supp_page1.pdf": {
+      "before_sha256": "4775a7735f819720e4a84f9f8ffef8e128b7c81d17bfdb9e5d5ab5da089ce97e",
+      "after_sha256": "8ae321e05361c530726b476d9216181377437f043c528009ee4eef3b7c92b807",
+      "role": "pdf"
+    },
+    "results/notebook_exports/03_contact/variance_estimation_supp_page1.pdf": {
+      "before_sha256": "bf5d8f21838887dd627aa672f8549618d100b28dd9f1e7d6894944b3aeb68edb",
+      "after_sha256": "2c4d097e0b48b83904fd1a4af6e2f8bd294a7ee59ee53f2af2901b3196770955",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/additional_comparisons_supp_page1.pdf": {
+      "before_sha256": "db6280eb752c0887085b5c58a448c393d651a0f0e7ea6d718beb9921905693da",
+      "after_sha256": "9f42ac0426791c2a2dfd4539c0e87b169748bc7f193898017460c11c7ba3e153",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/additional_comparisons_supp_page2.pdf": {
+      "before_sha256": "bbdd5b3f4e2ded2f06b9c0528f6a2a50acc714dace76f25da7138f48b86734f0",
+      "after_sha256": "001af50b059bfe345eccf212949eee328cd17d8a3efee947ca0c0ea99a60ed77",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/additional_comparisons_supp_page3.pdf": {
+      "before_sha256": "da3d64476c25983ba158878bdf4994171399946ad0e7f46769b72528ecbc5edf",
+      "after_sha256": "d6d0a7ec245891f02414264cfa9c253b285fb7581895eba941b5945c21729ea2",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/additional_comparisons_supp_page4.pdf": {
+      "before_sha256": "a902cda857cd600261734869082e533053ed7378882cfc3843dde926db326739",
+      "after_sha256": "fc97f2f3c777ee37257f900fcc33a27d37b481a1238d4ddb9d3937ed374d9ed4",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/additional_comparisons_supp_page5.pdf": {
+      "before_sha256": "08a2c8ea481b457f0ef900c42c5eaf09c6d0f8dc0951da7f78dac37370399384",
+      "after_sha256": "da24d91606d29c621cf25227f0cef97542cc01d1c931b41c386685e84a82fce2",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/additional_comparisons_supp_page6.pdf": {
+      "before_sha256": "28d20b46956bd6fa5f9d39266e27d75bd3a2ca9b29c813d2f5f3a3bc342fcb83",
+      "after_sha256": "045377133ce324f34110bca333b289a12d0fbb68483decf238cd3faef6709561",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/additional_comparisons_supp_page7.pdf": {
+      "before_sha256": "99bc75c3e706086bc2a74238f0b22258e9b00f3bf4b15738e76d506669a7ede8",
+      "after_sha256": "a5aeed70a4e4ccdd59c09fead3616b2b76985312c50152eaa5500fb7e29f1e4e",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/additional_comparisons_supp_page8.pdf": {
+      "before_sha256": "3a50c0b4fdb71570b086c28dec066eb1d119f04324ac981cfac71d91c479a180",
+      "after_sha256": "40b6e17678d581e7b80103a5c398f33eb44d6f02181a38146e0b07c67cbba9c1",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/block_updates_supp_page1.pdf": {
+      "before_sha256": "f271f6bac159dd679f83eacc521e9dd006bf594d73ace0d476b900d98888a671",
+      "after_sha256": "6f1517ec7dbf14cae9dd7fcb93199ac15a6039cee0d0878afe758892b3d01f3f",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/computation_time_scaling.pdf": {
+      "before_sha256": "c78aa0dace1e9a2d6ca615ba0a64f3cdcc0c30048dc07327744f6b05f61b22dc",
+      "after_sha256": "8858399a92d505686cadca6b8fe9729b7b0f3ed3d3290d76ad64295a4aeaab48",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/computation_time_supp_page2.pdf": {
+      "before_sha256": "3faac23b79efd1da71a47747a43bbcf00aaa6987864e6a1e5ae19a5a19e14127",
+      "after_sha256": "af930c679d7913c449be4fb75d25fc296bc8282f9d6b50e1eb1d69d7c979f370",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/information_page1.pdf": {
+      "before_sha256": "8281b3a7c16d80ade1031d3b7ccff6f147cde482d7652979a1ac740e1f371204",
+      "after_sha256": "4d5bbbced00624c6af6dcee935c04e0b181ea5beaa203ea2135e5d93f3ebad32",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/model_mismatch_supp_page1.pdf": {
+      "before_sha256": "b7df5e9e0710b7d18e990bf8e058a527fc94f7e7a7f0a3a33ed5bc178f8ab136",
+      "after_sha256": "598fe80d23950a7cdbcff07c488da748ae006aa13f0093c34b911e190a2ce295",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/noise_adaptation_supp_page2.pdf": {
+      "before_sha256": "e4a7c553fe6093f0a804aa321f654e803351dae2f39d83cd3144347141f4b5d8",
+      "after_sha256": "03a44f30f4a471f11a1d0fc44a74fb19c9a2ce7c6b3965e29524c005201c58ca",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/noise_adaptation_supp_page3.pdf": {
+      "before_sha256": "71872abd700cb32ba5cb4c12365f68f7e7e06d12f84579f895a078986eeed78e",
+      "after_sha256": "95fa944e5bd47a48044b6af4b68cbbc8ee1edf2fffb6f3fd9358e3a758ad7426",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/numerical_accuracy_supp_page1.pdf": {
+      "before_sha256": "5496cb39b30d170511fd05f46206237908011b169679dce8a355de95863408cc",
+      "after_sha256": "799a429fe7ff283a5d990e60d0130caf244d37d0ecc45aac98565f2c92f0d9b7",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/numerical_accuracy_supp_page2.pdf": {
+      "before_sha256": "15aea0da068369a0d6f6ea1d5b1531637bbc6532557a313deeed7d50a8271745",
+      "after_sha256": "cd894920ed32b45e9381878a2c2b83ca2e2803a9b3fb5371ebcb0162f0e7058c",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/numerical_accuracy_supp_page3.pdf": {
+      "before_sha256": "1063347ccc8e586b24b494f49f76403d8462cfdd7df9fe2f108d75adf8968993",
+      "after_sha256": "e72dceee6850fbc72b65546642029b5c2b6690f63d3485655eedd318457f91c5",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/paper_summary_supp_page1.pdf": {
+      "before_sha256": "242a5ce4a51d25fcdae085579d143b83a8e066a77c1ec0967473c86f34e1e36f",
+      "after_sha256": "28db7dc465a159fda52781f19fbb7a968cec10df421687eb2280ffab05a751ad",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/posterior_anisotropy_eigenvalues.pdf": {
+      "before_sha256": "13b599ce7fb5f42ead61f46a274417ada7b745880c394d7b6c224892f8f8c285",
+      "after_sha256": "d2cda320b46057a3575f4c6ebd4d090ae436991a9f7441ca35724bea63e6ed4f",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/posterior_curvature_supp_page1.pdf": {
+      "before_sha256": "9b7085b5d451f8153d1f28288d866aed8e6deac85702d1721383fd335057ba16",
+      "after_sha256": "ad23c8be60e6e7520e5ab98cc3713a0dee1b6095c4b782db12577d75f1febc9d",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/predictive_calibration_page2.pdf": {
+      "before_sha256": "050e360fdfcf4ddcc45f5b1867550d3b2a81d26bcb4016bd18b676c09963112c",
+      "after_sha256": "2999784df655c840e1afdb66d22130d9b4476a8daf69cca68fd11a915a9c6989",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/predictive_calibration_page6.pdf": {
+      "before_sha256": "2b0998bb5d595cb1f8b0294fafda69383645e5e60b89bc2bbf1c302d72fe7a63",
+      "after_sha256": "d9b29301e4ce7679a564691a906d6024f080ff5a8629d03f747254e9ef4403f9",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/predictive_calibration_supp_page1.pdf": {
+      "before_sha256": "c239eabbd122823cc1f0015a9550213e3b24d5306abeec222fbed01b08cef4d3",
+      "after_sha256": "228e53988eb8ad4a674e1c3cbb09362b1c55605a006c31a5fe867d27e7f3e269",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/predictive_calibration_supp_page3.pdf": {
+      "before_sha256": "a5a5901f6e89feb3794f3cc626031a2f302375f6ca856085e38c7c3fc5ca86dd",
+      "after_sha256": "10170e3c2dc25ec8f068b0c8211bab7788363d5acf02a6b47f66fe8ec3b71044",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/predictive_calibration_supp_page4.pdf": {
+      "before_sha256": "70b47840b3f0bccb9778b7394b504581b3c07e0daa187144f73dbc60a1877f6b",
+      "after_sha256": "83f247744ecc0d43e3f5dfd19a730783cb3664170ccd5263f48b9f84ff9e3879",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/predictive_calibration_supp_page5.pdf": {
+      "before_sha256": "b13e5a11148a9a8b429831670f78d106fc390b10aa99543bd2b0144881ca5585",
+      "after_sha256": "172d06b508ca6df4bf33b056188e340f3128919a02ac532adea0712ee7029c3c",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/predictive_calibration_supp_page7.pdf": {
+      "before_sha256": "554e46b3c3c55befca2d986812a3c459d5758d3ead28aa84c18d12b2a964b9de",
+      "after_sha256": "23dd3804245c111837a89b7c013e4b6e5c489ea96cc4b4359fde50b7adf71881",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/predictive_calibration_supp_page8.pdf": {
+      "before_sha256": "07e17170940d4d8f30c701f5e99934ea23c0577431b15a0d82e283c82897a28c",
+      "after_sha256": "581b15724abcc1a215d8d01a9cff34da978676283933445e05145e45795d7699",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/predictive_calibration_supp_page9.pdf": {
+      "before_sha256": "468b6ad976d6f0239f7c5b71d4b380df4c2d08c52a26edcd6dbaf5aa565db10c",
+      "after_sha256": "c2a334bb4fa8842cb5a676eba1c3c6895ed94105be12aa34401a623794e535b5",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/predictive_scores_supp_page1.pdf": {
+      "before_sha256": "49d6c51b8bcc7014c0bf0e96de772510982bf34c2071fac1b57222c839695daa",
+      "after_sha256": "5ed112fa0d7d7056eadac9f230fc2cdae4153d85a76265094f272bd997e4f6b2",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/setup_page1.pdf": {
+      "before_sha256": "ca8bf5f2780665b6eec280ba9dbce723db60955845d19b83f2b5a3bc915d8a2b",
+      "after_sha256": "e062ac718604cb35187c0ef672ff76ba3c4df45b5ac6fcc2ba25b588615c70f7",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/stationary_dimensions_T200.pdf": {
+      "before_sha256": "26c1d7957407fef332fe0cde80602c400504932aa059e6084de5f80ef36079ad",
+      "after_sha256": "9d02b83e751c865782fdaf195a94dcc794dc83496a2f5a1f9f28a0c0a1bb5051",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/stationary_dimensions_T200.png": {
+      "before_sha256": "6132b0aefda3881cc2061c00fcc71d1fae92e8a3e430d147829ce87b7d63e754",
+      "after_sha256": "9ba4290564f75e814a117ece47d7e204e6b6b69fc2c2e19bc74fe490de8d1ab8",
+      "role": "png"
+    },
+    "results/supplementary/beamforming/task_performance_paired_difference.pdf": {
+      "before_sha256": "9d97ad71518d829ee205f3c70f293633dc39bb6ae165434024336bd224af136e",
+      "after_sha256": "14bd91412666719854289a8704544130696f83cd08f497efa7a328c12678c98e",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/tracking_bound_supp_page1.pdf": {
+      "before_sha256": "f5cefb74d60acb5afdcb3bb6ae36f68b6c4b16d83b90e745d694649f8ac0df06",
+      "after_sha256": "b41b2adac54261490ae6c00c0bc4f20c5fcdffc450944eceb607a4a68fb398b2",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/tracking_bound_supp_page2.pdf": {
+      "before_sha256": "907863dc65cf06966383a17a9dd84c2cf5a703b9479517db24e8bc406786d046",
+      "after_sha256": "ca89debb1a3deb02a1c948d63a3c22171431883389c670dac52774f573015f6d",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/tracking_bound_supp_page3.pdf": {
+      "before_sha256": "36d8b56210772c91743fbce355ac02c67c6efcdbc17007943169eaf74df3e9f9",
+      "after_sha256": "6f13b99ad7ba8eaee8839b031020524d29ae543626142b7baef75036070b5fe1",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/tracking_bound_supp_page4.pdf": {
+      "before_sha256": "b34e32ac38a02f98a0643b652636edb7b8b8098b2b3635bfd3968e2aa7ea99a1",
+      "after_sha256": "ded66f63c9021ec2fb28692926f6c769293e6226a849fa83b5d7967684b28a22",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/tracking_error_supp_page1.pdf": {
+      "before_sha256": "7f17de4bcab6e1d7ab0bcb1ee8ea300d497bf565ca79bacacacacb33a14abaaa",
+      "after_sha256": "7d1b0d37cd8cf46cb4b0f51fbd23393856148db244bed2d5f38ae801d86e55c3",
+      "role": "pdf"
+    },
+    "results/supplementary/beamforming/variance_estimation_supp_page1.pdf": {
+      "before_sha256": "41b4a5d2194d328d6abc9da7ff6074309698855c62e167761cf1819fbea0d422",
+      "after_sha256": "0c1e8b59a2394af68b2909ca578f3059aa1c806ab1e137af90c2654183b3df6e",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/additional_comparisons_supp_page1.pdf": {
+      "before_sha256": "429f6c90d64c5c13e038237135ccd59b895e7e0b4fabe92e244111b4cce7e796",
+      "after_sha256": "7d1d7160bc4d254406b7e519882bc009e945cbf552cb9f72e7610b020e280e66",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/additional_comparisons_supp_page2.pdf": {
+      "before_sha256": "c4f2cd8c69b050d3099a692d6afca97d7f67f744be1c0faa87a299852976bc63",
+      "after_sha256": "d9c99a0c368db15e3c6f0d64d887b2ddcd9de8be1fa854c99b7e6b03f9910939",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/additional_comparisons_supp_page3.pdf": {
+      "before_sha256": "6b16faa798a99356b00e3332c0350590ae5db2ace97d7eb4dacbf56b5eee5aa7",
+      "after_sha256": "a35532cfc40bec358938cbb16aefc8ed3b98398c18e16c02b24689d81ea0218c",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/additional_comparisons_supp_page4.pdf": {
+      "before_sha256": "90b50149796398205adcff39517e2d8f811a2f6875b7ecafb77ac0414af0babb",
+      "after_sha256": "d9ccef16490598f66946643a603cd5f0702113b411e058c341cf5913cf771327",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/block_updates_supp_page1.pdf": {
+      "before_sha256": "0e233162eb967ad899add1c2d6a890d40f8e1800c6c4f85eafbdc1ad4b58d48f",
+      "after_sha256": "2a118ecdbdde126359c94109abdb9932cbabf14465058c4b267cb80b2ebe5cd8",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/computation_time_phases.pdf": {
+      "before_sha256": "7464bdcbe10fed0c5dbb03f457791b9c86b3b7c8fc4a8d256846ebf2776d7bab",
+      "after_sha256": "b8e2f9e6da92ecf8661d46c7a92e83fdb490858575c2d6e044bf5f070a3f7d68",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/computation_time_scaling.pdf": {
+      "before_sha256": "d405ca83e92091cbcb0a07293a96c6db3305550940b3156bd7fc38394fe14def",
+      "after_sha256": "aa617aa7fcaac06038be6d9a54f28c8480505d1ce02fe455d2001d4d958fd00f",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/computation_time_supp_page2.pdf": {
+      "before_sha256": "dc48a502fb0b3b265a099a617dc1894f4395ed6bc1406a6ee353317d68001fed",
+      "after_sha256": "401bbda9c4c1633bfa6af328ba2d571f9e838baf7c6b9f0087185c1c4eb2eb6f",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/model_mismatch_supp_page1.pdf": {
+      "before_sha256": "84de5349169d1d9662bdbed5e70b304de13760e633de73183f0e283cfe50eaab",
+      "after_sha256": "b5e1a186d13b916fafda2b22be9c98a0f30768d03e0cd39917efe00da99232dd",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/noise_adaptation_page1.pdf": {
+      "before_sha256": "9cb4f091e3b009133a55bd1905e1a7a8e85048b80984d7fc6d1eb775b8397a57",
+      "after_sha256": "4edaa05e2f8146dc80ee0af0c83f2e76055151bff3b5b336735ec63925e51ead",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/noise_adaptation_supp_page2.pdf": {
+      "before_sha256": "018857214fd6b6db232c84030b8ae453062643213856ef20de1d0d43f0eb0b4d",
+      "after_sha256": "343c3c440985439da0dae98936702a68e5b1ec72e9a030dbc2390d70e8b3f7a5",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/noise_adaptation_supp_page4.pdf": {
+      "before_sha256": "89b4bfed8c791eaf06aa664d64c8b4bbc030606668c5dc1250ebc88f289abebd",
+      "after_sha256": "3871d01780d4ff751310873ffcf1253296f180163c8a58ab85e85b693259104e",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/numerical_accuracy_supp_page1.pdf": {
+      "before_sha256": "c7ff9eab3a4911f80f87dd2bdaf02427011e494bcdaa4d0fee16e77d5a6641f6",
+      "after_sha256": "6246b28a36c6b98b1169b6594e6834dc53a0736e02a3265b302c288d6da5e383",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/numerical_accuracy_supp_page2.pdf": {
+      "before_sha256": "d40f04f5e999b256939556a5d1bdcbd09bfd0500d5b6a2e03574ae40f6051398",
+      "after_sha256": "35145ba3cd65f244b477b43c98e5258fb726889c931d012fdfa908097f7a415d",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/numerical_accuracy_supp_page3.pdf": {
+      "before_sha256": "62d7815042668d48c86931bd666b4a32930a02089ac8802cc9baaba3de210612",
+      "after_sha256": "2b851247d57d05f2d99ab747ac628922ce572e58430ce97b9a7bae03beda5180",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/paper_summary_supp_page1.pdf": {
+      "before_sha256": "ec6225ca77ceb2001abb6df79dc30a0039ec6c5c2574299280dafb9bb6610d75",
+      "after_sha256": "9ccf5ff430e22ee6928417673fe8ad8edbc093723e11b5534ddbc874def75021",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/posterior_curvature_supp_page1.pdf": {
+      "before_sha256": "00a9921e239cf69131eb7393e9606899d37e6bec7e7288a8dcfab3b170dbded0",
+      "after_sha256": "15ba8ece7e20e17d7231df9d9ad8fc3f9db157ae44e4e229f128961f1b5e344b",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/predictive_calibration_page2.pdf": {
+      "before_sha256": "c6df8d8b939b15e97d29087ab4412cb4bda8d5e7545a74aeac0d1afcee0f7fb0",
+      "after_sha256": "bcdea505ef9974055ef4192823ec361444d7032ec87299eb454ffc3a353cd2fb",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/predictive_calibration_page6.pdf": {
+      "before_sha256": "0ff897d0b9c853135172c85c9e1500f3bee154a248ebda3b027c64b711aa3bde",
+      "after_sha256": "80eb2227cdc107537ad83be1b1a11d47a895d4586bdb354fd1441498fdc44d8e",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/predictive_calibration_supp_page1.pdf": {
+      "before_sha256": "04bb8f360f419abbcc6efc842970043ad4b4897b60534f9e6c6766e937bc93d1",
+      "after_sha256": "54c5adf54ec792b86305fd74d421d08d5e6436391eaff8a576107f0eb9114bd2",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/predictive_calibration_supp_page3.pdf": {
+      "before_sha256": "9f60a23b78358806ea3f13c26d171a44ee39b33b9c1512f98619c6a9724bdd71",
+      "after_sha256": "31483b676e2e4abdb53472cab51d31f9fab19d5f3c702eadf6e20a55e38c0ef2",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/predictive_calibration_supp_page4.pdf": {
+      "before_sha256": "7abcd104d2ac0aa9fc337d13ff7519d5e0c84f8c55e615e38c3503245e48ea82",
+      "after_sha256": "143f35694bac5a95e94ff68c312dc8d51b94fcc56fc39923d8aa3a503c0fc3f5",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/predictive_calibration_supp_page5.pdf": {
+      "before_sha256": "e3bc4fb2704ad68233fe9782640287a6498e2e673d9bdc8dc28f302443acd08d",
+      "after_sha256": "4ec0bc321f45716a2f36a7e657ddc62f156e225020ae18c1514c69864c862311",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/predictive_calibration_supp_page7.pdf": {
+      "before_sha256": "ee5c22de73f0fa35c7de0ad2785d4dc9c1287748894f226ff20826aeee69754e",
+      "after_sha256": "41ea666853e0e61e1deb9b449cbe8a5745ccd42bf3a519faa10bed149d98a872",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/predictive_calibration_supp_page8.pdf": {
+      "before_sha256": "a96b9dd8cfadf360b4587fd4ee89e3b4a2d01475ab5c35639dd0978ce888a3ee",
+      "after_sha256": "4a0fa099abb8d07bd6d4bc271ce4588696352d59a0d1df6b72ec86c9d0be6368",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/predictive_calibration_supp_page9.pdf": {
+      "before_sha256": "d96809e5a980dace5c37097ce71cdd3b20b87d9675aca6499b6edd59c8b154ef",
+      "after_sha256": "785157940ab38317cfcf7fb74a57fa5f2fc41785095637b75b687bc300cd3f7c",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/predictive_scores_supp_page1.pdf": {
+      "before_sha256": "7db9e82065ae826fe875489cecf19fa0227f057a86a1c505523ceb899c60f5fe",
+      "after_sha256": "e16c91277af48ac82a92a034ed830ed60c992b3993d1bf58ae7e78a315e40b44",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/task_performance_supp_page2.pdf": {
+      "before_sha256": "fc04bf1aa658487028889867ec443a907e9e6402a9a03773a33b5355689e3cf5",
+      "after_sha256": "71c7e284ac5f1933d4e77495700a329de898b3e51f36e3657ed94a9ddfeb0117",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/tracking_bound_supp_page1.pdf": {
+      "before_sha256": "a440c9a03cc776609cb3b87e709a2d6404a478bb0ede5624bc241038a5951f92",
+      "after_sha256": "9baaef2840864ebbe42f3cd58f26c51a9660fa1b9b6121c35a8fcf8bd5720d94",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/tracking_bound_supp_page2.pdf": {
+      "before_sha256": "2d027eb9b781b2a25a2b4a14a2bfa0cd5ddba5ce105c53b512c747c8586173a2",
+      "after_sha256": "d5f4d7fa169543b1ecac7e042ed93a350e253d8ea48504adb5c01fd855f94bdc",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/tracking_bound_supp_page3.pdf": {
+      "before_sha256": "96868521d87c29030a36a5ded2d0bfb398ba1da635e880608b2d4cf0230a7d18",
+      "after_sha256": "dbcb382f4ac1753cb7c5500af3fd29bdbd9ad09a25c83bd77f7f623c0a37f95b",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/tracking_bound_supp_page4.pdf": {
+      "before_sha256": "d6e94de5653066c430276cd04c8a5729ba8f3a866aedc5c6b561d429245c1a61",
+      "after_sha256": "9d2f7e1b7d5701f38702f8044169482b199979ffe352eba10d9b9599bc14d4c8",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/tracking_error_supp_page1.pdf": {
+      "before_sha256": "4775a7735f819720e4a84f9f8ffef8e128b7c81d17bfdb9e5d5ab5da089ce97e",
+      "after_sha256": "8ae321e05361c530726b476d9216181377437f043c528009ee4eef3b7c92b807",
+      "role": "pdf"
+    },
+    "results/supplementary/contact/variance_estimation_supp_page1.pdf": {
+      "before_sha256": "bf5d8f21838887dd627aa672f8549618d100b28dd9f1e7d6894944b3aeb68edb",
+      "after_sha256": "2c4d097e0b48b83904fd1a4af6e2f8bd294a7ee59ee53f2af2901b3196770955",
+      "role": "pdf"
+    }
+  },
+  "existing_scientific_inputs_settings_seeds_and_statistics_unchanged": true,
+  "coordinate_transport_recovery_separate": "results/contact_transport_diagnostics/data/manifest.json",
+  "no_trajectory_jitter_smoothing_or_interpolation": true
+}

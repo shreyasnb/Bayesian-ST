@@ -6,6 +6,7 @@ statement remains in the figure cell for direct editing.
 from __future__ import annotations
 import ast
 import re
+from scripts.notebook_trajectory_style import apply_method_trajectory_style
 
 CONTROLS = '''# Font sizes are chosen for a six-inch-wide insertion in the paper.
 # The width factor preserves that printed size when FIGSIZE is changed.
@@ -56,7 +57,7 @@ if len([_axis for _axis in fig.axes if _axis.get_label() != '<colorbar>']) > 1:
                 _panel_text.remove()
 '''
         source = source.replace('\nif SAVE_PDF:', '\n'+finishing+'\nif SAVE_PDF:')
-    return apply_publication_borders(source)
+    return apply_publication_borders(apply_method_trajectory_style(source))
 
 
 BORDER_BEGIN = '# Publication borders: ordinary 2D axes only.'

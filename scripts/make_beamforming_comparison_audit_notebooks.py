@@ -31,6 +31,232 @@ def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def solid_trajectory_source(source, remove_selected_point=False):
+    """Change only trajectory styling; keep ordinary source visible in cells."""
+    import ast
+    from copy import deepcopy
+    lines=source.splitlines(keepends=True)
+    starts=[];position=0
+    for line in lines:starts.append(position);position+=len(line)
+    def offset(node,end=False):
+        row=node.end_lineno if end else node.lineno
+        column=node.end_col_offset if end else node.col_offset
+        return starts[row-1]+len(lines[row-1].encode()[:column].decode())
+    edits=[]
+    for node in ast.walk(ast.parse(source)):
+        if isinstance(node,ast.Call) and isinstance(node.func,ast.Attribute) and node.func.attr=='plot':
+            changed=deepcopy(node)
+            if len(changed.args)>2 and isinstance(changed.args[2],ast.Constant) and isinstance(changed.args[2].value,str):
+                if len(changed.args)!=3:raise ValueError('Unexpected grouped trajectory format')
+                changed.args=changed.args[:2]
+            removed={'marker','markevery','markersize','markerfacecolor','markeredgecolor',
+                     'markeredgewidth','mfc','mec','mew','ms','linestyle','ls'}
+            changed.keywords=[item for item in changed.keywords if item.arg not in removed]
+            changed.keywords.append(ast.keyword(arg='linestyle',value=ast.Constant('-')))
+            edits.append((offset(node),offset(node,True),ast.unparse(changed)))
+        if (remove_selected_point and isinstance(node,ast.Expr) and isinstance(node.value,ast.Call)
+                and isinstance(node.value.func,ast.Attribute) and node.value.func.attr=='scatter'):
+            edits.append((offset(node),offset(node,True),''))
+    for start,end,value in sorted(edits,reverse=True):source=source[:start]+value+source[end:]
+    tree=ast.parse(source);lines=source.splitlines(keepends=True)
+    for node in ast.walk(tree):
+        if (isinstance(node,ast.For) and isinstance(node.target,ast.Tuple) and len(node.target.elts)==2
+                and isinstance(node.target.elts[0],ast.Name) and isinstance(node.iter,ast.Call)
+                and isinstance(node.iter.func,ast.Name) and node.iter.func.id=='enumerate'
+                and node.iter.end_lineno==node.lineno and len(node.iter.args)==1):
+            index=node.target.elts[0].id
+            if not any(isinstance(item,ast.Name) and item.id==index and isinstance(item.ctx,ast.Load)
+                       for statement in node.body for item in ast.walk(statement)):
+                line=lines[node.lineno-1];indent=line[:len(line)-len(line.lstrip())]
+                lines[node.lineno-1]=indent+'for '+ast.unparse(node.target.elts[1])+' in '+ast.unparse(node.iter.args[0])+':\n'
+    source=''.join(lines)
+    # Marker dictionaries are still retained in forest/summary cells; trajectories
+    # have no unused per-method marker, dash or staggering configuration.
+    tree=ast.parse(source);lines=source.splitlines(keepends=True)
+    config_names={'MARKERS','LINESTYLES','MARK_OFFSETS','MARK_EVERY','MARK_EVERY_OFFSETS'}
+    def base(target):
+        if isinstance(target,ast.Name):return target.id
+        if isinstance(target,ast.Subscript):return base(target.value)
+        return None
+    assignments=[node for node in tree.body if isinstance(node,ast.Assign)
+                 and any(base(target) in config_names for target in node.targets)]
+    ignored={id(node) for node in assignments}
+    loads={node.id for statement in tree.body if id(statement) not in ignored
+           for node in ast.walk(statement) if isinstance(node,ast.Name) and isinstance(node.ctx,ast.Load)}
+    dropped=set()
+    for node in assignments:
+        if all(base(target) not in loads for target in node.targets):
+            dropped.update(range(node.lineno-1,node.end_lineno))
+    if remove_selected_point:
+        for node in tree.body:
+            # The selected beta remains in its unchanged legend label.
+            if isinstance(node,ast.For):
+                for statement in node.body:
+                    if (isinstance(statement,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='selected' for t in statement.targets)
+                            and not any(isinstance(x,ast.Name) and x.id=='selected' and isinstance(x.ctx,ast.Load)
+                                        for other in node.body if other is not statement for x in ast.walk(other))):
+                        dropped.update(range(statement.lineno-1,statement.end_lineno))
+    return ''.join(line for i,line in enumerate(lines) if i not in dropped)
+
+
+_STYLE_PROOF_SETUP=r'''import hashlib as _style_hashlib
+import json as _style_json
+from matplotlib.collections import PolyCollection as _StylePolyCollection
+_style_states = {}
+_style_reports = []
+def _style_array(value):
+    value=np.ascontiguousarray(np.asarray(value,dtype=float))
+    return {'shape':list(value.shape),'sha256':_style_hashlib.sha256(value.tobytes()).hexdigest()}
+def _style_state(figure):
+    axes=[]
+    for axis in figure.axes:
+        lines=[{'x':_style_array(line.get_xdata()),'y':_style_array(line.get_ydata()),
+                'label':line.get_label(),'color':str(line.get_color()),
+                'linewidth':line.get_linewidth(),'alpha':line.get_alpha()}
+               for line in axis.lines]
+        bands=[{'paths':[_style_array(path.vertices) for path in band.get_paths()],
+                'facecolors':_style_array(band.get_facecolors()),'alpha':band.get_alpha(),
+                'linewidths':_style_array(band.get_linewidths())}
+               for band in axis.collections if isinstance(band,_StylePolyCollection)]
+        axes.append({'lines':lines,'bands':bands,'xlabel':axis.get_xlabel(),'ylabel':axis.get_ylabel(),
+                     'xlim':list(axis.get_xlim()),'ylim':list(axis.get_ylim()),
+                     'xscale':axis.get_xscale(),'yscale':axis.get_yscale(),
+                     'label_fonts':[axis.xaxis.label.get_fontsize(),axis.yaxis.label.get_fontsize()]})
+    return {'figsize':list(figure.get_size_inches()),'dpi':figure.dpi,'axes':axes,
+            'legend_text':[[text.get_text() for text in legend.get_texts()] for legend in figure.legends],
+            'legend_fonts':[[text.get_fontsize() for text in legend.get_texts()] for legend in figure.legends]}
+def _style_check(figure,key):
+    assert _style_states[key] == _style_state(figure), 'Numerical/appearance parity failed: '+key
+    count=0
+    exempt={'Direction change','Noise variance change','Exact mode'}
+    for axis in figure.axes:
+        for line in axis.lines:
+            if line.get_label() in exempt:continue
+            assert line.get_marker() in ('None',None,'','none',' '), (key,line.get_label(),line.get_marker())
+            assert line.get_linestyle() == '-', (key,line.get_label(),line.get_linestyle())
+            assert line.get_markevery() is None
+            count+=1
+    for legend in figure.legends:
+        handles=getattr(legend,'legend_handles',getattr(legend,'legendHandles',[]))
+        for handle,text in zip(handles,legend.get_texts()):
+            if text.get_text() in exempt:continue
+            if hasattr(handle,'get_marker'):assert handle.get_marker() in ('None',None,'','none',' ')
+            if hasattr(handle,'get_linestyle'):assert handle.get_linestyle()=='-'
+    _style_reports.append({'figure':key,'solid_markerless_trajectories':count,
+        'line_arrays_equal':True,'CI_paths_equal':True,'band_alpha_equal':True,
+        'labels_colors_widths_fonts_figsize_limits_equal':True,'legend_handles_solid_markerless':True})
+'''
+
+
+def restyle_existing_notebook(root,notebook_path,target_figures,metadata_key,manifest_writer,timeout=900):
+    """Execute only existing trajectory cells under the shared writer lock."""
+    import ast
+    import fcntl
+    from copy import deepcopy
+    import tempfile
+    import nbformat
+    from nbclient import NotebookClient
+    root=Path(root).resolve();path=root/notebook_path
+    with open('/tmp/bayesian-st-notebook-render.lock','a+') as render_lock:
+        fcntl.flock(render_lock,fcntl.LOCK_EX)
+        original_bytes=path.read_bytes();notebook=json.loads(original_bytes);before=deepcopy(notebook)
+        selected=[i for i,c in enumerate(notebook['cells']) if c.get('metadata',{}).get('figure_id') in target_figures
+                  and c.get('metadata',{}).get('editable_plotting_role')=='plot']
+        if len(selected)!=len(target_figures):raise RuntimeError('Missing requested trajectory figure')
+        def text(cell):return ''.join(cell['source']) if isinstance(cell['source'],list) else cell['source']
+        # Protect numerical and timing inputs, not other actors' authorized plot changes.
+        mapping={}
+        for name,expected in notebook['metadata']['editable_plotting']['input_hashes'].items():
+            expected=expected.get('sha256') if isinstance(expected,dict) else expected
+            if sha(root/name)!=expected:raise RuntimeError('Numerical input changed: '+name)
+            mapping[name]=expected
+            candidate=root/name
+            if candidate.name=='manifest.json':
+                meta=json.loads(candidate.read_text())
+                for relative,digest in meta.get('artifacts',{}).items():
+                    artifact=root/relative
+                    if not artifact.is_file():artifact=candidate.parent/relative
+                    if artifact.is_file():mapping[str(artifact.relative_to(root))]=sha(artifact)
+        scope_info=notebook['metadata'][metadata_key]
+        output=Path(notebook['metadata']['editable_plotting']['output_directory'])
+        figure_manifest=root/output.parent/'figure_manifest.json'
+        prior_manifest=json.loads(figure_manifest.read_text())
+        protected_assets={}
+        for name,record in prior_manifest['figures'].items():
+            if Path(name).stem in target_figures:continue
+            for key in ('pdf','png','local_pdf','local_png','draft_pdf','draft_png'):
+                if key in record:protected_assets[record[key]]=sha(root/record[key])
+        handle,baseline_name=tempfile.mkstemp(prefix=path.stem+'-solid-baseline-',suffix='.json',dir='/tmp')
+        os.close(handle);Path(baseline_name).write_text(json.dumps({'notebook':before,'numeric':mapping,'unselected_assets':protected_assets},indent=1)+'\n')
+        # Each current cell keeps all user controls except the requested line styling.
+        for index in selected:
+            cell=notebook['cells'][index];is_beta=cell['metadata']['figure_id']=='posterior_mean_beta'
+            cell['source']=solid_trajectory_source(text(cell),remove_selected_point=is_beta).splitlines(keepends=True)
+        prose_changed=[]
+        for i,cell in enumerate(notebook['cells']):
+            if cell['cell_type']!='markdown':continue
+            value=text(cell)
+            updated=value.replace('The open marker identifies the selected grid point. The labels give its actual',
+                                  'The labels give the actual selected')
+            updated=updated.replace('The dashed blue control uses','The blue control uses')
+            if updated!=value:cell['source']=updated.splitlines(keepends=True);prose_changed.append(i)
+        setup=next(c for c in notebook['cells'] if c['cell_type']=='code' and
+                   ('-setup' in c.get('id','') or c.get('metadata',{}).get('editable_plotting_role')=='setup'))
+        work=[deepcopy(setup),nbformat.v4.new_code_cell(_STYLE_PROOF_SETUP,id='private-style-proof-setup')]
+        destinations=[]
+        for index in selected:
+            key=notebook['cells'][index]['metadata']['figure_id'];old=text(before['cells'][index])
+            old=old.replace('SAVE_PDF = True','SAVE_PDF = False')
+            old=old.replace('plt.show()',f"_style_states[{key!r}]=_style_state(fig)\nplt.close(fig)")
+            work.append(nbformat.v4.new_code_cell(old,id='private-old-'+key.replace('_','-')))
+            fresh=deepcopy(notebook['cells'][index]);fresh['outputs']=[];fresh['execution_count']=None
+            fresh['source']=text(fresh).replace('plt.show()',f"_style_check(fig,{key!r})\nplt.show()")
+            destinations.append((index,len(work)));work.append(fresh)
+        work.append(nbformat.v4.new_code_cell("print('SOLID_STYLE_PROOF='+_style_json.dumps(_style_reports))",id='private-style-proof-report'))
+        mini=nbformat.reads(json.dumps(dict(nbformat=4,nbformat_minor=5,cells=work,
+            metadata={'kernelspec':notebook['metadata']['kernelspec']})),as_version=4)
+        for name in ('OPENBLAS_NUM_THREADS','OMP_NUM_THREADS','MKL_NUM_THREADS'):os.environ[name]='1'
+        os.environ.setdefault('MPLCONFIGDIR','/tmp/bayesian-st-matplotlib')
+        os.environ.setdefault('JUPYTER_RUNTIME_DIR','/tmp/bayesian-st-jupyter')
+        os.environ.setdefault('IPYTHONDIR','/tmp/bayesian-st-ipython')
+        NotebookClient(mini,timeout=timeout,kernel_name='python3',resources={'metadata':{'path':str(root)}}).execute()
+        if path.read_bytes()!=original_bytes:raise RuntimeError('Notebook changed concurrently')
+        reports=None
+        for output_item in mini.cells[-1].outputs:
+            value=output_item.get('text','')
+            if 'SOLID_STYLE_PROOF=' in value:reports=json.loads(value.split('SOLID_STYLE_PROOF=',1)[1].strip())
+        if reports is None:raise RuntimeError('Missing live-artist parity proof')
+        for index,position in destinations:
+            executed=mini.cells[position];cell=notebook['cells'][index]
+            cell['outputs']=json.loads(json.dumps(executed['outputs']));cell['execution_count']=executed['execution_count']
+            if 'execution' in executed.metadata:cell['metadata']['execution']=json.loads(json.dumps(executed.metadata['execution']))
+        changed=set(selected+prose_changed)
+        if any(cell!=before['cells'][i] for i,cell in enumerate(notebook['cells']) if i not in changed):
+            raise RuntimeError('An unrelated cell object changed')
+        for name,digest in {**mapping,**protected_assets}.items():
+            if sha(root/name)!=digest:raise RuntimeError('Protected numerical or standalone/3D asset changed: '+name)
+        info=notebook['metadata'][metadata_key]
+        info['producer_sha256']=sha(root/info['producer'])
+        notebook['metadata']['solid_trajectory_style']={'producer':'scripts/make_beamforming_comparison_audit_notebooks.py',
+            'producer_sha256':sha(__file__),'figures':sorted(target_figures),'markers':False,'linestyle':'-',
+            'numerical_inputs_unchanged':True,'unselected_assets_unchanged':True}
+        temporary=path.with_suffix('.solid.tmp');temporary.write_text(json.dumps(notebook,indent=1,ensure_ascii=False)+'\n');temporary.replace(path)
+        restored=nbformat.read(path,as_version=4)
+        protection={'status':'passed','numeric_inputs':len(mapping),'unselected_assets':len(protected_assets),
+            'unchanged_cell_objects':len(notebook['cells'])-len(changed),'baseline':baseline_name,
+            'reports':reports,'scope':'Numerical/timing inputs and unrelated standalone/3D assets; concurrent authorized plots are outside this guard.'}
+        manifest_writer(root,restored,protection)
+        final_notebook=json.loads(path.read_text())
+        if any(cell!=before['cells'][i] for i,cell in enumerate(final_notebook['cells']) if i not in changed):
+            raise RuntimeError('An unrelated cell changed during provenance refresh')
+        report={'status':'passed','notebook':str(notebook_path),'figures':sorted(target_figures),
+                'changed_plot_cells':selected,'changed_prose_cells':prose_changed,'protection':protection}
+        report_path=Path('/tmp')/(path.stem+'-solid-trajectories.json')
+        report_path.write_text(json.dumps(report,indent=2)+'\n')
+        print(json.dumps({'status':'passed','notebook':str(notebook_path),'report':str(report_path)},indent=2),flush=True)
+        return report
+
+
 def protected_files(root):
     own={root/path for path in NOTEBOOKS.values()}
     paths=set((root/'notebooks').glob('*.ipynb'))-own
@@ -114,13 +340,7 @@ COLORS = {'mean':'#0072B2', 'mode':'#D55E00', 'isotropic':'#CC79A7',
 MARKERS = {'mean':'o', 'mode':'s', 'isotropic':'^', 'great_window':'D', 'great_ew':'v',
     'covariance_loading':'X', 'great_window_final_db':'D', 'great_full_history_final_db':'P',
     'great_ew_final_db':'v', 'covariance_loading_final_db':'X'}
-LINESTYLES = {'mean':'-', 'mode':'--', 'isotropic':'-.', 'great_window':':',
-    'great_ew':(0,(5,1,1,1)), 'covariance_loading':'-',
-    'great_window_final_db':':', 'great_full_history_final_db':':',
-    'great_ew_final_db':(0,(5,1,1,1)), 'covariance_loading_final_db':'-'}
-MARK_OFFSETS = {'mean':0, 'mode':1, 'isotropic':2, 'great_window':0, 'great_ew':2,
-    'covariance_loading':1, 'great_window_final_db':0,'great_full_history_final_db':0,
-    'great_ew_final_db':2,'covariance_loading_final_db':1}
+
 '''
 
 CONTROLS=r'''# Edit the canvas, labels, styles and save commands directly in this cell.
@@ -155,17 +375,19 @@ plt.show()
 
 
 def plot_source(stem,body):
-    return CONTROLS+f"PDF_PATH = EDITABLE_OUTPUT / '{stem}.pdf'\n\n"+STYLE+'\n'+dedent(body).strip()+'\n\n'+SAVE
+    source=CONTROLS+f"PDF_PATH = EDITABLE_OUTPUT / '{stem}.pdf'\n\n"+STYLE+'\n'+dedent(body).strip()+'\n\n'+SAVE
+    if stem in {'smooth_history','abrupt_history','original_settings','final_time_selection','posterior_mean_beta'}:
+        source=solid_trajectory_source(source,remove_selected_point=stem=='posterior_mean_beta')
+    return source
 
 
 MOVING_HISTORY=r'''
 condition = CONDITION
 fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout='constrained')
-for index, curve in enumerate(existing['curves'][condition]):
+for curve in existing['curves'][condition]:
     method = curve['method']
     points = np.asarray(curve['points'])
-    ax.plot(points[:,0], points[:,1], color=COLORS[method], marker=MARKERS[method],
-        linestyle=LINESTYLES[method], markevery=(index%4,4), label=LABELS[method])
+    ax.plot(points[:,0], points[:,1], color=COLORS[method], linestyle='-', label=LABELS[method])
     if method == 'mean':
         ax.fill_between(points[:,0], points[:,2], points[:,3],
                         color=COLORS[method], alpha=.14, linewidth=0)
@@ -247,10 +469,8 @@ for index, (condition,n) in enumerate(cases):
     selected_beta = float(mean_audit['selection'][key]['selected_beta'])
     case_label = condition.capitalize() if SCOPE == 'moving' else r'$n='+str(int(n))+r'$'
     label = case_label+', '+r'$\widehat\beta='+f'{selected_beta:g}'+r'$'
-    ax.plot(points[:,0],points[:,1], 'o-', color=palette[index],label=label)
+    ax.plot(points[:,0],points[:,1], linestyle='-', color=palette[index],label=label)
     ax.fill_between(points[:,0],points[:,2],points[:,3],color=palette[index],alpha=.10)
-    selected = points[np.isclose(points[:,0],selected_beta)][0]
-    ax.scatter(selected[0],selected[1],s=100,facecolors='none',edgecolors='#111111',linewidths=1.4,zorder=5)
 ax.set(xlabel=r'$\beta$', ylabel=r'$\widehat V(\beta)$ (dB)')
 ax.set_xticks(sorted(frame.beta.unique()))
 ax.grid(color='#BFC4C8', alpha=.30, linewidth=.45)
@@ -425,8 +645,7 @@ methods = ['mean','mode','isotropic','great_window','great_ew','covariance_loadi
 fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout='constrained')
 for method in methods:
     group = frame[frame.method.eq(method)].sort_values('n')
-    ax.plot(group.n,group['mean'],marker=MARKERS[method],color=COLORS[method],
-            linestyle=LINESTYLES[method],markevery=(MARK_OFFSETS[method],3),label=LABELS[method])
+    ax.plot(group.n,group['mean'],color=COLORS[method],linestyle='-',label=LABELS[method])
     if method == 'mean':ax.fill_between(group.n,group.lower,group.upper,color=COLORS[method],alpha=.14,linewidth=0)
 ax.set(xlabel=r'$n$',ylabel=r'$\ell_T$ (dB)')
 ax.set_xticks(CONFIG['dimensions'])
@@ -447,8 +666,7 @@ if same_history and np.allclose(selected_window[['mean','lower','upper']],full_h
 fig, ax = plt.subplots(figsize=FIGSIZE,dpi=DPI,layout='constrained')
 for method in methods:
     group = frame[frame.method.eq(method)].sort_values('n')
-    ax.plot(group.n,group['mean'],marker=MARKERS[method],color=COLORS[method],
-            linestyle=LINESTYLES[method],markevery=(MARK_OFFSETS[method],3),label=LABELS[method])
+    ax.plot(group.n,group['mean'],color=COLORS[method],linestyle='-',label=LABELS[method])
     if method == 'mean':ax.fill_between(group.n,group.lower,group.upper,color=COLORS[method],alpha=.14,linewidth=0)
 ax.set(xlabel=r'$n$',ylabel=r'$\ell_T$ (dB)')
 ax.set_xticks(CONFIG['dimensions'])
@@ -645,7 +863,7 @@ The posterior mean, mode and isotropic controls below retain their original para
 
 This audit searches only the original grid $\beta\in\{1,0.99,0.97,0.9\}$. Define $\widehat V(\beta)$ as the average measured dB output power across validation simulations, averaging the primary reporting measurements inside each simulation. For moving data these are all 32 reports; for stationary data only $t=200$ is used. The minimum on the validation grid selects $\widehat\beta$. Test data and secondary outcomes do not participate in selection.
 
-The open marker identifies the selected grid point. The labels give its actual $\widehat\beta$. Confidence bands summarize validation-simulation variability and do not change the selection rule.''','mean-beta-note')
+The labels give the actual selected $\widehat\beta$. Confidence bands summarize validation-simulation variability and do not change the selection rule.''','mean-beta-note')
     code(plot_source('posterior_mean_beta',BETA_VALIDATION),'mean-beta-validation','posterior_mean_beta')
     code(BETA_RESULTS,'mean-beta-test-results')
     md(r'''## EW objective, convergence and task loss
@@ -746,8 +964,17 @@ def main():
     parser.add_argument('--root',type=Path,default=ROOT)
     parser.add_argument('--scope',choices=['moving','stationary','both'],default='both')
     parser.add_argument('--execute',action='store_true')
+    parser.add_argument('--restyle',action='store_true',help='Restyle only existing trajectory cells; do not export or replay scientific data.')
     parser.add_argument('--timeout',type=int,default=900)
     args=parser.parse_args();root=args.root.resolve();folder=root/OUTPUT;folder.mkdir(parents=True,exist_ok=True)
+    if args.restyle:
+        scopes=('moving','stationary') if args.scope=='both' else (args.scope,)
+        for scope in scopes:
+            targets=({'smooth_history','abrupt_history','posterior_mean_beta'} if scope=='moving' else
+                     {'original_settings','final_time_selection','posterior_mean_beta'})
+            restyle_existing_notebook(root,NOTEBOOKS[scope],targets,'beamforming_comparison_audit',
+                lambda root,nb,proof,scope=scope:write_manifest(root,scope,nb,proof),timeout=args.timeout)
+        return
     import fcntl
     with open('/tmp/bayesian-st-notebook-render.lock','a+') as render_lock:
         fcntl.flock(render_lock,fcntl.LOCK_EX)

@@ -890,7 +890,10 @@ def check_notebooks(root):
                        'image/png' in output.get('data',{}) for output in cell.get('outputs',[]))
             plots.append(dict(cell=index,figure=figure))
         assert [item['figure'] for item in plots] and {item['figure'] for item in plots}==expected_figures[scope]
-        assert len(plots)==7 and executions==sorted(set(executions))
+        # A style-only rerun preserves the untouched cells' output objects and
+        # counters. Every cell must be executed, but counters need not increase
+        # from top to bottom after selective figure edits.
+        assert len(plots)==7
         for filename,figure in manifest['figures'].items():
             assert Path(filename).stem in expected_figures[scope]
             assert figure['figure_size_in']==[15,5] and figure['dpi']==300 and figure['text_usetex'] is True
@@ -899,7 +902,12 @@ def check_notebooks(root):
                 assert figure[suffix]==expected and sha(root/expected)==figure[suffix+'_sha256']
         records[scope]=dict(status='passed',notebook=manifest['notebook'],manifest=manifest_record,
             executed_code_cells=len(executions),editable_untiled_figures=plots)
-    return dict(status='passed',notebooks=records,pdf_and_preview_checks=_pdf_audit_with_available_python(root))
+    from scripts.check_solid_trajectories import check_source_styles
+    trajectory_style=check_source_styles(root,notebooks=tuple(
+        f'notebooks/beamforming_{scope}_comparison_audit.ipynb' for scope in ('moving','stationary')))
+    assert trajectory_style['status']=='passed',trajectory_style['errors']
+    return dict(status='passed',notebooks=records,pdf_and_preview_checks=_pdf_audit_with_available_python(root),
+                method_trajectory_styles=trajectory_style)
 
 
 def fullcheck(root=ROOT, existing_only=False):

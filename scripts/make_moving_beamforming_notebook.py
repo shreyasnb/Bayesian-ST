@@ -39,12 +39,11 @@ def code(value, cell_id, **metadata):
 
 STYLE = r'''
 STYLE = {
-    "mean": (r"Posterior mean $\overline P_t^+$", "#0072B2", "o", "-"),
-    "mode": (r"Mode $P_{\widehat{\mathcal X}_t}$", "#D55E00", "s", "--"),
-    "iso": (r"Isotropic mean $\overline P_t^{\mathrm{iso}}$", "#CC79A7", "^", "-."),
-    "great_window": ("GREAT (sliding window)", "#009E73", "D", ":"),
+    "mean": (r"Posterior mean $\overline P_t^+$", "#0072B2", "-"),
+    "mode": (r"Mode $P_{\widehat{\mathcal X}_t}$", "#D55E00", "-"),
+    "iso": (r"Isotropic mean $\overline P_t^{\mathrm{iso}}$", "#CC79A7", "-"),
+    "great_window": ("GREAT (sliding window)", "#009E73", "-"),
 }
-MARKER_OFFSETS = {"mean": 0, "mode": 1, "iso": 2, "great_window": 3}
 '''
 
 
@@ -64,7 +63,6 @@ LEGEND_FONT_SIZE = {10.5 if combined else 22.}
 PRINT_WIDTH_IN = 7.
 PRINT_SCALE = FIGSIZE[0] / PRINT_WIDTH_IN
 LINE_WIDTH = 1.8 * PRINT_SCALE
-MARKER_SIZE = 5.5 * PRINT_SCALE
 SPINE_WIDTH = 0.95
 IQR_ALPHA = 0.22
 SHOW_IQR = {{"mean": True, "mode": True, "iso": True, "great_window": True}}
@@ -85,7 +83,7 @@ plt.rcParams.update({{
     "xtick.labelsize": TICK_FONT_SIZE, "ytick.labelsize": TICK_FONT_SIZE,
     "legend.fontsize": LEGEND_FONT_SIZE, "axes.labelpad": {4. if combined else 8.},
     "figure.dpi": DPI, "savefig.dpi": DPI, "savefig.bbox": None,
-    "lines.linewidth": LINE_WIDTH, "lines.markersize": MARKER_SIZE,
+    "lines.linewidth": LINE_WIDTH,
     "axes.spines.top": True, "axes.spines.right": True,
     "axes.spines.bottom": True, "axes.spines.left": True,
 }})
@@ -112,7 +110,7 @@ for ax, condition in panels:
     # All empirical bands are behind every mean curve.
     for curve in plot_data["curves"]:
         method = curve["method"]
-        label, color_, marker_, linestyle_ = STYLE[method]
+        label, color_, linestyle_ = STYLE[method]
         points = curve["points"]  # columns t, mean, lower95, upper95; mean is unchanged
         quartiles = quantiles.loc[method].reindex(points[:, 0])
         if SHOW_IQR[method]:
@@ -120,13 +118,10 @@ for ax, condition in panels:
                             color=color_, alpha=IQR_ALPHA, linewidth=0., zorder=1)
     for curve in plot_data["curves"]:
         method = curve["method"]
-        label, color_, marker_, linestyle_ = STYLE[method]
+        label, color_, linestyle_ = STYLE[method]
         points = curve["points"]
-        ax.plot(points[:, 0], points[:, 1], color=color_, marker=marker_,
-                linestyle=linestyle_, label=label, linewidth=LINE_WIDTH,
-                markersize=MARKER_SIZE, markevery=(MARKER_OFFSETS[method], 4),
-                markerfacecolor=color_ if method == "mean" else "white",
-                markeredgecolor=color_, markeredgewidth=.8 * PRINT_SCALE, zorder=10)
+        ax.plot(points[:, 0], points[:, 1], color=color_, linestyle=linestyle_,
+                label=label, linewidth=LINE_WIDTH, zorder=10)
     if condition == "abrupt":
         ax.axvline(129, color="#7B3294", linewidth=1.3, linestyle="--", zorder=20,
                    label="Direction change")
@@ -282,6 +277,12 @@ def build_notebook(root, evidence):
         These are empirical spreads of the simulated output powers, not posterior
         credible regions. The tables retain their original Student 95% confidence
         intervals for the means at the recorded indices $t=8,16,\ldots,256$.
+
+        Blue, orange, pink and green solid curves denote the posterior mean
+        $\overline P_t^+$, mode $P_{\widehat{\mathcal X}_t}$, matched isotropic
+        mean $\overline P_t^{\mathrm{iso}}$ and GREAT (sliding window), respectively.
+        In the abrupt comparison, the purple dashed line at $t=129$ marks the
+        interference-direction change.
         ''', 'moving-power-definition'),
         code(r'''
         data = load_moving_evidence(ROOT, CONFIG)
@@ -414,10 +415,14 @@ def write_figure_manifest(root,notebook,evidence):
     plotting_manifest=folder/'plotting/manifest.json'
     files={};figures={}
     sentence='Curves show means across 256 Monte Carlo simulations. Shaded regions show the pointwise 25th–75th percentiles across simulations.'
-    definition=(r'$\ell_t=10\log_{10}[(w_t^{\mathrm H}R_tw_t)/p_t^\star]$, '
+    definition=(r'Normalized output power $\ell_t=10\log_{10}[(w_t^{\mathrm H}R_tw_t)/p_t^\star]$, '
         r'$R_t=\sigma^2I_n+\tau^2h_th_t^{\mathrm H}$, '
-        r'$p_t^\star=(a^{\mathrm H}R_t^{-1}a)^{-1}$. '+sentence+
-        ' These empirical simulation spreads are not posterior credible regions; table confidence intervals are unchanged.')
+        r'$p_t^\star=(a^{\mathrm H}R_t^{-1}a)^{-1}$, with $n=32$, $\beta=0.97$. '
+        r'Blue, orange, pink and green solid curves denote the posterior mean $\overline P_t^+$, '
+        r'mode $P_{\widehat{\mathcal X}_t}$, matched isotropic mean $\overline P_t^{\mathrm{iso}}$ '
+        'and GREAT (sliding window), respectively. '+sentence+
+        r' Means are arithmetic, using the 32 saved indices $t=8,16,\ldots,256$. '
+        'These empirical simulation spreads are not posterior credible regions; table confidence intervals are unchanged.')
     specs=[('moving_interference_smooth_output_power','smooth','smooth-output-power',[15,5]),
            ('moving_interference_abrupt_output_power','abrupt','abrupt-output-power',[15,5]),
            ('moving_interference_comparison','comparison','combined-output-power',[7,3.5])]
@@ -431,8 +436,8 @@ def write_figure_manifest(root,notebook,evidence):
         if source.read_bytes()!=candidate.read_bytes() or source.with_suffix('.png').read_bytes()!=candidate.with_suffix('.png').read_bytes():
             raise RuntimeError('Manuscript copy differs from the editable figure')
         motion=(r'$\varphi_t=\varphi_0+2\varphi_0(t-1)/(T-1)$' if condition=='smooth' else
-                r'$\varphi_t=\varphi_0$ through $t=128$, $3\varphi_0$ from $t=129$' if condition=='abrupt' else
-                'Left: smooth motion. Right: abrupt motion; the purple dashed line marks measurement 129.')
+                r'$\varphi_t=\varphi_0$ through $t=128$, $3\varphi_0$ from $t=129$. The purple dashed line at $t=129$ marks the interference-direction change' if condition=='abrupt' else
+                r'Left: smooth motion. Right: abrupt motion. The purple dashed line at $t=129$ marks the interference-direction change')
         cell=next(cell for cell in notebook.cells if cell.id==cell_id)
         figures[basename+'.pdf']=dict(status='completed',condition=condition,
             figure_size_in=size,dpi=300,text_usetex=True,optional_main_candidate=True,
@@ -445,7 +450,7 @@ def write_figure_manifest(root,notebook,evidence):
                 ticks=11 if condition=='comparison' else 23,
                 legend=10.5 if condition=='comparison' else 22,
                 line_width=1.8 if condition=='comparison' else 1.8*15/7,
-                marker_size=5.5 if condition=='comparison' else 5.5*15/7),
+                trajectory_style='Solid lines without markers; original colors retained.'),
             output_hashes=outputs)
         files.update(outputs)
     retained={path.relative_to(root).as_posix():sha(path) for path in
@@ -465,7 +470,8 @@ def write_figure_manifest(root,notebook,evidence):
         figure_sizes={name:record['figure_size_in'] for name,record in figures.items()},
         plotting=dict(labels=25,ticks=23,legend=22,layout='constrained',
             pdf='Native vector text and curves',png_dpi=300,display_bands='empirical pointwise IQR',
-            iqr_alpha=.22,combined_native_size_in=[7,3.5],four_sided_inward_ticks=True),
+            iqr_alpha=.22,combined_native_size_in=[7,3.5],four_sided_inward_ticks=True,
+            trajectory_style='Solid lines without markers; original colors retained.'),
         numerical_cell_hashes=dict(notebook.metadata['editable_plotting']['numerical_cell_hashes']),
         scope='Presentation-only empirical IQR and print-width combined plot. Saved data, selected settings, mean curves, confidence intervals and paired tables remain unchanged.')
     (folder/'figure_manifest.json').write_text(json.dumps(result,indent=2,allow_nan=False)+'\n')
@@ -475,7 +481,6 @@ def write_figure_manifest(root,notebook,evidence):
 def _protected_files(root):
     paths=[path for folder in ['results/beamforming_moving/data','results/beamforming_moving/tables']
            for path in (root/folder).rglob('*') if path.is_file()]
-    paths += [path for path in (root/'notebooks').glob('*.ipynb') if path!=root/NOTEBOOK]
     paths += [root/name for name in [
         'results/beamforming/data/paper/performance/manifest.json',
         'results/beamforming/data/paper/performance/selected.json',
@@ -509,12 +514,12 @@ def _generate(args):
         notebook.metadata['editable_plotting']['rendered_figure_count']=3
     nbformat.write(notebook,target)
     after=_protected_files(ROOT)
-    if protected!=after:raise RuntimeError('A protected numerical file or another notebook changed during the render window')
+    if protected!=after:raise RuntimeError('A protected numerical/settings file changed during the render window')
     folder=ROOT/'results/beamforming_moving/plotting'
     guard=folder/'run_guard.json'
     guard.write_text(json.dumps(dict(status='passed',lock='/tmp/bayesian-st-notebook-render.lock',
         protected_files=protected,after_hashes=after,all_protected_files_unchanged=True,
-        protected_count=len(protected),scope='All other notebooks and original numerical/settings files were unchanged during this exclusive render window.'),indent=2)+'\n')
+        protected_count=len(protected),scope='Original numerical/settings files were unchanged during this exclusive render window; separately authorized notebook/figure updates are outside this data-only guard.'),indent=2)+'\n')
     stats_path=folder/'manifest.json';stats=json.loads(stats_path.read_text())
     stats['artifacts'][guard.relative_to(ROOT).as_posix()]=sha(guard)
     stats['render_guard']='Passed under the shared exclusive notebook-render lock.'

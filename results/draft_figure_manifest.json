@@ -2,7 +2,7 @@
   "schema": 1,
   "status": "completed",
   "producer": "scripts/export_draft_figures.py",
-  "producer_sha256": "589026d0ca8692a6ba5f8f390fe01c1ae3cf881124297dfe643cd00faa8d31c1",
+  "producer_sha256": "3ad1e95f57862b0930a4af75eaa78b52fa4d3e92eeed27767304d054aedca32a",
   "source_figure_manifests": {
     "results/beamforming/figure_manifest.json": "9d7fbdc2541e82ebcafcfa7fcbc208b222043dbe8f31220e785396234dd0bc4d",
     "results/contact/figure_manifest.json": "3227dcb2beb7276506a19688ac954e8b6ede16e200815035d35e17fe5898bd52"
@@ -50,8 +50,8 @@
       "section": "main",
       "filename": "moving_interference_smooth_output_power.pdf",
       "local_pdf": "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf",
-      "sha256": "1cc54a3319e1eca4e7fdc7d7a2b8472d66e027e067518e7f4f76215984087f8c",
-      "bytes": 196519
+      "sha256": "34912ed2ec3cf2db0be7a4d3232a25a339551610da9ed80d6e80157351257d0c",
+      "bytes": 194675
     },
     "results/main/beamforming/moving_interference_abrupt_output_power.pdf": {
       "notebook": "notebooks/beamforming_moving_interference.ipynb",
@@ -60,8 +60,8 @@
       "section": "main",
       "filename": "moving_interference_abrupt_output_power.pdf",
       "local_pdf": "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf",
-      "sha256": "730fe503654d7bcbfebc1f789b4e6f72cf9ac0871c5f2a25f9c5e3d3f81c7e7b",
-      "bytes": 196646
+      "sha256": "9f98fd740a4ae047780545e9dcfb59cb088dedf77824e80b69763cef78b01270",
+      "bytes": 194813
     },
     "results/main/beamforming/moving_interference_comparison.pdf": {
       "notebook": "notebooks/beamforming_moving_interference.ipynb",
@@ -70,21 +70,21 @@
       "section": "main",
       "filename": "moving_interference_comparison.pdf",
       "local_pdf": "results/beamforming_moving/figures/moving_interference_comparison.pdf",
-      "sha256": "2207ceb588f766270ea896108bbaebad9f6b2af1254c3afd971062cbe15817aa",
-      "bytes": 340984
+      "sha256": "dd9b32f0439719d5bd53a86dd4433fc2a273a0c5348e7c58594d2afd614c682d",
+      "bytes": 337998
     }
   },
   "optional_moving_scope": "Independent candidates for review only; the six retained main figures and stationary tables are unchanged by this notebook.",
   "main_caption_notes": {
-    "results/main/beamforming/noise_adaptation_page1.pdf": "Beamforming with true variances, fixed variance estimates and EM variance estimates at $n=32$, $T=256$ and variance-estimation block length $L=32$. Panels (a,b) show the variances available before receiving $u_t$. The true noise variance is $0.2$ for $t\\leq128$ and $0.8$ for $t\\geq129$; the true signal variance is one. The true step and the common dashed event marker are drawn at $t=129$, with one common-legend entry Noise variance change. Variance bands contain the middle 50\\% of estimates across 256 Monte Carlo simulations. Panel (c) shows $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, using the prior mean $\\overline P_t^-$ and saved exact covariance powers. Panel (d) shows the normalized Bingham-mixture density $\\log\\pi_t(u_t)$, with $\\pi_t(u)=\\int p(u\\mid\\mathcal X,\\widehat\\theta_t)q_{A_t^-}(\\mathcal X)\\,d\\mu(\\mathcal X)$, evaluated before correction. Power and log-density bands are 95\\% confidence intervals for Monte Carlo means. The unchanged forgetting factors are $0.98$, $0.90$ and $0.98$ for true, fixed and EM variances. An EM fit uses two iterations and affects measurements from $t+1$.",
-    "results/main/beamforming/task_performance_output_power.pdf": "Stationary beamforming with fixed measurement total $T=200$ at every sensor count $n=32,64,128$. The interference direction is fixed, $\\sigma^2=0.2$, $\\tau^2=1$, $|a^{\\mathrm H}h|^2=1/2$, the Bingham initialization is uniform and $\\beta=1$. Each curve averages the individual covariance-based $\\ell_T=10\\log_{10}[(w_T^{\\mathrm H}Rw_T)/p^\\star]$ values over 256 independent simulations, with $R=\\sigma^2I+\\tau^2P_{\\mathcal X}$ and $p^\\star=(a^{\\mathrm H}R^{-1}a)^{-1}$. The posterior mean is taken after correction with measurement 200. Shading is a pointwise Student 95\\% confidence interval for its mean; smaller relative power is better. Parameter selection uses the unchanged measured-power criterion on 64 independent validation simulations per sensor count. The main table reports $n=64$, and the supplementary table reports all three sensor counts. This stationary figure is retained independently of the optional moving-interference candidates.",
-    "results/main/contact/information_rotation.pdf": "Change in the conditional measurement distribution under rotations of the saved plane with true normal $e_3$, using the original $t=16$ measurements. The angle $\\delta$ is measured in degrees. The curves evaluate $D_{\\mathrm{KL}}(p_0\\|p_z)$ along $z=(\\tan\\delta,0)^\\top$ and $z=(0,\\tan\\delta)^\\top$, where $n(z)=(e_3-z_1e_1-z_2e_2)/\\sqrt{1+\\|z\\|^2}$ and $p_z$ is the corresponding joint conditional likelihood. Markers retain the $5^\\circ$ and $30^\\circ$ rotations. This standalone figure has no inherited panel letter.",
-    "results/main/contact/posterior_anisotropy_risk.pdf": "Panel (c) of the directional posterior-uncertainty figure. For $v(\\theta)=v_0(\\cos\\theta\\,e_1+\\sin\\theta\\,e_2)$ with $v_0=0.02\\,\\mathrm{m/s}$, the ordinate is $r_t(v(\\theta))/v_0^2$, where $r_t(v)=v^\\top[\\overline P_t^+-(\\overline P_t^+)^2]v$. The full and matched isotropic curves each use the mean of their own law, $\\overline P_t^+$ and $\\overline P_t^{\\mathrm{iso}}$, respectively. They compare posterior response variances, rather than empirical losses under one common law. The saved unit-input risks already equal this dimensionless quantity and are plotted directly, without further normalization.",
-    "results/main/contact/posterior_anisotropy_spheres.pdf": "Directional posterior uncertainty at $t=16$. Panels (a,b) show the full and matched isotropic normal densities, normalized relative to invariant measure and drawn on a common logarithmic scale. Antipodal normals represent one plane. The point marks the common modal line; gray curves are coordinate great circles. Saved coordinates, camera, density parameters and logarithmic limits are unchanged. These panels are combined with the separate response-variance panel (c) in TeX.",
-    "results/main/contact/task_performance_page1.pdf": "Mean squared velocity prediction error $\\mathcal E_t(D_t)=\\tfrac13\\sum_{j=1}^3\\|D_tv_t^{(j)}-P_{\\mathcal X_t}v_t^{(j)}\\|^2$, with $v_t^{(j)}=v_0R_t^\\top e_j$ and $v_0=0.02\\,\\mathrm{m/s}$. Panel (a) uses stationary inputs near $e_1$ at measurement indices $t=1,4,16,32$. Panel (b) uses a sphere of radius $0.05$ m; errors are averaged over $t=4,8,\\ldots,192$ within each simulation before averaging the 256 values. Multiplication by $10^6$ converts the saved squared-velocity error to $(\\mathrm{mm}/\\mathrm{s})^2$; no additional factor of three is used. Confidence intervals are shown for the posterior mean in (a) and every method in (b)."
+    "results/main/beamforming/noise_adaptation_page1.pdf": "Causal variance estimation with $n=32$ and $T=256$. Black, gray and blue curves use supplied true variances, fixed estimates and EM estimates, respectively. The purple dashed line at $t=129$ marks the noise-variance change from $\\sigma_t^2=0.2$ to $0.8$; $\\tau_t^2=1$. The top-left and top-right panels show the variances available before $u_t$: solid estimate curves join medians at the eight saved indices $t=32,64,\\ldots,256$, and the blue bands contain the pointwise empirical 25th--75th percentiles across 256 Monte Carlo simulations. Black references give the true schedules. The bottom-left and bottom-right panels show arithmetic means over these simulations of $\\ell_t$ in~\\eqref{eq:beam-power-comparison} and $\\log\\pi_t(u_t)$ in~\\eqref{eq:beam-predictive-density}, evaluated from $q_{A_t^-}$ before correction at those same indices; all three methods have pointwise Student 95\\% confidence bands. EM uses blocks of $L=32$ measurements and two iterations; a fit completed at $t$ is first used at $t+1$.",
+    "results/main/beamforming/task_performance_output_power.pdf": "Stationary beamforming: $\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$ from~\\eqref{eq:beam-power-comparison}, after $T=200$ measurements for each $n\\in\\{32,64,128\\}$. Blue, orange, green and dark gray solid curves denote the posterior mean $\\overline P_T^+$, mode $P_{\\widehat{\\mathcal X}_T}$, GREAT (sliding window) and MVDR with regularized sample covariance, respectively. Each curve joins three arithmetic means over 256 Monte Carlo simulations; blue shading gives pointwise Student 95\\% confidence intervals for the posterior-mean averages.",
+    "results/main/contact/information_rotation.pdf": "Anisotropy of the conditional measurement information for the stationary plane with normal $e_3$. Orange and blue solid curves show the exact $D_{\\mathrm{KL}}(p_0\\Vert p_z)$ for $z=(\\tan\\delta,0)^\\top$ and $z=(0,\\tan\\delta)^\\top$, respectively, where $n(z)=(e_3-z_1e_1-z_2e_2)/\\sqrt{1+\\|z\\|^2}$ and $p_z$ is the joint conditional likelihood of the 16 measurements from~\\eqref{eq:contact-model}. Curves evaluate 201 angles from $0.25^\\circ$ to $35^\\circ$; the orange and blue points mark $5^\\circ$ and $30^\\circ$. The thin neutral segment joins the highlighted values $D_{\\mathrm{KL}}=0.23957$ at $5^\\circ$ and $0.23077$ at $30^\\circ$: nearly equal divergences arise at very different rotation angles. Their actual heights are retained. These are deterministic likelihood comparisons, with no Monte Carlo averaging or confidence band.",
+    "results/main/contact/posterior_anisotropy_risk.pdf": "Posterior response variance $r_t(v(\\theta))/v_0^2$ from~\\eqref{eq:contact-response-variance}, for $v(\\theta)=v_0(\\cos\\theta\\,e_1+\\sin\\theta\\,e_2)$ and $v_0=0.02\\,\\mathrm{m/s}$ at $t=16$. Blue and pink solid curves use the full and matched isotropic laws, respectively, each with its own posterior mean. The curves evaluate the same saved posterior pair at 181 angles over $[0,2\\pi]$; they are deterministic posterior variances, with no Monte Carlo averaging or confidence band.",
+    "results/main/contact/posterior_anisotropy_spheres.pdf": "Posterior normal densities for one saved stationary-plane simulation at corrected time $t=16$. Left: $q_{-A_t^+}([n])$; right: the isotropic Bingham law with the same modal line and expected squared chordal distance, whose plane mean is~\\eqref{eq:isotropic-control}. The blue--purple--pink--yellow colors show normalized density relative to invariant measure on one common logarithmic scale, from lower to higher density. Orange points mark the common modal line; gray curves are coordinate great circles. Antipodal normals represent the same plane. Each surface evaluates one saved distribution; it is not a Monte Carlo average or a confidence region.",
+    "results/main/contact/task_performance_page1.pdf": "Velocity prediction error $\\mathcal E_t(D_t)$ in~\\eqref{eq:contact-prediction-error}, in $(\\mathrm{mm}/\\mathrm{s})^2$. In the stationary-plane panel (left), blue, orange, brown and green solid curves denote the posterior mean $\\overline P_t^+$, mode $P_{\\widehat{\\mathcal X}_t}$, regularized matrix $\\widetilde M_t$ and GREAT (sliding window). Each joins arithmetic means over 256 Monte Carlo simulations at $t=1,4,16,32$; blue shading gives pointwise Student 95\\% confidence intervals for the posterior-mean averages. In the sphere panel (right), blue, orange, pink and brown points denote the posterior mean, mode, matched isotropic mean and regularized matrix $\\widetilde M_t$. Each point first averages the error over all 48 indices $t=4,8,\\ldots,192$ within each simulation, then averages the 256 resulting values; horizontal bars are Student 95\\% confidence intervals for every displayed method. Here $\\widetilde M_t=\\rho P_{\\widehat{\\mathcal X}_t}+(1-\\rho)(2/3)I_3$."
   },
   "documentation": {
-    "results/main/README.md": "e211e90665b7bc2ea7852e493f7be516d94629b86010c2feda97a9cb1706e7d1",
+    "results/main/README.md": "3216639c66b88c78e59421a0b005ffd12f8dbd18477ec3b7a4915d1b490dad1f",
     "results/supplementary/README.md": "4ef2bf57dda332fb2ea24db5fb92d81b1d2527c332221298dd9d4a30a7edaaed"
   },
   "files": {

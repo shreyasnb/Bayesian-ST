@@ -1,0 +1,63 @@
+{
+  "trial": 1,
+  "declaration_sha256": "e43f8e3975f846251eab2994a8ecbc5c87f4a3f6db645905385662c3b2a3e129",
+  "checks": {
+    "trial": 1,
+    "status": "passed",
+    "parity": {
+      "original_rows": 56,
+      "matched_rows": 56,
+      "rtol": 1e-10,
+      "atol": 1e-10,
+      "maximum_absolute_error_by_field": {
+        "time_s": 2.7755575615628914e-17,
+        "beta": 0.0,
+        "sigma2": 0.0,
+        "moment_resolution_error": 2.465190328815662e-32,
+        "response_mse": 9.110008754309451e-17,
+        "response_map_frobenius": 1.1102230246251565e-16,
+        "command_cost": 9.980080997729068e-17,
+        "posterior_response_excess": 8.166752864247062e-17,
+        "posterior_command_excess": 9.0015885370609e-17,
+        "command_excess_identity_error": 1.2037062152420224e-35
+      },
+      "maximum_relative_error_on_nonzero_references_by_field": {
+        "time_s": 1.8503717077085943e-16,
+        "beta": 0.0,
+        "sigma2": 0.0,
+        "moment_resolution_error": 2.2204460492503136e-16,
+        "response_mse": 6.914510732680431e-13,
+        "response_map_frobenius": 3.162949446212059e-13,
+        "command_cost": 7.55814263330012e-13,
+        "posterior_response_excess": 7.169224919439045e-13,
+        "posterior_command_excess": 8.246066916967756e-13,
+        "command_excess_identity_error": 1.9875321280002797e-16
+      },
+      "note": "Relative errors near algebraic zero are reported without a fitted denominator floor; absolute tolerance is the unchanged original algebra tolerance."
+    },
+    "native_checked_moment_calls": 96,
+    "maximum_mean_resolution_error": 1.1102230246251565e-16,
+    "maximum_log_normalizer_resolution_error": 8.881784197001252e-16,
+    "original_tolerance": 5e-08,
+    "all_native_moments_resolved": true,
+    "exact_seed_generated_arrays": {
+      "U": "5d7199704dee2277f412891ddda079895a255c81d8248c38d99257d4a5c021ef",
+      "V": "4e959d686859c64e56cb492833c8ac69e75e2fc21f4fea1cab60432021990bd4",
+      "G": "187ede91ba2c7b7f3e9de6cfdde0f3a4fdaf5e8365df55adc842c84272e909a3",
+      "R": "e576f0c4d6201f6035bc0d815765a7316802a87220ce1f232b7efa0061027d0f",
+      "P": "d6695c2ac784627c3d0e3b1fa87fc0f2439a89b8bce2161ff9b2475794c2985e",
+      "world_normal": "b89597b4f38f111b48a752cba46d4f61e7da869f28f44a0edba466662a729aa4",
+      "times": "9489b4534fcff097bde47b8cefc7ab0c34edf068f118a14d84e3aaf6b89b42f3"
+    },
+    "saved_story_exact_match": false,
+    "saved_story_scope": "Single simulation zero only, not a Monte Carlo result.",
+    "maximum_transport_geometry_identity_error": 4.891920202254596e-16,
+    "same_observations_variance_beta_action_times": true,
+    "only_row_retention_changed": true
+  },
+  "artifacts": {
+    "results/contact_transport_diagnostics/data/checkpoints/001/physical.csv.gz": "753be94d032f85630fd1b701f65bb5e950f383df82fb8f844bb91412c82bded8",
+    "results/contact_transport_diagnostics/data/checkpoints/001/metrics.csv.gz": "a9de0d581227ecf51aae24da963575803cf415d2b8e61d4cb1b9b6c8c21a40e8",
+    "results/contact_transport_diagnostics/data/checkpoints/001/diagnostics.csv.gz": "f0e4991735982bdaacc9c168bb7e4523ac361be99dbdf90784449fda5c4e527b"
+  }
+}

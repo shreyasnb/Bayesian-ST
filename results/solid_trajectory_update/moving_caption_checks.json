@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "code_cells_outputs_and_execution_counts_unchanged": true,
+  "rendered_assets_unchanged": 12,
+  "plotting_function_asts_unchanged": true,
+  "explicit_color_method_mapping_in_all_captions": true,
+  "no_notebook_rerender": true,
+  "notebook_sha256": "9fb1a4f85aa6923a2330c6e7a5208518c286fce8862f17147d0833978e78c563",
+  "figure_manifest_sha256": "8cee545b41f07dbed4dc5ca90df0226767b31d472278b8b790b295edbab2a572",
+  "plotting_manifest_sha256": "88f44ebdccc251a5b4f6da5a489783d310a077b6b8ac04c01d83fb6eb0eaef89",
+  "current_generator_sha256": "ca5799430d504756c695076293b64d08fcf1ff8d9622cda10a692246e3253941",
+  "render_generator_sha256": "7c43a9091f29409f347db8d26968a2474b5f23defa80a63a6699deefbe9981c5",
+  "render_generator_archive_path": "results/solid_trajectory_update/source_archive/7c43a9091f29409f347db8d26968a2474b5f23defa80a63a6699deefbe9981c5/scripts/make_moving_beamforming_notebook.py",
+  "all_render_source_paths_verify_exact_bytes": true
+}

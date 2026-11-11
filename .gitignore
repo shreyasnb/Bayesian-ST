@@ -73,6 +73,12 @@ results/beamforming_comparison_audit/**/unpublished_pre_stationary_finaltime_fix
 !results/contact_plotting_addendum/**
 !results/application_plotting_update/
 !results/application_plotting_update/**
+!results/solid_trajectory_update/
+!results/solid_trajectory_update/**
+!results/contact_transport_diagnostics/
+!results/contact_transport_diagnostics/**
+!results/application_trajectory_style_update/
+!results/application_trajectory_style_update/**
 !results/main/
 !results/main/**/
 !results/main/**

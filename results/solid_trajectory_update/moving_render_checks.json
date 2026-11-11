@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "figures": 3,
+  "solid_marker_free_trajectories": 16,
+  "empirical_iqr_bands_unchanged": 16,
+  "event_lines_unchanged": 2,
+  "nonstyle_controls_exactly_unchanged": true,
+  "method_labels_colors_exactly_unchanged": true,
+  "numerical_cell_source_hashes_unchanged": true,
+  "all_17_numerical_file_hashes_unchanged": true,
+  "means_and_xy_exactly_unchanged": true,
+  "source_uses_no_marker_markevery_or_offset_controls": true,
+  "every_source_cell_visible_and_executed": true,
+  "figure_manifest": "results/beamforming_moving/figure_manifest.json",
+  "figure_manifest_sha256": "844a165b13d5e196628fb896ab3c88e86d3eaeb9626b7edbbbbcd5927e75c9c5",
+  "plotting_manifest": "results/beamforming_moving/plotting/manifest.json",
+  "plotting_manifest_sha256": "1aadf28b13095d8282373cc65d02be403e2e29d6e52a591bc4ddbd64199de784",
+  "generator_sha256": "7c43a9091f29409f347db8d26968a2474b5f23defa80a63a6699deefbe9981c5",
+  "output_hashes": {
+    "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf": "34912ed2ec3cf2db0be7a4d3232a25a339551610da9ed80d6e80157351257d0c",
+    "results/beamforming_moving/figures/moving_interference_smooth_output_power.png": "0d7de61ed5f29c36af79edf61082c3f031b4afd8aab165604b930e1bfb8aeda2",
+    "results/main/beamforming/moving_interference_smooth_output_power.pdf": "34912ed2ec3cf2db0be7a4d3232a25a339551610da9ed80d6e80157351257d0c",
+    "results/main/beamforming/moving_interference_smooth_output_power.png": "0d7de61ed5f29c36af79edf61082c3f031b4afd8aab165604b930e1bfb8aeda2",
+    "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf": "9f98fd740a4ae047780545e9dcfb59cb088dedf77824e80b69763cef78b01270",
+    "results/beamforming_moving/figures/moving_interference_abrupt_output_power.png": "19f6d4002a19f61403842d6b4011117a37cf82a18d77f64c682d918fe7f24621",
+    "results/main/beamforming/moving_interference_abrupt_output_power.pdf": "9f98fd740a4ae047780545e9dcfb59cb088dedf77824e80b69763cef78b01270",
+    "results/main/beamforming/moving_interference_abrupt_output_power.png": "19f6d4002a19f61403842d6b4011117a37cf82a18d77f64c682d918fe7f24621",
+    "results/beamforming_moving/figures/moving_interference_comparison.pdf": "dd9b32f0439719d5bd53a86dd4433fc2a273a0c5348e7c58594d2afd614c682d",
+    "results/beamforming_moving/figures/moving_interference_comparison.png": "d0f517d22202a1a5bf632b431b1b6d01342b5b491e1391d7992875c059db9fc8",
+    "results/main/beamforming/moving_interference_comparison.pdf": "dd9b32f0439719d5bd53a86dd4433fc2a273a0c5348e7c58594d2afd614c682d",
+    "results/main/beamforming/moving_interference_comparison.png": "d0f517d22202a1a5bf632b431b1b6d01342b5b491e1391d7992875c059db9fc8"
+  }
+}

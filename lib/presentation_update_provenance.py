@@ -13,10 +13,13 @@ from pathlib import Path, PurePosixPath
 
 
 PROOF = 'results/application_plotting_update/authorized_updates.json'
+FOLLOWUP_PROOF = 'results/solid_trajectory_update/authorized_updates.json'
 NOTEBOOKS = {
     'notebooks/01_array.ipynb', 'notebooks/03_contact.ipynb',
     'notebooks/beamforming_moving_interference.ipynb',
     'notebooks/contact_prediction_diagnostics.ipynb',
+    'notebooks/beamforming_moving_comparison_audit.ipynb',
+    'notebooks/beamforming_stationary_comparison_audit.ipynb',
 }
 METADATA = {
     'results/notebook_editability.json', 'results/draft_figure_manifest.json',
@@ -26,6 +29,10 @@ METADATA = {
     'results/contact_prediction_diagnostics/figure_manifest.json',
     'results/contact_prediction_diagnostics/pdf_layout_checks.json',
     'results/contact_prediction_diagnostics/validation/independent_checks.json',
+    'results/beamforming_moving/plotting/manifest.json',
+    'results/beamforming_moving/plotting/run_guard.json',
+    'results/beamforming_comparison_audit/moving/figure_manifest.json',
+    'results/beamforming_comparison_audit/stationary/figure_manifest.json',
 }
 PURE_SPHERES = {
     'posterior_anisotropy_spheres.pdf', 'posterior_anisotropy_spheres.png',
@@ -47,6 +54,8 @@ def presentation_role(name):
         return 'notebook'
     if name in METADATA:
         return 'presentation_metadata'
+    if name == 'lib/presentation_update_provenance.py':
+        return 'presentation_validation_source'
     if path.name in PURE_SPHERES:
         return None
     if (path.name in {'noise_adaptation_supp_page3.pdf', 'noise_adaptation_supp_page3.png'}
@@ -61,6 +70,8 @@ def presentation_role(name):
         'results/notebook_exports/01_array', 'results/notebook_exports/03_contact',
         'results/beamforming_moving/figures',
         'results/contact_prediction_diagnostics/figures',
+        'results/beamforming_comparison_audit/moving/figures',
+        'results/beamforming_comparison_audit/stationary/figures',
     }
     if prefix in destinations:
         # Complete historical catalogues are not rewritten by notebook saves.
@@ -78,26 +89,41 @@ def presentation_role(name):
 
 
 def load_authorized_updates(root):
+    """Resolve successive exact-hash revisions while retaining prior proofs.
+
+    Every new revision must start at the previous revision's resulting hash.
+    Only the final hash is required on disk. No intermediate proof is rewritten
+    to pretend that an earlier audit observed the latest presentation.
+    """
     root = Path(root).resolve()
-    path = root/PROOF
-    if not path.is_file():
-        return {}
-    proof = json.loads(path.read_text())
-    if (proof.get('schema') != 1 or proof.get('status') != 'verified'
-            or proof.get('scope') != 'User-requested application plotting updates'):
-        raise RuntimeError('Unknown application presentation update proof')
-    for name, record in proof['updates'].items():
-        role = presentation_role(name)
-        if role is None or role != record.get('role'):
-            raise RuntimeError('Scientific or unapproved file in plotting update proof: '+name)
-        if not (isinstance(record.get('before_sha256'), str)
-                and len(record['before_sha256']) == 64
-                and isinstance(record.get('after_sha256'), str)
-                and len(record['after_sha256']) == 64):
-            raise RuntimeError('Presentation update needs both actual file hashes: '+name)
+    updates = {}
+    for filename in (PROOF, FOLLOWUP_PROOF):
+        path = root/filename
+        if not path.is_file():
+            continue
+        proof = json.loads(path.read_text())
+        if (proof.get('schema') != 1 or proof.get('status') != 'verified'
+                or proof.get('scope') != 'User-requested application plotting updates'):
+            raise RuntimeError('Unknown application presentation update proof')
+        for name, record in proof['updates'].items():
+            role = presentation_role(name)
+            if role is None or role != record.get('role'):
+                raise RuntimeError('Scientific or unapproved file in plotting update proof: '+name)
+            if not (isinstance(record.get('before_sha256'), str)
+                    and len(record['before_sha256']) == 64
+                    and isinstance(record.get('after_sha256'), str)
+                    and len(record['after_sha256']) == 64):
+                raise RuntimeError('Presentation update needs both actual file hashes: '+name)
+            previous = updates.get(name)
+            if previous is not None and previous['after_sha256'] != record['before_sha256']:
+                raise RuntimeError('Disconnected presentation revision: '+name)
+            prior_hashes = previous['permitted_before_sha256'][:] if previous else []
+            prior_hashes.append(record['before_sha256'])
+            updates[name] = dict(record, permitted_before_sha256=prior_hashes)
+    for name, record in updates.items():
         if not (root/name).is_file() or sha(root/name) != record['after_sha256']:
             raise RuntimeError('Changed presentation update output: '+name)
-    return proof['updates']
+    return updates
 
 
 def verify_presentation_preservation(root, mapping):
@@ -115,10 +141,11 @@ def verify_presentation_preservation(root, mapping):
         if updates is None:
             updates = load_authorized_updates(root)
         approved = updates.get(name)
-        if (approved is None or approved['before_sha256'] != expected
+        if (approved is None or expected not in approved['permitted_before_sha256']
                 or not path.is_file() or sha(path) != approved['after_sha256']):
             raise RuntimeError('Unapproved change to preserved evidence: '+name)
         authorized.append(name)
     return dict(status='passed', files_checked=len(mapping), unchanged_files=unchanged,
                 authorized_presentation_updates=sorted(authorized),
-                proof=PROOF if authorized else None)
+                proof=PROOF if authorized else None,
+                followup_proof=FOLLOWUP_PROOF if authorized and (root/FOLLOWUP_PROOF).is_file() else None)

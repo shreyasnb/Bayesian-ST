@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "notebook": "notebooks/beamforming_moving_comparison_audit.ipynb",
+  "figures": [
+    "abrupt_history",
+    "posterior_mean_beta",
+    "smooth_history"
+  ],
+  "changed_plot_cells": [
+    6,
+    8,
+    14
+  ],
+  "changed_prose_cells": [
+    13
+  ],
+  "protection": {
+    "status": "passed",
+    "numeric_inputs": 1614,
+    "unselected_assets": 8,
+    "unchanged_cell_objects": 23,
+    "baseline": "/tmp/beamforming_moving_comparison_audit-solid-baseline-wl4y2r2f.json",
+    "reports": [
+      {
+        "figure": "smooth_history",
+        "solid_markerless_trajectories": 5,
+        "line_arrays_equal": true,
+        "CI_paths_equal": true,
+        "band_alpha_equal": true,
+        "labels_colors_widths_fonts_figsize_limits_equal": true,
+        "legend_handles_solid_markerless": true
+      },
+      {
+        "figure": "abrupt_history",
+        "solid_markerless_trajectories": 5,
+        "line_arrays_equal": true,
+        "CI_paths_equal": true,
+        "band_alpha_equal": true,
+        "labels_colors_widths_fonts_figsize_limits_equal": true,
+        "legend_handles_solid_markerless": true
+      },
+      {
+        "figure": "posterior_mean_beta",
+        "solid_markerless_trajectories": 2,
+        "line_arrays_equal": true,
+        "CI_paths_equal": true,
+        "band_alpha_equal": true,
+        "labels_colors_widths_fonts_figsize_limits_equal": true,
+        "legend_handles_solid_markerless": true
+      }
+    ],
+    "scope": "Numerical/timing inputs and unrelated standalone/3D assets; concurrent authorized plots are outside this guard."
+  }
+}

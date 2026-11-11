@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "pytest": {
+    "tests": 317,
+    "subtests": 2,
+    "seconds": 56.63
+  },
+  "application_style_pdf_files": 112,
+  "existing_canonical_pdfs_unchanged": 32,
+  "main_and_supplementary_pdf_files": 130,
+  "application_notebooks_with_updated_styles": 6,
+  "notebook_figures": 145,
+  "contact_replay": {
+    "simulations": 256,
+    "action_times": 48,
+    "metrics_rows": 100352,
+    "original_rows_verified": 14336,
+    "moment_checks": 24576,
+    "moment_tolerance": 5e-08,
+    "algebra_tolerance": 1e-10,
+    "original_data_and_settings_unchanged": true
+  },
+  "no_computational_error_found": true,
+  "caption_file": "docs/solid_trajectory_captions.tex",
+  "draft_explanation_file": "docs/contact_transport_explanation.tex",
+  "validation_reports": [
+    "results/solid_trajectory_update/validation/moving.json",
+    "results/solid_trajectory_update/validation/contact_diagnostics.json",
+    "results/solid_trajectory_update/validation/comparison_audit.json",
+    "results/solid_trajectory_update/validation/solid_styles.json",
+    "results/contact_transport_diagnostics/validation/independent_checks.json",
+    "results/solid_trajectory_update/final_preservation_checks.json"
+  ]
+}

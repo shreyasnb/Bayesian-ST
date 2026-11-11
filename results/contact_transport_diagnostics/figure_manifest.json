@@ -1,0 +1,207 @@
+{
+  "schema": 1,
+  "status": "completed",
+  "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+  "notebook_sha256": "be97359cc1af07d7fe2ca64d31fc5f00e67a2bb347dacec60b209800a96c35a7",
+  "producer": "scripts/make_contact_prediction_diagnostics_notebook.py",
+  "producer_sha256": "c1b86f9ce279fb11402614c7a1e78362267508b7e80014f46813fdce30f60933",
+  "data_manifest": "results/contact_transport_diagnostics/data/manifest.json",
+  "data_manifest_sha256": "6c86d949cd61fbb16dbfb72ee9db79d29350059609c1428ce284129c863ec694",
+  "input_hashes": {
+    "results/contact/data/paper/performance/manifest.json": "73d1be8e70beca6aaf76a50300c8f8653c0ce973c6fc97f9b8932ddd4dbd2044",
+    "results/contact/tables/paper/performance/metrics.csv": "6fbf39129be8b26863f972f57dd2448cb67827881e129951fa87cacd0a4a5367",
+    "results/contact/data/paper/performance/selected.json": "0548b0e434a3c1cf278d8b1e29593e2533a9c9da0b96e5dfcec424e03b2a3c57",
+    "results/contact/data/paper/performance/story.npz": "d86191c85660423022e0c9bb0e49269e2a59ac531c666a3afe77aa40a228eebc"
+  },
+  "source_hashes": {
+    "lib/contact_transport_diagnostics.py": "7397a34ff957516d6c9c4fc2bca47b32cb011a97785af97b57c60350c42d7f3b",
+    "scripts/run_contact_transport_diagnostics.py": "2fc369dd9185283ec50591580c691def80577437e5ff95f015f53b51ee08954f",
+    "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+    "scripts/run_final_contact.py": "a698c1ae99f82614649a1ef89f0cdeab5c7711ddc026b175be2d2c6bb7335dd1",
+    "tests/test_final_contact.py": "fd09685a57a58054c4e3e3b866a14cde44baf5e19deb91ae1867e61c045ed5a7",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "benchmarks/common/__init__.py": "1b45903cc938c76c7b9f44eae5fcf1115e0b3b805237acedb399ee3e4f9815d6"
+  },
+  "figures": {
+    "transport_paired_rise.pdf": {
+      "section": "supplementary",
+      "figure_size_in": [
+        15,
+        5
+      ],
+      "dpi": 300,
+      "text_usetex": true,
+      "local_pdf": "results/contact_transport_diagnostics/figures/transport_paired_rise.pdf",
+      "local_png": "results/contact_transport_diagnostics/figures/transport_paired_rise.png",
+      "draft_pdf": "results/supplementary/contact/transport_paired_rise.pdf",
+      "draft_png": "results/supplementary/contact/transport_paired_rise.png",
+      "hashes": {
+        "results/contact_transport_diagnostics/figures/transport_paired_rise.pdf": "394b82e3badac3899347aa21c231cd6d66d7807a9c2c3643e2528984d39f6b5b",
+        "results/contact_transport_diagnostics/figures/transport_paired_rise.png": "e554f294bddc44e015fbfb5207b6985b5101bd92bab43332021ed19e26d9fa84",
+        "results/supplementary/contact/transport_paired_rise.pdf": "394b82e3badac3899347aa21c231cd6d66d7807a9c2c3643e2528984d39f6b5b",
+        "results/supplementary/contact/transport_paired_rise.png": "e554f294bddc44e015fbfb5207b6985b5101bd92bab43332021ed19e26d9fa84"
+      },
+      "latex_caption": "Empirical distributions of the paired endpoint change $\\Delta\\mathcal E=\\mathcal E_{192}(D_{192})-\\mathcal E_{128}(D_{128})$, in $(\\mathrm{mm}/\\mathrm{s})^2$. Blue and dark gray curves use the posterior mean with measured transport $G_t=R_t^\\top R_{t-1}$ and with $G_t=I_3$, respectively. Each empirical cumulative distribution retains all 256 simulation-level changes, including both tails; positive values indicate a larger error at $t=192$ in the same simulation. These are empirical distributions, with no confidence band. The vertical dashed line marks zero change, not a motion event."
+    },
+    "transport_projector_change.pdf": {
+      "section": "supplementary",
+      "figure_size_in": [
+        15,
+        5
+      ],
+      "dpi": 300,
+      "text_usetex": true,
+      "local_pdf": "results/contact_transport_diagnostics/figures/transport_projector_change.pdf",
+      "local_png": "results/contact_transport_diagnostics/figures/transport_projector_change.png",
+      "draft_pdf": "results/supplementary/contact/transport_projector_change.pdf",
+      "draft_png": "results/supplementary/contact/transport_projector_change.png",
+      "hashes": {
+        "results/contact_transport_diagnostics/figures/transport_projector_change.pdf": "a310380cfaed22f42db2495a72b6228e13fca555407f5475bda81d6ff34652f2",
+        "results/contact_transport_diagnostics/figures/transport_projector_change.png": "2c6a192900758673eb8e352cf064bbd67776cf28be8246bc82bfdb2d4f0e54fe",
+        "results/supplementary/contact/transport_projector_change.pdf": "a310380cfaed22f42db2495a72b6228e13fca555407f5475bda81d6ff34652f2",
+        "results/supplementary/contact/transport_projector_change.png": "2c6a192900758673eb8e352cf064bbd67776cf28be8246bc82bfdb2d4f0e54fe"
+      },
+      "latex_caption": "Changes of the generating tangent-plane projector during sphere motion. Blue shows $\\|P_t-P_{t-1}\\|_{\\mathrm F}$ in sensor coordinates; dark gray shows $\\|P_t-G_tP_{t-1}G_t^\\top\\|_{\\mathrm F}$ after compensating the measured frame rotation. Solid curves are arithmetic means over 256 Monte Carlo simulations at the 191 indices $t=2,3,\\ldots,192$; the initial normal and resulting physical path vary across simulations. No confidence band is displayed. The compensated increment equals the world-frame projector increment within each simulation."
+    },
+    "transport_excitation.pdf": {
+      "section": "supplementary",
+      "figure_size_in": [
+        15,
+        5
+      ],
+      "dpi": 300,
+      "text_usetex": true,
+      "local_pdf": "results/contact_transport_diagnostics/figures/transport_excitation.pdf",
+      "local_png": "results/contact_transport_diagnostics/figures/transport_excitation.png",
+      "draft_pdf": "results/supplementary/contact/transport_excitation.pdf",
+      "draft_png": "results/supplementary/contact/transport_excitation.png",
+      "hashes": {
+        "results/contact_transport_diagnostics/figures/transport_excitation.pdf": "bf20388d18dfeae84c9fe236944d7440e52c52e49d594790a63825b3b5287925",
+        "results/contact_transport_diagnostics/figures/transport_excitation.png": "9e94f9d49cf882d004921152f4ac1e7a6ad9de12e8042beb317478e2ed4377fe",
+        "results/supplementary/contact/transport_excitation.pdf": "bf20388d18dfeae84c9fe236944d7440e52c52e49d594790a63825b3b5287925",
+        "results/supplementary/contact/transport_excitation.png": "9e94f9d49cf882d004921152f4ac1e7a6ad9de12e8042beb317478e2ed4377fe"
+      },
+      "latex_caption": "Directional excitation of the known inputs. Let $S_t=\\beta G_tS_{t-1}G_t^\\top+v_tv_t^\\top$, $s_t=\\beta s_{t-1}+1$, and $H_t=S_t/(\\sigma^2s_t)$, with $S_0=0$, $s_0=0$ and the original $\\beta=0.9$. Blue, orange and pink solid curves give the increasingly ordered eigenvalues $\\lambda_1(H_t)$, $\\lambda_2(H_t)$ and $\\lambda_3(H_t)$, evaluated at the 48 action indices $t=4,8,\\ldots,192$. The vertical scale is logarithmic. The input and measured-frame schedules are shared deterministic quantities, so these curves are not Monte Carlo error means and no uncertainty band is drawn."
+    },
+    "transport_curvature.pdf": {
+      "section": "supplementary",
+      "figure_size_in": [
+        15,
+        5
+      ],
+      "dpi": 300,
+      "text_usetex": true,
+      "local_pdf": "results/contact_transport_diagnostics/figures/transport_curvature.pdf",
+      "local_png": "results/contact_transport_diagnostics/figures/transport_curvature.png",
+      "draft_pdf": "results/supplementary/contact/transport_curvature.pdf",
+      "draft_png": "results/supplementary/contact/transport_curvature.png",
+      "hashes": {
+        "results/contact_transport_diagnostics/figures/transport_curvature.pdf": "5a4c0e93ba7bd14b4eda400e0421cb17e2ca7e69505cfa578d33e94ef6cdd9a7",
+        "results/contact_transport_diagnostics/figures/transport_curvature.png": "fd2a58802d4fe16eae76575f6a899cce3ad44c9ecfc905fdb6b6e2af7492f7c8",
+        "results/supplementary/contact/transport_curvature.pdf": "5a4c0e93ba7bd14b4eda400e0421cb17e2ca7e69505cfa578d33e94ef6cdd9a7",
+        "results/supplementary/contact/transport_curvature.png": "fd2a58802d4fe16eae76575f6a899cce3ad44c9ecfc905fdb6b6e2af7492f7c8"
+      },
+      "latex_caption": "Tangent curvature of the normal posterior during sphere motion. For increasingly ordered eigenvalues of the plane parameter $A_t^+$, define $c_{\\min,t}=2[\\lambda_2(A_t^+)-\\lambda_1(A_t^+)]$ and $c_{\\max,t}=2[\\lambda_3(A_t^+)-\\lambda_1(A_t^+)]$. Blue and orange curves give these curvatures with measured transport; dark gray and light gray give the minimum and maximum with $G_t=I_3$. Curves are arithmetic means over 256 Monte Carlo simulations at the 48 action indices $t=4,8,\\ldots,192$; matching bands give pointwise Student 95\\% confidence intervals for the means. These are angular tangent curvatures of the maintained normal posterior, rather than prediction-error or coverage estimates."
+    }
+  },
+  "files": {
+    "results/contact_transport_diagnostics/figures/transport_paired_rise.pdf": "394b82e3badac3899347aa21c231cd6d66d7807a9c2c3643e2528984d39f6b5b",
+    "results/contact_transport_diagnostics/figures/transport_paired_rise.png": "e554f294bddc44e015fbfb5207b6985b5101bd92bab43332021ed19e26d9fa84",
+    "results/supplementary/contact/transport_paired_rise.pdf": "394b82e3badac3899347aa21c231cd6d66d7807a9c2c3643e2528984d39f6b5b",
+    "results/supplementary/contact/transport_paired_rise.png": "e554f294bddc44e015fbfb5207b6985b5101bd92bab43332021ed19e26d9fa84",
+    "results/contact_transport_diagnostics/figures/transport_projector_change.pdf": "a310380cfaed22f42db2495a72b6228e13fca555407f5475bda81d6ff34652f2",
+    "results/contact_transport_diagnostics/figures/transport_projector_change.png": "2c6a192900758673eb8e352cf064bbd67776cf28be8246bc82bfdb2d4f0e54fe",
+    "results/supplementary/contact/transport_projector_change.pdf": "a310380cfaed22f42db2495a72b6228e13fca555407f5475bda81d6ff34652f2",
+    "results/supplementary/contact/transport_projector_change.png": "2c6a192900758673eb8e352cf064bbd67776cf28be8246bc82bfdb2d4f0e54fe",
+    "results/contact_transport_diagnostics/figures/transport_excitation.pdf": "bf20388d18dfeae84c9fe236944d7440e52c52e49d594790a63825b3b5287925",
+    "results/contact_transport_diagnostics/figures/transport_excitation.png": "9e94f9d49cf882d004921152f4ac1e7a6ad9de12e8042beb317478e2ed4377fe",
+    "results/supplementary/contact/transport_excitation.pdf": "bf20388d18dfeae84c9fe236944d7440e52c52e49d594790a63825b3b5287925",
+    "results/supplementary/contact/transport_excitation.png": "9e94f9d49cf882d004921152f4ac1e7a6ad9de12e8042beb317478e2ed4377fe",
+    "results/contact_transport_diagnostics/figures/transport_curvature.pdf": "5a4c0e93ba7bd14b4eda400e0421cb17e2ca7e69505cfa578d33e94ef6cdd9a7",
+    "results/contact_transport_diagnostics/figures/transport_curvature.png": "fd2a58802d4fe16eae76575f6a899cce3ad44c9ecfc905fdb6b6e2af7492f7c8",
+    "results/supplementary/contact/transport_curvature.pdf": "5a4c0e93ba7bd14b4eda400e0421cb17e2ca7e69505cfa578d33e94ef6cdd9a7",
+    "results/supplementary/contact/transport_curvature.png": "fd2a58802d4fe16eae76575f6a899cce3ad44c9ecfc905fdb6b6e2af7492f7c8"
+  },
+  "preservation": {
+    "status": "passed",
+    "numeric_inputs": 64,
+    "unselected_assets": 8,
+    "unchanged_original_cell_objects": 11,
+    "baseline": "/tmp/contact-dense-transport-baseline-lvwjf1gv.json",
+    "reports": [
+      {
+        "figure": "prediction_error_stationary",
+        "solid_markerless_trajectories": 3,
+        "line_arrays_equal": true,
+        "CI_paths_equal": true,
+        "band_alpha_equal": true,
+        "labels_colors_widths_fonts_figsize_limits_equal": true,
+        "legend_handles_solid_markerless": true
+      },
+      {
+        "figure": "prediction_error_sphere",
+        "action_times": 48,
+        "simulations": 256,
+        "all_verified_means_exact": true,
+        "all_original_checkpoint_means_and_CIs_unchanged": true,
+        "mean_Student_CI_polygon_exact": true,
+        "original_colors_except_gray_identity": true,
+        "line_widths_labels_fonts_figsize_and_band_opacity_unchanged": true,
+        "solid_markerless_trajectories": 4,
+        "event_at_128_added": false
+      },
+      {
+        "figure": "transport_paired_rise",
+        "verified_saved_data_only": true,
+        "solid_markerless_trajectories": true,
+        "four_borders": true,
+        "figure_size_in": [
+          15,
+          5
+        ],
+        "dpi": 300
+      },
+      {
+        "figure": "transport_projector_change",
+        "verified_saved_data_only": true,
+        "solid_markerless_trajectories": true,
+        "four_borders": true,
+        "figure_size_in": [
+          15,
+          5
+        ],
+        "dpi": 300
+      },
+      {
+        "figure": "transport_excitation",
+        "verified_saved_data_only": true,
+        "solid_markerless_trajectories": true,
+        "four_borders": true,
+        "figure_size_in": [
+          15,
+          5
+        ],
+        "dpi": 300
+      },
+      {
+        "figure": "transport_curvature",
+        "verified_saved_data_only": true,
+        "solid_markerless_trajectories": true,
+        "four_borders": true,
+        "figure_size_in": [
+          15,
+          5
+        ],
+        "dpi": 300
+      }
+    ],
+    "scope": "Original numerical evidence and all untouched contact forest/3D exports; only two histories and appended diagnostics rendered."
+  }
+}

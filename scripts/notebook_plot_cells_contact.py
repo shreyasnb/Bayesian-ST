@@ -142,10 +142,20 @@ fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout="constrained")
 for values, label, color, style, point, angle, marked_kl in zip(
         [data["kl_first"], data["kl_second"]],
         [r"$z=(\tan\delta,0)^\top$", r"$z=(0,\tan\delta)^\top$"],
-        ["#D55E00", "#0072B2"], ["-", "--"], data["marked_points"],
+        ["#D55E00", "#0072B2"], ["-", "-"], data["marked_points"],
         data["marked_angles"], data["marked_kl"]):
     ax.plot(data["angle_deg"], values, style, color=color, label=label)
     ax.plot(angle, marked_kl, "o", color=color, markersize=4.)
+# Evaluate the two endpoints with the same exact KL function and saved-input Fisher matrix.
+from lib.final_information_visuals import exact_contact_kl
+connector_angles = np.asarray(data["marked_angles"], dtype=float)
+connector_kl = exact_contact_kl(np.asarray(data["marked_points"]), {"F": data["fisher_matrix"]})
+np.testing.assert_allclose(connector_kl, data["marked_kl"], rtol=0., atol=1e-14)
+ax.plot(connector_angles, connector_kl, "-", color="#8A8A8A", linewidth=1.,
+        zorder=8, label="_contact_kl_connector")
+for angle, divergence, label in zip(connector_angles, connector_kl, [r"$5^\circ$", r"$30^\circ$"]):
+    ax.annotate(label, xy=(angle, divergence), xytext=(0, 9), textcoords="offset points",
+                ha="center", va="bottom", fontsize=TICK_FONT_SIZE, zorder=9)
 ax.set(xlabel=r"$\delta\ ({}^\circ)$", ylabel=r"$D_{\mathrm{KL}}(p_0\,\Vert\,p_z)$", xlim=(0.,35.))
 ax.set_yscale("log")
 ax.set_yticks([1e-5, 1e-2, 1e1])

@@ -80,3 +80,25 @@ Run the read-only audit with:
 ```
 
 It independently recomputes every displayed mean and interquartile band from the original rows, checks the table confidence intervals and paired differences, verifies the notebook's execution and visible plotting controls, and compares all three local/main PDF and PNG pairs. The moving-data loader also checks saved steering vectors, motion schedules, posterior-parameter recursion, and shared posterior actions without running inference.
+
+
+## Figure interpretation and captions
+
+The individual smooth/abrupt figures and the combined figure use the same
+32 saved reporting indices and the same 256 independent simulations. Solid
+blue, orange, pink and green trajectories denote the posterior mean
+$\overline P_t^+$, mode $P_{\widehat{\mathcal X}_t}$, matched isotropic mean
+$\overline P_t^{\mathrm{iso}}$, and GREAT (sliding window), respectively.
+The plotted centers are arithmetic means of the individual dB values.
+Matching shaded bands are the empirical pointwise 25th–75th percentiles,
+not confidence intervals for those means or posterior credible regions.
+Only the abrupt case has the purple dashed direction-change marker at $t=129$.
+Markers on method curves have been removed; no values, coordinates,
+colors, means, quantiles or numerical tables change with this presentation.
+
+Use the individual or combined LaTeX captions in
+[solid_trajectory_captions.tex](solid_trajectory_captions.tex). The tabulated
+Student 95% confidence intervals above still describe means of the per-simulation
+32-report arithmetic averages. They have a different interpretation from
+the displayed pointwise interquartile bands. The paired comparisons and mixed
+method ordering remain the basis for conclusions about accuracy.

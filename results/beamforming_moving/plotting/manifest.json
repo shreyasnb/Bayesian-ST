@@ -2,7 +2,7 @@
   "schema": 1,
   "status": "completed",
   "producer": "scripts/make_moving_beamforming_notebook.py",
-  "producer_sha256": "f93209d87467d762c90d48e41c83a0af20f67129d613f94c6cc80f4126db8a19",
+  "producer_sha256": "ca5799430d504756c695076293b64d08fcf1ff8d9622cda10a692246e3253941",
   "inputs": {
     "results/beamforming/data/paper/performance/manifest.json": "473a680b450c3b350fb2ad9259f4678d3ac56bca26ab18581dc88d0bd8cd4dcb",
     "archive/dd399ba/stationary_source_proof.json": "c693f5b5f874f08a245ef6187c072e1e93c30c2242fde8d7119e8015a8e30222",
@@ -27,7 +27,7 @@
   },
   "artifacts": {
     "results/beamforming_moving/plotting/pointwise_iqr.csv": "8d210559255d3adde8df98ab7eeda857dde934026727c53801bef0a31b8010e7",
-    "results/beamforming_moving/plotting/run_guard.json": "859bcbc25ed5142a974c55c8140239d322d4302df0df97b7b9bd20789ab4d719"
+    "results/beamforming_moving/plotting/run_guard.json": "56b02726657d2f22b9c09c9a83cdce25de2671a84f4fe604ba63e43b326fe298"
   },
   "display": "Pointwise empirical 25th\u201375th percentiles of true_ratio_db across all 256 simulations.",
   "mean_definition": "The existing arithmetic Monte Carlo mean at each saved measurement index.",
@@ -36,5 +36,15 @@
   "means_unchanged": true,
   "no_smoothing_jitter_or_added_points": true,
   "old_confidence_intervals_unchanged": true,
-  "render_guard": "Passed under the shared exclusive notebook-render lock."
+  "render_guard": "Passed under the shared exclusive notebook-render lock.",
+  "caption_only_source_update": {
+    "scope": "Caption and explanatory markdown only; no rendering or numerical computation.",
+    "updated_utc": "2026-11-11T02:21:58.957181+00:00",
+    "previous_generator_sha256": "7c43a9091f29409f347db8d26968a2474b5f23defa80a63a6699deefbe9981c5",
+    "current_generator_sha256": "ca5799430d504756c695076293b64d08fcf1ff8d9622cda10a692246e3253941",
+    "plotting_functions_unchanged": true,
+    "plotting_cell_sources_unchanged": true,
+    "all_rendered_assets_unchanged": true,
+    "pointwise_statistics_unchanged": true
+  }
 }

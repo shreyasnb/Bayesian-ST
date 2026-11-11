@@ -3,43 +3,43 @@
   "status": "completed",
   "scope": "moving",
   "notebook": "notebooks/beamforming_moving_comparison_audit.ipynb",
-  "notebook_sha256": "f5f9a147d2c4b69e7c47605cfc756b1380f68c6084af1d466acce9309d224aea",
+  "notebook_sha256": "3241ab12e452d839987db89215826097c05e38774d06941c0c17920dcd1085b8",
   "producer": "scripts/make_beamforming_comparison_audit_notebooks.py",
-  "producer_sha256": "e0fddfe63b49515469db1231aeaa9a18fd58467e8d340524ec49eb97c5ae76f2",
+  "producer_sha256": "c8f86c22f54b37257a2b86c4f838c1011ac91c09129efea749d9fff1830da743",
   "config": {
-    "n": 32,
     "T": 256,
+    "common_beta": 0.97,
     "conditions": [
       "smooth",
       "abrupt"
     ],
-    "common_beta": 0.97,
+    "n": 32,
     "primary_aggregation": "mean_db",
     "primary_window": "all",
-    "test_simulations": 256,
     "sigma2": 0.2,
     "tau2": 1.0,
+    "test_simulations": 256,
     "validation_simulations": 64
   },
   "input_hashes": {
-    "results/beamforming/data/paper/performance/manifest.json": "473a680b450c3b350fb2ad9259f4678d3ac56bca26ab18581dc88d0bd8cd4dcb",
-    "results/beamforming/data/paper/performance/moving_checkpoints.csv.gz": "6f07236c41f8ca8696bc9b6cbf5e576411127c65f3f58385068bbb402bea5b29",
-    "results/beamforming/data/paper/performance/selected.json": "81c9d90aeb8a7ae779367d21a4fb857082ce46dddcd3cd932fbcb6af5f947eb7",
-    "archive/dd399ba/stationary_source_proof.json": "c693f5b5f874f08a245ef6187c072e1e93c30c2242fde8d7119e8015a8e30222",
     "archive/dd399ba/sources/lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
     "archive/dd399ba/sources/scripts/run_final_beamforming.py": "efeb7b0c53926c88c5aa898d07c6b4a04cb8283c1b6776bad0c43e6a8dc57f68",
     "archive/dd399ba/sources/tests/test_final_beamforming.py": "61d072eed3117a264ce7c5ec6becb5c995be9179df100cf8dac2f6d117d606d3",
-    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
-    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
-    "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
-    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
-    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
-    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
-    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
-    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
-    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "archive/dd399ba/stationary_source_proof.json": "c693f5b5f874f08a245ef6187c072e1e93c30c2242fde8d7119e8015a8e30222",
     "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
     "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+    "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "results/beamforming/data/paper/performance/manifest.json": "473a680b450c3b350fb2ad9259f4678d3ac56bca26ab18581dc88d0bd8cd4dcb",
+    "results/beamforming/data/paper/performance/moving_checkpoints.csv.gz": "6f07236c41f8ca8696bc9b6cbf5e576411127c65f3f58385068bbb402bea5b29",
+    "results/beamforming/data/paper/performance/selected.json": "81c9d90aeb8a7ae779367d21a4fb857082ce46dddcd3cd932fbcb6af5f947eb7",
     "results/beamforming_comparison_audit/moving/existing/manifest.json": "9a35eb6b6dd7dd9a51514202edb409122d922d3c0abff5ec6845c7245a36ff2f",
     "results/beamforming_comparison_audit/moving/mean_validation/manifest.json": "0cd427829d7949f4e63ef45d95d353eb6057a262c74db206675b840f11db0ab2",
     "results/beamforming_comparison_audit/moving/objective/manifest.json": "2cbf7e76c888da2608a7c9c51ba96989fe598ba08421ea59ed2c05663e87b1f5",
@@ -51,20 +51,20 @@
     "lib/beamforming_objective_audit.py": "79505a5c3ccc6c6a8506db39ee14a3bce8b20cff93fc74efe8e23196786c18be"
   },
   "historical_producer_sources": {
-    "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
-    "scripts/run_final_beamforming.py": "efeb7b0c53926c88c5aa898d07c6b4a04cb8283c1b6776bad0c43e6a8dc57f68",
-    "tests/test_final_beamforming.py": "61d072eed3117a264ce7c5ec6becb5c995be9179df100cf8dac2f6d117d606d3",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
+    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3",
     "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
-    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
     "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
-    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
-    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
     "lib/beamforming_decisions.py": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93",
-    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "lib/beamforming_numerics.py": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/final_beamforming.py": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
     "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
     "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
-    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac",
-    "benchmarks/case2/baselines.py": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3"
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "scripts/run_final_beamforming.py": "efeb7b0c53926c88c5aa898d07c6b4a04cb8283c1b6776bad0c43e6a8dc57f68",
+    "tests/test_final_beamforming.py": "61d072eed3117a264ce7c5ec6becb5c995be9179df100cf8dac2f6d117d606d3"
   },
   "figures": {
     "smooth_history.pdf": {
@@ -76,8 +76,8 @@
       ],
       "dpi": 300,
       "text_usetex": true,
-      "pdf_sha256": "7930f38ffcdf2a6c01404d375cf8a49120bf10c1ddb84cd1ab2d298c05511558",
-      "png_sha256": "44541433dbc82449995704947eedc12abc589b21f5bb4c3db3c0c0d8e7e64a49"
+      "pdf_sha256": "fbc7736ada2f9accb1f10d0be4534ec8353a153a2d5feb2be8706d0ae3cf806d",
+      "png_sha256": "e4e42a800322dd5cf58247fa5a045aa5b5c08d31747ad6fa84b1d12615f7d8dc"
     },
     "abrupt_history.pdf": {
       "pdf": "results/beamforming_comparison_audit/moving/figures/abrupt_history.pdf",
@@ -88,8 +88,8 @@
       ],
       "dpi": 300,
       "text_usetex": true,
-      "pdf_sha256": "4f8b71f93a0bcbd8fa7867b2c660bde3c59225d4a929344e13c0b53bdd838bba",
-      "png_sha256": "3fa8700aa192f93a283b54236fe9874a9c8e65f8158ac156f67bd095b7f2aecd"
+      "pdf_sha256": "88298fd47f38e16c5096c64561cd9bad71c82f98404d7115b3e30b9dbc596d28",
+      "png_sha256": "4d9bc9bf2f650533740acca7b1770e129a3d57112a4c11cb36b01b7c240e06c9"
     },
     "paired_primary.pdf": {
       "pdf": "results/beamforming_comparison_audit/moving/figures/paired_primary.pdf",
@@ -112,8 +112,8 @@
       ],
       "dpi": 300,
       "text_usetex": true,
-      "pdf_sha256": "be2fa63a1979d4f05498ea1e31fd9837338fb57f89ae54078e18d3ae34b31c08",
-      "png_sha256": "09bc9be8db83f1e653220ce5f1ec37e36a54c0b41360fd9391940c9e44b8b786"
+      "pdf_sha256": "9234c46ec0e5c4a3cc3f5f6add55f0e3c631f8434f16d34b4682d44702624637",
+      "png_sha256": "7d0847c2d93c3f55729ae7a95d861c6a703311a2a6ae45fce71d1b1f389dc811"
     },
     "ew_objective_gap.pdf": {
       "pdf": "results/beamforming_comparison_audit/moving/figures/ew_objective_gap.pdf",
@@ -153,14 +153,14 @@
     }
   },
   "files": {
-    "results/beamforming_comparison_audit/moving/figures/smooth_history.pdf": "7930f38ffcdf2a6c01404d375cf8a49120bf10c1ddb84cd1ab2d298c05511558",
-    "results/beamforming_comparison_audit/moving/figures/smooth_history.png": "44541433dbc82449995704947eedc12abc589b21f5bb4c3db3c0c0d8e7e64a49",
-    "results/beamforming_comparison_audit/moving/figures/abrupt_history.pdf": "4f8b71f93a0bcbd8fa7867b2c660bde3c59225d4a929344e13c0b53bdd838bba",
-    "results/beamforming_comparison_audit/moving/figures/abrupt_history.png": "3fa8700aa192f93a283b54236fe9874a9c8e65f8158ac156f67bd095b7f2aecd",
+    "results/beamforming_comparison_audit/moving/figures/smooth_history.pdf": "fbc7736ada2f9accb1f10d0be4534ec8353a153a2d5feb2be8706d0ae3cf806d",
+    "results/beamforming_comparison_audit/moving/figures/smooth_history.png": "e4e42a800322dd5cf58247fa5a045aa5b5c08d31747ad6fa84b1d12615f7d8dc",
+    "results/beamforming_comparison_audit/moving/figures/abrupt_history.pdf": "88298fd47f38e16c5096c64561cd9bad71c82f98404d7115b3e30b9dbc596d28",
+    "results/beamforming_comparison_audit/moving/figures/abrupt_history.png": "4d9bc9bf2f650533740acca7b1770e129a3d57112a4c11cb36b01b7c240e06c9",
     "results/beamforming_comparison_audit/moving/figures/paired_primary.pdf": "08ced5acc5f92101004f21a6d39e3db62f69c9be1235ae62dafba42038e4d481",
     "results/beamforming_comparison_audit/moving/figures/paired_primary.png": "a8c27dfeaf5a770ad94eab56dbaed34b6dddb306fed48b4a050f15057ba27672",
-    "results/beamforming_comparison_audit/moving/figures/posterior_mean_beta.pdf": "be2fa63a1979d4f05498ea1e31fd9837338fb57f89ae54078e18d3ae34b31c08",
-    "results/beamforming_comparison_audit/moving/figures/posterior_mean_beta.png": "09bc9be8db83f1e653220ce5f1ec37e36a54c0b41360fd9391940c9e44b8b786",
+    "results/beamforming_comparison_audit/moving/figures/posterior_mean_beta.pdf": "9234c46ec0e5c4a3cc3f5f6add55f0e3c631f8434f16d34b4682d44702624637",
+    "results/beamforming_comparison_audit/moving/figures/posterior_mean_beta.png": "7d0847c2d93c3f55729ae7a95d861c6a703311a2a6ae45fce71d1b1f389dc811",
     "results/beamforming_comparison_audit/moving/figures/ew_objective_gap.pdf": "edb6995f129e4bd8a005ae11289aa89ef04da807a936f249361b63f2714db28e",
     "results/beamforming_comparison_audit/moving/figures/ew_objective_gap.png": "79fc6aa467254d118808a29e33016c5adc7f20e9c70f5209fbb4f45a80d47e6d",
     "results/beamforming_comparison_audit/moving/figures/ew_task_power.pdf": "2788c5ff7a87bdf449f828b0697d184409045bd6f45fc4d059347ff238336ebb",
@@ -3028,10 +3028,72 @@
   },
   "preservation": {
     "status": "passed",
-    "files_checked": 29087,
-    "changed": [],
-    "existing_notebooks": 7,
-    "baseline_sha256": "c515cb8c497804feed7ecf1b23d92f68bf6bc016ddd7cac1d95a0b3ad924eb53"
+    "numeric_inputs": 1614,
+    "unselected_assets": 8,
+    "unchanged_cell_objects": 23,
+    "baseline": "/tmp/beamforming_moving_comparison_audit-solid-baseline-wl4y2r2f.json",
+    "reports": [
+      {
+        "figure": "smooth_history",
+        "solid_markerless_trajectories": 5,
+        "line_arrays_equal": true,
+        "CI_paths_equal": true,
+        "band_alpha_equal": true,
+        "labels_colors_widths_fonts_figsize_limits_equal": true,
+        "legend_handles_solid_markerless": true
+      },
+      {
+        "figure": "abrupt_history",
+        "solid_markerless_trajectories": 5,
+        "line_arrays_equal": true,
+        "CI_paths_equal": true,
+        "band_alpha_equal": true,
+        "labels_colors_widths_fonts_figsize_limits_equal": true,
+        "legend_handles_solid_markerless": true
+      },
+      {
+        "figure": "posterior_mean_beta",
+        "solid_markerless_trajectories": 2,
+        "line_arrays_equal": true,
+        "CI_paths_equal": true,
+        "band_alpha_equal": true,
+        "labels_colors_widths_fonts_figsize_limits_equal": true,
+        "legend_handles_solid_markerless": true
+      }
+    ],
+    "scope": "Numerical/timing inputs and unrelated standalone/3D assets; concurrent authorized plots are outside this guard.",
+    "unused_stagger_configuration_cleanup": [
+      {
+        "cell": 4,
+        "id": "original-moving-settings",
+        "removed_lines": 7
+      },
+      {
+        "cell": 10,
+        "id": "moving-paired-primary",
+        "removed_lines": 7
+      },
+      {
+        "cell": 11,
+        "id": "all-moving-aggregations",
+        "removed_lines": 7
+      },
+      {
+        "cell": 17,
+        "id": "ew-objective-gap",
+        "removed_lines": 7
+      },
+      {
+        "cell": 20,
+        "id": "ew-task-power",
+        "removed_lines": 7
+      },
+      {
+        "cell": 23,
+        "id": "optimization-computation-time",
+        "removed_lines": 7
+      }
+    ]
   },
   "scope_note": "Separate audit exports only; existing notebooks and results unchanged relative to the pre-render preservation snapshot."
 }

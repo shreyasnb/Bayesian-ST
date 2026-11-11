@@ -1,0 +1,3677 @@
+{
+  "status": "passed",
+  "sources": {
+    "status": "passed",
+    "notebooks": {
+      "notebooks/01_array.ipynb": {
+        "sha256": "6ab791435ca6160435cc9427a2f6c1d3de91896fa3be81f911b10d8ff92b74a4",
+        "cells": [
+          {
+            "cell": 3,
+            "id": "b11467bb",
+            "source_sha256": "cfb4c8c43f0e1ba51b6fc823b6d5643cf85367d6d430afa5cae36891bf6b42c7",
+            "trajectories": [
+              {
+                "line": 48,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 66,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 49,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 67,
+                "kind": "axvline"
+              },
+              {
+                "line": 68,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 5,
+            "id": "1b644243",
+            "source_sha256": "6a86ec9ff443938b068eddd0c9c19bd5d483f09dd9a462314da537c859a9ff89",
+            "trajectories": [
+              {
+                "line": 38,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 30,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 32,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 10,
+            "id": "e796892d",
+            "source_sha256": "b39cc90b48f89e6b274fa1bd4da8827fb11af34bbab00e3bd9a291a622f7e417",
+            "trajectories": [
+              {
+                "line": 50,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 151,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [
+              {
+                "line": 158,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 12,
+            "id": "stationary-dimensions-T200",
+            "source_sha256": "14b1ecfbce8faf2868e59b7f67ab9d1215e0a7feac4e7ec983af2414e4bb85a0",
+            "trajectories": [
+              {
+                "line": 50,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 14,
+            "id": "ac437acd",
+            "source_sha256": "9641febe3746ef4ab33e47830128adfe3486b3b1d29d036627fbb78acb24d0af",
+            "trajectories": [
+              {
+                "line": 159,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 160,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 254,
+                "primitive": "step",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 65,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 68,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 255,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 16,
+            "id": "f2772ed9",
+            "source_sha256": "d5415bb9e4361c9c378af7acdd7f1e9bf3289592902897b2813aa1014b610682",
+            "trajectories": [
+              {
+                "line": 51,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 62,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 55,
+                "kind": "mathematical_line"
+              },
+              {
+                "line": 68,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 19,
+            "id": "b45d1cee",
+            "source_sha256": "1520b580a0da75fb423024974a143bdacd7fcbe26f7023d69ac1033e66be8829",
+            "trajectories": [
+              {
+                "line": 48,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 50,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 53,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 20,
+            "id": "d1348b59",
+            "source_sha256": "bcdeea25514bd964ce31543990b341adbfb91526a3b61e3c4cfd80e4821ec546",
+            "trajectories": [
+              {
+                "line": 48,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 50,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 53,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 23,
+            "id": "c461996d",
+            "source_sha256": "db0e1f3b45e0ea8120f3c759cab90f557cda7675f6b51fbd4d0b9a2f85a71960",
+            "trajectories": [
+              {
+                "line": 55,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 29,
+            "id": "supp-tracking-error-1",
+            "source_sha256": "3480ad3c8b51b79bc466869827cb638d695a43f94b3431a02e7e6bed2f3d613a",
+            "trajectories": [
+              {
+                "line": 126,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 31,
+            "id": "supp-tracking-bound-1",
+            "source_sha256": "2ab8330d6a5654a2622233f3fc7bf1c6137b5ce036f2c7b26f2c4811f0eff802",
+            "trajectories": [
+              {
+                "line": 111,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 130,
+                "kind": "scatter"
+              },
+              {
+                "line": 117,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 113,
+                "kind": "mathematical_line"
+              },
+              {
+                "line": 114,
+                "kind": "mathematical_line"
+              },
+              {
+                "line": 136,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 33,
+            "id": "supp-tracking-bound-2",
+            "source_sha256": "a4957abd094140bb74fd9a852c5b3091c33de9dd776146fc31ba7b888eec0edd",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 106,
+                "kind": "scatter"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 35,
+            "id": "supp-tracking-bound-3",
+            "source_sha256": "806c4f36f5c3a0a6d7224fd0e6124a2559fe7b73730ae34ba2b47ee920691d52",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 117,
+                "kind": "verified_single_checkpoint_comparison"
+              },
+              {
+                "line": 119,
+                "kind": "verified_single_checkpoint_comparison"
+              },
+              {
+                "line": 123,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 120,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": [],
+            "single_checkpoint_evidence": {
+              "path": "results/beamforming/tables/paper/theory/tracking.csv",
+              "sha256": "7df14149a48b421c283e22b6e4a8e6c271b62cb575f39b016a4f8dcd9ff06baf",
+              "selection": {
+                "condition": "static",
+                "beta": "1.0",
+                "nonuniform_prior": "True",
+                "zero_signal": "False",
+                "design": "balanced"
+              },
+              "measurements": [
+                16384
+              ],
+              "raw_rows": 128,
+              "plotted_coordinates_per_method": 1
+            }
+          },
+          {
+            "cell": 37,
+            "id": "supp-tracking-bound-4",
+            "source_sha256": "135f8d13256d24cafeffd79e56125dcf65ba94fe5af1c274ac9dc878836b7018",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 117,
+                "kind": "verified_single_checkpoint_comparison"
+              },
+              {
+                "line": 119,
+                "kind": "verified_single_checkpoint_comparison"
+              },
+              {
+                "line": 123,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 120,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": [],
+            "single_checkpoint_evidence": {
+              "path": "results/beamforming/tables/paper/theory/tracking.csv",
+              "sha256": "7df14149a48b421c283e22b6e4a8e6c271b62cb575f39b016a4f8dcd9ff06baf",
+              "selection": {
+                "condition": "static",
+                "beta": "1.0",
+                "nonuniform_prior": "False",
+                "zero_signal": "True",
+                "design": "balanced"
+              },
+              "measurements": [
+                256
+              ],
+              "raw_rows": 128,
+              "plotted_coordinates_per_method": 1
+            }
+          },
+          {
+            "cell": 39,
+            "id": "supp-posterior-curvature-1",
+            "source_sha256": "bb86afca76076ae81a0b5ed0bd06dd7c9c3457321de671bb27576096f40c5c45",
+            "trajectories": [
+              {
+                "line": 123,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 125,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 92,
+                "kind": "scatter"
+              },
+              {
+                "line": 94,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 100,
+                "kind": "mathematical_line"
+              },
+              {
+                "line": 115,
+                "kind": "mathematical_curve",
+                "family": "inverse_Fisher_reference"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 41,
+            "id": "supp-block-updates-1",
+            "source_sha256": "8c2d7c406ad6c841050dca08031f66145a399d1d011ef5483cad8db95792c6d8",
+            "trajectories": [
+              {
+                "line": 128,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 136,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 91,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 113,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 140,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 96,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 97,
+                "kind": "axhline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 49,
+            "id": "supp-additional-comparisons-4",
+            "source_sha256": "0535608cbca1d5d2621b7aac20441d863ee996200fc80b7c47446e0756a53815",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 106,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [
+              {
+                "line": 113,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 51,
+            "id": "supp-additional-comparisons-5",
+            "source_sha256": "f8d1e5ee71ac5394d3cf27c8fe9c255fe6b7b1a98c79774c3c61075a199c5939",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 106,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [
+              {
+                "line": 113,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 53,
+            "id": "supp-additional-comparisons-6",
+            "source_sha256": "6fc6307744ce59c2b8e3f8e73f0bfe23f48003784cc82a71a122b796955fd9c8",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 106,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [
+              {
+                "line": 113,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 55,
+            "id": "supp-additional-comparisons-7",
+            "source_sha256": "585beb8e87b6a844992e5762d9802d367e47b49d01435ff2364ada945bf0792e",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 106,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [
+              {
+                "line": 113,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 57,
+            "id": "supp-additional-comparisons-8",
+            "source_sha256": "5656fb07d1856d4d870815a943e6325797f5bcd59ced4990f3af8679bde3cadf",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 106,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [
+              {
+                "line": 113,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 59,
+            "id": "supp-variance-estimation-1",
+            "source_sha256": "a15519cbd5575e789182731d09fbbb6a3ab94a5b80098c0a8e0d2ae5134f0dde",
+            "trajectories": [
+              {
+                "line": 99,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 114,
+                "kind": "boxplot"
+              },
+              {
+                "line": 132,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 118,
+                "kind": "axhline"
+              },
+              {
+                "line": 139,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 61,
+            "id": "supp-noise-adaptation-2",
+            "source_sha256": "67d12c9df7c525a9943c6573d5948bef94d1bd554518386ce743e39a56b961eb",
+            "trajectories": [
+              {
+                "line": 112,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 149,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 125,
+                "kind": "mathematical_line"
+              },
+              {
+                "line": 128,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 63,
+            "id": "supp-noise-adaptation-3",
+            "source_sha256": "945a2243d979ada2ef9c202c8bbfc04677838f979bf9979839fd2494f5099d78",
+            "trajectories": [
+              {
+                "line": 112,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 149,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 125,
+                "kind": "mathematical_line"
+              },
+              {
+                "line": 128,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 65,
+            "id": "supp-predictive-calibration-1",
+            "source_sha256": "6e30fcb515866024f3dd61cf1588f60047c2e8947c1fa966de2256c041f98800",
+            "trajectories": [
+              {
+                "line": 130,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 133,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 136,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 67,
+            "id": "supp-predictive-calibration-3",
+            "source_sha256": "3ed1ee73e165536bb05b6a438d7b24e1fd6d35a70b727e99663e2ac39af9a6b9",
+            "trajectories": [
+              {
+                "line": 130,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 133,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 136,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 69,
+            "id": "supp-predictive-calibration-4",
+            "source_sha256": "b63e8b9740a3549d01234ee4025bab5e9c3d64b550cb5658a3559248758fd1b4",
+            "trajectories": [
+              {
+                "line": 130,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 133,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 136,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 71,
+            "id": "supp-predictive-calibration-5",
+            "source_sha256": "3f189719e521d1c2d451bee8cbff789d7ae964b896245ca30fbb2a99ba59bc29",
+            "trajectories": [
+              {
+                "line": 130,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 133,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 136,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 73,
+            "id": "supp-predictive-calibration-7",
+            "source_sha256": "28da1146c66df93b4f7096d5041781541823fc44b8b07078e53581a48f60f85a",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 115,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 75,
+            "id": "supp-predictive-calibration-8",
+            "source_sha256": "ba651875d185c37bc729096130ac6aeb99ec90447b5161e2e6ae3b3d43af363a",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 115,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 77,
+            "id": "supp-predictive-calibration-9",
+            "source_sha256": "69f89c122f35525f1f0c707164b48b479d54918316df948b0eb74b02537c682b",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 115,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 79,
+            "id": "supp-predictive-scores-1",
+            "source_sha256": "c8835bddfc43e20407795c7a6154265ad8e88a0d321d8b9345580630b308f74b",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 111,
+                "kind": "scatter"
+              },
+              {
+                "line": 112,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 121,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 81,
+            "id": "supp-model-mismatch-1",
+            "source_sha256": "398f6ba2a87afe79b82590166a007b28b164e5cc0005e1a3adab9d8dd6333fa2",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 121,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 83,
+            "id": "supp-computation-time-2",
+            "source_sha256": "8be7e00f3b31be453d11c5e6feed08ff81727009a6889b037793b55f46170ee0",
+            "trajectories": [
+              {
+                "line": 105,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 85,
+            "id": "supp-numerical-accuracy-1",
+            "source_sha256": "a74fa93b76874f2e482fde884ac466a0d161ac221a3b3b4e1e6608b2e6a30e95",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 94,
+                "kind": "scatter"
+              },
+              {
+                "line": 109,
+                "kind": "scatter"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 91,
+            "id": "supp-paper-summary-1",
+            "source_sha256": "57ad9dc6686538469376e0d370d1fa8c66ab32daafcb02fff5906a3f0bf54151",
+            "trajectories": [
+              {
+                "line": 98,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 143,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 178,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 120,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [
+              {
+                "line": 125,
+                "kind": "axvline"
+              },
+              {
+                "line": 150,
+                "kind": "mathematical_line"
+              },
+              {
+                "line": 152,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          }
+        ],
+        "trajectories": 37,
+        "point_primitives": 37
+      },
+      "notebooks/03_contact.ipynb": {
+        "sha256": "b2f8fb559ce25097fee1acf86b8e50228f5ee35df407b9225b1acd2f63b033de",
+        "cells": [
+          {
+            "cell": 3,
+            "id": "e5e55aac",
+            "source_sha256": "897e3d0b638cb99caef48c339a3df61170700b380cc56968b61a38c9368aec2a",
+            "trajectories": [
+              {
+                "line": 40,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 64,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 69,
+                "kind": "axhline"
+              },
+              {
+                "line": 63,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 5,
+            "id": "376e95f3",
+            "source_sha256": "42fdbbaa028c2895a24b2a9b4eb29b7e9b56a7e73ee74e789e0c867c98db0e95",
+            "trajectories": [
+              {
+                "line": 132,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 39,
+                "kind": "standalone_plot_points"
+              },
+              {
+                "line": 45,
+                "kind": "standalone_plot_points"
+              },
+              {
+                "line": 126,
+                "kind": "standalone_plot_points"
+              }
+            ],
+            "references": [
+              {
+                "line": 32,
+                "kind": "contourf"
+              },
+              {
+                "line": 33,
+                "kind": "contour"
+              },
+              {
+                "line": 125,
+                "kind": "mathematical_curve",
+                "family": "controlled_KL_rotation"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 10,
+            "id": "f43835e9",
+            "source_sha256": "547c5d17ef102d636b7d3da4377e2607f92a8e57b139033842bddc1e842fe481",
+            "trajectories": [
+              {
+                "line": 48,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 56,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 14,
+            "id": "45ec7869",
+            "source_sha256": "bb07f3ea9f76753461f6ed1254ad8b9dfaa3302c31346065bd68364d8158ddc1",
+            "trajectories": [
+              {
+                "line": 167,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 168,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 70,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 73,
+                "kind": "scatter"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 16,
+            "id": "d8a577a1",
+            "source_sha256": "af0e34c4a547fe26e21141ee90f5d50399b2f1867bc7d4c81aa8dcd12e86db8f",
+            "trajectories": [
+              {
+                "line": 47,
+                "primitive": "step",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 58,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 51,
+                "kind": "mathematical_line"
+              },
+              {
+                "line": 52,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 19,
+            "id": "58a65c02",
+            "source_sha256": "d0ed8db3d7c3c0562c577a05347c3e634e3fde09e3e80d26a27e8383ce399dab",
+            "trajectories": [
+              {
+                "line": 46,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 48,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 50,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 20,
+            "id": "e49cb440",
+            "source_sha256": "7a75e677027b58ef18d38bee9e9bd8054431cf91dba60639054fd1df6632b500",
+            "trajectories": [
+              {
+                "line": 46,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 48,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 50,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 23,
+            "id": "762f1ec2",
+            "source_sha256": "754dc62982e39fed1b97c1db5d5978a660955942e26895141674a7a48f14699d",
+            "trajectories": [
+              {
+                "line": 46,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 29,
+            "id": "supp-tracking-error-1",
+            "source_sha256": "cbf24167a9df2c1bf210d296e56d509a50e972b2d78af2a6a6eb6c3739531506",
+            "trajectories": [
+              {
+                "line": 126,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 31,
+            "id": "supp-tracking-bound-1",
+            "source_sha256": "f976d176f552986f2207489075deb93b9ea88a2cc103bce38bedb542984159e1",
+            "trajectories": [
+              {
+                "line": 111,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 130,
+                "kind": "scatter"
+              },
+              {
+                "line": 117,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 113,
+                "kind": "mathematical_line"
+              },
+              {
+                "line": 114,
+                "kind": "mathematical_line"
+              },
+              {
+                "line": 136,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 33,
+            "id": "supp-tracking-bound-2",
+            "source_sha256": "8522b313e55b0632e1b55bcdc4511a038cb641d90120a9d50e0b43bb8195656c",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 106,
+                "kind": "scatter"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 35,
+            "id": "supp-tracking-bound-3",
+            "source_sha256": "5e1b3d6c16df495737924875d645334934d97502a0df5786e3b1b1b3c4a1bb93",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 117,
+                "kind": "verified_single_checkpoint_comparison"
+              },
+              {
+                "line": 119,
+                "kind": "verified_single_checkpoint_comparison"
+              },
+              {
+                "line": 123,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 120,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": [],
+            "single_checkpoint_evidence": {
+              "path": "results/contact/tables/paper/theory/tracking.csv",
+              "sha256": "5178dc74f21a4b86a5d3ee3cadb2e1ff43e0f456c711dccd6cd23680f1053d99",
+              "selection": {
+                "condition": "static",
+                "beta": "1.0",
+                "nonuniform_prior": "True",
+                "zero_signal": "False",
+                "design": "balanced"
+              },
+              "measurements": [
+                16384
+              ],
+              "raw_rows": 128,
+              "plotted_coordinates_per_method": 1
+            }
+          },
+          {
+            "cell": 37,
+            "id": "supp-tracking-bound-4",
+            "source_sha256": "f2349f82e92a3b3eaf57d5fde3d83a3de1e858e2dc5769ee577cb71a9092f382",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 117,
+                "kind": "verified_single_checkpoint_comparison"
+              },
+              {
+                "line": 119,
+                "kind": "verified_single_checkpoint_comparison"
+              },
+              {
+                "line": 123,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 120,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": [],
+            "single_checkpoint_evidence": {
+              "path": "results/contact/tables/paper/theory/tracking.csv",
+              "sha256": "5178dc74f21a4b86a5d3ee3cadb2e1ff43e0f456c711dccd6cd23680f1053d99",
+              "selection": {
+                "condition": "static",
+                "beta": "1.0",
+                "nonuniform_prior": "False",
+                "zero_signal": "False",
+                "design": "concentrated"
+              },
+              "measurements": [
+                256
+              ],
+              "raw_rows": 128,
+              "plotted_coordinates_per_method": 1
+            }
+          },
+          {
+            "cell": 39,
+            "id": "supp-posterior-curvature-1",
+            "source_sha256": "8bc9fa855b0a20f47de647be5686f30c063ddeb7003a6d3ecd21a457c4508252",
+            "trajectories": [
+              {
+                "line": 123,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 125,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 92,
+                "kind": "scatter"
+              },
+              {
+                "line": 94,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 100,
+                "kind": "mathematical_line"
+              },
+              {
+                "line": 115,
+                "kind": "mathematical_curve",
+                "family": "inverse_Fisher_reference"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 41,
+            "id": "supp-block-updates-1",
+            "source_sha256": "a7d8b32aacf3c902f218015da94702e060285e38e7a44e1fbb0612d8825ce282",
+            "trajectories": [
+              {
+                "line": 128,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 136,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 91,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 113,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 140,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 96,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 97,
+                "kind": "axhline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 51,
+            "id": "supp-task-performance-2",
+            "source_sha256": "d7ad1eeef5a5b857d56ec500edc30e0307c3f6cffa4b4894e32a51554607ff50",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 101,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 104,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 53,
+            "id": "supp-posterior-anisotropy-2",
+            "source_sha256": "130c9010ae68947a549afa2d71a63e3cd1ffea10a3e29e4842a415c5dc1cbc7d",
+            "trajectories": [
+              {
+                "line": 125,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 129,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 153,
+                "kind": "mathematical_curve",
+                "family": "constructed_distribution"
+              },
+              {
+                "line": 155,
+                "kind": "mathematical_curve",
+                "family": "constructed_distribution"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 55,
+            "id": "supp-variance-estimation-1",
+            "source_sha256": "ca3314136df96ad7b8d98e1aa222fb3ae943f25deeebeab77369b5daf1890305",
+            "trajectories": [
+              {
+                "line": 99,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 114,
+                "kind": "boxplot"
+              },
+              {
+                "line": 132,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 118,
+                "kind": "axhline"
+              },
+              {
+                "line": 139,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 57,
+            "id": "supp-noise-adaptation-2",
+            "source_sha256": "bbe6a1dff395cccded694af66ff45dfa5bdf8604ee96bdbe751556d4df211bf5",
+            "trajectories": [
+              {
+                "line": 112,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 149,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 125,
+                "kind": "mathematical_line"
+              },
+              {
+                "line": 128,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 59,
+            "id": "supp-noise-adaptation-3",
+            "source_sha256": "f092ff77805874dc94b4ad38ad780611298b8ac2d7e2871896f96fc3853b9c3f",
+            "trajectories": [
+              {
+                "line": 136,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 140,
+                "kind": "scatter"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 61,
+            "id": "supp-noise-adaptation-4",
+            "source_sha256": "29b2095613a3d00955d0f24f3aa3921952f092a2cca819f5ec66c2ce1516190c",
+            "trajectories": [
+              {
+                "line": 162,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 137,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 141,
+                "kind": "scatter"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 63,
+            "id": "supp-predictive-calibration-1",
+            "source_sha256": "a522eef133a95297d4d68af0f282a8584296e04ef7e1a38b72ced25b82eee452",
+            "trajectories": [
+              {
+                "line": 130,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 133,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 136,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 65,
+            "id": "supp-predictive-calibration-3",
+            "source_sha256": "1459204a3ac11f4bb219b32c9976c2f5cda69862141f0cd19c9b993d70586000",
+            "trajectories": [
+              {
+                "line": 130,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 133,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 136,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 67,
+            "id": "supp-predictive-calibration-4",
+            "source_sha256": "d22d7a9c4a3c53690cea0e53a6b474b0051763f8aa700602b41f89e1e8801e4b",
+            "trajectories": [
+              {
+                "line": 130,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 133,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 136,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 69,
+            "id": "supp-predictive-calibration-5",
+            "source_sha256": "7c7da0b6938326618b9ff754d5e9c9e6a820a4977cd5cc8405b75afb700f1ff8",
+            "trajectories": [
+              {
+                "line": 130,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 133,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 136,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 71,
+            "id": "supp-predictive-calibration-7",
+            "source_sha256": "db446472d1310f435dea7c187419d59427e9f50f75942f1d49281b5be58195bc",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 115,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 73,
+            "id": "supp-predictive-calibration-8",
+            "source_sha256": "14817d153b6fe307d32dfa0495a9fe37ff3affb99b55f5df90c094b6aa21b5e4",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 115,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 75,
+            "id": "supp-predictive-calibration-9",
+            "source_sha256": "2082627a356e6bb1b3025773fdfaf8b880c1174c0fafa807d22933c131051c56",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 115,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 77,
+            "id": "supp-predictive-scores-1",
+            "source_sha256": "33ddc12750d7dd01956a0130fa63ee9c1e0c650ef5f5ed0c96eca2c750babd0c",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 111,
+                "kind": "scatter"
+              },
+              {
+                "line": 112,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 121,
+                "kind": "mathematical_line"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 79,
+            "id": "supp-model-mismatch-1",
+            "source_sha256": "e2f8256895b080486fcd0eb0843713adf84e3d4666644f744f72f163659c2711",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 121,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 81,
+            "id": "supp-computation-time-2",
+            "source_sha256": "c2d892436ba1488eb4b6e21d2dd1f9d550e02381ae310433b4ac06236fb30273",
+            "trajectories": [
+              {
+                "line": 105,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 83,
+            "id": "supp-numerical-accuracy-1",
+            "source_sha256": "e3c8a77897df0a27080b3e88655ad14fd15c0431e0c711911c120f1adbe5c2da",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 94,
+                "kind": "scatter"
+              },
+              {
+                "line": 109,
+                "kind": "scatter"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 89,
+            "id": "supp-paper-summary-1",
+            "source_sha256": "27b9a510c4e0ef86e418b0b6dc0a2566ce6434e6670a98c60b26579c09694de7",
+            "trajectories": [
+              {
+                "line": 158,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 159,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              },
+              {
+                "line": 124,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 183,
+                "kind": "boxplot"
+              },
+              {
+                "line": 128,
+                "kind": "scatter"
+              }
+            ],
+            "references": [
+              {
+                "line": 188,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          }
+        ],
+        "trajectories": 36,
+        "point_primitives": 39
+      },
+      "notebooks/beamforming_moving_interference.ipynb": {
+        "sha256": "9fb1a4f85aa6923a2330c6e7a5208518c286fce8862f17147d0833978e78c563",
+        "cells": [
+          {
+            "cell": 9,
+            "id": "smooth-output-power",
+            "source_sha256": "a15769e756f171c676d285f2e5f39870aa0d1cfa8fa34e9002b5a0a90989db99",
+            "trajectories": [
+              {
+                "line": 67,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 70,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 11,
+            "id": "abrupt-output-power",
+            "source_sha256": "3b02f330cc61fa43a6fbc43b65a33159281b1f2b4527b332048ecae77d682e84",
+            "trajectories": [
+              {
+                "line": 67,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 70,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 13,
+            "id": "combined-output-power",
+            "source_sha256": "1d3d982823af12cfc3a62e43016ce3cee0142f83bf534b75f26d01c98de1ffe0",
+            "trajectories": [
+              {
+                "line": 67,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 70,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          }
+        ],
+        "trajectories": 3,
+        "point_primitives": 0
+      },
+      "notebooks/contact_prediction_diagnostics.ipynb": {
+        "sha256": "be97359cc1af07d7fe2ca64d31fc5f00e67a2bb347dacec60b209800a96c35a7",
+        "cells": [
+          {
+            "cell": 4,
+            "id": "prediction-error-stationary",
+            "source_sha256": "482829dea2708de1cbe89e5cd1db65948ab4ce4ab5e2900daf14731504a1076e",
+            "trajectories": [
+              {
+                "line": 34,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 6,
+            "id": "prediction-error-sphere",
+            "source_sha256": "6569cd3fc20ba318dead36c69a58954b3c47e3983968335e5e720c718745b43f",
+            "trajectories": [
+              {
+                "line": 39,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 8,
+            "id": "prediction-error-references",
+            "source_sha256": "c8e171185014f23316b5b5cb912d90d12c2d9aa2bde3f909ecdba0c3c2894dcb",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 41,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 12,
+            "id": "moving-sphere-posterior-spheres",
+            "source_sha256": "02d874c0136b2b491d4499004b73408c9b8dd22444e15648340a7637f75413f1",
+            "trajectories": [
+              {
+                "line": 59,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [
+              {
+                "line": 60,
+                "kind": "scatter"
+              },
+              {
+                "line": 62,
+                "kind": "scatter"
+              }
+            ],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 17,
+            "id": "transport-paired-rise",
+            "source_sha256": "3ce0e0fae51188f5f7794446d05a8f3897aa38e8b8211dbee50abfc726230772",
+            "trajectories": [
+              {
+                "line": 40,
+                "primitive": "step",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 42,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 19,
+            "id": "transport-projector-change",
+            "source_sha256": "07f928cafce2b270d8c8d6e49d8108804d147cde64643b7719997ae90d243c58",
+            "trajectories": [
+              {
+                "line": 42,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 21,
+            "id": "transport-excitation",
+            "source_sha256": "892bbb730ab087a683b3ace726a231b2b5192630a45944de57c581e5204d1907",
+            "trajectories": [
+              {
+                "line": 42,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 23,
+            "id": "transport-curvature",
+            "source_sha256": "266d36cd5dbe52135e7be8ce331e15c8906fbce5180c7517b80a4bc6d07103c9",
+            "trajectories": [
+              {
+                "line": 43,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          }
+        ],
+        "trajectories": 7,
+        "point_primitives": 3
+      },
+      "notebooks/beamforming_moving_comparison_audit.ipynb": {
+        "sha256": "3241ab12e452d839987db89215826097c05e38774d06941c0c17920dcd1085b8",
+        "cells": [
+          {
+            "cell": 6,
+            "id": "history-smooth",
+            "source_sha256": "5c830d4915d65d90dd8ab78103089f1fad0e8925b83be8847d5551c939baec19",
+            "trajectories": [
+              {
+                "line": 39,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 44,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 8,
+            "id": "history-abrupt",
+            "source_sha256": "445d99c0d32c77db004a71cd85ae48412afa93723569eae6a3d2f25957b120e7",
+            "trajectories": [
+              {
+                "line": 39,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [
+              {
+                "line": 44,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 10,
+            "id": "moving-paired-primary",
+            "source_sha256": "187e0ff1afe5c69d6297aa3f86b45139ce33624c5d1efbb3cf3e5107d1d23b45",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 46,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 49,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 14,
+            "id": "mean-beta-validation",
+            "source_sha256": "b8720461af45e8b5e0a77df6666e0086e703ec5edd3ea99f94ef19b24c2ca951",
+            "trajectories": [
+              {
+                "line": 52,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 17,
+            "id": "ew-objective-gap",
+            "source_sha256": "0ea4b7b4183a3b7b4a90385f57da6ad70a26231cb5b060382232b58d181ab9e4",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 50,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [
+              {
+                "line": 57,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 20,
+            "id": "ew-task-power",
+            "source_sha256": "64c4c605d62054f49b1b2237676e5530d0c736b8f09d94822eee401769d8ace2",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 57,
+                "kind": "interval_point_or_bars"
+              },
+              {
+                "line": 48,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 59,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 23,
+            "id": "optimization-computation-time",
+            "source_sha256": "132c942b92e85b1544e1eb582e72a9b39e600d6e7246b3143db5cb1eae763a83",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 46,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [],
+            "errors": []
+          }
+        ],
+        "trajectories": 3,
+        "point_primitives": 5
+      },
+      "notebooks/beamforming_stationary_comparison_audit.ipynb": {
+        "sha256": "848047e02112aa02e1f53334b1e548a3042a60753212e22eec74407d852576a1",
+        "cells": [
+          {
+            "cell": 5,
+            "id": "stationary-original",
+            "source_sha256": "8b1f529478dc7fe54d50af64eaa020f43fb1ccb81169d74c1e2542aaee211d5e",
+            "trajectories": [
+              {
+                "line": 39,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 7,
+            "id": "stationary-final-selection",
+            "source_sha256": "eadac858656a0ce1073df6e2f4be1347dba880cdf17204472c476dc1c221d8dc",
+            "trajectories": [
+              {
+                "line": 46,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 9,
+            "id": "stationary-paired-final",
+            "source_sha256": "95df04a1e09e05f7e91a1d2bebb80bba18bb00818c01869881b8ec270eda5986",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 52,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 55,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 12,
+            "id": "mean-beta-validation",
+            "source_sha256": "b8720461af45e8b5e0a77df6666e0086e703ec5edd3ea99f94ef19b24c2ca951",
+            "trajectories": [
+              {
+                "line": 52,
+                "primitive": "plot",
+                "style": "solid",
+                "markers": false
+              }
+            ],
+            "scientific_points": [],
+            "references": [],
+            "errors": []
+          },
+          {
+            "cell": 15,
+            "id": "ew-objective-gap",
+            "source_sha256": "0ea4b7b4183a3b7b4a90385f57da6ad70a26231cb5b060382232b58d181ab9e4",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 50,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [
+              {
+                "line": 57,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 18,
+            "id": "ew-task-power",
+            "source_sha256": "64c4c605d62054f49b1b2237676e5530d0c736b8f09d94822eee401769d8ace2",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 57,
+                "kind": "interval_point_or_bars"
+              },
+              {
+                "line": 48,
+                "kind": "interval_point_or_bars"
+              }
+            ],
+            "references": [
+              {
+                "line": 59,
+                "kind": "axvline"
+              }
+            ],
+            "errors": []
+          },
+          {
+            "cell": 21,
+            "id": "optimization-computation-time",
+            "source_sha256": "132c942b92e85b1544e1eb582e72a9b39e600d6e7246b3143db5cb1eae763a83",
+            "trajectories": [],
+            "scientific_points": [
+              {
+                "line": 46,
+                "kind": "boxplot"
+              }
+            ],
+            "references": [],
+            "errors": []
+          }
+        ],
+        "trajectories": 3,
+        "point_primitives": 5
+      }
+    },
+    "errors": [],
+    "excluded_notebooks": [
+      "notebooks/00_theory.ipynb",
+      "notebooks/02_field.ipynb",
+      "notebooks/04_implementation_audit.ipynb"
+    ]
+  },
+  "pdfs": {
+    "status": "passed",
+    "files": {
+      "results/supplementary/beamforming/setup_page1.pdf": {
+        "sha256": "e062ac718604cb35187c0ef672ff76ba3c4df45b5ac6fcc2ba25b588615c70f7",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 3,
+        "source_sha256": "cfb4c8c43f0e1ba51b6fc823b6d5643cf85367d6d430afa5cae36891bf6b42c7",
+        "connected_paths": 3,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/information_page1.pdf": {
+        "sha256": "4d5bbbced00624c6af6dcee935c04e0b181ea5beaa203ea2135e5d93f3ebad32",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 5,
+        "source_sha256": "6a86ec9ff443938b068eddd0c9c19bd5d483f09dd9a462314da537c859a9ff89",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 1,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/main/beamforming/task_performance_output_power.pdf": {
+        "sha256": "8fdb773ba05b602938e276bd7e40389d277442aa2cb9056a12eeff943d2edd07",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 10,
+        "source_sha256": "6b9c0ca48d1bc637ab05a3f00414b6323163fe7c46e2dd1f071e56b9c589d3df",
+        "connected_paths": 5,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/task_performance_paired_difference.pdf": {
+        "sha256": "14bd91412666719854289a8704544130696f83cd08f497efa7a328c12678c98e",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 10,
+        "source_sha256": "d91b447adee298ad020c387cc4543510422349e48620d0404125fec9d2e54f09",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/stationary_dimensions_T200.pdf": {
+        "sha256": "9d02b83e751c865782fdaf195a94dcc794dc83496a2f5a1f9f28a0c0a1bb5051",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 12,
+        "source_sha256": "14b1ecfbce8faf2868e59b7f67ab9d1215e0a7feac4e7ec983af2414e4bb85a0",
+        "connected_paths": 5,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/posterior_anisotropy_sphere.pdf": {
+        "sha256": "05a67d3ca9832023eb76f3c9390e05fb33929d6aefc225a59447484b108e7ba5",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 14,
+        "source_sha256": "b806614cec6828e0351b880b976822e791246d67776f2d8b851b2c772b960aab",
+        "connected_paths": 7,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/posterior_anisotropy_eigenvalues.pdf": {
+        "sha256": "d2cda320b46057a3575f4c6ebd4d090ae436991a9f7441ca35724bea63e6ed4f",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 14,
+        "source_sha256": "28ab4b5e817702518bc6dd1a2c71c9075689636faeac756f563c777daf078b7c",
+        "connected_paths": 1,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/posterior_anisotropy_empirical_cdf.pdf": {
+        "sha256": "f9a6eb2616ceefab98404b4a7eb3f42e32d6e2c5ab736236370c40ae52034bb6",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 14,
+        "source_sha256": "fea269aefd5c241a71854458b215946f592e1bb1eb008288a799a5e9a4c3882f",
+        "connected_paths": 1,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/main/beamforming/noise_adaptation_page1.pdf": {
+        "sha256": "065a73a67ef2a53c99ed2fc2f99cff190cf6eb9882748631a7e376bf88d56758",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 16,
+        "source_sha256": "d5415bb9e4361c9c378af7acdd7f1e9bf3289592902897b2813aa1014b610682",
+        "connected_paths": 17,
+        "events": [
+          {
+            "dashed": true,
+            "width_points": 1.2999999523162842,
+            "bounds": [
+              303.437255859375,
+              12.959991455078125,
+              303.437255859375,
+              134.45016479492188
+            ]
+          },
+          {
+            "dashed": true,
+            "width_points": 1.2999999523162842,
+            "bounds": [
+              848.4466552734375,
+              12.959991455078125,
+              848.4466552734375,
+              134.45016479492188
+            ]
+          },
+          {
+            "dashed": true,
+            "width_points": 1.2999999523162842,
+            "bounds": [
+              303.437255859375,
+              221.69314575195312,
+              303.437255859375,
+              343.1833190917969
+            ]
+          },
+          {
+            "dashed": true,
+            "width_points": 1.2999999523162842,
+            "bounds": [
+              848.4466552734375,
+              221.69314575195312,
+              848.4466552734375,
+              343.1833190917969
+            ]
+          }
+        ],
+        "allowed_reference_paths": 1,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/predictive_calibration_page2.pdf": {
+        "sha256": "2999784df655c840e1afdb66d22130d9b4476a8daf69cca68fd11a915a9c6989",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 19,
+        "source_sha256": "1520b580a0da75fb423024974a143bdacd7fcbe26f7023d69ac1033e66be8829",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 3,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/predictive_calibration_page6.pdf": {
+        "sha256": "d9b29301e4ce7679a564691a906d6024f080ff5a8629d03f747254e9ef4403f9",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 20,
+        "source_sha256": "bcdeea25514bd964ce31543990b341adbfb91526a3b61e3c4cfd80e4821ec546",
+        "connected_paths": 8,
+        "events": [],
+        "allowed_reference_paths": 3,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/computation_time_scaling.pdf": {
+        "sha256": "8858399a92d505686cadca6b8fe9729b7b0f3ed3d3290d76ad64295a4aeaab48",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 23,
+        "source_sha256": "ce56831a0b993a1d8266a5506a0aae50091d10ccc4c67b5c07ef87aafc1723ec",
+        "connected_paths": 4,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/computation_time_phases.pdf": {
+        "sha256": "e7b372d99db2c8ea3f7a9874dda5e39381ad7f75ff7fac6e8093aecfc4f8ef93",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 23,
+        "source_sha256": "ddac75e1fec95c9a44342586f6fb933e314942e323b2c2560e691d3de8bf7a14",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/tracking_error_supp_page1.pdf": {
+        "sha256": "7d1b0d37cd8cf46cb4b0f51fbd23393856148db244bed2d5f38ae801d86e55c3",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 29,
+        "source_sha256": "3480ad3c8b51b79bc466869827cb638d695a43f94b3431a02e7e6bed2f3d613a",
+        "connected_paths": 14,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/tracking_bound_supp_page1.pdf": {
+        "sha256": "b41b2adac54261490ae6c00c0bc4f20c5fcdffc450944eceb607a4a68fb398b2",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 31,
+        "source_sha256": "2ab8330d6a5654a2622233f3fc7bf1c6137b5ce036f2c7b26f2c4811f0eff802",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 1,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/tracking_bound_supp_page2.pdf": {
+        "sha256": "ca89debb1a3deb02a1c948d63a3c22171431883389c670dac52774f573015f6d",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 33,
+        "source_sha256": "a4957abd094140bb74fd9a852c5b3091c33de9dd776146fc31ba7b888eec0edd",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/tracking_bound_supp_page3.pdf": {
+        "sha256": "6f13b99ad7ba8eaee8839b031020524d29ae543626142b7baef75036070b5fe1",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 35,
+        "source_sha256": "806c4f36f5c3a0a6d7224fd0e6124a2559fe7b73730ae34ba2b47ee920691d52",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/tracking_bound_supp_page4.pdf": {
+        "sha256": "ded66f63c9021ec2fb28692926f6c769293e6226a849fa83b5d7967684b28a22",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 37,
+        "source_sha256": "135f8d13256d24cafeffd79e56125dcf65ba94fe5af1c274ac9dc878836b7018",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/posterior_curvature_supp_page1.pdf": {
+        "sha256": "ad23c8be60e6e7520e5ab98cc3713a0dee1b6095c4b782db12577d75f1febc9d",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 39,
+        "source_sha256": "bb86afca76076ae81a0b5ed0bd06dd7c9c3457321de671bb27576096f40c5c45",
+        "connected_paths": 5,
+        "events": [],
+        "allowed_reference_paths": 2,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/block_updates_supp_page1.pdf": {
+        "sha256": "6f1517ec7dbf14cae9dd7fcb93199ac15a6039cee0d0878afe758892b3d01f3f",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 41,
+        "source_sha256": "8c2d7c406ad6c841050dca08031f66145a399d1d011ef5483cad8db95792c6d8",
+        "connected_paths": 6,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/additional_comparisons_supp_page1.pdf": {
+        "sha256": "9f42ac0426791c2a2dfd4539c0e87b169748bc7f193898017460c11c7ba3e153",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 43,
+        "source_sha256": "4d480a5ebc9332f0546101164ecd681b5a602a1e07e58594d923dcadf6987566",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/additional_comparisons_supp_page2.pdf": {
+        "sha256": "001af50b059bfe345eccf212949eee328cd17d8a3efee947ca0c0ea99a60ed77",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 45,
+        "source_sha256": "5cce8edb7ca871226a76cffa80f8ab16797b3509c26e2f094508eb81ceafe9e2",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/additional_comparisons_supp_page3.pdf": {
+        "sha256": "d6d0a7ec245891f02414264cfa9c253b285fb7581895eba941b5945c21729ea2",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 47,
+        "source_sha256": "b6eb99e599c7006219bd9715d65d11013bf36944d5e6ee67f615c92e49b753fb",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/additional_comparisons_supp_page4.pdf": {
+        "sha256": "fc97f2f3c777ee37257f900fcc33a27d37b481a1238d4ddb9d3937ed374d9ed4",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 49,
+        "source_sha256": "0535608cbca1d5d2621b7aac20441d863ee996200fc80b7c47446e0756a53815",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/additional_comparisons_supp_page5.pdf": {
+        "sha256": "da24d91606d29c621cf25227f0cef97542cc01d1c931b41c386685e84a82fce2",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 51,
+        "source_sha256": "f8d1e5ee71ac5394d3cf27c8fe9c255fe6b7b1a98c79774c3c61075a199c5939",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/additional_comparisons_supp_page6.pdf": {
+        "sha256": "045377133ce324f34110bca333b289a12d0fbb68483decf238cd3faef6709561",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 53,
+        "source_sha256": "6fc6307744ce59c2b8e3f8e73f0bfe23f48003784cc82a71a122b796955fd9c8",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/additional_comparisons_supp_page7.pdf": {
+        "sha256": "a5aeed70a4e4ccdd59c09fead3616b2b76985312c50152eaa5500fb7e29f1e4e",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 55,
+        "source_sha256": "585beb8e87b6a844992e5762d9802d367e47b49d01435ff2364ada945bf0792e",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/additional_comparisons_supp_page8.pdf": {
+        "sha256": "40b6e17678d581e7b80103a5c398f33eb44d6f02181a38146e0b07c67cbba9c1",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 57,
+        "source_sha256": "5656fb07d1856d4d870815a943e6325797f5bcd59ced4990f3af8679bde3cadf",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/variance_estimation_supp_page1.pdf": {
+        "sha256": "0c1e8b59a2394af68b2909ca578f3059aa1c806ab1e137af90c2654183b3df6e",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 59,
+        "source_sha256": "a15519cbd5575e789182731d09fbbb6a3ab94a5b80098c0a8e0d2ae5134f0dde",
+        "connected_paths": 3,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/noise_adaptation_supp_page2.pdf": {
+        "sha256": "03a44f30f4a471f11a1d0fc44a74fb19c9a2ce7c6b3965e29524c005201c58ca",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 61,
+        "source_sha256": "67d12c9df7c525a9943c6573d5948bef94d1bd554518386ce743e39a56b961eb",
+        "connected_paths": 13,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/noise_adaptation_supp_page3.pdf": {
+        "sha256": "95fa944e5bd47a48044b6af4b68cbbc8ee1edf2fffb6f3fd9358e3a758ad7426",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 63,
+        "source_sha256": "945a2243d979ada2ef9c202c8bbfc04677838f979bf9979839fd2494f5099d78",
+        "connected_paths": 17,
+        "events": [],
+        "allowed_reference_paths": 1,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/predictive_calibration_supp_page1.pdf": {
+        "sha256": "228e53988eb8ad4a674e1c3cbb09362b1c55605a006c31a5fe867d27e7f3e269",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 65,
+        "source_sha256": "6e30fcb515866024f3dd61cf1588f60047c2e8947c1fa966de2256c041f98800",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 3,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/predictive_calibration_supp_page3.pdf": {
+        "sha256": "10170e3c2dc25ec8f068b0c8211bab7788363d5acf02a6b47f66fe8ec3b71044",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 67,
+        "source_sha256": "3ed1ee73e165536bb05b6a438d7b24e1fd6d35a70b727e99663e2ac39af9a6b9",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 3,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/predictive_calibration_supp_page4.pdf": {
+        "sha256": "83f247744ecc0d43e3f5dfd19a730783cb3664170ccd5263f48b9f84ff9e3879",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 69,
+        "source_sha256": "b63e8b9740a3549d01234ee4025bab5e9c3d64b550cb5658a3559248758fd1b4",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 3,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/predictive_calibration_supp_page5.pdf": {
+        "sha256": "172d06b508ca6df4bf33b056188e340f3128919a02ac532adea0712ee7029c3c",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 71,
+        "source_sha256": "3f189719e521d1c2d451bee8cbff789d7ae964b896245ca30fbb2a99ba59bc29",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 3,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/predictive_calibration_supp_page7.pdf": {
+        "sha256": "23dd3804245c111837a89b7c013e4b6e5c489ea96cc4b4359fde50b7adf71881",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 73,
+        "source_sha256": "28da1146c66df93b4f7096d5041781541823fc44b8b07078e53581a48f60f85a",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/predictive_calibration_supp_page8.pdf": {
+        "sha256": "581b15724abcc1a215d8d01a9cff34da978676283933445e05145e45795d7699",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 75,
+        "source_sha256": "ba651875d185c37bc729096130ac6aeb99ec90447b5161e2e6ae3b3d43af363a",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/predictive_calibration_supp_page9.pdf": {
+        "sha256": "c2a334bb4fa8842cb5a676eba1c3c6895ed94105be12aa34401a623794e535b5",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 77,
+        "source_sha256": "69f89c122f35525f1f0c707164b48b479d54918316df948b0eb74b02537c682b",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/predictive_scores_supp_page1.pdf": {
+        "sha256": "5ed112fa0d7d7056eadac9f230fc2cdae4153d85a76265094f272bd997e4f6b2",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 79,
+        "source_sha256": "c8835bddfc43e20407795c7a6154265ad8e88a0d321d8b9345580630b308f74b",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 2,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/model_mismatch_supp_page1.pdf": {
+        "sha256": "598fe80d23950a7cdbcff07c488da748ae006aa13f0093c34b911e190a2ce295",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 81,
+        "source_sha256": "398f6ba2a87afe79b82590166a007b28b164e5cc0005e1a3adab9d8dd6333fa2",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/computation_time_supp_page2.pdf": {
+        "sha256": "af930c679d7913c449be4fb75d25fc296bc8282f9d6b50e1eb1d69d7c979f370",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 83,
+        "source_sha256": "8be7e00f3b31be453d11c5e6feed08ff81727009a6889b037793b55f46170ee0",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/numerical_accuracy_supp_page1.pdf": {
+        "sha256": "799a429fe7ff283a5d990e60d0130caf244d37d0ecc45aac98565f2c92f0d9b7",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 85,
+        "source_sha256": "a74fa93b76874f2e482fde884ac466a0d161ac221a3b3b4e1e6608b2e6a30e95",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/numerical_accuracy_supp_page2.pdf": {
+        "sha256": "cd894920ed32b45e9381878a2c2b83ca2e2803a9b3fb5371ebcb0162f0e7058c",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 87,
+        "source_sha256": "bb694386941e194e806acd2868046a705218052a1c06e0fd073e4ebdb4d62b10",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/numerical_accuracy_supp_page3.pdf": {
+        "sha256": "e72dceee6850fbc72b65546642029b5c2b6690f63d3485655eedd318457f91c5",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 89,
+        "source_sha256": "198ea32572e9d8bedc7cbe6ab5fdcae37d9a20453cc018f4fa832fc6b5ba7db5",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/beamforming/paper_summary_supp_page1.pdf": {
+        "sha256": "28db7dc465a159fda52781f19fbb7a968cec10df421687eb2280ffab05a751ad",
+        "notebook": "notebooks/01_array.ipynb",
+        "cell": 91,
+        "source_sha256": "57ad9dc6686538469376e0d370d1fa8c66ab32daafcb02fff5906a3f0bf54151",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 1,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/setup_page1.pdf": {
+        "sha256": "1bb05a510c92fc79ae3f34ac40e91568436f8dc34e48100aa61b6869a7afe6e6",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 3,
+        "source_sha256": "897e3d0b638cb99caef48c339a3df61170700b380cc56968b61a38c9368aec2a",
+        "connected_paths": 15,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/information_contours.pdf": {
+        "sha256": "cb6530f3916bf3b8234c474f09cdf1d415fe0ea1b1abbd673466dce31d136ad2",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 5,
+        "source_sha256": "30173ed241d97c03f1998758559520bd228d53fd645ba77bb904e6951e20962e",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 1,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/main/contact/information_rotation.pdf": {
+        "sha256": "09546aeb0cda4e85cb73b8724c727093dbb3e61f6f56eff87ed203fb9f46338a",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 5,
+        "source_sha256": "6114fb40f7decdf09b38b392b786a46919579136971007f6463c22b15b922a16",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/main/contact/task_performance_page1.pdf": {
+        "sha256": "3927b9c28cabbb0b5eceb9bc5a57c31bf0ec2434cafd3d55749361f676978b3d",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 10,
+        "source_sha256": "547c5d17ef102d636b7d3da4377e2607f92a8e57b139033842bddc1e842fe481",
+        "connected_paths": 5,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/main/contact/posterior_anisotropy_spheres.pdf": {
+        "sha256": "9cc810e1ff411dd51cb64ee19bde89bc88a37bd92809097029ff6093c979ffe1",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 14,
+        "source_sha256": "c615ab6bb8e7b16c5987e7981a48b67eec11b53fe42ecdc82e2a82c55e53d357",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/main/contact/posterior_anisotropy_risk.pdf": {
+        "sha256": "939f24432429b80031dd555fe307c72d2722ed61235157fb1f46684c65db1d62",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 14,
+        "source_sha256": "8c7d2edb83fabb7ebb50d5ea2b91308b0f93bae102202a9e7d1642fe99365495",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/noise_adaptation_page1.pdf": {
+        "sha256": "4edaa05e2f8146dc80ee0af0c83f2e76055151bff3b5b336735ec63925e51ead",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 16,
+        "source_sha256": "af0e34c4a547fe26e21141ee90f5d50399b2f1867bc7d4c81aa8dcd12e86db8f",
+        "connected_paths": 16,
+        "events": [],
+        "allowed_reference_paths": 1,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/predictive_calibration_page2.pdf": {
+        "sha256": "bcdea505ef9974055ef4192823ec361444d7032ec87299eb454ffc3a353cd2fb",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 19,
+        "source_sha256": "d0ed8db3d7c3c0562c577a05347c3e634e3fde09e3e80d26a27e8383ce399dab",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 3,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/predictive_calibration_page6.pdf": {
+        "sha256": "80eb2227cdc107537ad83be1b1a11d47a895d4586bdb354fd1441498fdc44d8e",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 20,
+        "source_sha256": "7a75e677027b58ef18d38bee9e9bd8054431cf91dba60639054fd1df6632b500",
+        "connected_paths": 11,
+        "events": [],
+        "allowed_reference_paths": 3,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/computation_time_scaling.pdf": {
+        "sha256": "aa617aa7fcaac06038be6d9a54f28c8480505d1ce02fe455d2001d4d958fd00f",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 23,
+        "source_sha256": "cd35db8dc164941cb65e0fcb727b1525db39bc7ae509e8999b38701ad1694c96",
+        "connected_paths": 4,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/computation_time_phases.pdf": {
+        "sha256": "b8e2f9e6da92ecf8661d46c7a92e83fdb490858575c2d6e044bf5f070a3f7d68",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 23,
+        "source_sha256": "40acda41f0d6bf9445d11d94ecd5ff04d33123b122e933b6f77a0486a4354437",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/tracking_error_supp_page1.pdf": {
+        "sha256": "8ae321e05361c530726b476d9216181377437f043c528009ee4eef3b7c92b807",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 29,
+        "source_sha256": "cbf24167a9df2c1bf210d296e56d509a50e972b2d78af2a6a6eb6c3739531506",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/tracking_bound_supp_page1.pdf": {
+        "sha256": "9baaef2840864ebbe42f3cd58f26c51a9660fa1b9b6121c35a8fcf8bd5720d94",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 31,
+        "source_sha256": "f976d176f552986f2207489075deb93b9ea88a2cc103bce38bedb542984159e1",
+        "connected_paths": 3,
+        "events": [],
+        "allowed_reference_paths": 1,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/tracking_bound_supp_page2.pdf": {
+        "sha256": "d5f4d7fa169543b1ecac7e042ed93a350e253d8ea48504adb5c01fd855f94bdc",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 33,
+        "source_sha256": "8522b313e55b0632e1b55bcdc4511a038cb641d90120a9d50e0b43bb8195656c",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/tracking_bound_supp_page3.pdf": {
+        "sha256": "dbcb382f4ac1753cb7c5500af3fd29bdbd9ad09a25c83bd77f7f623c0a37f95b",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 35,
+        "source_sha256": "5e1b3d6c16df495737924875d645334934d97502a0df5786e3b1b1b3c4a1bb93",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/tracking_bound_supp_page4.pdf": {
+        "sha256": "9d2f7e1b7d5701f38702f8044169482b199979ffe352eba10d9b9599bc14d4c8",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 37,
+        "source_sha256": "f2349f82e92a3b3eaf57d5fde3d83a3de1e858e2dc5769ee577cb71a9092f382",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/posterior_curvature_supp_page1.pdf": {
+        "sha256": "15ba8ece7e20e17d7231df9d9ad8fc3f9db157ae44e4e229f128961f1b5e344b",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 39,
+        "source_sha256": "8bc9fa855b0a20f47de647be5686f30c063ddeb7003a6d3ecd21a457c4508252",
+        "connected_paths": 5,
+        "events": [],
+        "allowed_reference_paths": 2,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/block_updates_supp_page1.pdf": {
+        "sha256": "2a118ecdbdde126359c94109abdb9932cbabf14465058c4b267cb80b2ebe5cd8",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 41,
+        "source_sha256": "a7d8b32aacf3c902f218015da94702e060285e38e7a44e1fbb0612d8825ce282",
+        "connected_paths": 6,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/additional_comparisons_supp_page1.pdf": {
+        "sha256": "7d1d7160bc4d254406b7e519882bc009e945cbf552cb9f72e7610b020e280e66",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 43,
+        "source_sha256": "9eb2726933915dbf22374ee42efef16a38f40adaf2d8f0af91098c1b226b1d41",
+        "connected_paths": 4,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/additional_comparisons_supp_page2.pdf": {
+        "sha256": "d9c99a0c368db15e3c6f0d64d887b2ddcd9de8be1fa854c99b7e6b03f9910939",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 45,
+        "source_sha256": "2a89ccd818c5fd93fb21652b54ad95b25637a0e22bd67114ed01223f5c10dedc",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/additional_comparisons_supp_page3.pdf": {
+        "sha256": "a35532cfc40bec358938cbb16aefc8ed3b98398c18e16c02b24689d81ea0218c",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 47,
+        "source_sha256": "fa59ccff05a4f232db931fe84d46ef66224068d0a1aa8167009f69eadf9a7b85",
+        "connected_paths": 8,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/additional_comparisons_supp_page4.pdf": {
+        "sha256": "d9ccef16490598f66946643a603cd5f0702113b411e058c341cf5913cf771327",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 49,
+        "source_sha256": "e47b3dc7bdd3dcd53ba435cfbb11c6e2d529390c5f33813a6f9550668eeef416",
+        "connected_paths": 10,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/task_performance_supp_page2.pdf": {
+        "sha256": "71c7e284ac5f1933d4e77495700a329de898b3e51f36e3657ed94a9ddfeb0117",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 51,
+        "source_sha256": "d7ad1eeef5a5b857d56ec500edc30e0307c3f6cffa4b4894e32a51554607ff50",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/posterior_anisotropy_supp_page2.pdf": {
+        "sha256": "5a0f6a7537deee8ff2078519a39709518aa01e12b824314c7e1cb8590a8623ba",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 53,
+        "source_sha256": "130c9010ae68947a549afa2d71a63e3cd1ffea10a3e29e4842a415c5dc1cbc7d",
+        "connected_paths": 16,
+        "events": [],
+        "allowed_reference_paths": 2,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/variance_estimation_supp_page1.pdf": {
+        "sha256": "2c4d097e0b48b83904fd1a4af6e2f8bd294a7ee59ee53f2af2901b3196770955",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 55,
+        "source_sha256": "ca3314136df96ad7b8d98e1aa222fb3ae943f25deeebeab77369b5daf1890305",
+        "connected_paths": 3,
+        "events": [],
+        "allowed_reference_paths": 1,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/noise_adaptation_supp_page2.pdf": {
+        "sha256": "343c3c440985439da0dae98936702a68e5b1ec72e9a030dbc2390d70e8b3f7a5",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 57,
+        "source_sha256": "bbe6a1dff395cccded694af66ff45dfa5bdf8604ee96bdbe751556d4df211bf5",
+        "connected_paths": 14,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/noise_adaptation_supp_page3.pdf": {
+        "sha256": "cd4cba5cf16e95e811d777c9ac604abf6db359f5093568ec919d90b03327afc9",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 59,
+        "source_sha256": "f092ff77805874dc94b4ad38ad780611298b8ac2d7e2871896f96fc3853b9c3f",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/noise_adaptation_supp_page4.pdf": {
+        "sha256": "3871d01780d4ff751310873ffcf1253296f180163c8a58ab85e85b693259104e",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 61,
+        "source_sha256": "29b2095613a3d00955d0f24f3aa3921952f092a2cca819f5ec66c2ce1516190c",
+        "connected_paths": 8,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/predictive_calibration_supp_page1.pdf": {
+        "sha256": "54c5adf54ec792b86305fd74d421d08d5e6436391eaff8a576107f0eb9114bd2",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 63,
+        "source_sha256": "a522eef133a95297d4d68af0f282a8584296e04ef7e1a38b72ced25b82eee452",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 3,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/predictive_calibration_supp_page3.pdf": {
+        "sha256": "31483b676e2e4abdb53472cab51d31f9fab19d5f3c702eadf6e20a55e38c0ef2",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 65,
+        "source_sha256": "1459204a3ac11f4bb219b32c9976c2f5cda69862141f0cd19c9b993d70586000",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 3,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/predictive_calibration_supp_page4.pdf": {
+        "sha256": "143f35694bac5a95e94ff68c312dc8d51b94fcc56fc39923d8aa3a503c0fc3f5",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 67,
+        "source_sha256": "d22d7a9c4a3c53690cea0e53a6b474b0051763f8aa700602b41f89e1e8801e4b",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 3,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/predictive_calibration_supp_page5.pdf": {
+        "sha256": "4ec0bc321f45716a2f36a7e657ddc62f156e225020ae18c1514c69864c862311",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 69,
+        "source_sha256": "7c7da0b6938326618b9ff754d5e9c9e6a820a4977cd5cc8405b75afb700f1ff8",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 3,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/predictive_calibration_supp_page7.pdf": {
+        "sha256": "41ea666853e0e61e1deb9b449cbe8a5745ccd42bf3a519faa10bed149d98a872",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 71,
+        "source_sha256": "db446472d1310f435dea7c187419d59427e9f50f75942f1d49281b5be58195bc",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/predictive_calibration_supp_page8.pdf": {
+        "sha256": "4a0fa099abb8d07bd6d4bc271ce4588696352d59a0d1df6b72ec86c9d0be6368",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 73,
+        "source_sha256": "14817d153b6fe307d32dfa0495a9fe37ff3affb99b55f5df90c094b6aa21b5e4",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/predictive_calibration_supp_page9.pdf": {
+        "sha256": "785157940ab38317cfcf7fb74a57fa5f2fc41785095637b75b687bc300cd3f7c",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 75,
+        "source_sha256": "2082627a356e6bb1b3025773fdfaf8b880c1174c0fafa807d22933c131051c56",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/predictive_scores_supp_page1.pdf": {
+        "sha256": "e16c91277af48ac82a92a034ed830ed60c992b3993d1bf58ae7e78a315e40b44",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 77,
+        "source_sha256": "33ddc12750d7dd01956a0130fa63ee9c1e0c650ef5f5ed0c96eca2c750babd0c",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 2,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/model_mismatch_supp_page1.pdf": {
+        "sha256": "b5e1a186d13b916fafda2b22be9c98a0f30768d03e0cd39917efe00da99232dd",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 79,
+        "source_sha256": "e2f8256895b080486fcd0eb0843713adf84e3d4666644f744f72f163659c2711",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/computation_time_supp_page2.pdf": {
+        "sha256": "401bbda9c4c1633bfa6af328ba2d571f9e838baf7c6b9f0087185c1c4eb2eb6f",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 81,
+        "source_sha256": "c2d892436ba1488eb4b6e21d2dd1f9d550e02381ae310433b4ac06236fb30273",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/numerical_accuracy_supp_page1.pdf": {
+        "sha256": "6246b28a36c6b98b1169b6594e6834dc53a0736e02a3265b302c288d6da5e383",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 83,
+        "source_sha256": "e3c8a77897df0a27080b3e88655ad14fd15c0431e0c711911c120f1adbe5c2da",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/numerical_accuracy_supp_page2.pdf": {
+        "sha256": "35145ba3cd65f244b477b43c98e5258fb726889c931d012fdfa908097f7a415d",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 85,
+        "source_sha256": "a5f3383cbbf8a9950c083a7a9f6d0f8ef8455ced0784ec306981937db8cacc82",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/numerical_accuracy_supp_page3.pdf": {
+        "sha256": "2b851247d57d05f2d99ab747ac628922ce572e58430ce97b9a7bae03beda5180",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 87,
+        "source_sha256": "bda3166e9257e6ecd7db330583df26a4755e26442cb1aef796a2317096d85f66",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/paper_summary_supp_page1.pdf": {
+        "sha256": "9ccf5ff430e22ee6928417673fe8ad8edbc093723e11b5534ddbc874def75021",
+        "notebook": "notebooks/03_contact.ipynb",
+        "cell": 89,
+        "source_sha256": "27b9a510c4e0ef86e418b0b6dc0a2566ce6434e6670a98c60b26579c09694de7",
+        "connected_paths": 14,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/main/beamforming/moving_interference_smooth_output_power.pdf": {
+        "sha256": "34912ed2ec3cf2db0be7a4d3232a25a339551610da9ed80d6e80157351257d0c",
+        "notebook": "notebooks/beamforming_moving_interference.ipynb",
+        "cell": 9,
+        "source_sha256": "a15769e756f171c676d285f2e5f39870aa0d1cfa8fa34e9002b5a0a90989db99",
+        "connected_paths": 4,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/main/beamforming/moving_interference_abrupt_output_power.pdf": {
+        "sha256": "9f98fd740a4ae047780545e9dcfb59cb088dedf77824e80b69763cef78b01270",
+        "notebook": "notebooks/beamforming_moving_interference.ipynb",
+        "cell": 11,
+        "source_sha256": "3b02f330cc61fa43a6fbc43b65a33159281b1f2b4527b332048ecae77d682e84",
+        "connected_paths": 4,
+        "events": [
+          {
+            "dashed": true,
+            "width_points": 1.2999999523162842,
+            "bounds": [
+              565.4505004882812,
+              3.2806396484375,
+              565.4505004882812,
+              219.0010986328125
+            ]
+          }
+        ],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/main/beamforming/moving_interference_comparison.pdf": {
+        "sha256": "dd9b32f0439719d5bd53a86dd4433fc2a273a0c5348e7c58594d2afd614c682d",
+        "notebook": "notebooks/beamforming_moving_interference.ipynb",
+        "cell": 13,
+        "source_sha256": "1d3d982823af12cfc3a62e43016ce3cee0142f83bf534b75f26d01c98de1ffe0",
+        "connected_paths": 8,
+        "events": [
+          {
+            "dashed": true,
+            "width_points": 1.2999999523162842,
+            "bounds": [
+              391.4615478515625,
+              2.8800048828125,
+              391.4615478515625,
+              177.8441162109375
+            ]
+          }
+        ],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/main/contact/prediction_error_stationary.pdf": {
+        "sha256": "5d15cd5678c8af9760718187dbcfba78dca1e6ecf92febe9ec6e9547dc9c5252",
+        "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+        "cell": 4,
+        "source_sha256": "482829dea2708de1cbe89e5cd1db65948ab4ce4ab5e2900daf14731504a1076e",
+        "connected_paths": 3,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/main/contact/prediction_error_sphere.pdf": {
+        "sha256": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
+        "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+        "cell": 6,
+        "source_sha256": "6569cd3fc20ba318dead36c69a58954b3c47e3983968335e5e720c718745b43f",
+        "connected_paths": 4,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/prediction_error_references.pdf": {
+        "sha256": "a23874493d9bf904581633beae9ed599edbf37bb285e9e8376debdbff664b68f",
+        "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+        "cell": 8,
+        "source_sha256": "c8e171185014f23316b5b5cb912d90d12c2d9aa2bde3f909ecdba0c3c2894dcb",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/moving_sphere_posterior_spheres.pdf": {
+        "sha256": "b7d87318f3f30b048b551e3e7c46ba5184d926ab42d5277c4e3f438c38f97b64",
+        "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+        "cell": 12,
+        "source_sha256": "02d874c0136b2b491d4499004b73408c9b8dd22444e15648340a7637f75413f1",
+        "connected_paths": 12,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/transport_paired_rise.pdf": {
+        "sha256": "394b82e3badac3899347aa21c231cd6d66d7807a9c2c3643e2528984d39f6b5b",
+        "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+        "cell": 17,
+        "source_sha256": "3ce0e0fae51188f5f7794446d05a8f3897aa38e8b8211dbee50abfc726230772",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/transport_projector_change.pdf": {
+        "sha256": "a310380cfaed22f42db2495a72b6228e13fca555407f5475bda81d6ff34652f2",
+        "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+        "cell": 19,
+        "source_sha256": "07f928cafce2b270d8c8d6e49d8108804d147cde64643b7719997ae90d243c58",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/transport_excitation.pdf": {
+        "sha256": "bf20388d18dfeae84c9fe236944d7440e52c52e49d594790a63825b3b5287925",
+        "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+        "cell": 21,
+        "source_sha256": "892bbb730ab087a683b3ace726a231b2b5192630a45944de57c581e5204d1907",
+        "connected_paths": 2,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/supplementary/contact/transport_curvature.pdf": {
+        "sha256": "5a4c0e93ba7bd14b4eda400e0421cb17e2ca7e69505cfa578d33e94ef6cdd9a7",
+        "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+        "cell": 23,
+        "source_sha256": "266d36cd5dbe52135e7be8ce331e15c8906fbce5180c7517b80a4bc6d07103c9",
+        "connected_paths": 4,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/moving/figures/smooth_history.pdf": {
+        "sha256": "fbc7736ada2f9accb1f10d0be4534ec8353a153a2d5feb2be8706d0ae3cf806d",
+        "notebook": "notebooks/beamforming_moving_comparison_audit.ipynb",
+        "cell": 6,
+        "source_sha256": "5c830d4915d65d90dd8ab78103089f1fad0e8925b83be8847d5551c939baec19",
+        "connected_paths": 5,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/moving/figures/abrupt_history.pdf": {
+        "sha256": "88298fd47f38e16c5096c64561cd9bad71c82f98404d7115b3e30b9dbc596d28",
+        "notebook": "notebooks/beamforming_moving_comparison_audit.ipynb",
+        "cell": 8,
+        "source_sha256": "445d99c0d32c77db004a71cd85ae48412afa93723569eae6a3d2f25957b120e7",
+        "connected_paths": 5,
+        "events": [
+          {
+            "dashed": true,
+            "width_points": 1.2999999523162842,
+            "bounds": [
+              565.4166259765625,
+              12.959991455078125,
+              565.4166259765625,
+              184.36109924316406
+            ]
+          }
+        ],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/moving/figures/paired_primary.pdf": {
+        "sha256": "08ced5acc5f92101004f21a6d39e3db62f69c9be1235ae62dafba42038e4d481",
+        "notebook": "notebooks/beamforming_moving_comparison_audit.ipynb",
+        "cell": 10,
+        "source_sha256": "187e0ff1afe5c69d6297aa3f86b45139ce33624c5d1efbb3cf3e5107d1d23b45",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/moving/figures/posterior_mean_beta.pdf": {
+        "sha256": "9234c46ec0e5c4a3cc3f5f6add55f0e3c631f8434f16d34b4682d44702624637",
+        "notebook": "notebooks/beamforming_moving_comparison_audit.ipynb",
+        "cell": 14,
+        "source_sha256": "b8720461af45e8b5e0a77df6666e0086e703ec5edd3ea99f94ef19b24c2ca951",
+        "connected_paths": 4,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/moving/figures/ew_objective_gap.pdf": {
+        "sha256": "edb6995f129e4bd8a005ae11289aa89ef04da807a936f249361b63f2714db28e",
+        "notebook": "notebooks/beamforming_moving_comparison_audit.ipynb",
+        "cell": 17,
+        "source_sha256": "0ea4b7b4183a3b7b4a90385f57da6ad70a26231cb5b060382232b58d181ab9e4",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/moving/figures/ew_task_power.pdf": {
+        "sha256": "2788c5ff7a87bdf449f828b0697d184409045bd6f45fc4d059347ff238336ebb",
+        "notebook": "notebooks/beamforming_moving_comparison_audit.ipynb",
+        "cell": 20,
+        "source_sha256": "64c4c605d62054f49b1b2237676e5530d0c736b8f09d94822eee401769d8ace2",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/moving/figures/computation_time.pdf": {
+        "sha256": "3658dbb4c9bdf144401874569bbe871036af8c0f51758e4cb231d4e14c4d3460",
+        "notebook": "notebooks/beamforming_moving_comparison_audit.ipynb",
+        "cell": 23,
+        "source_sha256": "132c942b92e85b1544e1eb582e72a9b39e600d6e7246b3143db5cb1eae763a83",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/stationary/figures/original_settings.pdf": {
+        "sha256": "8a459767e1303d9461f332217ffaa00721379b96549c75a4ca24e66b34346524",
+        "notebook": "notebooks/beamforming_stationary_comparison_audit.ipynb",
+        "cell": 5,
+        "source_sha256": "8b1f529478dc7fe54d50af64eaa020f43fb1ccb81169d74c1e2542aaee211d5e",
+        "connected_paths": 6,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/stationary/figures/final_time_selection.pdf": {
+        "sha256": "cc3d1e64f6d5c4bc93c315ac70c96d9bd383e9553a7ce014a3f358f7d26f4b7d",
+        "notebook": "notebooks/beamforming_stationary_comparison_audit.ipynb",
+        "cell": 7,
+        "source_sha256": "eadac858656a0ce1073df6e2f4be1347dba880cdf17204472c476dc1c221d8dc",
+        "connected_paths": 6,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/stationary/figures/paired_final_time.pdf": {
+        "sha256": "ec0cc528dc386d17bcb009e6363cfa4405530f7d9664bfdbdd8bf57e43b058fb",
+        "notebook": "notebooks/beamforming_stationary_comparison_audit.ipynb",
+        "cell": 9,
+        "source_sha256": "95df04a1e09e05f7e91a1d2bebb80bba18bb00818c01869881b8ec270eda5986",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/stationary/figures/posterior_mean_beta.pdf": {
+        "sha256": "efde64953bd00facf8f70887e4c33137b0a38442fb664914dac4d79de0876ee1",
+        "notebook": "notebooks/beamforming_stationary_comparison_audit.ipynb",
+        "cell": 12,
+        "source_sha256": "b8720461af45e8b5e0a77df6666e0086e703ec5edd3ea99f94ef19b24c2ca951",
+        "connected_paths": 6,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": false,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/stationary/figures/ew_objective_gap.pdf": {
+        "sha256": "4fafa773bde36e164e982a63cca8a4dcd29bafa046dfd0bd48c2a6f4375ebc16",
+        "notebook": "notebooks/beamforming_stationary_comparison_audit.ipynb",
+        "cell": 15,
+        "source_sha256": "0ea4b7b4183a3b7b4a90385f57da6ad70a26231cb5b060382232b58d181ab9e4",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/stationary/figures/ew_task_power.pdf": {
+        "sha256": "67b3b4d6e7b8b06444475649ccc2b7131d122acbe050aa2e65143b9e0822c3d6",
+        "notebook": "notebooks/beamforming_stationary_comparison_audit.ipynb",
+        "cell": 18,
+        "source_sha256": "64c4c605d62054f49b1b2237676e5530d0c736b8f09d94822eee401769d8ace2",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      },
+      "results/beamforming_comparison_audit/stationary/figures/computation_time.pdf": {
+        "sha256": "66b80744af6c719f73a29cb57d5dbe176ac337435b56ffac587f729ad2f551ac",
+        "notebook": "notebooks/beamforming_stationary_comparison_audit.ipynb",
+        "cell": 21,
+        "source_sha256": "132c942b92e85b1544e1eb582e72a9b39e600d6e7246b3143db5cb1eae763a83",
+        "connected_paths": 0,
+        "events": [],
+        "allowed_reference_paths": 0,
+        "standalone_point_exception": true,
+        "unwanted_marker_paths": 0
+      }
+    },
+    "errors": [],
+    "scope": "AST and actual exported PDF paths only; no plotting, simulation or timing execution.",
+    "method_trajectories": "Solid lines without markers, markevery or marker offsets.",
+    "exceptions": "Standalone scientific/interval points, scatter, boxplot fliers, mathematical reference lines, contour levels and event lines.",
+    "checker": "scripts/check_solid_trajectories.py",
+    "checker_sha256": "0e98c01307e95e612d2e214bee8935fbfe09f48b50397368dc883dee0bda15e3"
+  },
+  "errors": [],
+  "checker": "scripts/check_solid_trajectories.py",
+  "checker_sha256": "0e98c01307e95e612d2e214bee8935fbfe09f48b50397368dc883dee0bda15e3"
+}

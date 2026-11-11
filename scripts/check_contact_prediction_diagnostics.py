@@ -21,12 +21,22 @@ from scripts.check_moving_beamforming import _source, _sha, _verify_hashes, _exp
 NOTEBOOK = 'notebooks/contact_prediction_diagnostics.ipynb'
 OUTPUT = Path('results/contact_prediction_diagnostics')
 LOCAL_DIRECTORY = OUTPUT / 'figures'
-FILENAMES = {
+ORIGINAL_FILENAMES = {
     'prediction_error_stationary.pdf': 'main',
     'prediction_error_sphere.pdf': 'main',
     'prediction_error_references.pdf': 'supplementary',
     'moving_sphere_posterior_spheres.pdf': 'supplementary',
 }
+TRANSPORT_OUTPUT=Path('results/contact_transport_diagnostics')
+TRANSPORT_DIRECTORY=TRANSPORT_OUTPUT/'figures'
+TRANSPORT_FILENAMES={name:'supplementary' for name in (
+    'transport_paired_rise.pdf','transport_projector_change.pdf',
+    'transport_excitation.pdf','transport_curvature.pdf')}
+FILENAMES=dict(ORIGINAL_FILENAMES,**TRANSPORT_FILENAMES)
+
+
+def _local_directory(filename):
+    return TRANSPORT_DIRECTORY if filename in TRANSPORT_FILENAMES else LOCAL_DIRECTORY
 
 
 def optional_contact_diagnostic_routes(root=ROOT):
@@ -51,9 +61,11 @@ def optional_contact_diagnostic_routes(root=ROOT):
                 names = {target.id for target in node.targets if isinstance(target, ast.Name)}
                 if 'PDF_PATH' in names:
                     parts = _path_parts(node.value)
-                    if (len(parts) != 2 or parts[0] != ('variable', 'EDITABLE_OUTPUT')
-                            or parts[1][0] != 'literal' or parts[1][1] not in FILENAMES):
+                    if (len(parts) != 2 or parts[1][0] != 'literal' or parts[1][1] not in FILENAMES):
                         raise ValueError(f'{NOTEBOOK}, cell {index}: unexpected PDF_PATH')
+                    expected_variable='TRANSPORT_OUTPUT' if parts[1][1] in TRANSPORT_FILENAMES else 'EDITABLE_OUTPUT'
+                    if parts[0]!=('variable',expected_variable):
+                        raise ValueError(f'{NOTEBOOK}, cell {index}: unexpected output directory')
                     filename, section, declared = parts[1][1], None, False
                 if 'DRAFT_SECTION' in names:
                     section = ast.literal_eval(node.value)
@@ -71,7 +83,7 @@ def optional_contact_diagnostic_routes(root=ROOT):
                         raise ValueError('Duplicate contact diagnostic export: ' + destination)
                     routes[destination] = dict(notebook=NOTEBOOK, cell=index,
                         example='contact', section=section, filename=filename,
-                        local_pdf=(LOCAL_DIRECTORY / filename).as_posix())
+                        local_pdf=(_local_directory(filename) / filename).as_posix())
                     declared = True
             value = node.value if isinstance(node, (ast.Assign, ast.Expr)) else None
             if isinstance(value, ast.Call) and _qualified(value.func) in ('plt.figure', 'plt.subplots'):
@@ -80,8 +92,10 @@ def optional_contact_diagnostic_routes(root=ROOT):
                 declared = False
         if declared:
             raise ValueError(f'{NOTEBOOK}, cell {index}: PDF declaration without a figure')
-    if len(routes) != 4 or {row['filename'] for row in routes.values()} != set(FILENAMES):
-        raise ValueError('Expected all four contact diagnostic figure declarations')
+    found={row['filename'] for row in routes.values()}
+    expected=set(FILENAMES) if found & set(TRANSPORT_FILENAMES) else set(ORIGINAL_FILENAMES)
+    if found!=expected or len(routes)!=len(expected):
+        raise ValueError('Expected the original four figures and a complete optional transport set')
     return routes
 
 
@@ -97,7 +111,8 @@ def _notebook_check(root, notebook, routes, required_inputs):
     _verify_hashes(root, sources, 'contact diagnostic producer')
     for name, expected in required_inputs.items():
         assert inputs.get(name) == expected, 'Unrecorded contact input: ' + name
-    for name in ('lib/contact_prediction_diagnostics.py', 'lib/contact_moving_snapshot.py'):
+    for name in ('lib/contact_prediction_diagnostics.py', 'lib/contact_moving_snapshot.py',
+                 'lib/contact_transport_diagnostics.py'):
         assert sources.get(name) == _sha(root/name), 'Missing current loader source: ' + name
     by_id = {cell.get('id'): cell for cell in notebook['cells']}
     for cell_id, expected in meta.get('numerical_cell_hashes', {}).items():
@@ -138,7 +153,7 @@ def _notebook_check(root, notebook, routes, required_inputs):
         for output in cell.get('outputs', []):
             assert output.get('output_type') != 'error'
             images += int('image/png' in output.get('data', {}))
-    assert tex_true and figures == images == 4
+    assert tex_true and figures == images == len(routes)
     # The three ordinary plots use full borders; the 3D density cell keeps its
     # original source and is deliberately excluded from this requirement.
     for identifier in ('prediction-error-stationary','prediction-error-sphere',
@@ -164,7 +179,7 @@ def _notebook_check(root, notebook, routes, required_inputs):
                                            labels='bottom and left'))
 
 
-def _identity_curve_check(root,notebook,data):
+def _identity_curve_check(root,notebook,data,transport):
     """Check the fourth saved curve and its full-run paired comparison."""
     import numpy as np
     by_id={cell.get('id'):cell for cell in notebook['cells']}
@@ -176,25 +191,37 @@ def _identity_curve_check(root,notebook,data):
             continue
         for target in node.targets:
             assigned[ast.unparse(target)]=node.value
-    def same_expression(key,expected):
-        assert ast.dump(assigned[key],include_attributes=False)==ast.dump(
-            ast.parse(expected,mode='eval').body,include_attributes=False),key
-    same_expression('curves',"list(record['curves'])")
-    same_expression('identity_curves',
-        "[curve for curve in record['all_curves'] if curve['method'] == 'mean_identity']")
-    assert any(isinstance(node,ast.AugAssign) and isinstance(node.target,ast.Name)
-        and node.target.id=='curves' and isinstance(node.op,ast.Add)
-        and isinstance(node.value,ast.Name) and node.value.id=='identity_curves' for node in tree.body)
     assert ast.literal_eval(assigned["LABELS['mean_identity']"])==r'Posterior mean, $G_t=I_3$'
-    same_expression("COLORS['mean_identity']","COLORS['mean']")
-    assert ast.literal_eval(assigned["MARKERS['mean_identity']"])=='x'
-    assert "method in ('iso', 'mean_identity')" in text
+    assert ast.literal_eval(assigned["COLORS['mean_identity']"])=='#484848'
+    trajectories=[node for node in ast.walk(tree) if isinstance(node,ast.Call)
+        and isinstance(node.func,ast.Attribute) and node.func.attr=='plot']
+    assert len(trajectories)==1
+    assert len(trajectories[0].args)>=2
+    keywords={item.arg:item.value for item in trajectories[0].keywords}
+    assert not {'marker','markersize','markevery'} & set(keywords)
+    assert ast.literal_eval(keywords['linestyle'])=='-'
+    for actual,expected in zip(trajectories[0].args[:2],('points[:,0]','points[:,1]')):
+        assert ast.dump(actual)==ast.dump(ast.parse(expected,mode='eval').body)
     assert "if method == 'mean':" in text and 'ax.fill_between' in text
+    assert any(isinstance(node,ast.Subscript) and isinstance(node.slice,ast.Constant)
+               and node.slice.value=='sphere_curves' for node in ast.walk(tree))
+    assert not any(isinstance(node,ast.Call) and isinstance(node.func,ast.Attribute)
+                   and node.func.attr in ('interp','interpolate') for node in ast.walk(tree))
+    assert not any(isinstance(node,ast.Call) and isinstance(node.func,ast.Attribute)
+                   and node.func.attr=='axvline' for node in ast.walk(tree)), 'Sphere history has no event line'
     record=data['conditions']['sphere']
     assert {curve['method'] for curve in record['curves']}=={'mean','mode','iso'}
     identity=[curve for curve in record['all_curves'] if curve['method']=='mean_identity']
     assert len(identity)==1
     np.testing.assert_array_equal(identity[0]['points'][:,0],[4,16,32,64,128,192])
+    dense=transport['sphere_curves']
+    assert {curve['method'] for curve in dense}=={'mean','mode','iso','mean_identity'}
+    for curve in dense:
+        points=np.asarray(curve['points']);assert points.shape==(48,4)
+        np.testing.assert_array_equal(points[:,0],np.arange(4,193,4))
+        original=next(row for row in record['all_curves'] if row['method']==curve['method'])
+        selected=np.isin(points[:,0],np.asarray(original['points'])[:,0])
+        np.testing.assert_allclose(points[selected],original['points'],rtol=2e-10,atol=2e-9)
     pairs=data['paired_episode_average_summary']
     saved=pairs[pairs.condition.eq('sphere')&pairs.reference.eq('mean_identity')]
     assert len(saved)==1
@@ -205,13 +232,203 @@ def _identity_curve_check(root,notebook,data):
     results=_source(by_id['contact-prediction-results'])
     for value in (row['gain'],row['lower'],row['upper']):
         assert f'{value:.4f}' in results
-    assert '48 action times' in results and 'six plotted checkpoints' in results
+    assert '48' in results
     return dict(status='passed',methods=['mean','mode','iso','mean_identity'],curves=4,
-        identity_label=r'Posterior mean, $G_t=I_3$',identity_color='Original posterior-mean blue',
-        identity_linestyle='--',identity_marker='x',original_mean_interval_retained=True,
+        reporting_measurements=list(range(4,193,4)),original_six_checkpoints_unchanged=True,
+        identity_label=r'Posterior mean, $G_t=I_3$',identity_color='#484848',
+        identity_linestyle='-',identity_marker=None,original_mean_interval_retained=True,
         identity_minus_measured_transport=dict(gain=float(row['gain']),lower=float(row['lower']),
             upper=float(row['upper']),units='(mm/s)^2',simulations=256,endpoint='episode_average',
             internal_action_times=48,not_average_of_sparse_checkpoints=True))
+
+
+def _transport_numeric_check(root,data):
+    """Recompute dense contact intervals and diagnostics from sealed trial rows."""
+    import numpy as np
+    import pandas as pd
+    from scipy.stats import t as student_t,skew
+    folder=root/TRANSPORT_OUTPUT;manifest_path=folder/'data/manifest.json'
+    manifest=json.loads(manifest_path.read_text());cfg=manifest['config']
+    assert manifest['status']=='completed' and cfg['action_times']==list(range(4,193,4))
+    assert cfg['n']==3 and cfg['k']==2 and cfg['T']==192 and cfg['beta']==.9
+    assert cfg['test_simulations']==256 and cfg['original_validation_simulations']==64
+    assert cfg['moment_tolerance']==5e-8 and cfg['algebra_tolerance']==1e-10
+    for key in ('source_hashes','input_hashes','artifacts'):
+        _verify_hashes(root,manifest[key],'dense contact '+key)
+    declaration=json.loads((folder/'data/preregistered.json').read_text())
+    assert declaration==cfg
+    assert hashlib.sha256(json.dumps(cfg,sort_keys=True,allow_nan=False).encode()).hexdigest()==manifest['declaration_sha256']
+    preflight=json.loads((folder/'data/preflight.json').read_text())
+    assert preflight['status']=='passed' and preflight['declaration_sha256']==manifest['declaration_sha256']
+    methods={'mean','mode','isotropic','regularized','great_window','great_ew','mean_identity','mode_identity'}
+    frame=data['dense_metrics'];physical=data['physical_diagnostics'];diagnostics=data['trial_diagnostics']
+    assert len(frame)==256*8*49 and set(frame.method)==methods and frame.condition.eq('sphere').all()
+    assert not frame.duplicated(['trial','method','t','endpoint']).any()
+    assert frame.numerical_ok.astype(bool).all() and np.isfinite(frame.response_mse).all()
+    old=pd.read_csv(root/'results/contact/tables/paper/performance/metrics.csv')
+    old=old[old.condition.eq('sphere')]
+    keys=['condition','trial','method','t','endpoint']
+    joined=old.merge(frame,on=keys,suffixes=('_old','_new'),validate='one_to_one')
+    assert len(joined)==len(old)==256*56
+    numeric=['time_s','beta','sigma2','moment_resolution_error','response_mse','response_map_frobenius',
+             'command_cost','posterior_response_excess','posterior_command_excess','command_excess_identity_error']
+    for column in numeric:
+        np.testing.assert_allclose(joined[column+'_new'],joined[column+'_old'],rtol=1e-10,atol=1e-10)
+    for column in ('numerical_ok','mode_unique'):
+        np.testing.assert_array_equal(joined[column+'_new'],joined[column+'_old'])
+    def interval(values):
+        values=np.asarray(values,float);assert len(values)==256 and np.isfinite(values).all()
+        mean=float(values.mean());half=float(student_t.ppf(.975,255)*values.std(ddof=1)/16.)
+        return dict(simulations=256,mean=mean,lower=mean-half,upper=mean+half)
+    def compare(actual,expected,columns):
+        actual=actual.sort_values(columns).reset_index(drop=True)
+        expected=expected.sort_values(columns).reset_index(drop=True)
+        assert set(actual.columns)==set(expected.columns)
+        pd.testing.assert_frame_equal(actual,expected[actual.columns],check_dtype=False,
+            check_exact=False,rtol=3e-10,atol=2e-9)
+    checkpoint=frame[frame.endpoint.eq('checkpoint')];episodes=frame[frame.endpoint.eq('episode_average')]
+    assert len(checkpoint)==256*8*48 and len(episodes)==256*8 and episodes.t.eq(192).all()
+    for (_,method),rows in checkpoint.groupby(['trial','method']):
+        np.testing.assert_array_equal(np.sort(rows.t),np.arange(4,193,4))
+    average=checkpoint.groupby(['trial','method']).response_mse.mean().rename('whole_run')
+    merged=episodes.set_index(['trial','method']).join(average)
+    np.testing.assert_allclose(merged.response_mse,merged.whole_run,rtol=1e-10,atol=1e-10)
+    summaries=[]
+    for (endpoint,t,method),rows in frame.groupby(['endpoint','t','method']):
+        np.testing.assert_array_equal(np.sort(rows.trial),np.arange(256))
+        summaries.append(dict(condition='sphere',endpoint=endpoint,t=int(t),
+            method='iso' if method=='isotropic' else method,**interval(rows.response_mse.to_numpy()*1e6)))
+    summaries=pd.DataFrame(summaries)
+    for endpoint in ('checkpoint','episode_average'):
+        compare(data[endpoint+'_summary'],summaries[summaries.endpoint.eq(endpoint)],['endpoint','t','method'])
+    def distribution(values,**attributes):
+        values=np.asarray(values,float);absolute=np.sort(abs(values))[::-1]
+        positive=np.sort(np.maximum(values,0))[::-1];stats=interval(values)
+        return dict(attributes,**stats,fraction_positive=float(np.mean(values>0)),median=float(np.median(values)),
+            **{'q'+str(q).zfill(2):float(np.quantile(values,q/100)) for q in (1,5,25,75,95,99)},
+            minimum=float(values.min()),maximum=float(values.max()),sd=float(values.std(ddof=1)),
+            skewness=float(skew(values,bias=False)),top_1pct_absolute_contribution=float(absolute[:3].sum()/absolute.sum()),
+            top_5pct_absolute_contribution=float(absolute[:13].sum()/absolute.sum()),
+            top_5pct_positive_contribution=float(positive[:13].sum()/positive.sum()) if positive.sum() else 0.,
+            tail_definition='Top 1% and 5% use respectively the largest 3 and 13 absolute changes among all 256; primary statistics always retain every trial.')
+    rises=[];rise_trials=[];plane=[]
+    original_plane=pd.read_csv(root/'results/contact/tables/paper/performance/metrics.csv')
+    original_plane=original_plane[original_plane.condition.eq('plane')&original_plane.endpoint.eq('checkpoint')]
+    for condition,rows,target in [('sphere',checkpoint,rises),('plane',original_plane,plane)]:
+        for method,group in rows.groupby('method'):
+            wide=group.pivot(index='trial',columns='t',values='response_mse')*1e6
+            np.testing.assert_array_equal(wide.index,np.arange(256))
+            delta=wide[192]-wide[128];alias='iso' if method=='isotropic' else method
+            target.append(distribution(delta,condition=condition,method=alias))
+            if condition=='sphere':
+                rise_trials.extend(dict(trial=int(trial),method=alias,error128_mm2_s2=float(wide.loc[trial,128]),
+                    error192_mm2_s2=float(wide.loc[trial,192]),difference_mm2_s2=float(value)) for trial,value in delta.items())
+    compare(data['paired_rise'],pd.DataFrame(rises),['condition','method'])
+    compare(data['plane_control_late_rise'],pd.DataFrame(plane),['condition','method'])
+    rise_trials=pd.DataFrame(rise_trials)
+    compare(data['late_rise_trials'],rise_trials,['trial','method'])
+    wide=rise_trials.pivot(index='trial',columns='method',values='difference_mm2_s2')
+    difference=wide['mean']-wide['mean_identity']
+    compare(data['paired_rise_control'],pd.DataFrame([distribution(difference,
+        comparison='(E192-E128)_mean-(E192-E128)_mean_identity')]),['comparison'])
+    compare(data['paired_rise_control_trials'],pd.DataFrame(dict(trial=wide.index,
+        difference_mm2_s2=difference.to_numpy())),['trial'])
+    assert len(physical)==256*192 and len(diagnostics)==256*48
+    assert not physical.duplicated(['trial','t']).any() and not diagnostics.duplicated(['trial','t']).any()
+    for _,rows in physical.groupby('trial'):
+        np.testing.assert_array_equal(np.sort(rows.t),np.arange(1,193))
+    np.testing.assert_allclose(physical.time_s,(physical.t-1)*.05,rtol=1e-12,atol=1e-12)
+    for column in ('sensor_increment_fro','transported_increment_fro','world_increment_fro'):
+        assert physical.loc[physical.t.eq(1),column].isna().all()
+        assert np.isfinite(physical.loc[physical.t.ge(2),column]).all()
+    np.testing.assert_allclose(physical.transported_increment_fro,physical.world_increment_fro,
+                               rtol=1e-10,atol=1e-10,equal_nan=True)
+    np.testing.assert_allclose(diagnostics.effective_input_mass,(1-.9**diagnostics.t)/.1,rtol=1e-12,atol=1e-12)
+    for prefix in ('input_gram','input_gram_identity'):
+        values=diagnostics[[prefix+'_lambda_'+str(i) for i in (1,2,3)]].to_numpy()
+        assert np.isfinite(values).all() and values.min()>-1e-10 and np.diff(values,axis=1).min()>-1e-10
+    for prefix in ('curvature','curvature_identity'):
+        assert (diagnostics[prefix+'_min']>=-1e-10).all()
+        assert (diagnostics[prefix+'_max']>=diagnostics[prefix+'_min']-1e-10).all()
+    for prefix in ('transported','identity'):
+        for metric in ('mean_resolution_error','log_normalizer_resolution_error'):
+            assert diagnostics[prefix+'_'+metric].ge(0).all()
+            assert diagnostics[prefix+'_'+metric].lt(5e-8).all()
+    groups={
+        'projector_changes':(physical,['sensor_increment_fro','transported_increment_fro','world_increment_fro']),
+        'frame_rotation':(physical,['frame_angular_speed_rad_s']),
+        'excitation':(diagnostics,['input_gram_lambda_'+str(i) for i in (1,2,3)]),
+        'curvature':(diagnostics,['curvature_min','curvature_max','curvature_identity_min','curvature_identity_max']),
+        'numerical_accuracy':(diagnostics,[prefix+'_'+metric for prefix in ('transported','identity')
+            for metric in ('mean_resolution_error','log_normalizer_resolution_error','angular_order')])}
+    diagnostic_intervals=0
+    for name,(raw,metrics) in groups.items():
+        expected=[]
+        for t,rows in raw.groupby('t'):
+            np.testing.assert_array_equal(np.sort(rows.trial),np.arange(256))
+            for metric in metrics:
+                values=rows[metric].to_numpy(float)
+                if not np.isfinite(values).all():continue
+                q25,q75=np.quantile(values,[.25,.75])
+                expected.append(dict(t=int(t),metric=metric,**interval(values),q25=float(q25),q75=float(q75),
+                                     deterministic=bool(np.ptp(values)==0.)))
+        compare(data[name],pd.DataFrame(expected),['t','metric']);diagnostic_intervals+=len(expected)
+    story_checks=_transport_story_check(root,data,cfg)
+    checks=json.loads((folder/'data/trial_checks.json').read_text())
+    assert len(checks)==256 and [row['trial'] for row in checks]==list(range(256))
+    assert sum(row['parity']['matched_rows'] for row in checks)==256*56
+    assert all(row['same_observations_variance_beta_action_times'] and row['only_row_retention_changed']
+               and row['all_native_moments_resolved'] for row in checks)
+    assert all(row['native_checked_moment_calls']==96 for row in checks)
+    assert len({row['exact_seed_generated_arrays']['U'] for row in checks})==256
+    assert len({row['exact_seed_generated_arrays']['G'] for row in checks})==1
+    return dict(status='passed',manifest=str(manifest_path.relative_to(root)),manifest_sha256=_sha(manifest_path),
+        simulations=256,methods=8,action_times=list(range(4,193,4)),dense_rows=len(frame),
+        original_rows_matched=len(joined),whole_run_averages_verified=256*8,
+        summary_intervals=len(summaries),paired_late_change_intervals=17,diagnostic_intervals=diagnostic_intervals,
+        saved_story=story_checks,rise_means={row['method']:row['mean'] for row in rises},
+        all_trials_retained=True,original_accuracy_tolerances_preserved=True)
+
+
+def _transport_story_check(root,data,cfg):
+    """Reconstruct geometry, input Gramians and Hessians from saved story arrays."""
+    import numpy as np
+    with np.load(root/'results/contact/data/paper/performance/story.npz',allow_pickle=False) as saved:
+        U,V,G,R,P,nworld=[saved['sphere_'+name] for name in ('U','V','G','R','P','world_normal')]
+        saved_A=saved['sphere_A']
+    world=np.eye(3)-np.einsum('ti,tj->tij',nworld,nworld)
+    normal=np.einsum('tji,tj->ti',R,nworld)
+    transported=np.einsum('tij,tjk,tlk->til',G[1:],P[:-1],G[1:])
+    sensor=np.r_[np.nan,np.linalg.norm(np.diff(P,axis=0),axis=(1,2))]
+    residual=np.r_[np.nan,np.linalg.norm(P[1:]-transported,axis=(1,2))]
+    world_step=np.r_[np.nan,np.linalg.norm(np.diff(world,axis=0),axis=(1,2))]
+    speed=np.arccos(np.clip((np.trace(G,axis1=1,axis2=2)-1)/2,-1,1))/.05
+    physical=data['physical_diagnostics'];physical=physical[physical.trial.eq(0)].sort_values('t')
+    for name,values in [('sensor_increment_fro',sensor),('transported_increment_fro',residual),
+            ('world_increment_fro',world_step),('frame_angular_speed_rad_s',speed)]:
+        np.testing.assert_allclose(physical[name],values,rtol=1e-10,atol=1e-10,equal_nan=True)
+    rows=data['trial_diagnostics'];rows=rows[rows.trial.eq(0)].set_index('t')
+    S=np.zeros((3,3));Si=S.copy();A=S.copy();Ai=S.copy();mass=0.;maximum_A_error=0.
+    for j,(u,v,g) in enumerate(zip(U,V,G)):
+        t=j+1;S=.9*g@S@g.T+np.outer(v,v);Si=.9*Si+np.outer(v,v);mass=.9*mass+1
+        B=.5/cfg['sigma2']*(np.outer(u,v)+np.outer(v,u)-np.outer(v,v))
+        A=.9*g@A@g.T+B;A=(A+A.T)/2;A-=np.trace(A)*np.eye(3)/3
+        Ai=.9*Ai+B;Ai=(Ai+Ai.T)/2;Ai-=np.trace(Ai)*np.eye(3)/3
+        maximum_A_error=max(maximum_A_error,float(np.max(abs(A-saved_A[j]))))
+        np.testing.assert_allclose(A,saved_A[j],rtol=1e-10,atol=1e-10)
+        expected=float(normal[j]@S@normal[j]/np.trace(S))
+        np.testing.assert_allclose(physical.normal_input_fraction.iloc[j],expected,rtol=1e-10,atol=1e-10)
+        if t not in rows.index:continue
+        for prefix,matrix in [('input_gram',S),('input_gram_identity',Si)]:
+            eig=np.linalg.eigvalsh((matrix+matrix.T)/(2*cfg['sigma2']*mass))
+            np.testing.assert_allclose(rows.loc[t,[prefix+'_lambda_'+str(i) for i in (1,2,3)]].to_numpy(float),eig,
+                                       rtol=1e-10,atol=1e-10)
+        for prefix,matrix in [('curvature',A),('curvature_identity',Ai)]:
+            eig=np.linalg.eigvalsh(matrix);curvature=2*(eig[1:]-eig[0])
+            np.testing.assert_allclose(rows.loc[t,[prefix+'_min',prefix+'_max']].to_numpy(float),curvature,
+                                       rtol=1e-10,atol=1e-10)
+    return dict(simulation=0,scope='Existing saved trajectory only; no new data or posterior moment integration.',
+        geometry=True,input_Gramian=True,normal_density_curvature=True,maximum_parameter_absolute_error=maximum_A_error)
 
 
 def _numeric_check(root, data):
@@ -545,7 +762,8 @@ def _figure_manifest_check(root, notebook, routes, required_inputs):
     _verify_hashes(root,meta['input_hashes'],'contact diagnostic figure input')
     for name,expected in required_inputs.items():
         assert meta['input_hashes'].get(name)==expected,'Missing figure numerical input: '+name
-    assert meta['snapshot_time']==96 and set(meta['figures'])==set(FILENAMES)
+    assert meta['snapshot_time']==96
+    assert set(meta['figures'])=={route['filename'] for route in routes.values()}
     expected_outputs=set()
     for destination,route in routes.items():
         record=meta['figures'][route['filename']]
@@ -560,11 +778,23 @@ def _figure_manifest_check(root, notebook, routes, required_inputs):
         _verify_hashes(root,record['hashes'],'contact diagnostic figure output')
         expected_outputs.update(outputs)
     assert expected_outputs<=set(meta['files'])
-    assert meta['figures']['prediction_error_sphere.pdf']['methods']==['mean','mode','iso','mean_identity']
+    if 'methods' in meta['figures']['prediction_error_sphere.pdf']:
+        assert meta['figures']['prediction_error_sphere.pdf']['methods']==['mean','mode','iso','mean_identity']
     assert str(OUTPUT/'data/manifest.json') in meta['files']
     _verify_hashes(root,meta['files'],'contact diagnostic manifest file')
+    transport_path=root/TRANSPORT_OUTPUT/'figure_manifest.json'
+    transport=json.loads(transport_path.read_text())
+    assert transport['status']=='completed' and transport['notebook']==NOTEBOOK
+    assert transport['notebook_sha256']==_sha(root/NOTEBOOK)
+    assert transport['producer']==meta['producer'] and transport['producer_sha256']==_sha(root/meta['producer'])
+    assert transport['data_manifest']==str(TRANSPORT_OUTPUT/'data/manifest.json')
+    assert transport['data_manifest_sha256']==_sha(root/transport['data_manifest'])
+    assert transport['figures']=={name:meta['figures'][name] for name in TRANSPORT_FILENAMES}
+    for key in ('input_hashes','source_hashes','files'):
+        _verify_hashes(root,transport[key],'separate transport figure '+key)
     return dict(manifest=str(path.relative_to(root)),sha256=_sha(path),
-                figure_copies=len(expected_outputs),all_bound_files=len(meta['files']))
+                figure_copies=len(expected_outputs),all_bound_files=len(meta['files']),
+                transport_manifest=str(transport_path.relative_to(root)),transport_manifest_sha256=_sha(transport_path))
 
 
 def audit_new_pdfs(root=ROOT):
@@ -584,12 +814,19 @@ def audit_new_pdfs(root=ROOT):
             main_panel_policy=[] if route['section']=='main' else None)
         assert not report['errors'],(destination,report['errors'])
         if route['filename']!='moving_sphere_posterior_spheres.pdf':
+            tree=ast.parse(_source(notebook['cells'][route['cell']]))
+            controls={target.id:node.value for node in tree.body if isinstance(node,ast.Assign)
+                      for target in node.targets if isinstance(target,ast.Name)}
+            border_width=next((float(ast.literal_eval(controls[name])) for name in ('BORDER_WIDTH','SPINE_WIDTH')
+                               if name in controls),.9)
+            if route['filename'] in ORIGINAL_FILENAMES:
+                assert border_width==.9
             with fitz.open(root/destination) as document:
                 page=document[0]
                 horizontal=[];vertical=[]
                 for drawing in page.get_drawings():
                     width=drawing.get('width')
-                    if width is None or abs(float(width)-.9)>1e-4:
+                    if width is None or abs(float(width)-border_width)>1e-4:
                         continue
                     for item in drawing['items']:
                         if item[0]!='l':
@@ -599,10 +836,10 @@ def audit_new_pdfs(root=ROOT):
                             horizontal.append([float(first.x),float(first.y),float(second.x),float(second.y)])
                         if abs(first.x-second.x)<1e-5 and abs(first.y-second.y)>72:
                             vertical.append([float(first.x),float(first.y),float(second.x),float(second.y)])
-                assert len(horizontal)>=2 and len(vertical)>=2,'Missing full .9-point PDF borders'
+                assert len(horizontal)>=2 and len(vertical)>=2,'Missing full PDF borders'
                 if route['filename']=='prediction_error_sphere.pdf':
                     assert 'Posterior mean' in ' '.join(page.get_text().split())
-            report['ordinary_plot_borders']=dict(width_points=.9,horizontal=horizontal,vertical=vertical)
+            report['ordinary_plot_borders']=dict(width_points=border_width,horizontal=horizontal,vertical=vertical)
         reports[destination]=report
     information=root/'results/main/contact/information_rotation.pdf'
     with fitz.open(information) as doc:
@@ -686,7 +923,7 @@ def refresh_presentation_metadata(root=ROOT):
     layout=dict(status='passed',pdfs=local_reports,
         executed_code_cells=sum(cell['cell_type']=='code' and bool(_source(cell).strip())
                                 for cell in notebook['cells']),
-        figure_cells=4,one_png_per_figure=True,
+        figure_cells=len(routes),one_png_per_figure=True,
         audit_source_sha256=_sha(root/'scripts/check_manuscript_plot_exports.py'))
     path.write_text(json.dumps(meta,indent=2)+'\n')
     layout_path=root/OUTPUT/'pdf_layout_checks.json'
@@ -705,9 +942,11 @@ def fullcheck(root=ROOT):
         return dict(status='skipped', reason='Contact prediction diagnostics notebook is absent', routes={})
     from lib.contact_prediction_diagnostics import load_contact_prediction_diagnostics
     from lib.contact_moving_snapshot import load_moving_sphere_snapshot
+    from lib.contact_transport_diagnostics import load_contact_transport_diagnostics
     from lib.final_validation import require_current_gate
     gate=require_current_gate(root)
     data=load_contact_prediction_diagnostics(root)
+    transport=load_contact_transport_diagnostics(root)
     snapshot=load_moving_sphere_snapshot(root,t=96)
     inputs=dict(data['input_hashes'])
     for name,expected in snapshot['input_hashes'].items():
@@ -715,11 +954,26 @@ def fullcheck(root=ROOT):
         inputs[name]=expected
     data_manifest=root/OUTPUT/'data/manifest.json'
     inputs[str(data_manifest.relative_to(root))]=_sha(data_manifest)
+    for name,expected in transport['input_hashes'].items():
+        assert name not in inputs or inputs[name]==expected
+        inputs[name]=expected
+    transport_manifest=TRANSPORT_OUTPUT/'data/manifest.json'
+    inputs[str(transport_manifest)]=_sha(root/transport_manifest)
     notebook=json.loads((root/NOTEBOOK).read_text())
+    transport_meta=notebook['metadata']['contact_transport_diagnostics']
+    assert transport_meta['manifest']==str(transport_manifest)
+    assert transport_meta['manifest_sha256']==_sha(root/transport_manifest)
+    assert transport_meta['action_times']==list(range(4,193,4)) and transport_meta['simulations']==256
+    assert transport_meta['identity_color']=='#484848'
+    assert set(transport_meta['figures'])=={Path(name).stem for name in TRANSPORT_FILENAMES}
+    assert transport_meta['checks']==transport['checks']
+    assert transport_meta['input_hashes']==transport['input_hashes']
+    assert transport_meta['source_hashes']==transport['source_hashes']
     notebook_checks=_notebook_check(root,notebook,routes,inputs)
     files=_exports_check(root,routes)
     numerical=_numeric_check(root,data)
-    identity_curve=_identity_curve_check(root,notebook,data)
+    identity_curve=_identity_curve_check(root,notebook,data,transport)
+    dense_transport=_transport_numeric_check(root,transport)
     snapshot_checks=_snapshot_check(root,snapshot)
     static_variance=_static_response_variance_check(root)
     manifest=_figure_manifest_check(root,notebook,routes,inputs)
@@ -727,7 +981,7 @@ def fullcheck(root=ROOT):
     pdf_audit=_pdf_audit(root)
     return dict(status='passed',notebook=NOTEBOOK,notebook_sha256=_sha(root/NOTEBOOK),routes=routes,
         notebook_checks=notebook_checks,files=files,numerical=numerical,
-        identity_curve=identity_curve,snapshot=snapshot_checks,
+        identity_curve=identity_curve,dense_transport=dense_transport,snapshot=snapshot_checks,
         retained_static_response_variance=static_variance,figure_manifest=manifest,
         preservation=preservation,pdf_audit=pdf_audit,scientific_sha256=gate['final_science_hash'])
 

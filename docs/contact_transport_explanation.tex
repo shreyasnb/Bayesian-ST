@@ -1,0 +1,4 @@
+% Suggested three-sentence main-draft explanation; detailed checks are supplementary.
+Both recursions use the same measurements, variances, and forgetting factor $\beta=0.9$; using $G_t=R_t^\top R_{t-1}$ in~\eqref{eq:recursion} transports accumulated information into the current sensor coordinates.
+Between $t=128$ and $t=192$, the identity-transport error increases in $94.5\%$ of simulations, while the mean untransported projector increment grows from $0.0153$ to $0.0549$ and the transport-corrected physical increment changes only from $0.0173$ to $0.0181$.
+These diagnostics support a contribution from omitted coordinate transport to the late rise; the dense prediction histories also retain intervals where the identity control performs better.
