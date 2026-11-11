@@ -2,12 +2,12 @@
   "schema": 1,
   "status": "inventoried",
   "base_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
-  "scientific_content_commit": "5e9f5790672ce77d25271f12e9ded90bc55a45d8",
+  "scientific_content_commit": null,
   "final_science_hash": "e926a6a16fea47e35f0625afcc811d5fbdd533fb812c8c1fa9314484f16b24ee",
   "files": {
     ".gitignore": {
-      "sha256": "8447dfaf73f701d3b575410607b7faa5e910ea2b6b01e72052c9407ef7fcd835",
-      "bytes": 3373
+      "sha256": "82bd8b71718d33a94badcb84ca6937ee2b8108bb2a4b23e878b982d30e667f7e",
+      "bytes": 3439
     },
     "README.md": {
       "sha256": "4de38ab60795f0784d9a539d79a4df19b55c3febed8656e83d0951ba3e1e56ca",
@@ -1330,8 +1330,8 @@
       "bytes": 23071
     },
     "lib/presentation_update_provenance.py": {
-      "sha256": "2ac932ca2d8c0b7f9304fc9b17f4975dcdab6c89837e3709441a87c0be3a266b",
-      "bytes": 7361
+      "sha256": "abdd56b19efc7d3f596ed95156bf6b3e856e1f49086777403411273e1542b5d6",
+      "bytes": 7512
     },
     "lib/rendering_provenance.py": {
       "sha256": "37e499f6f8f9e438c573a373b9b16ea37d9fbf975641135f994d9efdba9ded4c",
@@ -1382,8 +1382,8 @@
       "bytes": 1953678
     },
     "notebooks/contact_prediction_diagnostics.ipynb": {
-      "sha256": "be97359cc1af07d7fe2ca64d31fc5f00e67a2bb347dacec60b209800a96c35a7",
-      "bytes": 1889827
+      "sha256": "bd0506f09459b23ee6bbc491e08e608db76b5c81b7a4abbab652f5d7747806b3",
+      "bytes": 1908660
     },
     "pyproject.toml": {
       "sha256": "8220133389552906c7471dcd038ab3ba8314d38b7fb16a4fbffaf51bf734dcf0",
@@ -23061,6 +23061,18 @@
       "sha256": "d12b8edb77e2db7b4ed5563c883269f718ab90fb307cabff2a9c09f967e3d1ee",
       "bytes": 230712
     },
+    "results/contact_legend_update/authorized_updates.json": {
+      "sha256": "d495170008e857da4f04dd2d1d093856c4f7817404d502f233cbb13d4519af1e",
+      "bytes": 3294
+    },
+    "results/contact_legend_update/preserved_presentation.json": {
+      "sha256": "1d8fc41f70bb78b13f1f8e12bc30899512756d9cf87b0f1106fe23754cb986a1",
+      "bytes": 1590
+    },
+    "results/contact_legend_update/render_checks.json": {
+      "sha256": "5a35ffecf9031d4493779efba99803d15c80b77b30e153b05920948092e056ff",
+      "bytes": 2610
+    },
     "results/contact_plotting_addendum/diagnostics_borders.json": {
       "sha256": "c140dfb7674f1bf31f79a26f3e5ff9f9d6d90495abbcc093d1d3e2cc5332a5ff",
       "bytes": 1416084
@@ -23122,7 +23134,7 @@
       "bytes": 1601
     },
     "results/contact_prediction_diagnostics/figure_manifest.json": {
-      "sha256": "c57d28632f6a1bca7294e5922508fea083e6429faa85731933f9fc2c62db3e76",
+      "sha256": "2bc2dddea3607656db98bec7694c704a9e35bcce012aae3b9e2d63827b58b7a2",
       "bytes": 33560
     },
     "results/contact_prediction_diagnostics/figures/moving_sphere_posterior_spheres.pdf": {
@@ -23142,12 +23154,12 @@
       "bytes": 104938
     },
     "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf": {
-      "sha256": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
-      "bytes": 194327
+      "sha256": "31580e4902ce80286e491993fb4baa0c2cad08a5425dbeae6be26e27c016dd08",
+      "bytes": 194326
     },
     "results/contact_prediction_diagnostics/figures/prediction_error_sphere.png": {
-      "sha256": "2f706a1fe7abdcf3eb5aa2fdf256adbe7cf6b05719f7f9e9d7dc5ea5c0e6eee7",
-      "bytes": 262005
+      "sha256": "8ee70c6460c22abfd46ca9434356edc1ff0cd70609d76bb5867e9336973b1d52",
+      "bytes": 276097
     },
     "results/contact_prediction_diagnostics/figures/prediction_error_stationary.pdf": {
       "sha256": "5d15cd5678c8af9760718187dbcfba78dca1e6ecf92febe9ec6e9547dc9c5252",
@@ -23158,8 +23170,8 @@
       "bytes": 183968
     },
     "results/contact_prediction_diagnostics/pdf_layout_checks.json": {
-      "sha256": "34d24c228ae18bdca861bfae8215f1c4db5d178223a7cbacb4449882cfe82482",
-      "bytes": 30232
+      "sha256": "06e0f9c36660e35e152aaf22e0f98f70560985421c7ab91c60d5af6f8b457b48",
+      "bytes": 30234
     },
     "results/contact_prediction_diagnostics/preservation_baseline.json": {
       "sha256": "573550a55e06560e281091f0690dce78f693889bc8cffa8bf71adc3f1c0ff2f5",
@@ -27326,7 +27338,7 @@
       "bytes": 1001001
     },
     "results/contact_transport_diagnostics/figure_manifest.json": {
-      "sha256": "5b754db1e97a62019d8b5c992ad6814443b691cfcceabe2a8e6d26cc4990a67e",
+      "sha256": "3da39b58fc3d6554df9d5eae824ffb532e9259104820339ae5d2650fed78c936",
       "bytes": 14063
     },
     "results/contact_transport_diagnostics/figures/transport_curvature.pdf": {
@@ -27482,12 +27494,12 @@
       "bytes": 218125
     },
     "results/main/contact/prediction_error_sphere.pdf": {
-      "sha256": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
-      "bytes": 194327
+      "sha256": "31580e4902ce80286e491993fb4baa0c2cad08a5425dbeae6be26e27c016dd08",
+      "bytes": 194326
     },
     "results/main/contact/prediction_error_sphere.png": {
-      "sha256": "2f706a1fe7abdcf3eb5aa2fdf256adbe7cf6b05719f7f9e9d7dc5ea5c0e6eee7",
-      "bytes": 262005
+      "sha256": "8ee70c6460c22abfd46ca9434356edc1ff0cd70609d76bb5867e9336973b1d52",
+      "bytes": 276097
     },
     "results/main/contact/prediction_error_stationary.pdf": {
       "sha256": "5d15cd5678c8af9760718187dbcfba78dca1e6ecf92febe9ec6e9547dc9c5252",
@@ -27526,8 +27538,8 @@
       "bytes": 2738
     },
     "results/notebook_editability.json": {
-      "sha256": "a4a537b8d1ff1527d2fcc0c410c0389cb5151b9979a359bf526eeb9317f24f4a",
-      "bytes": 2758226
+      "sha256": "23fd50b3af22f2cd173435ab0ed194f2dbfaa987b5dbcfd41b7bf037db701113",
+      "bytes": 2758572
     },
     "results/solid_trajectory_update/authorized_updates.json": {
       "sha256": "71b7d0286ceff05a61b44d55a83bef8ce8e74041af5ac70d1432f025a6ff7048",
@@ -28138,8 +28150,8 @@
       "bytes": 5739
     },
     "scripts/check_contact_prediction_diagnostics.py": {
-      "sha256": "7dc901315c793c64e10edeb89dba8a57c9cde869a5c7be1f1be91c676716d477",
-      "bytes": 65275
+      "sha256": "4a780e4e6f62dc6b726f79cd6231017bfac6326e7be70ada8dfa4bafa952307c",
+      "bytes": 65269
     },
     "scripts/check_contact_transport_diagnostics.py": {
       "sha256": "78fc9b9ddce7b06f88bb158536f156bce92119bf390f5d57bc5d70273168c47e",
@@ -28234,8 +28246,8 @@
       "bytes": 14381
     },
     "scripts/make_contact_prediction_diagnostics_notebook.py": {
-      "sha256": "c1b86f9ce279fb11402614c7a1e78362267508b7e80014f46813fdce30f60933",
-      "bytes": 62902
+      "sha256": "90cb16fcb0947a0798aa14549189f8b867594e68e4f2faf4f311e06de263d3de",
+      "bytes": 63190
     },
     "scripts/make_contact_tracking_notebook.py": {
       "sha256": "91e8c57268f74f50dd881c8113b4e6f401f2d7f80d67c813702097986acf79c8",
@@ -28482,8 +28494,8 @@
       "bytes": 6263
     }
   },
-  "retained_files": 7119,
-  "retained_bytes": 742960222,
+  "retained_files": 7122,
+  "retained_bytes": 743015578,
   "excluded_regenerable_files": 11967,
   "excluded_regenerable_bytes": 1292540465,
   "excluded_scope": "Git-ignored checkpoint caches, pytest XML and original general-notebook diagnostic PDF/PNG exports. Component manifests exclude these caches; required raw arrays/tables and executed general notebook are retained.",

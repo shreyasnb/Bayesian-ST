@@ -81,6 +81,8 @@ results/beamforming_comparison_audit/**/unpublished_pre_stationary_finaltime_fix
 !results/application_trajectory_style_update/**
 !results/moving_linewidth_update/
 !results/moving_linewidth_update/**
+!results/contact_legend_update/
+!results/contact_legend_update/**
 !results/main/
 !results/main/**/
 !results/main/**

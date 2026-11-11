@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "status": "verified",
+  "scope": "User-requested application plotting updates",
+  "baseline_commit": "85c9a6b",
+  "previous_proof": "results/moving_linewidth_update/authorized_updates.json",
+  "previous_proof_sha256": "1f9f05f91c9dc84d22cef3099dbe82e45deee2a3a7ea7cc21193d5d30b2b415e",
+  "updates": {
+    "notebooks/contact_prediction_diagnostics.ipynb": {
+      "before_sha256": "be97359cc1af07d7fe2ca64d31fc5f00e67a2bb347dacec60b209800a96c35a7",
+      "after_sha256": "bd0506f09459b23ee6bbc491e08e608db76b5c81b7a4abbab652f5d7747806b3",
+      "role": "notebook"
+    },
+    "lib/presentation_update_provenance.py": {
+      "before_sha256": "2ac932ca2d8c0b7f9304fc9b17f4975dcdab6c89837e3709441a87c0be3a266b",
+      "after_sha256": "abdd56b19efc7d3f596ed95156bf6b3e856e1f49086777403411273e1542b5d6",
+      "role": "presentation_validation_source"
+    },
+    "results/contact_prediction_diagnostics/figure_manifest.json": {
+      "before_sha256": "c57d28632f6a1bca7294e5922508fea083e6429faa85731933f9fc2c62db3e76",
+      "after_sha256": "2bc2dddea3607656db98bec7694c704a9e35bcce012aae3b9e2d63827b58b7a2",
+      "role": "presentation_metadata"
+    },
+    "results/contact_prediction_diagnostics/pdf_layout_checks.json": {
+      "before_sha256": "34d24c228ae18bdca861bfae8215f1c4db5d178223a7cbacb4449882cfe82482",
+      "after_sha256": "06e0f9c36660e35e152aaf22e0f98f70560985421c7ab91c60d5af6f8b457b48",
+      "role": "presentation_metadata"
+    },
+    "results/contact_transport_diagnostics/figure_manifest.json": {
+      "before_sha256": "5b754db1e97a62019d8b5c992ad6814443b691cfcceabe2a8e6d26cc4990a67e",
+      "after_sha256": "3da39b58fc3d6554df9d5eae824ffb532e9259104820339ae5d2650fed78c936",
+      "role": "presentation_metadata"
+    },
+    "results/notebook_editability.json": {
+      "before_sha256": "a4a537b8d1ff1527d2fcc0c410c0389cb5151b9979a359bf526eeb9317f24f4a",
+      "after_sha256": "23fd50b3af22f2cd173435ab0ed194f2dbfaa987b5dbcfd41b7bf037db701113",
+      "role": "presentation_metadata"
+    },
+    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf": {
+      "before_sha256": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
+      "after_sha256": "31580e4902ce80286e491993fb4baa0c2cad08a5425dbeae6be26e27c016dd08",
+      "role": "pdf"
+    },
+    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.png": {
+      "before_sha256": "2f706a1fe7abdcf3eb5aa2fdf256adbe7cf6b05719f7f9e9d7dc5ea5c0e6eee7",
+      "after_sha256": "8ee70c6460c22abfd46ca9434356edc1ff0cd70609d76bb5867e9336973b1d52",
+      "role": "png"
+    },
+    "results/main/contact/prediction_error_sphere.pdf": {
+      "before_sha256": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
+      "after_sha256": "31580e4902ce80286e491993fb4baa0c2cad08a5425dbeae6be26e27c016dd08",
+      "role": "pdf"
+    },
+    "results/main/contact/prediction_error_sphere.png": {
+      "before_sha256": "2f706a1fe7abdcf3eb5aa2fdf256adbe7cf6b05719f7f9e9d7dc5ea5c0e6eee7",
+      "after_sha256": "8ee70c6460c22abfd46ca9434356edc1ff0cd70609d76bb5867e9336973b1d52",
+      "role": "png"
+    }
+  },
+  "change": "Only contact prediction_error_sphere identity legend notation and ncol=4; other plotting protocols and numerical results preserved."
+}

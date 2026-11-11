@@ -1,0 +1,71 @@
+{
+  "status": "passed",
+  "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+  "notebook_sha256": "bd0506f09459b23ee6bbc491e08e608db76b5c81b7a4abbab652f5d7747806b3",
+  "generator_sha256": "90cb16fcb0947a0798aa14549189f8b867594e68e4f2faf4f311e06de263d3de",
+  "modified_cell": "prediction-error-sphere",
+  "source_change": "Only the identity label and ncol=4",
+  "original_other_cell_objects_preserved": 24,
+  "protected_files_checked": 71,
+  "data_colors_widths_bands_limits_figsize_dpi_fonts_borders_unchanged": true,
+  "legend_before": [
+    "$\\overline P_t^+$",
+    "$P_{\\widehat{\\mathcal X}_t}$",
+    "$\\overline P_t^{\\mathrm{iso}}$",
+    "Posterior mean, $G_t=I_3$"
+  ],
+  "legend_after": [
+    "$\\overline P_t^+$",
+    "$P_{\\widehat{\\mathcal X}_t}$",
+    "$\\overline P_t^{\\mathrm{iso}}$",
+    "$\\overline P_t^+,\\ G_t=I_3$"
+  ],
+  "legend_columns": 4,
+  "legend_boxes": [
+    [
+      1291.9497823814186,
+      100.38458026460019,
+      118.74131218137063,
+      115.40984157310477
+    ],
+    [
+      1850.6910945627894,
+      82.5,
+      119.72518420506435,
+      102.86628086569894
+    ],
+    [
+      2410.416278767854,
+      100.38458026460019,
+      143.43116035002186,
+      120.99104929188071
+    ],
+    [
+      2993.8474391178756,
+      100.38458026460019,
+      470.86944516737367,
+      115.40984157310477
+    ]
+  ],
+  "canvas": [
+    0.0,
+    0.0,
+    4500.0,
+    1500.0
+  ],
+  "figure_outputs": {
+    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf": "31580e4902ce80286e491993fb4baa0c2cad08a5425dbeae6be26e27c016dd08",
+    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.png": "8ee70c6460c22abfd46ca9434356edc1ff0cd70609d76bb5867e9336973b1d52",
+    "results/main/contact/prediction_error_sphere.pdf": "31580e4902ce80286e491993fb4baa0c2cad08a5425dbeae6be26e27c016dd08",
+    "results/main/contact/prediction_error_sphere.png": "8ee70c6460c22abfd46ca9434356edc1ff0cd70609d76bb5867e9336973b1d52"
+  },
+  "raw_data_and_all_other_assets_unchanged": true,
+  "future_generator_same_plot_only": true,
+  "pdf_bounds_and_fonts_audit": "passed",
+  "visually_inspected_single_row": true,
+  "presentation_metadata_sha256": {
+    "results/contact_prediction_diagnostics/figure_manifest.json": "2bc2dddea3607656db98bec7694c704a9e35bcce012aae3b9e2d63827b58b7a2",
+    "results/contact_prediction_diagnostics/pdf_layout_checks.json": "3ecbaeaed84e941becd00d02657cd771086e783ac377bc17378324d42e94beae",
+    "results/contact_transport_diagnostics/figure_manifest.json": "3da39b58fc3d6554df9d5eae824ffb532e9259104820339ae5d2650fed78c936"
+  }
+}

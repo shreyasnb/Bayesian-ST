@@ -92,7 +92,7 @@
     "contact_prediction_diagnostics.ipynb": {
       "status": "verified",
       "notebook": "contact_prediction_diagnostics.ipynb",
-      "sha256": "be97359cc1af07d7fe2ca64d31fc5f00e67a2bb347dacec60b209800a96c35a7",
+      "sha256": "bd0506f09459b23ee6bbc491e08e608db76b5c81b7a4abbab652f5d7747806b3",
       "code_cells": 11,
       "plotting_cells": 8,
       "rendered_figures": 8,
@@ -361,8 +361,8 @@
     "scripts/update_application_plot_borders.py": "ef8395be001c3f70d189f460657d2cb6a559a7ef86ee619ca58781e2bb6d9b99",
     "scripts/update_contact_plotting_addendum.py": "32426b18728ffc940971e146e75f850720025eb70233a43222a71c408c280ab3",
     "scripts/update_contact_diagnostics_borders.py": "2844838c23242e18d1d764775b8a4a8cabe36e94dd91303b6497f2a4361fbaeb",
-    "scripts/make_contact_prediction_diagnostics_notebook.py": "c1b86f9ce279fb11402614c7a1e78362267508b7e80014f46813fdce30f60933",
-    "lib/presentation_update_provenance.py": "2ac932ca2d8c0b7f9304fc9b17f4975dcdab6c89837e3709441a87c0be3a266b",
+    "scripts/make_contact_prediction_diagnostics_notebook.py": "90cb16fcb0947a0798aa14549189f8b867594e68e4f2faf4f311e06de263d3de",
+    "lib/presentation_update_provenance.py": "abdd56b19efc7d3f596ed95156bf6b3e856e1f49086777403411273e1542b5d6",
     "scripts/make_beamforming_comparison_audit_notebooks.py": "c8f86c22f54b37257a2b86c4f838c1011ac91c09129efea749d9fff1830da743",
     "scripts/check_beamforming_comparison_audit.py": "f4630977270f53f933cf7b6c09767e24254427951688069d84c7495413b8a96d",
     "lib/beamforming_comparison_summaries.py": "6cd5e3cd3a56067be19b1d2f668ff32a039d83f82ab5b0bc3110c74921d30ba9",
@@ -372,7 +372,7 @@
     "scripts/check_contact_transport_diagnostics.py": "78fc9b9ddce7b06f88bb158536f156bce92119bf390f5d57bc5d70273168c47e",
     "scripts/run_contact_transport_diagnostics.py": "2fc369dd9185283ec50591580c691def80577437e5ff95f015f53b51ee08954f",
     "lib/contact_transport_diagnostics.py": "7397a34ff957516d6c9c4fc2bca47b32cb011a97785af97b57c60350c42d7f3b",
-    "scripts/check_contact_prediction_diagnostics.py": "7dc901315c793c64e10edeb89dba8a57c9cde869a5c7be1f1be91c676716d477"
+    "scripts/check_contact_prediction_diagnostics.py": "4a780e4e6f62dc6b726f79cd6231017bfac6326e7be70ada8dfa4bafa952307c"
   },
   "editing_policy": "DPI, figure size, labels, colors, layout and export paths are user controls. Their values and rendered PNG hashes are not restricted by the notebook verifier. Saved numerical inputs and data readers remain independently verified.",
   "matplotlib_boxplot_compatibility": {
@@ -83752,5 +83752,14 @@
     "other_controls_and_numerical_results_unchanged": true,
     "proof": "results/moving_linewidth_update/authorized_updates.json",
     "figure_manifest": "results/beamforming_moving/figure_manifest.json"
+  },
+  "contact_legend_update": {
+    "status": "verified",
+    "figure": "prediction_error_sphere.pdf",
+    "legend_columns": 4,
+    "identity_label": "$\\overline P_t^+,\\ G_t=I_3$",
+    "plot_cell_source_changes": 2,
+    "other_cells_and_numerical_results_unchanged": true,
+    "proof": "results/contact_legend_update/authorized_updates.json"
   }
 }

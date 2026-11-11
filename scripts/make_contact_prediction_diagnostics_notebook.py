@@ -209,9 +209,9 @@ SPHERE_HISTORY = HISTORY.replace(
     "record = {'T': transport['config']['T'], 'curves': transport['sphere_curves']}"
 ).replace(
     "for curve in record['curves']:",
-    "LABELS['mean_identity'] = r'Posterior mean, $G_t=I_3$'\n"
+    "LABELS['mean_identity'] = r'$\\overline P_t^+,\\ G_t=I_3$'\n"
     "COLORS['mean_identity'] = '#484848'\n"
-    "for curve in record['curves']:")
+    "for curve in record['curves']:").replace("ncol=3, frameon=False", "ncol=4, frameon=False")
 
 TRANSPORT_AXES = r'''
 BORDER_WIDTH = .9
@@ -346,6 +346,8 @@ def dense_sphere_source(source):
     """Keep current user controls while changing only the verified data source."""
     from scripts.make_beamforming_comparison_audit_notebooks import solid_trajectory_source
     source=solid_trajectory_source(source)
+    source=source.replace("LABELS['mean_identity'] = r'Posterior mean, $G_t=I_3$'", "LABELS['mean_identity'] = r'$\\overline P_t^+,\\ G_t=I_3$'")
+    source=source.replace('ncol=3, frameon=False', 'ncol=4, frameon=False')
     if "'curves': transport['sphere_curves']" in source:
         return source.replace("COLORS['mean_identity'] = COLORS['mean']", "COLORS['mean_identity'] = '#484848'")
     old="record = data['conditions'][condition]"
@@ -359,7 +361,7 @@ def dense_sphere_source(source):
     end=source.index('for curve in curves:',start)+len('for curve in curves:')
     source=source[:start]+(
         "# All 48 original action times; no interpolation or new simulation settings.\n"
-        "LABELS['mean_identity'] = r'Posterior mean, $G_t=I_3$'\n"
+        "LABELS['mean_identity'] = r'$\\overline P_t^+,\\ G_t=I_3$'\n"
         "COLORS['mean_identity'] = '#484848'\n"
         "for curve in record['curves']:")+source[end:]
     return source

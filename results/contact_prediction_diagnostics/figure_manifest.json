@@ -2,9 +2,9 @@
   "schema": 1,
   "status": "completed",
   "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
-  "notebook_sha256": "be97359cc1af07d7fe2ca64d31fc5f00e67a2bb347dacec60b209800a96c35a7",
+  "notebook_sha256": "bd0506f09459b23ee6bbc491e08e608db76b5c81b7a4abbab652f5d7747806b3",
   "producer": "scripts/make_contact_prediction_diagnostics_notebook.py",
-  "producer_sha256": "c1b86f9ce279fb11402614c7a1e78362267508b7e80014f46813fdce30f60933",
+  "producer_sha256": "90cb16fcb0947a0798aa14549189f8b867594e68e4f2faf4f311e06de263d3de",
   "config": {
     "T": 192,
     "conditions": [
@@ -176,10 +176,10 @@
       "draft_pdf": "results/main/contact/prediction_error_sphere.pdf",
       "draft_png": "results/main/contact/prediction_error_sphere.png",
       "hashes": {
-        "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
-        "results/contact_prediction_diagnostics/figures/prediction_error_sphere.png": "2f706a1fe7abdcf3eb5aa2fdf256adbe7cf6b05719f7f9e9d7dc5ea5c0e6eee7",
-        "results/main/contact/prediction_error_sphere.pdf": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
-        "results/main/contact/prediction_error_sphere.png": "2f706a1fe7abdcf3eb5aa2fdf256adbe7cf6b05719f7f9e9d7dc5ea5c0e6eee7"
+        "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf": "31580e4902ce80286e491993fb4baa0c2cad08a5425dbeae6be26e27c016dd08",
+        "results/contact_prediction_diagnostics/figures/prediction_error_sphere.png": "8ee70c6460c22abfd46ca9434356edc1ff0cd70609d76bb5867e9336973b1d52",
+        "results/main/contact/prediction_error_sphere.pdf": "31580e4902ce80286e491993fb4baa0c2cad08a5425dbeae6be26e27c016dd08",
+        "results/main/contact/prediction_error_sphere.png": "8ee70c6460c22abfd46ca9434356edc1ff0cd70609d76bb5867e9336973b1d52"
       },
       "latex_caption": "Moving-sphere velocity prediction error $\\mathcal E_t(D_t)$ in~\\eqref{eq:contact-prediction-error}, in $(\\mathrm{mm}/\\mathrm{s})^2$. Blue, orange and pink solid curves denote the posterior mean $\\overline P_t^+$, mode $P_{\\widehat{\\mathcal X}_t}$ and matched isotropic mean $\\overline P_t^{\\mathrm{iso}}$ with measured transport $G_t=R_t^\\top R_{t-1}$. The dark gray solid curve is the posterior mean with $G_t=I_3$. Each curve joins arithmetic means over the same 256 Monte Carlo simulations at all 48 original action indices $t=4,8,\\ldots,192$. Blue shading gives pointwise Student 95\\% confidence intervals for the measured-transport posterior-mean averages. The ordering varies with time; there is no programmed event at $t=128$."
     },
@@ -308,10 +308,10 @@
     "results/contact_prediction_diagnostics/figures/prediction_error_stationary.png": "15a69cc77cb36a92674ed96a85e0424f0b153aab9bc565560a8117a08aaaaf88",
     "results/main/contact/prediction_error_stationary.pdf": "5d15cd5678c8af9760718187dbcfba78dca1e6ecf92febe9ec6e9547dc9c5252",
     "results/main/contact/prediction_error_stationary.png": "15a69cc77cb36a92674ed96a85e0424f0b153aab9bc565560a8117a08aaaaf88",
-    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
-    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.png": "2f706a1fe7abdcf3eb5aa2fdf256adbe7cf6b05719f7f9e9d7dc5ea5c0e6eee7",
-    "results/main/contact/prediction_error_sphere.pdf": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
-    "results/main/contact/prediction_error_sphere.png": "2f706a1fe7abdcf3eb5aa2fdf256adbe7cf6b05719f7f9e9d7dc5ea5c0e6eee7",
+    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf": "31580e4902ce80286e491993fb4baa0c2cad08a5425dbeae6be26e27c016dd08",
+    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.png": "8ee70c6460c22abfd46ca9434356edc1ff0cd70609d76bb5867e9336973b1d52",
+    "results/main/contact/prediction_error_sphere.pdf": "31580e4902ce80286e491993fb4baa0c2cad08a5425dbeae6be26e27c016dd08",
+    "results/main/contact/prediction_error_sphere.png": "8ee70c6460c22abfd46ca9434356edc1ff0cd70609d76bb5867e9336973b1d52",
     "results/contact_prediction_diagnostics/figures/prediction_error_references.pdf": "a23874493d9bf904581633beae9ed599edbf37bb285e9e8376debdbff664b68f",
     "results/contact_prediction_diagnostics/figures/prediction_error_references.png": "7a4a73c2f95547782069c7ce12a3e2de59729d2d5bfa83e759a5e6e51826dd7d",
     "results/supplementary/contact/prediction_error_references.pdf": "a23874493d9bf904581633beae9ed599edbf37bb285e9e8376debdbff664b68f",

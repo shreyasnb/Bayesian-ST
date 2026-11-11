@@ -191,7 +191,7 @@ def _identity_curve_check(root,notebook,data,transport):
             continue
         for target in node.targets:
             assigned[ast.unparse(target)]=node.value
-    assert ast.literal_eval(assigned["LABELS['mean_identity']"])==r'Posterior mean, $G_t=I_3$'
+    assert ast.literal_eval(assigned["LABELS['mean_identity']"])==r'$\overline P_t^+,\ G_t=I_3$'
     assert ast.literal_eval(assigned["COLORS['mean_identity']"])=='#484848'
     trajectories=[node for node in ast.walk(tree) if isinstance(node,ast.Call)
         and isinstance(node.func,ast.Attribute) and node.func.attr=='plot']
@@ -235,7 +235,7 @@ def _identity_curve_check(root,notebook,data,transport):
     assert '48' in results
     return dict(status='passed',methods=['mean','mode','iso','mean_identity'],curves=4,
         reporting_measurements=list(range(4,193,4)),original_six_checkpoints_unchanged=True,
-        identity_label=r'Posterior mean, $G_t=I_3$',identity_color='#484848',
+        identity_label=r'$\overline P_t^+,\ G_t=I_3$',identity_color='#484848',
         identity_linestyle='-',identity_marker=None,original_mean_interval_retained=True,
         identity_minus_measured_transport=dict(gain=float(row['gain']),lower=float(row['lower']),
             upper=float(row['upper']),units='(mm/s)^2',simulations=256,endpoint='episode_average',
@@ -838,7 +838,7 @@ def audit_new_pdfs(root=ROOT):
                             vertical.append([float(first.x),float(first.y),float(second.x),float(second.y)])
                 assert len(horizontal)>=2 and len(vertical)>=2,'Missing full PDF borders'
                 if route['filename']=='prediction_error_sphere.pdf':
-                    assert 'Posterior mean' in ' '.join(page.get_text().split())
+                    assert 'Gt=I3' in ''.join(page.get_text().split())
             report['ordinary_plot_borders']=dict(width_points=border_width,horizontal=horizontal,vertical=vertical)
         reports[destination]=report
     information=root/'results/main/contact/information_rotation.pdf'

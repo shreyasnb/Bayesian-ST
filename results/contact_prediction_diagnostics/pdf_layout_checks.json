@@ -153,7 +153,7 @@
       "errors": []
     },
     "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf": {
-      "sha256": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
+      "sha256": "31580e4902ce80286e491993fb4baa0c2cad08a5425dbeae6be26e27c016dd08",
       "pages": [
         {
           "page": 1,
@@ -161,7 +161,7 @@
             15.0,
             5.0
           ],
-          "vector_text_spans": 37,
+          "vector_text_spans": 39,
           "fonts": [
             {
               "name": "CMEX10",
@@ -199,7 +199,7 @@
             "24.9066": 8,
             "17.4345": 3,
             "21.9178": 7,
-            "15.3424": 8,
+            "15.3424": 10,
             "10.9589": 1
           },
           "primary_font_readability": {
@@ -228,7 +228,7 @@
       "errors": []
     },
     "results/main/contact/prediction_error_sphere.pdf": {
-      "sha256": "ae1fadc51c0e290f28bc4705e4336a09421124609738e237354d0af05ccb6923",
+      "sha256": "31580e4902ce80286e491993fb4baa0c2cad08a5425dbeae6be26e27c016dd08",
       "pages": [
         {
           "page": 1,
@@ -236,7 +236,7 @@
             15.0,
             5.0
           ],
-          "vector_text_spans": 37,
+          "vector_text_spans": 39,
           "fonts": [
             {
               "name": "CMEX10",
@@ -274,7 +274,7 @@
             "24.9066": 8,
             "17.4345": 3,
             "21.9178": 7,
-            "15.3424": 8,
+            "15.3424": 10,
             "10.9589": 1
           },
           "primary_font_readability": {
