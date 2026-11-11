@@ -52,3 +52,17 @@ Figure changes read the saved, verified arrays. Font, layout and color
 changes do not rerun inference, tune an estimator, or change a benchmark
 or its numerical results. Density colorbars retain their explicit
 normalization; colored display regions are not credible-region boundaries.
+
+Ordinary 2D application plots use four visible borders, 0.9–0.95 pt wide,
+with inward ticks on all four sides and tick labels on the bottom and left.
+This applies to the beamforming, contact, moving and diagnostic notebooks
+and their generators. It does not alter the 3D density-sphere presentation.
+
+The compact moving-beamforming comparison uses a 7 by 3.5 inch canvas,
+12 pt axis labels, 11 pt ticks, a shared 10.5 pt legend, 1.8 pt lines and
+5.5 pt markers. Its separate editable individual figures remain available.
+For that comparison only, shaded regions are empirical pointwise interquartile
+ranges across the 256 saved simulations; the curves are arithmetic mean dB
+values. Numerical tables retain Student confidence intervals for their means.
+See [the figure update](application_plotting_update.md) for the caption and
+export paths. All other uncertainty-band definitions remain unchanged.

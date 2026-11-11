@@ -1,0 +1,42 @@
+{
+  "status": "completed",
+  "protocol": {
+    "warmups": 1,
+    "repetitions": 7,
+    "seed": 2026111101,
+    "blas_threads": 1,
+    "isolation_confirmed": true,
+    "workload": "All measurement updates and task decisions at the declared report indices",
+    "setup": "Observations/scaling prepared before clock; tracker initialization and phase instrumentation included",
+    "warmup_trajectory": "Original validation simulation0",
+    "timed_trajectory": "Original test simulation0",
+    "phase_units": "tracking_ms includes covariance+SGD or covariance+report-time EVD; decision_ms includes32 moving or4 stationary beamformer decisions",
+    "exact_mode": "One covariance update per measurement and eigensolve only at task reporting indices",
+    "excluded": "Stream generation, heldout/true scoring, objective and exact-reference diagnostics",
+    "objective_manifest_sha256": "c177c487d9c1a84f81dc8bc7180cdc5577d0f2e65dbbf42a83c46a0afcaacbdc"
+  },
+  "artifacts": {
+    "results/beamforming_comparison_audit/stationary/objective/timing/preregistered.json": "617ce17396dd0624a89b6f5016352a0ed2635199342f085e6701713428316b28",
+    "results/beamforming_comparison_audit/stationary/objective/timing/summary.csv": "761977fef819efd7e54d60da932de2087d4a082661ed57b5c59ea682b9fd1a59",
+    "results/beamforming_comparison_audit/stationary/objective/timing/raw.csv": "ecd2e9761d45c4c4e1b9d8a39e4687c269a80e3ee5c72d2fc7c5e2afe895685e"
+  },
+  "source_hashes": {
+    "lib/beamforming_objective_audit.py": "79505a5c3ccc6c6a8506db39ee14a3bce8b20cff93fc74efe8e23196786c18be",
+    "scripts/run_beamforming_objective_audit.py": "340e347f222d0e62ca02c8f8edba0f35412d9866c720d238cd9f8bc70edb870f",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "lib/final_beamforming.py": "29d183650f9c156e25e19553e72559291c884d4d68ee400d448e5430793a9a8f",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/final_validation.py": "3b8ae90ed322edd8affc3385246d2fc678ada0a05ec61970076def526b5f9952",
+    "lib/final_stationary_evidence.py": "55650162cc4eee030c4925000a1624daca566e101561b6f73138160bca981b55",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac"
+  },
+  "input_hashes": {
+    "results/beamforming/data/paper/performance/stationary_T200/manifest.json": "bab0048213e53fb9429e22381a981458bdb2408367ff2175a7a174c1d8c77a77",
+    "results/beamforming/data/paper/performance/stationary_T200/stationary.csv": "0ebf63ee9d3170d3e79b23b72cd6d5cde0a7ef210ac02e1178b8f81d6f996d71",
+    "results/beamforming/data/paper/performance/stationary_T200/stories.npz": "5c94fb730d4ebd5d4862ef05bf349d18b6f4983635ef16c805bbafa86b6e4f12",
+    "results/beamforming/data/paper/performance/stationary_T200/selected.json": "f1734d95197a32d873669e2ad80bded92f88f99dac489606a77400cdde668019",
+    "results/beamforming/tables/paper/performance/stationary_T200/validation_curves.csv": "8b4b9cb0b8b64a0b19055aa227ab2f4db01bb611772ffa6b741cdb9bfb97988e",
+    "archive/dd399ba/stationary_source_proof.json": "c693f5b5f874f08a245ef6187c072e1e93c30c2242fde8d7119e8015a8e30222"
+  }
+}

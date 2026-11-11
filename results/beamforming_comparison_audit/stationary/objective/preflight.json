@@ -1,0 +1,236 @@
+{
+  "status": "passed",
+  "declaration": {
+    "cohort": "stationary",
+    "sigma2": 0.2,
+    "tau2": 1.0,
+    "rank": 1,
+    "initial_parameter": "A_0=0",
+    "transport": "G_t=I_n",
+    "validation_seed": 2026111001,
+    "test_seed": 2026111002,
+    "cases": [
+      {
+        "case": "static_n32",
+        "condition": "static",
+        "n": 32,
+        "T": 200,
+        "beta": 1.0,
+        "times": [
+          25,
+          50,
+          100,
+          200
+        ],
+        "stationary": true
+      },
+      {
+        "case": "static_n64",
+        "condition": "static",
+        "n": 64,
+        "T": 200,
+        "beta": 1.0,
+        "times": [
+          25,
+          50,
+          100,
+          200
+        ],
+        "stationary": true
+      },
+      {
+        "case": "static_n128",
+        "condition": "static",
+        "n": 128,
+        "T": 200,
+        "beta": 1.0,
+        "times": [
+          25,
+          50,
+          100,
+          200
+        ],
+        "stationary": true
+      }
+    ],
+    "inner_steps": [
+      1,
+      3,
+      10,
+      30
+    ],
+    "original_inner_steps": 3,
+    "original_fixed_stepsizes": {
+      "static_n32": 0.003125,
+      "static_n64": 0.0015625,
+      "static_n128": 0.00078125
+    },
+    "covariance_definition": "C_t=sum beta^(t-j)*(eta_j/eta_0)*u_j*u_j^H=A_t_uncentered/eta_0; gamma=sqrt(beta)",
+    "objective": "L_t(x)=tr(C_t)-x^H C_t x; exact minimum tr(C_t)-lambda_max(C_t)",
+    "relative_gap_definition": "(lambda_max-x^H C_t x)/(lambda_max-lambda_min)",
+    "selection_criterion": "Final t=200 measured log output power, averaged over64 validation simulations",
+    "stationary_primary_evaluation": "t=200 only; four report times retained solely for objective diagnostics",
+    "test_policy": "Retain original three-step baseline and independently selected count; exact common-EW mode reference",
+    "source_hashes": {
+      "lib/beamforming_objective_audit.py": "79505a5c3ccc6c6a8506db39ee14a3bce8b20cff93fc74efe8e23196786c18be",
+      "scripts/run_beamforming_objective_audit.py": "340e347f222d0e62ca02c8f8edba0f35412d9866c720d238cd9f8bc70edb870f",
+      "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+      "lib/final_beamforming.py": "29d183650f9c156e25e19553e72559291c884d4d68ee400d448e5430793a9a8f",
+      "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+      "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+      "lib/final_validation.py": "3b8ae90ed322edd8affc3385246d2fc678ada0a05ec61970076def526b5f9952",
+      "lib/final_stationary_evidence.py": "55650162cc4eee030c4925000a1624daca566e101561b6f73138160bca981b55",
+      "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac"
+    },
+    "input_hashes": {
+      "results/beamforming/data/paper/performance/stationary_T200/manifest.json": "bab0048213e53fb9429e22381a981458bdb2408367ff2175a7a174c1d8c77a77",
+      "results/beamforming/data/paper/performance/stationary_T200/stationary.csv": "0ebf63ee9d3170d3e79b23b72cd6d5cde0a7ef210ac02e1178b8f81d6f996d71",
+      "results/beamforming/data/paper/performance/stationary_T200/stories.npz": "5c94fb730d4ebd5d4862ef05bf349d18b6f4983635ef16c805bbafa86b6e4f12",
+      "results/beamforming/data/paper/performance/stationary_T200/selected.json": "f1734d95197a32d873669e2ad80bded92f88f99dac489606a77400cdde668019",
+      "results/beamforming/tables/paper/performance/stationary_T200/validation_curves.csv": "8b4b9cb0b8b64a0b19055aa227ab2f4db01bb611772ffa6b741cdb9bfb97988e",
+      "archive/dd399ba/stationary_source_proof.json": "c693f5b5f874f08a245ef6187c072e1e93c30c2242fde8d7119e8015a8e30222"
+    },
+    "validation_simulations": 64,
+    "test_simulations": 256,
+    "wall_time_claims": false
+  },
+  "checks": [
+    {
+      "case": "static_n32",
+      "trial": 0,
+      "split": "validation",
+      "maximum_statistics_match_relative_error": 5.705020390504983e-16,
+      "maximum_original_great_ew_db_error": 0.0,
+      "maximum_original_mode_db_error": 0.0,
+      "measurements": 200,
+      "reporting_times": [
+        25,
+        50,
+        100,
+        200
+      ],
+      "inner_steps": [
+        3
+      ],
+      "no_covariance_or_truth_used_for_validation_selection": true
+    },
+    {
+      "case": "static_n32",
+      "trial": 0,
+      "split": "test",
+      "maximum_statistics_match_relative_error": 5.583490904710337e-16,
+      "maximum_original_great_ew_db_error": 8.881784197001252e-16,
+      "maximum_original_mode_db_error": 1.887379141862766e-15,
+      "measurements": 200,
+      "reporting_times": [
+        25,
+        50,
+        100,
+        200
+      ],
+      "inner_steps": [
+        3
+      ],
+      "no_covariance_or_truth_used_for_validation_selection": true
+    },
+    {
+      "case": "static_n64",
+      "trial": 0,
+      "split": "validation",
+      "maximum_statistics_match_relative_error": 6.559556673784065e-16,
+      "maximum_original_great_ew_db_error": 0.0,
+      "maximum_original_mode_db_error": 0.0,
+      "measurements": 200,
+      "reporting_times": [
+        25,
+        50,
+        100,
+        200
+      ],
+      "inner_steps": [
+        3
+      ],
+      "no_covariance_or_truth_used_for_validation_selection": true
+    },
+    {
+      "case": "static_n64",
+      "trial": 0,
+      "split": "test",
+      "maximum_statistics_match_relative_error": 5.809219121464686e-16,
+      "maximum_original_great_ew_db_error": 9.575673587391975e-16,
+      "maximum_original_mode_db_error": 3.608224830031759e-15,
+      "measurements": 200,
+      "reporting_times": [
+        25,
+        50,
+        100,
+        200
+      ],
+      "inner_steps": [
+        3
+      ],
+      "no_covariance_or_truth_used_for_validation_selection": true
+    },
+    {
+      "case": "static_n128",
+      "trial": 0,
+      "split": "validation",
+      "maximum_statistics_match_relative_error": 6.274125219183045e-16,
+      "maximum_original_great_ew_db_error": 0.0,
+      "maximum_original_mode_db_error": 0.0,
+      "measurements": 200,
+      "reporting_times": [
+        25,
+        50,
+        100,
+        200
+      ],
+      "inner_steps": [
+        3
+      ],
+      "no_covariance_or_truth_used_for_validation_selection": true
+    },
+    {
+      "case": "static_n128",
+      "trial": 0,
+      "split": "test",
+      "maximum_statistics_match_relative_error": 6.286812071467247e-16,
+      "maximum_original_great_ew_db_error": 6.661338147750939e-16,
+      "maximum_original_mode_db_error": 3.552713678800501e-15,
+      "measurements": 200,
+      "reporting_times": [
+        25,
+        50,
+        100,
+        200
+      ],
+      "inner_steps": [
+        3
+      ],
+      "no_covariance_or_truth_used_for_validation_selection": true
+    }
+  ],
+  "summary": [
+    {
+      "condition": "static",
+      "n": 32,
+      "maximum_relative_gap": 0.006741924722797093,
+      "maximum_chordal": 0.10336756093673725,
+      "maximum_absolute_gap": 0.23712955218839227
+    },
+    {
+      "condition": "static",
+      "n": 64,
+      "maximum_relative_gap": 0.16608465832705188,
+      "maximum_chordal": 0.6188706901827109,
+      "maximum_absolute_gap": 7.075540959414681
+    },
+    {
+      "condition": "static",
+      "n": 128,
+      "maximum_relative_gap": 0.2149229163083942,
+      "maximum_chordal": 0.7039866857703992,
+      "maximum_absolute_gap": 13.097771877278198
+    }
+  ]
+}

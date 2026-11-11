@@ -22,6 +22,8 @@ FILENAMES = {
     f'moving_interference_{condition}_output_power.pdf': condition
     for condition in ('smooth', 'abrupt')
 }
+FILENAMES['moving_interference_comparison.pdf']='comparison'
+FIGURE_SIZES={name:([7,3.5] if condition=='comparison' else [15,5]) for name,condition in FILENAMES.items()}
 
 
 def _source(cell):
@@ -34,7 +36,7 @@ def _sha(path):
 
 
 def optional_moving_routes(root=ROOT):
-    """Return the two manuscript-PDF declarations, or {} before creation.
+    """Return the three manuscript-PDF declarations, or {} before creation.
 
     Each record has the same schema and zero-based notebook cell position as
     ``lib.notebook_pdf_exports.declared_notebook_pdf_routes``.
@@ -90,8 +92,8 @@ def optional_moving_routes(root=ROOT):
                 declared = False
         if declared:
             raise ValueError(f'{NOTEBOOK}, cell {index}: PDF declaration has no figure')
-    if {record['filename'] for record in routes.values()} != set(FILENAMES) or len(routes) != 2:
-        raise ValueError('The moving notebook must declare one smooth and one abrupt figure')
+    if {record['filename'] for record in routes.values()} != set(FILENAMES) or len(routes) != 3:
+        raise ValueError('The moving notebook must declare smooth, abrupt and combined figures')
     return routes
 
 
@@ -154,7 +156,27 @@ def _notebook_check(root, notebook, routes, data):
             assigned = {target.id: node.value for node in tree.body if isinstance(node, ast.Assign)
                         for target in node.targets if isinstance(target, ast.Name)}
             assert ast.literal_eval(assigned['DPI']) == 300
-            assert tuple(ast.literal_eval(assigned['FIGSIZE'])) == (15, 5)
+            route=next(record for record in routes.values() if record['cell']==index)
+            expected_size=FIGURE_SIZES[route['filename']]
+            assert tuple(ast.literal_eval(assigned['FIGSIZE'])) == tuple(expected_size)
+            combined=route['filename']=='moving_interference_comparison.pdf'
+            assert ast.literal_eval(assigned['LABEL_FONT_SIZE'])==(12. if combined else 25.)
+            assert ast.literal_eval(assigned['TICK_FONT_SIZE'])==(11. if combined else 23.)
+            assert ast.literal_eval(assigned['LEGEND_FONT_SIZE'])==(10.5 if combined else 22.)
+            assert ast.literal_eval(assigned['IQR_ALPHA'])==.22
+            assert ast.literal_eval(assigned['SPINE_WIDTH'])==.95
+            assert all(ast.literal_eval(assigned['SHOW_IQR']).values())
+            assert ast.literal_eval(assigned['MARKER_OFFSETS'])=={'mean':0,'mode':1,'iso':2,'great_window':3}
+            styles=ast.literal_eval(assigned['STYLE'])
+            assert {key:value[2:] for key,value in styles.items()}=={
+                'mean':('o','-'),'mode':('s','--'),'iso':('^','-.'),'great_window':('D',':')}
+            assert not any(isinstance(call.func,ast.Attribute) and call.func.attr in ('set_visible','annotate','text') for call in calls)
+            quantiles=[call for call in calls if isinstance(call.func,ast.Attribute) and call.func.attr=='quantile']
+            assert len(quantiles)==1 and ast.literal_eval(quantiles[0].args[0])==[.25,.75]
+            ticks=[call for call in calls if isinstance(call.func,ast.Attribute) and call.func.attr=='tick_params']
+            assert len(ticks)==1
+            options={item.arg:ast.literal_eval(item.value) for item in ticks[0].keywords if isinstance(item.value,ast.Constant)}
+            assert options['direction']=='in' and all(options[name] is True for name in ['top','right','bottom','left','labelbottom','labelleft'])
             assert ast.literal_eval(assigned['SAVE_PDF']) is True
             for node in constructors:
                 kwargs = {item.arg: item.value for item in node.keywords}
@@ -170,33 +192,35 @@ def _notebook_check(root, notebook, routes, data):
         for output in cell.get('outputs', []):
             assert output.get('output_type') != 'error'
             images += int('image/png' in output.get('data', {}))
-    assert tex_true and figures == images == 2
+    assert tex_true and figures == images == 3
     return dict(code_cells=code_count, visible_figures=figures, embedded_images=images,
                 text_usetex=True, dpi=300, figure_size_in=[15, 5],
+                native_combined_size_in=[7,3.5],all_bands_empirical_iqr=True,
                 numerical_inputs=len(inputs), producer_sources=len(sources))
 
 
-def _exports_check(root, routes):
+def _exports_check(root, routes, figure_sizes=None):
+    """Check declared canvases; other notebooks retain the 15-by-5 default."""
     from PIL import Image
     files = {}
     for destination, route in routes.items():
-        local = root / route['local_pdf']
-        main = root / destination
-        assert local.is_file() and main.is_file() and _sha(local) == _sha(main)
-        content = local.read_bytes()
-        assert content.startswith(b'%PDF-')
-        boxes = re.findall(rb'/MediaBox\s*\[\s*([-+0-9.eE]+)\s+([-+0-9.eE]+)\s+([-+0-9.eE]+)\s+([-+0-9.eE]+)\s*\]', content)
-        assert len(boxes) == 1, 'Expected a single-page Matplotlib PDF'
-        x0, y0, x1, y1 = map(float, boxes[0])
-        assert abs((x1-x0) / 72 - 15) < 1e-6 and abs((y1-y0) / 72 - 5) < 1e-6
-        local_png, main_png = local.with_suffix('.png'), main.with_suffix('.png')
-        assert local_png.is_file() and main_png.is_file() and _sha(local_png) == _sha(main_png)
+        size=tuple((figure_sizes or {}).get(destination,route.get('figure_size_in',(15,5))))
+        local=root/route['local_pdf'];main=root/destination
+        assert local.is_file() and main.is_file() and _sha(local)==_sha(main)
+        content=local.read_bytes();assert content.startswith(b'%PDF-')
+        boxes=re.findall(rb'/MediaBox\s*\[\s*([-+0-9.eE]+)\s+([-+0-9.eE]+)\s+([-+0-9.eE]+)\s*([-+0-9.eE]+)\s*\]',content)
+        assert len(boxes)==1,'Expected a single-page Matplotlib PDF'
+        x0,y0,x1,y1=map(float,boxes[0])
+        assert abs((x1-x0)/72-size[0])<1e-6 and abs((y1-y0)/72-size[1])<1e-6
+        local_png,main_png=local.with_suffix('.png'),main.with_suffix('.png')
+        assert local_png.is_file() and main_png.is_file() and _sha(local_png)==_sha(main_png)
+        pixels=tuple(round(value*300) for value in size)
         with Image.open(local_png) as image:
-            assert image.size == (4500, 1500)
-            assert all(abs(float(value)-300) < .1 for value in image.info.get('dpi', []))
-            assert len(image.info.get('dpi', [])) == 2
-        files[destination] = dict(sha256=_sha(local), local_pdf=route['local_pdf'],
-            png_sha256=_sha(local_png), png_size_px=[4500, 1500])
+            assert image.size==pixels
+            assert len(image.info.get('dpi',[]))==2
+            assert all(abs(float(value)-300)<.1 for value in image.info['dpi'])
+        files[destination]=dict(sha256=_sha(local),local_pdf=route['local_pdf'],
+            png_sha256=_sha(local_png),png_size_px=list(pixels),figure_size_in=list(size))
     return files
 
 
@@ -328,11 +352,56 @@ def _preservation_check(root):
     baseline_path = Path('/tmp/independent-moving-preservation-baseline.json')
     if not baseline_path.is_file():
         return dict(status='not_available', scope='Optional session snapshot is absent')
-    baseline = json.loads(baseline_path.read_text())
-    for name, expected in baseline.items():
-        assert (root / name).is_file() and _sha(root / name) == expected, 'Protected file changed: ' + name
-    return dict(status='passed', protected_files=len(baseline),
-                baseline_sha256=_sha(baseline_path), all_files_unchanged=True)
+    historical = json.loads(baseline_path.read_text())
+    from lib.presentation_update_provenance import verify_presentation_preservation
+    checked = verify_presentation_preservation(root, historical)
+    return dict(status='passed', protected_files=len(historical),
+                baseline_sha256=_sha(baseline_path),
+                exact_preservation=checked,
+                scientific_data_and_settings_unchanged=True)
+
+
+def _iqr_check(root,data):
+    """Verify display quartiles directly, separately from unchanged table CIs."""
+    import numpy as np
+    import pandas as pd
+    raw=pd.read_csv(root/'results/beamforming/data/paper/performance/moving_checkpoints.csv.gz',
+                    usecols=['condition','n','trial','t','method','true_ratio_db'])
+    raw=raw[raw.condition.isin(['smooth','abrupt'])&raw.n.eq(32)
+            &raw.method.isin(['mean','mode','isotropic','great_window'])].copy()
+    raw['method']=raw.method.replace({'isotropic':'iso'})
+    expected=[]
+    for (condition,method,t),group in raw.groupby(['condition','method','t'],sort=True):
+        np.testing.assert_array_equal(np.sort(group.trial),np.arange(256))
+        q25,q75=np.quantile(group.true_ratio_db.to_numpy(),[.25,.75])
+        expected.append(dict(condition=condition,method=method,t=t,simulations=256,
+            mean=float(group.true_ratio_db.mean()),q25=float(q25),q75=float(q75)))
+    folder=root/'results/beamforming_moving/plotting'
+    actual=pd.read_csv(folder/'pointwise_iqr.csv')
+    expected=pd.DataFrame(expected)
+    keys=['condition','method','t']
+    pd.testing.assert_frame_equal(actual.sort_values(keys).reset_index(drop=True),
+        expected.sort_values(keys).reset_index(drop=True),check_dtype=False,rtol=1e-12,atol=1e-12)
+    original=data['checkpoint_summary'][['condition','method','t','mean']]
+    checked=actual.merge(original,on=keys,suffixes=('_display','_original'),validate='one_to_one')
+    np.testing.assert_allclose(checked.mean_display,checked.mean_original,rtol=1e-13,atol=1e-13)
+    meta=json.loads((folder/'manifest.json').read_text())
+    assert meta['status']=='completed' and meta['points']==256 and meta['means_unchanged'] is True
+    assert meta['inputs']==data['input_hashes'] and meta['old_confidence_intervals_unchanged'] is True
+    assert meta['producer_sha256']==_sha(root/'scripts/make_moving_beamforming_notebook.py')
+    _verify_hashes(root,meta['artifacts'],'empirical-IQR display artifacts')
+    guard=json.loads((folder/'run_guard.json').read_text())
+    assert guard['status']=='passed' and guard['all_protected_files_unchanged'] is True
+    assert guard['protected_files']==guard['after_hashes']
+    for name,digest in guard['protected_files'].items():
+        if not name.endswith('.ipynb'):
+            assert _sha(root/name)==digest,'Protected numerical/settings input changed: '+name
+    return dict(points=len(expected),simulations_per_point=256,all_four_methods=True,
+        quantiles=[.25,.75],computed_from_original_trial_records=True,
+        means_and_original_table_confidence_intervals_unchanged=True,
+        empirical_spread_not_posterior_credible_interval=True,
+        exclusive_render_guard_passed=True,guarded_files=guard['protected_count'],
+        plotting_manifest_sha256=_sha(folder/'manifest.json'))
 
 
 def _figure_manifest_check(root, notebook, routes, data):
@@ -341,11 +410,14 @@ def _figure_manifest_check(root, notebook, routes, data):
     assert meta['status'] == 'completed' and meta['example'] == 'beamforming_moving'
     assert meta['notebook'] == NOTEBOOK and meta['notebook_sha256'] == _sha(root / NOTEBOOK)
     assert meta['config'] == meta['configuration'] == data['config']
-    assert meta['optional_main_candidate'] is True and meta['figure_count'] == 2
+    assert meta['optional_main_candidate'] is True and meta['figure_count'] == 3
     assert meta['dpi'] == 300 and meta['figure_size_in'] == [15, 5] and meta['text_usetex'] is True
     data_manifest = root / 'results/beamforming_moving/data/manifest.json'
     assert meta['data_manifest'] == str(data_manifest.relative_to(root))
     assert meta['data_manifest_sha256'] == _sha(data_manifest)
+    plotting_manifest=root/'results/beamforming_moving/plotting/manifest.json'
+    assert meta['plotting_manifest']==plotting_manifest.relative_to(root).as_posix()
+    assert meta['plotting_manifest_sha256']==_sha(plotting_manifest)
     assert meta['input_hashes'] == data['input_hashes']
     original_sources = {record['path']: record['sha256']
                         for record in data['provenance']['verified_source_files'].values()}
@@ -361,9 +433,11 @@ def _figure_manifest_check(root, notebook, routes, data):
         record = meta['figures'][route['filename']]
         condition = FILENAMES[route['filename']]
         assert record['status'] == 'completed' and record['condition'] == condition
-        assert record['figure_size_in'] == [15, 5] and record['dpi'] == 300
+        assert record['figure_size_in'] == FIGURE_SIZES[route['filename']] and record['dpi'] == 300
         assert record['text_usetex'] is True and record['optional_main_candidate'] is True
-        assert record['event_t'] == data['conditions'][condition]['event']
+        assert record['event_t'] == (129 if condition=='comparison' else data['conditions'][condition]['event'])
+        assert record['iqr_alpha']==.22 and record['mean_curves_unchanged'] is True
+        assert '25th–75th' in record['uncertainty']
         assert record['caption'].strip() and record['formula_or_claim'].strip()
         cell = notebook['cells'][route['cell']]
         assert record['source_cell_id'] == cell['id']
@@ -377,7 +451,8 @@ def _figure_manifest_check(root, notebook, routes, data):
     assert set(meta['files']) == expected_outputs
     _verify_hashes(root, meta['files'], 'moving-figure files')
     if meta.get('retained_previous_main'):
-        _verify_hashes(root, meta['retained_previous_main'], 'retained previous main figure')
+        from lib.presentation_update_provenance import verify_presentation_preservation
+        verify_presentation_preservation(root, meta['retained_previous_main'])
     return dict(manifest=str(path.relative_to(root)), sha256=_sha(path),
                 exported_files=len(meta['files']), optional_main_candidates=True)
 
@@ -394,13 +469,14 @@ def fullcheck(root=ROOT):
     data = load_moving_evidence(root)
     notebook = json.loads((root / NOTEBOOK).read_text())
     notebook_checks = _notebook_check(root, notebook, routes, data)
-    files = _exports_check(root, routes)
+    files = _exports_check(root, routes, {destination:FIGURE_SIZES[route['filename']] for destination,route in routes.items()})
     numerical = _numeric_check(root, data)
+    display_spread = _iqr_check(root,data)
     preservation = _preservation_check(root)
     figure_manifest = _figure_manifest_check(root, notebook, routes, data)
     return dict(status='passed', notebook=NOTEBOOK, notebook_sha256=_sha(root / NOTEBOOK),
         routes=routes, notebook_checks=notebook_checks, files=files, numerical=numerical,
-        preservation=preservation, figure_manifest=figure_manifest,
+        preservation=preservation, figure_manifest=figure_manifest,display_spread=display_spread,
         scientific_sha256=gate['final_science_hash'], input_hashes=data['input_hashes'],
         original_producer_hashes={record['path']: record['sha256']
             for record in data['provenance']['verified_source_files'].values()},

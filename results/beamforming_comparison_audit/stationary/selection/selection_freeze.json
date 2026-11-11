@@ -1,0 +1,8 @@
+{
+  "status": "selected_before_test_scoring",
+  "selected_settings_sha256": "b10447658edcf64d08bb0db46e4d57a581c0b4eb9f99b2ec344139183b4e69d3",
+  "validation_trials_sha256": "23174f397db380884125daf2d997b0535a0174669ae53704952b4416cae9e6a4",
+  "validation_candidates_sha256": "10097cd6b2d806e95184533f1c51633c68ce4396549a668fb12aba8bbae9d545",
+  "source_signature": "23825c855b7df13e5eff702ca61ac61fbc4ed5a9e7fa9764cebfd38bf6277235",
+  "frozen_utc": "2026-11-11T01:04:15.051442+00:00"
+}

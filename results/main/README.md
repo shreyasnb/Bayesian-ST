@@ -33,7 +33,7 @@ Directional posterior uncertainty at $t=16$. Panels (a,b) show the full and matc
 
 ### contact/posterior_anisotropy_risk.pdf
 
-Panel (c) of the directional posterior-uncertainty figure. For $v(\theta)=v_0(\cos\theta\,e_2+\sin\theta\,e_3)$ with $v_0=0.02\,\mathrm{m/s}$, the ordinate is $r_t(v(\theta))/v_0^2$, where $r_t(v)=v^\top[\overline P_t^+-(\overline P_t^+)^2]v$. The two curves use $\overline P_t^+$ and $\overline P_t^{\mathrm{iso}}$, respectively, each with its own distribution. The saved unit-input curves equal this normalized quantity; no velocity scaling is applied to them.
+Panel (c) of the directional posterior-uncertainty figure. For $v(\theta)=v_0(\cos\theta\,e_1+\sin\theta\,e_2)$ with $v_0=0.02\,\mathrm{m/s}$, the ordinate is $r_t(v(\theta))/v_0^2$, where $r_t(v)=v^\top[\overline P_t^+-(\overline P_t^+)^2]v$. The full and matched isotropic curves each use the mean of their own law, $\overline P_t^+$ and $\overline P_t^{\mathrm{iso}}$, respectively. They compare posterior response variances, rather than empirical losses under one common law. The saved unit-input risks already equal this dimensionless quantity and are plotted directly, without further normalization.
 
 ### contact/task_performance_page1.pdf
 
@@ -44,4 +44,5 @@ Mean squared velocity prediction error $\mathcal E_t(D_t)=\tfrac13\sum_{j=1}^3\|
 These independent exports are candidates for review. They do not replace the stationary presentation or select a manuscript block. Their editable source and summaries are in [the moving notebook](../../notebooks/beamforming_moving_interference.ipynb).
 
 - [moving_interference_abrupt_output_power.pdf](beamforming/moving_interference_abrupt_output_power.pdf).
+- [moving_interference_comparison.pdf](beamforming/moving_interference_comparison.pdf).
 - [moving_interference_smooth_output_power.pdf](beamforming/moving_interference_smooth_output_power.pdf).

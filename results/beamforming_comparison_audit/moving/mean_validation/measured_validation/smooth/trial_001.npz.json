@@ -1,0 +1,13 @@
+{
+  "binding": "f6a51d9cdb347463af5c59b8c0f09cfa4ddac3750ee16ccd7c99790c78661c27",
+  "sha256": "3ba8efb8a0799c43fb2b8195b060ef65b1759d9f7eb1042183826172b04b8653",
+  "fields": [
+    "U",
+    "a",
+    "sigma2",
+    "tau2",
+    "times",
+    "Rhat"
+  ],
+  "information": "Measured finite holdout covariance; no hidden signatures, true covariance, oracle power, angles or test records supplied to selection."
+}

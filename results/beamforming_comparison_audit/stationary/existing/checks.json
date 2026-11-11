@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "raw_rows": 30720,
+  "checkpoint_summaries": 120,
+  "primary_summaries": 30,
+  "all_simulation_ids_verified": true,
+  "strict_T200_sources_and_artifacts_verified": true,
+  "exact_covariance_power_identity_verified": true,
+  "new_simulations": 0,
+  "new_replays": 0,
+  "new_parameter_selections": 0
+}

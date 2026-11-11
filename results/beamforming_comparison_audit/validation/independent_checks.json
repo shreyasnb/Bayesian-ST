@@ -1,0 +1,2356 @@
+{
+  "status": "passed",
+  "scope": "Complete comparison audit",
+  "scientific_sha256": "e926a6a16fea47e35f0625afcc811d5fbdd533fb812c8c1fa9314484f16b24ee",
+  "existing": {
+    "status": "passed",
+    "moving_manifest": {
+      "path": "results/beamforming_comparison_audit/moving/existing/manifest.json",
+      "sha256": "9a35eb6b6dd7dd9a51514202edb409122d922d3c0abff5ec6845c7245a36ff2f",
+      "outputs": 13,
+      "source_and_input_hashes": 21
+    },
+    "stationary_manifest": {
+      "path": "results/beamforming_comparison_audit/stationary/existing/manifest.json",
+      "sha256": "da3e75358e0e8c8374115897c354c0688abcf4ab2566ade52b0bc8da0fd07318",
+      "outputs": 9,
+      "source_and_input_hashes": 30
+    },
+    "moving_rows": 81920,
+    "moving_checkpoint_intervals": 320,
+    "moving_aggregate_intervals": 40,
+    "moving_paired_aggregate_intervals": 32,
+    "moving_simulation_aggregates": 10240,
+    "moving_paired_simulation_differences": 8192,
+    "stationary_rows": 30720,
+    "stationary_checkpoint_intervals": 120,
+    "stationary_primary_intervals": 30,
+    "stationary_paired_primary_intervals": 27,
+    "original_primary_summaries_preserved": true,
+    "legacy_secondary_reproduced": true,
+    "jensen_per_simulation_verified": true,
+    "degrees_of_freedom": 255,
+    "primary": "Arithmetic mean of individual true_ratio_db over all32 reports within each trial; then trial mean and Student95% CI."
+  },
+  "mean_validation": {
+    "moving": {
+      "status": "passed",
+      "manifest": {
+        "path": "results/beamforming_comparison_audit/moving/mean_validation/manifest.json",
+        "sha256": "0cd427829d7949f4e63ef45d95d353eb6057a262c74db206675b840f11db0ab2",
+        "outputs": 1545,
+        "source_and_input_hashes": 17
+      },
+      "validation_rows": 16384,
+      "validation_candidate_intervals": [
+        {
+          "case": "smooth",
+          "beta": 1.0,
+          "simulations": 64,
+          "mean": -5.292047850266327,
+          "lower": -5.333885222714126,
+          "upper": -5.250210477818528
+        },
+        {
+          "case": "smooth",
+          "beta": 0.99,
+          "simulations": 64,
+          "mean": -5.862334754582494,
+          "lower": -5.891683036487624,
+          "upper": -5.832986472677364
+        },
+        {
+          "case": "smooth",
+          "beta": 0.97,
+          "simulations": 64,
+          "mean": -6.235071889628044,
+          "lower": -6.254123585753767,
+          "upper": -6.21602019350232
+        },
+        {
+          "case": "smooth",
+          "beta": 0.9,
+          "simulations": 64,
+          "mean": -6.078527739041198,
+          "lower": -6.095024840919023,
+          "upper": -6.062030637163374
+        },
+        {
+          "case": "abrupt",
+          "beta": 1.0,
+          "simulations": 64,
+          "mean": -3.592200719049223,
+          "lower": -3.631979286916852,
+          "upper": -3.552422151181594
+        },
+        {
+          "case": "abrupt",
+          "beta": 0.99,
+          "simulations": 64,
+          "mean": -4.618171222467732,
+          "lower": -4.655408835711553,
+          "upper": -4.58093360922391
+        },
+        {
+          "case": "abrupt",
+          "beta": 0.97,
+          "simulations": 64,
+          "mean": -5.092794887384958,
+          "lower": -5.117764013957892,
+          "upper": -5.067825760812024
+        },
+        {
+          "case": "abrupt",
+          "beta": 0.9,
+          "simulations": 64,
+          "mean": -4.763083418253277,
+          "lower": -4.7858378581822265,
+          "upper": -4.740328978324328
+        }
+      ],
+      "test_checkpoint_rows": 49152,
+      "aggregate_intervals": 208,
+      "paired_intervals": 336,
+      "same_beta_reuse": [
+        {
+          "case": "smooth",
+          "beta": 0.97,
+          "numerical_tie": true,
+          "maximum_copy_error": 0.0
+        },
+        {
+          "case": "abrupt",
+          "beta": 0.97,
+          "numerical_tie": true,
+          "maximum_copy_error": 0.0
+        }
+      ],
+      "selection_uses_one_primary_aggregate_per_validation_trial": true,
+      "no_oracle_used_for_selection": true,
+      "secondary_criteria_do_not_select_settings": true,
+      "replay_scope": "Production sources and all immutable original rows verified; baseline numerical replay uses saved simulation0, and selected same-beta records reuse every original simulation."
+    },
+    "stationary": {
+      "status": "passed",
+      "manifest": {
+        "path": "results/beamforming_comparison_audit/stationary/mean_validation/manifest.json",
+        "sha256": "acf72b680c2d7af9bb9ce62bb6aaa3d9c25b7cd50bde171e3779fb4841137d71",
+        "outputs": 2313,
+        "source_and_input_hashes": 17
+      },
+      "validation_rows": 768,
+      "validation_candidate_intervals": [
+        {
+          "case": "n32",
+          "beta": 1.0,
+          "simulations": 64,
+          "mean": -4.568641216876076,
+          "lower": -4.636927070520854,
+          "upper": -4.500355363231297
+        },
+        {
+          "case": "n32",
+          "beta": 0.99,
+          "simulations": 64,
+          "mean": -4.525146744957175,
+          "lower": -4.594219675992572,
+          "upper": -4.456073813921779
+        },
+        {
+          "case": "n32",
+          "beta": 0.97,
+          "simulations": 64,
+          "mean": -4.261879645025212,
+          "lower": -4.332536938408608,
+          "upper": -4.191222351641817
+        },
+        {
+          "case": "n32",
+          "beta": 0.9,
+          "simulations": 64,
+          "mean": -3.1593273060403697,
+          "lower": -3.2658452364480026,
+          "upper": -3.052809375632737
+        },
+        {
+          "case": "n64",
+          "beta": 1.0,
+          "simulations": 64,
+          "mean": -4.379476738423001,
+          "lower": -4.436868861378794,
+          "upper": -4.322084615467209
+        },
+        {
+          "case": "n64",
+          "beta": 0.99,
+          "simulations": 64,
+          "mean": -4.265503383186546,
+          "lower": -4.325724093058856,
+          "upper": -4.205282673314237
+        },
+        {
+          "case": "n64",
+          "beta": 0.97,
+          "simulations": 64,
+          "mean": -3.66949974030766,
+          "lower": -3.741216896813866,
+          "upper": -3.5977825838014543
+        },
+        {
+          "case": "n64",
+          "beta": 0.9,
+          "simulations": 64,
+          "mean": -2.1795984127306793,
+          "lower": -2.2708909899138883,
+          "upper": -2.0883058355474704
+        },
+        {
+          "case": "n128",
+          "beta": 1.0,
+          "simulations": 64,
+          "mean": -4.185524473710654,
+          "lower": -4.256883478542377,
+          "upper": -4.114165468878931
+        },
+        {
+          "case": "n128",
+          "beta": 0.99,
+          "simulations": 64,
+          "mean": -3.9175677383203835,
+          "lower": -3.9922593501371995,
+          "upper": -3.8428761265035676
+        },
+        {
+          "case": "n128",
+          "beta": 0.97,
+          "simulations": 64,
+          "mean": -2.858396532284095,
+          "lower": -2.9502903770584274,
+          "upper": -2.7665026875097625
+        },
+        {
+          "case": "n128",
+          "beta": 0.9,
+          "simulations": 64,
+          "mean": -1.6994521556135158,
+          "lower": -1.7842035295208176,
+          "upper": -1.614700781706214
+        }
+      ],
+      "test_checkpoint_rows": 2304,
+      "aggregate_intervals": 78,
+      "paired_intervals": 126,
+      "same_beta_reuse": [
+        {
+          "case": "n32",
+          "beta": 1.0,
+          "numerical_tie": true,
+          "maximum_copy_error": 0.0
+        },
+        {
+          "case": "n64",
+          "beta": 1.0,
+          "numerical_tie": true,
+          "maximum_copy_error": 0.0
+        },
+        {
+          "case": "n128",
+          "beta": 1.0,
+          "numerical_tie": true,
+          "maximum_copy_error": 0.0
+        }
+      ],
+      "selection_uses_one_primary_aggregate_per_validation_trial": true,
+      "no_oracle_used_for_selection": true,
+      "secondary_criteria_do_not_select_settings": true,
+      "replay_scope": "Production sources and all immutable original rows verified; baseline numerical replay uses saved simulation0, and selected same-beta records reuse every original simulation."
+    }
+  },
+  "stationary_selection": {
+    "status": "passed",
+    "manifest": {
+      "path": "results/beamforming_comparison_audit/stationary/selection/manifest.json",
+      "sha256": "5f0282fa3ea142d6e585f632d0cb4465d6b0c0e76d4eba2f1547955282bc3025",
+      "outputs": 11,
+      "source_and_input_hashes": 14
+    },
+    "validation_records": 12288,
+    "validation_candidate_intervals": 192,
+    "selected_GREAT": [
+      {
+        "n": 32,
+        "method": "great_window_final_db",
+        "candidate_id": "great_window_23",
+        "validation_mean_db": -4.57282744915544
+      },
+      {
+        "n": 32,
+        "method": "great_ew_final_db",
+        "candidate_id": "great_ew_27",
+        "validation_mean_db": -4.5728240742176585
+      },
+      {
+        "n": 32,
+        "method": "great_full_history_final_db",
+        "candidate_id": "great_window_23",
+        "validation_mean_db": -4.57282744915544
+      },
+      {
+        "n": 64,
+        "method": "great_window_final_db",
+        "candidate_id": "great_window_23",
+        "validation_mean_db": -4.392188824980714
+      },
+      {
+        "n": 64,
+        "method": "great_ew_final_db",
+        "candidate_id": "great_ew_29",
+        "validation_mean_db": -4.392279246751013
+      },
+      {
+        "n": 64,
+        "method": "great_full_history_final_db",
+        "candidate_id": "great_window_23",
+        "validation_mean_db": -4.392188824980714
+      },
+      {
+        "n": 128,
+        "method": "great_window_final_db",
+        "candidate_id": "great_window_17",
+        "validation_mean_db": -4.229962050852904
+      },
+      {
+        "n": 128,
+        "method": "great_ew_final_db",
+        "candidate_id": "great_ew_29",
+        "validation_mean_db": -4.229784528288123
+      },
+      {
+        "n": 128,
+        "method": "great_full_history_final_db",
+        "candidate_id": "great_window_17",
+        "validation_mean_db": -4.229962050852904
+      }
+    ],
+    "measured_covariance_loading_powers_reconstructed": 6528,
+    "test_records": 10752,
+    "test_intervals": 42,
+    "paired_test_intervals": 39,
+    "full_history_window": 200,
+    "selection_uses_only_final_measured_db": true,
+    "original_methods_unchanged": 10,
+    "disjoint_validation_test_observation_hashes": true
+  },
+  "objective": {
+    "moving": {
+      "status": "passed",
+      "manifest": {
+        "path": "results/beamforming_comparison_audit/moving/objective/manifest.json",
+        "sha256": "2cbf7e76c888da2608a7c9c51ba96989fe598ba08421ea59ed2c05663e87b1f5",
+        "outputs": 11,
+        "source_and_input_hashes": 15
+      },
+      "validation_rows": 20480,
+      "test_rows": 49152,
+      "diagnostic_intervals": {
+        "validation": 1920,
+        "test": 1344
+      },
+      "paired_power_intervals": 4,
+      "selection": {
+        "smooth": {
+          "selected_inner_steps": 30,
+          "original_inner_steps": 3,
+          "beta": 0.97,
+          "stepsize": 0.006000000000000005,
+          "measured_validation_db_by_inner_steps": {
+            "1": -6.143984468893293,
+            "3": -6.214402100967737,
+            "10": -6.232650880613138,
+            "30": -6.233678552303051
+          },
+          "validation_selection_times": [
+            8,
+            16,
+            24,
+            32,
+            40,
+            48,
+            56,
+            64,
+            72,
+            80,
+            88,
+            96,
+            104,
+            112,
+            120,
+            128,
+            136,
+            144,
+            152,
+            160,
+            168,
+            176,
+            184,
+            192,
+            200,
+            208,
+            216,
+            224,
+            232,
+            240,
+            248,
+            256
+          ],
+          "selected_by": "Measured validation log-power at all32 reports, all64 simulations"
+        },
+        "abrupt": {
+          "selected_inner_steps": 30,
+          "original_inner_steps": 3,
+          "beta": 0.97,
+          "stepsize": 0.006000000000000005,
+          "measured_validation_db_by_inner_steps": {
+            "1": -4.875494682845131,
+            "3": -5.027874434242224,
+            "10": -5.087424823103837,
+            "30": -5.102005730014605
+          },
+          "validation_selection_times": [
+            8,
+            16,
+            24,
+            32,
+            40,
+            48,
+            56,
+            64,
+            72,
+            80,
+            88,
+            96,
+            104,
+            112,
+            120,
+            128,
+            136,
+            144,
+            152,
+            160,
+            168,
+            176,
+            184,
+            192,
+            200,
+            208,
+            216,
+            224,
+            232,
+            240,
+            248,
+            256
+          ],
+          "selected_by": "Measured validation log-power at all32 reports, all64 simulations"
+        }
+      },
+      "gamma_equals_sqrt_beta": true,
+      "covariance_matches_Bingham": true,
+      "chordal_distance_and_squared_distance_distinguished": true,
+      "rayleigh_gap_chordal_bound_verified": true,
+      "independent_saved_observation_replay": [
+        {
+          "condition": "smooth",
+          "n": 32,
+          "simulation": 0,
+          "reporting_times": [
+            8,
+            16,
+            24,
+            32,
+            40,
+            48,
+            56,
+            64,
+            72,
+            80,
+            88,
+            96,
+            104,
+            112,
+            120,
+            128,
+            136,
+            144,
+            152,
+            160,
+            168,
+            176,
+            184,
+            192,
+            200,
+            208,
+            216,
+            224,
+            232,
+            240,
+            248,
+            256
+          ],
+          "independent_saved_observation_replay": true,
+          "maximum_gap_absolute_error": 0.0,
+          "maximum_chordal_absolute_error": 0.0,
+          "maximum_covariance_match_relative_error": 4.462318853753218e-16
+        },
+        {
+          "condition": "abrupt",
+          "n": 32,
+          "simulation": 0,
+          "reporting_times": [
+            8,
+            16,
+            24,
+            32,
+            40,
+            48,
+            56,
+            64,
+            72,
+            80,
+            88,
+            96,
+            104,
+            112,
+            120,
+            128,
+            136,
+            144,
+            152,
+            160,
+            168,
+            176,
+            184,
+            192,
+            200,
+            208,
+            216,
+            224,
+            232,
+            240,
+            248,
+            256
+          ],
+          "independent_saved_observation_replay": true,
+          "maximum_gap_absolute_error": 0.0,
+          "maximum_chordal_absolute_error": 0.0,
+          "maximum_covariance_match_relative_error": 4.33995620121946e-16
+        }
+      ],
+      "operation_count_workloads": 6,
+      "diagnostic_eigensolves_excluded_from_timings": true,
+      "sign": "EW GREAT minus exact mode; positive power difference favors the exact mode.",
+      "timing": {
+        "status": "passed",
+        "manifest": {
+          "path": "results/beamforming_comparison_audit/moving/objective/timing/manifest.json",
+          "sha256": "798c216e2329252d82ae2e1385bad557e6e01caed9ac1c7c1e3b161466b6887b",
+          "outputs": 3,
+          "source_and_input_hashes": 15
+        },
+        "repetitions_per_workload": 7,
+        "raw_repetitions": 42,
+        "workloads": 6,
+        "scope": {
+          "warmups": 1,
+          "repetitions": 7,
+          "seed": 2026111101,
+          "blas_threads": 1,
+          "isolation_confirmed": true,
+          "workload": "All measurement updates and task decisions at the declared report indices",
+          "setup": "Observations/scaling prepared before clock; tracker initialization and phase instrumentation included",
+          "warmup_trajectory": "Original validation simulation0",
+          "timed_trajectory": "Original test simulation0",
+          "phase_units": "tracking_ms includes covariance+SGD or covariance+report-time EVD; decision_ms includes32 moving or4 stationary beamformer decisions",
+          "exact_mode": "One covariance update per measurement and eigensolve only at task reporting indices",
+          "excluded": "Stream generation, heldout/true scoring, objective and exact-reference diagnostics",
+          "objective_manifest_sha256": "2cbf7e76c888da2608a7c9c51ba96989fe598ba08421ea59ed2c05663e87b1f5"
+        },
+        "medians": [
+          {
+            "condition": "abrupt",
+            "n": 32,
+            "T": 256,
+            "method": "great_ew",
+            "inner_steps": 3,
+            "repetitions": 7,
+            "median_ms": 81.48232699022628,
+            "p90_ms": 91.84373579337262
+          },
+          {
+            "condition": "abrupt",
+            "n": 32,
+            "T": 256,
+            "method": "great_ew",
+            "inner_steps": 30,
+            "repetitions": 7,
+            "median_ms": 696.1203929968178,
+            "p90_ms": 743.1073835934512
+          },
+          {
+            "condition": "abrupt",
+            "n": 32,
+            "T": 256,
+            "method": "mode_exact",
+            "inner_steps": 0,
+            "repetitions": 7,
+            "median_ms": 8.792447013547644,
+            "p90_ms": 9.89537020213902
+          },
+          {
+            "condition": "smooth",
+            "n": 32,
+            "T": 256,
+            "method": "great_ew",
+            "inner_steps": 3,
+            "repetitions": 7,
+            "median_ms": 78.8835370040033,
+            "p90_ms": 86.2282833957579
+          },
+          {
+            "condition": "smooth",
+            "n": 32,
+            "T": 256,
+            "method": "great_ew",
+            "inner_steps": 30,
+            "repetitions": 7,
+            "median_ms": 719.126444979338,
+            "p90_ms": 727.7226982056163
+          },
+          {
+            "condition": "smooth",
+            "n": 32,
+            "T": 256,
+            "method": "mode_exact",
+            "inner_steps": 0,
+            "repetitions": 7,
+            "median_ms": 10.386231006123126,
+            "p90_ms": 11.242448014672846
+          }
+        ]
+      }
+    },
+    "stationary": {
+      "status": "passed",
+      "manifest": {
+        "path": "results/beamforming_comparison_audit/stationary/objective/manifest.json",
+        "sha256": "c177c487d9c1a84f81dc8bc7180cdc5577d0f2e65dbbf42a83c46a0afcaacbdc",
+        "outputs": 11,
+        "source_and_input_hashes": 15
+      },
+      "validation_rows": 3840,
+      "test_rows": 8192,
+      "diagnostic_intervals": {
+        "validation": 360,
+        "test": 224
+      },
+      "paired_power_intervals": 5,
+      "selection": {
+        "static_n32": {
+          "selected_inner_steps": 10,
+          "original_inner_steps": 3,
+          "beta": 1.0,
+          "stepsize": 0.003125,
+          "measured_validation_db_by_inner_steps": {
+            "1": -4.572493802449482,
+            "3": -4.572724189636577,
+            "10": -4.572765414423446,
+            "30": -4.572765140291773
+          },
+          "validation_selection_times": [
+            200
+          ],
+          "selected_by": "Measured validation log-power at t=200 only, all64 simulations"
+        },
+        "static_n64": {
+          "selected_inner_steps": 3,
+          "original_inner_steps": 3,
+          "beta": 1.0,
+          "stepsize": 0.0015625,
+          "measured_validation_db_by_inner_steps": {
+            "1": -4.392196434241859,
+            "3": -4.392279246751013,
+            "10": -4.392265970970079,
+            "30": -4.392265541411869
+          },
+          "validation_selection_times": [
+            200
+          ],
+          "selected_by": "Measured validation log-power at t=200 only, all64 simulations"
+        },
+        "static_n128": {
+          "selected_inner_steps": 10,
+          "original_inner_steps": 3,
+          "beta": 1.0,
+          "stepsize": 0.00078125,
+          "measured_validation_db_by_inner_steps": {
+            "1": -4.227799438187137,
+            "3": -4.229784528288123,
+            "10": -4.2300375412870155,
+            "30": -4.230005109767527
+          },
+          "validation_selection_times": [
+            200
+          ],
+          "selected_by": "Measured validation log-power at t=200 only, all64 simulations"
+        }
+      },
+      "gamma_equals_sqrt_beta": true,
+      "covariance_matches_Bingham": true,
+      "chordal_distance_and_squared_distance_distinguished": true,
+      "rayleigh_gap_chordal_bound_verified": true,
+      "independent_saved_observation_replay": [
+        {
+          "condition": "static",
+          "n": 64,
+          "simulation": 0,
+          "reporting_times": [
+            25,
+            50,
+            100,
+            200
+          ],
+          "independent_saved_observation_replay": true,
+          "maximum_gap_absolute_error": 0.0,
+          "maximum_chordal_absolute_error": 0.0,
+          "maximum_covariance_match_relative_error": 5.809219121464686e-16
+        }
+      ],
+      "operation_count_workloads": 8,
+      "diagnostic_eigensolves_excluded_from_timings": true,
+      "sign": "EW GREAT minus exact mode; positive power difference favors the exact mode.",
+      "timing": {
+        "status": "passed",
+        "manifest": {
+          "path": "results/beamforming_comparison_audit/stationary/objective/timing/manifest.json",
+          "sha256": "d0c405a1cbe804f2d17ac32ef08514c46a557c2e5a258c84230d77cf6df3bad1",
+          "outputs": 3,
+          "source_and_input_hashes": 15
+        },
+        "repetitions_per_workload": 7,
+        "raw_repetitions": 56,
+        "workloads": 8,
+        "scope": {
+          "warmups": 1,
+          "repetitions": 7,
+          "seed": 2026111101,
+          "blas_threads": 1,
+          "isolation_confirmed": true,
+          "workload": "All measurement updates and task decisions at the declared report indices",
+          "setup": "Observations/scaling prepared before clock; tracker initialization and phase instrumentation included",
+          "warmup_trajectory": "Original validation simulation0",
+          "timed_trajectory": "Original test simulation0",
+          "phase_units": "tracking_ms includes covariance+SGD or covariance+report-time EVD; decision_ms includes32 moving or4 stationary beamformer decisions",
+          "exact_mode": "One covariance update per measurement and eigensolve only at task reporting indices",
+          "excluded": "Stream generation, heldout/true scoring, objective and exact-reference diagnostics",
+          "objective_manifest_sha256": "c177c487d9c1a84f81dc8bc7180cdc5577d0f2e65dbbf42a83c46a0afcaacbdc"
+        },
+        "medians": [
+          {
+            "condition": "static",
+            "n": 32,
+            "T": 200,
+            "method": "great_ew",
+            "inner_steps": 3,
+            "repetitions": 7,
+            "median_ms": 79.35914301197045,
+            "p90_ms": 92.19715280923992
+          },
+          {
+            "condition": "static",
+            "n": 32,
+            "T": 200,
+            "method": "great_ew",
+            "inner_steps": 10,
+            "repetitions": 7,
+            "median_ms": 230.89495199383236,
+            "p90_ms": 244.92455519502982
+          },
+          {
+            "condition": "static",
+            "n": 32,
+            "T": 200,
+            "method": "mode_exact",
+            "inner_steps": 0,
+            "repetitions": 7,
+            "median_ms": 4.324964014813304,
+            "p90_ms": 7.536115206312389
+          },
+          {
+            "condition": "static",
+            "n": 64,
+            "T": 200,
+            "method": "great_ew",
+            "inner_steps": 3,
+            "repetitions": 7,
+            "median_ms": 77.78778197825886,
+            "p90_ms": 113.84312040172519
+          },
+          {
+            "condition": "static",
+            "n": 64,
+            "T": 200,
+            "method": "mode_exact",
+            "inner_steps": 0,
+            "repetitions": 7,
+            "median_ms": 12.765414983732626,
+            "p90_ms": 19.904882000992078
+          },
+          {
+            "condition": "static",
+            "n": 128,
+            "T": 200,
+            "method": "great_ew",
+            "inner_steps": 3,
+            "repetitions": 7,
+            "median_ms": 102.99866099376231,
+            "p90_ms": 111.65569481090643
+          },
+          {
+            "condition": "static",
+            "n": 128,
+            "T": 200,
+            "method": "great_ew",
+            "inner_steps": 10,
+            "repetitions": 7,
+            "median_ms": 239.3737199890893,
+            "p90_ms": 241.7460528027732
+          },
+          {
+            "condition": "static",
+            "n": 128,
+            "T": 200,
+            "method": "mode_exact",
+            "inner_steps": 0,
+            "repetitions": 7,
+            "median_ms": 45.925790996989235,
+            "p90_ms": 46.857008803635836
+          }
+        ]
+      }
+    }
+  },
+  "notebooks": {
+    "status": "passed",
+    "notebooks": {
+      "moving": {
+        "status": "passed",
+        "notebook": "notebooks/beamforming_moving_comparison_audit.ipynb",
+        "manifest": {
+          "path": "results/beamforming_comparison_audit/moving/figure_manifest.json",
+          "sha256": "18f52b47bab8d70e8db26abaa848b6d2cdebeee27711e5c65ba1f8d1dc44a05e",
+          "outputs": 2872,
+          "source_and_input_hashes": 22
+        },
+        "executed_code_cells": 14,
+        "editable_untiled_figures": [
+          {
+            "cell": 6,
+            "figure": "smooth_history"
+          },
+          {
+            "cell": 8,
+            "figure": "abrupt_history"
+          },
+          {
+            "cell": 10,
+            "figure": "paired_primary"
+          },
+          {
+            "cell": 14,
+            "figure": "posterior_mean_beta"
+          },
+          {
+            "cell": 17,
+            "figure": "ew_objective_gap"
+          },
+          {
+            "cell": 20,
+            "figure": "ew_task_power"
+          },
+          {
+            "cell": 23,
+            "figure": "computation_time"
+          }
+        ]
+      },
+      "stationary": {
+        "status": "passed",
+        "notebook": "notebooks/beamforming_stationary_comparison_audit.ipynb",
+        "manifest": {
+          "path": "results/beamforming_comparison_audit/stationary/figure_manifest.json",
+          "sha256": "a1aa8baff2400e19fd6fb6d9ad6b80f31ec1e5d98f5dbfdaf6c5e3f7605c7648",
+          "outputs": 5441,
+          "source_and_input_hashes": 32
+        },
+        "executed_code_cells": 14,
+        "editable_untiled_figures": [
+          {
+            "cell": 5,
+            "figure": "original_settings"
+          },
+          {
+            "cell": 7,
+            "figure": "final_time_selection"
+          },
+          {
+            "cell": 9,
+            "figure": "paired_final_time"
+          },
+          {
+            "cell": 12,
+            "figure": "posterior_mean_beta"
+          },
+          {
+            "cell": 15,
+            "figure": "ew_objective_gap"
+          },
+          {
+            "cell": 18,
+            "figure": "ew_task_power"
+          },
+          {
+            "cell": 21,
+            "figure": "computation_time"
+          }
+        ]
+      }
+    },
+    "pdf_and_preview_checks": {
+      "status": "passed",
+      "scopes": {
+        "moving": {
+          "status": "passed",
+          "figures": {
+            "smooth_history.pdf": {
+              "sha256": "7930f38ffcdf2a6c01404d375cf8a49120bf10c1ddb84cd1ab2d298c05511558",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 23,
+                  "fonts": [
+                    {
+                      "name": "CMEX10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMSY10",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 7,
+                    "24.9066": 3,
+                    "17.4345": 1,
+                    "21.9178": 5,
+                    "15.3424": 6,
+                    "10.9589": 1
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            },
+            "abrupt_history.pdf": {
+              "sha256": "4f8b71f93a0bcbd8fa7867b2c660bde3c59225d4a929344e13c0b53bdd838bba",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 24,
+                  "fonts": [
+                    {
+                      "name": "CMEX10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMSY10",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 7,
+                    "24.9066": 3,
+                    "17.4345": 1,
+                    "21.9178": 6,
+                    "15.3424": 6,
+                    "10.9589": 1
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            },
+            "paired_primary.pdf": {
+              "sha256": "08ced5acc5f92101004f21a6d39e3db62f69c9be1235ae62dafba42038e4d481",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 52,
+                  "fonts": [
+                    {
+                      "name": "CMEX10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMSY10",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 20,
+                    "24.9066": 9,
+                    "17.4345": 1,
+                    "21.9178": 12,
+                    "15.3424": 8,
+                    "10.9589": 2
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            },
+            "posterior_mean_beta.pdf": {
+              "sha256": "be2fa63a1979d4f05498ea1e31fd9837338fb57f89ae54078e18d3ae34b31c08",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 36,
+                  "fonts": [
+                    {
+                      "name": "CMEX10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMSY10",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 18,
+                    "24.9066": 6,
+                    "21.9178": 12
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            },
+            "ew_objective_gap.pdf": {
+              "sha256": "edb6995f129e4bd8a005ae11289aa89ef04da807a936f249361b63f2714db28e",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 39,
+                  "fonts": [
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 24,
+                    "24.9066": 1,
+                    "21.9178": 14
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            },
+            "ew_task_power.pdf": {
+              "sha256": "2788c5ff7a87bdf449f828b0697d184409045bd6f45fc4d059347ff238336ebb",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 59,
+                  "fonts": [
+                    {
+                      "name": "CMEX10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMSY10",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 27,
+                    "24.9066": 9,
+                    "17.4345": 2,
+                    "21.9178": 17,
+                    "15.3424": 4
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            },
+            "computation_time.pdf": {
+              "sha256": "3658dbb4c9bdf144401874569bbe871036af8c0f51758e4cb231d4e14c4d3460",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 24,
+                  "fonts": [
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 9,
+                    "24.9066": 1,
+                    "21.9178": 14
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            }
+          },
+          "count": 7
+        },
+        "stationary": {
+          "status": "passed",
+          "figures": {
+            "original_settings.pdf": {
+              "sha256": "581214f734ba7a4bac52e73a107e89545d62c97f85bb84194daa9a2a5ef8d0fe",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 29,
+                  "fonts": [
+                    {
+                      "name": "CMEX10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMSY10",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 12,
+                    "24.9066": 3,
+                    "17.4345": 1,
+                    "21.9178": 6,
+                    "15.3424": 6,
+                    "10.9589": 1
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            },
+            "final_time_selection.pdf": {
+              "sha256": "bf03ff49a99da751e9d1d8af207d2e1c7bf5e5ae35d3d2aa593a0dac72228392",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 32,
+                  "fonts": [
+                    {
+                      "name": "CMEX10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMSY10",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 12,
+                    "24.9066": 3,
+                    "17.4345": 1,
+                    "21.9178": 9,
+                    "15.3424": 6,
+                    "10.9589": 1
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            },
+            "paired_final_time.pdf": {
+              "sha256": "ec0cc528dc386d17bcb009e6363cfa4405530f7d9664bfdbdd8bf57e43b058fb",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 49,
+                  "fonts": [
+                    {
+                      "name": "CMEX10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMSY10",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 24,
+                    "24.9066": 9,
+                    "17.4345": 3,
+                    "21.9178": 8,
+                    "15.3424": 4,
+                    "10.9589": 1
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            },
+            "posterior_mean_beta.pdf": {
+              "sha256": "4b3c3ea37d42adea3b624b6cc1c23971b1d130fd553ab3967083ca539dc850cb",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 39,
+                  "fonts": [
+                    {
+                      "name": "CMEX10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMSY10",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 18,
+                    "24.9066": 6,
+                    "21.9178": 15
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            },
+            "ew_objective_gap.pdf": {
+              "sha256": "4fafa773bde36e164e982a63cca8a4dcd29bafa046dfd0bd48c2a6f4375ebc16",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 49,
+                  "fonts": [
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 21,
+                    "24.9066": 1,
+                    "17.4345": 1,
+                    "21.9178": 26
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            },
+            "ew_task_power.pdf": {
+              "sha256": "67b3b4d6e7b8b06444475649ccc2b7131d122acbe050aa2e65143b9e0822c3d6",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 65,
+                  "fonts": [
+                    {
+                      "name": "CMEX10",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMSY10",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 15,
+                    "24.9066": 9,
+                    "17.4345": 4,
+                    "12.4533": 1,
+                    "21.9178": 30,
+                    "15.3424": 6
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            },
+            "computation_time.pdf": {
+              "sha256": "66b80744af6c719f73a29cb57d5dbe176ac337435b56ffac587f729ad2f551ac",
+              "pages": [
+                {
+                  "page": 1,
+                  "figure_size_in": [
+                    15.0,
+                    5.0
+                  ],
+                  "vector_text_spans": 33,
+                  "fonts": [
+                    {
+                      "name": "CMMI12",
+                      "type": "Type1",
+                      "embedded": true
+                    },
+                    {
+                      "name": "CMR17",
+                      "type": "Type1",
+                      "embedded": true
+                    }
+                  ],
+                  "font_size_counts": {
+                    "22.9141": 6,
+                    "24.9066": 1,
+                    "21.9178": 26
+                  },
+                  "primary_font_readability": {
+                    "LABEL_FONT_SIZE": {
+                      "declared_pt": 25.0,
+                      "actual_pt": 24.9066,
+                      "six_inch_insertion_pt": 9.96264
+                    },
+                    "TICK_FONT_SIZE": {
+                      "declared_pt": 23.0,
+                      "actual_pt": 22.9141,
+                      "six_inch_insertion_pt": 9.16564
+                    },
+                    "LEGEND_FONT_SIZE": {
+                      "declared_pt": 22.0,
+                      "actual_pt": 21.9178,
+                      "six_inch_insertion_pt": 8.76712
+                    }
+                  },
+                  "raster_dpi": [],
+                  "out_of_page_text": [],
+                  "panel_letters": [],
+                  "errors": []
+                }
+              ],
+              "errors": [],
+              "preview": {
+                "pixels": [
+                  4500,
+                  1500
+                ],
+                "dpi": [
+                  299.9994,
+                  299.9994
+                ]
+              }
+            }
+          },
+          "count": 7
+        }
+      },
+      "scope": "Actual PDF dimensions, embedded vector LaTeX fonts, primary type size, page bounds, panel letters and preview pixels/dpi; no simulation, estimator or plotting is executed.",
+      "checker": "scripts/check_beamforming_comparison_audit.py",
+      "checker_sha256": "8b3900b1a37faa0e2b5ac0dd77ab2d9d7049cce634093272be6750b8032d612a"
+    }
+  },
+  "preservation": {
+    "status": "passed",
+    "tracked_files": 4054,
+    "proof_sha256": "e00c17965527c142fe22fa280eda9ce7e45a8ab13d39fefbb33fcdf987aab4d6",
+    "tracked": {
+      "status": "passed",
+      "files_checked": 4054,
+      "unchanged_files": 3937,
+      "authorized_presentation_updates": [
+        "notebooks/01_array.ipynb",
+        "notebooks/03_contact.ipynb",
+        "notebooks/beamforming_moving_interference.ipynb",
+        "notebooks/contact_prediction_diagnostics.ipynb",
+        "results/beamforming_moving/figure_manifest.json",
+        "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf",
+        "results/beamforming_moving/figures/moving_interference_abrupt_output_power.png",
+        "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf",
+        "results/beamforming_moving/figures/moving_interference_smooth_output_power.png",
+        "results/contact_prediction_diagnostics/figure_manifest.json",
+        "results/contact_prediction_diagnostics/figures/prediction_error_references.pdf",
+        "results/contact_prediction_diagnostics/figures/prediction_error_references.png",
+        "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf",
+        "results/contact_prediction_diagnostics/figures/prediction_error_sphere.png",
+        "results/contact_prediction_diagnostics/figures/prediction_error_stationary.pdf",
+        "results/contact_prediction_diagnostics/figures/prediction_error_stationary.png",
+        "results/contact_prediction_diagnostics/pdf_layout_checks.json",
+        "results/draft_figure_manifest.json",
+        "results/main/README.md",
+        "results/main/beamforming/moving_interference_abrupt_output_power.pdf",
+        "results/main/beamforming/moving_interference_abrupt_output_power.png",
+        "results/main/beamforming/moving_interference_smooth_output_power.pdf",
+        "results/main/beamforming/moving_interference_smooth_output_power.png",
+        "results/main/beamforming/noise_adaptation_page1.pdf",
+        "results/main/beamforming/noise_adaptation_page1.png",
+        "results/main/beamforming/task_performance_output_power.pdf",
+        "results/main/beamforming/task_performance_output_power.png",
+        "results/main/contact/information_rotation.pdf",
+        "results/main/contact/posterior_anisotropy_risk.pdf",
+        "results/main/contact/prediction_error_sphere.pdf",
+        "results/main/contact/prediction_error_sphere.png",
+        "results/main/contact/prediction_error_stationary.pdf",
+        "results/main/contact/prediction_error_stationary.png",
+        "results/main/contact/task_performance_page1.pdf",
+        "results/notebook_editability.json",
+        "results/supplementary/beamforming/additional_comparisons_supp_page1.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page2.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page3.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page4.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page5.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page6.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page7.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page8.pdf",
+        "results/supplementary/beamforming/block_updates_supp_page1.pdf",
+        "results/supplementary/beamforming/computation_time_phases.pdf",
+        "results/supplementary/beamforming/computation_time_scaling.pdf",
+        "results/supplementary/beamforming/computation_time_supp_page2.pdf",
+        "results/supplementary/beamforming/information_page1.pdf",
+        "results/supplementary/beamforming/model_mismatch_supp_page1.pdf",
+        "results/supplementary/beamforming/noise_adaptation_supp_page2.pdf",
+        "results/supplementary/beamforming/noise_adaptation_supp_page3.pdf",
+        "results/supplementary/beamforming/numerical_accuracy_supp_page1.pdf",
+        "results/supplementary/beamforming/numerical_accuracy_supp_page2.pdf",
+        "results/supplementary/beamforming/numerical_accuracy_supp_page3.pdf",
+        "results/supplementary/beamforming/paper_summary_supp_page1.pdf",
+        "results/supplementary/beamforming/posterior_anisotropy_eigenvalues.pdf",
+        "results/supplementary/beamforming/posterior_anisotropy_empirical_cdf.pdf",
+        "results/supplementary/beamforming/posterior_curvature_supp_page1.pdf",
+        "results/supplementary/beamforming/predictive_calibration_page2.pdf",
+        "results/supplementary/beamforming/predictive_calibration_page6.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page1.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page3.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page4.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page5.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page7.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page8.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page9.pdf",
+        "results/supplementary/beamforming/predictive_scores_supp_page1.pdf",
+        "results/supplementary/beamforming/setup_page1.pdf",
+        "results/supplementary/beamforming/stationary_dimensions_T200.pdf",
+        "results/supplementary/beamforming/stationary_dimensions_T200.png",
+        "results/supplementary/beamforming/task_performance_paired_difference.pdf",
+        "results/supplementary/beamforming/tracking_bound_supp_page1.pdf",
+        "results/supplementary/beamforming/tracking_bound_supp_page2.pdf",
+        "results/supplementary/beamforming/tracking_bound_supp_page3.pdf",
+        "results/supplementary/beamforming/tracking_bound_supp_page4.pdf",
+        "results/supplementary/beamforming/tracking_error_supp_page1.pdf",
+        "results/supplementary/beamforming/variance_estimation_supp_page1.pdf",
+        "results/supplementary/contact/additional_comparisons_supp_page1.pdf",
+        "results/supplementary/contact/additional_comparisons_supp_page2.pdf",
+        "results/supplementary/contact/additional_comparisons_supp_page3.pdf",
+        "results/supplementary/contact/additional_comparisons_supp_page4.pdf",
+        "results/supplementary/contact/block_updates_supp_page1.pdf",
+        "results/supplementary/contact/computation_time_phases.pdf",
+        "results/supplementary/contact/computation_time_scaling.pdf",
+        "results/supplementary/contact/computation_time_supp_page2.pdf",
+        "results/supplementary/contact/information_contours.pdf",
+        "results/supplementary/contact/model_mismatch_supp_page1.pdf",
+        "results/supplementary/contact/noise_adaptation_page1.pdf",
+        "results/supplementary/contact/noise_adaptation_supp_page2.pdf",
+        "results/supplementary/contact/noise_adaptation_supp_page4.pdf",
+        "results/supplementary/contact/numerical_accuracy_supp_page1.pdf",
+        "results/supplementary/contact/numerical_accuracy_supp_page2.pdf",
+        "results/supplementary/contact/numerical_accuracy_supp_page3.pdf",
+        "results/supplementary/contact/paper_summary_supp_page1.pdf",
+        "results/supplementary/contact/posterior_anisotropy_supp_page2.pdf",
+        "results/supplementary/contact/posterior_curvature_supp_page1.pdf",
+        "results/supplementary/contact/prediction_error_references.pdf",
+        "results/supplementary/contact/prediction_error_references.png",
+        "results/supplementary/contact/predictive_calibration_page2.pdf",
+        "results/supplementary/contact/predictive_calibration_page6.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page1.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page3.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page4.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page5.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page7.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page8.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page9.pdf",
+        "results/supplementary/contact/predictive_scores_supp_page1.pdf",
+        "results/supplementary/contact/setup_page1.pdf",
+        "results/supplementary/contact/task_performance_supp_page2.pdf",
+        "results/supplementary/contact/tracking_bound_supp_page1.pdf",
+        "results/supplementary/contact/tracking_bound_supp_page2.pdf",
+        "results/supplementary/contact/tracking_bound_supp_page3.pdf",
+        "results/supplementary/contact/tracking_bound_supp_page4.pdf",
+        "results/supplementary/contact/tracking_error_supp_page1.pdf",
+        "results/supplementary/contact/variance_estimation_supp_page1.pdf"
+      ],
+      "proof": "results/application_plotting_update/authorized_updates.json"
+    },
+    "local": {
+      "status": "passed",
+      "files_checked": 29162,
+      "unchanged_files": 28958,
+      "authorized_presentation_updates": [
+        "notebooks/01_array.ipynb",
+        "notebooks/03_contact.ipynb",
+        "notebooks/beamforming_moving_interference.ipynb",
+        "notebooks/contact_prediction_diagnostics.ipynb",
+        "results/beamforming_moving/figure_manifest.json",
+        "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf",
+        "results/beamforming_moving/figures/moving_interference_abrupt_output_power.png",
+        "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf",
+        "results/beamforming_moving/figures/moving_interference_smooth_output_power.png",
+        "results/contact_prediction_diagnostics/figure_manifest.json",
+        "results/contact_prediction_diagnostics/figures/prediction_error_references.pdf",
+        "results/contact_prediction_diagnostics/figures/prediction_error_references.png",
+        "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf",
+        "results/contact_prediction_diagnostics/figures/prediction_error_sphere.png",
+        "results/contact_prediction_diagnostics/figures/prediction_error_stationary.pdf",
+        "results/contact_prediction_diagnostics/figures/prediction_error_stationary.png",
+        "results/contact_prediction_diagnostics/pdf_layout_checks.json",
+        "results/draft_figure_manifest.json",
+        "results/main/README.md",
+        "results/main/beamforming/moving_interference_abrupt_output_power.pdf",
+        "results/main/beamforming/moving_interference_abrupt_output_power.png",
+        "results/main/beamforming/moving_interference_smooth_output_power.pdf",
+        "results/main/beamforming/moving_interference_smooth_output_power.png",
+        "results/main/beamforming/noise_adaptation_page1.pdf",
+        "results/main/beamforming/noise_adaptation_page1.png",
+        "results/main/beamforming/task_performance_output_power.pdf",
+        "results/main/beamforming/task_performance_output_power.png",
+        "results/main/contact/information_rotation.pdf",
+        "results/main/contact/posterior_anisotropy_risk.pdf",
+        "results/main/contact/prediction_error_sphere.pdf",
+        "results/main/contact/prediction_error_sphere.png",
+        "results/main/contact/prediction_error_stationary.pdf",
+        "results/main/contact/prediction_error_stationary.png",
+        "results/main/contact/task_performance_page1.pdf",
+        "results/notebook_editability.json",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page1.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page2.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page3.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page4.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page5.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page6.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page7.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page8.pdf",
+        "results/notebook_exports/01_array/block_updates_supp_page1.pdf",
+        "results/notebook_exports/01_array/computation_time_phases.pdf",
+        "results/notebook_exports/01_array/computation_time_scaling.pdf",
+        "results/notebook_exports/01_array/computation_time_supp_page2.pdf",
+        "results/notebook_exports/01_array/information_page1.pdf",
+        "results/notebook_exports/01_array/model_mismatch_supp_page1.pdf",
+        "results/notebook_exports/01_array/noise_adaptation_page1.pdf",
+        "results/notebook_exports/01_array/noise_adaptation_page1.png",
+        "results/notebook_exports/01_array/noise_adaptation_supp_page2.pdf",
+        "results/notebook_exports/01_array/noise_adaptation_supp_page3.pdf",
+        "results/notebook_exports/01_array/numerical_accuracy_supp_page1.pdf",
+        "results/notebook_exports/01_array/numerical_accuracy_supp_page2.pdf",
+        "results/notebook_exports/01_array/numerical_accuracy_supp_page3.pdf",
+        "results/notebook_exports/01_array/paper_summary_supp_page1.pdf",
+        "results/notebook_exports/01_array/posterior_anisotropy_eigenvalues.pdf",
+        "results/notebook_exports/01_array/posterior_anisotropy_empirical_cdf.pdf",
+        "results/notebook_exports/01_array/posterior_curvature_supp_page1.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_page2.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_page6.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page1.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page3.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page4.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page5.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page7.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page8.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page9.pdf",
+        "results/notebook_exports/01_array/predictive_scores_supp_page1.pdf",
+        "results/notebook_exports/01_array/setup_page1.pdf",
+        "results/notebook_exports/01_array/stationary_dimensions_T200.pdf",
+        "results/notebook_exports/01_array/stationary_dimensions_T200.png",
+        "results/notebook_exports/01_array/task_performance_output_power.pdf",
+        "results/notebook_exports/01_array/task_performance_output_power.png",
+        "results/notebook_exports/01_array/task_performance_paired_difference.pdf",
+        "results/notebook_exports/01_array/tracking_bound_supp_page1.pdf",
+        "results/notebook_exports/01_array/tracking_bound_supp_page2.pdf",
+        "results/notebook_exports/01_array/tracking_bound_supp_page3.pdf",
+        "results/notebook_exports/01_array/tracking_bound_supp_page4.pdf",
+        "results/notebook_exports/01_array/tracking_error_supp_page1.pdf",
+        "results/notebook_exports/01_array/variance_estimation_supp_page1.pdf",
+        "results/notebook_exports/03_contact/additional_comparisons_supp_page1.pdf",
+        "results/notebook_exports/03_contact/additional_comparisons_supp_page2.pdf",
+        "results/notebook_exports/03_contact/additional_comparisons_supp_page3.pdf",
+        "results/notebook_exports/03_contact/additional_comparisons_supp_page4.pdf",
+        "results/notebook_exports/03_contact/block_updates_supp_page1.pdf",
+        "results/notebook_exports/03_contact/computation_time_phases.pdf",
+        "results/notebook_exports/03_contact/computation_time_scaling.pdf",
+        "results/notebook_exports/03_contact/computation_time_supp_page2.pdf",
+        "results/notebook_exports/03_contact/information_contours.pdf",
+        "results/notebook_exports/03_contact/information_rotation.pdf",
+        "results/notebook_exports/03_contact/model_mismatch_supp_page1.pdf",
+        "results/notebook_exports/03_contact/noise_adaptation_page1.pdf",
+        "results/notebook_exports/03_contact/noise_adaptation_supp_page2.pdf",
+        "results/notebook_exports/03_contact/noise_adaptation_supp_page4.pdf",
+        "results/notebook_exports/03_contact/numerical_accuracy_supp_page1.pdf",
+        "results/notebook_exports/03_contact/numerical_accuracy_supp_page2.pdf",
+        "results/notebook_exports/03_contact/numerical_accuracy_supp_page3.pdf",
+        "results/notebook_exports/03_contact/paper_summary_supp_page1.pdf",
+        "results/notebook_exports/03_contact/posterior_anisotropy_risk.pdf",
+        "results/notebook_exports/03_contact/posterior_anisotropy_supp_page2.pdf",
+        "results/notebook_exports/03_contact/posterior_curvature_supp_page1.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_page2.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_page6.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page1.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page3.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page4.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page5.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page7.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page8.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page9.pdf",
+        "results/notebook_exports/03_contact/predictive_scores_supp_page1.pdf",
+        "results/notebook_exports/03_contact/setup_page1.pdf",
+        "results/notebook_exports/03_contact/task_performance_page1.pdf",
+        "results/notebook_exports/03_contact/task_performance_supp_page2.pdf",
+        "results/notebook_exports/03_contact/tracking_bound_supp_page1.pdf",
+        "results/notebook_exports/03_contact/tracking_bound_supp_page2.pdf",
+        "results/notebook_exports/03_contact/tracking_bound_supp_page3.pdf",
+        "results/notebook_exports/03_contact/tracking_bound_supp_page4.pdf",
+        "results/notebook_exports/03_contact/tracking_error_supp_page1.pdf",
+        "results/notebook_exports/03_contact/variance_estimation_supp_page1.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page1.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page2.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page3.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page4.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page5.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page6.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page7.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page8.pdf",
+        "results/supplementary/beamforming/block_updates_supp_page1.pdf",
+        "results/supplementary/beamforming/computation_time_phases.pdf",
+        "results/supplementary/beamforming/computation_time_scaling.pdf",
+        "results/supplementary/beamforming/computation_time_supp_page2.pdf",
+        "results/supplementary/beamforming/information_page1.pdf",
+        "results/supplementary/beamforming/model_mismatch_supp_page1.pdf",
+        "results/supplementary/beamforming/noise_adaptation_supp_page2.pdf",
+        "results/supplementary/beamforming/noise_adaptation_supp_page3.pdf",
+        "results/supplementary/beamforming/numerical_accuracy_supp_page1.pdf",
+        "results/supplementary/beamforming/numerical_accuracy_supp_page2.pdf",
+        "results/supplementary/beamforming/numerical_accuracy_supp_page3.pdf",
+        "results/supplementary/beamforming/paper_summary_supp_page1.pdf",
+        "results/supplementary/beamforming/posterior_anisotropy_eigenvalues.pdf",
+        "results/supplementary/beamforming/posterior_anisotropy_empirical_cdf.pdf",
+        "results/supplementary/beamforming/posterior_curvature_supp_page1.pdf",
+        "results/supplementary/beamforming/predictive_calibration_page2.pdf",
+        "results/supplementary/beamforming/predictive_calibration_page6.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page1.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page3.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page4.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page5.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page7.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page8.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page9.pdf",
+        "results/supplementary/beamforming/predictive_scores_supp_page1.pdf",
+        "results/supplementary/beamforming/setup_page1.pdf",
+        "results/supplementary/beamforming/stationary_dimensions_T200.pdf",
+        "results/supplementary/beamforming/stationary_dimensions_T200.png",
+        "results/supplementary/beamforming/task_performance_paired_difference.pdf",
+        "results/supplementary/beamforming/tracking_bound_supp_page1.pdf",
+        "results/supplementary/beamforming/tracking_bound_supp_page2.pdf",
+        "results/supplementary/beamforming/tracking_bound_supp_page3.pdf",
+        "results/supplementary/beamforming/tracking_bound_supp_page4.pdf",
+        "results/supplementary/beamforming/tracking_error_supp_page1.pdf",
+        "results/supplementary/beamforming/variance_estimation_supp_page1.pdf",
+        "results/supplementary/contact/additional_comparisons_supp_page1.pdf",
+        "results/supplementary/contact/additional_comparisons_supp_page2.pdf",
+        "results/supplementary/contact/additional_comparisons_supp_page3.pdf",
+        "results/supplementary/contact/additional_comparisons_supp_page4.pdf",
+        "results/supplementary/contact/block_updates_supp_page1.pdf",
+        "results/supplementary/contact/computation_time_phases.pdf",
+        "results/supplementary/contact/computation_time_scaling.pdf",
+        "results/supplementary/contact/computation_time_supp_page2.pdf",
+        "results/supplementary/contact/information_contours.pdf",
+        "results/supplementary/contact/model_mismatch_supp_page1.pdf",
+        "results/supplementary/contact/noise_adaptation_page1.pdf",
+        "results/supplementary/contact/noise_adaptation_supp_page2.pdf",
+        "results/supplementary/contact/noise_adaptation_supp_page4.pdf",
+        "results/supplementary/contact/numerical_accuracy_supp_page1.pdf",
+        "results/supplementary/contact/numerical_accuracy_supp_page2.pdf",
+        "results/supplementary/contact/numerical_accuracy_supp_page3.pdf",
+        "results/supplementary/contact/paper_summary_supp_page1.pdf",
+        "results/supplementary/contact/posterior_anisotropy_supp_page2.pdf",
+        "results/supplementary/contact/posterior_curvature_supp_page1.pdf",
+        "results/supplementary/contact/prediction_error_references.pdf",
+        "results/supplementary/contact/prediction_error_references.png",
+        "results/supplementary/contact/predictive_calibration_page2.pdf",
+        "results/supplementary/contact/predictive_calibration_page6.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page1.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page3.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page4.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page5.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page7.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page8.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page9.pdf",
+        "results/supplementary/contact/predictive_scores_supp_page1.pdf",
+        "results/supplementary/contact/setup_page1.pdf",
+        "results/supplementary/contact/task_performance_supp_page2.pdf",
+        "results/supplementary/contact/tracking_bound_supp_page1.pdf",
+        "results/supplementary/contact/tracking_bound_supp_page2.pdf",
+        "results/supplementary/contact/tracking_bound_supp_page3.pdf",
+        "results/supplementary/contact/tracking_bound_supp_page4.pdf",
+        "results/supplementary/contact/tracking_error_supp_page1.pdf",
+        "results/supplementary/contact/variance_estimation_supp_page1.pdf"
+      ],
+      "proof": "results/application_plotting_update/authorized_updates.json",
+      "files": 29162,
+      "sha256": "43e4b71d61ae21773eb51a1164b82cfb2374c5e78917f001095634e5c30c548b"
+    }
+  },
+  "checker": "scripts/check_beamforming_comparison_audit.py",
+  "checker_sha256": "8b3900b1a37faa0e2b5ac0dd77ab2d9d7049cce634093272be6750b8032d612a"
+}

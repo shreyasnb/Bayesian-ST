@@ -140,7 +140,16 @@ def verify_display_audits(example):
     verify_mapping(folder, {name: record['sha256'] for name, record in exported['previews'].items()})
     curated = exported['curated_exports']
     assert curated['status'] == 'passed' and not curated['errors']
-    assert curated['manifest_sha256'] == sha(ROOT / 'results/draft_figure_manifest.json')
+    current_draft=ROOT/'results/draft_figure_manifest.json'
+    if curated['manifest_sha256'] != sha(current_draft):
+        # This immutable audit covers the retained canonical PDF copies. Later
+        # notebook-only presentation changes do not rebind its producer or data.
+        archived=ROOT/'archive/d39498a/presentation_before_update/results/draft_figure_manifest.json'
+        assert archived.is_file() and sha(archived)==curated['manifest_sha256']
+        before=json.loads(archived.read_text())
+        current=json.loads(current_draft.read_text())
+        assert before['files']==current['files'], 'Canonical exports need a fresh layout audit if changed'
+        assert before['source_figure_manifests']==current['source_figure_manifests']
     verify_mapping(ROOT, {name: record['sha256'] for name, record in curated['files'].items()})
     return dict(status='verified', laws_checked=geometry['laws_checked'],
                 unchanged_file_counts=preservation['unchanged_file_counts'],

@@ -1,0 +1,80 @@
+{
+  "status": "completed",
+  "producer": "scripts/update_contact_plotting_addendum.py",
+  "source_hashes": {
+    "scripts/update_contact_plotting_addendum.py": "32426b18728ffc940971e146e75f850720025eb70233a43222a71c408c280ab3",
+    "scripts/notebook_plot_cells_contact.py": "859aaadf09c5b2805d3825d16c13ccf6908c381ec176bdd44ca913f25b0a8a57",
+    "scripts/make_contact_prediction_diagnostics_notebook.py": "3cb4b9a5fc33dd9030d46f23590180c182933ab6448cbb5d1304b20b56661163"
+  },
+  "input_hashes": {
+    "results/contact/data/paper/performance/manifest.json": "73d1be8e70beca6aaf76a50300c8f8653c0ce973c6fc97f9b8932ddd4dbd2044",
+    "results/contact/data/paper/performance/selected.json": "0548b0e434a3c1cf278d8b1e29593e2533a9c9da0b96e5dfcec424e03b2a3c57",
+    "results/contact/data/paper/performance/story.npz": "d86191c85660423022e0c9bb0e49269e2a59ac531c666a3afe77aa40a228eebc",
+    "results/contact/tables/paper/performance/metrics.csv": "6fbf39129be8b26863f972f57dd2448cb67827881e129951fa87cacd0a4a5367",
+    "results/contact/tables/paper/performance/paired.csv": "2a9e0d9023e3ae9cf97b337556da4af605535e841289470788d7de87c485ba45",
+    "results/contact/tables/paper/performance/validation.csv": "d8887f78810e98a8cea13c156eed4995c4668354b33bf7508a29291d3acb98d2",
+    "lib/final_contact.py": "9a390626ba3aad533ce81b28c5055759cd79f3ebed41d68881580994ed7aa8c9",
+    "scripts/run_final_contact.py": "a698c1ae99f82614649a1ef89f0cdeab5c7711ddc026b175be2d2c6bb7335dd1",
+    "tests/test_final_contact.py": "fd09685a57a58054c4e3e3b866a14cde44baf5e19deb91ae1867e61c045ed5a7",
+    "lib/final_theory.py": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57",
+    "lib/models.py": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e",
+    "lib/geometry.py": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7",
+    "lib/contact_mechanics.py": "3650dce959ae57e4b3f672b2f7893227b92a890c6bbaa2f83865de75146809ef",
+    "lib/contact_posterior.py": "6f3b1a296c6b065deb48c692679024cf2ac67fcfb7f5ac0363896078479e1d1e",
+    "lib/contact_process_prediction.py": "64c69d506fda83a83833cfe37898d8b4ef4b7707194b3b3bc82f703f9b868ae6",
+    "lib/spectral_series.py": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "benchmarks/common/__init__.py": "1b45903cc938c76c7b9f44eae5fcf1115e0b3b805237acedb399ee3e4f9815d6",
+    "results/contact/data/paper/performance/anisotropy.npz": "d3e7afc0ff19d80534c7385a4ee71956b883bb5a371f8c7f8602ee6685eec311"
+  },
+  "outputs": {
+    "notebooks/03_contact.ipynb": "292225145b174378d6590cb11db7e156946a58c091c163a26d70e20f1aaf5858",
+    "notebooks/contact_prediction_diagnostics.ipynb": "aa799475127e47c53b07be92430a78c927f6101c2e4f8886d02b118ce28229d1",
+    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf": "8e01b2ba63a27f8ec6075d3d069c5f8bfe7358532b38fb4c8c6e8f71a8566395",
+    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.png": "1ebf109cc2a2a37ed8fe9ee3a8e2daa4f201823702433ea24587c834189f8081",
+    "results/main/contact/posterior_anisotropy_risk.pdf": "deca3a45ab8c70fd9dcf848d3ab9c92b46f47b7460e77fdc29790840b3aa5c6b",
+    "results/main/contact/posterior_anisotropy_risk.png": "19cc38ac5fc33c3dd27e37fe8086d79aac75ad2ebdbddffbecf5b35c2d9e3655",
+    "results/main/contact/prediction_error_sphere.pdf": "8e01b2ba63a27f8ec6075d3d069c5f8bfe7358532b38fb4c8c6e8f71a8566395",
+    "results/main/contact/prediction_error_sphere.png": "1ebf109cc2a2a37ed8fe9ee3a8e2daa4f201823702433ea24587c834189f8081",
+    "results/notebook_exports/03_contact/posterior_anisotropy_risk.pdf": "deca3a45ab8c70fd9dcf848d3ab9c92b46f47b7460e77fdc29790840b3aa5c6b",
+    "results/notebook_exports/03_contact/posterior_anisotropy_risk.png": "19cc38ac5fc33c3dd27e37fe8086d79aac75ad2ebdbddffbecf5b35c2d9e3655"
+  },
+  "report_path": "results/contact_plotting_addendum/report.json",
+  "report_sha256": "34ff76466930392c3533e8e77f112c92ebbd6c3b3195429420de31cadae8cf29",
+  "plotting": {
+    "dpi": 300,
+    "figure_size_in": [
+      15,
+      5
+    ],
+    "text_usetex": true
+  },
+  "checks": {
+    "identity_episode_average_gain": 2.6548246409743737,
+    "identity_episode_average_lower": 2.095611015675944,
+    "identity_episode_average_upper": 3.2140382662728033,
+    "simulations": 256,
+    "averaging_source": "Existing paired_episode_average_summary at endpoint episode_average, t192; all 48 action times, not the six plotted checkpoints.",
+    "first_static_sphere_source_sha256": "c615ab6bb8e7b16c5987e7981a48b67eec11b53fe42ecdc82e2a82c55e53d357",
+    "first_static_sphere_output_sha256": "5c8cc3907325e34016a4a91eb9c864a786648c8f5a83b37280ee6bb8639c2188",
+    "query_family": 0,
+    "query_definition": "v(theta)=v0*(cos(theta)*e1+sin(theta)*e2)",
+    "risk_definition": "Saved unit-input risks directly equal r_t(v(theta))/v0^2; no rescaling.",
+    "directional_risk_endpoints": [
+      {
+        "theta": 0.0,
+        "risk_full": 0.019462209657903684,
+        "risk_isotropic": 0.08842183901123923
+      },
+      {
+        "theta": 1.5707963267948966,
+        "risk_full": 0.14346703590668408,
+        "risk_isotropic": 0.09824824499508511
+      }
+    ],
+    "new_simulations": 0,
+    "new_parameter_selections": 0,
+    "new_posterior_fits": 0
+  },
+  "provenance": "Independent presentation addendum. Existing data/figure manifests are intentionally unchanged; this manifest records only the authorized plot update."
+}

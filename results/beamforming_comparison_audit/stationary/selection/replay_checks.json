@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "dimensions": [
+    32,
+    64,
+    128
+  ],
+  "T": 200,
+  "t": 200,
+  "validation_simulations_per_dimension": 64,
+  "test_simulations_per_dimension": 256,
+  "great_candidates_per_dimension": {
+    "32": 30,
+    "64": 30,
+    "128": 30
+  },
+  "full_history_window": 200,
+  "full_history_control_separate": true,
+  "candidate_selection_uses_final_measured_db_only": true,
+  "selection_frozen_before_test": true,
+  "old_mean_mode_isotropic_values_preserved": true,
+  "all_original_methods_retained": 10,
+  "additional_methods": 4,
+  "new_test_records": 3072,
+  "maximum_mode_replay_error_db": 6.050715484207103e-15,
+  "maximum_old_great_window_replay_error_db": 1.1102230246251565e-16,
+  "maximum_old_great_ew_replay_error_db": 9.71445146547012e-17,
+  "maximum_old_covariance_loading_replay_error_db": 3.9968028886505635e-15,
+  "exact_saved_n64_story_measurements_replayed": true,
+  "disjoint_validation_test_replay_hashes": true,
+  "initial_and_observation_hashes_recorded": true,
+  "all_test_methods_resolved": true,
+  "maximum_unit_gain_error": 4.449557262054372e-16,
+  "moment_and_normalizer_recomputations": 0,
+  "old_files_written": 0,
+  "timing_scope": "Concurrent execution metadata; no computational benchmark claim",
+  "total_seconds": 628.4659508470213
+}

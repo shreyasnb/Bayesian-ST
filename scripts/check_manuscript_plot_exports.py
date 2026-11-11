@@ -37,6 +37,7 @@ MAIN_PANELS = {
     ('beamforming', 'noise_adaptation_page1.pdf'): [],
     ('beamforming', 'moving_interference_smooth_output_power.pdf'): [],
     ('beamforming', 'moving_interference_abrupt_output_power.pdf'): [],
+    ('beamforming', 'moving_interference_comparison.pdf'): [],
     ('contact', 'information_rotation.pdf'): [],
     ('contact', 'task_performance_page1.pdf'): [],
     ('contact', 'posterior_anisotropy_spheres.pdf'): [],

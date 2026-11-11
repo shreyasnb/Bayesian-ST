@@ -1,0 +1,1409 @@
+{
+  "status": "passed",
+  "scopes": {
+    "moving": {
+      "executed_code_cells": 14,
+      "inline_figures": 7,
+      "files": [
+        {
+          "figure": "smooth_history",
+          "pdf": {
+            "sha256": "7930f38ffcdf2a6c01404d375cf8a49120bf10c1ddb84cd1ab2d298c05511558",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 23,
+                "fonts": [
+                  {
+                    "name": "CMEX10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMSY10",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 7,
+                  "24.9066": 3,
+                  "17.4345": 1,
+                  "21.9178": 5,
+                  "15.3424": 6,
+                  "10.9589": 1
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              58.392147064208984,
+              184.36109924316406,
+              58.392147064208984,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              184.36109924316406,
+              1068.47998046875,
+              12.959991455078125
+            ],
+            [
+              58.392147064208984,
+              184.36109924316406,
+              1068.47998046875,
+              184.36109924316406
+            ],
+            [
+              58.392147064208984,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": {
+            "actual_saved_points_unchanged": true,
+            "student_band_endpoints_unchanged": true,
+            "marker_offsets_only": true
+          }
+        },
+        {
+          "figure": "abrupt_history",
+          "pdf": {
+            "sha256": "4f8b71f93a0bcbd8fa7867b2c660bde3c59225d4a929344e13c0b53bdd838bba",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 24,
+                "fonts": [
+                  {
+                    "name": "CMEX10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMSY10",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 7,
+                  "24.9066": 3,
+                  "17.4345": 1,
+                  "21.9178": 6,
+                  "15.3424": 6,
+                  "10.9589": 1
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              58.392147064208984,
+              184.36109924316406,
+              58.392147064208984,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              184.36109924316406,
+              1068.47998046875,
+              12.959991455078125
+            ],
+            [
+              58.392147064208984,
+              184.36109924316406,
+              1068.47998046875,
+              184.36109924316406
+            ],
+            [
+              58.392147064208984,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": {
+            "actual_saved_points_unchanged": true,
+            "student_band_endpoints_unchanged": true,
+            "marker_offsets_only": true
+          }
+        },
+        {
+          "figure": "paired_primary",
+          "pdf": {
+            "sha256": "08ced5acc5f92101004f21a6d39e3db62f69c9be1235ae62dafba42038e4d481",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 52,
+                "fonts": [
+                  {
+                    "name": "CMEX10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMSY10",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 20,
+                  "24.9066": 9,
+                  "17.4345": 1,
+                  "21.9178": 12,
+                  "15.3424": 8,
+                  "10.9589": 2
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              383.0560302734375,
+              283.87249755859375,
+              383.0560302734375,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              283.87249755859375,
+              1068.47998046875,
+              12.959991455078125
+            ],
+            [
+              383.0560302734375,
+              283.87249755859375,
+              1068.47998046875,
+              283.87249755859375
+            ],
+            [
+              383.0560302734375,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": null
+        },
+        {
+          "figure": "posterior_mean_beta",
+          "pdf": {
+            "sha256": "be2fa63a1979d4f05498ea1e31fd9837338fb57f89ae54078e18d3ae34b31c08",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 36,
+                "fonts": [
+                  {
+                    "name": "CMEX10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMSY10",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 18,
+                  "24.9066": 6,
+                  "21.9178": 12
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              81.8406982421875,
+              223.6331024169922,
+              81.8406982421875,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              223.6331024169922,
+              1068.47998046875,
+              12.959991455078125
+            ],
+            [
+              81.8406982421875,
+              223.6331024169922,
+              1068.47998046875,
+              223.6331024169922
+            ],
+            [
+              81.8406982421875,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": null
+        },
+        {
+          "figure": "ew_objective_gap",
+          "pdf": {
+            "sha256": "edb6995f129e4bd8a005ae11289aa89ef04da807a936f249361b63f2714db28e",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 39,
+                "fonts": [
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 24,
+                  "24.9066": 1,
+                  "21.9178": 14
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              296.9498596191406,
+              293.0296936035156,
+              296.9498596191406,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              293.0296936035156,
+              1068.47998046875,
+              12.959991455078125
+            ],
+            [
+              296.9498596191406,
+              293.0296936035156,
+              1068.47998046875,
+              293.0296936035156
+            ],
+            [
+              296.9498596191406,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": null
+        },
+        {
+          "figure": "ew_task_power",
+          "pdf": {
+            "sha256": "2788c5ff7a87bdf449f828b0697d184409045bd6f45fc4d059347ff238336ebb",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 59,
+                "fonts": [
+                  {
+                    "name": "CMEX10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMSY10",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 27,
+                  "24.9066": 9,
+                  "17.4345": 2,
+                  "21.9178": 17,
+                  "15.3424": 4
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              296.9498596191406,
+              224.91001892089844,
+              296.9498596191406,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              224.91001892089844,
+              1068.47998046875,
+              12.959991455078125
+            ],
+            [
+              296.9498596191406,
+              224.91001892089844,
+              1068.47998046875,
+              224.91001892089844
+            ],
+            [
+              296.9498596191406,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": null
+        },
+        {
+          "figure": "computation_time",
+          "pdf": {
+            "sha256": "3658dbb4c9bdf144401874569bbe871036af8c0f51758e4cb231d4e14c4d3460",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 24,
+                "fonts": [
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 9,
+                  "24.9066": 1,
+                  "21.9178": 14
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              296.9498596191406,
+              290.30712890625,
+              296.9498596191406,
+              12.959991455078125
+            ],
+            [
+              1063.3604736328125,
+              290.30712890625,
+              1063.3604736328125,
+              12.959991455078125
+            ],
+            [
+              296.9498596191406,
+              290.30712890625,
+              1063.3604736328125,
+              290.30712890625
+            ],
+            [
+              296.9498596191406,
+              12.959991455078125,
+              1063.3604736328125,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": null
+        }
+      ]
+    },
+    "stationary": {
+      "executed_code_cells": 14,
+      "inline_figures": 7,
+      "files": [
+        {
+          "figure": "original_settings",
+          "pdf": {
+            "sha256": "581214f734ba7a4bac52e73a107e89545d62c97f85bb84194daa9a2a5ef8d0fe",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 29,
+                "fonts": [
+                  {
+                    "name": "CMEX10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMSY10",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 12,
+                  "24.9066": 3,
+                  "17.4345": 1,
+                  "21.9178": 6,
+                  "15.3424": 6,
+                  "10.9589": 1
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              85.6421127319336,
+              184.36109924316406,
+              85.6421127319336,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              184.36109924316406,
+              1068.47998046875,
+              12.959991455078125
+            ],
+            [
+              85.6421127319336,
+              184.36109924316406,
+              1068.47998046875,
+              184.36109924316406
+            ],
+            [
+              85.6421127319336,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": null
+        },
+        {
+          "figure": "final_time_selection",
+          "pdf": {
+            "sha256": "bf03ff49a99da751e9d1d8af207d2e1c7bf5e5ae35d3d2aa593a0dac72228392",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 32,
+                "fonts": [
+                  {
+                    "name": "CMEX10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMSY10",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 12,
+                  "24.9066": 3,
+                  "17.4345": 1,
+                  "21.9178": 9,
+                  "15.3424": 6,
+                  "10.9589": 1
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              85.6421127319336,
+              184.36109924316406,
+              85.6421127319336,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              184.36109924316406,
+              1068.47998046875,
+              12.959991455078125
+            ],
+            [
+              85.6421127319336,
+              184.36109924316406,
+              1068.47998046875,
+              184.36109924316406
+            ],
+            [
+              85.6421127319336,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": null
+        },
+        {
+          "figure": "paired_final_time",
+          "pdf": {
+            "sha256": "ec0cc528dc386d17bcb009e6363cfa4405530f7d9664bfdbdd8bf57e43b058fb",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 49,
+                "fonts": [
+                  {
+                    "name": "CMEX10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMSY10",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 24,
+                  "24.9066": 9,
+                  "17.4345": 3,
+                  "21.9178": 8,
+                  "15.3424": 4,
+                  "10.9589": 1
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              300.9231872558594,
+              283.87249755859375,
+              300.9231872558594,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              283.87249755859375,
+              1068.47998046875,
+              12.959991455078125
+            ],
+            [
+              300.9231872558594,
+              283.87249755859375,
+              1068.47998046875,
+              283.87249755859375
+            ],
+            [
+              300.9231872558594,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": null
+        },
+        {
+          "figure": "posterior_mean_beta",
+          "pdf": {
+            "sha256": "4b3c3ea37d42adea3b624b6cc1c23971b1d130fd553ab3967083ca539dc850cb",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 39,
+                "fonts": [
+                  {
+                    "name": "CMEX10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMSY10",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 18,
+                  "24.9066": 6,
+                  "21.9178": 15
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              81.8406982421875,
+              223.6331024169922,
+              81.8406982421875,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              223.6331024169922,
+              1068.47998046875,
+              12.959991455078125
+            ],
+            [
+              81.8406982421875,
+              223.6331024169922,
+              1068.47998046875,
+              223.6331024169922
+            ],
+            [
+              81.8406982421875,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": null
+        },
+        {
+          "figure": "ew_objective_gap",
+          "pdf": {
+            "sha256": "4fafa773bde36e164e982a63cca8a4dcd29bafa046dfd0bd48c2a6f4375ebc16",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 49,
+                "fonts": [
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 21,
+                  "24.9066": 1,
+                  "17.4345": 1,
+                  "21.9178": 26
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              300.11553955078125,
+              293.0296936035156,
+              300.11553955078125,
+              12.959991455078125
+            ],
+            [
+              1053.0009765625,
+              293.0296936035156,
+              1053.0009765625,
+              12.959991455078125
+            ],
+            [
+              300.11553955078125,
+              293.0296936035156,
+              1053.0009765625,
+              293.0296936035156
+            ],
+            [
+              300.11553955078125,
+              12.959991455078125,
+              1053.0009765625,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": null
+        },
+        {
+          "figure": "ew_task_power",
+          "pdf": {
+            "sha256": "67b3b4d6e7b8b06444475649ccc2b7131d122acbe050aa2e65143b9e0822c3d6",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 65,
+                "fonts": [
+                  {
+                    "name": "CMEX10",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMSY10",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 15,
+                  "24.9066": 9,
+                  "17.4345": 4,
+                  "12.4533": 1,
+                  "21.9178": 30,
+                  "15.3424": 6
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              300.11553955078125,
+              222.2948455810547,
+              300.11553955078125,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              222.2948455810547,
+              1068.47998046875,
+              12.959991455078125
+            ],
+            [
+              300.11553955078125,
+              222.2948455810547,
+              1068.47998046875,
+              222.2948455810547
+            ],
+            [
+              300.11553955078125,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": null
+        },
+        {
+          "figure": "computation_time",
+          "pdf": {
+            "sha256": "66b80744af6c719f73a29cb57d5dbe176ac337435b56ffac587f729ad2f551ac",
+            "pages": [
+              {
+                "page": 1,
+                "figure_size_in": [
+                  15.0,
+                  5.0
+                ],
+                "vector_text_spans": 33,
+                "fonts": [
+                  {
+                    "name": "CMMI12",
+                    "type": "Type1",
+                    "embedded": true
+                  },
+                  {
+                    "name": "CMR17",
+                    "type": "Type1",
+                    "embedded": true
+                  }
+                ],
+                "font_size_counts": {
+                  "22.9141": 6,
+                  "24.9066": 1,
+                  "21.9178": 26
+                },
+                "primary_font_readability": {
+                  "LABEL_FONT_SIZE": {
+                    "declared_pt": 25,
+                    "actual_pt": 24.9066,
+                    "six_inch_insertion_pt": 9.96264
+                  },
+                  "TICK_FONT_SIZE": {
+                    "declared_pt": 23,
+                    "actual_pt": 22.9141,
+                    "six_inch_insertion_pt": 9.16564
+                  },
+                  "LEGEND_FONT_SIZE": {
+                    "declared_pt": 22,
+                    "actual_pt": 21.9178,
+                    "six_inch_insertion_pt": 8.76712
+                  }
+                },
+                "raster_dpi": [],
+                "out_of_page_text": [],
+                "panel_letters": [],
+                "errors": []
+              }
+            ],
+            "errors": []
+          },
+          "actual_vector_frame_segments": [
+            [
+              300.11553955078125,
+              290.30712890625,
+              300.11553955078125,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              290.30712890625,
+              1068.47998046875,
+              12.959991455078125
+            ],
+            [
+              300.11553955078125,
+              290.30712890625,
+              1068.47998046875,
+              290.30712890625
+            ],
+            [
+              300.11553955078125,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "artist_frame": true,
+          "artist_inward_ticks_all_sides": true,
+          "no_top_right_labels": true,
+          "raw_history_check": null
+        }
+      ]
+    }
+  }
+}

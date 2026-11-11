@@ -355,3 +355,28 @@ Direction and noise events use t=129 and a single legend entry. The noise
 step, pre-measurement estimates, exact power and mixture predictive densities
 retain their existing numerical records; the new moving notebook never
 writes the noise figure.
+
+## Application plotting and separate comparison audit
+
+The editable moving notebook now also exports a compact 7-by-3.5-inch
+smooth/abrupt comparison with one shared legend. Its mean curves are unchanged;
+all four methods have empirical pointwise 25th–75th percentile bands computed
+from the 256 saved simulations. Student confidence intervals remain in the
+numerical tables. Individual exports are retained. Ordinary 2D application
+figures use four-sided borders and inward ticks; 3D spheres are unchanged.
+See [the figure update and manuscript caption](docs/application_plotting_update.md).
+
+The contact response-variance plot uses the saved e1/e2 input scan without
+rescaling its unit-input risks, and the sphere prediction history includes
+the existing identity-transport control. Existing contact settings and data
+are preserved.
+
+Two independent beamforming audit notebooks retain both GREAT variants,
+all four requested averaging conventions, paired intervals, measured-only
+validation, full-history stationary windows and isolated optimization-cost
+measurements. These additional outputs neither replace the stationary study
+nor modify the original moving records. The full-history stationary window
+closes most of the earlier GREAT gap; more EW optimization steps substantially
+reduce the moving optimization error, with rare transient errors retained.
+The posterior mean has no uniform frequentist dB-performance advantage.
+See [the complete comparison audit](docs/beamforming_comparison_audit.md).

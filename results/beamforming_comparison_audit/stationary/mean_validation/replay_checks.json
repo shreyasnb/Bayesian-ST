@@ -1,0 +1,61 @@
+{
+  "status": "passed",
+  "binding": "146c732fbf2cb1a8dcd3b97de4c375f1e311216caeb2ac7b7e747c8367cde82a",
+  "cases": [
+    {
+      "n": 32,
+      "condition": "static",
+      "trial": 0,
+      "beta": 1.0,
+      "story_fields_identical": [],
+      "checkpoint_method_rows": 3,
+      "maximum_absolute_errors": {
+        "true_power": 5.551115123125783e-17,
+        "heldout_power": 0.0,
+        "oracle_power": 5.551115123125783e-17,
+        "true_ratio_db": 8.326672684688674e-17,
+        "heldout_ratio_db": 0.0
+      }
+    },
+    {
+      "n": 64,
+      "condition": "static",
+      "trial": 0,
+      "beta": 1.0,
+      "story_fields_identical": [
+        "U",
+        "h",
+        "a",
+        "angles",
+        "sigma2",
+        "tau2",
+        "time"
+      ],
+      "checkpoint_method_rows": 3,
+      "maximum_absolute_errors": {
+        "true_power": 5.551115123125783e-17,
+        "heldout_power": 0.0,
+        "oracle_power": 5.551115123125783e-17,
+        "true_ratio_db": 5.551115123125783e-17,
+        "heldout_ratio_db": 8.326672684688674e-17
+      }
+    },
+    {
+      "n": 128,
+      "condition": "static",
+      "trial": 0,
+      "beta": 1.0,
+      "story_fields_identical": [],
+      "checkpoint_method_rows": 3,
+      "maximum_absolute_errors": {
+        "true_power": 5.551115123125783e-17,
+        "heldout_power": 5.551115123125783e-17,
+        "oracle_power": 0.0,
+        "true_ratio_db": 0.0,
+        "heldout_ratio_db": 5.551115123125783e-17
+      }
+    }
+  ],
+  "seconds": 0.21479307700064965,
+  "scope": "Original trial-0 saved observations/trajectory and same-beta actions; all preserved trial IDs/checkpoint grids also checked. Numerical comparison uses 3e-12 absolute/relative tolerance to allow CSV round trips."
+}

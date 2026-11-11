@@ -151,11 +151,36 @@ for curve in record['curves']:
                         color=COLORS[method], alpha=.14, linewidth=0)
 ax.set(xlabel=r'$t$', ylabel=r'$\mathcal E_t(D_t)$ $((\mathrm{mm}/\mathrm{s})^2)$',
        xlim=(1, int(record['T'])))
-ax.spines[['top','right']].set_visible(False)
+BORDER_WIDTH = .9
+for spine in ax.spines.values():
+    spine.set_visible(True)
+    spine.set_linewidth(BORDER_WIDTH)
+ax.tick_params(axis='both', which='both', direction='in',
+               top=True, right=True, bottom=True, left=True,
+               labeltop=False, labelright=False, labelbottom=True, labelleft=True,
+               width=BORDER_WIDTH)
+ax.xaxis.set_label_position('bottom')
+ax.yaxis.set_label_position('left')
 ax.grid(color='#BFC4C8', alpha=.30, linewidth=.45)
 fig.legend(*ax.get_legend_handles_labels(), loc='outside lower center',
            ncol=3, frameon=False, fontsize=LEGEND_FONT_SIZE)
 '''
+
+SPHERE_HISTORY = HISTORY.replace(
+    "for curve in record['curves']:",
+    """# Keep the measured-frame curves and add the saved identity-transport control.
+LABELS['mean_identity'] = r'Posterior mean, $G_t=I_3$'
+COLORS['mean_identity'] = COLORS['mean']
+MARKERS['mean_identity'] = 'x'
+curves = list(record['curves'])
+identity_curves = [curve for curve in record['all_curves']
+                   if curve['method'] == 'mean_identity']
+if len(identity_curves) != 1:
+    raise ValueError('Expected one saved identity-transport posterior-mean curve')
+curves += identity_curves
+for curve in curves:""").replace(
+    "linestyle='--' if method == 'iso' else '-'",
+    "linestyle='--' if method in ('iso', 'mean_identity') else '-'")
 
 REFERENCES=r'''
 # This endpoint averages all 48 scheduled action times inside each simulation.
@@ -176,7 +201,16 @@ ax.set(yticks=np.arange(len(methods)), yticklabels=[LABELS[method] for method in
        xlabel=r'$\overline{\mathcal E}(D)$ $((\mathrm{mm}/\mathrm{s})^2)$')
 ax.tick_params(axis='y', labelsize=LEGEND_FONT_SIZE)
 ax.invert_yaxis()
-ax.spines[['top','right']].set_visible(False)
+BORDER_WIDTH = .9
+for spine in ax.spines.values():
+    spine.set_visible(True)
+    spine.set_linewidth(BORDER_WIDTH)
+ax.tick_params(axis='both', which='both', direction='in',
+               top=True, right=True, bottom=True, left=True,
+               labeltop=False, labelright=False, labelbottom=True, labelleft=True,
+               width=BORDER_WIDTH)
+ax.xaxis.set_label_position('bottom')
+ax.yaxis.set_label_position('left')
 ax.grid(axis='x', color='#BFC4C8', alpha=.30, linewidth=.45)
 '''
 
@@ -324,8 +358,8 @@ Both the plane and sensor frame remain fixed in this controlled fixture. Concent
          'prediction-error-stationary',{'editable_plotting_role':'plot','figure_id':'prediction_error_stationary','source_page':1})
     markdown(r'''### Contact moving over a sphere
 
-Here the physical tangent plane moves as well as changing coordinates with the sensor. The history uses the actual saved checkpoints $t=4,16,32,64,128,192$. Lines connect those saved points; they do not reconstruct errors at unrecorded checkpoints. The test reveals tracking performance under the already selected estimator settings, including any effects of physical motion not represented by measured frame transport.''','sphere-prediction-note')
-    code(plotting_source(FIGURES[1][0],FIGURES[1][1],HISTORY.replace('CONDITION',repr('sphere'))),
+Here the physical tangent plane moves as well as changing coordinates with the sensor. The history uses the actual saved checkpoints $t=4,16,32,64,128,192$. Lines connect those saved points; they do not reconstruct errors at unrecorded checkpoints. The test reveals tracking performance under the already selected estimator settings, including any effects of physical motion not represented by measured frame transport. The dashed blue control uses the saved posterior-mean predictions with $G_t=I_3$, omitting measured sensor-frame transport while retaining its original settings.''','sphere-prediction-note')
+    code(plotting_source(FIGURES[1][0],FIGURES[1][1],SPHERE_HISTORY.replace('CONDITION',repr('sphere'))),
          'prediction-error-sphere',{'editable_plotting_role':'plot','figure_id':'prediction_error_sphere','source_page':1})
     markdown(r'''## Reference algorithms and paired comparisons
 
@@ -361,7 +395,11 @@ This moving checkpoint need not reproduce the strong anisotropy of the controlle
         +', and the isotropic-minus-mean difference is '
         +f"{paired.loc['iso','gain']:.4f} [{paired.loc['iso','lower']:.4f}, {paired.loc['iso','upper']:.4f}]"
         +r' in the same units (pointwise 95% intervals). '
-        +'The positive paired difference against the matched isotropic mean supports the value of directional posterior moments for this saved condition. It does not imply the same ordering at every time.')
+        +'The positive paired difference against the matched isotropic mean supports the value of directional posterior moments for this saved condition. It does not imply the same ordering at every time.'
+        +'\n\nAcross the same 48 action times, the paired identity-transport-minus-measured-transport posterior-mean error is '
+        +f"{paired.loc['mean_identity','gain']:.4f} [{paired.loc['mean_identity','lower']:.4f}, {paired.loc['mean_identity','upper']:.4f}]"
+        +r' $(\mathrm{mm}/\mathrm{s})^2$ (pointwise 95% interval across 256 simulations). '
+        +'This uses the saved whole-run episode-average records, rather than an average of the six plotted checkpoints.')
     markdown('## What the prediction comparisons show\n\n'+results,'contact-prediction-results')
     markdown(r'''## Interpretation and links to the controlled example
 

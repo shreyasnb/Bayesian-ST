@@ -1,0 +1,7 @@
+condition,n,method,inner_steps,measurements,covariance_updates,grassmann_steps,task_decisions,diagnostic_eigendecompositions,tracker_eigendecompositions,scope
+smooth,32,great_ew,3,256,256,768,32,32,0,Diagnostic eigenspaces excluded from future timing
+smooth,32,great_ew,30,256,256,7680,32,32,0,Diagnostic eigenspaces excluded from future timing
+smooth,32,mode_exact,0,256,256,0,32,0,32,Exact mode at the common task reporting times
+abrupt,32,great_ew,3,256,256,768,32,32,0,Diagnostic eigenspaces excluded from future timing
+abrupt,32,great_ew,30,256,256,7680,32,32,0,Diagnostic eigenspaces excluded from future timing
+abrupt,32,mode_exact,0,256,256,0,32,0,32,Exact mode at the common task reporting times

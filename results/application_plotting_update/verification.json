@@ -1,0 +1,68 @@
+{
+  "status": "passed",
+  "pytest": {
+    "command": ".venv/bin/python -m pytest -q",
+    "tests": 317,
+    "subtests": 2,
+    "seconds": 44.48
+  },
+  "scientific_sha256": "e926a6a16fea47e35f0625afcc811d5fbdd533fb812c8c1fa9314484f16b24ee",
+  "actual_application_pdf_exports": 90,
+  "canonical_pdfs_unchanged": 32,
+  "comparison_audit_pdfs": 14,
+  "main_and_supplementary_pdfs": 126,
+  "all_existing_simulation_data_settings_seeds_and_numerical_results_preserved": true,
+  "combined_moving_export": "results/main/beamforming/moving_interference_comparison.pdf",
+  "combined_size_inches": [
+    7,
+    3.5
+  ],
+  "preview_dpi": 300,
+  "empirical_band": [
+    0.25,
+    0.75
+  ],
+  "simulations_per_point": 256,
+  "reporting_times": [
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64,
+    72,
+    80,
+    88,
+    96,
+    104,
+    112,
+    120,
+    128,
+    136,
+    144,
+    152,
+    160,
+    168,
+    176,
+    184,
+    192,
+    200,
+    208,
+    216,
+    224,
+    232,
+    240,
+    248,
+    256
+  ],
+  "pointwise_means_and_table_student_intervals_unchanged": true,
+  "independent_reports": [
+    "results/beamforming_comparison_audit/validation/independent_checks.json",
+    "results/contact_plotting_addendum/independent_checks.json",
+    "results/application_plotting_update/pdf_layout_checks.json",
+    "results/application_plotting_update/comparison_notebook_plot_checks.json",
+    "results/application_plotting_update/final_preservation_checks.json"
+  ]
+}

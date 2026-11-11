@@ -1,0 +1,15 @@
+{
+  "warmups": 1,
+  "repetitions": 7,
+  "seed": 2026111101,
+  "blas_threads": 1,
+  "isolation_confirmed": true,
+  "workload": "All measurement updates and task decisions at the declared report indices",
+  "setup": "Observations/scaling prepared before clock; tracker initialization and phase instrumentation included",
+  "warmup_trajectory": "Original validation simulation0",
+  "timed_trajectory": "Original test simulation0",
+  "phase_units": "tracking_ms includes covariance+SGD or covariance+report-time EVD; decision_ms includes32 moving or4 stationary beamformer decisions",
+  "exact_mode": "One covariance update per measurement and eigensolve only at task reporting indices",
+  "excluded": "Stream generation, heldout/true scoring, objective and exact-reference diagnostics",
+  "objective_manifest_sha256": "c177c487d9c1a84f81dc8bc7180cdc5577d0f2e65dbbf42a83c46a0afcaacbdc"
+}

@@ -1,0 +1,92 @@
+{
+  "n": 32,
+  "T": 256,
+  "sigma2": 0.2,
+  "tau2": 1.0,
+  "beta": 0.97,
+  "methods": [
+    "mean",
+    "mode",
+    "isotropic",
+    "great_window",
+    "great_ew"
+  ],
+  "conditions": [
+    "smooth",
+    "abrupt"
+  ],
+  "reporting_t": [
+    8,
+    16,
+    24,
+    32,
+    40,
+    48,
+    56,
+    64,
+    72,
+    80,
+    88,
+    96,
+    104,
+    112,
+    120,
+    128,
+    136,
+    144,
+    152,
+    160,
+    168,
+    176,
+    184,
+    192,
+    200,
+    208,
+    216,
+    224,
+    232,
+    240,
+    248,
+    256
+  ],
+  "event_abrupt": 129,
+  "validation_simulations": 64,
+  "test_simulations": 256,
+  "aggregations": [
+    {
+      "aggregation": "mean_db",
+      "window": "all",
+      "start_t": 8,
+      "reporting_points": 32,
+      "primary": true
+    },
+    {
+      "aggregation": "mean_db",
+      "window": "t_ge_32",
+      "start_t": 32,
+      "reporting_points": 29,
+      "primary": false
+    },
+    {
+      "aggregation": "log_mean_ratio",
+      "window": "all",
+      "start_t": 8,
+      "reporting_points": 32,
+      "primary": false
+    },
+    {
+      "aggregation": "log_mean_ratio",
+      "window": "t_ge_32",
+      "start_t": 32,
+      "reporting_points": 29,
+      "primary": false
+    }
+  ],
+  "primary": "mean_db/all: mean individual true_ratio_db over all 32 reporting measurements within each simulation",
+  "mean_db": "Arithmetic mean of 10*log10(true_power/oracle_power) within each simulation.",
+  "log_mean_ratio": "10*log10(arithmetic mean of true_power/oracle_power within each simulation).",
+  "all": "t=8,16,...,256 (32 reporting measurements)",
+  "t_ge_32": "t=32,40,...,256 (29 reporting measurements); omits only t=8,16,24",
+  "selection": "Unchanged original measured held-out-power selection, on 64 separate validation simulations.",
+  "great_ew_weights": "Complex EW GREAT receives sqrt(eta_j/eta_initial)*u_j, eta_j=tau2_j/[sigma2_j*(sigma2_j+tau2_j)]. Its covariance matches the uncentered Bingham statistic up to the fixed positive factor eta_initial under the uniform prior. Fixed-variance data are unchanged; raw sliding-window GREAT retains the original residual objective."
+}

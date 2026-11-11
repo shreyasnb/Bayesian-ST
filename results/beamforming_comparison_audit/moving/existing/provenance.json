@@ -1,0 +1,170 @@
+{
+  "original_manifest": "results/beamforming/data/paper/performance/manifest.json",
+  "original_manifest_sha256": "473a680b450c3b350fb2ad9259f4678d3ac56bca26ab18581dc88d0bd8cd4dcb",
+  "original_source_commit": "dd399bacae3d7b37e31abb949b24740c1f07a4f3",
+  "verified_source_files": {
+    "lib/final_beamforming.py": {
+      "path": "archive/dd399ba/sources/lib/final_beamforming.py",
+      "sha256": "6f22a6e82711afc37479b371455411cd0d44e0764b06ca50b7ada82957c97ed9"
+    },
+    "scripts/run_final_beamforming.py": {
+      "path": "archive/dd399ba/sources/scripts/run_final_beamforming.py",
+      "sha256": "efeb7b0c53926c88c5aa898d07c6b4a04cb8283c1b6776bad0c43e6a8dc57f68"
+    },
+    "tests/test_final_beamforming.py": {
+      "path": "archive/dd399ba/sources/tests/test_final_beamforming.py",
+      "sha256": "61d072eed3117a264ce7c5ec6becb5c995be9179df100cf8dac2f6d117d606d3"
+    },
+    "benchmarks/common/great.py": {
+      "path": "benchmarks/common/great.py",
+      "sha256": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419"
+    },
+    "lib/final_theory.py": {
+      "path": "lib/final_theory.py",
+      "sha256": "d2e8cac7d9925dd95efc77ba1852b0bf7ceabac17627ee6a04f16c07de839f57"
+    },
+    "lib/array_geometry_study.py": {
+      "path": "lib/array_geometry_study.py",
+      "sha256": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a"
+    },
+    "lib/beamforming_protocol.py": {
+      "path": "lib/beamforming_protocol.py",
+      "sha256": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721"
+    },
+    "lib/beamforming_numerics.py": {
+      "path": "lib/beamforming_numerics.py",
+      "sha256": "daba1090e0ad85cad9dc5fe5a60f8e901cc50707115094f990af9a700c6cce3f"
+    },
+    "lib/beamforming_decisions.py": {
+      "path": "lib/beamforming_decisions.py",
+      "sha256": "c1c6267f5666640675f801bafaf44567bcb4beeac249cf256197d495bcc0bd93"
+    },
+    "lib/spectral_series.py": {
+      "path": "lib/spectral_series.py",
+      "sha256": "5267f4872d9f768a1efcbc00ebd5d1662f51a17bd6af0c5b57e9a45406307011"
+    },
+    "lib/geometry.py": {
+      "path": "lib/geometry.py",
+      "sha256": "cf4a54c6f35edfb05c636cde8f174ebe4b444a781faee33e8c81b093a26002f7"
+    },
+    "lib/models.py": {
+      "path": "lib/models.py",
+      "sha256": "b04aaaa7ab4be5e1e0c1698110a93f72e8ae4e632c959658df433d4520e39c5e"
+    },
+    "benchmarks/case1/baselines.py": {
+      "path": "benchmarks/case1/baselines.py",
+      "sha256": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac"
+    },
+    "benchmarks/case2/baselines.py": {
+      "path": "benchmarks/case2/baselines.py",
+      "sha256": "6c3dd891a4d831d5bfc4d68e3dc09ce1d1ebc92ba16fd6bde091f2353bd694e3"
+    }
+  },
+  "original_config": {
+    "schema": 1,
+    "stage": "paper",
+    "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+    "rank": 1,
+    "dimensions": [
+      32,
+      64,
+      128
+    ],
+    "stationary_ratios": [
+      0.25,
+      0.5,
+      1.0,
+      2.0
+    ],
+    "validation_episodes": 64,
+    "test_episodes": 256,
+    "validation_seed": 2026111001,
+    "test_seed": 2026111002,
+    "story_seed": 2026111003,
+    "sigma2": 0.2,
+    "tau2": 1.0,
+    "overlap": 0.5,
+    "moving_n": 32,
+    "moving_T": 256,
+    "moving_conditions": [
+      "static",
+      "smooth",
+      "abrupt",
+      "noise_change",
+      "power_change"
+    ],
+    "action_cadence": 8,
+    "primary_burnin": 32,
+    "dt": 0.01,
+    "betas": [
+      1.0,
+      0.99,
+      0.97,
+      0.9
+    ],
+    "great_step_multipliers": [
+      0.02,
+      0.08,
+      0.24
+    ],
+    "great_inner_steps": [
+      1,
+      3
+    ],
+    "great_window_ratios": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "grouse_steps": [
+      0.001,
+      0.01,
+      0.1,
+      1.0
+    ],
+    "loading_bracket_points": 33,
+    "heldout_snapshots": 256,
+    "moment_tolerance": 1e-10,
+    "moment_max_order": 4096,
+    "moment_fallback_max_order": 8192,
+    "block_lengths": [
+      1,
+      4,
+      16,
+      32
+    ],
+    "block_test_episodes": 64,
+    "block_n": 32,
+    "block_T": 64,
+    "block_beta": 0.97,
+    "block_conditions": [
+      "static",
+      "smooth"
+    ],
+    "story": {
+      "stationary_n": 64,
+      "stationary_ratio": 1.0,
+      "episode": 0,
+      "moving_episode": 0,
+      "moving_time": 128,
+      "moving_times": [
+        32,
+        128,
+        256
+      ]
+    },
+    "outcome": "Independent held-out disturbance power divided by true-covariance oracle power; 10 log10 of the episode-averaged ratio for displayed dB outcomes.",
+    "repetition_unit": "Independent episode. Held-out snapshots average inside a checkpoint; moving primary outcomes average checkpoints inside the episode.",
+    "selection": "Independent held-out measured disturbance power on disjoint validation episodes only; no true signature, covariance, oracle power or drift enters policy selection. Static beta=1. Moving mean/mode/isotropic share a mode-selected beta. Modal loading and loaded covariance select their own memory/loading. Sliding GREAT selects window/step/inner count; EW GREAT matches the shared Bingham beta and selects step/inner count.",
+    "great_ew_weights": "Complex EW GREAT receives sqrt(eta_j/eta_initial)*u_j, eta_j=tau2_j/[sigma2_j*(sigma2_j+tau2_j)]. Its covariance matches the uncentered Bingham statistic up to the fixed positive factor eta_initial under the uniform prior. Fixed-variance data are unchanged; raw sliding-window GREAT retains the original residual objective.",
+    "variance_convention": "Proper-complex covariance sigma2*I; real/imaginary component variances sigma2/2. Unit steering signatures give total interference power tau2.",
+    "motion": "Identity transport for all primary unknown-motion comparisons. Baseline half-power desired/interference overlap is held exactly fixed across dimensions.",
+    "numerical_scope": "Native complex rank-one means and normalizers only; no higher-rank, tail, interval or second-moment accuracy is inferred from these mean flags.",
+    "scale_information": "This performance cohort conditions on the generating variances at correction/action time as a calibrated reference. The separate causal variance-learning cohort never receives future generating scales.",
+    "block_budget": "Supplementary cadence/constant-state-block experiment uses 64 independent test episodes per motion at n=32,T=64. Primary stationary/moving performance cohorts retain 256. This smaller block cohort was selected from operation counts/native-mean preflight before any block task outcomes.",
+    "precision": "Paper plan: 64 validation and 256 independent test episodes per primary cohort; all paired pointwise 95% intervals and achieved SEs retained. Broad grids are exploratory without multiplicity correction."
+  },
+  "raw_input": "results/beamforming/data/paper/performance/moving_checkpoints.csv.gz",
+  "scope": "Existing smooth/abrupt measurements and original settings; no replays, tuning or simulation.",
+  "aggregation_policy": "All four user-specified aggregations retained regardless of method ranking."
+}

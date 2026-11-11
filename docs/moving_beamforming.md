@@ -43,7 +43,7 @@ The latent direction is used to score the simulation, not to update the estimato
 
 ## Summaries and interpretation
 
-Each curve averages 256 independent test simulations at the stored indices $t=8,16,\ldots,256$. Shading shows a pointwise Student 95% confidence interval for the average. These are Monte Carlo confidence intervals, not posterior prediction intervals. The notebook exposes the shading choices and full plotting code directly.
+Curves show means across 256 Monte Carlo simulations. Shaded regions show the pointwise 25th–75th percentiles across simulations. Each uses the stored indices $t=8,16,\ldots,256$ and individual `true_ratio_db` records. These are empirical performance bands, not posterior credible regions or confidence intervals for the mean. The numerical tables retain Student 95% confidence intervals. The notebook exposes the shading choices and full plotting code directly.
 
 For the tables below, each simulation first contributes $\frac1{32}\sum_{j=1}^{32}\ell_{8j}$. The mean and its interval then use these 256 simulation averages, including the initial transient. All entries are in dB.
 
@@ -65,13 +65,13 @@ Paired differences use the same simulation and measurement indices. Positive val
 | Abrupt | Isotropic mean | 0.01458 [0.01381, 0.01536] |
 | Abrupt | GREAT (sliding window) | 0.01346 [0.00621, 0.02070] |
 
-Retaining directional uncertainty improves on the matched isotropic mean in both cases, although the smooth-motion difference is small. The posterior mean and mode are similar during smooth motion; their paired interval includes zero. GREAT performs better on the smooth time average. In the abrupt case the mode performs best among these four comparisons, while the posterior mean improves on GREAT and the isotropic mean. These experiments show different transient behavior and a measurable effect of anisotropy; they do not establish universal superiority of one method or address computational cost.
+Retaining directional uncertainty improves on the matched isotropic mean in both cases, although the smooth-motion difference is small. The posterior mean and mode are similar during smooth motion; their paired interval includes zero. Sliding-window GREAT performs better on the smooth time average. In the abrupt case the mode performs best among these four comparisons, while the posterior mean improves on sliding-window GREAT and the isotropic mean. These experiments show different transient behavior and a measurable effect of anisotropy; they do not establish universal superiority of one method or address computational cost. The [separate comparison audit](beamforming_comparison_audit.md) includes exponentially weighted GREAT, additional optimization budgets and computational costs.
 
 ## Files and checks
 
 The original input is `results/beamforming/data/paper/performance/moving_checkpoints.csv.gz`, verified against its original manifest and archived producer sources. Derived per-simulation values, checkpoint summaries, time averages, and paired differences are stored under `results/beamforming_moving/data/` and `results/beamforming_moving/tables/`.
 
-The two figures use editable $(15,5)$-inch canvases, 300 dpi, and `text.usetex = True`. Their PDF and PNG exports are saved locally under `results/beamforming_moving/figures/` and copied to `results/main/beamforming/` using the separate names `moving_interference_smooth_output_power` and `moving_interference_abrupt_output_power`. These are optional main-paper candidates; existing figures remain in place.
+The individual figures retain editable $(15,5)$-inch canvases, 300 dpi, and `text.usetex = True`. Their PDF and PNG exports are saved locally under `results/beamforming_moving/figures/` and copied to `results/main/beamforming/` using the separate names `moving_interference_smooth_output_power` and `moving_interference_abrupt_output_power`. A third editable cell exports `moving_interference_comparison.pdf` and its preview on a compact 7-by-3.5-inch canvas, with smooth motion on the left, abrupt motion on the right, and one shared legend below. All are optional main-paper candidates; stationary exports remain separate. See the [plotting update](application_plotting_update.md) for the replacement manuscript command and caption.
 
 Run the read-only audit with:
 
@@ -79,4 +79,4 @@ Run the read-only audit with:
 .venv/bin/python scripts/check_moving_beamforming.py --report /tmp/moving-beamforming-check.json
 ```
 
-It independently recomputes every displayed mean and confidence interval from the original rows, checks all paired differences and exported tables, verifies the notebook's execution and visible plotting controls, and compares the local and main PDF/PNG files. The moving-data loader also checks saved steering vectors, motion schedules, posterior-parameter recursion, and shared posterior actions without running inference.
+It independently recomputes every displayed mean and interquartile band from the original rows, checks the table confidence intervals and paired differences, verifies the notebook's execution and visible plotting controls, and compares all three local/main PDF and PNG pairs. The moving-data loader also checks saved steering vectors, motion schedules, posterior-parameter recursion, and shared posterior actions without running inference.

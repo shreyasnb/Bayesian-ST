@@ -2,7 +2,8 @@
 
 Route discovery imports no plotting or numerical packages. The full audit
 checks existing observations, derived statistics, posterior geometry and saved
-figures; it does not execute a notebook or change scientific evidence.
+figures; it does not execute a notebook or change scientific evidence. An
+explicit maintenance flag refreshes only the two presentation metadata files.
 """
 from __future__ import annotations
 
@@ -138,9 +139,79 @@ def _notebook_check(root, notebook, routes, required_inputs):
             assert output.get('output_type') != 'error'
             images += int('image/png' in output.get('data', {}))
     assert tex_true and figures == images == 4
+    # The three ordinary plots use full borders; the 3D density cell keeps its
+    # original source and is deliberately excluded from this requirement.
+    for identifier in ('prediction-error-stationary','prediction-error-sphere',
+                       'prediction-error-references'):
+        tree=ast.parse(_source(by_id[identifier]))
+        widths=[ast.literal_eval(node.value) for node in tree.body if isinstance(node,ast.Assign)
+            and any(isinstance(target,ast.Name) and target.id=='BORDER_WIDTH' for target in node.targets)]
+        assert widths==[.9], 'Missing visible .9-point border control: '+identifier
+        ticks=[node for node in ast.walk(tree) if isinstance(node,ast.Call)
+               and isinstance(node.func,ast.Attribute) and node.func.attr=='tick_params'
+               and any(key.arg=='direction' and isinstance(key.value,ast.Constant)
+                       and key.value.value=='in' for key in node.keywords)]
+        assert len(ticks)==1,'Expected one four-sided inward-tick instruction'
+        keywords={key.arg:key.value for key in ticks[0].keywords}
+        for name in ('top','right','bottom','left','labelbottom','labelleft'):
+            assert ast.literal_eval(keywords[name]) is True
+        for name in ('labeltop','labelright'):
+            assert ast.literal_eval(keywords[name]) is False
     return dict(code_cells=count, visible_figures=figures, embedded_images=images,
                 text_usetex=True, dpi=300, figure_size_in=[15, 5],
-                numerical_inputs=len(inputs), producer_sources=len(sources))
+                numerical_inputs=len(inputs), producer_sources=len(sources),
+                ordinary_plot_borders=dict(width_points=.9,sides=4,ticks='inward',
+                                           labels='bottom and left'))
+
+
+def _identity_curve_check(root,notebook,data):
+    """Check the fourth saved curve and its full-run paired comparison."""
+    import numpy as np
+    by_id={cell.get('id'):cell for cell in notebook['cells']}
+    text=_source(by_id['prediction-error-sphere'])
+    tree=ast.parse(text)
+    assigned={}
+    for node in tree.body:
+        if not isinstance(node,ast.Assign):
+            continue
+        for target in node.targets:
+            assigned[ast.unparse(target)]=node.value
+    def same_expression(key,expected):
+        assert ast.dump(assigned[key],include_attributes=False)==ast.dump(
+            ast.parse(expected,mode='eval').body,include_attributes=False),key
+    same_expression('curves',"list(record['curves'])")
+    same_expression('identity_curves',
+        "[curve for curve in record['all_curves'] if curve['method'] == 'mean_identity']")
+    assert any(isinstance(node,ast.AugAssign) and isinstance(node.target,ast.Name)
+        and node.target.id=='curves' and isinstance(node.op,ast.Add)
+        and isinstance(node.value,ast.Name) and node.value.id=='identity_curves' for node in tree.body)
+    assert ast.literal_eval(assigned["LABELS['mean_identity']"])==r'Posterior mean, $G_t=I_3$'
+    same_expression("COLORS['mean_identity']","COLORS['mean']")
+    assert ast.literal_eval(assigned["MARKERS['mean_identity']"])=='x'
+    assert "method in ('iso', 'mean_identity')" in text
+    assert "if method == 'mean':" in text and 'ax.fill_between' in text
+    record=data['conditions']['sphere']
+    assert {curve['method'] for curve in record['curves']}=={'mean','mode','iso'}
+    identity=[curve for curve in record['all_curves'] if curve['method']=='mean_identity']
+    assert len(identity)==1
+    np.testing.assert_array_equal(identity[0]['points'][:,0],[4,16,32,64,128,192])
+    pairs=data['paired_episode_average_summary']
+    saved=pairs[pairs.condition.eq('sphere')&pairs.reference.eq('mean_identity')]
+    assert len(saved)==1
+    row=saved.iloc[0]
+    assert row.endpoint=='episode_average' and int(row.t)==192 and int(row.simulations)==256
+    np.testing.assert_allclose([row['gain'],row['lower'],row['upper']],
+        [2.6548246409743737,2.095611015675944,3.2140382662728033],rtol=0,atol=1e-10)
+    results=_source(by_id['contact-prediction-results'])
+    for value in (row['gain'],row['lower'],row['upper']):
+        assert f'{value:.4f}' in results
+    assert '48 action times' in results and 'six plotted checkpoints' in results
+    return dict(status='passed',methods=['mean','mode','iso','mean_identity'],curves=4,
+        identity_label=r'Posterior mean, $G_t=I_3$',identity_color='Original posterior-mean blue',
+        identity_linestyle='--',identity_marker='x',original_mean_interval_retained=True,
+        identity_minus_measured_transport=dict(gain=float(row['gain']),lower=float(row['lower']),
+            upper=float(row['upper']),units='(mm/s)^2',simulations=256,endpoint='episode_average',
+            internal_action_times=48,not_average_of_sparse_checkpoints=True))
 
 
 def _numeric_check(root, data):
@@ -388,12 +459,33 @@ def _snapshot_check(root, snapshot):
 
 def _static_response_variance_check(root):
     import numpy as np
-    from lib.notebook_contact_data import load_contact_plot_data
     path = root/'results/contact/data/paper/performance/anisotropy.npz'
     with np.load(path,allow_pickle=False) as saved:
         a = {name:saved[name] for name in saved.files}
-    plotted = load_contact_plot_data(root,'posterior_anisotropy')
-    selected = a['query_family']==1
+    # The visible risk block overrides the generic loader with family 0. The
+    # underlying loader and all simulation arrays intentionally remain intact.
+    notebook=json.loads((root/'notebooks/03_contact.ipynb').read_text())
+    cell=next(cell for cell in notebook['cells'] if cell.get('id')=='45ec7869')
+    source=_source(cell)
+    risk_start=source.rfind('# Edit these controls',0,source.index("'posterior_anisotropy_risk.pdf'"))
+    risk_source=source[risk_start:]
+    tree=ast.parse(risk_source)
+    assignments={ast.unparse(target):node.value for node in ast.walk(tree) if isinstance(node,ast.Assign)
+                 for target in node.targets}
+    required={'query_family':"np.asarray(saved['query_family']) == 0",
+        'theta':"np.asarray(saved['query_angles'])[query_family].copy()",
+        'unit_queries':"np.asarray(saved['unit_queries'])[query_family].copy()",
+        'risk_full':"np.asarray(saved['risks_full'])[query_family].copy()",
+        'risk_iso':"np.asarray(saved['risks_isotropic'])[query_family].copy()"}
+    for key,expected in required.items():
+        assert ast.dump(assignments[key],include_attributes=False)==ast.dump(
+            ast.parse(expected,mode='eval').body,include_attributes=False),key
+    selected = a['query_family']==0
+    theta=a['query_angles'][selected]
+    unit=a['unit_queries'][selected]
+    np.testing.assert_allclose(unit,np.column_stack([np.cos(theta),np.sin(theta),np.zeros_like(theta)]),
+                               rtol=0,atol=1e-14)
+    plotted=dict(risk_full=a['risks_full'][selected],risk_iso=a['risks_isotropic'][selected])
     v0 = .02
     errors = {}
     for label, mean_key, risk_key, plot_key in [
@@ -405,25 +497,42 @@ def _static_response_variance_check(root):
         np.testing.assert_allclose(normalized,a[risk_key],rtol=1e-12,atol=1e-12)
         np.testing.assert_allclose(plotted[plot_key],normalized[selected],rtol=1e-12,atol=1e-12)
         errors[label] = float(np.max(abs(plotted[plot_key]-normalized[selected])))
+    endpoints=[]
+    for angle,expected in ((0.,(.019462209657903684,.08842183901123923)),
+                           (np.pi/2,(.14346703590668408,.09824824499508511))):
+        index=int(np.argmin(abs(theta-angle)))
+        np.testing.assert_allclose([plotted['risk_full'][index],plotted['risk_iso'][index]],
+                                   expected,rtol=0,atol=1e-14)
+        endpoints.append(dict(theta=float(theta[index]),risk_full=float(plotted['risk_full'][index]),
+                              risk_isotropic=float(plotted['risk_iso'][index])))
+    risk_exports=_exports_check(root,{'results/main/contact/posterior_anisotropy_risk.pdf':dict(
+        local_pdf='results/notebook_exports/03_contact/posterior_anisotropy_risk.pdf')})
     return dict(status='passed',original_arrays_sha256=_sha(path),
         each_curve_uses_its_own_law_mean=True,normalization='r_t(v(theta))/v0^2',
+        query_family=0,query_definition='v(theta)=v0*(cos(theta)*e1+sin(theta)*e2)',
+        saved_unit_risks_used_directly=True,endpoints=endpoints,exports=risk_exports,
         maximum_absolute_errors=errors,
         interpretation='Posterior response variance under each displayed law; not an empirical loss under one shared law.')
 
 
 def _preservation_check(root):
+    from lib.presentation_update_provenance import verify_presentation_preservation
     proof_path = root/OUTPUT/'preserved_files.json'
     proof = json.loads(proof_path.read_text())
     mapping = proof['tracked_files']
-    _verify_hashes(root,mapping,'protected original result/library/notebook')
+    tracked_check=verify_presentation_preservation(root,mapping)
     baseline_path = Path('/tmp/contact-prediction-preservation-baseline.json')
     local = None
     if baseline_path.is_file():
         baseline = json.loads(baseline_path.read_text())
-        _verify_hashes(root,baseline,'protected original local file')
-        local = dict(files=len(baseline),sha256=_sha(baseline_path),all_files_unchanged=True)
+        checked=verify_presentation_preservation(root,baseline)
+        local = dict(files=len(baseline),sha256=_sha(baseline_path),
+                     all_files_unchanged=not checked['authorized_presentation_updates'],
+                     authorized_presentation_updates=checked['authorized_presentation_updates'])
     return dict(status='passed',tracked_files=len(mapping),tracked_proof_sha256=_sha(proof_path),
-                all_original_tracked_files_unchanged=True,local_snapshot=local)
+                all_original_tracked_files_unchanged=not tracked_check['authorized_presentation_updates'],
+                authorized_presentation_updates=tracked_check['authorized_presentation_updates'],
+                scientific_data_and_settings_unchanged=True,local_snapshot=local)
 
 
 def _figure_manifest_check(root, notebook, routes, required_inputs):
@@ -451,6 +560,7 @@ def _figure_manifest_check(root, notebook, routes, required_inputs):
         _verify_hashes(root,record['hashes'],'contact diagnostic figure output')
         expected_outputs.update(outputs)
     assert expected_outputs<=set(meta['files'])
+    assert meta['figures']['prediction_error_sphere.pdf']['methods']==['mean','mode','iso','mean_identity']
     assert str(OUTPUT/'data/manifest.json') in meta['files']
     _verify_hashes(root,meta['files'],'contact diagnostic manifest file')
     return dict(manifest=str(path.relative_to(root)),sha256=_sha(path),
@@ -473,6 +583,26 @@ def audit_new_pdfs(root=ROOT):
             primary_fonts=declaration['primary_font_sizes_pt'],require_primary_sizes=True,
             main_panel_policy=[] if route['section']=='main' else None)
         assert not report['errors'],(destination,report['errors'])
+        if route['filename']!='moving_sphere_posterior_spheres.pdf':
+            with fitz.open(root/destination) as document:
+                page=document[0]
+                horizontal=[];vertical=[]
+                for drawing in page.get_drawings():
+                    width=drawing.get('width')
+                    if width is None or abs(float(width)-.9)>1e-4:
+                        continue
+                    for item in drawing['items']:
+                        if item[0]!='l':
+                            continue
+                        first,second=item[1:]
+                        if abs(first.y-second.y)<1e-5 and abs(first.x-second.x)>72:
+                            horizontal.append([float(first.x),float(first.y),float(second.x),float(second.y)])
+                        if abs(first.x-second.x)<1e-5 and abs(first.y-second.y)>72:
+                            vertical.append([float(first.x),float(first.y),float(second.x),float(second.y)])
+                assert len(horizontal)>=2 and len(vertical)>=2,'Missing full .9-point PDF borders'
+                if route['filename']=='prediction_error_sphere.pdf':
+                    assert 'Posterior mean' in ' '.join(page.get_text().split())
+            report['ordinary_plot_borders']=dict(width_points=.9,horizontal=horizontal,vertical=vertical)
         reports[destination]=report
     information=root/'results/main/contact/information_rotation.pdf'
     with fitz.open(information) as doc:
@@ -506,6 +636,67 @@ def _pdf_audit(root):
     raise RuntimeError('PyMuPDF is required for the independent PDF audit: '+'; '.join(errors))
 
 
+def refresh_presentation_metadata(root=ROOT):
+    """Refresh only the authorized figure manifest and read-only PDF report.
+
+    No notebook, image, snapshot, numerical record, data manifest, or historical
+    independent-validation report is written by this maintenance operation.
+    """
+    root=Path(root).resolve()
+    path=root/OUTPUT/'figure_manifest.json'
+    meta=json.loads(path.read_text())
+    old_meta=json.loads(path.read_text())
+    routes=optional_contact_diagnostic_routes(root)
+    notebook=json.loads((root/NOTEBOOK).read_text())
+    pdfs=_pdf_audit(root)
+    assert pdfs['status']=='passed'
+    asset_names={record[key] for record in meta['figures'].values()
+                 for key in ('local_pdf','local_png','draft_pdf','draft_png')}
+    # Scientific-data hashes must stay bound to their original bytes. Only
+    # presentation assets can receive refreshed hashes here.
+    for name,digest in meta['files'].items():
+        if name not in asset_names:
+            assert _sha(root/name)==digest,'Scientific diagnostic evidence changed: '+name
+    _verify_hashes(root,meta['input_hashes'],'unchanged contact diagnostic input')
+    _verify_hashes(root,meta['source_hashes'],'unchanged contact numerical source')
+    meta['notebook_sha256']=_sha(root/NOTEBOOK)
+    meta['producer_sha256']=_sha(root/meta['producer'])
+    methods={'prediction_error_stationary.pdf':['mean','mode','iso'],
+        'prediction_error_sphere.pdf':['mean','mode','iso','mean_identity'],
+        'prediction_error_references.pdf':['mean','mode','iso','regularized','great_window','great_ew']}
+    local_reports={}
+    for destination,route in routes.items():
+        record=meta['figures'][route['filename']]
+        record['hashes']={name:_sha(root/name) for name in record['hashes']}
+        meta['files'].update(record['hashes'])
+        if route['filename'] in methods:
+            record['methods']=methods[route['filename']]
+            record['border']=dict(width_points=.9,sides=4,inward_ticks=True,
+                                  tick_labels='bottom and left')
+        else:
+            assert record==old_meta['figures'][route['filename']], 'The 3D figure metadata changed'
+        local_reports[record['local_pdf']]=pdfs['figures'][destination]
+    meta['presentation_updates']=dict(
+        directional_risk='Saved query family0; unit-query risks are used directly without rescaling.',
+        sphere_prediction='Original mean_identity control added to the three original curves.',
+        borders='Three ordinary diagnostic plots have four .9-point spines and inward ticks.',
+        applied_by=['scripts/update_contact_plotting_addendum.py',
+                    'scripts/update_contact_diagnostics_borders.py'],
+        no_new_simulations=True,no_new_parameter_selection=True,no_new_posterior_fits=True)
+    layout=dict(status='passed',pdfs=local_reports,
+        executed_code_cells=sum(cell['cell_type']=='code' and bool(_source(cell).strip())
+                                for cell in notebook['cells']),
+        figure_cells=4,one_png_per_figure=True,
+        audit_source_sha256=_sha(root/'scripts/check_manuscript_plot_exports.py'))
+    path.write_text(json.dumps(meta,indent=2)+'\n')
+    layout_path=root/OUTPUT/'pdf_layout_checks.json'
+    layout_path.write_text(json.dumps(layout,indent=2)+'\n')
+    return dict(status='completed',refreshed_files={str(path.relative_to(root)):_sha(path),
+        str(layout_path.relative_to(root)):_sha(layout_path)},
+        notebook_sha256=meta['notebook_sha256'],producer_sha256=meta['producer_sha256'],
+        unchanged_scientific_data=True,unchanged_3d_figure_metadata=True)
+
+
 def fullcheck(root=ROOT):
     """Verify the complete optional addendum without changing its files."""
     root = Path(root).resolve()
@@ -528,13 +719,15 @@ def fullcheck(root=ROOT):
     notebook_checks=_notebook_check(root,notebook,routes,inputs)
     files=_exports_check(root,routes)
     numerical=_numeric_check(root,data)
+    identity_curve=_identity_curve_check(root,notebook,data)
     snapshot_checks=_snapshot_check(root,snapshot)
     static_variance=_static_response_variance_check(root)
     manifest=_figure_manifest_check(root,notebook,routes,inputs)
     preservation=_preservation_check(root)
     pdf_audit=_pdf_audit(root)
     return dict(status='passed',notebook=NOTEBOOK,notebook_sha256=_sha(root/NOTEBOOK),routes=routes,
-        notebook_checks=notebook_checks,files=files,numerical=numerical,snapshot=snapshot_checks,
+        notebook_checks=notebook_checks,files=files,numerical=numerical,
+        identity_curve=identity_curve,snapshot=snapshot_checks,
         retained_static_response_variance=static_variance,figure_manifest=manifest,
         preservation=preservation,pdf_audit=pdf_audit,scientific_sha256=gate['final_science_hash'])
 
@@ -544,9 +737,12 @@ def main():
     parser.add_argument('--root', type=Path, default=ROOT)
     parser.add_argument('--routes-only', action='store_true')
     parser.add_argument('--pdf-only',action='store_true',help='Run only the independent PyMuPDF audit.')
+    parser.add_argument('--refresh-presentation-metadata',action='store_true',
+        help='Refresh only figure_manifest.json and pdf_layout_checks.json from current saved figures.')
     parser.add_argument('--report', type=Path, help='Optional JSON report; result files are read-only.')
     args = parser.parse_args()
-    report = (optional_contact_diagnostic_routes(args.root) if args.routes_only else
+    report = (refresh_presentation_metadata(args.root) if args.refresh_presentation_metadata else
+              optional_contact_diagnostic_routes(args.root) if args.routes_only else
               audit_new_pdfs(args.root) if args.pdf_only else fullcheck(args.root))
     if args.report:
         args.report.parent.mkdir(parents=True,exist_ok=True)

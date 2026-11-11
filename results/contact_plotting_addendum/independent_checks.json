@@ -1,0 +1,1303 @@
+{
+  "status": "passed",
+  "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+  "notebook_sha256": "57f057fcc7d8992bed5de2c591f5253add4e232aed6a85328787ee03c6eecca7",
+  "routes": {
+    "results/main/contact/prediction_error_stationary.pdf": {
+      "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+      "cell": 4,
+      "example": "contact",
+      "section": "main",
+      "filename": "prediction_error_stationary.pdf",
+      "local_pdf": "results/contact_prediction_diagnostics/figures/prediction_error_stationary.pdf"
+    },
+    "results/main/contact/prediction_error_sphere.pdf": {
+      "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+      "cell": 6,
+      "example": "contact",
+      "section": "main",
+      "filename": "prediction_error_sphere.pdf",
+      "local_pdf": "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf"
+    },
+    "results/supplementary/contact/prediction_error_references.pdf": {
+      "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+      "cell": 8,
+      "example": "contact",
+      "section": "supplementary",
+      "filename": "prediction_error_references.pdf",
+      "local_pdf": "results/contact_prediction_diagnostics/figures/prediction_error_references.pdf"
+    },
+    "results/supplementary/contact/moving_sphere_posterior_spheres.pdf": {
+      "notebook": "notebooks/contact_prediction_diagnostics.ipynb",
+      "cell": 12,
+      "example": "contact",
+      "section": "supplementary",
+      "filename": "moving_sphere_posterior_spheres.pdf",
+      "local_pdf": "results/contact_prediction_diagnostics/figures/moving_sphere_posterior_spheres.pdf"
+    }
+  },
+  "notebook_checks": {
+    "code_cells": 7,
+    "visible_figures": 4,
+    "embedded_images": 4,
+    "text_usetex": true,
+    "dpi": 300,
+    "figure_size_in": [
+      15,
+      5
+    ],
+    "numerical_inputs": 21,
+    "producer_sources": 2,
+    "ordinary_plot_borders": {
+      "width_points": 0.9,
+      "sides": 4,
+      "ticks": "inward",
+      "labels": "bottom and left"
+    }
+  },
+  "files": {
+    "results/main/contact/prediction_error_stationary.pdf": {
+      "sha256": "e1512ed1f432e7abb7ace4369af43ab2cce0948bcd44b6ad1bbe2cbb8e17fc9b",
+      "local_pdf": "results/contact_prediction_diagnostics/figures/prediction_error_stationary.pdf",
+      "png_sha256": "dc4ef975da4697797c2f069972058e4167eab483186ce8a77c4beec08d6f5fdb",
+      "png_size_px": [
+        4500,
+        1500
+      ],
+      "figure_size_in": [
+        15,
+        5
+      ]
+    },
+    "results/main/contact/prediction_error_sphere.pdf": {
+      "sha256": "e02beab3c6b03f5f5016646ce50d55acda7556d76c094188d50a0144ea57ec5b",
+      "local_pdf": "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf",
+      "png_sha256": "00f8b930b5f56c4a936366f7b04c2b3f09f601d349cdf74b68c8e7af567d41d6",
+      "png_size_px": [
+        4500,
+        1500
+      ],
+      "figure_size_in": [
+        15,
+        5
+      ]
+    },
+    "results/supplementary/contact/prediction_error_references.pdf": {
+      "sha256": "a23874493d9bf904581633beae9ed599edbf37bb285e9e8376debdbff664b68f",
+      "local_pdf": "results/contact_prediction_diagnostics/figures/prediction_error_references.pdf",
+      "png_sha256": "7a4a73c2f95547782069c7ce12a3e2de59729d2d5bfa83e759a5e6e51826dd7d",
+      "png_size_px": [
+        4500,
+        1500
+      ],
+      "figure_size_in": [
+        15,
+        5
+      ]
+    },
+    "results/supplementary/contact/moving_sphere_posterior_spheres.pdf": {
+      "sha256": "b7d87318f3f30b048b551e3e7c46ba5184d926ab42d5277c4e3f438c38f97b64",
+      "local_pdf": "results/contact_prediction_diagnostics/figures/moving_sphere_posterior_spheres.pdf",
+      "png_sha256": "f776677d3bb626ba45bb986b8d33178b064642712e2d8be232ef5289827c5704",
+      "png_size_px": [
+        4500,
+        1500
+      ],
+      "figure_size_in": [
+        15,
+        5
+      ]
+    }
+  },
+  "numerical": {
+    "raw_records": 36352,
+    "checkpoint_intervals": 120,
+    "episode_average_intervals": 22,
+    "paired_checkpoint_intervals": 104,
+    "paired_episode_average_intervals": 19,
+    "paired_simulation_differences": 31488,
+    "original_paired_table_rows_verified": 296,
+    "exported_dataframes_roundtripped": 7,
+    "units": "(mm/s)^2",
+    "unit_factor": 1000000.0,
+    "error_equals_v0_squared_frobenius_error_over_three": true,
+    "no_extra_division_by_three": true,
+    "confidence_level": 0.95,
+    "degrees_of_freedom": 255,
+    "test_simulations_per_group": 256,
+    "full_run_story_checks": {
+      "static_concentrated": {
+        "internal_action_count": 4,
+        "full_run_errors_independently_reconstructed": {
+          "mean": 14.22051365402835,
+          "mode": 7.731982461616529,
+          "iso": 14.099463972423187,
+          "regularized": 15.95710779495094
+        },
+        "regularization_rho": 0.6492223094270835
+      },
+      "plane": {
+        "internal_action_count": 48,
+        "full_run_errors_independently_reconstructed": {
+          "mean": 0.869739181684909,
+          "mode": 0.8741861290572156,
+          "iso": 0.8699177539292201,
+          "regularized": 0.8723640646554128
+        },
+        "regularization_rho": 0.9931639573323646
+      },
+      "sphere": {
+        "internal_action_count": 48,
+        "full_run_errors_independently_reconstructed": {
+          "mean": 5.2233347541542186,
+          "mode": 5.122904993187594,
+          "iso": 5.191068230202357,
+          "regularized": 5.214304950630262
+        },
+        "regularization_rho": 0.9280718164228191
+      }
+    },
+    "full_sphere_action_count": 48,
+    "sparse_checkpoints_not_averaged": true,
+    "maximum_sparse_average_discrepancy_mm2_s2": 32.036661237182244,
+    "physical_checks": {
+      "static_concentrated": {
+        "saved_simulation": 0,
+        "T": 32,
+        "beta": 1.0,
+        "sigma2": 0.0001,
+        "measured_rotation_only": true,
+        "coordinate_transport_identity_verified": true,
+        "world_normal_fixed": true,
+        "maximum_sensor_rotation_distance": 0.0,
+        "maximum_physical_projector_increment": 0.0,
+        "maximum_residual_after_measured_transport": 0.0,
+        "maximum_conditional_parameter_error": 3.552713678800501e-15,
+        "actual_internal_action_times": [
+          1,
+          4,
+          16,
+          32
+        ],
+        "whole_run_saved_story_mean_errors_mm2_s2": {
+          "mean": 14.22051365402835,
+          "mode": 7.731982461616529,
+          "isotropic": 14.09946397242319
+        }
+      },
+      "plane": {
+        "saved_simulation": 0,
+        "T": 192,
+        "beta": 1.0,
+        "sigma2": 1.6e-05,
+        "measured_rotation_only": true,
+        "coordinate_transport_identity_verified": true,
+        "world_normal_fixed": true,
+        "maximum_sensor_rotation_distance": 1.0742275770531786,
+        "maximum_physical_projector_increment": 0.0,
+        "maximum_residual_after_measured_transport": 1.1909050386352223e-15,
+        "maximum_conditional_parameter_error": 2.2737367544323206e-13,
+        "actual_internal_action_times": [
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72,
+          76,
+          80,
+          84,
+          88,
+          92,
+          96,
+          100,
+          104,
+          108,
+          112,
+          116,
+          120,
+          124,
+          128,
+          132,
+          136,
+          140,
+          144,
+          148,
+          152,
+          156,
+          160,
+          164,
+          168,
+          172,
+          176,
+          180,
+          184,
+          188,
+          192
+        ],
+        "whole_run_saved_story_mean_errors_mm2_s2": {
+          "mean": 0.8697391816849089,
+          "mode": 0.8741861290572157,
+          "isotropic": 0.86991775392922
+        }
+      },
+      "sphere": {
+        "saved_simulation": 0,
+        "T": 192,
+        "beta": 0.9,
+        "sigma2": 1.6e-05,
+        "measured_rotation_only": true,
+        "coordinate_transport_identity_verified": true,
+        "world_normal_fixed": false,
+        "maximum_sensor_rotation_distance": 1.0742275770531786,
+        "maximum_physical_projector_increment": 0.028644555727577053,
+        "maximum_residual_after_measured_transport": 0.028644555727577074,
+        "maximum_conditional_parameter_error": 1.4210854715202004e-14,
+        "actual_internal_action_times": [
+          4,
+          8,
+          12,
+          16,
+          20,
+          24,
+          28,
+          32,
+          36,
+          40,
+          44,
+          48,
+          52,
+          56,
+          60,
+          64,
+          68,
+          72,
+          76,
+          80,
+          84,
+          88,
+          92,
+          96,
+          100,
+          104,
+          108,
+          112,
+          116,
+          120,
+          124,
+          128,
+          132,
+          136,
+          140,
+          144,
+          148,
+          152,
+          156,
+          160,
+          164,
+          168,
+          172,
+          176,
+          180,
+          184,
+          188,
+          192
+        ],
+        "whole_run_saved_story_mean_errors_mm2_s2": {
+          "mean": 5.223334754154218,
+          "mode": 5.122904993187594,
+          "isotropic": 5.191068230202357
+        }
+      }
+    },
+    "data_manifest_sha256": "b5521ff493dd1cf20020ce00031a237d7194cc34e52d42d546497de572e502be",
+    "main_comparisons": [
+      {
+        "condition": "sphere",
+        "endpoint": "episode_average",
+        "t": 192,
+        "method": "great_ew",
+        "simulations": 256,
+        "mean": 78.44423433344595,
+        "lower": 70.27141686214085,
+        "upper": 86.61705180475104
+      },
+      {
+        "condition": "sphere",
+        "endpoint": "episode_average",
+        "t": 192,
+        "method": "great_window",
+        "simulations": 256,
+        "mean": 67.56400192082288,
+        "lower": 59.56772677240268,
+        "upper": 75.56027706924307
+      },
+      {
+        "condition": "sphere",
+        "endpoint": "episode_average",
+        "t": 192,
+        "method": "iso",
+        "simulations": 256,
+        "mean": 10.149408463438881,
+        "lower": 8.752151142647847,
+        "upper": 11.546665784229916
+      },
+      {
+        "condition": "sphere",
+        "endpoint": "episode_average",
+        "t": 192,
+        "method": "mean",
+        "simulations": 256,
+        "mean": 9.806583285068543,
+        "lower": 8.512527940145427,
+        "upper": 11.100638629991659
+      },
+      {
+        "condition": "sphere",
+        "endpoint": "episode_average",
+        "t": 192,
+        "method": "mean_identity",
+        "simulations": 256,
+        "mean": 12.461407926042916,
+        "lower": 11.27114496694143,
+        "upper": 13.651670885144403
+      },
+      {
+        "condition": "sphere",
+        "endpoint": "episode_average",
+        "t": 192,
+        "method": "mode",
+        "simulations": 256,
+        "mean": 11.540899478427002,
+        "lower": 9.765346960543132,
+        "upper": 13.316451996310873
+      },
+      {
+        "condition": "sphere",
+        "endpoint": "episode_average",
+        "t": 192,
+        "method": "mode_identity",
+        "simulations": 256,
+        "mean": 14.16789768276196,
+        "lower": 12.601702239646,
+        "upper": 15.734093125877921
+      },
+      {
+        "condition": "sphere",
+        "endpoint": "episode_average",
+        "t": 192,
+        "method": "regularized",
+        "simulations": 256,
+        "mean": 11.170664750338037,
+        "lower": 9.522824499911444,
+        "upper": 12.818505000764631
+      },
+      {
+        "condition": "static_concentrated",
+        "endpoint": "checkpoint",
+        "t": 16,
+        "method": "great_ew",
+        "simulations": 256,
+        "mean": 70.56783253850733,
+        "lower": 61.59254420910334,
+        "upper": 79.54312086791133
+      },
+      {
+        "condition": "static_concentrated",
+        "endpoint": "checkpoint",
+        "t": 16,
+        "method": "great_window",
+        "simulations": 256,
+        "mean": 74.67280758966524,
+        "lower": 65.52125730446267,
+        "upper": 83.82435787486781
+      },
+      {
+        "condition": "static_concentrated",
+        "endpoint": "checkpoint",
+        "t": 16,
+        "method": "iso",
+        "simulations": 256,
+        "mean": 28.31575015946663,
+        "lower": 24.289666594502403,
+        "upper": 32.341833724430856
+      },
+      {
+        "condition": "static_concentrated",
+        "endpoint": "checkpoint",
+        "t": 16,
+        "method": "mean",
+        "simulations": 256,
+        "mean": 26.942648375804517,
+        "lower": 23.361231224381235,
+        "upper": 30.524065527227798
+      },
+      {
+        "condition": "static_concentrated",
+        "endpoint": "checkpoint",
+        "t": 16,
+        "method": "mode",
+        "simulations": 256,
+        "mean": 34.063678158864235,
+        "lower": 28.181521092642583,
+        "upper": 39.94583522508589
+      },
+      {
+        "condition": "static_concentrated",
+        "endpoint": "checkpoint",
+        "t": 16,
+        "method": "regularized",
+        "simulations": 256,
+        "mean": 33.05223208665035,
+        "lower": 29.233404491704977,
+        "upper": 36.871059681595725
+      }
+    ],
+    "limitations": [
+      "Dense test metrics are not retained for every simulation. Saved episode_average records and the unchanged verified producer establish the 48-time average; the saved trial-zero trajectory independently verifies it for mean, mode and isotropic mean.",
+      "GREAT receives measured velocities and rotations; conditional estimators additionally receive the known applied inputs."
+    ]
+  },
+  "identity_curve": {
+    "status": "passed",
+    "methods": [
+      "mean",
+      "mode",
+      "iso",
+      "mean_identity"
+    ],
+    "curves": 4,
+    "identity_label": "Posterior mean, $G_t=I_3$",
+    "identity_color": "Original posterior-mean blue",
+    "identity_linestyle": "--",
+    "identity_marker": "x",
+    "original_mean_interval_retained": true,
+    "identity_minus_measured_transport": {
+      "gain": 2.6548246409743737,
+      "lower": 2.095611015675944,
+      "upper": 3.2140382662728033,
+      "units": "(mm/s)^2",
+      "simulations": 256,
+      "endpoint": "episode_average",
+      "internal_action_times": 48,
+      "not_average_of_sparse_checkpoints": true
+    }
+  },
+  "snapshot": {
+    "t": 96,
+    "simulation": 0,
+    "sensor_frame_and_measured_transport_verified": true,
+    "same_native_mesh_and_identity_display_rotation": true,
+    "antipodal_sign_geometry_verified": true,
+    "modal_true_normal_angle_deg": 4.261287810209432,
+    "matching_overlap_error": 1.1102230246251565e-16,
+    "expected_squared_chordal_distance": 0.007963781412742232,
+    "integration_rule": "Independent 256-point Gauss-Legendre by 512-angle spectral-frame sphere quadrature; normalized invariant measure",
+    "laws": {
+      "full": {
+        "independent_log_normalizer_error": 3.979039320256561e-13,
+        "independent_mass": 1.0000000000004001,
+        "independent_mean_error": 4.003666820565467e-13,
+        "curvature_eigenvalues": [
+          230.9352932573118,
+          277.68599941683647
+        ],
+        "response_variance_m2_s2": 3.359597128819437e-06,
+        "response_variance_uses_own_law_mean": true
+      },
+      "isotropic": {
+        "independent_log_normalizer_error": 4.263256414560601e-13,
+        "independent_mass": 1.0000000000004274,
+        "independent_mean_error": 4.275478103144641e-13,
+        "curvature_eigenvalues": [
+          252.1532996144468,
+          252.15329961444684
+        ],
+        "response_variance_m2_s2": 3.4072261450140227e-06,
+        "response_variance_uses_own_law_mean": true
+      }
+    },
+    "metadata_sha256": "6e4754b28a4fb99bf369eaffed53e2b82a2794d3afbca46490157b7d38c5d85f"
+  },
+  "retained_static_response_variance": {
+    "status": "passed",
+    "original_arrays_sha256": "d3e7afc0ff19d80534c7385a4ee71956b883bb5a371f8c7f8602ee6685eec311",
+    "each_curve_uses_its_own_law_mean": true,
+    "normalization": "r_t(v(theta))/v0^2",
+    "query_family": 0,
+    "query_definition": "v(theta)=v0*(cos(theta)*e1+sin(theta)*e2)",
+    "saved_unit_risks_used_directly": true,
+    "endpoints": [
+      {
+        "theta": 0.0,
+        "risk_full": 0.019462209657903684,
+        "risk_isotropic": 0.08842183901123923
+      },
+      {
+        "theta": 1.5707963267948966,
+        "risk_full": 0.14346703590668408,
+        "risk_isotropic": 0.09824824499508511
+      }
+    ],
+    "exports": {
+      "results/main/contact/posterior_anisotropy_risk.pdf": {
+        "sha256": "ac0a516e29324ce8e0ffc7175e427e14f182341ef071124ef0d56116abd45c14",
+        "local_pdf": "results/notebook_exports/03_contact/posterior_anisotropy_risk.pdf",
+        "png_sha256": "12540b37b4fa695ab4da611ba82d2fececf0f49e26d8b2dc431bd599f96c8ea2",
+        "png_size_px": [
+          4500,
+          1500
+        ],
+        "figure_size_in": [
+          15,
+          5
+        ]
+      }
+    },
+    "maximum_absolute_errors": {
+      "full": 5.551115123125783e-17,
+      "isotropic": 4.163336342344337e-17
+    },
+    "interpretation": "Posterior response variance under each displayed law; not an empirical loss under one shared law."
+  },
+  "figure_manifest": {
+    "manifest": "results/contact_prediction_diagnostics/figure_manifest.json",
+    "sha256": "13423f663991993fde0091f0d64b1d20349e4c6ff4f6144d72be1dd197c83e0f",
+    "figure_copies": 16,
+    "all_bound_files": 30
+  },
+  "preservation": {
+    "status": "passed",
+    "tracked_files": 4006,
+    "tracked_proof_sha256": "396220a37e1f14faa67efc9969bf5053e08d478cf833922b82a0c39d6007d2c1",
+    "all_original_tracked_files_unchanged": false,
+    "authorized_presentation_updates": [
+      "notebooks/01_array.ipynb",
+      "notebooks/03_contact.ipynb",
+      "notebooks/beamforming_moving_interference.ipynb",
+      "results/beamforming_moving/figure_manifest.json",
+      "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf",
+      "results/beamforming_moving/figures/moving_interference_abrupt_output_power.png",
+      "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf",
+      "results/beamforming_moving/figures/moving_interference_smooth_output_power.png",
+      "results/draft_figure_manifest.json",
+      "results/main/README.md",
+      "results/main/beamforming/moving_interference_abrupt_output_power.pdf",
+      "results/main/beamforming/moving_interference_abrupt_output_power.png",
+      "results/main/beamforming/moving_interference_smooth_output_power.pdf",
+      "results/main/beamforming/moving_interference_smooth_output_power.png",
+      "results/main/beamforming/noise_adaptation_page1.pdf",
+      "results/main/beamforming/noise_adaptation_page1.png",
+      "results/main/beamforming/task_performance_output_power.pdf",
+      "results/main/beamforming/task_performance_output_power.png",
+      "results/main/contact/information_rotation.pdf",
+      "results/main/contact/posterior_anisotropy_risk.pdf",
+      "results/main/contact/task_performance_page1.pdf",
+      "results/notebook_editability.json",
+      "results/supplementary/beamforming/additional_comparisons_supp_page1.pdf",
+      "results/supplementary/beamforming/additional_comparisons_supp_page2.pdf",
+      "results/supplementary/beamforming/additional_comparisons_supp_page3.pdf",
+      "results/supplementary/beamforming/additional_comparisons_supp_page4.pdf",
+      "results/supplementary/beamforming/additional_comparisons_supp_page5.pdf",
+      "results/supplementary/beamforming/additional_comparisons_supp_page6.pdf",
+      "results/supplementary/beamforming/additional_comparisons_supp_page7.pdf",
+      "results/supplementary/beamforming/additional_comparisons_supp_page8.pdf",
+      "results/supplementary/beamforming/block_updates_supp_page1.pdf",
+      "results/supplementary/beamforming/computation_time_phases.pdf",
+      "results/supplementary/beamforming/computation_time_scaling.pdf",
+      "results/supplementary/beamforming/computation_time_supp_page2.pdf",
+      "results/supplementary/beamforming/information_page1.pdf",
+      "results/supplementary/beamforming/model_mismatch_supp_page1.pdf",
+      "results/supplementary/beamforming/noise_adaptation_supp_page2.pdf",
+      "results/supplementary/beamforming/noise_adaptation_supp_page3.pdf",
+      "results/supplementary/beamforming/numerical_accuracy_supp_page1.pdf",
+      "results/supplementary/beamforming/numerical_accuracy_supp_page2.pdf",
+      "results/supplementary/beamforming/numerical_accuracy_supp_page3.pdf",
+      "results/supplementary/beamforming/paper_summary_supp_page1.pdf",
+      "results/supplementary/beamforming/posterior_anisotropy_eigenvalues.pdf",
+      "results/supplementary/beamforming/posterior_anisotropy_empirical_cdf.pdf",
+      "results/supplementary/beamforming/posterior_curvature_supp_page1.pdf",
+      "results/supplementary/beamforming/predictive_calibration_page2.pdf",
+      "results/supplementary/beamforming/predictive_calibration_page6.pdf",
+      "results/supplementary/beamforming/predictive_calibration_supp_page1.pdf",
+      "results/supplementary/beamforming/predictive_calibration_supp_page3.pdf",
+      "results/supplementary/beamforming/predictive_calibration_supp_page4.pdf",
+      "results/supplementary/beamforming/predictive_calibration_supp_page5.pdf",
+      "results/supplementary/beamforming/predictive_calibration_supp_page7.pdf",
+      "results/supplementary/beamforming/predictive_calibration_supp_page8.pdf",
+      "results/supplementary/beamforming/predictive_calibration_supp_page9.pdf",
+      "results/supplementary/beamforming/predictive_scores_supp_page1.pdf",
+      "results/supplementary/beamforming/setup_page1.pdf",
+      "results/supplementary/beamforming/stationary_dimensions_T200.pdf",
+      "results/supplementary/beamforming/stationary_dimensions_T200.png",
+      "results/supplementary/beamforming/task_performance_paired_difference.pdf",
+      "results/supplementary/beamforming/tracking_bound_supp_page1.pdf",
+      "results/supplementary/beamforming/tracking_bound_supp_page2.pdf",
+      "results/supplementary/beamforming/tracking_bound_supp_page3.pdf",
+      "results/supplementary/beamforming/tracking_bound_supp_page4.pdf",
+      "results/supplementary/beamforming/tracking_error_supp_page1.pdf",
+      "results/supplementary/beamforming/variance_estimation_supp_page1.pdf",
+      "results/supplementary/contact/additional_comparisons_supp_page1.pdf",
+      "results/supplementary/contact/additional_comparisons_supp_page2.pdf",
+      "results/supplementary/contact/additional_comparisons_supp_page3.pdf",
+      "results/supplementary/contact/additional_comparisons_supp_page4.pdf",
+      "results/supplementary/contact/block_updates_supp_page1.pdf",
+      "results/supplementary/contact/computation_time_phases.pdf",
+      "results/supplementary/contact/computation_time_scaling.pdf",
+      "results/supplementary/contact/computation_time_supp_page2.pdf",
+      "results/supplementary/contact/information_contours.pdf",
+      "results/supplementary/contact/model_mismatch_supp_page1.pdf",
+      "results/supplementary/contact/noise_adaptation_page1.pdf",
+      "results/supplementary/contact/noise_adaptation_supp_page2.pdf",
+      "results/supplementary/contact/noise_adaptation_supp_page4.pdf",
+      "results/supplementary/contact/numerical_accuracy_supp_page1.pdf",
+      "results/supplementary/contact/numerical_accuracy_supp_page2.pdf",
+      "results/supplementary/contact/numerical_accuracy_supp_page3.pdf",
+      "results/supplementary/contact/paper_summary_supp_page1.pdf",
+      "results/supplementary/contact/posterior_anisotropy_supp_page2.pdf",
+      "results/supplementary/contact/posterior_curvature_supp_page1.pdf",
+      "results/supplementary/contact/predictive_calibration_page2.pdf",
+      "results/supplementary/contact/predictive_calibration_page6.pdf",
+      "results/supplementary/contact/predictive_calibration_supp_page1.pdf",
+      "results/supplementary/contact/predictive_calibration_supp_page3.pdf",
+      "results/supplementary/contact/predictive_calibration_supp_page4.pdf",
+      "results/supplementary/contact/predictive_calibration_supp_page5.pdf",
+      "results/supplementary/contact/predictive_calibration_supp_page7.pdf",
+      "results/supplementary/contact/predictive_calibration_supp_page8.pdf",
+      "results/supplementary/contact/predictive_calibration_supp_page9.pdf",
+      "results/supplementary/contact/predictive_scores_supp_page1.pdf",
+      "results/supplementary/contact/setup_page1.pdf",
+      "results/supplementary/contact/task_performance_supp_page2.pdf",
+      "results/supplementary/contact/tracking_bound_supp_page1.pdf",
+      "results/supplementary/contact/tracking_bound_supp_page2.pdf",
+      "results/supplementary/contact/tracking_bound_supp_page3.pdf",
+      "results/supplementary/contact/tracking_bound_supp_page4.pdf",
+      "results/supplementary/contact/tracking_error_supp_page1.pdf",
+      "results/supplementary/contact/variance_estimation_supp_page1.pdf"
+    ],
+    "scientific_data_and_settings_unchanged": true,
+    "local_snapshot": {
+      "files": 29114,
+      "sha256": "4e11ebbe28508c00038553931822c5086444576993306829dc55404f7452ee5d",
+      "all_files_unchanged": false,
+      "authorized_presentation_updates": [
+        "notebooks/01_array.ipynb",
+        "notebooks/03_contact.ipynb",
+        "notebooks/beamforming_moving_interference.ipynb",
+        "results/beamforming_moving/figure_manifest.json",
+        "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf",
+        "results/beamforming_moving/figures/moving_interference_abrupt_output_power.png",
+        "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf",
+        "results/beamforming_moving/figures/moving_interference_smooth_output_power.png",
+        "results/draft_figure_manifest.json",
+        "results/main/README.md",
+        "results/main/beamforming/moving_interference_abrupt_output_power.pdf",
+        "results/main/beamforming/moving_interference_abrupt_output_power.png",
+        "results/main/beamforming/moving_interference_smooth_output_power.pdf",
+        "results/main/beamforming/moving_interference_smooth_output_power.png",
+        "results/main/beamforming/noise_adaptation_page1.pdf",
+        "results/main/beamforming/noise_adaptation_page1.png",
+        "results/main/beamforming/task_performance_output_power.pdf",
+        "results/main/beamforming/task_performance_output_power.png",
+        "results/main/contact/information_rotation.pdf",
+        "results/main/contact/posterior_anisotropy_risk.pdf",
+        "results/main/contact/task_performance_page1.pdf",
+        "results/notebook_editability.json",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page1.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page2.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page3.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page4.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page5.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page6.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page7.pdf",
+        "results/notebook_exports/01_array/additional_comparisons_supp_page8.pdf",
+        "results/notebook_exports/01_array/block_updates_supp_page1.pdf",
+        "results/notebook_exports/01_array/computation_time_phases.pdf",
+        "results/notebook_exports/01_array/computation_time_scaling.pdf",
+        "results/notebook_exports/01_array/computation_time_supp_page2.pdf",
+        "results/notebook_exports/01_array/information_page1.pdf",
+        "results/notebook_exports/01_array/model_mismatch_supp_page1.pdf",
+        "results/notebook_exports/01_array/noise_adaptation_page1.pdf",
+        "results/notebook_exports/01_array/noise_adaptation_page1.png",
+        "results/notebook_exports/01_array/noise_adaptation_supp_page2.pdf",
+        "results/notebook_exports/01_array/noise_adaptation_supp_page3.pdf",
+        "results/notebook_exports/01_array/numerical_accuracy_supp_page1.pdf",
+        "results/notebook_exports/01_array/numerical_accuracy_supp_page2.pdf",
+        "results/notebook_exports/01_array/numerical_accuracy_supp_page3.pdf",
+        "results/notebook_exports/01_array/paper_summary_supp_page1.pdf",
+        "results/notebook_exports/01_array/posterior_anisotropy_eigenvalues.pdf",
+        "results/notebook_exports/01_array/posterior_anisotropy_empirical_cdf.pdf",
+        "results/notebook_exports/01_array/posterior_curvature_supp_page1.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_page2.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_page6.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page1.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page3.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page4.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page5.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page7.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page8.pdf",
+        "results/notebook_exports/01_array/predictive_calibration_supp_page9.pdf",
+        "results/notebook_exports/01_array/predictive_scores_supp_page1.pdf",
+        "results/notebook_exports/01_array/setup_page1.pdf",
+        "results/notebook_exports/01_array/stationary_dimensions_T200.pdf",
+        "results/notebook_exports/01_array/stationary_dimensions_T200.png",
+        "results/notebook_exports/01_array/task_performance_output_power.pdf",
+        "results/notebook_exports/01_array/task_performance_output_power.png",
+        "results/notebook_exports/01_array/task_performance_paired_difference.pdf",
+        "results/notebook_exports/01_array/tracking_bound_supp_page1.pdf",
+        "results/notebook_exports/01_array/tracking_bound_supp_page2.pdf",
+        "results/notebook_exports/01_array/tracking_bound_supp_page3.pdf",
+        "results/notebook_exports/01_array/tracking_bound_supp_page4.pdf",
+        "results/notebook_exports/01_array/tracking_error_supp_page1.pdf",
+        "results/notebook_exports/01_array/variance_estimation_supp_page1.pdf",
+        "results/notebook_exports/03_contact/additional_comparisons_supp_page1.pdf",
+        "results/notebook_exports/03_contact/additional_comparisons_supp_page2.pdf",
+        "results/notebook_exports/03_contact/additional_comparisons_supp_page3.pdf",
+        "results/notebook_exports/03_contact/additional_comparisons_supp_page4.pdf",
+        "results/notebook_exports/03_contact/block_updates_supp_page1.pdf",
+        "results/notebook_exports/03_contact/computation_time_phases.pdf",
+        "results/notebook_exports/03_contact/computation_time_scaling.pdf",
+        "results/notebook_exports/03_contact/computation_time_supp_page2.pdf",
+        "results/notebook_exports/03_contact/information_contours.pdf",
+        "results/notebook_exports/03_contact/information_rotation.pdf",
+        "results/notebook_exports/03_contact/model_mismatch_supp_page1.pdf",
+        "results/notebook_exports/03_contact/noise_adaptation_page1.pdf",
+        "results/notebook_exports/03_contact/noise_adaptation_supp_page2.pdf",
+        "results/notebook_exports/03_contact/noise_adaptation_supp_page4.pdf",
+        "results/notebook_exports/03_contact/numerical_accuracy_supp_page1.pdf",
+        "results/notebook_exports/03_contact/numerical_accuracy_supp_page2.pdf",
+        "results/notebook_exports/03_contact/numerical_accuracy_supp_page3.pdf",
+        "results/notebook_exports/03_contact/paper_summary_supp_page1.pdf",
+        "results/notebook_exports/03_contact/posterior_anisotropy_risk.pdf",
+        "results/notebook_exports/03_contact/posterior_anisotropy_supp_page2.pdf",
+        "results/notebook_exports/03_contact/posterior_curvature_supp_page1.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_page2.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_page6.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page1.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page3.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page4.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page5.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page7.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page8.pdf",
+        "results/notebook_exports/03_contact/predictive_calibration_supp_page9.pdf",
+        "results/notebook_exports/03_contact/predictive_scores_supp_page1.pdf",
+        "results/notebook_exports/03_contact/setup_page1.pdf",
+        "results/notebook_exports/03_contact/task_performance_page1.pdf",
+        "results/notebook_exports/03_contact/task_performance_supp_page2.pdf",
+        "results/notebook_exports/03_contact/tracking_bound_supp_page1.pdf",
+        "results/notebook_exports/03_contact/tracking_bound_supp_page2.pdf",
+        "results/notebook_exports/03_contact/tracking_bound_supp_page3.pdf",
+        "results/notebook_exports/03_contact/tracking_bound_supp_page4.pdf",
+        "results/notebook_exports/03_contact/tracking_error_supp_page1.pdf",
+        "results/notebook_exports/03_contact/variance_estimation_supp_page1.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page1.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page2.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page3.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page4.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page5.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page6.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page7.pdf",
+        "results/supplementary/beamforming/additional_comparisons_supp_page8.pdf",
+        "results/supplementary/beamforming/block_updates_supp_page1.pdf",
+        "results/supplementary/beamforming/computation_time_phases.pdf",
+        "results/supplementary/beamforming/computation_time_scaling.pdf",
+        "results/supplementary/beamforming/computation_time_supp_page2.pdf",
+        "results/supplementary/beamforming/information_page1.pdf",
+        "results/supplementary/beamforming/model_mismatch_supp_page1.pdf",
+        "results/supplementary/beamforming/noise_adaptation_supp_page2.pdf",
+        "results/supplementary/beamforming/noise_adaptation_supp_page3.pdf",
+        "results/supplementary/beamforming/numerical_accuracy_supp_page1.pdf",
+        "results/supplementary/beamforming/numerical_accuracy_supp_page2.pdf",
+        "results/supplementary/beamforming/numerical_accuracy_supp_page3.pdf",
+        "results/supplementary/beamforming/paper_summary_supp_page1.pdf",
+        "results/supplementary/beamforming/posterior_anisotropy_eigenvalues.pdf",
+        "results/supplementary/beamforming/posterior_anisotropy_empirical_cdf.pdf",
+        "results/supplementary/beamforming/posterior_curvature_supp_page1.pdf",
+        "results/supplementary/beamforming/predictive_calibration_page2.pdf",
+        "results/supplementary/beamforming/predictive_calibration_page6.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page1.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page3.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page4.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page5.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page7.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page8.pdf",
+        "results/supplementary/beamforming/predictive_calibration_supp_page9.pdf",
+        "results/supplementary/beamforming/predictive_scores_supp_page1.pdf",
+        "results/supplementary/beamforming/setup_page1.pdf",
+        "results/supplementary/beamforming/stationary_dimensions_T200.pdf",
+        "results/supplementary/beamforming/stationary_dimensions_T200.png",
+        "results/supplementary/beamforming/task_performance_paired_difference.pdf",
+        "results/supplementary/beamforming/tracking_bound_supp_page1.pdf",
+        "results/supplementary/beamforming/tracking_bound_supp_page2.pdf",
+        "results/supplementary/beamforming/tracking_bound_supp_page3.pdf",
+        "results/supplementary/beamforming/tracking_bound_supp_page4.pdf",
+        "results/supplementary/beamforming/tracking_error_supp_page1.pdf",
+        "results/supplementary/beamforming/variance_estimation_supp_page1.pdf",
+        "results/supplementary/contact/additional_comparisons_supp_page1.pdf",
+        "results/supplementary/contact/additional_comparisons_supp_page2.pdf",
+        "results/supplementary/contact/additional_comparisons_supp_page3.pdf",
+        "results/supplementary/contact/additional_comparisons_supp_page4.pdf",
+        "results/supplementary/contact/block_updates_supp_page1.pdf",
+        "results/supplementary/contact/computation_time_phases.pdf",
+        "results/supplementary/contact/computation_time_scaling.pdf",
+        "results/supplementary/contact/computation_time_supp_page2.pdf",
+        "results/supplementary/contact/information_contours.pdf",
+        "results/supplementary/contact/model_mismatch_supp_page1.pdf",
+        "results/supplementary/contact/noise_adaptation_page1.pdf",
+        "results/supplementary/contact/noise_adaptation_supp_page2.pdf",
+        "results/supplementary/contact/noise_adaptation_supp_page4.pdf",
+        "results/supplementary/contact/numerical_accuracy_supp_page1.pdf",
+        "results/supplementary/contact/numerical_accuracy_supp_page2.pdf",
+        "results/supplementary/contact/numerical_accuracy_supp_page3.pdf",
+        "results/supplementary/contact/paper_summary_supp_page1.pdf",
+        "results/supplementary/contact/posterior_anisotropy_supp_page2.pdf",
+        "results/supplementary/contact/posterior_curvature_supp_page1.pdf",
+        "results/supplementary/contact/predictive_calibration_page2.pdf",
+        "results/supplementary/contact/predictive_calibration_page6.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page1.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page3.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page4.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page5.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page7.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page8.pdf",
+        "results/supplementary/contact/predictive_calibration_supp_page9.pdf",
+        "results/supplementary/contact/predictive_scores_supp_page1.pdf",
+        "results/supplementary/contact/setup_page1.pdf",
+        "results/supplementary/contact/task_performance_supp_page2.pdf",
+        "results/supplementary/contact/tracking_bound_supp_page1.pdf",
+        "results/supplementary/contact/tracking_bound_supp_page2.pdf",
+        "results/supplementary/contact/tracking_bound_supp_page3.pdf",
+        "results/supplementary/contact/tracking_bound_supp_page4.pdf",
+        "results/supplementary/contact/tracking_error_supp_page1.pdf",
+        "results/supplementary/contact/variance_estimation_supp_page1.pdf"
+      ]
+    }
+  },
+  "pdf_audit": {
+    "status": "passed",
+    "figures": {
+      "results/main/contact/prediction_error_stationary.pdf": {
+        "sha256": "e1512ed1f432e7abb7ace4369af43ab2cce0948bcd44b6ad1bbe2cbb8e17fc9b",
+        "pages": [
+          {
+            "page": 1,
+            "figure_size_in": [
+              15.0,
+              5.0
+            ],
+            "vector_text_spans": 29,
+            "fonts": [
+              {
+                "name": "CMEX10",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMMI10",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMMI12",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMR12",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMR17",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMSY10",
+                "type": "Type1",
+                "embedded": true
+              }
+            ],
+            "font_size_counts": {
+              "22.9141": 8,
+              "24.9066": 8,
+              "17.4345": 3,
+              "21.9178": 3,
+              "15.3424": 6,
+              "10.9589": 1
+            },
+            "primary_font_readability": {
+              "LABEL_FONT_SIZE": {
+                "declared_pt": 25.0,
+                "actual_pt": 24.9066,
+                "six_inch_insertion_pt": 9.96264
+              },
+              "TICK_FONT_SIZE": {
+                "declared_pt": 23.0,
+                "actual_pt": 22.9141,
+                "six_inch_insertion_pt": 9.16564
+              },
+              "LEGEND_FONT_SIZE": {
+                "declared_pt": 22.0,
+                "actual_pt": 21.9178,
+                "six_inch_insertion_pt": 8.76712
+              }
+            },
+            "raster_dpi": [],
+            "out_of_page_text": [],
+            "panel_letters": [],
+            "errors": []
+          }
+        ],
+        "errors": [],
+        "ordinary_plot_borders": {
+          "width_points": 0.9,
+          "horizontal": [
+            [
+              81.04998016357422,
+              216.17953491210938,
+              1068.47998046875,
+              216.17953491210938
+            ],
+            [
+              81.04998016357422,
+              12.959991455078125,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ],
+          "vertical": [
+            [
+              81.04998016357422,
+              216.17953491210938,
+              81.04998016357422,
+              12.959991455078125
+            ],
+            [
+              1068.47998046875,
+              216.17953491210938,
+              1068.47998046875,
+              12.959991455078125
+            ]
+          ]
+        }
+      },
+      "results/main/contact/prediction_error_sphere.pdf": {
+        "sha256": "e02beab3c6b03f5f5016646ce50d55acda7556d76c094188d50a0144ea57ec5b",
+        "pages": [
+          {
+            "page": 1,
+            "figure_size_in": [
+              15.0,
+              5.0
+            ],
+            "vector_text_spans": 37,
+            "fonts": [
+              {
+                "name": "CMEX10",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMMI10",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMMI12",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMR12",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMR17",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMSY10",
+                "type": "Type1",
+                "embedded": true
+              }
+            ],
+            "font_size_counts": {
+              "22.9141": 10,
+              "24.9066": 8,
+              "17.4345": 3,
+              "21.9178": 7,
+              "15.3424": 8,
+              "10.9589": 1
+            },
+            "primary_font_readability": {
+              "LABEL_FONT_SIZE": {
+                "declared_pt": 25.0,
+                "actual_pt": 24.9066,
+                "six_inch_insertion_pt": 9.96264
+              },
+              "TICK_FONT_SIZE": {
+                "declared_pt": 23.0,
+                "actual_pt": 22.9141,
+                "six_inch_insertion_pt": 9.16564
+              },
+              "LEGEND_FONT_SIZE": {
+                "declared_pt": 22.0,
+                "actual_pt": 21.9178,
+                "six_inch_insertion_pt": 8.76712
+              }
+            },
+            "raster_dpi": [],
+            "out_of_page_text": [],
+            "panel_letters": [],
+            "errors": []
+          }
+        ],
+        "errors": [],
+        "ordinary_plot_borders": {
+          "width_points": 0.9,
+          "horizontal": [
+            [
+              70.54116821289062,
+              184.36109924316406,
+              1068.47998046875,
+              184.36109924316406
+            ],
+            [
+              70.54116821289062,
+              17.278289794921875,
+              1068.47998046875,
+              17.278289794921875
+            ]
+          ],
+          "vertical": [
+            [
+              70.54116821289062,
+              184.36109924316406,
+              70.54116821289062,
+              17.278289794921875
+            ],
+            [
+              1068.47998046875,
+              184.36109924316406,
+              1068.47998046875,
+              17.278289794921875
+            ]
+          ]
+        }
+      },
+      "results/supplementary/contact/prediction_error_references.pdf": {
+        "sha256": "a23874493d9bf904581633beae9ed599edbf37bb285e9e8376debdbff664b68f",
+        "pages": [
+          {
+            "page": 1,
+            "figure_size_in": [
+              15.0,
+              5.0
+            ],
+            "vector_text_spans": 32,
+            "fonts": [
+              {
+                "name": "CMEX10",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMMI10",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMMI12",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMR12",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMR17",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMSY10",
+                "type": "Type1",
+                "embedded": true
+              }
+            ],
+            "font_size_counts": {
+              "22.9141": 9,
+              "24.9066": 7,
+              "17.4345": 1,
+              "21.9178": 7,
+              "15.3424": 7,
+              "10.9589": 1
+            },
+            "primary_font_readability": {
+              "LABEL_FONT_SIZE": {
+                "declared_pt": 25.0,
+                "actual_pt": 24.9066,
+                "six_inch_insertion_pt": 9.96264
+              },
+              "TICK_FONT_SIZE": {
+                "declared_pt": 23.0,
+                "actual_pt": 22.9141,
+                "six_inch_insertion_pt": 9.16564
+              },
+              "LEGEND_FONT_SIZE": {
+                "declared_pt": 22.0,
+                "actual_pt": 21.9178,
+                "six_inch_insertion_pt": 8.76712
+              }
+            },
+            "raster_dpi": [],
+            "out_of_page_text": [],
+            "panel_letters": [],
+            "errors": []
+          }
+        ],
+        "errors": [],
+        "ordinary_plot_borders": {
+          "width_points": 0.9,
+          "horizontal": [
+            [
+              300.9231872558594,
+              287.9394226074219,
+              1062.604248046875,
+              287.9394226074219
+            ],
+            [
+              300.9231872558594,
+              12.959991455078125,
+              1062.604248046875,
+              12.959991455078125
+            ]
+          ],
+          "vertical": [
+            [
+              300.9231872558594,
+              287.9394226074219,
+              300.9231872558594,
+              12.959991455078125
+            ],
+            [
+              1062.604248046875,
+              287.9394226074219,
+              1062.604248046875,
+              12.959991455078125
+            ]
+          ]
+        }
+      },
+      "results/supplementary/contact/moving_sphere_posterior_spheres.pdf": {
+        "sha256": "b7d87318f3f30b048b551e3e7c46ba5184d926ab42d5277c4e3f438c38f97b64",
+        "pages": [
+          {
+            "page": 1,
+            "figure_size_in": [
+              15.0,
+              5.0
+            ],
+            "vector_text_spans": 55,
+            "fonts": [
+              {
+                "name": "CMEX10",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMMI12",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMR12",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMR17",
+                "type": "Type1",
+                "embedded": true
+              },
+              {
+                "name": "CMSY10",
+                "type": "Type1",
+                "embedded": true
+              }
+            ],
+            "font_size_counts": {
+              "22.9141": 28,
+              "24.9066": 10,
+              "17.4345": 7,
+              "16.0398": 5,
+              "21.9178": 3,
+              "15.3424": 2
+            },
+            "primary_font_readability": {
+              "LABEL_FONT_SIZE": {
+                "declared_pt": 25.0,
+                "actual_pt": 24.9066,
+                "six_inch_insertion_pt": 9.96264
+              },
+              "TICK_FONT_SIZE": {
+                "declared_pt": 23.0,
+                "actual_pt": 22.9141,
+                "six_inch_insertion_pt": 9.16564
+              },
+              "LEGEND_FONT_SIZE": {
+                "declared_pt": 22.0,
+                "actual_pt": 21.9178,
+                "six_inch_insertion_pt": 8.76712
+              }
+            },
+            "raster_dpi": [
+              [
+                300.00000227065317,
+                300.00000227065317
+              ],
+              [
+                300.00000755385616,
+                300.00000227065317
+              ],
+              [
+                300.00000227065317,
+                300.00000180150994
+              ]
+            ],
+            "out_of_page_text": [],
+            "panel_letters": [],
+            "errors": []
+          }
+        ],
+        "errors": []
+      }
+    },
+    "audit_source_sha256": "eeea9b09d6f6e1bd981ac39ab283208a9cfffa1a1b3df4c97f97805bf32bfbe3",
+    "retained_information": {
+      "path": "results/main/contact/information_rotation.pdf",
+      "sha256": "dd765a08af944b69185018a49f20b9821b820c8b16de89a54a169071ef82f593",
+      "inherited_panel_letters": [],
+      "unchanged_lowercase_chart_notation": true,
+      "interpretation": "The retained p_z and the new p_Z denote the same candidate-plane conditional measurement law, with z=vec(Z)."
+    }
+  },
+  "scientific_sha256": "e926a6a16fea47e35f0625afcc811d5fbdd533fb812c8c1fa9314484f16b24ee"
+}

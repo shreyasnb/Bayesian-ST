@@ -64,6 +64,15 @@ results/implementation_audit/**/pytest.xml
 !results/beamforming_moving/**
 !results/contact_prediction_diagnostics/
 !results/contact_prediction_diagnostics/**
+!results/beamforming_comparison_audit/
+!results/beamforming_comparison_audit/**
+# Audit worker caches are restartable; declared records/manifests are retained.
+results/beamforming_comparison_audit/**/checkpoints/**
+results/beamforming_comparison_audit/**/unpublished_pre_stationary_finaltime_fix/**
+!results/contact_plotting_addendum/
+!results/contact_plotting_addendum/**
+!results/application_plotting_update/
+!results/application_plotting_update/**
 !results/main/
 !results/main/**/
 !results/main/**

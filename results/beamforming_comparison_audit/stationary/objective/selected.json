@@ -1,0 +1,50 @@
+{
+  "static_n32": {
+    "selected_inner_steps": 10,
+    "original_inner_steps": 3,
+    "beta": 1.0,
+    "stepsize": 0.003125,
+    "measured_validation_db_by_inner_steps": {
+      "1": -4.572493802449482,
+      "3": -4.572724189636577,
+      "10": -4.572765414423446,
+      "30": -4.572765140291773
+    },
+    "validation_selection_times": [
+      200
+    ],
+    "selected_by": "Measured validation log-power at t=200 only, all64 simulations"
+  },
+  "static_n64": {
+    "selected_inner_steps": 3,
+    "original_inner_steps": 3,
+    "beta": 1.0,
+    "stepsize": 0.0015625,
+    "measured_validation_db_by_inner_steps": {
+      "1": -4.392196434241859,
+      "3": -4.392279246751013,
+      "10": -4.392265970970079,
+      "30": -4.392265541411869
+    },
+    "validation_selection_times": [
+      200
+    ],
+    "selected_by": "Measured validation log-power at t=200 only, all64 simulations"
+  },
+  "static_n128": {
+    "selected_inner_steps": 10,
+    "original_inner_steps": 3,
+    "beta": 1.0,
+    "stepsize": 0.00078125,
+    "measured_validation_db_by_inner_steps": {
+      "1": -4.227799438187137,
+      "3": -4.229784528288123,
+      "10": -4.2300375412870155,
+      "30": -4.230005109767527
+    },
+    "validation_selection_times": [
+      200
+    ],
+    "selected_by": "Measured validation log-power at t=200 only, all64 simulations"
+  }
+}

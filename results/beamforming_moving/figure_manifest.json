@@ -2,7 +2,7 @@
   "schema": 1,
   "status": "completed",
   "example": "beamforming_moving",
-  "created_utc": "2026-11-11T00:13:31.106234+00:00",
+  "created_utc": "2026-11-11T01:28:36.862658+00:00",
   "optional_main_candidate": true,
   "configuration": {
     "n": 32,
@@ -129,14 +129,16 @@
     "time_average_definition": "Arithmetic mean of true_ratio_db at the 32 reporting indices t=8,16,...,256 within each simulation, followed by an across-simulation mean and Student 95% confidence interval. This is not the logarithm of an average power ratio and has no burn-in exclusion."
   },
   "notebook": "notebooks/beamforming_moving_interference.ipynb",
-  "notebook_sha256": "4afeab956e2e2150315d3461f9db4d8b3480c426ffec001bf9960cb3b2730135",
+  "notebook_sha256": "81122ee489132286e48deb8208d4f7d694d1deafbb1b13b02e6ef4db8f9066d4",
   "producer": "scripts/make_moving_beamforming_notebook.py",
   "source_hashes": {
     "lib/beamforming_moving_evidence.py": "36786cfe98474f00e3a31f96ce7eac5d178a986568765e48fb4656198d67f252",
-    "scripts/make_moving_beamforming_notebook.py": "3775c557a555cc25580d48e26f8298bd6a3d6ea75938e435b7c7cf1fb18c7baa"
+    "scripts/make_moving_beamforming_notebook.py": "f93209d87467d762c90d48e41c83a0af20f67129d613f94c6cc80f4126db8a19"
   },
   "data_manifest": "results/beamforming_moving/data/manifest.json",
   "data_manifest_sha256": "f6a5f19f7850144347e740291113230fa1f1b2f455f669363c471f63aa603895",
+  "plotting_manifest": "results/beamforming_moving/plotting/manifest.json",
+  "plotting_manifest_sha256": "944d3010c5f5d6d32525c348beb88b8430838e0c64c761820655b0b6a151e839",
   "input_hashes": {
     "results/beamforming/data/paper/performance/manifest.json": "473a680b450c3b350fb2ad9259f4678d3ac56bca26ab18581dc88d0bd8cd4dcb",
     "archive/dd399ba/stationary_source_proof.json": "c693f5b5f874f08a245ef6187c072e1e93c30c2242fde8d7119e8015a8e30222",
@@ -186,17 +188,26 @@
       "dpi": 300,
       "text_usetex": true,
       "optional_main_candidate": true,
-      "formula_or_claim": "$\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, $R_t=\\sigma^2I_n+\\tau^2h_th_t^{\\mathrm H}$, $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. Curves average 256 simulations at each stored t=8,16,...,256; shading is a pointwise Student 95% interval for the posterior-mean average. $\\varphi_t=\\varphi_0+2\\varphi_0(t-1)/(T-1)$.",
-      "caption": "$\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, $R_t=\\sigma^2I_n+\\tau^2h_th_t^{\\mathrm H}$, $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. Curves average 256 simulations at each stored t=8,16,...,256; shading is a pointwise Student 95% interval for the posterior-mean average. $\\varphi_t=\\varphi_0+2\\varphi_0(t-1)/(T-1)$.",
+      "formula_or_claim": "$\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, $R_t=\\sigma^2I_n+\\tau^2h_th_t^{\\mathrm H}$, $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. Curves show means across 256 Monte Carlo simulations. Shaded regions show the pointwise 25th\u201375th percentiles across simulations. These empirical simulation spreads are not posterior credible regions; table confidence intervals are unchanged. $\\varphi_t=\\varphi_0+2\\varphi_0(t-1)/(T-1)$.",
+      "caption": "$\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, $R_t=\\sigma^2I_n+\\tau^2h_th_t^{\\mathrm H}$, $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. Curves show means across 256 Monte Carlo simulations. Shaded regions show the pointwise 25th\u201375th percentiles across simulations. These empirical simulation spreads are not posterior credible regions; table confidence intervals are unchanged. $\\varphi_t=\\varphi_0+2\\varphi_0(t-1)/(T-1)$.",
       "source_cell_id": "smooth-output-power",
-      "source_cell_sha256": "a08ca724373746f8516621b3e123f262e206aa1040dbac7d84abb3c1fbf5d806",
+      "source_cell_sha256": "eb2508fcd7fe048a0223ea457600e50582597ff60dbb4443eb1c8eacd8a849e4",
       "event_t": null,
-      "uncertainty": "Pointwise Student 95% confidence interval across 256 simulations",
+      "uncertainty": "Pointwise empirical 25th\u201375th percentiles across 256 simulations",
+      "mean_curves_unchanged": true,
+      "iqr_alpha": 0.22,
+      "plotting": {
+        "labels": 25,
+        "ticks": 23,
+        "legend": 22,
+        "line_width": 3.857142857142857,
+        "marker_size": 11.785714285714286
+      },
       "output_hashes": {
-        "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf": "bb42b86d38389b349a6174b18179719c7a55b05ca8f2053fcad3e1e103527589",
-        "results/beamforming_moving/figures/moving_interference_smooth_output_power.png": "d1e6f2f1ce7a10177159f325f328df6a5669a77cb5959aeae1511f81d2993f2e",
-        "results/main/beamforming/moving_interference_smooth_output_power.pdf": "bb42b86d38389b349a6174b18179719c7a55b05ca8f2053fcad3e1e103527589",
-        "results/main/beamforming/moving_interference_smooth_output_power.png": "d1e6f2f1ce7a10177159f325f328df6a5669a77cb5959aeae1511f81d2993f2e"
+        "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf": "1cc54a3319e1eca4e7fdc7d7a2b8472d66e027e067518e7f4f76215984087f8c",
+        "results/beamforming_moving/figures/moving_interference_smooth_output_power.png": "f0fc1ee621fd3f00fa2a72bb311e213212632fdd76682b58a7b4a717bc88221a",
+        "results/main/beamforming/moving_interference_smooth_output_power.pdf": "1cc54a3319e1eca4e7fdc7d7a2b8472d66e027e067518e7f4f76215984087f8c",
+        "results/main/beamforming/moving_interference_smooth_output_power.png": "f0fc1ee621fd3f00fa2a72bb311e213212632fdd76682b58a7b4a717bc88221a"
       }
     },
     "moving_interference_abrupt_output_power.pdf": {
@@ -209,53 +220,119 @@
       "dpi": 300,
       "text_usetex": true,
       "optional_main_candidate": true,
-      "formula_or_claim": "$\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, $R_t=\\sigma^2I_n+\\tau^2h_th_t^{\\mathrm H}$, $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. Curves average 256 simulations at each stored t=8,16,...,256; shading is a pointwise Student 95% interval for the posterior-mean average. $\\varphi_t=\\varphi_0$ for $t\\leq128$, $3\\varphi_0$ for $t\\geq129$.",
-      "caption": "$\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, $R_t=\\sigma^2I_n+\\tau^2h_th_t^{\\mathrm H}$, $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. Curves average 256 simulations at each stored t=8,16,...,256; shading is a pointwise Student 95% interval for the posterior-mean average. $\\varphi_t=\\varphi_0$ for $t\\leq128$, $3\\varphi_0$ for $t\\geq129$.",
+      "formula_or_claim": "$\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, $R_t=\\sigma^2I_n+\\tau^2h_th_t^{\\mathrm H}$, $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. Curves show means across 256 Monte Carlo simulations. Shaded regions show the pointwise 25th\u201375th percentiles across simulations. These empirical simulation spreads are not posterior credible regions; table confidence intervals are unchanged. $\\varphi_t=\\varphi_0$ through $t=128$, $3\\varphi_0$ from $t=129$.",
+      "caption": "$\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, $R_t=\\sigma^2I_n+\\tau^2h_th_t^{\\mathrm H}$, $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. Curves show means across 256 Monte Carlo simulations. Shaded regions show the pointwise 25th\u201375th percentiles across simulations. These empirical simulation spreads are not posterior credible regions; table confidence intervals are unchanged. $\\varphi_t=\\varphi_0$ through $t=128$, $3\\varphi_0$ from $t=129$.",
       "source_cell_id": "abrupt-output-power",
-      "source_cell_sha256": "be6fa2f7fcbda8620004f0662cb4273a0f2ce33a02d23d59a0f5236196b1ed12",
+      "source_cell_sha256": "73d199a23678042709868856366836689320c5442bf1819b2acc162f39133f22",
       "event_t": 129,
-      "uncertainty": "Pointwise Student 95% confidence interval across 256 simulations",
+      "uncertainty": "Pointwise empirical 25th\u201375th percentiles across 256 simulations",
+      "mean_curves_unchanged": true,
+      "iqr_alpha": 0.22,
+      "plotting": {
+        "labels": 25,
+        "ticks": 23,
+        "legend": 22,
+        "line_width": 3.857142857142857,
+        "marker_size": 11.785714285714286
+      },
       "output_hashes": {
-        "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf": "f897f216043d0e9e7008b39982627e4fde8a0765d22a3bbb6d203c8253e5e520",
-        "results/beamforming_moving/figures/moving_interference_abrupt_output_power.png": "b93f95c7adb3ee29edc17cd2a82741a28e422f9e60b4a9b9c8ee9648a5b4f795",
-        "results/main/beamforming/moving_interference_abrupt_output_power.pdf": "f897f216043d0e9e7008b39982627e4fde8a0765d22a3bbb6d203c8253e5e520",
-        "results/main/beamforming/moving_interference_abrupt_output_power.png": "b93f95c7adb3ee29edc17cd2a82741a28e422f9e60b4a9b9c8ee9648a5b4f795"
+        "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf": "730fe503654d7bcbfebc1f789b4e6f72cf9ac0871c5f2a25f9c5e3d3f81c7e7b",
+        "results/beamforming_moving/figures/moving_interference_abrupt_output_power.png": "3cbeff966bb1d786b2619e29912dea2e1cd5d2dc1b3fdc269d20b33da3b7273f",
+        "results/main/beamforming/moving_interference_abrupt_output_power.pdf": "730fe503654d7bcbfebc1f789b4e6f72cf9ac0871c5f2a25f9c5e3d3f81c7e7b",
+        "results/main/beamforming/moving_interference_abrupt_output_power.png": "3cbeff966bb1d786b2619e29912dea2e1cd5d2dc1b3fdc269d20b33da3b7273f"
+      }
+    },
+    "moving_interference_comparison.pdf": {
+      "status": "completed",
+      "condition": "comparison",
+      "figure_size_in": [
+        7,
+        3.5
+      ],
+      "dpi": 300,
+      "text_usetex": true,
+      "optional_main_candidate": true,
+      "formula_or_claim": "$\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, $R_t=\\sigma^2I_n+\\tau^2h_th_t^{\\mathrm H}$, $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. Curves show means across 256 Monte Carlo simulations. Shaded regions show the pointwise 25th\u201375th percentiles across simulations. These empirical simulation spreads are not posterior credible regions; table confidence intervals are unchanged. Left: smooth motion. Right: abrupt motion; the purple dashed line marks measurement 129..",
+      "caption": "$\\ell_t=10\\log_{10}[(w_t^{\\mathrm H}R_tw_t)/p_t^\\star]$, $R_t=\\sigma^2I_n+\\tau^2h_th_t^{\\mathrm H}$, $p_t^\\star=(a^{\\mathrm H}R_t^{-1}a)^{-1}$. Curves show means across 256 Monte Carlo simulations. Shaded regions show the pointwise 25th\u201375th percentiles across simulations. These empirical simulation spreads are not posterior credible regions; table confidence intervals are unchanged. Left: smooth motion. Right: abrupt motion; the purple dashed line marks measurement 129..",
+      "source_cell_id": "combined-output-power",
+      "source_cell_sha256": "4ebadb010db09c64f244d43d9c3749b4d41937b936c43a2595fa8197195d55ae",
+      "event_t": 129,
+      "uncertainty": "Pointwise empirical 25th\u201375th percentiles across 256 simulations",
+      "mean_curves_unchanged": true,
+      "iqr_alpha": 0.22,
+      "plotting": {
+        "labels": 12,
+        "ticks": 11,
+        "legend": 10.5,
+        "line_width": 1.8,
+        "marker_size": 5.5
+      },
+      "output_hashes": {
+        "results/beamforming_moving/figures/moving_interference_comparison.pdf": "2207ceb588f766270ea896108bbaebad9f6b2af1254c3afd971062cbe15817aa",
+        "results/beamforming_moving/figures/moving_interference_comparison.png": "aab234ddcb275aa6d1fa9dd6d8372508237a90971650bfcdd2e5eb1aa7bf7154",
+        "results/main/beamforming/moving_interference_comparison.pdf": "2207ceb588f766270ea896108bbaebad9f6b2af1254c3afd971062cbe15817aa",
+        "results/main/beamforming/moving_interference_comparison.png": "aab234ddcb275aa6d1fa9dd6d8372508237a90971650bfcdd2e5eb1aa7bf7154"
       }
     }
   },
   "files": {
-    "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf": "bb42b86d38389b349a6174b18179719c7a55b05ca8f2053fcad3e1e103527589",
-    "results/beamforming_moving/figures/moving_interference_smooth_output_power.png": "d1e6f2f1ce7a10177159f325f328df6a5669a77cb5959aeae1511f81d2993f2e",
-    "results/main/beamforming/moving_interference_smooth_output_power.pdf": "bb42b86d38389b349a6174b18179719c7a55b05ca8f2053fcad3e1e103527589",
-    "results/main/beamforming/moving_interference_smooth_output_power.png": "d1e6f2f1ce7a10177159f325f328df6a5669a77cb5959aeae1511f81d2993f2e",
-    "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf": "f897f216043d0e9e7008b39982627e4fde8a0765d22a3bbb6d203c8253e5e520",
-    "results/beamforming_moving/figures/moving_interference_abrupt_output_power.png": "b93f95c7adb3ee29edc17cd2a82741a28e422f9e60b4a9b9c8ee9648a5b4f795",
-    "results/main/beamforming/moving_interference_abrupt_output_power.pdf": "f897f216043d0e9e7008b39982627e4fde8a0765d22a3bbb6d203c8253e5e520",
-    "results/main/beamforming/moving_interference_abrupt_output_power.png": "b93f95c7adb3ee29edc17cd2a82741a28e422f9e60b4a9b9c8ee9648a5b4f795"
+    "results/beamforming_moving/figures/moving_interference_smooth_output_power.pdf": "1cc54a3319e1eca4e7fdc7d7a2b8472d66e027e067518e7f4f76215984087f8c",
+    "results/beamforming_moving/figures/moving_interference_smooth_output_power.png": "f0fc1ee621fd3f00fa2a72bb311e213212632fdd76682b58a7b4a717bc88221a",
+    "results/main/beamforming/moving_interference_smooth_output_power.pdf": "1cc54a3319e1eca4e7fdc7d7a2b8472d66e027e067518e7f4f76215984087f8c",
+    "results/main/beamforming/moving_interference_smooth_output_power.png": "f0fc1ee621fd3f00fa2a72bb311e213212632fdd76682b58a7b4a717bc88221a",
+    "results/beamforming_moving/figures/moving_interference_abrupt_output_power.pdf": "730fe503654d7bcbfebc1f789b4e6f72cf9ac0871c5f2a25f9c5e3d3f81c7e7b",
+    "results/beamforming_moving/figures/moving_interference_abrupt_output_power.png": "3cbeff966bb1d786b2619e29912dea2e1cd5d2dc1b3fdc269d20b33da3b7273f",
+    "results/main/beamforming/moving_interference_abrupt_output_power.pdf": "730fe503654d7bcbfebc1f789b4e6f72cf9ac0871c5f2a25f9c5e3d3f81c7e7b",
+    "results/main/beamforming/moving_interference_abrupt_output_power.png": "3cbeff966bb1d786b2619e29912dea2e1cd5d2dc1b3fdc269d20b33da3b7273f",
+    "results/beamforming_moving/figures/moving_interference_comparison.pdf": "2207ceb588f766270ea896108bbaebad9f6b2af1254c3afd971062cbe15817aa",
+    "results/beamforming_moving/figures/moving_interference_comparison.png": "aab234ddcb275aa6d1fa9dd6d8372508237a90971650bfcdd2e5eb1aa7bf7154",
+    "results/main/beamforming/moving_interference_comparison.pdf": "2207ceb588f766270ea896108bbaebad9f6b2af1254c3afd971062cbe15817aa",
+    "results/main/beamforming/moving_interference_comparison.png": "aab234ddcb275aa6d1fa9dd6d8372508237a90971650bfcdd2e5eb1aa7bf7154"
   },
   "retained_previous_main": {
     "results/beamforming_moving/figures/abrupt_previous_main.pdf": "56208bb7278a05cd2dad81dd3d0a857a580a3a4c95fdec045a38e8a0c4795ba1",
     "results/beamforming_moving/figures/abrupt_previous_main.png": "b93f95c7adb3ee29edc17cd2a82741a28e422f9e60b4a9b9c8ee9648a5b4f795"
   },
-  "figure_count": 2,
+  "figure_count": 3,
   "dpi": 300,
   "figure_size_in": [
     15,
     5
   ],
   "text_usetex": true,
+  "figure_sizes": {
+    "moving_interference_smooth_output_power.pdf": [
+      15,
+      5
+    ],
+    "moving_interference_abrupt_output_power.pdf": [
+      15,
+      5
+    ],
+    "moving_interference_comparison.pdf": [
+      7,
+      3.5
+    ]
+  },
   "plotting": {
     "labels": 25,
     "ticks": 23,
     "legend": 22,
     "layout": "constrained",
     "pdf": "Native vector text and curves",
-    "png_dpi": 300
+    "png_dpi": 300,
+    "display_bands": "empirical pointwise IQR",
+    "iqr_alpha": 0.22,
+    "combined_native_size_in": [
+      7,
+      3.5
+    ],
+    "four_sided_inward_ticks": true
   },
   "numerical_cell_hashes": {
     "moving-configuration": "c0ace162052b1b313973e2d67b448096b1b9dde64222050fef5529ede951e53d",
     "moving-load": "49a49e7500de9ec9452398422cd6f3f9e92d81064f691d9433a98c1d486bb7ae",
     "moving-summaries": "be68bce7d88f8c48312689b48f69485f2c9b201ea15a7aa4f996310d465a90dc"
   },
-  "scope": "Existing saved moving data and selected settings; no new simulation, inference, fitting or tuning. Optional candidates do not replace existing main figures."
+  "scope": "Presentation-only empirical IQR and print-width combined plot. Saved data, selected settings, mean curves, confidence intervals and paired tables remain unchanged."
 }

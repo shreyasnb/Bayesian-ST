@@ -447,7 +447,7 @@ plt.rcParams.update({{
     'legend.fontsize': 22, 'xtick.labelsize': 23, 'ytick.labelsize': 23,
     'lines.linewidth': 1.6, 'lines.markersize': 4,
     'figure.dpi': 300, 'savefig.dpi': 300, 'savefig.bbox': None,
-    'axes.spines.top': False, 'axes.spines.right': False,
+    'axes.spines.top': True, 'axes.spines.right': True,
 }})
 print('Verified', len(INPUT_HASHES), 'saved numerical inputs.')
 print('Editable PDF output:', EDITABLE_OUTPUT)

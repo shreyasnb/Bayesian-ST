@@ -1,0 +1,281 @@
+{
+  "schema": 1,
+  "status": "completed",
+  "example": "beamforming",
+  "component": "stationary_final_time_selection_audit",
+  "config": {
+    "schema": 1,
+    "n": [
+      32,
+      64,
+      128
+    ],
+    "T": 200,
+    "t": 200,
+    "validation_simulations": 64,
+    "test_simulations": 256,
+    "sigma2": 0.2,
+    "tau2": 1.0,
+    "beta": 1.0,
+    "original_configuration": {
+      "schema": 1,
+      "stage": "paper",
+      "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+      "rank": 1,
+      "dimensions": [
+        32,
+        64,
+        128
+      ],
+      "stationary_T": 200,
+      "stationary_times": [
+        25,
+        50,
+        100,
+        200
+      ],
+      "stationary_primary_t": 200,
+      "validation_episodes": 64,
+      "test_episodes": 256,
+      "validation_seed": 2026111001,
+      "test_seed": 2026111002,
+      "story_seed": 2026111003,
+      "sigma2": 0.2,
+      "tau2": 1.0,
+      "overlap": 0.5,
+      "moving_n": 32,
+      "moving_T": 256,
+      "moving_conditions": [
+        "static",
+        "smooth",
+        "abrupt",
+        "noise_change",
+        "power_change"
+      ],
+      "action_cadence": 8,
+      "primary_burnin": 32,
+      "dt": 0.01,
+      "betas": [
+        1.0,
+        0.99,
+        0.97,
+        0.9
+      ],
+      "great_step_multipliers": [
+        0.02,
+        0.08,
+        0.24
+      ],
+      "great_inner_steps": [
+        1,
+        3
+      ],
+      "great_window_ratios": [
+        0.5,
+        1.0,
+        2.0
+      ],
+      "grouse_steps": [
+        0.001,
+        0.01,
+        0.1,
+        1.0
+      ],
+      "loading_bracket_points": 33,
+      "heldout_snapshots": 256,
+      "moment_tolerance": 1e-10,
+      "moment_max_order": 4096,
+      "moment_fallback_max_order": 8192,
+      "block_lengths": [
+        1,
+        4,
+        16,
+        32
+      ],
+      "block_test_episodes": 64,
+      "block_n": 32,
+      "block_T": 64,
+      "block_beta": 0.97,
+      "block_conditions": [
+        "static",
+        "smooth"
+      ],
+      "story": {
+        "stationary_n": 64,
+        "stationary_time": 200,
+        "episode": 0,
+        "moving_episode": 0,
+        "moving_time": 128,
+        "moving_times": [
+          32,
+          128,
+          256
+        ]
+      },
+      "outcome": "Stationary primary: arithmetic mean of individual exact-covariance true_ratio_db at t=T=200. Measured heldout power remains the parameter-selection criterion. Moving records retain their original episode-averaged ratio definitions.",
+      "repetition_unit": "Independent episode. Held-out snapshots average inside a checkpoint; moving primary outcomes average checkpoints inside the episode.",
+      "selection": "Independent held-out measured disturbance power on disjoint validation episodes only; no true signature, covariance, oracle power or drift enters policy selection. Static beta=1. Moving mean/mode/isotropic share a mode-selected beta. Modal loading and loaded covariance select their own memory/loading. Sliding GREAT selects window/step/inner count; EW GREAT matches the shared Bingham beta and selects step/inner count.",
+      "great_ew_weights": "Complex EW GREAT receives sqrt(eta_j/eta_initial)*u_j, eta_j=tau2_j/[sigma2_j*(sigma2_j+tau2_j)]. Its covariance matches the uncentered Bingham statistic up to the fixed positive factor eta_initial under the uniform prior. Fixed-variance data are unchanged; raw sliding-window GREAT retains the original residual objective.",
+      "variance_convention": "Proper-complex covariance sigma2*I; real/imaginary component variances sigma2/2. Unit steering signatures give total interference power tau2.",
+      "motion": "Identity transport for all primary unknown-motion comparisons. Baseline half-power desired/interference overlap is held exactly fixed across dimensions.",
+      "numerical_scope": "Native complex rank-one means and normalizers only; no higher-rank, tail, interval or second-moment accuracy is inferred from these mean flags.",
+      "scale_information": "This performance cohort conditions on the generating variances at correction/action time as a calibrated reference. The separate causal variance-learning cohort never receives future generating scales.",
+      "block_budget": "Supplementary cadence/constant-state-block experiment uses 64 independent test episodes per motion at n=32,T=64. Primary stationary/moving performance cohorts retain 256. This smaller block cohort was selected from operation counts/native-mean preflight before any block task outcomes.",
+      "precision": "Paper plan: 64 validation and 256 independent test episodes per primary cohort; all paired pointwise 95% intervals and achieved SEs retained. Broad grids are exploratory without multiplicity correction."
+    },
+    "original_configuration_sha256": "9e16e4d9098b1e04c05f6d1f791d18f350839ca4f2012ec1bc6785def02ff18b",
+    "original_settings": {
+      "32": {
+        "great_window": {
+          "window": 64,
+          "beta": null,
+          "stepsize": 0.003125,
+          "inner_steps": 3,
+          "step_multiplier": 0.24
+        },
+        "great_ew": {
+          "window": null,
+          "beta": 1.0,
+          "stepsize": 0.003125,
+          "inner_steps": 3,
+          "step_multiplier": 0.24
+        },
+        "covariance_loading_alpha": 0.3538007162976233
+      },
+      "64": {
+        "great_window": {
+          "window": 128,
+          "beta": null,
+          "stepsize": 0.0015625,
+          "inner_steps": 3,
+          "step_multiplier": 0.24
+        },
+        "great_ew": {
+          "window": null,
+          "beta": 1.0,
+          "stepsize": 0.0015625,
+          "inner_steps": 3,
+          "step_multiplier": 0.24
+        },
+        "covariance_loading_alpha": 0.45923178071496473
+      },
+      "128": {
+        "great_window": {
+          "window": 128,
+          "beta": null,
+          "stepsize": 0.0015625,
+          "inner_steps": 3,
+          "step_multiplier": 0.24
+        },
+        "great_ew": {
+          "window": null,
+          "beta": 1.0,
+          "stepsize": 0.00078125,
+          "inner_steps": 3,
+          "step_multiplier": 0.24
+        },
+        "covariance_loading_alpha": 0.5304028814675519
+      }
+    },
+    "windows": "Original n/2,n,2n settings plus explicit full-history window 200",
+    "step_multipliers": [
+      0.02,
+      0.08,
+      0.24
+    ],
+    "inner_steps": [
+      1,
+      3
+    ],
+    "ew_beta": 1.0,
+    "ew_step_memory": "2*n",
+    "covariance_loading_grid_points": 33,
+    "covariance_loading_bounds": [
+      0.0,
+      1.0
+    ],
+    "validation_criterion": "Arithmetic mean across 64 validation simulations of 10*log10(independent measured heldout output power) at t=200 only; no oracle normalization",
+    "test_endpoint": "true_ratio_db at t=200",
+    "numerical_tolerances": {
+      "moment_tolerance": 1e-10,
+      "moment_max_order": 4096,
+      "moment_fallback_max_order": 8192
+    },
+    "original_results_unchanged": true
+  },
+  "sources": {
+    "lib/beamforming_stationary_selection_audit.py": "be1ddffc2140bfafc125b069e1708dc4083f4a11372550bf70f4baf91ffe175d",
+    "scripts/run_beamforming_stationary_selection_audit.py": "b3e3ebdc2d0fe47f352e2d742ac57b63e85aede968b48fd9ebe6ad82c593ba00",
+    "lib/final_beamforming.py": "29d183650f9c156e25e19553e72559291c884d4d68ee400d448e5430793a9a8f",
+    "benchmarks/common/great.py": "2787c38501d470976cf73a569a86d55ff4372dded7e1c8a5ed1deca6869ab419",
+    "lib/array_geometry_study.py": "d73505194d3860b2aae28273c22c2804aa34ae129b9e766ea65780c5fb9ac70a",
+    "lib/beamforming_protocol.py": "3d729704d6755548396e29a49a21e9b9e4e2756bf9a3a603c92f998bd6e58721",
+    "lib/final_stationary_evidence.py": "55650162cc4eee030c4925000a1624daca566e101561b6f73138160bca981b55",
+    "lib/final_validation.py": "3b8ae90ed322edd8affc3385246d2fc678ada0a05ec61970076def526b5f9952",
+    "benchmarks/case1/baselines.py": "6cf88ae86e9248cf0a320a0a48b96d174c936b8ad4d077eca8a162701b0bcaac"
+  },
+  "inputs": {
+    "results/beamforming/data/paper/performance/stationary_T200/manifest.json": "bab0048213e53fb9429e22381a981458bdb2408367ff2175a7a174c1d8c77a77",
+    "results/beamforming/data/paper/performance/stationary_T200/selected.json": "f1734d95197a32d873669e2ad80bded92f88f99dac489606a77400cdde668019",
+    "results/beamforming/data/paper/performance/stationary_T200/stationary.csv": "0ebf63ee9d3170d3e79b23b72cd6d5cde0a7ef210ac02e1178b8f81d6f996d71",
+    "results/beamforming/data/paper/performance/stationary_T200/stories.npz": "5c94fb730d4ebd5d4862ef05bf349d18b6f4983635ef16c805bbafa86b6e4f12",
+    "results/beamforming/tables/paper/performance/stationary_T200/validation_curves.csv": "8b4b9cb0b8b64a0b19055aa227ab2f4db01bb611772ffa6b741cdb9bfb97988e"
+  },
+  "source_signature": "23825c855b7df13e5eff702ca61ac61fbc4ed5a9e7fa9764cebfd38bf6277235",
+  "artifacts": {
+    "results/beamforming_comparison_audit/stationary/selection/execution_metadata.csv": "34c4327add07451e1744def7ea8a2cda5b959921e4dfaac36a519fe6eb7703fb",
+    "results/beamforming_comparison_audit/stationary/selection/paired_vs_mean.csv": "ce0dfb72cbf3c20c79ca282749060bc5bff0737117fa3c064d9bcfb484f8571f",
+    "results/beamforming_comparison_audit/stationary/selection/preregistered.json": "4d8f9322e01205087aace6d0560f9c754f00364508b960f9a5613b0fb8203bff",
+    "results/beamforming_comparison_audit/stationary/selection/replay_checks.json": "2b3966e9fca9962d66f2ae83f2c91f5347e4701afc70b6d393083f4beeb5f996",
+    "results/beamforming_comparison_audit/stationary/selection/replay_fingerprints.csv": "136d94c32e30fb5c22e89bb74de08a5625e6dce6c40336402be718782ba9adb4",
+    "results/beamforming_comparison_audit/stationary/selection/selected_settings.json": "b10447658edcf64d08bb0db46e4d57a581c0b4eb9f99b2ec344139183b4e69d3",
+    "results/beamforming_comparison_audit/stationary/selection/selection_freeze.json": "60384333c7cb30ade1f6c0463873c2564c6bb64e3d9e425ccd1e003940adc47f",
+    "results/beamforming_comparison_audit/stationary/selection/test_metrics.csv": "8b75be6e2dcdef696396b51638734a5fd5a02775ca386537b446e7c9554cad17",
+    "results/beamforming_comparison_audit/stationary/selection/test_summary.csv": "7d9f08fecd647409e9441d6add876ea07de1ee69e9e8c1a6bf0a101bbb5fef70",
+    "results/beamforming_comparison_audit/stationary/selection/validation_candidates.csv": "10097cd6b2d806e95184533f1c51633c68ce4396549a668fb12aba8bbae9d545",
+    "results/beamforming_comparison_audit/stationary/selection/validation_trials.csv": "23174f397db380884125daf2d997b0535a0174669ae53704952b4416cae9e6a4"
+  },
+  "checks": {
+    "status": "passed",
+    "dimensions": [
+      32,
+      64,
+      128
+    ],
+    "T": 200,
+    "t": 200,
+    "validation_simulations_per_dimension": 64,
+    "test_simulations_per_dimension": 256,
+    "great_candidates_per_dimension": {
+      "32": 30,
+      "64": 30,
+      "128": 30
+    },
+    "full_history_window": 200,
+    "full_history_control_separate": true,
+    "candidate_selection_uses_final_measured_db_only": true,
+    "selection_frozen_before_test": true,
+    "old_mean_mode_isotropic_values_preserved": true,
+    "all_original_methods_retained": 10,
+    "additional_methods": 4,
+    "new_test_records": 3072,
+    "maximum_mode_replay_error_db": 6.050715484207103e-15,
+    "maximum_old_great_window_replay_error_db": 1.1102230246251565e-16,
+    "maximum_old_great_ew_replay_error_db": 9.71445146547012e-17,
+    "maximum_old_covariance_loading_replay_error_db": 3.9968028886505635e-15,
+    "exact_saved_n64_story_measurements_replayed": true,
+    "disjoint_validation_test_replay_hashes": true,
+    "initial_and_observation_hashes_recorded": true,
+    "all_test_methods_resolved": true,
+    "maximum_unit_gain_error": 4.449557262054372e-16,
+    "moment_and_normalizer_recomputations": 0,
+    "old_files_written": 0,
+    "timing_scope": "Concurrent execution metadata; no computational benchmark claim",
+    "total_seconds": 628.4659508470213
+  },
+  "validation_path": "results/beamforming/data/validation/stationary_T200/validation.json",
+  "validation_sha256": "31489683fd6d25991b8db002b6be14091b83019a83869467981c463041be3ec2",
+  "scientific_sha256": "e926a6a16fea47e35f0625afcc811d5fbdd533fb812c8c1fa9314484f16b24ee",
+  "scope": "Additional references on exact original streams and initials; original selections/results remain separate and immutable",
+  "completed_utc": "2026-11-11T01:07:51.157850+00:00"
+}

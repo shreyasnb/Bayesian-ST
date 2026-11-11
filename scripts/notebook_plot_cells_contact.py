@@ -183,6 +183,22 @@ for ax, label in zip(axes, ["(a)", "(b)"]):
 fig.legend(*axes[0].get_legend_handles_labels(), loc="outside lower center", ncol=2, frameon=False, fontsize=10.)
 ''')
 
+_DIRECTIONAL_RISK_DATA = r'''
+# Use the saved unit-query risks for v(theta)/v0 = cos(theta)e1 + sin(theta)e2.
+# These are already r_t(v(theta))/v0**2; do not multiply or divide by v0**2.
+ANISOTROPY_PATH = ROOT / 'results/contact/data/paper/performance/anisotropy.npz'
+with np.load(ANISOTROPY_PATH, allow_pickle=False) as saved:
+    query_family = np.asarray(saved['query_family']) == 0
+    theta = np.asarray(saved['query_angles'])[query_family].copy()
+    unit_queries = np.asarray(saved['unit_queries'])[query_family].copy()
+    risk_full = np.asarray(saved['risks_full'])[query_family].copy()
+    risk_iso = np.asarray(saved['risks_isotropic'])[query_family].copy()
+np.testing.assert_allclose(unit_queries,
+    np.column_stack([np.cos(theta), np.sin(theta), np.zeros_like(theta)]),
+    rtol=0., atol=1e-14)
+data = dict(data, theta=theta, risk_full=risk_full, risk_iso=risk_iso)
+'''
+
 PLOT_CELLS[('posterior_anisotropy', 1)] = (
 _split_panel('posterior_anisotropy', (15, 5), 'posterior_anisotropy_spheres.pdf', r'''
 # All display choices are local to this cell. The saved density values stay fixed.
@@ -228,7 +244,7 @@ for ax, nodes, log_density, label in zip(spheres,data["nodes"],data["log_density
     ax.text2D(.02,.97,label,transform=ax.transAxes,ha="left",va="top")
 fig.colorbar(plt.cm.ScalarMappable(norm=norm,cmap=cmap),ax=spheres,label=r"$q([n])$",shrink=.64,pad=.015)
 ''', style=True) +
-_split_panel('posterior_anisotropy', (15, 5), 'posterior_anisotropy_risk.pdf', r'''
+_split_panel('posterior_anisotropy', (15, 5), 'posterior_anisotropy_risk.pdf', _DIRECTIONAL_RISK_DATA + r'''
 fig, ax = plt.subplots(figsize=FIGSIZE, dpi=DPI, layout="constrained")
 ax.plot(data["theta"],data["risk_full"],color=COLORS["mean"],label=r"$\overline P_t^+$")
 ax.plot(data["theta"],data["risk_iso"],"--",color=COLORS["iso"],label=r"$\overline P_t^{\mathrm{iso}}$")
@@ -239,7 +255,14 @@ ax.legend(frameon=False,fontsize=10.)
 ax.spines[["top","right"]].set_visible(False)
 ax.grid(color="#BFC4C8",alpha=.30,linewidth=.45)
 ax.text(.015,.985,"(c)",transform=ax.transAxes,ha="left",va="top")
-''', style=True)
+''', style=True).replace(
+    '    DRAFT_PATH.write_bytes(PDF_PATH.read_bytes())\nplt.show()',
+    '''    DRAFT_PATH.write_bytes(PDF_PATH.read_bytes())
+    PNG_PATH = PDF_PATH.with_suffix('.png')
+    fig.savefig(PNG_PATH, dpi=DPI, bbox_inches=None)
+    DRAFT_PNG_PATH = DRAFT_PATH.with_suffix('.png')
+    DRAFT_PNG_PATH.write_bytes(PNG_PATH.read_bytes())
+plt.show()''')
 )
 
 PLOT_CELLS[('noise_adaptation', 1)] = _cell('noise_adaptation', 1, (15,5), r'''

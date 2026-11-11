@@ -1,0 +1,62 @@
+{
+  "binding": "146c732fbf2cb1a8dcd3b97de4c375f1e311216caeb2ac7b7e747c8367cde82a",
+  "selection": {
+    "n32": {
+      "n": 32,
+      "condition": "static",
+      "selected_beta": 1.0,
+      "baseline_beta": 1.0,
+      "criterion": "Arithmetic mean across 64 validation simulations of 10*log10(w_200^H Rhat_validation,200 w_200); final time t=200 only, no oracle normalization, and no true covariance in selection.",
+      "scored_times": [
+        200
+      ],
+      "simulations": 64,
+      "candidate_mean_loss_db": {
+        "1.0": -4.568641216876076,
+        "0.99": -4.525146744957175,
+        "0.97": -4.261879645025212,
+        "0.9": -3.1593273060403697
+      },
+      "selected_using": "Independent posterior-mean validation, primary criterion only"
+    },
+    "n64": {
+      "n": 64,
+      "condition": "static",
+      "selected_beta": 1.0,
+      "baseline_beta": 1.0,
+      "criterion": "Arithmetic mean across 64 validation simulations of 10*log10(w_200^H Rhat_validation,200 w_200); final time t=200 only, no oracle normalization, and no true covariance in selection.",
+      "scored_times": [
+        200
+      ],
+      "simulations": 64,
+      "candidate_mean_loss_db": {
+        "1.0": -4.3794767384230004,
+        "0.99": -4.265503383186547,
+        "0.97": -3.66949974030766,
+        "0.9": -2.1795984127306793
+      },
+      "selected_using": "Independent posterior-mean validation, primary criterion only"
+    },
+    "n128": {
+      "n": 128,
+      "condition": "static",
+      "selected_beta": 1.0,
+      "baseline_beta": 1.0,
+      "criterion": "Arithmetic mean across 64 validation simulations of 10*log10(w_200^H Rhat_validation,200 w_200); final time t=200 only, no oracle normalization, and no true covariance in selection.",
+      "scored_times": [
+        200
+      ],
+      "simulations": 64,
+      "candidate_mean_loss_db": {
+        "1.0": -4.185524473710654,
+        "0.99": -3.9175677383203835,
+        "0.97": -2.8583965322840954,
+        "0.9": -1.6994521556135158
+      },
+      "selected_using": "Independent posterior-mean validation, primary criterion only"
+    }
+  },
+  "scope": "stationary",
+  "no_test_outcomes_used": true,
+  "validation_scores_sha256": "dd106ed02072beb3eb5ebe422489e1c1cca728d9987c897ddda0e687419f5068"
+}

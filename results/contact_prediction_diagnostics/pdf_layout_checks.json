@@ -1,91 +1,8 @@
 {
   "status": "passed",
   "pdfs": {
-    "results/contact_prediction_diagnostics/figures/moving_sphere_posterior_spheres.pdf": {
-      "sha256": "b7d87318f3f30b048b551e3e7c46ba5184d926ab42d5277c4e3f438c38f97b64",
-      "pages": [
-        {
-          "page": 1,
-          "figure_size_in": [
-            15.0,
-            5.0
-          ],
-          "vector_text_spans": 55,
-          "fonts": [
-            {
-              "name": "CMEX10",
-              "type": "Type1",
-              "embedded": true
-            },
-            {
-              "name": "CMMI12",
-              "type": "Type1",
-              "embedded": true
-            },
-            {
-              "name": "CMR12",
-              "type": "Type1",
-              "embedded": true
-            },
-            {
-              "name": "CMR17",
-              "type": "Type1",
-              "embedded": true
-            },
-            {
-              "name": "CMSY10",
-              "type": "Type1",
-              "embedded": true
-            }
-          ],
-          "font_size_counts": {
-            "22.9141": 28,
-            "24.9066": 10,
-            "17.4345": 7,
-            "16.0398": 5,
-            "21.9178": 3,
-            "15.3424": 2
-          },
-          "primary_font_readability": {
-            "LABEL_FONT_SIZE": {
-              "declared_pt": 25,
-              "actual_pt": 24.9066,
-              "six_inch_insertion_pt": 9.96264
-            },
-            "TICK_FONT_SIZE": {
-              "declared_pt": 23,
-              "actual_pt": 22.9141,
-              "six_inch_insertion_pt": 9.16564
-            },
-            "LEGEND_FONT_SIZE": {
-              "declared_pt": 22,
-              "actual_pt": 21.9178,
-              "six_inch_insertion_pt": 8.76712
-            }
-          },
-          "raster_dpi": [
-            [
-              300.00000227065317,
-              300.00000227065317
-            ],
-            [
-              300.00000755385616,
-              300.00000227065317
-            ],
-            [
-              300.00000227065317,
-              300.00000180150994
-            ]
-          ],
-          "out_of_page_text": [],
-          "panel_letters": [],
-          "errors": []
-        }
-      ],
-      "errors": []
-    },
     "results/contact_prediction_diagnostics/figures/prediction_error_stationary.pdf": {
-      "sha256": "3577748bad34a1b0df4ef0a4d57ff8594503319e215354d733fce722c420c09f",
+      "sha256": "e1512ed1f432e7abb7ace4369af43ab2cce0948bcd44b6ad1bbe2cbb8e17fc9b",
       "pages": [
         {
           "page": 1,
@@ -136,17 +53,17 @@
           },
           "primary_font_readability": {
             "LABEL_FONT_SIZE": {
-              "declared_pt": 25,
+              "declared_pt": 25.0,
               "actual_pt": 24.9066,
               "six_inch_insertion_pt": 9.96264
             },
             "TICK_FONT_SIZE": {
-              "declared_pt": 23,
+              "declared_pt": 23.0,
               "actual_pt": 22.9141,
               "six_inch_insertion_pt": 9.16564
             },
             "LEGEND_FONT_SIZE": {
-              "declared_pt": 22,
+              "declared_pt": 22.0,
               "actual_pt": 21.9178,
               "six_inch_insertion_pt": 8.76712
             }
@@ -157,10 +74,41 @@
           "errors": []
         }
       ],
-      "errors": []
+      "errors": [],
+      "ordinary_plot_borders": {
+        "width_points": 0.9,
+        "horizontal": [
+          [
+            81.04998016357422,
+            216.17953491210938,
+            1068.47998046875,
+            216.17953491210938
+          ],
+          [
+            81.04998016357422,
+            12.959991455078125,
+            1068.47998046875,
+            12.959991455078125
+          ]
+        ],
+        "vertical": [
+          [
+            81.04998016357422,
+            216.17953491210938,
+            81.04998016357422,
+            12.959991455078125
+          ],
+          [
+            1068.47998046875,
+            216.17953491210938,
+            1068.47998046875,
+            12.959991455078125
+          ]
+        ]
+      }
     },
     "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf": {
-      "sha256": "0510a171788a52472b1c9351b7dfca506817a5890133929a7df790b96711d91e",
+      "sha256": "e02beab3c6b03f5f5016646ce50d55acda7556d76c094188d50a0144ea57ec5b",
       "pages": [
         {
           "page": 1,
@@ -168,7 +116,7 @@
             15.0,
             5.0
           ],
-          "vector_text_spans": 31,
+          "vector_text_spans": 37,
           "fonts": [
             {
               "name": "CMEX10",
@@ -205,23 +153,23 @@
             "22.9141": 10,
             "24.9066": 8,
             "17.4345": 3,
-            "21.9178": 3,
-            "15.3424": 6,
+            "21.9178": 7,
+            "15.3424": 8,
             "10.9589": 1
           },
           "primary_font_readability": {
             "LABEL_FONT_SIZE": {
-              "declared_pt": 25,
+              "declared_pt": 25.0,
               "actual_pt": 24.9066,
               "six_inch_insertion_pt": 9.96264
             },
             "TICK_FONT_SIZE": {
-              "declared_pt": 23,
+              "declared_pt": 23.0,
               "actual_pt": 22.9141,
               "six_inch_insertion_pt": 9.16564
             },
             "LEGEND_FONT_SIZE": {
-              "declared_pt": 22,
+              "declared_pt": 22.0,
               "actual_pt": 21.9178,
               "six_inch_insertion_pt": 8.76712
             }
@@ -232,10 +180,41 @@
           "errors": []
         }
       ],
-      "errors": []
+      "errors": [],
+      "ordinary_plot_borders": {
+        "width_points": 0.9,
+        "horizontal": [
+          [
+            70.54116821289062,
+            184.36109924316406,
+            1068.47998046875,
+            184.36109924316406
+          ],
+          [
+            70.54116821289062,
+            17.278289794921875,
+            1068.47998046875,
+            17.278289794921875
+          ]
+        ],
+        "vertical": [
+          [
+            70.54116821289062,
+            184.36109924316406,
+            70.54116821289062,
+            17.278289794921875
+          ],
+          [
+            1068.47998046875,
+            184.36109924316406,
+            1068.47998046875,
+            17.278289794921875
+          ]
+        ]
+      }
     },
     "results/contact_prediction_diagnostics/figures/prediction_error_references.pdf": {
-      "sha256": "7fd123b54bd8026f9f6a93e23883e9987ff3a50296c4819b4fddc2ffbc99c950",
+      "sha256": "a23874493d9bf904581633beae9ed599edbf37bb285e9e8376debdbff664b68f",
       "pages": [
         {
           "page": 1,
@@ -286,17 +265,17 @@
           },
           "primary_font_readability": {
             "LABEL_FONT_SIZE": {
-              "declared_pt": 25,
+              "declared_pt": 25.0,
               "actual_pt": 24.9066,
               "six_inch_insertion_pt": 9.96264
             },
             "TICK_FONT_SIZE": {
-              "declared_pt": 23,
+              "declared_pt": 23.0,
               "actual_pt": 22.9141,
               "six_inch_insertion_pt": 9.16564
             },
             "LEGEND_FONT_SIZE": {
-              "declared_pt": 22,
+              "declared_pt": 22.0,
               "actual_pt": 21.9178,
               "six_inch_insertion_pt": 8.76712
             }
@@ -307,10 +286,125 @@
           "errors": []
         }
       ],
+      "errors": [],
+      "ordinary_plot_borders": {
+        "width_points": 0.9,
+        "horizontal": [
+          [
+            300.9231872558594,
+            287.9394226074219,
+            1062.604248046875,
+            287.9394226074219
+          ],
+          [
+            300.9231872558594,
+            12.959991455078125,
+            1062.604248046875,
+            12.959991455078125
+          ]
+        ],
+        "vertical": [
+          [
+            300.9231872558594,
+            287.9394226074219,
+            300.9231872558594,
+            12.959991455078125
+          ],
+          [
+            1062.604248046875,
+            287.9394226074219,
+            1062.604248046875,
+            12.959991455078125
+          ]
+        ]
+      }
+    },
+    "results/contact_prediction_diagnostics/figures/moving_sphere_posterior_spheres.pdf": {
+      "sha256": "b7d87318f3f30b048b551e3e7c46ba5184d926ab42d5277c4e3f438c38f97b64",
+      "pages": [
+        {
+          "page": 1,
+          "figure_size_in": [
+            15.0,
+            5.0
+          ],
+          "vector_text_spans": 55,
+          "fonts": [
+            {
+              "name": "CMEX10",
+              "type": "Type1",
+              "embedded": true
+            },
+            {
+              "name": "CMMI12",
+              "type": "Type1",
+              "embedded": true
+            },
+            {
+              "name": "CMR12",
+              "type": "Type1",
+              "embedded": true
+            },
+            {
+              "name": "CMR17",
+              "type": "Type1",
+              "embedded": true
+            },
+            {
+              "name": "CMSY10",
+              "type": "Type1",
+              "embedded": true
+            }
+          ],
+          "font_size_counts": {
+            "22.9141": 28,
+            "24.9066": 10,
+            "17.4345": 7,
+            "16.0398": 5,
+            "21.9178": 3,
+            "15.3424": 2
+          },
+          "primary_font_readability": {
+            "LABEL_FONT_SIZE": {
+              "declared_pt": 25.0,
+              "actual_pt": 24.9066,
+              "six_inch_insertion_pt": 9.96264
+            },
+            "TICK_FONT_SIZE": {
+              "declared_pt": 23.0,
+              "actual_pt": 22.9141,
+              "six_inch_insertion_pt": 9.16564
+            },
+            "LEGEND_FONT_SIZE": {
+              "declared_pt": 22.0,
+              "actual_pt": 21.9178,
+              "six_inch_insertion_pt": 8.76712
+            }
+          },
+          "raster_dpi": [
+            [
+              300.00000227065317,
+              300.00000227065317
+            ],
+            [
+              300.00000755385616,
+              300.00000227065317
+            ],
+            [
+              300.00000227065317,
+              300.00000180150994
+            ]
+          ],
+          "out_of_page_text": [],
+          "panel_letters": [],
+          "errors": []
+        }
+      ],
       "errors": []
     }
   },
   "executed_code_cells": 7,
   "figure_cells": 4,
-  "one_png_per_figure": true
+  "one_png_per_figure": true,
+  "audit_source_sha256": "eeea9b09d6f6e1bd981ac39ab283208a9cfffa1a1b3df4c97f97805bf32bfbe3"
 }

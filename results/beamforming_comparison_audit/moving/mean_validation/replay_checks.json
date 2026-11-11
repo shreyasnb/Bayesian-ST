@@ -1,0 +1,54 @@
+{
+  "status": "passed",
+  "binding": "f6a51d9cdb347463af5c59b8c0f09cfa4ddac3750ee16ccd7c99790c78661c27",
+  "cases": [
+    {
+      "n": 32,
+      "condition": "smooth",
+      "trial": 0,
+      "beta": 0.97,
+      "story_fields_identical": [
+        "U",
+        "h",
+        "a",
+        "angles",
+        "sigma2",
+        "tau2",
+        "time"
+      ],
+      "checkpoint_method_rows": 96,
+      "maximum_absolute_errors": {
+        "true_power": 8.326672684688674e-17,
+        "heldout_power": 8.326672684688674e-17,
+        "oracle_power": 8.326672684688674e-17,
+        "true_ratio_db": 1.1102230246251565e-16,
+        "heldout_ratio_db": 2.220446049250313e-16
+      }
+    },
+    {
+      "n": 32,
+      "condition": "abrupt",
+      "trial": 0,
+      "beta": 0.97,
+      "story_fields_identical": [
+        "U",
+        "h",
+        "a",
+        "angles",
+        "sigma2",
+        "tau2",
+        "time"
+      ],
+      "checkpoint_method_rows": 96,
+      "maximum_absolute_errors": {
+        "true_power": 8.326672684688674e-17,
+        "heldout_power": 8.326672684688674e-17,
+        "oracle_power": 5.551115123125783e-17,
+        "true_ratio_db": 4.440892098500626e-16,
+        "heldout_ratio_db": 2.220446049250313e-16
+      }
+    }
+  ],
+  "seconds": 0.5571280729782302,
+  "scope": "Original trial-0 saved observations/trajectory and same-beta actions; all preserved trial IDs/checkpoint grids also checked. Numerical comparison uses 3e-12 absolute/relative tolerance to allow CSV round trips."
+}

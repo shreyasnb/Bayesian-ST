@@ -1,0 +1,27 @@
+{
+  "status": "completed",
+  "producer": "scripts/update_contact_diagnostics_borders.py",
+  "source_hashes": {
+    "scripts/update_contact_diagnostics_borders.py": "2844838c23242e18d1d764775b8a4a8cabe36e94dd91303b6497f2a4361fbaeb",
+    "scripts/make_contact_prediction_diagnostics_notebook.py": "d4de38dcb5d60c002083c46209ea8216844c3f1a9705468fc5072571ebad124f",
+    "scripts/update_contact_plotting_addendum.py": "32426b18728ffc940971e146e75f850720025eb70233a43222a71c408c280ab3"
+  },
+  "outputs": {
+    "notebooks/contact_prediction_diagnostics.ipynb": "57f057fcc7d8992bed5de2c591f5253add4e232aed6a85328787ee03c6eecca7",
+    "results/contact_prediction_diagnostics/figures/prediction_error_references.pdf": "a23874493d9bf904581633beae9ed599edbf37bb285e9e8376debdbff664b68f",
+    "results/contact_prediction_diagnostics/figures/prediction_error_references.png": "7a4a73c2f95547782069c7ce12a3e2de59729d2d5bfa83e759a5e6e51826dd7d",
+    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.pdf": "e02beab3c6b03f5f5016646ce50d55acda7556d76c094188d50a0144ea57ec5b",
+    "results/contact_prediction_diagnostics/figures/prediction_error_sphere.png": "00f8b930b5f56c4a936366f7b04c2b3f09f601d349cdf74b68c8e7af567d41d6",
+    "results/contact_prediction_diagnostics/figures/prediction_error_stationary.pdf": "e1512ed1f432e7abb7ace4369af43ab2cce0948bcd44b6ad1bbe2cbb8e17fc9b",
+    "results/contact_prediction_diagnostics/figures/prediction_error_stationary.png": "dc4ef975da4697797c2f069972058e4167eab483186ce8a77c4beec08d6f5fdb",
+    "results/main/contact/prediction_error_sphere.pdf": "e02beab3c6b03f5f5016646ce50d55acda7556d76c094188d50a0144ea57ec5b",
+    "results/main/contact/prediction_error_sphere.png": "00f8b930b5f56c4a936366f7b04c2b3f09f601d349cdf74b68c8e7af567d41d6",
+    "results/main/contact/prediction_error_stationary.pdf": "e1512ed1f432e7abb7ace4369af43ab2cce0948bcd44b6ad1bbe2cbb8e17fc9b",
+    "results/main/contact/prediction_error_stationary.png": "dc4ef975da4697797c2f069972058e4167eab483186ce8a77c4beec08d6f5fdb",
+    "results/supplementary/contact/prediction_error_references.pdf": "a23874493d9bf904581633beae9ed599edbf37bb285e9e8376debdbff664b68f",
+    "results/supplementary/contact/prediction_error_references.png": "7a4a73c2f95547782069c7ce12a3e2de59729d2d5bfa83e759a5e6e51826dd7d"
+  },
+  "report": "results/contact_plotting_addendum/diagnostics_borders.json",
+  "report_sha256": "c140dfb7674f1bf31f79a26f3e5ff9f9d6d90495abbcc093d1d3e2cc5332a5ff",
+  "scope": "Only plot borders and tick directions changed. Original curves, confidence intervals, identity control, labels, canvas sizes and fonts are retained. Moving 3D density source/output/PDF/PNG and all data remain exact."
+}

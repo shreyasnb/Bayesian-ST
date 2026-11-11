@@ -1,0 +1,5 @@
+condition,n,method,inner_steps,reference,metric,simulations,mean,lower,upper
+abrupt,32,great_ew,3,mode_exact,time_average_true_ratio_db_difference,256,0.07444905918548153,0.06998789484579557,0.0789102235251675
+abrupt,32,great_ew,30,mode_exact,time_average_true_ratio_db_difference,256,0.0030738700989718154,0.002129991285768253,0.004017748912175378
+smooth,32,great_ew,3,mode_exact,time_average_true_ratio_db_difference,256,0.02157884299957734,0.01943158269543223,0.02372610330372245
+smooth,32,great_ew,30,mode_exact,time_average_true_ratio_db_difference,256,-5.050138119950067e-05,-0.0004091824497995753,0.00030817968740057397
