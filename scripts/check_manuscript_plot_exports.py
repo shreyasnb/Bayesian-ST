@@ -5,7 +5,7 @@ Live PDF dimensions and raster resolution are checked against each visible
 FIGSIZE/DPI declaration. Canonical curated copies are checked separately
 against their manifest. PDF text and lines remain vector data, so dpi applies
 only to embedded raster layers. Font readability is assessed using the primary
-label/tick sizes at six-inch insertion, not the smaller mathematical scripts.
+label/tick sizes at 6.5-inch insertion, not the smaller mathematical scripts.
 Optional previews are rendered to the directory supplied with --previews.
 """
 from __future__ import annotations
@@ -41,7 +41,7 @@ MAIN_PANELS = {
     ('contact', 'information_rotation.pdf'): [],
     ('contact', 'task_performance_page1.pdf'): [],
     ('contact', 'posterior_anisotropy_spheres.pdf'): [],
-    ('contact', 'posterior_anisotropy_risk.pdf'): ['(c)'],
+    ('contact', 'posterior_anisotropy_risk.pdf'): [],
 }
 POINT_TOLERANCE = .02
 TEXT_TOLERANCE = .5
@@ -116,8 +116,13 @@ def figure_declarations(source):
             raise ValueError('FIGSIZE must contain two positive numbers')
         fonts = {name: float(values[name]) for name in
                  ('LABEL_FONT_SIZE', 'TICK_FONT_SIZE', 'LEGEND_FONT_SIZE') if name in values}
+        from scripts.notebook_publication_style import figure_blocks
+        block = next(block for block in figure_blocks(source) if pdf_name in block)
+        tight_bbox = any(isinstance(item, ast.keyword) and item.arg == 'bbox_inches'
+                         and isinstance(item.value, ast.Constant) and item.value.value == 'tight'
+                         for item in ast.walk(ast.parse(block)))
         declarations.append(dict(filename=pdf_name, figure_size_in=list(size), dpi=float(dpi),
-                                 primary_font_sizes_pt=fonts))
+                                 primary_font_sizes_pt=fonts, tight_bbox=tight_bbox))
     return declarations
 
 
@@ -140,7 +145,8 @@ def notebook_declarations(root, routes):
 
 
 def audit_pdf(path, expected_sizes, expected_dpi=300., primary_fonts=None,
-              main_panel_policy=None, require_primary_sizes=False, preview=None):
+              main_panel_policy=None, require_primary_sizes=False, preview=None,
+              tight_bbox=False):
     """Read actual PDF vector text, embedded fonts, bounds and image transforms."""
     path = Path(path)
     digest = sha(path)
@@ -152,7 +158,9 @@ def audit_pdf(path, expected_sizes, expected_dpi=300., primary_fonts=None,
             page_errors = []
             size = [page.rect.width / 72., page.rect.height / 72.]
             if page_index < len(expected_sizes):
-                if any(abs(actual * 72. - expected * 72.) > POINT_TOLERANCE
+                # Tight export trims the canvas margins; text bounds are checked below.
+                tolerance = 12. if tight_bbox else POINT_TOLERANCE
+                if any(abs(actual * 72. - expected * 72.) > tolerance
                        for actual, expected in zip(size, expected_sizes[page_index])):
                     page_errors.append('Page dimensions differ from the visible FIGSIZE or manifest')
             if any(abs(a-b) > POINT_TOLERANCE for a, b in zip(page.mediabox, page.cropbox)):
@@ -196,15 +204,15 @@ def audit_pdf(path, expected_sizes, expected_dpi=300., primary_fonts=None,
                 target = declared * TEX_POINT_RATIO
                 matched = [value for value in sizes if abs(value - target) <= FONT_TOLERANCE]
                 actual = min(matched, key=lambda value: abs(value-target)) if matched else None
-                at_six_inches = actual * 6. / size[0] if actual is not None else None
+                at_six_inches = actual * 6.5 / size[0] if actual is not None else None
                 readability[name] = dict(declared_pt=declared, actual_pt=actual,
-                                         six_inch_insertion_pt=at_six_inches)
+                                         paper_width_in=6.5, paper_insertion_pt=at_six_inches)
                 if require_primary_sizes and name != 'LEGEND_FONT_SIZE' and actual is None:
                     page_errors.append('Primary font size is absent from the actual PDF: ' + name)
                 threshold = {'LABEL_FONT_SIZE': 9.5, 'TICK_FONT_SIZE': 8.7,
                              'LEGEND_FONT_SIZE': 8.4}[name]
                 if at_six_inches is not None and at_six_inches < threshold:
-                    page_errors.append('Primary text is too small at six-inch insertion: ' + name)
+                    page_errors.append('Primary text is too small at 6.5-inch insertion: ' + name)
             letters = re.findall(r'\([a-z]\)', page.get_text())
             if main_panel_policy is not None and letters != main_panel_policy:
                 page_errors.append(f'Panel letters {letters!r} differ from {main_panel_policy!r}')
@@ -225,7 +233,7 @@ def audit_pdf(path, expected_sizes, expected_dpi=300., primary_fonts=None,
     return dict(sha256=digest, pages=pages, errors=errors)
 
 
-def run(root, previews=None, main_only=False):
+def run(root, previews=None, main_only=False, figure_names=None):
     root = Path(root).resolve()
     routes = declared_notebook_pdf_routes(root)
     if (root/'notebooks/beamforming_moving_interference.ipynb').is_file():
@@ -238,7 +246,10 @@ def run(root, previews=None, main_only=False):
     files, errors = {}, []
     matched = 0
     selected_routes = {name: route for name, route in routes.items()
-                       if not main_only or (route['example'], route['filename']) in MAIN_PANELS}
+                       if (not main_only or (route['example'], route['filename']) in MAIN_PANELS)
+                       and (not figure_names or route['filename'] in figure_names)}
+    if figure_names and set(figure_names) - {route['filename'] for route in selected_routes.values()}:
+        raise ValueError('Requested figure has no selected notebook route')
     for destination, route in selected_routes.items():
         path = root / destination
         expected = declarations[destination]
@@ -257,14 +268,15 @@ def run(root, previews=None, main_only=False):
                    if previews is not None and panel_policy is not None else None)
         record = audit_pdf(path, [expected['figure_size_in']], expected_dpi=expected['dpi'],
             primary_fonts=expected['primary_font_sizes_pt'], main_panel_policy=panel_policy,
-            require_primary_sizes=panel_policy is not None, preview=preview)
+            require_primary_sizes=panel_policy is not None, preview=preview,
+            tight_bbox=expected['tight_bbox'])
         record['source'] = expected
         record['local_pdf'] = route['local_pdf']
         files[destination] = record
         errors.extend(destination + ': ' + error for error in record['errors'])
     canonical, main_count, supplementary_count = {}, 0, 0
     manifest_path = root / 'results/draft_figure_manifest.json'
-    if not main_only and manifest_path.is_file():
+    if not main_only and not figure_names and manifest_path.is_file():
         manifest = json.loads(manifest_path.read_text())
         for destination, declaration in manifest['files'].items():
             path = root / destination
@@ -292,7 +304,7 @@ def run(root, previews=None, main_only=False):
         canonical_supplementary=supplementary_count, files=files, canonical_files=canonical,
         errors=errors, scope='Read-only Python AST and PDF inspection. No plotting code, fitting, '
             'simulation or numerical benchmark is executed. Primary text sizes are matched to '
-            'actual PDF text and scaled to a six-inch insertion; math subscripts are excluded '
+            'actual PDF text and scaled to a 6.5-inch insertion; math subscripts are excluded '
             'from that assessment. Page-bound text is checked; artist overlap and graphical '
             'clarity require visual review. PDF vector text and lines have no dpi.',
         tolerances=dict(page_points=POINT_TOLERANCE, text_bounds_points=TEXT_TOLERANCE,
@@ -305,8 +317,10 @@ def main():
     parser.add_argument('--output', type=Path, help='Write the JSON audit to this path')
     parser.add_argument('--previews', type=Path, help='Render retained main and optional candidate previews to this directory')
     parser.add_argument('--main-only', action='store_true', help='Inspect retained main figures and optional moving candidates')
+    parser.add_argument('--figure', action='append', help='Inspect only this declared PDF basename; repeat as needed')
     args = parser.parse_args()
-    report = run(args.root, previews=args.previews, main_only=args.main_only)
+    report = run(args.root, previews=args.previews, main_only=args.main_only,
+                 figure_names=args.figure)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(report, indent=2, allow_nan=False)+'\n')

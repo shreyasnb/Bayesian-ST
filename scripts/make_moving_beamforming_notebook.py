@@ -56,9 +56,9 @@ def plot_cell(condition=None):
 import matplotlib.pyplot as plt
 
 DPI = 300
-FIGSIZE = {(7, 3.5) if combined else (15, 5)!r}
-LABEL_FONT_SIZE = {12. if combined else 25.}
-TICK_FONT_SIZE = {11. if combined else 23.}
+FIGSIZE = {(7, 2.8) if combined else (15, 5)!r}
+LABEL_FONT_SIZE = {10.5 if combined else 25.}
+TICK_FONT_SIZE = {10. if combined else 23.}
 LEGEND_FONT_SIZE = {10.5 if combined else 22.}
 PRINT_WIDTH_IN = 7.
 PRINT_SCALE = FIGSIZE[0] / PRINT_WIDTH_IN
@@ -148,9 +148,9 @@ if layout is not None and hasattr(layout, "set"):
 
 if SAVE_PDF:
     PDF_PATH.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(PDF_PATH, dpi=DPI, bbox_inches=None, metadata={"Title": ""})
+    fig.savefig(PDF_PATH, dpi=DPI, bbox_inches="tight", pad_inches=.04, metadata={"Title": ""})
     if SAVE_PNG:
-        fig.savefig(PNG_PATH, dpi=DPI, bbox_inches=None)
+        fig.savefig(PNG_PATH, dpi=DPI, bbox_inches="tight", pad_inches=.04)
     if COPY_MAIN_CANDIDATE:
         DRAFT_PATH.parent.mkdir(parents=True, exist_ok=True)
         DRAFT_PATH.write_bytes(PDF_PATH.read_bytes())
@@ -425,7 +425,7 @@ def write_figure_manifest(root,notebook,evidence):
         'These empirical simulation spreads are not posterior credible regions; table confidence intervals are unchanged.')
     specs=[('moving_interference_smooth_output_power','smooth','smooth-output-power',[15,5]),
            ('moving_interference_abrupt_output_power','abrupt','abrupt-output-power',[15,5]),
-           ('moving_interference_comparison','comparison','combined-output-power',[7,3.5])]
+           ('moving_interference_comparison','comparison','combined-output-power',[7,2.8])]
     for basename,condition,cell_id,size in specs:
         source=folder/'figures'/(basename+'.pdf')
         candidate=root/'results/main/beamforming'/(basename+'.pdf')
@@ -446,8 +446,8 @@ def write_figure_manifest(root,notebook,evidence):
             event_t=None if condition=='smooth' else 129,
             uncertainty='Pointwise empirical 25th–75th percentiles across 256 simulations',
             mean_curves_unchanged=True,iqr_alpha=.22,
-            plotting=dict(labels=12 if condition=='comparison' else 25,
-                ticks=11 if condition=='comparison' else 23,
+            plotting=dict(labels=10.5 if condition=='comparison' else 25,
+                ticks=10 if condition=='comparison' else 23,
                 legend=10.5 if condition=='comparison' else 22,
                 line_width=1.0 if condition=='comparison' else 15/7,
                 trajectory_style='Solid lines without markers; original colors retained.'),

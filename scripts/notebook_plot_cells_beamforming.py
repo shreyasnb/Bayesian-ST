@@ -456,6 +456,28 @@ for _key, _source in list(PLOT_CELLS.items()):
     PLOT_CELLS[_key] = apply_publication_style(_source)
 
 
+# Compact, editable 2x2 supplement layout, sized for a 6.5-inch paper width.
+_noise = PLOT_CELLS['noise_adaptation', 1]
+_noise = _noise.replace('FIGSIZE = (15, 7)', 'FIGSIZE = (7, 4.5)')
+_noise = _noise.replace('LABEL_FONT_SIZE = 25. * FIGSIZE[0] / 15.', 'LABEL_FONT_SIZE = 10.5')
+_noise = _noise.replace('TICK_FONT_SIZE = 23. * FIGSIZE[0] / 15.', 'TICK_FONT_SIZE = 10.')
+_noise = _noise.replace('LEGEND_FONT_SIZE = 22. * FIGSIZE[0] / 15.', 'LEGEND_FONT_SIZE = 10.5')
+_noise = _noise.replace("# Font sizes are chosen for a six-inch-wide insertion in the paper.\n# The width factor preserves that printed size when FIGSIZE is changed.",
+    '# Font sizes target 9--10 pt at a final paper width of 6.5 inches.')
+_noise = _noise.replace("'axes.labelpad': 8.", "'axes.labelpad': 4.")
+_noise = _noise.replace('ncol=4,columnspacing=.8', 'ncol=2,columnspacing=1.2')
+_noise = _noise.replace('_layout.set(h_pad=.18, w_pad=.16)', '_layout.set(h_pad=.07, w_pad=.06)')
+_noise = _noise.replace('bbox_inches=None', 'bbox_inches="tight", pad_inches=.04')
+_noise = _noise.replace("DRAFT_SECTION = 'main'", "DRAFT_SECTION = 'supplementary'")
+_noise = _noise.replace('    DRAFT_PNG_PATH.write_bytes(PNG_PATH.read_bytes())',
+    """    DRAFT_PNG_PATH.write_bytes(PNG_PATH.read_bytes())
+    # Retain the existing main-paper filename for downstream compatibility.
+    LEGACY_MAIN_PATH = ROOT / 'results/main/beamforming' / PDF_PATH.name
+    LEGACY_MAIN_PATH.write_bytes(PDF_PATH.read_bytes())
+    LEGACY_MAIN_PATH.with_suffix('.png').write_bytes(PNG_PATH.read_bytes())""")
+PLOT_CELLS['noise_adaptation', 1] = _noise
+
+
 def get_plot_cell(name, page=1):
     """Return ordinary source to place directly into one notebook code cell."""
     return PLOT_CELLS[name,page]

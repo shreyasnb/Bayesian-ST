@@ -377,8 +377,9 @@ fig.legend(*ax.get_legend_handles_labels(),loc="outside lower center",ncol=3,fra
 
 
 from scripts.notebook_publication_style import apply_publication_style
+from scripts.notebook_paper_sizing import contact_paper_layout
 for _key, _source in list(PLOT_CELLS.items()):
-    PLOT_CELLS[_key] = apply_publication_style(_source)
+    PLOT_CELLS[_key] = contact_paper_layout(apply_publication_style(_source))
 
 
 def get_plot_cell(name, page=1):

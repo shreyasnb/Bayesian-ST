@@ -169,7 +169,8 @@ def plotting_source(stem,section,body):
         style=''.join(line for i,line in enumerate(lines) if i not in removed)
     path_source=("TRANSPORT_OUTPUT = ROOT / 'results/contact_transport_diagnostics/figures'\n"
                  +f"PDF_PATH = TRANSPORT_OUTPUT / '{stem}.pdf'\n") if stem.startswith('transport_') else f"PDF_PATH = EDITABLE_OUTPUT / '{stem}.pdf'\n"
-    return (CONTROLS+path_source+f"DRAFT_SECTION = '{section}'\n"
+    from scripts.notebook_paper_sizing import contact_paper_layout
+    return contact_paper_layout(CONTROLS+path_source+f"DRAFT_SECTION = '{section}'\n"
         +"DRAFT_PATH = ROOT / 'results' / DRAFT_SECTION / 'contact' / PDF_PATH.name\n\n"
         +style+'\n'+dedent(body).strip()+'\n\n'+SAVE)
 

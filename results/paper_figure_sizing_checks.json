@@ -1,0 +1,594 @@
+{
+  "status": "passed",
+  "paper_width_in": 6.5,
+  "visual_review": {
+    "render_width_px": 975,
+    "resolution_dpi": 150,
+    "text_and_legend_readable": true,
+    "no_visible_text_or_legend_overlap": true,
+    "both_spheres_and_common_color_bars_visible": true,
+    "contact_risk_obsolete_panel_label_removed": true,
+    "information_rotation_explanatory_guide_retained": true,
+    "beamforming_common_legend_and_uncertainty_bands_visible": true,
+    "noise_adaptation_readable_2_by_2": true
+  },
+  "files": {
+    "results/main/contact/contact_comparison.pdf": {
+      "sha256": "4570b8becc949f27f2e6c991a1e8dafd0d02a92e2db6b6c7e6f59d6d1d3114d2",
+      "pages": 1,
+      "exported_size_in": [
+        6.5,
+        4.234712
+      ],
+      "height_at_6_5_in_width": 4.234712,
+      "all_printed_font_sizes_pt": [
+        4.626,
+        6.476,
+        6.799,
+        9.251,
+        9.714
+      ],
+      "primary_printed_font_sizes_pt": [
+        9.251,
+        9.714
+      ],
+      "smaller_sizes_are_math_scripts": true,
+      "fonts": [
+        {
+          "name": "CMMI10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMEX7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI5",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMSY10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMSY7",
+          "type": "Type1",
+          "embedded": true
+        }
+      ],
+      "vector_drawing_count": 84,
+      "text_outside_page": [],
+      "high_resolution_png_size_px": [
+        1950,
+        1271
+      ],
+      "png_dpi_metadata": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "results/main/beamforming/moving_interference_comparison.pdf": {
+      "sha256": "d10eaffb68043ed52cae7110aefd88de08cddb4704756f0cac4473119da146f4",
+      "pages": 1,
+      "exported_size_in": [
+        6.999488,
+        2.767083
+      ],
+      "height_at_6_5_in_width": 2.569622,
+      "all_printed_font_sizes_pt": [
+        4.857,
+        6.8,
+        9.252,
+        9.714
+      ],
+      "primary_printed_font_sizes_pt": [
+        9.252,
+        9.714
+      ],
+      "smaller_sizes_are_math_scripts": true,
+      "fonts": [
+        {
+          "name": "CMEX7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI5",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMSY7",
+          "type": "Type1",
+          "embedded": true
+        }
+      ],
+      "vector_drawing_count": 89,
+      "text_outside_page": [],
+      "high_resolution_png_size_px": [
+        2099,
+        830
+      ],
+      "png_dpi_metadata": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "results/supplementary/contact/information_rotation.pdf": {
+      "sha256": "2e87e3e411e3972e73c3b815387bda99e57207a2facd38604335874459572372",
+      "pages": 1,
+      "exported_size_in": [
+        7.0,
+        2.6
+      ],
+      "height_at_6_5_in_width": 2.414286,
+      "all_printed_font_sizes_pt": [
+        6.476,
+        6.799,
+        9.251,
+        9.714
+      ],
+      "primary_printed_font_sizes_pt": [
+        9.251,
+        9.714
+      ],
+      "smaller_sizes_are_math_scripts": true,
+      "fonts": [
+        {
+          "name": "CMMI10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMSY10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMSY7",
+          "type": "Type1",
+          "embedded": true
+        }
+      ],
+      "vector_drawing_count": 46,
+      "text_outside_page": [],
+      "high_resolution_png_size_px": [
+        2100,
+        780
+      ],
+      "png_dpi_metadata": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "results/supplementary/contact/posterior_anisotropy_spheres.pdf": {
+      "sha256": "174ff7098a5ccb725d1c25ece76daf2eef7481a5689b817dcd52fd3058ce6ce2",
+      "pages": 1,
+      "exported_size_in": [
+        7.0,
+        3.1
+      ],
+      "height_at_6_5_in_width": 2.878571,
+      "all_printed_font_sizes_pt": [
+        6.476,
+        6.799,
+        9.251,
+        9.714
+      ],
+      "primary_printed_font_sizes_pt": [
+        9.251,
+        9.714
+      ],
+      "smaller_sizes_are_math_scripts": true,
+      "fonts": [
+        {
+          "name": "CMMI10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMSY10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMSY7",
+          "type": "Type1",
+          "embedded": true
+        }
+      ],
+      "vector_drawing_count": 79,
+      "text_outside_page": [],
+      "high_resolution_png_size_px": [
+        2100,
+        930
+      ],
+      "png_dpi_metadata": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "results/supplementary/contact/moving_sphere_posterior_spheres.pdf": {
+      "sha256": "b613b5d9329b1f6fd6cce7252912d19ac351235e5c9dc53e6a5b67f7e3221927",
+      "pages": 1,
+      "exported_size_in": [
+        6.898262,
+        3.170556
+      ],
+      "height_at_6_5_in_width": 2.987508,
+      "all_printed_font_sizes_pt": [
+        6.571,
+        6.9,
+        9.387,
+        9.857
+      ],
+      "primary_printed_font_sizes_pt": [
+        9.387,
+        9.857
+      ],
+      "smaller_sizes_are_math_scripts": true,
+      "fonts": [
+        {
+          "name": "CMEX10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMSY10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMSY7",
+          "type": "Type1",
+          "embedded": true
+        }
+      ],
+      "vector_drawing_count": 83,
+      "text_outside_page": [],
+      "high_resolution_png_size_px": [
+        2069,
+        951
+      ],
+      "png_dpi_metadata": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "results/supplementary/beamforming/noise_adaptation_page1.pdf": {
+      "sha256": "cd849906d0276df1cf14aeb6fb926ee0981b7a3c9bdc6f7f9d34aba9fbb69281",
+      "pages": 1,
+      "exported_size_in": [
+        6.960847,
+        4.437083
+      ],
+      "height_at_6_5_in_width": 4.143323,
+      "all_printed_font_sizes_pt": [
+        6.838,
+        9.303,
+        9.768
+      ],
+      "primary_printed_font_sizes_pt": [
+        9.303,
+        9.768
+      ],
+      "smaller_sizes_are_math_scripts": true,
+      "fonts": [
+        {
+          "name": "CMEX10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMSY10",
+          "type": "Type1",
+          "embedded": true
+        }
+      ],
+      "vector_drawing_count": 151,
+      "text_outside_page": [],
+      "high_resolution_png_size_px": [
+        2088,
+        1331
+      ],
+      "png_dpi_metadata": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "results/main/contact/posterior_anisotropy_risk.pdf": {
+      "sha256": "a5201b70f54698cbca047e4ba3c3c4e9b5e3dcef6bb0b750eb99ed433fb232be",
+      "pages": 1,
+      "exported_size_in": [
+        7.0,
+        2.1
+      ],
+      "height_at_6_5_in_width": 1.95,
+      "all_printed_font_sizes_pt": [
+        6.476,
+        6.799,
+        9.251,
+        9.714
+      ],
+      "primary_printed_font_sizes_pt": [
+        9.251,
+        9.714
+      ],
+      "smaller_sizes_are_math_scripts": true,
+      "fonts": [
+        {
+          "name": "CMMI10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR7",
+          "type": "Type1",
+          "embedded": true
+        }
+      ],
+      "vector_drawing_count": 36,
+      "text_outside_page": [],
+      "high_resolution_png_size_px": [
+        2100,
+        630
+      ],
+      "png_dpi_metadata": [
+        299.9994,
+        299.9994
+      ]
+    },
+    "results/main/contact/prediction_error_sphere.pdf": {
+      "sha256": "c769ca58be45201359b9aa17b64cd64cec85a1c5cea7076221f2bcd4b27d6355",
+      "pages": 1,
+      "exported_size_in": [
+        7.0,
+        2.370715
+      ],
+      "height_at_6_5_in_width": 2.201378,
+      "all_printed_font_sizes_pt": [
+        4.626,
+        6.476,
+        6.799,
+        9.251,
+        9.714
+      ],
+      "primary_printed_font_sizes_pt": [
+        9.251,
+        9.714
+      ],
+      "smaller_sizes_are_math_scripts": true,
+      "fonts": [
+        {
+          "name": "CMEX7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI5",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMMI7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMR7",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMSY10",
+          "type": "Type1",
+          "embedded": true
+        },
+        {
+          "name": "CMSY7",
+          "type": "Type1",
+          "embedded": true
+        }
+      ],
+      "vector_drawing_count": 48,
+      "text_outside_page": [],
+      "high_resolution_png_size_px": [
+        2100,
+        711
+      ],
+      "png_dpi_metadata": [
+        299.9994,
+        299.9994
+      ]
+    }
+  },
+  "preservation": {
+    "numerical_artifacts": {
+      "tracked_files_checked": 4094,
+      "changed": []
+    },
+    "configuration_json": {
+      "tracked_files_checked": 59,
+      "changed": []
+    },
+    "scientific_library": {
+      "tracked_files_checked": 77,
+      "changed": []
+    },
+    "other_json_reference": {
+      "tracked_files_checked": 2969,
+      "changed": [
+        "results/beamforming_moving/figure_manifest.json"
+      ]
+    },
+    "other_json_changes_scope": "Only results/beamforming_moving/figure_manifest.json changed; it records regenerated figure presentation metadata."
+  },
+  "rendered_artist_preservation": {
+    "contact": {
+      "status": "passed",
+      "log_path": "/tmp/contact-preservation.log",
+      "log_sha256": "1bac0d0e4ddeddbe2230221503bb982eee0f9a83593c7e309e296ec6f63baecd",
+      "verified_plot_cells": [
+        "03_contact 5 all plotted trajectories, bands, colors, styles, labels, guides and borders preserved",
+        "03_contact 14 all plotted trajectories, bands, colors, styles, labels, guides and borders preserved",
+        "contact_prediction_diagnostics 6 all plotted trajectories, bands, colors, styles, labels, guides and borders preserved",
+        "contact_prediction_diagnostics 12 all plotted trajectories, bands, colors, styles, labels, guides and borders preserved"
+      ]
+    },
+    "beamforming": {
+      "status": "passed",
+      "log_path": "/tmp/beamforming-preservation.log",
+      "log_sha256": "1ead26766ae2dd606bb330c7d5527852f33032a90e5d50735870a9c937e0d41d",
+      "verified_plot_cells": [
+        "01_array 16 all trajectories, bands, colors, styles, labels, event coordinates and borders preserved",
+        "beamforming_moving_interference 9 all trajectories, bands, colors, styles, labels, event coordinates and borders preserved",
+        "beamforming_moving_interference 11 all trajectories, bands, colors, styles, labels, event coordinates and borders preserved",
+        "beamforming_moving_interference 13 all trajectories, bands, colors, styles, labels, event coordinates and borders preserved"
+      ]
+    }
+  }
+}
