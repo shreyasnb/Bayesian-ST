@@ -2,7 +2,7 @@
 
 The revised main numerical section uses two figures:
 
-- [contact/contact_comparison.pdf](contact/contact_comparison.pdf): posterior velocity variance above contact tracking error, composed at 6.5 inches wide.
+- [contact/contact_comparison.pdf](contact/contact_comparison.pdf): posterior velocity variance and contact tracking error side by side, with one centered common legend on a single row.
 - [beamforming/moving_interference_comparison.pdf](beamforming/moving_interference_comparison.pdf): smooth and abrupt interference motion side by side, with one common legend.
 
 The individual PDFs below retain their filenames. Information rotation, posterior spheres and the 2×2 beamforming noise-adaptation figure have resized copies under `results/supplementary/`. See [figure sizing](../../docs/paper_figure_sizing.md) for dimensions and export instructions.

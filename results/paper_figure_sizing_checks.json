@@ -10,17 +10,19 @@
     "contact_risk_obsolete_panel_label_removed": true,
     "information_rotation_explanatory_guide_retained": true,
     "beamforming_common_legend_and_uncertainty_bands_visible": true,
-    "noise_adaptation_readable_2_by_2": true
+    "noise_adaptation_readable_2_by_2": true,
+    "contact_comparison_side_by_side": true,
+    "contact_comparison_single_centered_legend_row": true
   },
   "files": {
     "results/main/contact/contact_comparison.pdf": {
-      "sha256": "4570b8becc949f27f2e6c991a1e8dafd0d02a92e2db6b6c7e6f59d6d1d3114d2",
+      "sha256": "0083c0e5d25ae9214e48dae72d1b4aa639ccc331dca42c47cb8655189ee4a084",
       "pages": 1,
       "exported_size_in": [
-        6.5,
-        4.234712
+        7.0,
+        2.770629
       ],
-      "height_at_6_5_in_width": 4.234712,
+      "height_at_6_5_in_width": 2.572727,
       "all_printed_font_sizes_pt": [
         4.626,
         6.476,
@@ -34,26 +36,6 @@
       ],
       "smaller_sizes_are_math_scripts": true,
       "fonts": [
-        {
-          "name": "CMMI10",
-          "type": "Type1",
-          "embedded": true
-        },
-        {
-          "name": "CMMI7",
-          "type": "Type1",
-          "embedded": true
-        },
-        {
-          "name": "CMR10",
-          "type": "Type1",
-          "embedded": true
-        },
-        {
-          "name": "CMR7",
-          "type": "Type1",
-          "embedded": true
-        },
         {
           "name": "CMEX7",
           "type": "Type1",
@@ -95,16 +77,39 @@
           "embedded": true
         }
       ],
-      "vector_drawing_count": 84,
+      "vector_drawing_count": 67,
       "text_outside_page": [],
       "high_resolution_png_size_px": [
-        1950,
-        1271
+        2100,
+        831
       ],
       "png_dpi_metadata": [
         299.9994,
         299.9994
-      ]
+      ],
+      "layout": "Side by side: posterior velocity variance left, tracking error right.",
+      "common_legend": {
+        "source": "prediction_error_sphere",
+        "entries_unchanged": true,
+        "entry_order": [
+          "mean",
+          "mode",
+          "iso",
+          "mean_identity"
+        ],
+        "single_row": true,
+        "centered": true
+      },
+      "artist_preservation": {
+        "coordinates": true,
+        "uncertainty_band_vertices": true,
+        "colours": true,
+        "line_styles": true,
+        "line_widths": true,
+        "axis_labels": true,
+        "four_borders": true
+      },
+      "other_tracked_files_unchanged": 9684
     },
     "results/main/beamforming/moving_interference_comparison.pdf": {
       "sha256": "d10eaffb68043ed52cae7110aefd88de08cddb4704756f0cac4473119da146f4",

@@ -2,15 +2,16 @@
 
 The main numerical section now uses `results/main/contact/contact_comparison.pdf`
 and `results/main/beamforming/moving_interference_comparison.pdf`. The contact
-composition stacks the existing velocity-variance PDF above the existing tracking
-error PDF. Individual basenames, saved inputs, simulation settings, methods,
+comparison places posterior velocity variance on the left and tracking error on
+the right, with the prediction-error panel's four-entry legend centered in one
+row. Individual basenames, saved inputs, simulation settings, methods,
 statistics, notation and colours are unchanged.
 
 | Figure basename | Canvas, inches | Tight PDF, inches | Current manuscript directory |
 | --- | --- | --- | --- |
 | `posterior_anisotropy_risk` | 7 × 2.1 | 7.000 × 2.100 | `results/main/contact/` |
 | `prediction_error_sphere` | 7 × 2.4 | 7.000 × 2.371 | `results/main/contact/` |
-| `contact_comparison` | PDF composition | 6.500 × 4.235 | `results/main/contact/` |
+| `contact_comparison` | 7 × 2.8 | 7.000 × 2.771 | `results/main/contact/` |
 | `moving_interference_comparison` | 7 × 2.8 | 6.999 × 2.767 | `results/main/beamforming/` |
 | `information_rotation` | 7 × 2.6 | 7.000 × 2.600 | `results/supplementary/contact/` |
 | `posterior_anisotropy_spheres` | 7 × 3.1 | 7.000 × 3.100 | `results/supplementary/contact/` |
@@ -36,17 +37,18 @@ Activate `.venv` and run only the setup/data-loading and selected plot cells:
 - `notebooks/01_array.ipynb`: setup and the first noise-adaptation plot cell.
 
 Their visible `FIGSIZE`, font and save controls are editable. Source generators
-carry the same layouts. No simulation runner is required. After the two contact
-individuals are saved, compose the main contact figure with:
+carry the same layouts. No simulation runner is required. Export the side-by-side
+contact comparison directly from the same saved arrays with:
 
 ```bash
-python3 scripts/export_contact_comparison.py
+.venv/bin/python scripts/export_contact_comparison.py
 ```
 
-This composition command requires PyMuPDF, available in the prepared machine's
-system Python. It embeds the source PDF pages directly, retaining vector text
-and lines, and exports a 300-dpi preview. It does not render the PDF into an
-image for inclusion in the composition.
+The comparison exporter uses the installed scientific Python stack and TeX.
+It reads the same saved unit-query risk arrays and contact-transport curves used
+by the individual notebooks, retaining their trajectory coordinates, colours,
+notation, and uncertainty band. It redraws only the combined layout, with vector
+text and lines and a 300-dpi preview. Individual exports remain unchanged.
 
 ## Inspection
 
