@@ -66,9 +66,9 @@ def make_figure(root):
         points = np.asarray(curve['points'], dtype=float)
         ax.plot(points[:, 0], points[:, 1], color=COLORS[method], label=LABELS[method],
                 linestyle='-', linewidth=1.8)
-        if method == 'mean':
+        if method in ('mean', 'mean_identity'):
             ax.fill_between(points[:, 0], points[:, 2], points[:, 3],
-                            color=COLORS[method], alpha=.14, linewidth=0)
+                            color=COLORS[method], alpha=.14, linewidth=0, zorder=1)
     ax.set(xlabel=r'$t$', ylabel=r'$\mathcal E_t(D_t)$ $((\mathrm{mm}/\mathrm{s})^2)$',
            xlim=(1, int(transport['config']['T'])))
 

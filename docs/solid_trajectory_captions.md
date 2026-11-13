@@ -52,7 +52,7 @@ Stationary-plane velocity prediction error $\mathcal E_t(D_t)$ in~\eqref{eq:cont
 
 ### results/main/contact/prediction_error_sphere.pdf
 
-Moving-sphere velocity prediction error $\mathcal E_t(D_t)$ in~\eqref{eq:contact-prediction-error}, in $(\mathrm{mm}/\mathrm{s})^2$. Blue, orange and pink solid curves denote the posterior mean $\overline P_t^+$, mode $P_{\widehat{\mathcal X}_t}$ and matched isotropic mean $\overline P_t^{\mathrm{iso}}$ with measured transport $G_t=R_t^\top R_{t-1}$. The dark gray solid curve is the posterior mean with $G_t=I_3$. Each curve joins arithmetic means over the same 256 Monte Carlo simulations at all 48 original action indices $t=4,8,\ldots,192$. Blue shading gives pointwise Student 95\% confidence intervals for the measured-transport posterior-mean averages. The ordering varies with time; there is no programmed event at $t=128$.
+Moving-sphere velocity prediction error $\mathcal E_t(D_t)$ in~\eqref{eq:contact-prediction-error}, in $(\mathrm{mm}/\mathrm{s})^2$. Blue, orange and pink solid curves denote the posterior mean $\overline P_t^+$, mode $P_{\widehat{\mathcal X}_t}$ and matched isotropic mean $\overline P_t^{\mathrm{iso}}$ with measured transport $G_t=R_t^\top R_{t-1}$. The dark gray solid curve is the posterior mean with $G_t=I_3$. Each curve joins arithmetic means over the same 256 Monte Carlo simulations at all 48 original action indices $t=4,8,\ldots,192$. Blue and light gray shading give the saved pointwise Student 95\% confidence intervals across the same 256 simulations for the measured-transport and identity-transport posterior-mean averages, respectively. The ordering varies with time; there is no programmed event at $t=128$.
 
 ### results/supplementary/contact/prediction_error_references.pdf
 

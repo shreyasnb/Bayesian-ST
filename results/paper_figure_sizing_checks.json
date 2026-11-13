@@ -12,17 +12,19 @@
     "beamforming_common_legend_and_uncertainty_bands_visible": true,
     "noise_adaptation_readable_2_by_2": true,
     "contact_comparison_side_by_side": true,
-    "contact_comparison_single_centered_legend_row": true
+    "contact_comparison_single_centered_legend_row": true,
+    "mean_identity_light_gray_band_legible": true,
+    "both_contact_bands_behind_clear_solid_trajectories": true
   },
   "files": {
     "results/main/contact/contact_comparison.pdf": {
-      "sha256": "0083c0e5d25ae9214e48dae72d1b4aa639ccc331dca42c47cb8655189ee4a084",
+      "sha256": "c6d8e92c3e60c408c4e5a2c9951f4e2b0e2adc123a80952d2bcc2219b603d46b",
       "pages": 1,
       "exported_size_in": [
         7.0,
-        2.770629
+        2.770555
       ],
-      "height_at_6_5_in_width": 2.572727,
+      "height_at_6_5_in_width": 2.572659,
       "all_printed_font_sizes_pt": [
         4.626,
         6.476,
@@ -77,7 +79,7 @@
           "embedded": true
         }
       ],
-      "vector_drawing_count": 67,
+      "vector_drawing_count": 68,
       "text_outside_page": [],
       "high_resolution_png_size_px": [
         2100,
@@ -109,7 +111,17 @@
         "axis_labels": true,
         "four_borders": true
       },
-      "other_tracked_files_unchanged": 9684
+      "confidence_bands": {
+        "methods": [
+          "mean",
+          "mean_identity"
+        ],
+        "source": "Existing sealed sphere_curves columns t, mean, lower, upper; saved pointwise 95% limits across 256 simulations. No intervals recomputed.",
+        "alpha": 0.14,
+        "bands_behind_all_trajectories": true,
+        "mean_identity_gray": true,
+        "separate_band_legend_entry": false
+      }
     },
     "results/main/beamforming/moving_interference_comparison.pdf": {
       "sha256": "d10eaffb68043ed52cae7110aefd88de08cddb4704756f0cac4473119da146f4",
@@ -478,13 +490,13 @@
       ]
     },
     "results/main/contact/prediction_error_sphere.pdf": {
-      "sha256": "c769ca58be45201359b9aa17b64cd64cec85a1c5cea7076221f2bcd4b27d6355",
+      "sha256": "1bdc4b9401f5ccf4f9d36aa1d51cabcefe8466f93058679bc8f4d0142801c03e",
       "pages": 1,
       "exported_size_in": [
         7.0,
-        2.370715
+        2.370555
       ],
-      "height_at_6_5_in_width": 2.201378,
+      "height_at_6_5_in_width": 2.20123,
       "all_printed_font_sizes_pt": [
         4.626,
         6.476,
@@ -539,7 +551,7 @@
           "embedded": true
         }
       ],
-      "vector_drawing_count": 48,
+      "vector_drawing_count": 49,
       "text_outside_page": [],
       "high_resolution_png_size_px": [
         2100,
@@ -548,7 +560,18 @@
       "png_dpi_metadata": [
         299.9994,
         299.9994
-      ]
+      ],
+      "confidence_bands": {
+        "methods": [
+          "mean",
+          "mean_identity"
+        ],
+        "source": "Existing sealed sphere_curves columns t, mean, lower, upper; saved pointwise 95% limits across 256 simulations. No intervals recomputed.",
+        "alpha": 0.14,
+        "bands_behind_all_trajectories": true,
+        "mean_identity_gray": true,
+        "separate_band_legend_entry": false
+      }
     }
   },
   "preservation": {
@@ -595,5 +618,21 @@
         "beamforming_moving_interference 13 all trajectories, bands, colors, styles, labels, event coordinates and borders preserved"
       ]
     }
+  },
+  "confidence_band_validation": {
+    "status": "passed",
+    "combined_and_standalone": true,
+    "saved_limit_polygon_vertices_exact": true,
+    "existing_trajectories_colors_styles_widths_labels_borders_and_legend_unchanged": true,
+    "figure_canvas_dimensions_unchanged": true,
+    "tight_bbox_tolerance_points": 0.02,
+    "all_band_limits_within_y_range": true,
+    "unchanged_saved_numeric_artifacts": 4111,
+    "unchanged_configuration_jsons": 59,
+    "unchanged_lib_modules": 92,
+    "unchanged_other_figures": 760,
+    "unrelated_notebook_cells_unchanged": true,
+    "visual_review_width_in": 6.5,
+    "visual_review_resolution_dpi": 150
   }
 }

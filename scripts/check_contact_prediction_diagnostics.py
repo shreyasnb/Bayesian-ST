@@ -202,7 +202,19 @@ def _identity_curve_check(root,notebook,data,transport):
     assert ast.literal_eval(keywords['linestyle'])=='-'
     for actual,expected in zip(trajectories[0].args[:2],('points[:,0]','points[:,1]')):
         assert ast.dump(actual)==ast.dump(ast.parse(expected,mode='eval').body)
-    assert "if method == 'mean':" in text and 'ax.fill_between' in text
+    band_condition = next(node for node in ast.walk(tree) if isinstance(node, ast.If)
+        and any(isinstance(call, ast.Call) and isinstance(call.func, ast.Attribute)
+                and call.func.attr == 'fill_between' for call in ast.walk(node)))
+    assert ast.dump(band_condition.test) == ast.dump(
+        ast.parse("method in ('mean', 'mean_identity')", mode='eval').body)
+    band = next(node for node in ast.walk(band_condition) if isinstance(node, ast.Call)
+                and isinstance(node.func, ast.Attribute) and node.func.attr == 'fill_between')
+    for actual, expected in zip(band.args, ('points[:,0]', 'points[:,2]', 'points[:,3]')):
+        assert ast.dump(actual) == ast.dump(ast.parse(expected, mode='eval').body)
+    band_keywords = {item.arg: item.value for item in band.keywords}
+    assert ast.literal_eval(band_keywords['alpha']) == .14
+    assert ast.literal_eval(band_keywords['zorder']) == 1
+    assert 'label' not in band_keywords
     assert any(isinstance(node,ast.Subscript) and isinstance(node.slice,ast.Constant)
                and node.slice.value=='sphere_curves' for node in ast.walk(tree))
     assert not any(isinstance(node,ast.Call) and isinstance(node.func,ast.Attribute)

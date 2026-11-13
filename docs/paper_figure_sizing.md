@@ -60,6 +60,11 @@ page bounds. No TeX cropping is required. The obsolete risk `(c)` label is gone;
 the information-rotation explanatory guide and highlighted scientific points
 remain. Uncertainty bands, solid trajectories, and four-sided 2D borders are
 preserved. Beamforming event lines are identified in the common legend.
+The combined contact comparison and standalone sphere history shade both
+posterior-mean curves: blue for measured transport and light gray for
+`mean_identity`. Both bands use the original saved pointwise 95% limits across
+256 simulations, with opacity 0.14 behind the trajectories and no added legend
+entry. Numerical intervals are read directly; none are recomputed for plotting.
 
 `results/paper_figure_sizing_checks.json` records measured PDF dimensions,
 printed font sizes, preview resolution, bounds and independent visual review.

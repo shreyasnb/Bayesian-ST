@@ -212,7 +212,9 @@ SPHERE_HISTORY = HISTORY.replace(
     "for curve in record['curves']:",
     "LABELS['mean_identity'] = r'$\\overline P_t^+,\\ G_t=I_3$'\n"
     "COLORS['mean_identity'] = '#484848'\n"
-    "for curve in record['curves']:").replace("ncol=3, frameon=False", "ncol=4, frameon=False")
+    "for curve in record['curves']:").replace("ncol=3, frameon=False", "ncol=4, frameon=False").replace(
+    "if method == 'mean':", "if method in ('mean', 'mean_identity'):").replace(
+    "alpha=.14, linewidth=0)", "alpha=.14, linewidth=0, zorder=1)")
 
 TRANSPORT_AXES = r'''
 BORDER_WIDTH = .9
