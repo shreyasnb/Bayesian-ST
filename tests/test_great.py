@@ -67,7 +67,7 @@ def test_real_restriction_and_finite_gradient_descent_without_eigensolve(monkeyp
         complex_tracker.update(u)
         assert np.allclose(real.projector, complex_tracker.projector, atol=2e-12)
         assert np.all(np.diff(real.step_losses) <= 2e-12)
-    assert real.total_gradient_steps == 3 * len(U)
+    assert real.total_gradient_steps == 3 * (len(U) - 1)
     assert real.descent_violations == 0
     # Finite steps need not solve the new objective exactly at each snapshot.
     C = real.covariance

@@ -25,14 +25,12 @@ def _covariance(C, n):
 
 
 def residual_objective(X, covariance):
-
     X = _basis(X)
     C = _covariance(covariance, len(X))
     return float((np.trace(C) - np.trace(X.conj().T @ C @ X)).real)
 
 
 def riemannian_gradient(X, covariance):
-
     X = _basis(X)
     C = _covariance(covariance, len(X))
     CX = C @ X
@@ -40,8 +38,6 @@ def riemannian_gradient(X, covariance):
 
 
 def grassmann_exp(X, tangent):
-
-
     X = _basis(X)
     tangent = np.asarray(tangent)
     if tangent.shape != X.shape or not np.isfinite(tangent).all():
@@ -53,23 +49,19 @@ def grassmann_exp(X, tangent):
     U, singular, Vh = np.linalg.svd(tangent, full_matrices=False)
     V = Vh.conj().T
     Y = ((X @ V) * np.cos(singular)) @ Vh + (U * np.sin(singular)) @ Vh
-
-
     if np.linalg.norm(Y.conj().T @ Y - np.eye(X.shape[1])) > 5e-12:
         Y = np.linalg.qr(Y, mode='reduced')[0]
     return Y
 
 
 class GREAT:
-
-
-    def __init__(self, n, k, stepsize=1e-3, inner_steps=1, window=None,
+    def __init__(self, n, k, stepsize=None, inner_steps=5, window=None,
                  beta=None, complex_data=False, initial_basis=None, record_objective=False):
         if (not isinstance(n, numbers.Integral) or not isinstance(k, numbers.Integral)
                 or not 0 < k < n):
             raise ValueError('Require integer 0 < k < n')
-        if not np.isfinite(stepsize) or stepsize <= 0:
-            raise ValueError('Use a finite positive gradient step size')
+        if stepsize is not None and (not np.isfinite(stepsize) or stepsize <= 0):
+            raise ValueError('Use a finite positive gradient step size or None')
         if not isinstance(inner_steps, numbers.Integral) or inner_steps < 1:
             raise ValueError('Use a positive finite number of gradient steps')
         if window is None and beta is None:
@@ -81,7 +73,9 @@ class GREAT:
         if beta is not None and (not np.isfinite(beta) or not 0 < beta <= 1):
             raise ValueError('Require 0 < beta <= 1')
         self.n, self.k = int(n), int(k)
-        self.stepsize, self.inner_steps = float(stepsize), int(inner_steps)
+        self.stepsize = None if stepsize is None else float(stepsize)
+        self.inner_steps = int(inner_steps)
+        self.last_stepsize = None
         self.window = None if window is None else int(window)
         self.beta = None if beta is None else float(beta)
         self.gamma = None if beta is None else float(np.sqrt(beta))
@@ -106,7 +100,6 @@ class GREAT:
         self._history = deque()
 
     def update(self, u, G=None):
-
         u = np.asarray(u)
         if u.shape != (self.n,) or not np.isfinite(u).all():
             raise ValueError('Use one finite measured vector of length n')
@@ -141,13 +134,27 @@ class GREAT:
             self.effective_mass = float(len(self._history))
         self.covariance += np.outer(u, u.conj())
         self.covariance = (self.covariance + self.covariance.conj().T) / 2
+        self.observations += 1
+        self.step_losses = []
+        self.last_stepsize = None
+        count = self.observations if self.window is None else len(self._history)
+        if count < self.k:
+            return self.basis.copy()
+        stepsize = self.stepsize
+        if stepsize is None:
+            if self.window is not None:
+                W = np.asarray(self._history).T
+                self.covariance = W @ W.conj().T
+            largest = float(np.linalg.eigvalsh(self.covariance)[-1])
+            stepsize = 1. / max(4. * largest, 1e-8)
+        self.last_stepsize = stepsize
         CX = self.covariance @ self.basis
         trace = np.trace(self.covariance).real
         self.step_losses = ([float(trace - np.vdot(self.basis, CX).real)]
                             if self.record_objective else [])
         for step in range(self.inner_steps):
             gradient = -2 * (CX - self.basis @ (self.basis.conj().T @ CX))
-            self.basis = grassmann_exp(self.basis, -self.stepsize * gradient)
+            self.basis = grassmann_exp(self.basis, -stepsize * gradient)
             if step < self.inner_steps - 1 or self.record_objective:
                 CX = self.covariance @ self.basis
             if self.record_objective:
@@ -156,7 +163,6 @@ class GREAT:
                     self.descent_violations += 1
                 self.step_losses.append(loss)
             self.total_gradient_steps += 1
-        self.observations += 1
         return self.basis.copy()
 
     @property
@@ -168,6 +174,7 @@ class GREAT:
                     descent_violations=self.descent_violations if self.record_objective else None,
                     descent_monitored=self.record_objective, effective_mass=self.effective_mass,
                     window=self.window, beta=self.beta, gamma=self.gamma,
+                    stepsize=self.stepsize, last_stepsize=self.last_stepsize,
                     complex_extension=self.complex_data, covariance_normalized=False,
                     method='GREAT, complex extension' if self.complex_data else 'GREAT',
                     last_step_losses=list(self.step_losses))
