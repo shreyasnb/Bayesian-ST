@@ -1,9 +1,7 @@
 """Positive spectral series for real/complex rank-one Bingham moments.
 
-Appendices C, F and H of Cazzella et al., *On the Latent Information Geometry
-of the Grassmann Manifold*, motivate evaluating a normalizer and differentiating
-it. Here the rank-one specialization avoids general Jack polynomial enumeration:
-squared coordinates have a Dirichlet(a,...,a) law, a=1/2 real or a=1 complex.
+The rank-one specialization avoids general Jack polynomial enumeration.
+Squared coordinates have a Dirichlet(a,...,a) law, a=1/2 real or a=1 complex.
 
 The finite approximation uses a smooth identity shift and includes its derivative.
 Thus ``mean`` is the exact gradient of the finite-order approximate log normalizer

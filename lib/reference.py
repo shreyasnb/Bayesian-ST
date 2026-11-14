@@ -2,8 +2,8 @@
 
 The discrete nodes used to compute moments are not an accurate representation
 of a continuous tail CDF at a fixed quadrature order. This independent helper
-integrates polar caps directly and solves the continuous CDF equations from
-Appendix I. It is a low-dimensional validation reference, not an array backend.
+integrates polar caps directly and solves continuous CDFs. It is a
+low-dimensional validation reference, not an array backend.
 """
 from dataclasses import dataclass
 import warnings

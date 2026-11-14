@@ -22,7 +22,7 @@ class Fit:
 
 
 def marginal_mstep(h_parallel, h_perp, n, k, floor=1e-6):
-    """Eq. S32, including the ordered-variance boundary and zero statistics."""
+    """Ordered-variance update, including boundary and zero statistics."""
     if h_parallel >= max(h_perp, floor):
         s, p = max(h_perp, floor), h_parallel
     else:
@@ -62,7 +62,7 @@ def fit_noise(records, k, s, tau2, mean, iterations=5, floor=1e-6,
         means=[mean(r.prior+increment(r.u,s,tau2,r.v,complex_data),k) for r in records]
         evaluations += L
         if conditional:
-            # Expected residual, not residual of expected response alone (Eq.38).
+            # Expected residual includes posterior response uncertainty.
             total=sum(np.vdot(r.u-M@r.v,r.u-M@r.v).real +
                       np.vdot(r.v,(M-M@M)@r.v).real for r,M in zip(records,means))
             candidate=(max(float(total/(n*L)),floor),None)

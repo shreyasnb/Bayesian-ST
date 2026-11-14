@@ -1,6 +1,5 @@
 """Excitation, fixed-time tracking, and certified regional task bounds.
 
-Equation numbers refer to the supplied Bayesian subspace tracking draft.
 The tracking certificate uses deterministic inputs and the true fixed variance;
 it is an evaluation tool, not an observable posterior radius.
 """
@@ -30,17 +29,16 @@ def _basis(X):
 
 
 def fisher_information(X, V, s):
-    """Real-model Fisher information (20), in column-major chart coordinates.
+    """Real-model Fisher information in column-major chart coordinates.
 
     ``V`` has shape (n, observations). The complementary basis is the one
     returned by scipy.linalg.null_space(X.T). The function is deliberately
-    restricted to real inputs; the draft's real constants do not apply to
-    complex coordinates.
+    restricted to real inputs.
     """
     X = _basis(X)
     V = np.asarray(V)
     if np.iscomplexobj(X) or np.iscomplexobj(V):
-        raise ValueError("equation (20) is stated for real observations")
+        raise ValueError("Fisher information requires real observations")
     if s <= 0 or not np.isfinite(s):
         raise ValueError("s must be a positive finite variance")
     if V.ndim != 2 or V.shape[0] != X.shape[0]:
@@ -69,13 +67,13 @@ class TrackingBound:
 
 
 def tracking_bound(X_history, V, s, beta=1., G=None, A0=None, delta=.05):
-    """Evaluate (24)--(29) at the last supplied time.
+    """Evaluate the tracking bound at the last observation time.
 
     X_history has shape (t,n,k), V has shape (t,n). G has shape (t,n,n),
     with G[j] the supplied transformation into observation j; G[0] transports
     the initialization into the first observation. All past observations are
     retained here, independently of any EM fitting window. ``bound`` is NaN
-    whenever the theorem's strict condition fails; ``ceiling`` always applies.
+    whenever the strict validity condition fails; ``ceiling`` always applies.
     """
     Xs = np.asarray(X_history)
     vs = np.asarray(V)
@@ -85,7 +83,7 @@ def tracking_bound(X_history, V, s, beta=1., G=None, A0=None, delta=.05):
     for X in Xs:
         _basis(X)
     if np.iscomplexobj(Xs) or np.iscomplexobj(vs):
-        raise ValueError("the fixed-time theorem is stated over the reals")
+        raise ValueError("the tracking bound requires real observations")
     if vs.shape != (t, n) or not np.all(np.isfinite(vs)):
         raise ValueError("V must have finite entries and shape (t,n)")
     if not 0 < beta <= 1 or not 0 < delta < 1 or s <= 0:
@@ -189,8 +187,8 @@ def _select_family(H, E, rank, base, eigenvalues, target):
 def regional_bound(B, C, a, k, tol=1e-9, maxiter=100):
     """Maximize tr(BP) subject to tr(CP)>=a, rank(P)=k, P²=P.
 
-    Implements the one-dimensional convex dual (33), including the tied
-    eigenspace construction (S25), complex Hermitian data, and the endpoint
+    Implements the one-dimensional convex dual, including tied eigenspaces,
+    complex Hermitian data, and the endpoint
     a=sum(top-k eigenvalues(C)). Empty regions raise ValueError. The returned
     objective gap certifies the numerical optimization for this region.
     """

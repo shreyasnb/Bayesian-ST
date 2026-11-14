@@ -1,15 +1,4 @@
-"""GREAT finite-step Grassmann tracking and an explicit complex extension.
-
-The objective is tr(C) - tr(X* C X), with an unnormalized window or discounted
-covariance C. At each new observation the previous estimate warm-starts a fixed
-number of Riemannian-gradient/exponential-map steps. There is no eigensolve.
-
-The real sliding-window construction and EW column weighting are specified in
-the supplied final simulation guide, which cites arXiv:2412.09052v2 Algorithm 1,
-Sections IV-B/C and Remark 9. Primary-source accessibility and code provenance
-are recorded in docs/great_reference.md; direct paper/author-code matching is
-not silently claimed when those services cannot be reached.
-"""
+"""GREAT subspace tracking."""
 from collections import deque
 import numbers
 
@@ -36,14 +25,14 @@ def _covariance(C, n):
 
 
 def residual_objective(X, covariance):
-    """Squared projection residual for the supplied unnormalized covariance."""
+
     X = _basis(X)
     C = _covariance(covariance, len(X))
     return float((np.trace(C) - np.trace(X.conj().T @ C @ X)).real)
 
 
 def riemannian_gradient(X, covariance):
-    """Grassmann gradient -2(I-XX*) C X in the horizontal representation."""
+
     X = _basis(X)
     C = _covariance(covariance, len(X))
     CX = C @ X
@@ -51,12 +40,8 @@ def riemannian_gradient(X, covariance):
 
 
 def grassmann_exp(X, tangent):
-    """Exact Grassmann exponential for a horizontal tangent matrix.
 
-    SVD is of an n-by-k tangent, not of the n-by-n data covariance. The formula
-    includes zero singular directions and is valid for rank-deficient tangents.
-    Numerical horizontal projection removes roundoff in X* tangent.
-    """
+
     X = _basis(X)
     tangent = np.asarray(tangent)
     if tangent.shape != X.shape or not np.isfinite(tangent).all():
@@ -68,25 +53,15 @@ def grassmann_exp(X, tangent):
     U, singular, Vh = np.linalg.svd(tangent, full_matrices=False)
     V = Vh.conj().T
     Y = ((X @ V) * np.cos(singular)) @ Vh + (U * np.sin(singular)) @ Vh
-    # This repair is normally inactive; it does not replace the exponential
-    # update by a generic retraction or optimize the covariance eigenvectors.
+
+
     if np.linalg.norm(Y.conj().T @ Y - np.eye(X.shape[1])) > 5e-12:
         Y = np.linalg.qr(Y, mode='reduced')[0]
     return Y
 
 
 class GREAT:
-    """Warm-started finite-gradient subspace tracker.
 
-    Select a positive sliding window or beta in (0, 1]. For EW covariance
-    weights beta**age, Remark 9's data-column weight is gamma=sqrt(beta).
-    stepsize multiplies the raw, unnormalized gradient; no hidden division by
-    the window size or effective mass is performed. Step size, memory and
-    number of inner steps must be selected on independent validation episodes.
-
-    update receives measured u only, plus optional supplied coordinate G.
-    In contact this is a response-only reference and does not receive v.
-    """
 
     def __init__(self, n, k, stepsize=1e-3, inner_steps=1, window=None,
                  beta=None, complex_data=False, initial_basis=None, record_objective=False):
@@ -131,7 +106,7 @@ class GREAT:
         self._history = deque()
 
     def update(self, u, G=None):
-        """Assimilate one measurement and take the declared finite steps."""
+
         u = np.asarray(u)
         if u.shape != (self.n,) or not np.isfinite(u).all():
             raise ValueError('Use one finite measured vector of length n')
@@ -150,7 +125,7 @@ class GREAT:
                 if np.max(abs(G.imag)) > 1e-13:
                     raise ValueError('Complex coordinate changes require complex_data=True')
                 G = G.real
-            # Estimator and historical optimization dataset share the frame.
+
             self.basis = G @ self.basis
             self.covariance = G @ self.covariance @ G.conj().T
             if self.window is not None:

@@ -1,4 +1,4 @@
-"""Independent references and safety guards for the appendix-inspired backend."""
+"""Independent references and safety guards for the spectral-series backend."""
 import numpy as np
 import pytest
 from numpy.testing import assert_allclose

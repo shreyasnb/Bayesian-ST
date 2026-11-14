@@ -1,4 +1,4 @@
-"""Independent continuous-CDF checks for the draft's anisotropic example."""
+"""Independent continuous-CDF checks for anisotropic distributions."""
 import unittest
 
 import numpy as np

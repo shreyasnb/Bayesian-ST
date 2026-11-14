@@ -95,7 +95,7 @@ def sample_bingham(A, k, rng=None, draws=1000, burnin=500, thin=1,
     numerical effect because the spectrum is centered before simulation.
 
     ``mean`` averages row norms in the eigenbasis, including exact symmetry on
-    repeated-eigenvalue blocks (Appendix G.1). ``raw_mean`` averages the actual
+    repeated-eigenvalue blocks. ``raw_mean`` averages the actual
     sampled projectors. ``mcse`` is the largest spectral-entry batch-mean
     standard error. It does not estimate all possible credible-tail errors.
     """

@@ -121,3 +121,6 @@ precision, and no scientific code or paper record was changed to conceal it.
 Contact projector differences remain below `4.5e-16`, and the original
 `5e-8` resolution checks pass. `results/verification.json` records the detailed
 comparisons and independent acceptance results. Remote CI is a separate run.
+
+The [GREAT implementation status](great_reference.md) distinguishes the local
+numerical checks from direct comparison with the author's repository.

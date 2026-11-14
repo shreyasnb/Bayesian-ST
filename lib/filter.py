@@ -1,4 +1,4 @@
-"""Algorithm 1 with one correction per observation and pre-correction prior storage."""
+"""One correction per observation with pre-correction prior storage."""
 from collections import deque
 import numpy as np
 from .geometry import center, mode
