@@ -1,0 +1,115 @@
+{
+  "stage": "paper",
+  "source_commit": "a91faabeb10a63b1d1c613d75cc32503cfc0cac6",
+  "validation_episodes": 64,
+  "test_episodes": 256,
+  "calibration_validation_episodes": 32,
+  "calibration_test_episodes": 128,
+  "mismatch_episodes": 64,
+  "validation_seed": 2026111011,
+  "test_seed": 2026111012,
+  "calibration_seed": 2026111013,
+  "mismatch_seed": 2026111014,
+  "seed_offset": 0,
+  "primary_beam_n": 32,
+  "primary_beam_T": 256,
+  "primary_beam_dt": 0.01,
+  "primary_contact_T": 192,
+  "primary_contact_dt": 0.05,
+  "primary_report_every": 32,
+  "calibration_n": 3,
+  "calibration_T": 64,
+  "calibration_times": [
+    32,
+    64
+  ],
+  "calibration_sigma2": 0.2,
+  "calibration_tau2": 1.0,
+  "calibration_drift_angle": 0.8,
+  "nominal": [
+    0.5,
+    0.8,
+    0.95
+  ],
+  "posterior_draws": 4096,
+  "real_orders": [
+    [
+      48,
+      96
+    ],
+    [
+      64,
+      192
+    ]
+  ],
+  "state_mass_tolerance": 0.035,
+  "quantile_resolution_tolerance": 0.006,
+  "moment_tolerance": 1e-09,
+  "max_order": 4096,
+  "ascent_tolerance": 1e-07,
+  "real_quadrature_resolution_tolerance": 1e-07,
+  "second_moment_tolerance": 1e-06,
+  "numerical_scope": "Native mean/log-normalizer flags bound series truncation in exact arithmetic, excluding rounding. The real N3 fallback compares two quadrature resolutions at tolerance1e-7, not a rigorous error enclosure. Tail/CDF and second-moment checks are separate.",
+  "beam_floor": 1e-05,
+  "contact_floor": 1e-08,
+  "calibration_floor": 1e-05,
+  "policy_candidates": [
+    {
+      "beta": 1.0,
+      "block_length": 32,
+      "em_iterations": 2
+    },
+    {
+      "beta": 0.98,
+      "block_length": 32,
+      "em_iterations": 2
+    },
+    {
+      "beta": 0.9,
+      "block_length": 32,
+      "em_iterations": 2
+    },
+    {
+      "beta": 0.98,
+      "block_length": 32,
+      "em_iterations": 4
+    }
+  ],
+  "beam_conditions": [
+    "noise_change",
+    "smooth",
+    "power_change"
+  ],
+  "contact_conditions": [
+    "noise_change",
+    "fast_sphere"
+  ],
+  "heldout_draws": 128,
+  "task_penalty": 10.0,
+  "precision": "Primary256 independent test episodes; calibration128 independent episodes with exact binomial intervals. Reporting times and queries are averaged within episodes. All precision flags are retained.",
+  "variance_convention": "sigma2 is per-real-coordinate variance, or proper-complex covariance; complex real/imaginary noise components have variance sigma2/2.",
+  "causal_rule": "One singleton correction; completed nonoverlapping past blocks; transported preceding prior fixed during EM; fitted variances used only for future corrections; streaming state is never replaced or augmented by fitted block posterior.",
+  "timing_scope": "Elapsed component clocks are execution metadata. Comparative warmed serial cadence timing is a separate root-owned stage.",
+  "causal_warm_start": "One current-parameter warm start per completed block; if signal variance is zero, also use a declared positive interior fallback. Multiple-start stationary reference experiments are retained separately.",
+  "validation_scoring_scope": "Policy validation uses independent observed held-out disturbance power or noisy held-out KKT response MSE. Hidden subspaces, normals and true covariance losses never select settings. Optional predictive density reports are not computed during task-policy selection.",
+  "mismatch": {
+    "contamination_power": 0.5,
+    "secondary_power": 0.35,
+    "noise_correlation": 0.5,
+    "friction_coefficient": 0.35,
+    "anisotropic_damping": [
+      1.0,
+      2.0,
+      4.0
+    ],
+    "position_dt": 0.05,
+    "position_sigma": 0.01
+  },
+  "section": "all",
+  "primary_contact_generator_seeds": {
+    "validation_seed": 2026111001,
+    "test_seed": 2026111002,
+    "stage_seed_offset": 0
+  },
+  "primary_beam_generator_seeds": "SeedSequence([validation_seed or test_seed + seed_offset, 32, episode, 31]); same draws across interventions"
+}

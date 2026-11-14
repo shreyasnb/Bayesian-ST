@@ -1,0 +1,162 @@
+[
+  {
+    "trial": 7,
+    "method": "mean",
+    "t": 4,
+    "response_mse": 2.7114728602010524e-05,
+    "response_map_frobenius": 0.2033604645150789,
+    "posterior_response_excess": 0.0
+  },
+  {
+    "trial": 7,
+    "method": "mode",
+    "t": 4,
+    "response_mse": 2.59313493182968e-05,
+    "response_map_frobenius": 0.19448511988722592,
+    "posterior_response_excess": 1.22496338032179e-05
+  },
+  {
+    "trial": 7,
+    "method": "isotropic",
+    "t": 4,
+    "response_mse": 2.7059457251764948e-05,
+    "response_map_frobenius": 0.20294592938823702,
+    "posterior_response_excess": 2.5598627765649645e-06
+  },
+  {
+    "trial": 7,
+    "method": "mean_identity",
+    "t": 4,
+    "response_mse": 3.1104004791943025e-05,
+    "response_map_frobenius": 0.2332800359395727,
+    "posterior_response_excess": 3.4865260496085343e-07
+  },
+  {
+    "trial": 7,
+    "method": "mean",
+    "t": 16,
+    "response_mse": 4.212201824670705e-05,
+    "response_map_frobenius": 0.315915136850303,
+    "posterior_response_excess": 0.0
+  },
+  {
+    "trial": 7,
+    "method": "mode",
+    "t": 16,
+    "response_mse": 2.85344493338608e-05,
+    "response_map_frobenius": 0.2140083700039561,
+    "posterior_response_excess": 3.211409617481043e-05
+  },
+  {
+    "trial": 7,
+    "method": "isotropic",
+    "t": 16,
+    "response_mse": 3.7968571646644205e-05,
+    "response_map_frobenius": 0.28476428734983156,
+    "posterior_response_excess": 7.737014604843856e-06
+  },
+  {
+    "trial": 7,
+    "method": "mean_identity",
+    "t": 16,
+    "response_mse": 4.1032790113042656e-05,
+    "response_map_frobenius": 0.30774592584782,
+    "posterior_response_excess": 5.733034303224792e-06
+  },
+  {
+    "trial": 7,
+    "method": "mean",
+    "t": 64,
+    "response_mse": 3.2576196271293293e-06,
+    "response_map_frobenius": 0.024432147203469964,
+    "posterior_response_excess": 0.0
+  },
+  {
+    "trial": 7,
+    "method": "mode",
+    "t": 64,
+    "response_mse": 3.282738381145205e-06,
+    "response_map_frobenius": 0.024620537858589035,
+    "posterior_response_excess": 1.0385557530692043e-08
+  },
+  {
+    "trial": 7,
+    "method": "isotropic",
+    "t": 64,
+    "response_mse": 3.257642472193628e-06,
+    "response_map_frobenius": 0.02443231854145221,
+    "posterior_response_excess": 2.9847307649500383e-12
+  },
+  {
+    "trial": 7,
+    "method": "mean_identity",
+    "t": 64,
+    "response_mse": 4.765982088405611e-06,
+    "response_map_frobenius": 0.03574486566304209,
+    "posterior_response_excess": 3.4238539734890506e-07
+  },
+  {
+    "trial": 7,
+    "method": "mean",
+    "t": 128,
+    "response_mse": 1.775942675815482e-06,
+    "response_map_frobenius": 0.013319570068616109,
+    "posterior_response_excess": 0.0
+  },
+  {
+    "trial": 7,
+    "method": "mode",
+    "t": 128,
+    "response_mse": 1.7841884014430128e-06,
+    "response_map_frobenius": 0.013381413010822591,
+    "posterior_response_excess": 1.1101594314501431e-08
+  },
+  {
+    "trial": 7,
+    "method": "isotropic",
+    "t": 128,
+    "response_mse": 1.7753479599365207e-06,
+    "response_map_frobenius": 0.013315109699523897,
+    "posterior_response_excess": 2.7093580261123764e-11
+  },
+  {
+    "trial": 7,
+    "method": "mean_identity",
+    "t": 128,
+    "response_mse": 3.7779210003517307e-06,
+    "response_map_frobenius": 0.028334407502637975,
+    "posterior_response_excess": 1.2869468655197383e-06
+  },
+  {
+    "trial": 7,
+    "method": "mean",
+    "t": 192,
+    "response_mse": 2.2142271648504798e-07,
+    "response_map_frobenius": 0.001660670373637859,
+    "posterior_response_excess": 0.0
+  },
+  {
+    "trial": 7,
+    "method": "mode",
+    "t": 192,
+    "response_mse": 2.1117637483650667e-07,
+    "response_map_frobenius": 0.0015838228112737991,
+    "posterior_response_excess": 1.2756887739771292e-08
+  },
+  {
+    "trial": 7,
+    "method": "isotropic",
+    "t": 192,
+    "response_mse": 2.213534823040597e-07,
+    "response_map_frobenius": 0.0016601511172804474,
+    "posterior_response_excess": 5.543800939794158e-11
+  },
+  {
+    "trial": 7,
+    "method": "mean_identity",
+    "t": 192,
+    "response_mse": 6.9087333499258224e-06,
+    "response_map_frobenius": 0.05181550012444368,
+    "posterior_response_excess": 8.713092296291923e-06
+  }
+]

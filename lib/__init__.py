@@ -1,1 +1,1 @@
-"""Bayesian subspace tracking. See docs/claims.md for assumptions."""
+"""Bayesian subspace tracking and the camera-ready paper experiments."""
