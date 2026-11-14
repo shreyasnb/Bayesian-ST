@@ -59,8 +59,12 @@ def main():
     release=json.loads(config_bytes)
     experiments=['stationary','moving','noise'] if args.experiment=='all' else [args.experiment]
     for experiment in experiments:
-        if (args.output/f'{experiment}.csv.gz').exists():
-            raise FileExistsError(f'Refusing to overwrite {args.output/experiment}; use a fresh output directory')
+        names=[f'{experiment}.csv.gz',f'config_{experiment}.json',
+            f'policies_{experiment}.json',f'run_{experiment}.json']
+        for name in names:
+            if (args.output/name).exists():
+                raise FileExistsError(f'Refusing to overwrite {args.output/name}; use a fresh output directory')
+    for experiment in experiments:
         cfg=release[experiment]['config'];selected=release[experiment]['selected']
         count=1 if args.smoke else cfg['test_episodes']
         policies=[selected] if experiment=='noise' else selected
