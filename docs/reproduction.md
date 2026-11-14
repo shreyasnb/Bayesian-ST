@@ -55,7 +55,9 @@ python scripts/reproduce.py --workers 4
 ```
 
 Reruns go into ignored `results/rerun/`, preserving the committed paper cohort.
-Paths supplied to commands are resolved from the caller's working directory;
+Choose a fresh `--output` directory for another simulation run; the runners
+refuse to overwrite existing records or metadata. Paths supplied to commands
+are resolved from the caller's working directory;
 default data/output paths resolve from the script's location. Figures can be
 redrawn after a rerun without rerunning the simulation.
 
@@ -70,12 +72,12 @@ build dependencies were not supplied as a complete paper source tree.
 
 | Paper output | Numerical producer | Export |
 | --- | --- | --- |
-| Fig. 1, `results/contact/contact_comparison.pdf` | `final_contact` fixed-plane fixture and dense sphere transport | `paper_plots` |
-| Fig. 2, `results/beamforming/moving_interference_comparison.pdf` | independent smooth/abrupt moving interference | `paper_plots` |
-| Fig. 3, `results/contact/information_rotation.pdf` | fixed-plane conditional information | `paper_plots` |
-| Fig. 4, `results/contact/posterior_anisotropy_spheres.pdf` | real normal Bingham quadrature | `paper_plots` |
-| Fig. 5, `results/beamforming/noise_adaptation.pdf` | pre-correction prediction with future-only block EM | `paper_plots` |
-| Stationary settings/results, moving averages | frozen per-trial beamforming records | beamforming table exporter |
+| Fig. 1, `results/contact/contact_comparison.pdf` | `final_contact.anisotropy_fixture` / `test_episode` | `paper_plots` |
+| Fig. 2, `results/beamforming/moving_interference_comparison.pdf` | `final_beamforming.evaluate_episode` | `paper_plots` |
+| Fig. 3, `results/contact/information_rotation.pdf` | `paper_plots.contact_information_matrix` | `paper_plots` |
+| Fig. 4, `results/contact/posterior_anisotropy_spheres.pdf` | `final_contact.anisotropy_fixture` | `paper_plots` |
+| Fig. 5, `results/beamforming/noise_adaptation.pdf` | `final_prediction.adaptation_trial` | `paper_plots` |
+| Stationary settings/results, moving averages | frozen per-trial beamforming records | `beamforming_tables.export_tables` |
 
 Configurations under `configs/` retain exact seeds, reporting times, numerical
 budgets, and unrounded selected baseline parameters. Data provenance records
@@ -98,3 +100,24 @@ between-simulation means; differences are paired and intervals use Student's
 `t`. Contact bands are pointwise confidence intervals for mean errors; moving
 beamforming shades the middle 50% of values. Noise variance, power, and score
 bands retain their separate definitions from the source.
+
+## Verified release
+
+The complete `reproduce.py --workers 4` workflow passed from a fresh checkout
+of reproduction code `f634eb4` with a newly installed virtual environment:
+76 tests and two subtests, all 256-simulation paper cohorts, all five PDF
+exports, numerical tables, manuscript claims, intervals and plot-band checks.
+No notebook packages were installed. Separate full runs with two and four
+workers produced the same scientific results. The original 64-simulation
+parameter selection was preserved, not rerun.
+
+Beamforming per-trial powers, dB losses, variance estimates and predictive
+scores match the saved paper records exactly. Round-trip reading of the
+original contact CSV reveals decimal rounding differences up to `9.98e-17`
+in response MSE. Replaying the largest case (trial 137, measurement 32) with
+the pinned original producer gives `0.0001016779375313998`, exactly the release
+value; the original CSV stores `0.0001016779375313`. This is serialization
+precision, and no scientific code or paper record was changed to conceal it.
+Contact projector differences remain below `4.5e-16`, and the original
+`5e-8` resolution checks pass. `results/verification.json` records the detailed
+comparisons and independent acceptance results. Remote CI is a separate run.

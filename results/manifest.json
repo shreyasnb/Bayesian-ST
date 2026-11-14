@@ -74,6 +74,7 @@
     "beamforming/tables/stationary_results.csv": "783087ac737682420920396df7db2c1614002eab09b80055a62efd2375c8f2a7",
     "beamforming/tables/stationary_results.tex": "c96d085fec34ad3eebb71d1885dfdffaffc9bc50a0accd6d065bde84b047a235",
     "beamforming/tables/stationary_settings.csv": "15f2a4bd6f224ebb1add3a61bf7f9070fc5ae9c987d830199101150573b6d7fa",
-    "beamforming/tables/stationary_settings.tex": "c5ea4108f9e24ba23fe55b568bb49ec059b1b9ca03ed338e52a3a41fd494b27b"
+    "beamforming/tables/stationary_settings.tex": "c5ea4108f9e24ba23fe55b568bb49ec059b1b9ca03ed338e52a3a41fd494b27b",
+    "verification.json": "545b021727537b2aac8ddd400d9fc14c1020b78c54074371153cec0062406a8f"
   }
 }
