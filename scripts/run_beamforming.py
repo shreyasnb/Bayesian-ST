@@ -5,10 +5,8 @@ for name in ("OPENBLAS_NUM_THREADS","OMP_NUM_THREADS","MKL_NUM_THREADS"):
 import argparse
 from concurrent.futures import ProcessPoolExecutor
 from multiprocessing import get_context
-import hashlib
 import json
 import sys
-from time import perf_counter
 import numpy as np
 import pandas as pd
 
@@ -40,36 +38,27 @@ def worker(job):
     return evaluate_episode(cfg,policy,trial,stationary=experiment=='stationary')[0]
 
 
-def write_json(path,value):
-    path.write_text(json.dumps(value,indent=2)+'\n')
-
-
 def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--experiment',choices=['all','stationary','moving','noise'],default='all')
     parser.add_argument('--output',type=Path,default=ROOT/'results/rerun/beamforming/data')
     parser.add_argument('--config',type=Path,default=ROOT/'configs/beamforming.json')
     parser.add_argument('--workers',type=int,default=1)
-    parser.add_argument('--smoke',action='store_true',help='One simulation per frozen condition; retains paper seeds and horizons.')
     args=parser.parse_args()
     if args.workers<1:parser.error('--workers must be positive')
     args.output.mkdir(parents=True,exist_ok=True)
-    config_bytes=args.config.read_bytes()
-    config_sha256=hashlib.sha256(config_bytes).hexdigest()
-    release=json.loads(config_bytes)
+    release=json.loads(args.config.read_text())
     experiments=['stationary','moving','noise'] if args.experiment=='all' else [args.experiment]
     for experiment in experiments:
-        names=[f'{experiment}.csv.gz',f'config_{experiment}.json',
-            f'policies_{experiment}.json',f'run_{experiment}.json']
-        for name in names:
-            if (args.output/name).exists():
-                raise FileExistsError(f'Refusing to overwrite {args.output/name}; use a fresh output directory')
+        path=args.output/f'{experiment}.csv.gz'
+        if path.exists():
+            raise FileExistsError(f'Refusing to overwrite {path}; use a fresh output directory')
     for experiment in experiments:
         cfg=release[experiment]['config'];selected=release[experiment]['selected']
-        count=1 if args.smoke else cfg['test_episodes']
+        count=cfg['test_episodes']
         policies=[selected] if experiment=='noise' else selected
         jobs=[(experiment,cfg,policy,trial) for policy in policies for trial in range(count)]
-        start=perf_counter();rows=[]
+        rows=[]
         if args.workers==1:
             output=map(worker,jobs)
             for i,part in enumerate(output,1):
@@ -88,13 +77,6 @@ def main():
             if not frame[flag].astype(bool).all():raise ArithmeticError('Unresolved '+flag)
         path=args.output/f'{experiment}.csv.gz'
         frame.to_csv(path,index=False,compression={'method':'gzip','mtime':0})
-        write_json(args.output/f'config_{experiment}.json',cfg)
-        write_json(args.output/f'policies_{experiment}.json',selected)
-        write_json(args.output/f'run_{experiment}.json',dict(status='completed',smoke=args.smoke,
-            simulations_per_condition=count,conditions=len(policies),rows=len(frame),
-            seconds=perf_counter()-start,source_commit=release['source_commit'],
-            config_sha256=config_sha256,
-            data_sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
 
 
 if __name__=='__main__':main()

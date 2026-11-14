@@ -20,8 +20,3 @@ def constant(u, k, s, tau2=None, v=None, complex_data=False):
     norm = n * np.log(np.pi if complex_data else 2 * np.pi)
     logdet = n * np.log(s) if v is not None else (n-k)*np.log(s) + k*np.log(s+tau2)
     return -f * (norm + logdet + np.vdot(u,u).real / s)
-
-
-def log_likelihood(u, P, s, tau2=None, v=None, complex_data=False):
-    B = increment(u,s,tau2,v,complex_data)
-    return constant(u,round(np.trace(P).real),s,tau2,v,complex_data) + np.trace(B @ P).real

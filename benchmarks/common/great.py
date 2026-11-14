@@ -15,28 +15,6 @@ def _basis(X):
     return X
 
 
-def _covariance(C, n):
-    C = np.asarray(C)
-    if C.shape != (n, n) or not np.isfinite(C).all():
-        raise ValueError('Covariance must be a finite square matrix')
-    if not np.allclose(C, C.conj().T, atol=2e-10, rtol=1e-12):
-        raise ValueError('Covariance must be Hermitian')
-    return C
-
-
-def residual_objective(X, covariance):
-    X = _basis(X)
-    C = _covariance(covariance, len(X))
-    return float((np.trace(C) - np.trace(X.conj().T @ C @ X)).real)
-
-
-def riemannian_gradient(X, covariance):
-    X = _basis(X)
-    C = _covariance(covariance, len(X))
-    CX = C @ X
-    return -2 * (CX - X @ (X.conj().T @ CX))
-
-
 def grassmann_exp(X, tangent):
     X = _basis(X)
     tangent = np.asarray(tangent)

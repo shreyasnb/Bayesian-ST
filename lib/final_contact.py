@@ -9,6 +9,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import numpy as np
 from scipy.optimize import brentq
+from scipy.linalg import null_space
 
 from .geometry import center
 from .models import increment
@@ -244,6 +245,38 @@ def bingham_records(cfg,data,beta,times=None,transport=True,A0=None):
     return records,np.asarray(all_A)
 
 
+def _basis(X):
+    X = np.asarray(X)
+    if X.ndim != 2 or not 0 < X.shape[1] < X.shape[0]:
+        raise ValueError("basis must have 0 < rank < ambient dimension")
+    if not np.allclose(X.conj().T @ X, np.eye(X.shape[1]), atol=1e-9):
+        raise ValueError("basis columns must be orthonormal")
+    return X
+
+
+def fisher_information(X, V, s):
+    """Real-model Fisher information in column-major chart coordinates.
+
+    ``V`` has shape (n, observations). The complementary basis is the one
+    returned by scipy.linalg.null_space(X.T). The function is deliberately
+    restricted to real inputs.
+    """
+    X = _basis(X)
+    V = np.asarray(V)
+    if np.iscomplexobj(X) or np.iscomplexobj(V):
+        raise ValueError("Fisher information requires real observations")
+    if s <= 0 or not np.isfinite(s):
+        raise ValueError("s must be a positive finite variance")
+    if V.ndim != 2 or V.shape[0] != X.shape[0]:
+        raise ValueError("V must have shape (n, observations)")
+    Q = null_space(X.T)
+    C = V @ V.T
+    k = X.shape[1]
+    r = Q.shape[1]
+    return (np.kron(X.T @ C @ X, np.eye(r)) +
+            np.kron(np.eye(k), Q.T @ C @ Q)) / s
+
+
 def anisotropy_fixture(cfg):
     """An actual, preassigned noisy stationary episode and an actual axial law."""
     local=dict(cfg,static_sigma2=cfg['anisotropy_sigma2'],test_seed=cfg['story_seed'],stage_seed_offset=0)
@@ -269,7 +302,6 @@ def anisotropy_fixture(cfg):
     iso_risks=np.einsum('qi,ij,qj->q',queries,iso_M-iso_M@iso_M,queries)
     values=np.linalg.eigvalsh(normal_A)[::-1];curvature=2*(values[0]-values[1:])
     X=np.linalg.svd(np.asarray(cfg['anisotropy_normal'])[None,:],full_matrices=True)[2][1:].T
-    from .theory import fisher_information
     F=fisher_information(X,data['V'][:t].T,cfg['anisotropy_sigma2'])
     overlap_error=abs(float(mode@iso['mean']@mode)-target)
     checks=dict(data_generated=True,selected_episode=0,selected_time=t,

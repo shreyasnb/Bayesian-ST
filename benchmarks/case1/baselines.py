@@ -18,14 +18,3 @@ def mvdr(covariance, steering):
     if denominator <= 0:
         raise ValueError("Steering vector must be nonzero")
     return solution / denominator
-
-
-def output_power(weight, covariance):
-    return float(np.vdot(weight, covariance @ weight).real)
-
-
-def sample_output_power(weight, snapshots):
-    snapshots = np.asarray(snapshots)
-    if snapshots.ndim != 2 or snapshots.shape[0] == 0:
-        raise ValueError("Expected nonempty row-wise snapshots")
-    return float(np.mean(np.abs(snapshots @ np.asarray(weight).conj()) ** 2))

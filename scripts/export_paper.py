@@ -8,20 +8,15 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
 from lib.paper_plots import export_figures
-from lib.beamforming_tables import export_tables
-from lib.contact_reporting import save_tables
-import pandas as pd
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Export all five paper figures and numerical tables from saved records.')
+    parser = argparse.ArgumentParser(description='Export the paper figures from saved simulation records.')
     parser.add_argument('--results', type=Path, default=ROOT / 'results')
-    results = parser.parse_args().results.resolve()
-    contact = results / 'contact/data'
-    save_tables(pd.read_csv(contact / 'metrics.csv.gz', float_precision='round_trip'),
-                contact, write_metrics=False)
-    export_tables(ROOT, results=results)
-    for path in export_figures(ROOT, results=results):
+    parser.add_argument('--example', choices=['all', 'contact', 'beamforming'], default='all')
+    args = parser.parse_args()
+    results = args.results.resolve()
+    for path in export_figures(ROOT, results=results, example=args.example):
         print(path)
 
 

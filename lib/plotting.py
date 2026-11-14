@@ -16,11 +16,3 @@ mpl.rcParams.update({
     'figure.figsize': (12, 5), 'figure.dpi': 200, 'savefig.bbox': 'tight', 'savefig.dpi': 200,
 })
 import matplotlib.pyplot as plt
-
-
-def save(fig, path):
-    from pathlib import Path
-    path = Path(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(path.with_suffix('.pdf'), dpi=200)
-    fig.savefig(path.with_suffix('.png'), dpi=200)

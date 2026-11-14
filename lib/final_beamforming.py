@@ -1,4 +1,3 @@
-from time import perf_counter
 import numpy as np
 from scipy.optimize import brentq
 from .geometry import center
@@ -7,11 +6,9 @@ from .beamforming_numerics import complex_moments
 from .beamforming_decisions import isotropized_mean
 from .beamforming_baselines import distortionless_weight, covariance_shrinkage
 from benchmarks.common.great import GREAT
-from benchmarks.case1.baselines import sample_output_power
 SOURCE_COMMIT='ec998a933fd693c2f5bdb62c6bf5654e9345853a'
 CONDITIONS=('static','smooth','abrupt','noise_change','power_change')
 METHODS=('mean','mode','isotropic','great_window','covariance_loading')
-
 
 
 def matched_overlap_angle(n, overlap=.5):
@@ -116,31 +113,6 @@ def checked_moments(A,tol=1e-10,max_order=4096,fallback_max_order=8192):
         if fallback_max_order<=max_order:
             raise
         return complex_moments(A,tol,fallback_max_order),True
-
-
-def action_from_parameter(A,a,sigma2,tau2,method='mean',tol=1e-10,max_order=4096,
-                          fallback_max_order=8192):
-    """One production action for cadence timing, without any scoring work.
-
-    Native mean evaluation already includes its eigensystem. A mode-only
-    action uses the efficient rank-one inverse identity. Optional uncertainty
-    reports and variance fitting are separate operations.
-    """
-    if method=='mode':
-        P,h,gap=projector_mode(A)
-        return dict(weight=modal_weight(h,a,sigma2,tau2),projector=P,
-                    numerical_ok=True,mode_gap=gap)
-    if method not in ('mean','isotropic'):
-        raise ValueError('Use mean, mode or isotropic')
-    posterior,fallback=checked_moments(A,tol,max_order,fallback_max_order)
-    M=posterior.mean
-    if method=='isotropic':
-        P,h,gap=projector_mode(A)
-        M,_=isotropized_mean(M,P)
-    return dict(weight=distortionless_weight(sigma2*np.eye(len(A))+tau2*M,a),
-                projector=M,numerical_ok=posterior.numerical_ok,
-                moment_diagnostics=dict(posterior.diagnostics,cap_extension=fallback),
-                log_normalizer=posterior.log_normalizer)
 
 
 def oracle_power(a, h, sigma2, tau2):

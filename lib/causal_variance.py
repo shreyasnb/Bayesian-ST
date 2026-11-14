@@ -7,9 +7,9 @@ fitted posterior never replaces or augments the streaming parameter.
 from dataclasses import dataclass
 from time import perf_counter
 import numpy as np
-from .geometry import center, mode
-from .models import increment, constant
-from .block_em import BlockData, fit_block_em, moments
+from .geometry import center
+from .models import increment
+from .block_em import BlockData, fit_block_em
 
 
 @dataclass(frozen=True)
@@ -110,27 +110,6 @@ class CausalVarianceTracker:
         G = self._transform(G)
         return center(self.beta * G @ self.A @ G.conj().T)
 
-    def posterior(self, G=None, *, predict=False):
-        A = self.predict_parameter(G) if predict else self.A
-        return moments(A, self.k, self.complex_data,
-                       self.moment_tolerance, self.max_order)
-
-    def logscore(self, u, v=None, G=None):
-        """Full normalized density of an excluded next observation."""
-        prior = self.predict_parameter(G)
-        B = increment(np.asarray(u), self.sigma2, self.tau2,
-                      None if v is None else np.asarray(v), self.complex_data)
-        _, psi0, d0 = moments(prior, self.k, self.complex_data,
-                             self.moment_tolerance, self.max_order)
-        _, psi1, d1 = moments(prior+B, self.k, self.complex_data,
-                             self.moment_tolerance, self.max_order)
-        value = constant(np.asarray(u), self.k, self.sigma2, self.tau2,
-                         None if v is None else np.asarray(v), self.complex_data)+psi1-psi0
-        return float(value), bool(d0['numerical_ok'] and d1['numerical_ok'])
-
-    @property
-    def basis(self):
-        return mode(self.A, self.k)
 
     def _fit_completed(self):
         U, V, prior, product = align_completed_block(

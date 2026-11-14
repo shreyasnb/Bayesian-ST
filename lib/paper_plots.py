@@ -85,15 +85,19 @@ def contact_comparison(root, results=None):
            xticks=np.linspace(0., 2*np.pi, 5),
            xticklabels=[r'$0$', r'$\pi/2$', r'$\pi$', r'$3\pi/2$', r'$2\pi$'],
            yticks=[.05, .10, .15])
-    frame = pd.read_csv(results / 'contact/data/checkpoint_summary.csv')
+    frame = pd.read_csv(results / 'contact/data/metrics.csv.gz', float_precision='round_trip')
+    frame = frame[frame.endpoint.eq('checkpoint')]
     for method in ('mean', 'mode', 'iso', 'mean_identity'):
-        rows = frame[frame.method.eq(method)].sort_values('t')
-        if len(rows) != 48:
+        source = 'isotropic' if method == 'iso' else method
+        rows = frame[frame.method.eq(source)]
+        points = np.array([(time, *_interval(group.response_mse.to_numpy()*1e6))
+                           for time, group in rows.groupby('t', sort=True)])
+        if len(points) != 48 or not np.array_equal(points[:, 0], np.arange(4, 193, 4)):
             raise ValueError('The contact figure requires all 48 dense reporting times')
-        axes[1].plot(rows.t, rows['mean'], color=COLORS[method],
+        axes[1].plot(points[:, 0], points[:, 1], color=COLORS[method],
                      label=LABELS[method], linewidth=1.8)
         if method in ('mean', 'mean_identity'):
-            axes[1].fill_between(rows.t, rows.lower, rows.upper,
+            axes[1].fill_between(points[:, 0], points[:, 2], points[:, 3],
                                  color=COLORS[method], alpha=.14, linewidth=0, zorder=1)
     axes[1].set(xlabel=r'$t$', ylabel=r'$\mathcal E_t(D_t)$ $((\mathrm{mm}/\mathrm{s})^2)$',
                 xlim=(1, 192))
@@ -273,6 +277,8 @@ def moving_interference_comparison(root, results=None):
 
 def _interval(values):
     values = np.asarray(values, float)
+    if values.ndim != 1 or len(values) < 2 or not np.isfinite(values).all():
+        raise ValueError('At least two finite independent simulation outcomes are required')
     average = values.mean()
     error = student_t.ppf(.975, len(values)-1)*values.std(ddof=1)/np.sqrt(len(values))
     return average, average-error, average+error
@@ -324,13 +330,17 @@ def noise_adaptation(root, results=None):
     return fig
 
 
-def export_figures(root, results=None):
+def export_figures(root, results=None, example='all'):
     root = Path(root).resolve()
     results = Path(results).resolve() if results is not None else root / 'results'
+    if example not in ('all', 'contact', 'beamforming'):
+        raise ValueError('Use all, contact or beamforming')
     producers = [contact_comparison, information_rotation, posterior_anisotropy_spheres,
                  moving_interference_comparison, noise_adaptation]
     paths = []
     for name, producer in zip(FIGURE_SIZES, producers):
+        if example != 'all' and not name.startswith(example+'/'):
+            continue
         target = results / name
         target.parent.mkdir(parents=True, exist_ok=True)
         with plt.rc_context():
