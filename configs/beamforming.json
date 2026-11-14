@@ -2,9 +2,7 @@
   "source_commit": "ec998a933fd693c2f5bdb62c6bf5654e9345853a",
   "stationary": {
     "config": {
-      "rank": 1,
       "stationary_T": 200,
-      "validation_episodes": 64,
       "test_episodes": 256,
       "validation_seed": 2026111001,
       "test_seed": 2026111002,
@@ -14,43 +12,16 @@
       "dt": 0.01,
       "moment_tolerance": 1e-10,
       "moment_max_order": 4096,
-      "moment_fallback_max_order": 8192,
-      "source_commit": "ec998a933fd693c2f5bdb62c6bf5654e9345853a"
+      "moment_fallback_max_order": 8192
     },
     "selected": [
       {
         "n": 32,
         "condition": "static",
-        "stationary": true,
-        "times": [
-          200
-        ],
+        "times": [200],
         "policies": [
           {
-            "times": [
-              25
-            ],
-            "covariance_beta": 1.0,
-            "alpha": 0.5669754656593768
-          },
-          {
-            "times": [
-              50
-            ],
-            "covariance_beta": 1.0,
-            "alpha": 0.5069545320542769
-          },
-          {
-            "times": [
-              100
-            ],
-            "covariance_beta": 1.0,
-            "alpha": 0.4373349078045467
-          },
-          {
-            "times": [
-              200
-            ],
+            "times": [200],
             "covariance_beta": 1.0,
             "alpha": 0.3538007162976233
           }
@@ -66,36 +37,10 @@
       {
         "n": 64,
         "condition": "static",
-        "stationary": true,
-        "times": [
-          200
-        ],
+        "times": [200],
         "policies": [
           {
-            "times": [
-              25
-            ],
-            "covariance_beta": 1.0,
-            "alpha": 0.617780043568838
-          },
-          {
-            "times": [
-              50
-            ],
-            "covariance_beta": 1.0,
-            "alpha": 0.5904256754540775
-          },
-          {
-            "times": [
-              100
-            ],
-            "covariance_beta": 1.0,
-            "alpha": 0.5262493853156766
-          },
-          {
-            "times": [
-              200
-            ],
+            "times": [200],
             "covariance_beta": 1.0,
             "alpha": 0.45923178071496473
           }
@@ -111,36 +56,10 @@
       {
         "n": 128,
         "condition": "static",
-        "stationary": true,
-        "times": [
-          200
-        ],
+        "times": [200],
         "policies": [
           {
-            "times": [
-              25
-            ],
-            "covariance_beta": 1.0,
-            "alpha": 0.592910541910997
-          },
-          {
-            "times": [
-              50
-            ],
-            "covariance_beta": 1.0,
-            "alpha": 0.6192626339085355
-          },
-          {
-            "times": [
-              100
-            ],
-            "covariance_beta": 1.0,
-            "alpha": 0.5881687013426274
-          },
-          {
-            "times": [
-              200
-            ],
+            "times": [200],
             "covariance_beta": 1.0,
             "alpha": 0.5304028814675519
           }
@@ -153,21 +72,11 @@
           "inner_steps": 3
         }
       }
-    ],
-    "selection": {
-      "validation_simulations": 64,
-      "validation_seed": 2026111001,
-      "test_seed": 2026111002,
-      "objective": "Independent held-out measured output power; frozen selection, no retuning",
-      "source_commit": "ec998a933fd693c2f5bdb62c6bf5654e9345853a"
-    }
+    ]
   },
   "moving": {
     "config": {
-      "rank": 1,
-      "moving_n": 32,
       "moving_T": 256,
-      "validation_episodes": 64,
       "test_episodes": 256,
       "validation_seed": 2026111001,
       "test_seed": 2026111002,
@@ -177,83 +86,25 @@
       "dt": 0.01,
       "moment_tolerance": 1e-10,
       "moment_max_order": 4096,
-      "moment_fallback_max_order": 8192,
-      "source_commit": "ec998a933fd693c2f5bdb62c6bf5654e9345853a"
+      "moment_fallback_max_order": 8192
     },
     "selected": [
       {
         "n": 32,
         "condition": "smooth",
-        "stationary": false,
         "times": [
-          8,
-          16,
-          24,
-          32,
-          40,
-          48,
-          56,
-          64,
-          72,
-          80,
-          88,
-          96,
-          104,
-          112,
-          120,
-          128,
-          136,
-          144,
-          152,
-          160,
-          168,
-          176,
-          184,
-          192,
-          200,
-          208,
-          216,
-          224,
-          232,
-          240,
-          248,
-          256
+          8, 16, 24, 32, 40, 48, 56, 64,
+          72, 80, 88, 96, 104, 112, 120, 128,
+          136, 144, 152, 160, 168, 176, 184, 192,
+          200, 208, 216, 224, 232, 240, 248, 256
         ],
         "policies": [
           {
             "times": [
-              8,
-              16,
-              24,
-              32,
-              40,
-              48,
-              56,
-              64,
-              72,
-              80,
-              88,
-              96,
-              104,
-              112,
-              120,
-              128,
-              136,
-              144,
-              152,
-              160,
-              168,
-              176,
-              184,
-              192,
-              200,
-              208,
-              216,
-              224,
-              232,
-              240,
-              248,
-              256
+              8, 16, 24, 32, 40, 48, 56, 64,
+              72, 80, 88, 96, 104, 112, 120, 128,
+              136, 144, 152, 160, 168, 176, 184, 192,
+              200, 208, 216, 224, 232, 240, 248, 256
             ],
             "covariance_beta": 0.97,
             "alpha": 0.7450887845568691
@@ -270,76 +121,19 @@
       {
         "n": 32,
         "condition": "abrupt",
-        "stationary": false,
         "times": [
-          8,
-          16,
-          24,
-          32,
-          40,
-          48,
-          56,
-          64,
-          72,
-          80,
-          88,
-          96,
-          104,
-          112,
-          120,
-          128,
-          136,
-          144,
-          152,
-          160,
-          168,
-          176,
-          184,
-          192,
-          200,
-          208,
-          216,
-          224,
-          232,
-          240,
-          248,
-          256
+          8, 16, 24, 32, 40, 48, 56, 64,
+          72, 80, 88, 96, 104, 112, 120, 128,
+          136, 144, 152, 160, 168, 176, 184, 192,
+          200, 208, 216, 224, 232, 240, 248, 256
         ],
         "policies": [
           {
             "times": [
-              8,
-              16,
-              24,
-              32,
-              40,
-              48,
-              56,
-              64,
-              72,
-              80,
-              88,
-              96,
-              104,
-              112,
-              120,
-              128,
-              136,
-              144,
-              152,
-              160,
-              168,
-              176,
-              184,
-              192,
-              200,
-              208,
-              216,
-              224,
-              232,
-              240,
-              248,
-              256
+              8, 16, 24, 32, 40, 48, 56, 64,
+              72, 80, 88, 96, 104, 112, 120, 128,
+              136, 144, 152, 160, 168, 176, 184, 192,
+              200, 208, 216, 224, 232, 240, 248, 256
             ],
             "covariance_beta": 0.97,
             "alpha": 0.5833105888254071
@@ -353,18 +147,10 @@
           "inner_steps": 3
         }
       }
-    ],
-    "selection": {
-      "validation_simulations": 64,
-      "validation_seed": 2026111001,
-      "test_seed": 2026111002,
-      "objective": "Independent held-out measured output power; frozen selection, no retuning",
-      "source_commit": "ec998a933fd693c2f5bdb62c6bf5654e9345853a"
-    }
+    ]
   },
   "noise": {
     "config": {
-      "validation_episodes": 64,
       "test_episodes": 256,
       "validation_seed": 2026111011,
       "test_seed": 2026111012,
@@ -379,10 +165,7 @@
       "ascent_tolerance": 1e-07,
       "real_quadrature_resolution_tolerance": 1e-07,
       "beam_floor": 1e-05,
-      "beam_conditions": [
-        "noise_change"
-      ],
-      "source_commit": "ec998a933fd693c2f5bdb62c6bf5654e9345853a"
+      "beam_conditions": ["noise_change"]
     },
     "selected": {
       "known": {
@@ -400,13 +183,6 @@
         "block_length": 32,
         "em_iterations": 2
       }
-    },
-    "selection": {
-      "validation_simulations": 64,
-      "validation_seed": 2026111011,
-      "test_seed": 2026111012,
-      "objective": "Independent held-out measured output power; frozen selection, no retuning",
-      "source_commit": "ec998a933fd693c2f5bdb62c6bf5654e9345853a"
     }
   }
 }
